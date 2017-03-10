@@ -1,2 +1,3 @@
 # SchedulingClients
-Scheduling client wrappers for Guidance Automation products
+
+Scheduling client wrappers for Guidance Automation products.
