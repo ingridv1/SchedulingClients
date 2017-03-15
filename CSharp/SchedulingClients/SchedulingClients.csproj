@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44C76564-FCEA-466C-B7A6-56747A99BADA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchedulingClients</RootNamespace>
+    <AssemblyName>SchedulingClients</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.4\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractCallbackClient.cs" />
+    <Compile Include="AbstractClient.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="ICallbackClient.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="JobBuilderClient.cs" />
+    <Compile Include="EndpointSettings.cs" />
+    <Compile Include="EndpointSettings_ExtensionMethods.cs" />
+    <Compile Include="RoadmapClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\JobBuilderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoadmapServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicingServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServicingCallback.cs" />
+    <Compile Include="ServicingClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
+    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\roadmap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\roadmap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\roadmap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\roadmap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\RoadmapService.wsdl" />
+    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.NodeData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\ServicingService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
+    <WCFMetadataStorage Include="Service References\RoadmapServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobBuilderServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobBuilderServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobBuilderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoadmapServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoadmapServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoadmapServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoadmapServiceReference\roadmap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\servicing.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
