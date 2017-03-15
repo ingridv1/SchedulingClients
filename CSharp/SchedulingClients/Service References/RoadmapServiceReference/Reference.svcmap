@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fe01e394-0548-485b-9856-b33e80ebf184" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:41916/roadmap.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="roadmap.disco" MetadataType="Disco" ID="c419f0a6-aa11-4ea6-a474-87073e93267a" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?disco" />
+    <MetadataFile FileName="roadmap.xsd" MetadataType="Schema" ID="fe34e4a2-af95-4e65-ad61-b43d62b17b5d" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" />
+    <MetadataFile FileName="roadmap1.xsd" MetadataType="Schema" ID="299557bf-0ec9-4178-bcd6-2c7196fc1a59" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd0" />
+    <MetadataFile FileName="RoadmapService.wsdl" MetadataType="Wsdl" ID="9fa350a2-d2b4-4909-a5a3-ece7989794e3" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?wsdl" />
+    <MetadataFile FileName="roadmap2.xsd" MetadataType="Schema" ID="1a9be6ef-64e5-4d98-a2fc-4cde8dd4c336" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd1" />
+    <MetadataFile FileName="roadmap3.xsd" MetadataType="Schema" ID="bf95bf18-bcfb-49e0-a151-183b07a49947" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
