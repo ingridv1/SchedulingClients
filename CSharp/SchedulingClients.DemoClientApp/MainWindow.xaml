@@ -1,0 +1,50 @@
+﻿<Window x:Class="SchedulingClients.DemoClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchedulingClients.DemoClientApp"
+        xmlns:clientsUC="clr-namespace:SchedulingClients.UserControls;assembly=SchedulingClients.UserControls"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="Scheduling Services Client Demo" Width="800" Height="600">
+    <Window.Resources>
+        <ResourceDictionary>
+            <local:DemoClient x:Key="demoClient" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem>
+                <TabItem.Header>
+                    Job Builder Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:JobBuilderClientControl x:Name="jobBuilderClientControl" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Map Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:MapClientControl x:Name="mapClientControl" Margin="0,-2,0,2" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Servicing Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:ServicingClientControl x:Name="servicingClientControl" Margin="0,-2,0,2" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
