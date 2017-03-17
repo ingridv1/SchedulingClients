@@ -13,16 +13,16 @@ namespace SchedulingClients
 {
     public abstract class AbstractCallbackClient<T> : ICallbackClient
     {
-        protected NetTcpBinding Binding = new NetTcpBinding(SecurityMode.None)
-        {
-            PortSharingEnabled = true
-        };
-
-        protected DuplexChannelFactory<T> channelFactory;
+        protected InstanceContext context;
 
         protected AutoResetEvent heartbeatReset = new AutoResetEvent(false);
 
         private readonly Guid key = Guid.NewGuid();
+
+        private NetTcpBinding Binding = new NetTcpBinding(SecurityMode.None)
+        {
+            PortSharingEnabled = true
+        };
 
         private EndpointAddress endpointAddress;
 
@@ -40,7 +40,7 @@ namespace SchedulingClients
         {
             this.endpointAddress = new EndpointAddress(netTcpUri);
 
-            ConfigureChannelFactory();
+            SetInstanceContext();
 
             hearbeatThread = new Thread(new ThreadStart(HeartbeatThread));
             hearbeatThread.Start();
@@ -97,7 +97,10 @@ namespace SchedulingClients
             Dispose(true);
         }
 
-        protected abstract void ConfigureChannelFactory();
+        protected DuplexChannelFactory<T> CreateChannelFactory()
+        {
+            return new DuplexChannelFactory<T>(context, Binding, EndpointAddress);
+        }
 
         protected void Dispose(bool isDisposing)
         {
@@ -114,6 +117,8 @@ namespace SchedulingClients
         }
 
         protected abstract void HeartbeatThread();
+
+        protected abstract void SetInstanceContext();
 
         private void OnConnected(DateTime dateTime)
         {

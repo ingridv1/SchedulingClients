@@ -1,5 +1,6 @@
 ﻿using System;
 using SchedulingClients.JobBuilderServiceReference;
+using System.ServiceModel;
 
 namespace SchedulingClients
 {
@@ -28,8 +29,12 @@ namespace SchedulingClients
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
+            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
             IJobBuilderService channel = channelFactory.CreateChannel();
-            return channel.CommitJob(jobId, agentId).Item1;
+
+            bool success = channel.CommitJob(jobId, agentId).Item1;
+            channelFactory.Close();
+            return success;
         }
 
         /// <summary>
@@ -43,8 +48,12 @@ namespace SchedulingClients
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
+            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
             IJobBuilderService channel = channelFactory.CreateChannel();
-            return channel.CreateJob();
+
+            JobData jobData = channel.CreateJob();
+            channelFactory.Close();
+            return jobData;
         }
 
         /// <summary>
@@ -60,8 +69,12 @@ namespace SchedulingClients
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
+            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
             IJobBuilderService channel = channelFactory.CreateChannel();
-            return channel.CreateListTask(parentTaskId, isOrdered);
+
+            Tuple<int, string> listTask = channel.CreateListTask(parentTaskId, isOrdered);
+            channelFactory.Close();
+            return listTask;
         }
 
         /// <summary>
@@ -79,8 +92,12 @@ namespace SchedulingClients
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
+            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
             IJobBuilderService channel = channelFactory.CreateChannel();
-            return channel.CreateNodeTask(parentTaskId, nodeId, serviceType, expectedDuration);
+
+            Tuple<int, string> nodeTask = channel.CreateNodeTask(parentTaskId, nodeId, serviceType, expectedDuration);
+            channelFactory.Close();
+            return nodeTask;
         }
 
         /// <summary>
@@ -93,8 +110,12 @@ namespace SchedulingClients
         {
             try
             {
+                ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
                 IJobBuilderService channel = channelFactory.CreateChannel();
+
                 Tuple<bool, string> result = channel.CommitJob(jobId, agentId);
+                channelFactory.Close();
+
                 if (result.Item1)
                 {
                     return true;
@@ -142,8 +163,7 @@ namespace SchedulingClients
         {
             try
             {
-                IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateListTask(parentTaskId, isOrdered);
+                result = CreateListTask(parentTaskId, isOrdered);
                 return true;
             }
             catch (Exception ex)

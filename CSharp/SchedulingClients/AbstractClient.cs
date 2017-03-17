@@ -8,7 +8,7 @@ namespace SchedulingClients
 {
     public abstract class AbstractClient<T> : IClient
     {
-        protected ChannelFactory<T> channelFactory;
+        private readonly NetTcpBinding binding;
 
         private readonly EndpointAddress endpointAddress;
 
@@ -21,9 +21,7 @@ namespace SchedulingClients
         public AbstractClient(Uri netTcpUri)
         {
             this.endpointAddress = new EndpointAddress(netTcpUri);
-
-            NetTcpBinding binding = new NetTcpBinding(SecurityMode.None) { PortSharingEnabled = true };
-            this.channelFactory = new ChannelFactory<T>(binding, endpointAddress);
+            this.binding = new NetTcpBinding(SecurityMode.None) { PortSharingEnabled = true };
         }
 
         ~AbstractClient()
@@ -63,14 +61,17 @@ namespace SchedulingClients
             Dispose(true);
         }
 
+        protected ChannelFactory<T> CreateChannelFactory()
+        {
+            return new ChannelFactory<T>(binding, endpointAddress);
+        }
+
         protected virtual void Dispose(bool isDisposing)
         {
             if (isDisposed)
             {
                 return;
             }
-
-            channelFactory.Close();
 
             isDisposed = true;
         }

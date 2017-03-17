@@ -24,29 +24,19 @@ namespace SchedulingClients
 
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
-        protected override void ConfigureChannelFactory()
-        {
-            InstanceContext context = new InstanceContext(this.callback);
-            this.channelFactory = new DuplexChannelFactory<IServicingService>(context, Binding, EndpointAddress);
-        }
-
         protected override void HeartbeatThread()
         {
             Logger.Debug("[ServicingClient] HeartbeatThread");
+
+            ChannelFactory<IServicingService> channelFactory = CreateChannelFactory();
+            IServicingService servicingService = channelFactory.CreateChannel();
 
             while (!Terminate)
             {
                 try
                 {
-                    if (channelFactory.State != CommunicationState.Opened)
-                    {
-                        channelFactory.Abort();
-                        ConfigureChannelFactory();
-                    }
-
-                    IServicingService channel = channelFactory.CreateChannel();
                     Logger.Trace("[ServicingClient] SubscriptionHeartbeat({0})", Key);
-                    channel.SubscriptionHeartbeat(Key);
+                    servicingService.SubscriptionHeartbeat(Key);
                     IsConnected = true;
                 }
                 catch (Exception ex)
@@ -54,12 +44,20 @@ namespace SchedulingClients
                     channelFactory.Abort();
                     Logger.Warn(ex);
                     IsConnected = false;
+
+                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
+                    servicingService = channelFactory.CreateChannel();
                 }
 
                 heartbeatReset.WaitOne(Heartbeat);
             }
 
             Logger.Debug("[ServicingClient] HeartbeatThread exit()");
+        }
+
+        protected override void SetInstanceContext()
+        {
+            this.context = new InstanceContext(this.callback);
         }
     }
 }
