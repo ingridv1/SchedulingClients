@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Net;
 using SchedulingClients;
-using GATools.Logging;
 using NLog;
 
 namespace SchedulingClients.DemoClientApp
@@ -12,9 +11,6 @@ namespace SchedulingClients.DemoClientApp
         public MainWindow()
         {
             InitializeComponent();
-
-            GALogManager.BaseDir = @"C:\temp";
-            GALogManager.SetTrace();
         }
 
         private void HandleShutdown()
