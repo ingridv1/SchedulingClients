@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Net;
 using SchedulingClients;
-using GATools.Logging;
 using NLog;
 
 namespace SchedulingClients.DemoClientApp
@@ -14,10 +13,7 @@ namespace SchedulingClients.DemoClientApp
             InitializeComponent();
 
             DemoClient demoClient = (DemoClient)FindResource("demoClient");
-
-            GALogManager.BaseDir = @"C:\temp";
-            GALogManager.SetTrace();
-            Logger logger = GALogManager.GetLogger("SchedulingClients.UserControls");
+            Logger logger = LogManager.CreateNullLogger();
 
             jobBuilderClientControl.Logger = logger;
             mapClientControl.Logger = logger;
