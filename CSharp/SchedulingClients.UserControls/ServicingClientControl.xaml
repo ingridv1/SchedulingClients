@@ -23,9 +23,9 @@
             <DataGrid Grid.Row="1" ItemsSource="{Binding Mode=OneWay}" x:Name="recentServiceStateDataGrid" AutoGenerateColumns="False"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="TaskId" Binding="{Binding TaskId}" />
-                    <DataGridTextColumn Header="ExecutorId" Binding="{Binding ExecutorId}" Width="*" />
-                    <DataGridTextColumn Header="BeneficiaryId" Binding="{Binding BeneficiaryId}" Width="*" />
+                    <DataGridTextColumn Header="TaskId" Binding="{Binding TaskId}"  Width="1*" />
+                    <DataGridTextColumn Header="ExecutorId" Binding="{Binding ExecutorId}" Width="2*" />
+                    <DataGridTextColumn Header="BeneficiaryId" Binding="{Binding BeneficiaryId}" Width="2*" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

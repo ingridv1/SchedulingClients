@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SchedulingClients.UserControls.JobBuilderClientControl"
+﻿<UserControl x:Class="SchedulingClients.UserControls.RoadmapClientControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6,10 +6,12 @@
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+    </UserControl.Resources>
     <Grid>
         <HeaderedContentControl>
             <HeaderedContentControl.Header>
-                Job Builder Client Control
+                Map Client
             </HeaderedContentControl.Header>
             <Grid>
                 <Grid.RowDefinitions>
@@ -20,10 +22,11 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <TextBlock>Creates a single job with no tasks</TextBlock>
-                <Button x:Name="createJobButton" Click="createJobButton_Click" Grid.Column="1">Create</Button>
-                <TextBlock Grid.Row="1" TextWrapping="Wrap">Creates a simple multi pick job, consisting of three picks, a drop and a park</TextBlock>
-                <Button Grid.Row="1" x:Name="multiPickJobTest" Click="multiPickJobTest_Click" Grid.Column="1">Multi</Button>
+                <TextBlock Grid.Column="0">Calls GetAllNodeData()</TextBlock>
+                <Button x:Name="getAllNodeDataButton" Grid.Row="0" Grid.Column="1"  Click="getAllNodeDataButton_Click">Refresh</Button>
+                <DataGrid x:Name="nodeDataDataGrid" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="True" ColumnWidth="*"
+                          Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+                </DataGrid>
             </Grid>
         </HeaderedContentControl>
     </Grid>

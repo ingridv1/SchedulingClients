@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using System.Net;
 
 namespace SchedulingClients.DemoClientApp
 {
@@ -22,6 +11,29 @@ namespace SchedulingClients.DemoClientApp
         public StartupWindow()
         {
             InitializeComponent();
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+            Close();
+            Application.Current.Shutdown(0);
+        }
+
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            IPAddress ipAddress = new IPAddress(new byte[] { (byte)byteA.Value, (byte)byteB.Value, (byte)byteC.Value, (byte)byteD.Value, });
+
+            int http = (int)httpPort.Value;
+            int tcp = (int)tcpPort.Value;
+
+            DemoClient demoClient = new DemoClient(ipAddress, http, tcp);
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.DataContext = demoClient;
+            mainWindow.Show();
+
+            Close();
         }
     }
 }

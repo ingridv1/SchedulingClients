@@ -1,26 +1,33 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.ObjectModel;
-using System.Windows;
+using System.Net;
 
 namespace SchedulingClients.DemoClientApp
 {
-    /// <summary>
-    /// Simple client to the scheduling wrappers.
-    /// </summary>
     public class DemoClient : IDisposable
     {
-        private ObservableCollection<IClient> clients = new ObservableCollection<IClient>();
+        private readonly int httpPort;
 
-        private bool isConfigured = false;
+        private readonly IPAddress ipAddress;
+
+        private readonly int tcpPort;
+
+        private ObservableCollection<IClient> clients = new ObservableCollection<IClient>();
 
         private bool isDisposed = false;
 
         private ReadOnlyObservableCollection<IClient> readOnlyClients;
 
-        public DemoClient()
+        public DemoClient(IPAddress ipAddress, int httpPort, int tcpPort)
         {
+            this.ipAddress = ipAddress;
+            this.httpPort = httpPort;
+            this.tcpPort = tcpPort;
+
             readOnlyClients = new ReadOnlyObservableCollection<IClient>(clients);
+
+            Configure();
         }
 
         ~DemoClient()
@@ -30,22 +37,17 @@ namespace SchedulingClients.DemoClientApp
 
         public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
-        public bool IsConfigured { get { return isConfigured; } }
-
         public bool IsDisposed { get { return isDisposed; } }
 
         public JobBuilderClient JobBuilderClient { get { return (JobBuilderClient)clients.FirstOrDefault(e => e is JobBuilderClient); } }
 
-        public RoadmapClient MapClient { get { return (RoadmapClient)clients.FirstOrDefault(e => e is RoadmapClient); } }
+        public RoadmapClient RoadmapClient { get { return (RoadmapClient)clients.FirstOrDefault(e => e is RoadmapClient); } }
 
         public ServicingClient ServicingClient { get { return (ServicingClient)clients.FirstOrDefault(e => e is ServicingClient); } }
 
-        public void Configure(EndpointSettings endpointSettings)
+        public void Configure()
         {
-            if (IsConfigured)
-            {
-                return;
-            }
+            EndpointSettings endpointSettings = new EndpointSettings(ipAddress, httpPort, tcpPort);
 
             JobBuilderClient jobBuilderClient = new JobBuilderClient(endpointSettings.TcpJobBuilderService());
             clients.Add(jobBuilderClient);
@@ -55,8 +57,6 @@ namespace SchedulingClients.DemoClientApp
 
             ServicingClient servicingClient = new ServicingClient(endpointSettings.TcpServicingService());
             clients.Add(servicingClient);
-
-            isConfigured = true;
         }
 
         public void Dispose()
@@ -73,14 +73,8 @@ namespace SchedulingClients.DemoClientApp
 
             foreach (IClient client in clients.ToList())
             {
-                if (!Application.Current.Dispatcher.HasShutdownStarted)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(new Action(() =>
-                    {
-                        client.Dispose();
-                        clients.Remove(client);
-                    }));
-                }
+                client.Dispose();
+                clients.Remove(client);
             }
 
             isDisposed = true;

@@ -8,24 +8,9 @@ namespace SchedulingClients.UserControls
 {
     public partial class JobBuilderClientControl : UserControl
     {
-        private Logger logger = LogManager.CreateNullLogger();
-
         public JobBuilderClientControl()
         {
             InitializeComponent();
-        }
-
-        public Logger Logger
-        {
-            get { return logger; }
-
-            set
-            {
-                if (logger != value)
-                {
-                    logger = value;
-                }
-            }
         }
 
         private void createJobButton_Click(object sender, RoutedEventArgs e)
@@ -34,12 +19,9 @@ namespace SchedulingClients.UserControls
             {
                 JobBuilderClient client = DataContext as JobBuilderClient;
                 JobData jobData = client.CreateJob();
-
-                logger.Info("[JobBuilderClientControl] {0}", jobData.ToJobDataString());
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
             }
         }
 

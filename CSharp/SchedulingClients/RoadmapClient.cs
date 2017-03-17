@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using SchedulingClients.RoadmapServiceReference;
 
 namespace SchedulingClients
@@ -29,8 +30,12 @@ namespace SchedulingClients
                 throw new ObjectDisposedException("RoadmapClient");
             }
 
+            ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory();
             IRoadmapService channel = channelFactory.CreateChannel();
-            return channel.GetAllNodeData();
+
+            NodeData[] nodeData = channel.GetAllNodeData();
+            channelFactory.Close();
+            return nodeData;
         }
 
         /// <summary>

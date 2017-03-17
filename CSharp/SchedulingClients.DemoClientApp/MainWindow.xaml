@@ -10,7 +10,9 @@
         Title="Scheduling Services Client Demo" Width="800" Height="600">
     <Window.Resources>
         <ResourceDictionary>
-            <local:DemoClient x:Key="demoClient" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/SchedulingClients.DemoClientApp;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -26,7 +28,7 @@
                     Job Builder Client
                 </TabItem.Header>
                 <Grid>
-                    <clientsUC:JobBuilderClientControl x:Name="jobBuilderClientControl" />
+                    <clientsUC:JobBuilderClientControl x:Name="jobBuilderClientControl" DataContext="{Binding Path=JobBuilderClient}" />
                 </Grid>
             </TabItem>
             <TabItem>
@@ -34,7 +36,7 @@
                     Map Client
                 </TabItem.Header>
                 <Grid>
-                    <clientsUC:MapClientControl x:Name="mapClientControl" Margin="0,-2,0,2" />
+                    <clientsUC:RoadmapClientControl x:Name="roadmapClientControl" DataContext="{Binding Path=RoadmapClient}" />
                 </Grid>
             </TabItem>
             <TabItem>
@@ -42,7 +44,7 @@
                     Servicing Client
                 </TabItem.Header>
                 <Grid>
-                    <clientsUC:ServicingClientControl x:Name="servicingClientControl" Margin="0,-2,0,2" />
+                    <clientsUC:ServicingClientControl x:Name="servicingClientControl" DataContext="{Binding Path=ServicingClient}" />
                 </Grid>
             </TabItem>
         </TabControl>
