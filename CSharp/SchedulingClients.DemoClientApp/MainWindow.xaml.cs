@@ -1,8 +1,4 @@
-﻿using System;
-using System.Windows;
-using System.Net;
-using SchedulingClients;
-using NLog;
+﻿using System.Windows;
 
 namespace SchedulingClients.DemoClientApp
 {
