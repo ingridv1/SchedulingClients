@@ -12,6 +12,8 @@ namespace SchedulingClients
         /// </summary>
         EndpointAddress EndpointAddress { get; }
 
+        Exception LastCaughtException { get; }
+
         /// <summary>
         /// Logger for debugging / monitoring
         /// </summary>

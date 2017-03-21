@@ -7,23 +7,16 @@ namespace SchedulingClients.DemoClientApp
 {
     public class DemoClient : IDisposable
     {
-        private readonly int httpPort;
-
-        private readonly IPAddress ipAddress;
-
-        private readonly int tcpPort;
-
         private ObservableCollection<IClient> clients = new ObservableCollection<IClient>();
 
+        private EndpointSettings endpointSettings;
         private bool isDisposed = false;
 
         private ReadOnlyObservableCollection<IClient> readOnlyClients;
 
         public DemoClient(IPAddress ipAddress, int httpPort, int tcpPort)
         {
-            this.ipAddress = ipAddress;
-            this.httpPort = httpPort;
-            this.tcpPort = tcpPort;
+            this.endpointSettings = new EndpointSettings(ipAddress, httpPort, tcpPort);
 
             readOnlyClients = new ReadOnlyObservableCollection<IClient>(clients);
 
@@ -41,13 +34,16 @@ namespace SchedulingClients.DemoClientApp
 
         public JobBuilderClient JobBuilderClient { get { return (JobBuilderClient)clients.FirstOrDefault(e => e is JobBuilderClient); } }
 
+        public JobsStateClient JobsStateClient { get { return (JobsStateClient)clients.FirstOrDefault(e => e is JobsStateClient); } }
+
         public RoadmapClient RoadmapClient { get { return (RoadmapClient)clients.FirstOrDefault(e => e is RoadmapClient); } }
 
         public ServicingClient ServicingClient { get { return (ServicingClient)clients.FirstOrDefault(e => e is ServicingClient); } }
 
         public void Configure()
         {
-            EndpointSettings endpointSettings = new EndpointSettings(ipAddress, httpPort, tcpPort);
+            JobsStateClient jobsStateClient = new JobsStateClient(endpointSettings.TcpJobsStateService());
+            clients.Add(jobsStateClient);
 
             JobBuilderClient jobBuilderClient = new JobBuilderClient(endpointSettings.TcpJobBuilderService());
             clients.Add(jobBuilderClient);

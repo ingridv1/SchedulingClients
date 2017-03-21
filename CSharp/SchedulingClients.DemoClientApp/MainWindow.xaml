@@ -33,6 +33,14 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
+                    Jobs State Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:JobsStateClientControl x:Name="jobsStateClientControl" DataContext="{Binding Path=JobsStateClient}" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
                     Map Client
                 </TabItem.Header>
                 <Grid>

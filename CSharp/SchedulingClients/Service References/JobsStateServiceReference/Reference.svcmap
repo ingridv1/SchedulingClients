@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef2f76b9-5c5f-409f-ba5e-1515bba533d5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:41916/jobsState.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JobsStateService.wsdl" MetadataType="Wsdl" ID="61aa3556-6058-4789-a245-fb84c91000d2" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?wsdl" />
+    <MetadataFile FileName="jobsState.xsd" MetadataType="Schema" ID="28f7340b-e870-4cc9-933e-f73cf3b03f4f" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" />
+    <MetadataFile FileName="jobsState1.xsd" MetadataType="Schema" ID="6d51c9b7-add9-46c7-a052-07a31f582a19" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd0" />
+    <MetadataFile FileName="jobsState2.xsd" MetadataType="Schema" ID="abf6f2ca-315a-4361-a279-7ef02b8ebf23" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" />
+    <MetadataFile FileName="jobsState3.xsd" MetadataType="Schema" ID="5e671e33-05a6-4de3-932e-97d6d6f81e8e" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" />
+    <MetadataFile FileName="jobsState.disco" MetadataType="Disco" ID="8c27891e-181e-43d9-baa3-cda173b7b993" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

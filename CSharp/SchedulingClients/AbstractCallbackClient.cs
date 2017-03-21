@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
-using System.Text;
 using System.Threading;
 using NLog;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
@@ -31,6 +27,8 @@ namespace SchedulingClients
         private bool isConnected = false;
 
         private bool isDisposed = false;
+
+        private Exception lastCaughtException = null;
 
         private Logger logger = LogManager.CreateNullLogger();
 
@@ -84,6 +82,20 @@ namespace SchedulingClients
 
         public Guid Key { get { return key; } }
 
+        public Exception LastCaughtException
+        {
+            get { return lastCaughtException; }
+
+            protected set
+            {
+                if (lastCaughtException != value)
+                {
+                    lastCaughtException = value;
+                    OnNotifyPropertyChanged();
+                }
+            }
+        }
+
         public Logger Logger
         {
             get { return logger; }
@@ -102,7 +114,7 @@ namespace SchedulingClients
             return new DuplexChannelFactory<T>(context, Binding, EndpointAddress);
         }
 
-        protected void Dispose(bool isDisposing)
+        protected virtual void Dispose(bool isDisposing)
         {
             if (isDisposed)
             {

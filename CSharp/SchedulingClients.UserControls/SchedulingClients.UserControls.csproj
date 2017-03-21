@@ -56,6 +56,10 @@
       <DependentUpon>JobBuilderClientControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="JobBuilderClient_ExtensionMethods.cs" />
+    <Compile Include="JobsStateClientControl.xaml.cs">
+      <DependentUpon>JobsStateClientControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LabelContentControl.cs" />
     <Compile Include="RoadmapClientControl.xaml.cs">
       <DependentUpon>RoadmapClientControl.xaml</DependentUpon>
     </Compile>
@@ -94,6 +98,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="JobBuilderClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JobsStateClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
