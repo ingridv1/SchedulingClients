@@ -121,6 +121,24 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobs", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsResponse")]
         System.Threading.Tasks.Task AbortAllJobsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse")]
+        void AbortAllJobsForAgent(int agentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse")]
+        System.Threading.Tasks.Task AbortAllJobsForAgentAsync(int agentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortJob", ReplyAction="http://tempuri.org/IJobsStateService/AbortJobResponse")]
+        bool AbortJob(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortJob", ReplyAction="http://tempuri.org/IJobsStateService/AbortJobResponse")]
+        System.Threading.Tasks.Task<bool> AbortJobAsync(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
+        int[] GetActiveJobIdsForAgent(int agentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
+        System.Threading.Tasks.Task<int[]> GetActiveJobIdsForAgentAsync(int agentId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -172,6 +190,30 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         public System.Threading.Tasks.Task AbortAllJobsAsync() {
             return base.Channel.AbortAllJobsAsync();
+        }
+        
+        public void AbortAllJobsForAgent(int agentId) {
+            base.Channel.AbortAllJobsForAgent(agentId);
+        }
+        
+        public System.Threading.Tasks.Task AbortAllJobsForAgentAsync(int agentId) {
+            return base.Channel.AbortAllJobsForAgentAsync(agentId);
+        }
+        
+        public bool AbortJob(int jobId) {
+            return base.Channel.AbortJob(jobId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AbortJobAsync(int jobId) {
+            return base.Channel.AbortJobAsync(jobId);
+        }
+        
+        public int[] GetActiveJobIdsForAgent(int agentId) {
+            return base.Channel.GetActiveJobIdsForAgent(agentId);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> GetActiveJobIdsForAgentAsync(int agentId) {
+            return base.Channel.GetActiveJobIdsForAgentAsync(agentId);
         }
     }
 }

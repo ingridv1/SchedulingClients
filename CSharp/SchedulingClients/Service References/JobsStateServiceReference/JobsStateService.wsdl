@@ -17,8 +17,8 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJobsStateService_SubscriptionHeartbeat_InputMessage">
@@ -32,6 +32,24 @@
   </wsdl:message>
   <wsdl:message name="IJobsStateService_AbortAllJobs_OutputMessage">
     <wsdl:part name="parameters" element="tns:AbortAllJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_AbortAllJobsForAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbortAllJobsForAgent" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_AbortAllJobsForAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbortAllJobsForAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_AbortJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbortJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_AbortJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbortJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_GetActiveJobIdsForAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveJobIdsForAgent" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_GetActiveJobIdsForAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveJobIdsForAgentResponse" />
   </wsdl:message>
   <wsdl:message name="IJobsStateService_OnJobsStateChange_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnJobsStateChange" />
@@ -47,6 +65,18 @@
     <wsdl:operation name="AbortAllJobs">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/AbortAllJobs" message="tns:IJobsStateService_AbortAllJobs_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/AbortAllJobsResponse" message="tns:IJobsStateService_AbortAllJobs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AbortAllJobsForAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent" message="tns:IJobsStateService_AbortAllJobsForAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse" message="tns:IJobsStateService_AbortAllJobsForAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AbortJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/AbortJob" message="tns:IJobsStateService_AbortJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/AbortJobResponse" message="tns:IJobsStateService_AbortJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveJobIdsForAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent" message="tns:IJobsStateService_GetActiveJobIdsForAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse" message="tns:IJobsStateService_GetActiveJobIdsForAgent_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OnJobsStateChange">
       <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/OnJobsStateChange" message="tns:IJobsStateService_OnJobsStateChange_OutputCallbackMessage" />
@@ -67,6 +97,33 @@
     </wsdl:operation>
     <wsdl:operation name="AbortAllJobs">
       <soap12:operation soapAction="http://tempuri.org/IJobsStateService/AbortAllJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbortAllJobsForAgent">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbortJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/AbortJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveJobIdsForAgent">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

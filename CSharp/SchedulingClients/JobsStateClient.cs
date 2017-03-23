@@ -44,6 +44,52 @@ namespace SchedulingClients
             channelFactory.Close();
         }
 
+        public bool AbortJob(int jobId)
+        {
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobsStateClient");
+            }
+
+            ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
+            IJobsStateService channel = channelFactory.CreateChannel();
+
+            bool result = channel.AbortJob(jobId);
+            channelFactory.Close();
+
+            return result;
+        }
+
+        public IEnumerable<int> GetActiveJobIdsForAgent(int agentId)
+        {
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobsStateClient");
+            }
+
+            ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
+            IJobsStateService channel = channelFactory.CreateChannel();
+
+            IEnumerable<int> jobIds = channel.GetActiveJobIdsForAgent(agentId);
+            channelFactory.Close();
+            return jobIds;
+        }
+
+        public bool GetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
+        {
+            try
+            {
+                jobIds = GetActiveJobIdsForAgent(agentId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LastCaughtException = ex;
+                jobIds = Enumerable.Empty<int>();
+                return false;
+            }
+        }
+
         public bool TryAbortAllJobs()
         {
             try
@@ -54,6 +100,21 @@ namespace SchedulingClients
             catch (Exception ex)
             {
                 LastCaughtException = ex;
+                return false;
+            }
+        }
+
+        public bool TryAbortJob(int jobId, out bool couldAbort)
+        {
+            try
+            {
+                couldAbort = AbortJob(jobId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LastCaughtException = ex;
+                couldAbort = false;
                 return false;
             }
         }
