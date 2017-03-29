@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SchedulingClients.JobBuilderServiceReference;
-using System.Threading.Tasks;
+﻿using SchedulingClients.JobBuilderServiceReference;
+using System;
 
 namespace SchedulingClients.UserControls
 {
