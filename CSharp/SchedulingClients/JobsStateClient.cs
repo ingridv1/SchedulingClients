@@ -127,6 +127,8 @@ namespace SchedulingClients
             }
 
             isDisposed = true;
+
+            base.Dispose(isDisposing);
         }
 
         protected override void HeartbeatThread()

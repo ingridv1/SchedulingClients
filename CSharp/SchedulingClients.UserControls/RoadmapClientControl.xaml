@@ -7,27 +7,26 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
+        <local:ServiceTypeArrayToStringConverter x:Key="serviceTypeConverter" />
     </UserControl.Resources>
     <Grid>
-        <HeaderedContentControl>
-            <HeaderedContentControl.Header>
-                Map Client
-            </HeaderedContentControl.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0">Calls GetAllNodeData()</TextBlock>
-                <Button x:Name="getAllNodeDataButton" Grid.Row="0" Grid.Column="1"  Click="getAllNodeDataButton_Click">Refresh</Button>
-                <DataGrid x:Name="nodeDataDataGrid" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="True" ColumnWidth="*"
-                          Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
-                </DataGrid>
-            </Grid>
-        </HeaderedContentControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <local:LabelContentControl Grid.Row="0" Header="Get All Node Data()">
+            <Button x:Name="getAllNodeDataButton" Click="getAllNodeDataButton_Click">Refresh</Button>
+        </local:LabelContentControl>
+        <DataGrid x:Name="nodeDataDataGrid" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*"
+                  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" />
+                <DataGridTextColumn Header="MapItemId" Binding="{Binding MapItemId}" />
+                <DataGridTextColumn Header="X" Binding="{Binding X}" />
+                <DataGridTextColumn Header="Y" Binding="{Binding Y}" />
+                <DataGridTextColumn Header="HeadingRad" Binding="{Binding HeadingRad}" />
+                <DataGridTextColumn Header="Services" Binding="{Binding Services, Converter={StaticResource ResourceKey=serviceTypeConverter}}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

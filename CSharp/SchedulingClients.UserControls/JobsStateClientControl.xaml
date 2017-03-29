@@ -6,31 +6,31 @@
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              DataContextChanged="UserControl_DataContextChanged">
     <Grid>
-        <HeaderedContentControl>
-            <HeaderedContentControl.Header>
-                Jobs State Client Control
-            </HeaderedContentControl.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Row="0" Orientation="Horizontal">
-                    <TextBlock>IsConnected</TextBlock>
-                    <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock>IsConnected</TextBlock>
+            <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <local:LabelContentControl Header="Abort All Jobs">
+                <Button x:Name="abortAllJobsButton" Click="abortAllJobsButton_Click">Abort All Jobs</Button>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Abort Job">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown Minimum="0" x:Name="abortJobId" DefaultValue="0" Value="0" />
+                    <Button x:Name="abortJobButton" Click="abortJobButton_Click">Abort Job</Button>
                 </StackPanel>
-                <StackPanel Grid.Row="1">
-                    <local:LabelContentControl Header="Abort All Jobs">
-                        <Button x:Name="abortAllJobsButton" Click="abortAllJobsButton_Click">Abort</Button>
-                    </local:LabelContentControl>
-                </StackPanel>
-            </Grid>
-        </HeaderedContentControl>
+            </local:LabelContentControl>
+        </StackPanel>
     </Grid>
 </UserControl>

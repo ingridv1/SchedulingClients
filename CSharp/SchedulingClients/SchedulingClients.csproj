@@ -85,7 +85,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
       <SubType>Designer</SubType>
@@ -102,7 +104,7 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
+    <None Include="Service References\JobBuilderServiceReference\JobBuilderService1.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -154,9 +156,6 @@
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\RoadmapServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobBuilderServiceReference\configuration91.svcinfo" />

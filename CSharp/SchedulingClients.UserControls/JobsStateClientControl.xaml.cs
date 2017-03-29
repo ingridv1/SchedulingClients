@@ -32,6 +32,14 @@ namespace SchedulingClients.UserControls
             jobsStateClient.TryAbortAllJobs();
         }
 
+        private void abortJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool couldAbort;
+
+            JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            jobsStateClient.TryAbortJob((int)abortJobId.Value, out couldAbort);
+        }
+
         private void JobsStateClient_JobsStateChange(JobsStateServiceReference.JobsStateData obj)
         {
             throw new NotImplementedException();

@@ -10,8 +10,10 @@ namespace SchedulingClients
 
         private TimeSpan heartbeat;
 
+        private bool isDisposed = false;
+
         public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
-            : base(netTcpUri)
+                    : base(netTcpUri)
         {
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
@@ -23,6 +25,18 @@ namespace SchedulingClients
         }
 
         public TimeSpan Heartbeat { get { return heartbeat; } }
+
+        protected override void Dispose(bool isDisposing)
+        {
+            if (isDisposed)
+            {
+                return;
+            }
+
+            isDisposed = true;
+
+            base.Dispose(isDisposing);
+        }
 
         protected override void HeartbeatThread()
         {
