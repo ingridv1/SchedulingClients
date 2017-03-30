@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="GcfZtLlHAcjUMIJaj++ddg7Y3S8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="psdYRGxctng5ZPw0JjOVOGJoiho=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IJobBuilderService">
+    <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IJobsStateService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>NetTcpBinding_IJobBuilderService</serializedValue>
+          <serializedValue>NetTcpBinding_IJobsStateService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -119,10 +119,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsDualHttpBinding" name="WSDualHttpBinding_IJobBuilderService">
+    <bindingConfiguration bindingType="wsDualHttpBinding" name="WSDualHttpBinding_IJobsStateService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IJobBuilderService</serializedValue>
+          <serializedValue>WSDualHttpBinding_IJobsStateService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -215,10 +215,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IJobBuilderService" contract="JobBuilderServiceReference.IJobBuilderService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41917/jobBuilder.svc" bindingConfiguration="NetTcpBinding_IJobBuilderService">
+    <endpoint name="NetTcpBinding_IJobsStateService" contract="JobsStateServiceReference.IJobsStateService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41917/jobsState.svc" bindingConfiguration="NetTcpBinding_IJobsStateService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://127.0.0.1:41917/jobBuilder.svc</serializedValue>
+          <serializedValue>net.tcp://127.0.0.1:41917/jobsState.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -227,10 +227,10 @@
           <serializedValue>netTcpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>NetTcpBinding_IJobBuilderService</serializedValue>
+          <serializedValue>NetTcpBinding_IJobsStateService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>JobBuilderServiceReference.IJobBuilderService</serializedValue>
+          <serializedValue>JobsStateServiceReference.IJobsStateService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -290,7 +290,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>NetTcpBinding_IJobBuilderService</serializedValue>
+          <serializedValue>NetTcpBinding_IJobsStateService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -300,10 +300,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSDualHttpBinding_IJobBuilderService" contract="JobBuilderServiceReference.IJobBuilderService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41916/jobBuilder.svc" bindingConfiguration="WSDualHttpBinding_IJobBuilderService">
+    <endpoint name="WSDualHttpBinding_IJobsStateService" contract="JobsStateServiceReference.IJobsStateService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41916/jobsState.svc" bindingConfiguration="WSDualHttpBinding_IJobsStateService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1:41916/jobBuilder.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:41916/jobsState.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -312,10 +312,10 @@
           <serializedValue>wsDualHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IJobBuilderService</serializedValue>
+          <serializedValue>WSDualHttpBinding_IJobsStateService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>JobBuilderServiceReference.IJobBuilderService</serializedValue>
+          <serializedValue>JobsStateServiceReference.IJobsStateService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -375,7 +375,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IJobBuilderService</serializedValue>
+          <serializedValue>WSDualHttpBinding_IJobsStateService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

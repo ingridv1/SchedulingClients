@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using System.Net;
+﻿using System.Net;
+using System.Windows;
 
 namespace SchedulingClients.DemoClientApp
 {

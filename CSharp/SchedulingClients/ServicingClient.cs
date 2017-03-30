@@ -1,5 +1,5 @@
-﻿using System;
-using SchedulingClients.ServicingServiceReference;
+﻿using SchedulingClients.ServicingServiceReference;
+using System;
 using System.ServiceModel;
 
 namespace SchedulingClients
@@ -10,19 +10,39 @@ namespace SchedulingClients
 
         private TimeSpan heartbeat;
 
+        private bool isDisposed = false;
+
         public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
-            : base(netTcpUri)
+                    : base(netTcpUri)
         {
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
+        /// <summary>
+        /// New service request received
+        /// </summary>
         public event Action<ServiceStateData> ServiceRequest
         {
             add { callback.ServiceRequest += value; }
             remove { callback.ServiceRequest -= value; }
         }
 
+        /// <summary>
+        /// Heartbeat time
+        /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
+
+        protected override void Dispose(bool isDisposing)
+        {
+            if (isDisposed)
+            {
+                return;
+            }
+
+            isDisposed = true;
+
+            base.Dispose(isDisposing);
+        }
 
         protected override void HeartbeatThread()
         {

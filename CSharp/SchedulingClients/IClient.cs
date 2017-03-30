@@ -1,7 +1,7 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.ComponentModel;
 using System.ServiceModel;
-using NLog;
 
 namespace SchedulingClients
 {
@@ -11,6 +11,8 @@ namespace SchedulingClients
         /// Endpoint address of the service host
         /// </summary>
         EndpointAddress EndpointAddress { get; }
+
+        Exception LastCaughtException { get; }
 
         /// <summary>
         /// Logger for debugging / monitoring

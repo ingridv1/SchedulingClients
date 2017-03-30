@@ -1,8 +1,7 @@
-﻿using System.Windows.Controls;
-using NLog;
-using System.Collections.ObjectModel;
-using SchedulingClients.ServicingServiceReference;
+﻿using SchedulingClients.ServicingServiceReference;
 using System;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 namespace SchedulingClients.UserControls
 {

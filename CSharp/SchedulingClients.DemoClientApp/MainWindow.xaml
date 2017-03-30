@@ -7,7 +7,7 @@
         xmlns:clientsUC="clr-namespace:SchedulingClients.UserControls;assembly=SchedulingClients.UserControls"
         mc:Ignorable="d"
         Closing="Window_Closing"
-        Title="Scheduling Services Client Demo" Width="800" Height="600">
+        Title="Demo Scheduling Services Client" Width="800" Height="600">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,6 +29,14 @@
                 </TabItem.Header>
                 <Grid>
                     <clientsUC:JobBuilderClientControl x:Name="jobBuilderClientControl" DataContext="{Binding Path=JobBuilderClient}" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Jobs State Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:JobsStateClientControl x:Name="jobsStateClientControl" DataContext="{Binding Path=JobsStateClient}" />
                 </Grid>
             </TabItem>
             <TabItem>
