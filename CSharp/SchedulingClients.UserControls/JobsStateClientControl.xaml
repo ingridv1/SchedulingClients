@@ -11,17 +11,20 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock>IsConnected</TextBlock>
-            <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
-        </StackPanel>
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <local:LabelContentControl Header="IsConnected">
+                <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Assigning">
+                <TextBlock Text="{Binding Path=JobsStateData.AssigningCount, UpdateSourceTrigger=Explicit, TargetNullValue=-1, FallbackValue=-1}" />
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Waiting">
+                <TextBlock Text="{Binding Path=JobsStateData.WaitingCount, UpdateSourceTrigger=Explicit, TargetNullValue=-1, FallbackValue=-1}" />
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="InProgress">
+                <TextBlock Text="{Binding Path=JobsStateData.InProgessCount, UpdateSourceTrigger=Explicit, TargetNullValue=-1, FallbackValue=-1}" />
+            </local:LabelContentControl>
             <local:LabelContentControl Header="Abort All Jobs">
                 <Button x:Name="abortAllJobsButton" Click="abortAllJobsButton_Click">Abort All Jobs</Button>
             </local:LabelContentControl>

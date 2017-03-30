@@ -1,7 +1,7 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.ComponentModel;
 using System.ServiceModel;
-using NLog;
 
 namespace SchedulingClients
 {

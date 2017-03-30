@@ -1,5 +1,5 @@
-﻿using System;
-using SchedulingClients.ServicingServiceReference;
+﻿using SchedulingClients.ServicingServiceReference;
+using System;
 using System.ServiceModel;
 
 namespace SchedulingClients

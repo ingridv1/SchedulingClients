@@ -1,9 +1,7 @@
-﻿using System;
+﻿using SchedulingClients.JobsStateServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SchedulingClients.JobsStateServiceReference;
 using System.ServiceModel;
 
 namespace SchedulingClients
@@ -16,19 +14,30 @@ namespace SchedulingClients
 
         private bool isDisposed = false;
 
+        private JobsStateData jobsStateData = null;
+
         public JobsStateClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
                     : base(netTcpUri)
         {
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
-        }
-
-        public event Action<JobsStateData> JobsStateChange
-        {
-            add { callback.JobsStateChange += value; }
-            remove { callback.JobsStateChange -= value; }
+            callback.JobsStateChange += Callback_JobsStateChange;
         }
 
         public TimeSpan Heartbeat { get { return heartbeat; } }
+
+        public JobsStateData JobsStateData
+        {
+            get { return jobsStateData; }
+
+            private set
+            {
+                if (jobsStateData != value)
+                {
+                    jobsStateData = value;
+                    OnNotifyPropertyChanged();
+                }
+            }
+        }
 
         public void AbortAllJobs()
         {
@@ -126,6 +135,7 @@ namespace SchedulingClients
                 return;
             }
 
+            callback.JobsStateChange -= Callback_JobsStateChange;
             isDisposed = true;
 
             base.Dispose(isDisposing);
@@ -165,6 +175,11 @@ namespace SchedulingClients
         protected override void SetInstanceContext()
         {
             this.context = new InstanceContext(this.callback);
+        }
+
+        private void Callback_JobsStateChange(JobsStateData newJobsStateData)
+        {
+            JobsStateData = newJobsStateData;
         }
     }
 }

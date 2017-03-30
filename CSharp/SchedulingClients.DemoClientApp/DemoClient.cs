@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Net;
 
 namespace SchedulingClients.DemoClientApp

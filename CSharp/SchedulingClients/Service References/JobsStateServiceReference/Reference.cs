@@ -26,9 +26,6 @@ namespace SchedulingClients.JobsStateServiceReference {
         private int AssigningCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int[] IdleAgentIdsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int InProgessCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -53,19 +50,6 @@ namespace SchedulingClients.JobsStateServiceReference {
                 if ((this.AssigningCountField.Equals(value) != true)) {
                     this.AssigningCountField = value;
                     this.RaisePropertyChanged("AssigningCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int[] IdleAgentIds {
-            get {
-                return this.IdleAgentIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdleAgentIdsField, value) != true)) {
-                    this.IdleAgentIdsField = value;
-                    this.RaisePropertyChanged("IdleAgentIds");
                 }
             }
         }

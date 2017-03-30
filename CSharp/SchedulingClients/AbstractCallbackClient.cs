@@ -1,9 +1,9 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.Threading;
-using NLog;
 
 namespace SchedulingClients
 {
@@ -130,6 +130,14 @@ namespace SchedulingClients
 
         protected abstract void HeartbeatThread();
 
+        protected void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
         protected abstract void SetInstanceContext();
 
         private void OnConnected(DateTime dateTime)
@@ -153,14 +161,6 @@ namespace SchedulingClients
                 {
                     handler.BeginInvoke(dateTime, null, null);
                 }
-            }
-        }
-
-        private void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

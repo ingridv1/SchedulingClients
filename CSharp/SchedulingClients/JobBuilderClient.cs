@@ -1,5 +1,5 @@
-﻿using System;
-using SchedulingClients.JobBuilderServiceReference;
+﻿using SchedulingClients.JobBuilderServiceReference;
+using System;
 using System.ServiceModel;
 
 namespace SchedulingClients

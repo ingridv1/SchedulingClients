@@ -1,8 +1,8 @@
-﻿using System;
+﻿using SchedulingClients.RoadmapServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using SchedulingClients.RoadmapServiceReference;
 
 namespace SchedulingClients
 {
