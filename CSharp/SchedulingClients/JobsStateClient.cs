@@ -23,8 +23,14 @@ namespace SchedulingClients
             callback.JobsStateChange += Callback_JobsStateChange;
         }
 
+        /// <summary>
+        /// Hearbeat time
+        /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
+        /// <summary>
+        /// The current state of jobs in the server
+        /// </summary>
         public JobsStateData JobsStateData
         {
             get { return jobsStateData; }
@@ -39,6 +45,9 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Aborts all jobs
+        /// </summary>
         public void AbortAllJobs()
         {
             if (isDisposed)
@@ -53,6 +62,11 @@ namespace SchedulingClients
             channelFactory.Close();
         }
 
+        /// <summary>
+        /// Aborts a specific job
+        /// </summary>
+        /// <param name="jobId">Id of the the to be aborted</param>
+        /// <returns>True if succesfully aborted</returns>
         public bool AbortJob(int jobId)
         {
             if (isDisposed)
@@ -69,6 +83,11 @@ namespace SchedulingClients
             return result;
         }
 
+        /// <summary>
+        /// Gets active jobs for a specific agent
+        /// </summary>
+        /// <param name="agentId">Id of agent</param>
+        /// <returns>Enumerable of all job ids in the waiting or inProgress state</returns>
         public IEnumerable<int> GetActiveJobIdsForAgent(int agentId)
         {
             if (isDisposed)
@@ -84,21 +103,10 @@ namespace SchedulingClients
             return jobIds;
         }
 
-        public bool GetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
-        {
-            try
-            {
-                jobIds = GetActiveJobIdsForAgent(agentId);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                LastCaughtException = ex;
-                jobIds = Enumerable.Empty<int>();
-                return false;
-            }
-        }
-
+        /// <summary>
+        /// Tries to abort all jobs
+        /// </summary>
+        /// <returns>True if succesfull, otherwise false</returns>
         public bool TryAbortAllJobs()
         {
             try
@@ -113,6 +121,12 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Tries to abort a specific job
+        /// </summary>
+        /// <param name="jobId">Id of the job to abort</param>
+        /// <param name="couldAbort">True if job could be aborted</param>
+        /// <returns>True if succesfull, otherwise false</returns>
         public bool TryAbortJob(int jobId, out bool couldAbort)
         {
             try
@@ -124,6 +138,27 @@ namespace SchedulingClients
             {
                 LastCaughtException = ex;
                 couldAbort = false;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Tries to get active job ids for agent
+        /// </summary>
+        /// <param name="agentId">Id of agent</param>
+        /// <param name="jobIds">Enumerable of all job ids in the waiting or inProgress state</param>
+        /// <returns>True if succesfull, otherwise false</returns>
+        public bool TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
+        {
+            try
+            {
+                jobIds = GetActiveJobIdsForAgent(agentId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LastCaughtException = ex;
+                jobIds = Enumerable.Empty<int>();
                 return false;
             }
         }

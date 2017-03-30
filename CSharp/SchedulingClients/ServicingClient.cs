@@ -18,12 +18,18 @@ namespace SchedulingClients
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
+        /// <summary>
+        /// New service request received
+        /// </summary>
         public event Action<ServiceStateData> ServiceRequest
         {
             add { callback.ServiceRequest += value; }
             remove { callback.ServiceRequest -= value; }
         }
 
+        /// <summary>
+        /// Heartbeat time
+        /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
         protected override void Dispose(bool isDisposing)
