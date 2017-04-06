@@ -41,6 +41,23 @@ namespace SchedulingClients.UserControls
             }
         }
 
+        private void getTrajectoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int moveId = (int)trajectoryIdUpDown.Value;
+                RoadmapClient client = DataContext as RoadmapClient;
+                IEnumerable<WaypointData> waypoints = client.GetTrajectory(moveId);
+
+                TrajectoryDialog dialog = new TrajectoryDialog();
+                dialog.DataContext = waypoints;
+                dialog.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         private void keyCardRefreshButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -48,7 +65,9 @@ namespace SchedulingClients.UserControls
                 RoadmapClient client = DataContext as RoadmapClient;
                 byte[] keycard = client.GetMappingKeyCardSignature();
 
-                keycardTextBlock.Text = keycard.ToHexString();
+                MappingKeyDialog dialog = new MappingKeyDialog();
+                dialog.DataContext = keycard.ToHexString();
+                dialog.ShowDialog();
             }
             catch (Exception ex)
             {

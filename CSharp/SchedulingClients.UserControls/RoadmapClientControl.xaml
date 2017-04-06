@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -16,10 +17,10 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <local:LabelContentControl Grid.Row="0" Header="Get Mapping Keycard Signature ">
+        <local:LabelContentControl Grid.Row="0" Header="Get Mapping Keycard Signature">
             <StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="keycardTextBlock"></TextBlock>
                 <Button x:Name="keyCardRefreshButton" Click="keyCardRefreshButton_Click">Refresh</Button>
             </StackPanel>
         </local:LabelContentControl>
@@ -50,5 +51,11 @@
                 <DataGridTextColumn Header="Length" Binding="{Binding Length}" />
             </DataGrid.Columns>
         </DataGrid>
+        <local:LabelContentControl Grid.Row="5" Header="Get Trajectory">
+            <StackPanel Orientation="Horizontal">
+                <toolkit:IntegerUpDown x:Name="trajectoryIdUpDown" Minimum="0" DefaultValue="0" DisplayDefaultValueOnEmptyText="True" />
+                <Button x:Name="getTrajectoryButton" Click="getTrajectoryButton_Click">Get</Button>
+            </StackPanel>
+        </local:LabelContentControl>
     </Grid>
 </UserControl>
