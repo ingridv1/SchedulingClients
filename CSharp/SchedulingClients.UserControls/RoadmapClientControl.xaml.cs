@@ -13,6 +13,20 @@ namespace SchedulingClients.UserControls
             InitializeComponent();
         }
 
+        private void getAllMoveDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                RoadmapClient client = DataContext as RoadmapClient;
+                IEnumerable<MoveData> nodeDatas = client.GetAllMoveData();
+
+                moveDataDataGrid.ItemsSource = nodeDatas;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         private void getAllNodeDataButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -21,6 +35,20 @@ namespace SchedulingClients.UserControls
                 IEnumerable<NodeData> nodeDatas = client.GetAllNodeData();
 
                 nodeDataDataGrid.ItemsSource = nodeDatas;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void keyCardRefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                RoadmapClient client = DataContext as RoadmapClient;
+                byte[] keycard = client.GetMappingKeyCardSignature();
+
+                keycardTextBlock.Text = keycard.ToHexString();
             }
             catch (Exception ex)
             {

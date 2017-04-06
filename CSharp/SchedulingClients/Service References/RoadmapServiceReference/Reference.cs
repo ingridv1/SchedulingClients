@@ -15,6 +15,115 @@ namespace SchedulingClients.RoadmapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.SerializableAttribute()]
+    public partial class MoveData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AliasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DestinationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SourceIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Alias {
+            get {
+                return this.AliasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
+                    this.AliasField = value;
+                    this.RaisePropertyChanged("Alias");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DestinationId {
+            get {
+                return this.DestinationIdField;
+            }
+            set {
+                if ((this.DestinationIdField.Equals(value) != true)) {
+                    this.DestinationIdField = value;
+                    this.RaisePropertyChanged("DestinationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Length {
+            get {
+                return this.LengthField;
+            }
+            set {
+                if ((this.LengthField.Equals(value) != true)) {
+                    this.LengthField = value;
+                    this.RaisePropertyChanged("Length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SourceId {
+            get {
+                return this.SourceIdField;
+            }
+            set {
+                if ((this.SourceIdField.Equals(value) != true)) {
+                    this.SourceIdField = value;
+                    this.RaisePropertyChanged("SourceId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
     [System.SerializableAttribute()]
     public partial class NodeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -161,15 +270,126 @@ namespace SchedulingClients.RoadmapServiceReference {
         Drop = 5,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WaypointData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.SerializableAttribute()]
+    public partial class WaypointData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HeadingRadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double YField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double HeadingRad {
+            get {
+                return this.HeadingRadField;
+            }
+            set {
+                if ((this.HeadingRadField.Equals(value) != true)) {
+                    this.HeadingRadField = value;
+                    this.RaisePropertyChanged("HeadingRad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RoadmapServiceReference.IRoadmapService")]
     public interface IRoadmapService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllMoveData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllMoveDataResponse")]
+        SchedulingClients.RoadmapServiceReference.MoveData[] GetAllMoveData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllMoveData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllMoveDataResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.MoveData[]> GetAllMoveDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllNodeData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllNodeDataResponse")]
         SchedulingClients.RoadmapServiceReference.NodeData[] GetAllNodeData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllNodeData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllNodeDataResponse")]
         System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.NodeData[]> GetAllNodeDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignature", ReplyAction="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignatureResponse")]
+        byte[] GetMappingKeyCardSignature();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignature", ReplyAction="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignatureResponse")]
+        System.Threading.Tasks.Task<byte[]> GetMappingKeyCardSignatureAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetTrajectory", ReplyAction="http://tempuri.org/IRoadmapService/GetTrajectoryResponse")]
+        SchedulingClients.RoadmapServiceReference.WaypointData[] GetTrajectory(int moveId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetTrajectory", ReplyAction="http://tempuri.org/IRoadmapService/GetTrajectoryResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.WaypointData[]> GetTrajectoryAsync(int moveId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -199,12 +419,36 @@ namespace SchedulingClients.RoadmapServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public SchedulingClients.RoadmapServiceReference.MoveData[] GetAllMoveData() {
+            return base.Channel.GetAllMoveData();
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.MoveData[]> GetAllMoveDataAsync() {
+            return base.Channel.GetAllMoveDataAsync();
+        }
+        
         public SchedulingClients.RoadmapServiceReference.NodeData[] GetAllNodeData() {
             return base.Channel.GetAllNodeData();
         }
         
         public System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.NodeData[]> GetAllNodeDataAsync() {
             return base.Channel.GetAllNodeDataAsync();
+        }
+        
+        public byte[] GetMappingKeyCardSignature() {
+            return base.Channel.GetMappingKeyCardSignature();
+        }
+        
+        public System.Threading.Tasks.Task<byte[]> GetMappingKeyCardSignatureAsync() {
+            return base.Channel.GetMappingKeyCardSignatureAsync();
+        }
+        
+        public SchedulingClients.RoadmapServiceReference.WaypointData[] GetTrajectory(int moveId) {
+            return base.Channel.GetTrajectory(moveId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.WaypointData[]> GetTrajectoryAsync(int moveId) {
+            return base.Channel.GetTrajectoryAsync(moveId);
         }
     }
 }

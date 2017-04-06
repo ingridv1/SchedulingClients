@@ -12,12 +12,21 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <local:LabelContentControl Grid.Row="0" Header="Get All Node Data()">
+        <local:LabelContentControl Grid.Row="0" Header="Get Mapping Keycard Signature ">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="keycardTextBlock"></TextBlock>
+                <Button x:Name="keyCardRefreshButton" Click="keyCardRefreshButton_Click">Refresh</Button>
+            </StackPanel>
+        </local:LabelContentControl>
+        <local:LabelContentControl Grid.Row="1" Header="Get All Node Data()">
             <Button x:Name="getAllNodeDataButton" Click="getAllNodeDataButton_Click">Refresh</Button>
         </local:LabelContentControl>
-        <DataGrid x:Name="nodeDataDataGrid" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*"
+        <DataGrid x:Name="nodeDataDataGrid" Grid.Row="2" AutoGenerateColumns="False" ColumnWidth="*"
                   Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" />
@@ -26,6 +35,19 @@
                 <DataGridTextColumn Header="Y" Binding="{Binding Y}" />
                 <DataGridTextColumn Header="HeadingRad" Binding="{Binding HeadingRad}" />
                 <DataGridTextColumn Header="Services" Binding="{Binding Services, Converter={StaticResource ResourceKey=serviceTypeConverter}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <local:LabelContentControl Grid.Row="3" Header="Get All Move Data()">
+            <Button x:Name="getAllMoveDataButton" Click="getAllMoveDataButton_Click">Refresh</Button>
+        </local:LabelContentControl>
+        <DataGrid x:Name="moveDataDataGrid" Grid.Row="4" AutoGenerateColumns="False" ColumnWidth="*"
+                  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" />
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="SourceId" Binding="{Binding SourceId}" />
+                <DataGridTextColumn Header="DestinationId" Binding="{Binding DestinationId}" />
+                <DataGridTextColumn Header="Length" Binding="{Binding Length}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
