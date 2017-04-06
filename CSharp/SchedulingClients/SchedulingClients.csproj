@@ -121,20 +121,26 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobsStateServiceReference\JobsStateService1.wsdl" />
-    <None Include="Service References\RoadmapServiceReference\roadmap.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap1.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap2.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap3.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap43.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\RoadmapService.wsdl" />
+    <None Include="Service References\RoadmapServiceReference\RoadmapService1.wsdl" />
+    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.MoveData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.NodeData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.WaypointData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">
@@ -180,9 +186,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RoadmapServiceReference\roadmap.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServicingServiceReference\servicing.disco" />

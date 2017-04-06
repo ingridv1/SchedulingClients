@@ -85,6 +85,9 @@
       <DependentUpon>JobsStateClientControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LabelContentControl.cs" />
+    <Compile Include="MappingKeyDialog.xaml.cs">
+      <DependentUpon>MappingKeyDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RoadmapClientControl.xaml.cs">
       <DependentUpon>RoadmapClientControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,9 @@
     </Compile>
     <Compile Include="ServicingClientControl.xaml.cs">
       <DependentUpon>ServicingClientControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrajectoryDialog.xaml.cs">
+      <DependentUpon>TrajectoryDialog.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,11 +136,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MappingKeyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RoadmapClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ServicingClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrajectoryDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
