@@ -28,15 +28,11 @@ namespace SchedulingClients.UserControls
 
         private void completeButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            try
-            {
-                int taskId = (int)serviceIdUpDown.Value;
-                ServicingClient client = DataContext as ServicingClient;
-                client.SetServiceComplete(taskId);
-            }
-            catch (Exception ex)
-            {
-            }
+            bool success;
+
+            int taskId = (int)serviceIdUpDown.Value;
+            ServicingClient client = DataContext as ServicingClient;
+            client.TrySetServiceComplete(taskId, out success);
         }
 
         private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
