@@ -119,11 +119,11 @@ namespace SchedulingClients.JobBuilderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateListTaskResponse")]
         System.Threading.Tasks.Task<System.Tuple<int, string>> CreateListTaskAsync(int parentTaskId, bool isOrdered);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateNodeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateNodeTaskResponse")]
-        System.Tuple<int, string> CreateNodeTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
+        System.Tuple<int, string> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateNodeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateNodeTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, string>> CreateNodeTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, string>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -177,12 +177,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
             return base.Channel.CreateListTaskAsync(parentTaskId, isOrdered);
         }
         
-        public System.Tuple<int, string> CreateNodeTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
-            return base.Channel.CreateNodeTask(parentTaskId, nodeId, serviceType, expectedDuration);
+        public System.Tuple<int, string> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
+            return base.Channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, string>> CreateNodeTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
-            return base.Channel.CreateNodeTaskAsync(parentTaskId, nodeId, serviceType, expectedDuration);
+        public System.Threading.Tasks.Task<System.Tuple<int, string>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
+            return base.Channel.CreateServicingTaskAsync(parentTaskId, nodeId, serviceType, expectedDuration);
         }
     }
 }

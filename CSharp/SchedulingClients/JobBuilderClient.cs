@@ -84,16 +84,16 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Creates a new node task
+        /// Creates a new servicing task
         /// </summary>
         /// <param name="parentTaskId">Parent task of this service task</param>
         /// <param name="nodeId">Id of the node to service at</param>
         /// <param name="serviceType">ServiceType to perform</param>
         /// <param name="expectedDuration">Estimated duration of the service task</param>
         /// <returns>Tuple of new task id and error string</returns>
-        public Tuple<int, string> CreateNodeTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
+        public Tuple<int, string> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
-            Logger.Info("CreateNodeTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
+            Logger.Info("CreateServicingTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
 
             if (isDisposed)
             {
@@ -103,7 +103,7 @@ namespace SchedulingClients
             ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
             IJobBuilderService channel = channelFactory.CreateChannel();
 
-            Tuple<int, string> nodeTask = channel.CreateNodeTask(parentTaskId, nodeId, serviceType, expectedDuration);
+            Tuple<int, string> nodeTask = channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
             channelFactory.Close();
             return nodeTask;
         }
@@ -197,13 +197,13 @@ namespace SchedulingClients
         /// <param name="expectedDuration">Estimated duration of the service task</param>
         /// <param name="serviceTaskId">TaskId of the new service task</param>
         /// <returns>True if operation succesfull, otherwise false</returns>
-        public bool TryCreateNodeTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration, out Tuple<int, string> result)
+        public bool TryCreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration, out Tuple<int, string> result)
         {
             Logger.Info("TryCreateNodeTask({0},{1})", parentTaskId, nodeId);
 
             try
             {
-                result = CreateNodeTask(parentTaskId, nodeId, serviceType, expectedDuration);
+                result = CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
                 return true;
             }
             catch (Exception ex)

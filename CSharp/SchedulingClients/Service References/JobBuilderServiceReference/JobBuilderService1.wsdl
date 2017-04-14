@@ -48,11 +48,11 @@
   <wsdl:message name="IJobBuilderService_CreateListTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateListTaskResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateNodeTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateNodeTask" />
+  <wsdl:message name="IJobBuilderService_CreateServicingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServicingTask" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateNodeTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateNodeTaskResponse" />
+  <wsdl:message name="IJobBuilderService_CreateServicingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateServicingTaskResponse" />
   </wsdl:message>
   <wsdl:portType name="IJobBuilderService">
     <wsdl:operation name="CommitJob">
@@ -67,9 +67,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateListTask" message="tns:IJobBuilderService_CreateListTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateListTaskResponse" message="tns:IJobBuilderService_CreateListTask_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateNodeTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateNodeTask" message="tns:IJobBuilderService_CreateNodeTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateNodeTaskResponse" message="tns:IJobBuilderService_CreateNodeTask_OutputMessage" />
+    <wsdl:operation name="CreateServicingTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse" message="tns:IJobBuilderService_CreateServicingTask_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJobBuilderService" type="tns:IJobBuilderService">
@@ -102,8 +102,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateNodeTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateNodeTask" style="document" />
+    <wsdl:operation name="CreateServicingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -142,8 +142,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateNodeTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateNodeTask" style="document" />
+    <wsdl:operation name="CreateServicingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
