@@ -32,6 +32,37 @@ namespace SchedulingClients
         /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
+        public bool SetServiceComplete(int taskId)
+        {
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            ChannelFactory<IServicingService> channelFactory = CreateChannelFactory();
+            IServicingService channel = channelFactory.CreateChannel();
+
+            bool result = channel.SetServiceComplete(taskId);
+            channelFactory.Close();
+            return result;
+        }
+
+        public bool TrySetServiceComplete(int taskId, out bool success)
+        {
+            try
+            {
+                success = SetServiceComplete(taskId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn(ex);
+                LastCaughtException = ex;
+                success = false;
+                return false;
+            }
+        }
+
         protected override void Dispose(bool isDisposing)
         {
             if (isDisposed)
