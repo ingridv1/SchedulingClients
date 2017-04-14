@@ -68,6 +68,8 @@ namespace SchedulingClients
                     isConnected = value;
                     OnNotifyPropertyChanged();
 
+                    Logger.Debug("IsConnected: {0}", value);
+
                     if (value)
                     {
                         OnConnected(DateTime.Now);
@@ -91,6 +93,14 @@ namespace SchedulingClients
                 if (lastCaughtException != value)
                 {
                     lastCaughtException = value;
+                    if (value is EndpointNotFoundException)
+                    {
+                        Logger.Warn("EndpointNotFoundException. Is The server running?");
+                    }
+                    else
+                    {
+                        Logger.Error(value);
+                    }
                     OnNotifyPropertyChanged();
                 }
             }

@@ -50,6 +50,8 @@ namespace SchedulingClients
         /// </summary>
         public void AbortAllJobs()
         {
+            Logger.Info("AbortAllJobs()");
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobsStateClient");
@@ -69,6 +71,8 @@ namespace SchedulingClients
         /// <returns>True if succesfully aborted</returns>
         public bool AbortJob(int jobId)
         {
+            Logger.Info("AbortJob({0})", jobId);
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobsStateClient");
@@ -90,6 +94,8 @@ namespace SchedulingClients
         /// <returns>Enumerable of all job ids in the waiting or inProgress state</returns>
         public IEnumerable<int> GetActiveJobIdsForAgent(int agentId)
         {
+            Logger.Info("GetActiveJobIdsForAgent({0})", agentId);
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobsStateClient");
@@ -109,6 +115,8 @@ namespace SchedulingClients
         /// <returns>True if succesfull, otherwise false</returns>
         public bool TryAbortAllJobs()
         {
+            Logger.Info("TryAbortAllJobs()");
+
             try
             {
                 AbortAllJobs();
@@ -129,6 +137,8 @@ namespace SchedulingClients
         /// <returns>True if succesfull, otherwise false</returns>
         public bool TryAbortJob(int jobId, out bool couldAbort)
         {
+            Logger.Info("TryAbortJob({0})", jobId);
+
             try
             {
                 couldAbort = AbortJob(jobId);
@@ -150,6 +160,8 @@ namespace SchedulingClients
         /// <returns>True if succesfull, otherwise false</returns>
         public bool TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
         {
+            Logger.Info("TryGetActiveJobIdsForAgent({0})", agentId);
+
             try
             {
                 jobIds = GetActiveJobIdsForAgent(agentId);
@@ -165,6 +177,8 @@ namespace SchedulingClients
 
         protected override void Dispose(bool isDisposing)
         {
+            Logger.Debug("Dispose({0})", isDisposing);
+
             if (isDisposed)
             {
                 return;
@@ -178,23 +192,38 @@ namespace SchedulingClients
 
         protected override void HeartbeatThread()
         {
-            Logger.Debug("[JobsStateClient] HeartbeatThread");
+            Logger.Debug("HeartbeatThread()");
 
             ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
             IJobsStateService jobsStateService = channelFactory.CreateChannel();
 
+            bool? exceptionCaught;
+
             while (!Terminate)
             {
+                exceptionCaught = null;
+
                 try
                 {
-                    Logger.Trace("[JobsStateClient] SubscriptionHeartbeat({0})", Key);
+                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
                     jobsStateService.SubscriptionHeartbeat(Key);
                     IsConnected = true;
+                    exceptionCaught = false;
+                }
+                catch (EndpointNotFoundException)
+                {
+                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
+                    exceptionCaught = true;
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex);
+                    exceptionCaught = true;
+                }
+
+                if (exceptionCaught == true)
+                {
                     channelFactory.Abort();
-                    Logger.Warn(ex);
                     IsConnected = false;
 
                     channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
@@ -204,7 +233,7 @@ namespace SchedulingClients
                 heartbeatReset.WaitOne(Heartbeat);
             }
 
-            Logger.Debug("[JobsStateClient] HeartbeatThread exit()");
+            Logger.Debug("HeartbeatThread exit");
         }
 
         protected override void SetInstanceContext()
