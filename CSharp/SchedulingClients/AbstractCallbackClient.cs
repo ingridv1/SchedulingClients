@@ -95,7 +95,7 @@ namespace SchedulingClients
                     lastCaughtException = value;
                     if (value is EndpointNotFoundException)
                     {
-                        Logger.Warn("EndpointNotFoundException. Is The server running?");
+                        Logger.Warn("EndpointNotFoundException - is The server running?");
                     }
                     else
                     {

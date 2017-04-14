@@ -22,6 +22,8 @@ namespace SchedulingClients
 
         public IEnumerable<MoveData> GetAllMoveData()
         {
+            Logger.Info("GetAllMoveData()");
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("RoadmapClient");
@@ -41,6 +43,8 @@ namespace SchedulingClients
         /// <returns>IEnumerable of NodeData</returns>
         public IEnumerable<NodeData> GetAllNodeData()
         {
+            Logger.Info("GetAllNodeData()");
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("RoadmapClient");
@@ -56,6 +60,8 @@ namespace SchedulingClients
 
         public byte[] GetMappingKeyCardSignature()
         {
+            Logger.Info("GetMappingKeyCardSignature()");
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("RoadmapClient");
@@ -71,6 +77,8 @@ namespace SchedulingClients
 
         public IEnumerable<WaypointData> GetTrajectory(int moveId)
         {
+            Logger.Info("GetTrajectory({0})", moveId);
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("RoadmapClient");
@@ -86,6 +94,8 @@ namespace SchedulingClients
 
         public bool TryGetAllMoveData(out IEnumerable<MoveData> moveData)
         {
+            Logger.Info("TryGetAllMoveData()");
+
             try
             {
                 moveData = GetAllMoveData();
@@ -93,7 +103,6 @@ namespace SchedulingClients
             }
             catch (Exception ex)
             {
-                Logger.Warn(ex);
                 LastCaughtException = ex;
                 moveData = Enumerable.Empty<MoveData>();
                 return false;
@@ -107,6 +116,8 @@ namespace SchedulingClients
         /// <returns>True if operation succesfull, otherwise false</returns>
         public bool TryGetAllNodeData(out IEnumerable<NodeData> nodeData)
         {
+            Logger.Info("TryGetAllNodeData()");
+
             try
             {
                 nodeData = GetAllNodeData();
@@ -114,7 +125,6 @@ namespace SchedulingClients
             }
             catch (Exception ex)
             {
-                Logger.Warn(ex);
                 LastCaughtException = ex;
                 nodeData = Enumerable.Empty<NodeData>();
                 return false;
@@ -123,6 +133,8 @@ namespace SchedulingClients
 
         public bool TryGetMappingKeyCardSignature(out byte[] signature)
         {
+            Logger.Info("TryGetMappingKeyCardSignature()");
+
             try
             {
                 signature = GetMappingKeyCardSignature();
@@ -130,7 +142,6 @@ namespace SchedulingClients
             }
             catch (Exception ex)
             {
-                Logger.Warn(ex);
                 LastCaughtException = ex;
                 signature = null;
                 return false;
@@ -139,6 +150,8 @@ namespace SchedulingClients
 
         public bool TryGetTrajectory(int moveId, out IEnumerable<WaypointData> waypointData)
         {
+            Logger.Info("TryGetTrajectory({0})", moveId);
+
             try
             {
                 waypointData = GetTrajectory(moveId);
@@ -146,7 +159,6 @@ namespace SchedulingClients
             }
             catch (Exception ex)
             {
-                Logger.Warn(ex);
                 LastCaughtException = ex;
                 waypointData = Enumerable.Empty<WaypointData>();
                 return false;

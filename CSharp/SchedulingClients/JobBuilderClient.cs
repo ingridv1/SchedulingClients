@@ -24,6 +24,8 @@ namespace SchedulingClients
         /// <param name="agentId">Id of the agent to be assigned, -1 if unspecified</param>
         public bool Commit(int jobId, int agentId = -1)
         {
+            Logger.Info("Commit({0},{1})", jobId, agentId);
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
@@ -43,6 +45,8 @@ namespace SchedulingClients
         /// <returns>JobData of created job</returns>
         public JobData CreateJob()
         {
+            Logger.Info("CreateJob()");
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
@@ -64,6 +68,8 @@ namespace SchedulingClients
         /// <returns>Tuple of new list tast id and error string</returns>
         public Tuple<int, string> CreateListTask(int parentTaskId, bool isOrdered)
         {
+            Logger.Info("CreateListTask({0},{1})", parentTaskId, isOrdered);
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
@@ -87,6 +93,8 @@ namespace SchedulingClients
         /// <returns>Tuple of new task id and error string</returns>
         public Tuple<int, string> CreateNodeTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
+            Logger.Info("CreateNodeTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
+
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
@@ -108,6 +116,8 @@ namespace SchedulingClients
         /// <returns>True if succesfull, otherwise false</returns>
         public bool TryCommit(int jobId, int agentId = -1)
         {
+            Logger.Info("TryCommit({0},{1})", jobId, agentId);
+
             try
             {
                 ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
@@ -139,6 +149,8 @@ namespace SchedulingClients
         /// <returns>True if operation succesfull, otherwise false</returns>
         public bool TryCreateJob(out JobData jobData)
         {
+            Logger.Info("TryCreateJob()");
+
             try
             {
                 jobData = CreateJob();
@@ -161,6 +173,8 @@ namespace SchedulingClients
         /// <returns>True if operation succesfull, otherwise false</returns>
         public bool TryCreateListTask(int parentTaskId, bool isOrdered, out Tuple<int, string> result)
         {
+            Logger.Info("TryCreateListTask({0},{1})", parentTaskId, isOrdered);
+
             try
             {
                 result = CreateListTask(parentTaskId, isOrdered);
@@ -185,6 +199,8 @@ namespace SchedulingClients
         /// <returns>True if operation succesfull, otherwise false</returns>
         public bool TryCreateNodeTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration, out Tuple<int, string> result)
         {
+            Logger.Info("TryCreateNodeTask({0},{1})", parentTaskId, nodeId);
+
             try
             {
                 result = CreateNodeTask(parentTaskId, nodeId, serviceType, expectedDuration);
@@ -200,6 +216,8 @@ namespace SchedulingClients
 
         protected override void Dispose(bool isDisposing)
         {
+            Logger.Debug("Dispose({0})", isDisposing);
+
             if (isDisposed)
             {
                 return;
