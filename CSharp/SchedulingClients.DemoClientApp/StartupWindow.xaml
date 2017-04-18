@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:SchedulingClients.DemoClientApp"
+        xmlns:clientsUC="clr-namespace:SchedulingClients.UserControls;assembly=SchedulingClients.UserControls"
         mc:Ignorable="d"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        Title="Startup Window" SizeToContent="WidthAndHeight" WindowStyle="None">
+        Title="Startup Window" SizeToContent="WidthAndHeight" WindowStyle="ToolWindow">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -15,43 +16,62 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Border>
-        <HeaderedContentControl>
-            <HeaderedContentControl.Header>
-                Demo Scheduling Client Configuration:
-            </HeaderedContentControl.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <StackPanel>
-                    <TextBlock>IP Address</TextBlock>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <StackPanel.Resources>
-                            <Style TargetType="{x:Type toolkit:IntegerUpDown}">
-                                <Setter Property="Margin" Value="10" />
-                            </Style>
-                        </StackPanel.Resources>
-                        <toolkit:IntegerUpDown x:Name="byteA" Value="127" Minimum="0" Maximum="255" />
-                        <toolkit:IntegerUpDown x:Name="byteB" Value="0" Minimum="0" Maximum="255" />
-                        <toolkit:IntegerUpDown x:Name="byteC" Value="0" Minimum="0" Maximum="255" />
-                        <toolkit:IntegerUpDown x:Name="byteD" Value="1" Minimum="0" Maximum="255" />
-                    </StackPanel>
-                    <TextBlock>Http Port</TextBlock>
-                    <toolkit:IntegerUpDown x:Name="httpPort" Value="41916" Minimum="1024" Maximum="49151" HorizontalAlignment="Right" />
-                    <TextBlock>Tcp Port</TextBlock>
-                    <toolkit:IntegerUpDown x:Name="tcpPort" Value="41917" Minimum="1024" Maximum="49151" HorizontalAlignment="Right" />
-                </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="okButton" Click="okButton_Click">
-                        OK
-                    </Button>
-                    <Button x:Name="cancelButton" Click="cancelButton_Click">
-                        Cancel
-                    </Button>
-                </StackPanel>
-            </Grid>
-        </HeaderedContentControl>
-    </Border>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <clientsUC:LabelContentControl Header="IP address:" ToolTip="IP address of the scheduling server">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type toolkit:IntegerUpDown}">
+                            <Setter Property="Margin" Value="10" />
+                            <Setter Property="Minimum" Value="0" />
+                            <Setter Property="Maximum" Value="255" />
+                            <Setter Property="Margin" Value="10" />
+                            <Setter Property="DisplayDefaultValueOnEmptyText" Value="True" />
+                            <Setter Property="ShowButtonSpinner" Value="False" />
+                        </Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </Grid.Resources>
+                    <toolkit:IntegerUpDown Grid.Column="0" x:Name="byteA" Value="127" DefaultValue="127" />
+                    <TextBlock Grid.Column="1">.</TextBlock>
+                    <toolkit:IntegerUpDown Grid.Column="2" x:Name="byteB" Value="0" DefaultValue="0" />
+                    <TextBlock Grid.Column="3">.</TextBlock>
+                    <toolkit:IntegerUpDown Grid.Column="4" x:Name="byteC" Value="0" DefaultValue="0" />
+                    <TextBlock Grid.Column="5">.</TextBlock>
+                    <toolkit:IntegerUpDown Grid.Column="6" x:Name="byteD" Value="1" DefaultValue="1" />
+                </Grid>
+            </clientsUC:LabelContentControl>
+            <clientsUC:LabelContentControl Header="Http port:" ToolTip="Port used by the server to host http services">
+                <toolkit:IntegerUpDown x:Name="httpPort" Value="41916" Minimum="1024" Maximum="49151" HorizontalAlignment="Right"
+                         DefaultValue="41916" DisplayDefaultValueOnEmptyText="True" />
+            </clientsUC:LabelContentControl>
+            <clientsUC:LabelContentControl Header="TCP port:" ToolTip="Port used by the server to host tcp services">
+                <toolkit:IntegerUpDown x:Name="tcpPort" Value="41917" Minimum="1024" Maximum="49151" HorizontalAlignment="Right"
+                         DefaultValue="41917" DisplayDefaultValueOnEmptyText="True" />
+            </clientsUC:LabelContentControl>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="okButton" Click="okButton_Click">
+                OK
+            </Button>
+            <Button x:Name="cancelButton" Click="cancelButton_Click">
+                Cancel
+            </Button>
+        </StackPanel>
+    </Grid>
 </Window>

@@ -14,14 +14,9 @@ namespace SchedulingClients.UserControls
 
         private void createJobButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                JobBuilderClient client = DataContext as JobBuilderClient;
-                JobData jobData = client.CreateJob();
-            }
-            catch (Exception ex)
-            {
-            }
+            JobBuilderClient client = DataContext as JobBuilderClient;
+            JobData jobData;
+            client.TryCreateJob(out jobData);
         }
 
         private void multiPickJobTest_Click(object sender, RoutedEventArgs e)

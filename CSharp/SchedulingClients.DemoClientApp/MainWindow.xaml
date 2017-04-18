@@ -17,12 +17,18 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TabControl Grid.Row="0">
+        <Menu Grid.Row="0">
+            <MenuItem Header="Logs">
+                <MenuItem Header="Open Logs Folder" x:Name="logsFolderMenuItem" Click="logsFolderMenuItem_Click" />
+            </MenuItem>
+        </Menu>
+        <TabControl Grid.Row="1">
             <TabItem>
                 <TabItem.Header>
                     Job Builder Client

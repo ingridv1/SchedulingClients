@@ -46,7 +46,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateNodeTask">
+  <xs:element name="CreateServicingTask">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
@@ -56,10 +56,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateNodeTaskResponse">
+  <xs:element name="CreateServicingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateNodeTaskResult" nillable="true" type="q6:TupleOfintstring" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q6:TupleOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

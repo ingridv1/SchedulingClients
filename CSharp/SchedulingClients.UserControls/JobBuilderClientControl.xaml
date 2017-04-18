@@ -12,18 +12,14 @@
                 Job Builder Client Control
             </HeaderedContentControl.Header>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <TextBlock>Creates a single job with no tasks</TextBlock>
-                <Button x:Name="createJobButton" Click="createJobButton_Click" Grid.Column="1">Create</Button>
-                <TextBlock Grid.Row="1" TextWrapping="Wrap">Creates a simple multi pick job, consisting of three picks, a drop and a park</TextBlock>
-                <Button Grid.Row="1" x:Name="multiPickJobTest" Click="multiPickJobTest_Click" Grid.Column="1">Multi</Button>
+                <StackPanel>
+                    <local:LabelContentControl Header="Creates a single job with no tasks">
+                        <Button x:Name="createJobButton" Click="createJobButton_Click">Create</Button>
+                    </local:LabelContentControl>
+                    <local:LabelContentControl Header="Creates a simple multi pick job, consisting of three picks, a drop and a park">
+                        <Button x:Name="multiPickJobTest" Click="multiPickJobTest_Click"  >Multi</Button>
+                    </local:LabelContentControl>
+                </StackPanel>
             </Grid>
         </HeaderedContentControl>
     </Grid>

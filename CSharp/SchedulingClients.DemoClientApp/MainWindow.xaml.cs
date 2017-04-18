@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Diagnostics;
 
 namespace SchedulingClients.DemoClientApp
 {
@@ -15,6 +16,12 @@ namespace SchedulingClients.DemoClientApp
             demoClient.Dispose();
 
             Application.Current.Shutdown(0);
+        }
+
+        private void logsFolderMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            DemoClient demoClient = DataContext as DemoClient;
+            Process.Start(demoClient.LogFolderPath);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

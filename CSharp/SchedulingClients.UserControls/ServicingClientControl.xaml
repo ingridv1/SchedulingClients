@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              mc:Ignorable="d"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              d:DesignHeight="300" d:DesignWidth="300"
              DataContextChanged="UserControl_DataContextChanged">
     <HeaderedContentControl>
@@ -15,6 +16,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock>IsConnected</TextBlock>
@@ -28,6 +30,12 @@
                     <DataGridTextColumn Header="BeneficiaryId" Binding="{Binding BeneficiaryId}" Width="2*" />
                 </DataGrid.Columns>
             </DataGrid>
+            <local:LabelContentControl Grid.Row="2" Header="Set Service Complete">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown x:Name="serviceIdUpDown" Minimum="0" DefaultValue="0" DisplayDefaultValueOnEmptyText="True" />
+                    <Button x:Name="completeButton" Click="completeButton_Click">Complete</Button>
+                </StackPanel>
+            </local:LabelContentControl>
         </Grid>
     </HeaderedContentControl>
 </UserControl>
