@@ -31,6 +31,14 @@
         <TabControl Grid.Row="1">
             <TabItem>
                 <TabItem.Header>
+                    Agent Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:AgentClientControl x:Name="agentClientControl" DataContext="{Binding Path=AgentClient}" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
                     Job Builder Client
                 </TabItem.Header>
                 <Grid>

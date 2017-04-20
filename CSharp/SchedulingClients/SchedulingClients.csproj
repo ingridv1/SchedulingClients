@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AbstractCallbackClient.cs" />
     <Compile Include="AbstractClient.cs" />
+    <Compile Include="AgentClient.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="ICallbackClient.cs" />
     <Compile Include="IClient.cs" />
@@ -58,6 +59,11 @@
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="RoadmapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AgentServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\JobBuilderServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +95,28 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Service References\AgentServiceReference\agent.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\agent1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\agent2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\agent3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\agent4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\agent5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\AgentService.wsdl" />
+    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.AgentData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -158,6 +186,7 @@
     <None Include="Service References\ServicingServiceReference\ServicingService.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\RoadmapServiceReference\" />
@@ -210,6 +239,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobsStateServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

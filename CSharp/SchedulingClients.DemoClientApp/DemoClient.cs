@@ -37,6 +37,8 @@ namespace SchedulingClients.DemoClientApp
             Dispose(false);
         }
 
+        public AgentClient AgentClient { get { return (AgentClient)clients.FirstOrDefault(e => e is AgentClient); } }
+
         public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
         public bool IsDisposed { get { return isDisposed; } }
@@ -53,6 +55,9 @@ namespace SchedulingClients.DemoClientApp
 
         public void Configure()
         {
+            AgentClient agentClient = new AgentClient(endpointSettings.TcpAgentService());
+            clients.Add(agentClient);
+
             JobsStateClient jobsStateClient = new JobsStateClient(endpointSettings.TcpJobsStateService());
             clients.Add(jobsStateClient);
 

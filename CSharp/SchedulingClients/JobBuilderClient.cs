@@ -13,7 +13,7 @@ namespace SchedulingClients
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the job builder service</param>
         public JobBuilderClient(Uri netTcpUri)
-                    : base(netTcpUri)
+            : base(netTcpUri)
         {
         }
 

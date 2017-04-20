@@ -5,6 +5,11 @@ namespace SchedulingClients
 {
     public static class EndpointSettings_ExtensionMethods
     {
+        public static Uri TcpAgentService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "agent.svc");
+        }
+
         public static Uri TcpJobBuilderService(this EndpointSettings portSettings)
         {
             return new Uri(portSettings.ToTcpBase(), "jobBuilder.svc");
