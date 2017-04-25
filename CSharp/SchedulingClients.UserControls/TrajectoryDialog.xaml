@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SchedulingClients.UserControls"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Trajectory" Height="300" Width="300">
+        Title="Trajectory" Height="320" Width="480">
     <Window.Resources>
         <system:Double x:Key="Text">14</system:Double>
         <Style TargetType="{x:Type Control}" x:Key="BaseControlStyle">
@@ -33,9 +33,9 @@
                   Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                <DataGridTextColumn Header="X" Binding="{Binding X}" />
-                <DataGridTextColumn Header="Y" Binding="{Binding Y}" />
-                <DataGridTextColumn Header="HeadingRad" Binding="{Binding HeadingRad}" />
+                <DataGridTextColumn Header="X (m)" Binding="{Binding X, StringFormat={}{0:N3}}" />
+                <DataGridTextColumn Header="Y (m)" Binding="{Binding Y, StringFormat={}{0:N3}}" />
+                <DataGridTextColumn Header="Heading (rad)" Binding="{Binding HeadingRad, StringFormat={}{0:N2}}" />
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="1" HorizontalAlignment="Right" x:Name="okButton" Click="okButton_Click">OK</Button>
