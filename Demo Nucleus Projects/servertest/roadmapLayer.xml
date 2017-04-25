@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<roadmapLayer>
+  <fileFormat>1</fileFormat>
+  <metadata alias="Roadmap Layer" id="0" />
+  <roadmap>
+    <hitBox>
+      <pose heading="0">
+        <point x="0" y="0" />
+      </pose>
+      <shapes />
+    </hitBox>
+    <nodes>
+      <node alias="N0" id="0">
+        <pose heading="0">
+          <point x="0" y="0" />
+        </pose>
+        <services Charge="true" />
+      </node>
+      <node alias="N1" id="1">
+        <pose heading="0">
+          <point x="2" y="0" />
+        </pose>
+        <services Charge="true" Park="true" />
+      </node>
+      <node alias="N3" id="3">
+        <pose heading="0">
+          <point x="4" y="0" />
+        </pose>
+        <services Drop="true" Pick="true" Fault="true" Park="true" />
+      </node>
+      <node alias="N5" id="5">
+        <pose heading="3.1415926535897931">
+          <point x="4" y="2" />
+        </pose>
+        <services Fault="true" Drop="true" Pick="true" />
+      </node>
+      <node alias="N6" id="6">
+        <pose heading="3.1415926535897931">
+          <point x="2" y="2" />
+        </pose>
+        <services />
+      </node>
+      <node alias="N7" id="7">
+        <pose heading="3.1415926535897931">
+          <point x="0" y="2" />
+        </pose>
+        <services Drop="true" Pick="true" />
+      </node>
+      <node alias="N10" id="10">
+        <pose heading="1.5707963267948966">
+          <point x="5" y="1" />
+        </pose>
+        <services />
+      </node>
+      <node alias="N11" id="11">
+        <pose heading="4.71238898038469">
+          <point x="-1" y="1" />
+        </pose>
+        <services Drop="true" Pick="true" />
+      </node>
+    </nodes>
+    <moves>
+      <move alias="N0-N1" id="2" sourceid="0" destinationid="1" desiredspeed="1" />
+      <move alias="N1-N3" id="4" sourceid="1" destinationid="3" desiredspeed="1" />
+      <move alias="N5-N6" id="8" sourceid="5" destinationid="6" desiredspeed="1" />
+      <move alias="N6-N7" id="9" sourceid="6" destinationid="7" desiredspeed="1" />
+      <move alias="N3-N10" id="12" sourceid="3" destinationid="10" desiredspeed="1" />
+      <move alias="N10-N5" id="13" sourceid="10" destinationid="5" desiredspeed="1" />
+      <move alias="N7-N11" id="14" sourceid="7" destinationid="11" desiredspeed="1" />
+      <move alias="N11-N0" id="15" sourceid="11" destinationid="0" desiredspeed="1" />
+    </moves>
+    <moveConjugates />
+  </roadmap>
+</roadmapLayer>

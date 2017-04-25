@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map>
+  <fileFormat>1</fileFormat>
+  <metadata description="" />
+  <mapLayers>
+    <mapLayer xmlPath="roadmapLayer.xml" />
+    <mapLayer xmlPath="pointCloudLayer.xml" />
+    <mapLayer xmlPath="spriteLayer.xml" />
+  </mapLayers>
+</map>
