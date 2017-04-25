@@ -32,9 +32,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" />
                 <DataGridTextColumn Header="MapItemId" Binding="{Binding MapItemId}" />
-                <DataGridTextColumn Header="X" Binding="{Binding X}" />
-                <DataGridTextColumn Header="Y" Binding="{Binding Y}" />
-                <DataGridTextColumn Header="HeadingRad" Binding="{Binding HeadingRad}" />
+                <DataGridTextColumn Header="X (m)" Binding="{Binding X, StringFormat={}{0:N3}}" />
+                <DataGridTextColumn Header="Y (m)" Binding="{Binding Y, StringFormat={}{0:N3}}" />
+                <DataGridTextColumn Header="Heading (rad)" Binding="{Binding HeadingRad, StringFormat={}{0:N2}}" />
                 <DataGridTextColumn Header="Services" Binding="{Binding Services, Converter={StaticResource ResourceKey=serviceTypeConverter}}" />
             </DataGrid.Columns>
         </DataGrid>
@@ -48,7 +48,7 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="SourceId" Binding="{Binding SourceId}" />
                 <DataGridTextColumn Header="DestinationId" Binding="{Binding DestinationId}" />
-                <DataGridTextColumn Header="Length" Binding="{Binding Length}" />
+                <DataGridTextColumn Header="Length (m)" Binding="{Binding Length, StringFormat={}{0:N3}}" />
             </DataGrid.Columns>
         </DataGrid>
         <local:LabelContentControl Grid.Row="5" Header="Get Trajectory">
