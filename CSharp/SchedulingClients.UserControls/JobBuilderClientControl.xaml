@@ -7,20 +7,13 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <HeaderedContentControl>
-            <HeaderedContentControl.Header>
-                Job Builder Client Control
-            </HeaderedContentControl.Header>
-            <Grid>
-                <StackPanel>
-                    <local:LabelContentControl Header="Creates a single job with no tasks">
-                        <Button x:Name="createJobButton" Click="createJobButton_Click">Create</Button>
-                    </local:LabelContentControl>
-                    <local:LabelContentControl Header="Creates a simple multi pick job, consisting of three picks, a drop and a park">
-                        <Button x:Name="multiPickJobTest" Click="multiPickJobTest_Click"  >Multi</Button>
-                    </local:LabelContentControl>
-                </StackPanel>
-            </Grid>
-        </HeaderedContentControl>
+        <StackPanel>
+            <local:LabelContentControl Header="Creates a single job with no tasks">
+                <Button x:Name="createJobButton" Click="createJobButton_Click">Create</Button>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Creates a simple multi pick job, consisting of three picks, a drop and a park">
+                <Button x:Name="multiPickJobTest" Click="multiPickJobTest_Click"  >Multi</Button>
+            </local:LabelContentControl>
+        </StackPanel>
     </Grid>
 </UserControl>

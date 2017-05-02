@@ -34,7 +34,7 @@ namespace SchedulingClients.UserControls
             JobStateClient jobStateClient = DataContext as JobStateClient;
             if (jobStateClient.TryGetJobState((int)getJobStateId.Value, out jobStateData))
             {
-                throw new NotImplementedException();
+                jobStateDataControl.DataContext = jobStateData;
             }
         }
     }

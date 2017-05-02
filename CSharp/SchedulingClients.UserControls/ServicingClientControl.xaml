@@ -8,34 +8,29 @@
              xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              d:DesignHeight="300" d:DesignWidth="300"
              DataContextChanged="UserControl_DataContextChanged">
-    <HeaderedContentControl>
-        <HeaderedContentControl.Header>
-            Servicing Client Control
-        </HeaderedContentControl.Header>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock>IsConnected</TextBlock>
-                <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
-            </StackPanel>
-            <DataGrid Grid.Row="1" ItemsSource="{Binding Mode=OneWay}" x:Name="recentServiceStateDataGrid" AutoGenerateColumns="False"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock>IsConnected</TextBlock>
+            <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+        </StackPanel>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Mode=OneWay}" x:Name="recentServiceStateDataGrid" AutoGenerateColumns="False"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="TaskId" Binding="{Binding TaskId}"  Width="1*" />
-                    <DataGridTextColumn Header="ExecutorId" Binding="{Binding ExecutorId}" Width="2*" />
-                    <DataGridTextColumn Header="BeneficiaryId" Binding="{Binding BeneficiaryId}" Width="2*" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <local:LabelContentControl Grid.Row="2" Header="Set Service Complete">
-                <StackPanel Orientation="Horizontal">
-                    <toolkit:IntegerUpDown x:Name="serviceIdUpDown" Minimum="0" DefaultValue="0" DisplayDefaultValueOnEmptyText="True" />
-                    <Button x:Name="completeButton" Click="completeButton_Click">Complete</Button>
-                </StackPanel>
-            </local:LabelContentControl>
-        </Grid>
-    </HeaderedContentControl>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TaskId" Binding="{Binding TaskId}"  Width="1*" />
+                <DataGridTextColumn Header="ExecutorId" Binding="{Binding ExecutorId}" Width="2*" />
+                <DataGridTextColumn Header="BeneficiaryId" Binding="{Binding BeneficiaryId}" Width="2*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <local:LabelContentControl Grid.Row="2" Header="Set Service Complete">
+            <StackPanel Orientation="Horizontal">
+                <toolkit:IntegerUpDown x:Name="serviceIdUpDown" Minimum="0" DefaultValue="0" DisplayDefaultValueOnEmptyText="True" />
+                <Button x:Name="completeButton" Click="completeButton_Click">Complete</Button>
+            </StackPanel>
+        </local:LabelContentControl>
+    </Grid>
 </UserControl>

@@ -10,6 +10,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <local:LabelContentControl Header="Get Job State">
@@ -19,5 +20,6 @@
                 </StackPanel>
             </local:LabelContentControl>
         </StackPanel>
+        <local:JobStateDataControl x:Name="jobStateDataControl" Grid.Row="1" />
     </Grid>
 </UserControl>
