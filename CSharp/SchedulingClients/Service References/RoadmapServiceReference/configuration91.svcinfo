@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="1qKLwM4q27nivszxH4wiorw7A20=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="4ITVpxM3gOc8/1uMTITqNAo1tQs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IRoadmapService">
       <properties>
@@ -215,10 +215,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IRoadmapService" contract="RoadmapServiceReference.IRoadmapService" bindingType="netTcpBinding" address="net.tcp://127.0.0.255:41917/roadmap.svc" bindingConfiguration="NetTcpBinding_IRoadmapService">
+    <endpoint name="NetTcpBinding_IRoadmapService" contract="RoadmapServiceReference.IRoadmapService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41917/roadmap.svc" bindingConfiguration="NetTcpBinding_IRoadmapService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://127.0.0.255:41917/roadmap.svc</serializedValue>
+          <serializedValue>net.tcp://127.0.0.1:41917/roadmap.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -300,10 +300,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSDualHttpBinding_IRoadmapService" contract="RoadmapServiceReference.IRoadmapService" bindingType="wsDualHttpBinding" address="http://127.0.0.255:41916/roadmap.svc" bindingConfiguration="WSDualHttpBinding_IRoadmapService">
+    <endpoint name="WSDualHttpBinding_IRoadmapService" contract="RoadmapServiceReference.IRoadmapService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41916/roadmap.svc" bindingConfiguration="WSDualHttpBinding_IRoadmapService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.255:41916/roadmap.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:41916/roadmap.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

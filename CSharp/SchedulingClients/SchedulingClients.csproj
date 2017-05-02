@@ -169,16 +169,16 @@
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobStateData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap4.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap41.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap42.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap43.xsd">
+    <None Include="Service References\RoadmapServiceReference\roadmap3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\RoadmapServiceReference\RoadmapService1.wsdl" />
@@ -203,7 +203,7 @@
     <None Include="Service References\ServicingServiceReference\servicing2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServicingServiceReference\ServicingService.wsdl" />
+    <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
@@ -236,9 +236,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServicingServiceReference\servicing.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServicingServiceReference\configuration91.svcinfo" />
