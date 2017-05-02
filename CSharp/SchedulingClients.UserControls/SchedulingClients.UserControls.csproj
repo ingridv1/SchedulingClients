@@ -88,6 +88,9 @@
     <Compile Include="JobsStateClientControl.xaml.cs">
       <DependentUpon>JobsStateClientControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JobStateClientControl.xaml.cs">
+      <DependentUpon>JobStateClientControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LabelContentControl.cs" />
     <Compile Include="MappingKeyDialog.xaml.cs">
       <DependentUpon>MappingKeyDialog.xaml</DependentUpon>
@@ -141,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JobsStateClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JobStateClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

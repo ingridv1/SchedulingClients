@@ -47,6 +47,8 @@ namespace SchedulingClients.DemoClientApp
 
         public JobsStateClient JobsStateClient { get { return (JobsStateClient)clients.FirstOrDefault(e => e is JobsStateClient); } }
 
+        public JobStateClient JobStateClient { get { return (JobStateClient)clients.FirstOrDefault(e => e is JobStateClient); } }
+
         public string LogFolderPath { get { return logFolderPath; } }
 
         public RoadmapClient RoadmapClient { get { return (RoadmapClient)clients.FirstOrDefault(e => e is RoadmapClient); } }
@@ -55,20 +57,14 @@ namespace SchedulingClients.DemoClientApp
 
         public void Configure()
         {
-            AgentClient agentClient = new AgentClient(endpointSettings.TcpAgentService());
-            clients.Add(agentClient);
+            clients.Add(ClientFactory.GetAgentClient(endpointSettings));
+            clients.Add(ClientFactory.GetJobBuilderClient(endpointSettings));
 
-            JobsStateClient jobsStateClient = new JobsStateClient(endpointSettings.TcpJobsStateService());
-            clients.Add(jobsStateClient);
+            clients.Add(ClientFactory.GetJobStateClient(endpointSettings));
+            clients.Add(ClientFactory.GetJobsStateClient(endpointSettings));
 
-            JobBuilderClient jobBuilderClient = new JobBuilderClient(endpointSettings.TcpJobBuilderService());
-            clients.Add(jobBuilderClient);
-
-            RoadmapClient mapClient = new RoadmapClient(endpointSettings.TcpMapService());
-            clients.Add(mapClient);
-
-            ServicingClient servicingClient = new ServicingClient(endpointSettings.TcpServicingService());
-            clients.Add(servicingClient);
+            clients.Add(ClientFactory.GetRoadmapClient(endpointSettings));
+            clients.Add(ClientFactory.GetServicingClient(endpointSettings));
 
             LogManager.Configuration = new LoggingConfiguration();
 
