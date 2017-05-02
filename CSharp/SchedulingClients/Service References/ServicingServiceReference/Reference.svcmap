@@ -22,8 +22,7 @@
     <MetadataSource Address="http://127.0.0.1:41916/servicing.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="servicing.disco" MetadataType="Disco" ID="02342223-3ef6-4d75-a1e1-2ec365546c18" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?disco" />
-    <MetadataFile FileName="ServicingService.wsdl" MetadataType="Wsdl" ID="4101b4f0-2aaf-453e-a4d3-5418838deff4" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?wsdl" />
+    <MetadataFile FileName="ServicingService1.wsdl" MetadataType="Wsdl" ID="8a69db58-55a2-48eb-b9bb-8f3c6b84ead5" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc" />
     <MetadataFile FileName="servicing.xsd" MetadataType="Schema" ID="65881833-7739-4034-94f5-598a4f1b2f0d" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" />
     <MetadataFile FileName="servicing1.xsd" MetadataType="Schema" ID="f08d079c-53c9-43fe-951d-c6e539708c01" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" />
     <MetadataFile FileName="servicing2.xsd" MetadataType="Schema" ID="8b311380-0061-4764-bb10-a8ca6cef1748" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd0" />

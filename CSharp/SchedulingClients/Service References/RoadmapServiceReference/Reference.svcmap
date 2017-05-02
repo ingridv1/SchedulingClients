@@ -22,11 +22,11 @@
     <MetadataSource Address="http://127.0.0.1:41916/roadmap.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="roadmap4.xsd" MetadataType="Schema" ID="0cef993c-73ff-44b4-aba3-9d1e94813f33" SourceId="1" SourceUrl="http://127.0.0.255:41916/roadmap.svc?xsd=xsd3" />
     <MetadataFile FileName="RoadmapService1.wsdl" MetadataType="Wsdl" ID="80c4d252-c4e4-4339-8706-0011a2f053bf" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc" />
-    <MetadataFile FileName="roadmap41.xsd" MetadataType="Schema" ID="93018402-19a0-41b4-ab48-ba5bcfc06987" SourceId="1" SourceUrl="http://127.0.0.255:41916/roadmap.svc?xsd=xsd2" />
-    <MetadataFile FileName="roadmap42.xsd" MetadataType="Schema" ID="06f2f0a3-032e-4fc7-bd55-00e96a4b8f74" SourceId="1" SourceUrl="http://127.0.0.255:41916/roadmap.svc?xsd=xsd1" />
-    <MetadataFile FileName="roadmap43.xsd" MetadataType="Schema" ID="12e03c6d-1933-4373-b742-252891e49d1f" SourceId="1" SourceUrl="http://127.0.0.255:41916/roadmap.svc?xsd=xsd0" />
+    <MetadataFile FileName="roadmap.xsd" MetadataType="Schema" ID="18208c1e-cc5c-44c3-9d1e-9a218e579d89" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd2" />
+    <MetadataFile FileName="roadmap1.xsd" MetadataType="Schema" ID="659b1ddd-aacf-4b8d-aadd-69537715073d" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" />
+    <MetadataFile FileName="roadmap2.xsd" MetadataType="Schema" ID="f7a0807b-390b-4b1a-8999-cad376aeefcf" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd0" />
+    <MetadataFile FileName="roadmap3.xsd" MetadataType="Schema" ID="46e37a8d-929e-4787-9dc1-440e8d29c839" SourceId="1" SourceUrl="http://127.0.0.1:41916/roadmap.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
