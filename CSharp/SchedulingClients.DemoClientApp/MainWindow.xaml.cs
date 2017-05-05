@@ -10,6 +10,12 @@ namespace SchedulingClients.DemoClientApp
             InitializeComponent();
         }
 
+        public void Configure(DemoClient demoClient)
+        {
+            DataContext = demoClient;
+            jobBuilderClientControl.Configure(demoClient.RoadmapClient);
+        }
+
         private void HandleShutdown()
         {
             DemoClient demoClient = DataContext as DemoClient;

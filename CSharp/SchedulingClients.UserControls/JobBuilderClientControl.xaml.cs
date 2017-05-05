@@ -1,5 +1,7 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
+using SchedulingClients.RoadmapServiceReference;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,9 +9,16 @@ namespace SchedulingClients.UserControls
 {
     public partial class JobBuilderClientControl : UserControl
     {
+        private RoadmapClient roadmapClient = null;
+
         public JobBuilderClientControl()
         {
             InitializeComponent();
+        }
+
+        public void Configure(RoadmapClient client)
+        {
+            roadmapClient = client;
         }
 
         private void createJobButton_Click(object sender, RoutedEventArgs e)
@@ -22,7 +31,15 @@ namespace SchedulingClients.UserControls
         private void multiPickJobTest_Click(object sender, RoutedEventArgs e)
         {
             JobBuilderClient client = DataContext as JobBuilderClient;
-            client.MultiPickJobTest();
+
+            if (roadmapClient != null)
+            {
+                IEnumerable<NodeData> nodeData;
+                if (roadmapClient.TryGetAllNodeData(out nodeData))
+                {
+                    client.MultiPickJobTest(nodeData);
+                }
+            }
         }
     }
 }
