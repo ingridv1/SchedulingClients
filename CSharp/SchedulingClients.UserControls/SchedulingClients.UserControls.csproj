@@ -80,6 +80,10 @@
     <Compile Include="AgentClientControl.xaml.cs">
       <DependentUpon>AgentClientControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AutoServicer.cs" />
+    <Compile Include="AutoServicerControl.xaml.cs">
+      <DependentUpon>AutoServicerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters.cs" />
     <Compile Include="JobBuilderClientControl.xaml.cs">
       <DependentUpon>JobBuilderClientControl.xaml</DependentUpon>
@@ -139,6 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AgentClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoServicerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

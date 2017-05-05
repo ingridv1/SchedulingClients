@@ -5,18 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              mc:Ignorable="d"
+             xmlns:clients="clr-namespace:SchedulingClients;assembly=SchedulingClients"
              xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              d:DesignHeight="300" d:DesignWidth="300"
              DataContextChanged="UserControl_DataContextChanged">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:AutoServicer x:Key="autoServicer" />
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock>IsConnected</TextBlock>
-            <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <local:AutoServicerControl DataContext="{StaticResource autoServicer}" />
+            <local:LabelContentControl Header="IsConnected">
+                <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+            </local:LabelContentControl>
         </StackPanel>
         <DataGrid Grid.Row="1" ItemsSource="{Binding Mode=OneWay}" x:Name="recentServiceStateDataGrid" AutoGenerateColumns="False"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">

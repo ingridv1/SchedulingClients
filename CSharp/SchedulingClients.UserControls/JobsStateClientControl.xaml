@@ -26,7 +26,7 @@
                 <TextBlock Text="{Binding Path=JobsStateData.InProgessCount, UpdateSourceTrigger=Explicit, TargetNullValue=-1, FallbackValue=-1}" />
             </local:LabelContentControl>
             <local:LabelContentControl Header="Abort All Jobs">
-                <Button x:Name="abortAllJobsButton" Click="abortAllJobsButton_Click">Abort All Jobs</Button>
+                <Button x:Name="abortAllJobsButton" Click="abortAllJobsButton_Click">Abort All</Button>
             </local:LabelContentControl>
             <local:LabelContentControl Header="Abort Job">
                 <StackPanel Orientation="Horizontal">
