@@ -15,6 +15,8 @@ namespace SchedulingClients.DemoClientApp
             DemoClient demoClient = DataContext as DemoClient;
             demoClient.Dispose();
 
+            servicingClientControl.Dispose();
+
             Application.Current.Shutdown(0);
         }
 
