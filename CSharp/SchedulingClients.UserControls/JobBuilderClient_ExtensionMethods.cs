@@ -1,12 +1,15 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using System;
+using System.Linq;
 using System.ServiceModel;
+using SchedulingClients.RoadmapServiceReference;
+using System.Collections.Generic;
 
 namespace SchedulingClients.UserControls
 {
     public static class JobBuilderClient_ExtensionMethods
     {
-        public static void MultiPickJobTest(this JobBuilderClient jobBuilder)
+        public static void MultiPickJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
         {
             try
             {
@@ -14,17 +17,29 @@ namespace SchedulingClients.UserControls
 
                 int unorderedListTaskId = jobBuilder.CreateListTask(jobData.OrderedListTaskId, false).Item1;
 
-                int pickTask0Id = jobBuilder.CreateServicingTask(unorderedListTaskId, 1, ServiceType.Pick, TimeSpan.FromSeconds(30)).Item1;
+                for (int i = 0; i < 3; i++)
+                {
+                    NodeData pickNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Pick);
 
-                int pickTask1Id = jobBuilder.CreateServicingTask(unorderedListTaskId, 3, ServiceType.Pick, TimeSpan.FromSeconds(30)).Item1;
+                    if (pickNode != null)
+                    {
+                        jobBuilder.CreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.Pick, TimeSpan.FromSeconds(30));
+                    }
+                }
 
-                int pickTask2Id = jobBuilder.CreateServicingTask(unorderedListTaskId, 7, ServiceType.Pick, TimeSpan.FromSeconds(30)).Item1;
+                NodeData dropNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Drop);
+                if (dropNode != null)
+                {
+                    jobBuilder.CreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.Drop, TimeSpan.FromSeconds(10));
+                }
 
-                int dropTaskId = jobBuilder.CreateServicingTask(jobData.OrderedListTaskId, 10, ServiceType.Drop, TimeSpan.FromSeconds(10)).Item1;
+                NodeData parkNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Park);
+                if (parkNode != null)
+                {
+                    jobBuilder.CreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, TimeSpan.FromSeconds(10));
+                }
 
-                int parkTaskId = jobBuilder.CreateServicingTask(jobData.OrderedListTaskId, 12, ServiceType.Park, TimeSpan.FromMinutes(5)).Item1;
-
-                bool success = jobBuilder.Commit(jobData.JobId);
+                jobBuilder.Commit(jobData.JobId);
             }
             catch (Exception ex)
             {
@@ -37,6 +52,19 @@ namespace SchedulingClients.UserControls
                     jobBuilder.Logger.Error(ex);
                 }
             }
+        }
+
+        private static NodeData GetRandomNode(IEnumerable<NodeData> nodes, RoadmapServiceReference.ServiceType serviceType)
+        {
+            List<NodeData> subSet = nodes.Where(e => e.Services.Contains(serviceType)).ToList();
+
+            if (subSet.Any())
+            {
+                Random random = new Random();
+                return subSet[random.Next(0, subSet.Count - 1)];
+            }
+
+            return null;
         }
     }
 }

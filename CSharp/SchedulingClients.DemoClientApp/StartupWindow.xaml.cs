@@ -30,7 +30,7 @@ namespace SchedulingClients.DemoClientApp
             DemoClient demoClient = new DemoClient(ipAddress, http, tcp);
 
             MainWindow mainWindow = new MainWindow();
-            mainWindow.DataContext = demoClient;
+            mainWindow.Configure(demoClient);
             mainWindow.Show();
 
             Close();
