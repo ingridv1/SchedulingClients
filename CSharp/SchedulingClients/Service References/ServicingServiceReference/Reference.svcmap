@@ -23,9 +23,11 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="ServicingService1.wsdl" MetadataType="Wsdl" ID="8a69db58-55a2-48eb-b9bb-8f3c6b84ead5" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc" />
+    <MetadataFile FileName="servicing3.xsd" MetadataType="Schema" ID="9ec3542e-1bbe-490e-963b-060e8c3b085d" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" />
     <MetadataFile FileName="servicing.xsd" MetadataType="Schema" ID="65881833-7739-4034-94f5-598a4f1b2f0d" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" />
     <MetadataFile FileName="servicing1.xsd" MetadataType="Schema" ID="f08d079c-53c9-43fe-951d-c6e539708c01" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" />
     <MetadataFile FileName="servicing2.xsd" MetadataType="Schema" ID="8b311380-0061-4764-bb10-a8ca6cef1748" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd0" />
+    <MetadataFile FileName="servicing31.xsd" MetadataType="Schema" ID="a978ed51-e646-409b-82fa-f53e319f1bde" SourceId="1" SourceUrl="http://127.0.0.1:41916/servicing.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
   <xs:element name="SubscriptionHeartbeat">
     <xs:complexType>
       <xs:sequence>
@@ -22,7 +23,7 @@
   <xs:element name="GetOutstandingServiceRequestsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q2:ArrayOfServiceStateData" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q2:TupleOfArrayOfServiceStateDataRejectionDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -36,14 +37,14 @@
   <xs:element name="SetServiceCompleteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SetServiceCompleteResult" type="xs:boolean" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q3:TupleOfbooleanRejectionDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnServiceRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="serviceStateData" nillable="true" type="q3:ServiceStateData" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="serviceStateData" nillable="true" type="q4:ServiceStateData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

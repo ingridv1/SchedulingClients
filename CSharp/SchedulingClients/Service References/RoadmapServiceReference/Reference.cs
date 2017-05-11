@@ -124,6 +124,126 @@ namespace SchedulingClients.RoadmapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RejectionData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.SerializableAttribute()]
+    public partial class RejectionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.RoadmapServiceReference.RejectCode CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Exception ExceptionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.RoadmapServiceReference.RejectCode Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Exception Exception {
+            get {
+                return this.ExceptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
+                    this.ExceptionField = value;
+                    this.RaisePropertyChanged("Exception");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RejectCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    public enum RejectCode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICENOTCONFIGURED = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITJOBFAILED = 1001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEJOBFAILED = 1002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATELISTTASKFAILED = 1003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESERVICINGTASKFAILED = 1004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFAILED = 2001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFORAGENTFAILED = 2002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTJOBFAILED = 2003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETJOBSTATEFAILED = 3001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLMOVEDATAFAILED = 4001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLNODEDATAFAILED = 4002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETMAPPIGNKEYCARDSIGNATUREFAILED = 4003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETTRAJECTORYFAILED = 4004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDMOVEID = 4005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETSERVICECOMPLETEFAILED = 5002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLAGENTDATAFAILED = 6001,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
     [System.SerializableAttribute()]
     public partial class NodeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -368,28 +488,28 @@ namespace SchedulingClients.RoadmapServiceReference {
     public interface IRoadmapService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllMoveData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllMoveDataResponse")]
-        SchedulingClients.RoadmapServiceReference.MoveData[] GetAllMoveData();
+        System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllMoveData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllMoveData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllMoveDataResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.MoveData[]> GetAllMoveDataAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllMoveDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllNodeData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllNodeDataResponse")]
-        SchedulingClients.RoadmapServiceReference.NodeData[] GetAllNodeData();
+        System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllNodeData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllNodeData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllNodeDataResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.NodeData[]> GetAllNodeDataAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllNodeDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignature", ReplyAction="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignatureResponse")]
-        byte[] GetMappingKeyCardSignature();
+        System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData> GetMappingKeyCardSignature();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignature", ReplyAction="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignatureResponse")]
-        System.Threading.Tasks.Task<byte[]> GetMappingKeyCardSignatureAsync();
+        System.Threading.Tasks.Task<System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetMappingKeyCardSignatureAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetTrajectory", ReplyAction="http://tempuri.org/IRoadmapService/GetTrajectoryResponse")]
-        SchedulingClients.RoadmapServiceReference.WaypointData[] GetTrajectory(int moveId);
+        System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetTrajectory(int moveId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetTrajectory", ReplyAction="http://tempuri.org/IRoadmapService/GetTrajectoryResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.WaypointData[]> GetTrajectoryAsync(int moveId);
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetTrajectoryAsync(int moveId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -419,35 +539,35 @@ namespace SchedulingClients.RoadmapServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public SchedulingClients.RoadmapServiceReference.MoveData[] GetAllMoveData() {
+        public System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllMoveData() {
             return base.Channel.GetAllMoveData();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.MoveData[]> GetAllMoveDataAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllMoveDataAsync() {
             return base.Channel.GetAllMoveDataAsync();
         }
         
-        public SchedulingClients.RoadmapServiceReference.NodeData[] GetAllNodeData() {
+        public System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllNodeData() {
             return base.Channel.GetAllNodeData();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.NodeData[]> GetAllNodeDataAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllNodeDataAsync() {
             return base.Channel.GetAllNodeDataAsync();
         }
         
-        public byte[] GetMappingKeyCardSignature() {
+        public System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData> GetMappingKeyCardSignature() {
             return base.Channel.GetMappingKeyCardSignature();
         }
         
-        public System.Threading.Tasks.Task<byte[]> GetMappingKeyCardSignatureAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetMappingKeyCardSignatureAsync() {
             return base.Channel.GetMappingKeyCardSignatureAsync();
         }
         
-        public SchedulingClients.RoadmapServiceReference.WaypointData[] GetTrajectory(int moveId) {
+        public System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetTrajectory(int moveId) {
             return base.Channel.GetTrajectory(moveId);
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.RoadmapServiceReference.WaypointData[]> GetTrajectoryAsync(int moveId) {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetTrajectoryAsync(int moveId) {
             return base.Channel.GetTrajectoryAsync(moveId);
         }
     }

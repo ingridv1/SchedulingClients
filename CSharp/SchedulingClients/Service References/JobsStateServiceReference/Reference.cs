@@ -15,6 +15,126 @@ namespace SchedulingClients.JobsStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RejectionData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.SerializableAttribute()]
+    public partial class RejectionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobsStateServiceReference.RejectCode CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Exception ExceptionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobsStateServiceReference.RejectCode Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Exception Exception {
+            get {
+                return this.ExceptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
+                    this.ExceptionField = value;
+                    this.RaisePropertyChanged("Exception");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RejectCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    public enum RejectCode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICENOTCONFIGURED = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITJOBFAILED = 1001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEJOBFAILED = 1002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATELISTTASKFAILED = 1003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESERVICINGTASKFAILED = 1004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFAILED = 2001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFORAGENTFAILED = 2002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTJOBFAILED = 2003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETJOBSTATEFAILED = 3001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLMOVEDATAFAILED = 4001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLNODEDATAFAILED = 4002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETMAPPIGNKEYCARDSIGNATUREFAILED = 4003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETTRAJECTORYFAILED = 4004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDMOVEID = 4005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETSERVICECOMPLETEFAILED = 5002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLAGENTDATAFAILED = 6001,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="JobsStateData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
     [System.SerializableAttribute()]
     public partial class JobsStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -101,28 +221,28 @@ namespace SchedulingClients.JobsStateServiceReference {
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobs", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsResponse")]
-        void AbortAllJobs();
+        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData> AbortAllJobs();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobs", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsResponse")]
-        System.Threading.Tasks.Task AbortAllJobsAsync();
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData>> AbortAllJobsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse")]
-        void AbortAllJobsForAgent(int agentId);
+        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData> AbortAllJobsForAgent(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse")]
-        System.Threading.Tasks.Task AbortAllJobsForAgentAsync(int agentId);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData>> AbortAllJobsForAgentAsync(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortJob", ReplyAction="http://tempuri.org/IJobsStateService/AbortJobResponse")]
-        bool AbortJob(int jobId);
+        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData> AbortJob(int jobId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortJob", ReplyAction="http://tempuri.org/IJobsStateService/AbortJobResponse")]
-        System.Threading.Tasks.Task<bool> AbortJobAsync(int jobId);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData>> AbortJobAsync(int jobId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
-        int[] GetActiveJobIdsForAgent(int agentId);
+        System.Tuple<int[], SchedulingClients.JobsStateServiceReference.RejectionData> GetActiveJobIdsForAgent(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
-        System.Threading.Tasks.Task<int[]> GetActiveJobIdsForAgentAsync(int agentId);
+        System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.RejectionData>> GetActiveJobIdsForAgentAsync(int agentId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -168,35 +288,35 @@ namespace SchedulingClients.JobsStateServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public void AbortAllJobs() {
-            base.Channel.AbortAllJobs();
+        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData> AbortAllJobs() {
+            return base.Channel.AbortAllJobs();
         }
         
-        public System.Threading.Tasks.Task AbortAllJobsAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData>> AbortAllJobsAsync() {
             return base.Channel.AbortAllJobsAsync();
         }
         
-        public void AbortAllJobsForAgent(int agentId) {
-            base.Channel.AbortAllJobsForAgent(agentId);
+        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData> AbortAllJobsForAgent(int agentId) {
+            return base.Channel.AbortAllJobsForAgent(agentId);
         }
         
-        public System.Threading.Tasks.Task AbortAllJobsForAgentAsync(int agentId) {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData>> AbortAllJobsForAgentAsync(int agentId) {
             return base.Channel.AbortAllJobsForAgentAsync(agentId);
         }
         
-        public bool AbortJob(int jobId) {
+        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData> AbortJob(int jobId) {
             return base.Channel.AbortJob(jobId);
         }
         
-        public System.Threading.Tasks.Task<bool> AbortJobAsync(int jobId) {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.RejectionData>> AbortJobAsync(int jobId) {
             return base.Channel.AbortJobAsync(jobId);
         }
         
-        public int[] GetActiveJobIdsForAgent(int agentId) {
+        public System.Tuple<int[], SchedulingClients.JobsStateServiceReference.RejectionData> GetActiveJobIdsForAgent(int agentId) {
             return base.Channel.GetActiveJobIdsForAgent(agentId);
         }
         
-        public System.Threading.Tasks.Task<int[]> GetActiveJobIdsForAgentAsync(int agentId) {
+        public System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.RejectionData>> GetActiveJobIdsForAgentAsync(int agentId) {
             return base.Channel.GetActiveJobIdsForAgentAsync(agentId);
         }
     }

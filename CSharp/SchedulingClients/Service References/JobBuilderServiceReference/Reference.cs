@@ -15,6 +15,126 @@ namespace SchedulingClients.JobBuilderServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RejectionData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.SerializableAttribute()]
+    public partial class RejectionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobBuilderServiceReference.RejectCode CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Exception ExceptionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobBuilderServiceReference.RejectCode Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Exception Exception {
+            get {
+                return this.ExceptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
+                    this.ExceptionField = value;
+                    this.RaisePropertyChanged("Exception");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RejectCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    public enum RejectCode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICENOTCONFIGURED = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITJOBFAILED = 1001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEJOBFAILED = 1002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATELISTTASKFAILED = 1003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESERVICINGTASKFAILED = 1004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFAILED = 2001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFORAGENTFAILED = 2002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTJOBFAILED = 2003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETJOBSTATEFAILED = 3001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLMOVEDATAFAILED = 4001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLNODEDATAFAILED = 4002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETMAPPIGNKEYCARDSIGNATUREFAILED = 4003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETTRAJECTORYFAILED = 4004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDMOVEID = 4005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETSERVICECOMPLETEFAILED = 5002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLAGENTDATAFAILED = 6001,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="JobData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
     [System.SerializableAttribute()]
     public partial class JobData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -102,28 +222,28 @@ namespace SchedulingClients.JobBuilderServiceReference {
     public interface IJobBuilderService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CommitJob", ReplyAction="http://tempuri.org/IJobBuilderService/CommitJobResponse")]
-        System.Tuple<bool, string> CommitJob(int jobId, int agentId);
+        System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.RejectionData> CommitJob(int jobId, int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CommitJob", ReplyAction="http://tempuri.org/IJobBuilderService/CommitJobResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, string>> CommitJobAsync(int jobId, int agentId);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.RejectionData>> CommitJobAsync(int jobId, int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateJob", ReplyAction="http://tempuri.org/IJobBuilderService/CreateJobResponse")]
-        SchedulingClients.JobBuilderServiceReference.JobData CreateJob();
+        System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.RejectionData> CreateJob();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateJob", ReplyAction="http://tempuri.org/IJobBuilderService/CreateJobResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.JobData> CreateJobAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.RejectionData>> CreateJobAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateListTaskResponse")]
-        System.Tuple<int, string> CreateListTask(int parentTaskId, bool isOrdered);
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData> CreateListTask(int parentTaskId, bool isOrdered);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateListTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, string>> CreateListTaskAsync(int parentTaskId, bool isOrdered);
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData>> CreateListTaskAsync(int parentTaskId, bool isOrdered);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
-        System.Tuple<int, string> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, string>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -153,35 +273,35 @@ namespace SchedulingClients.JobBuilderServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public System.Tuple<bool, string> CommitJob(int jobId, int agentId) {
+        public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.RejectionData> CommitJob(int jobId, int agentId) {
             return base.Channel.CommitJob(jobId, agentId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, string>> CommitJobAsync(int jobId, int agentId) {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.RejectionData>> CommitJobAsync(int jobId, int agentId) {
             return base.Channel.CommitJobAsync(jobId, agentId);
         }
         
-        public SchedulingClients.JobBuilderServiceReference.JobData CreateJob() {
+        public System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.RejectionData> CreateJob() {
             return base.Channel.CreateJob();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.JobData> CreateJobAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.RejectionData>> CreateJobAsync() {
             return base.Channel.CreateJobAsync();
         }
         
-        public System.Tuple<int, string> CreateListTask(int parentTaskId, bool isOrdered) {
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData> CreateListTask(int parentTaskId, bool isOrdered) {
             return base.Channel.CreateListTask(parentTaskId, isOrdered);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, string>> CreateListTaskAsync(int parentTaskId, bool isOrdered) {
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData>> CreateListTaskAsync(int parentTaskId, bool isOrdered) {
             return base.Channel.CreateListTaskAsync(parentTaskId, isOrdered);
         }
         
-        public System.Tuple<int, string> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
             return base.Channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, string>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.RejectionData>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
             return base.Channel.CreateServicingTaskAsync(parentTaskId, nodeId, serviceType, expectedDuration);
         }
     }
