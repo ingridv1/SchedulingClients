@@ -12,6 +12,11 @@ namespace SchedulingClients
 
         private bool isDisposed = false;
 
+        /// <summary>
+        /// Creates a new servicing client
+        /// </summary>
+        /// <param name="netTcpUri">net.tcp address of the servicing service</param>
+        /// <param name="heartbeat">Heartbeat</param>
         public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
                     : base(netTcpUri)
         {
@@ -32,6 +37,12 @@ namespace SchedulingClients
         /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
+        /// <summary>
+        /// Sets a service to complete
+        /// </summary>
+        /// <param name="taskId">Id of the service task</param>
+        /// <param name="success">True if successfull</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TrySetServiceComplete(int taskId, out bool success)
         {
             Logger.Info("TrySetServiceComplete({0})", taskId);
@@ -116,7 +127,7 @@ namespace SchedulingClients
 
         private Tuple<bool, ServiceCallData> SetServiceComplete(int taskId)
         {
-            Logger.Info("SetServiceComplete({0})", taskId);
+            Logger.Debug("SetServiceComplete({0})", taskId);
 
             if (isDisposed)
             {

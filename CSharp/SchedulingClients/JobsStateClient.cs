@@ -16,6 +16,11 @@ namespace SchedulingClients
 
         private JobsStateData jobsStateData = null;
 
+        /// <summary>
+        /// Creates a JobsStateClient
+        /// </summary>
+        /// <param name="netTcpUri">net.tcp address of the job state service</param>
+        /// <param name="heartbeat">Heartbeat</param>
         public JobsStateClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
                     : base(netTcpUri)
         {
@@ -45,39 +50,57 @@ namespace SchedulingClients
             }
         }
 
-        public bool TryAbortAllJobs()
+        /// <summary>
+        /// Aborts all jobs
+        /// </summary>
+        /// <param name="success">True if abortion successfull</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryAbortAllJobs(out bool success)
         {
             Logger.Info("TryAbortAllJobs()");
 
             try
             {
-                AbortAllJobs();
-                return true;
+                var result = AbortAllJobs();
+                success = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
-                return false;
+                success = false;
+                return HandleClientException(ex);
             }
         }
 
-        public ServiceOperationResult TryAbortJob(int jobId, out bool couldAbort)
+        /// <summary>
+        /// Abort a specific job
+        /// </summary>
+        /// <param name="jobId">Id of job to abort</param>
+        /// <param name="success">True if successfull</param>
+        /// <returns></returns>
+        public ServiceOperationResult TryAbortJob(int jobId, out bool success)
         {
             Logger.Info("TryAbortJob({0})", jobId);
 
             try
             {
                 var result = AbortJob(jobId);
-                couldAbort = result.Item1;
+                success = result.Item1;
                 return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                couldAbort = false;
+                success = false;
                 return HandleClientException(ex);
             }
         }
 
+        /// <summary>
+        /// Gets all active jobs for a specifc agent
+        /// </summary>
+        /// <param name="agentId">Id of agent</param>
+        /// <param name="jobIds">Active job ids for this agent</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
         {
             Logger.Info("TryGetActiveJobIdsForAgent({0})", agentId);
@@ -163,7 +186,7 @@ namespace SchedulingClients
 
         private Tuple<bool, ServiceCallData> AbortAllJobs()
         {
-            Logger.Info("AbortAllJobs()");
+            Logger.Debug("AbortAllJobs()");
 
             if (isDisposed)
             {
@@ -185,7 +208,7 @@ namespace SchedulingClients
 
         private Tuple<bool, ServiceCallData> AbortJob(int jobId)
         {
-            Logger.Info("AbortJob({0})", jobId);
+            Logger.Debug("AbortJob({0})", jobId);
 
             if (isDisposed)
             {
@@ -211,7 +234,7 @@ namespace SchedulingClients
 
         private Tuple<int[], ServiceCallData> GetActiveJobIdsForAgent(int agentId)
         {
-            Logger.Info("GetActiveJobIdsForAgent({0})", agentId);
+            Logger.Debug("GetActiveJobIdsForAgent({0})", agentId);
 
             if (isDisposed)
             {

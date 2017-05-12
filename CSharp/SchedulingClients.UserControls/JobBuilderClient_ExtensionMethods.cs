@@ -25,7 +25,7 @@ namespace SchedulingClients.UserControls
                         if (pickNode != null)
                         {
                             int nodeTaskId;
-                            jobBuilder.TryCreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.Pick, TimeSpan.FromSeconds(30), out nodeTaskId);
+                            jobBuilder.TryCreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.Pick, out nodeTaskId, TimeSpan.FromSeconds(30));
                         }
                     }
 
@@ -34,7 +34,7 @@ namespace SchedulingClients.UserControls
                     if (dropNode != null)
                     {
                         int dropNodeId;
-                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.Drop, TimeSpan.FromSeconds(10), out dropNodeId);
+                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.Drop, out dropNodeId, TimeSpan.FromSeconds(10));
                     }
 
                     NodeData parkNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Park);
@@ -42,7 +42,7 @@ namespace SchedulingClients.UserControls
                     if (parkNode != null)
                     {
                         int parkNodeId;
-                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, TimeSpan.FromSeconds(10), out parkNodeId);
+                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, out parkNodeId, TimeSpan.FromSeconds(10));
                     }
                 }
 

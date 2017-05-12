@@ -9,11 +9,20 @@ namespace SchedulingClients
     {
         private bool isDisposed = false;
 
+        /// <summary>
+        /// Creates a new agent client
+        /// </summary>
+        /// <param name="netTcpUri">net .tcp address of the agent client service</param>
         public AgentClient(Uri netTcpUri)
             : base(netTcpUri)
         {
         }
 
+        /// <summary>
+        /// Gets all available data on registered agents
+        /// </summary>
+        /// <param name="agentDatas"></param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetAllAgentData(out IEnumerable<AgentData> agentDatas)
         {
             Logger.Info("TryGetAllAgentData()");
@@ -61,6 +70,7 @@ namespace SchedulingClients
                 IAgentService channel = channelFactory.CreateChannel();
                 result = channel.GetAllAgentData();
                 channelFactory.Close();
+                Logger.Trace("channelFactory closed");
             }
 
             return result;

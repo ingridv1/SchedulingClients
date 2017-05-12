@@ -17,6 +17,15 @@ namespace SchedulingClients
         {
         }
 
+        /// <summary>
+        /// Commits a job
+        /// </summary>
+        /// <param name="jobId">Id of the job to be committed</param>
+        /// <param name="success">True if succesfull</param>
+        /// <param name="agentId">
+        /// Agent to assign the job to. If default scheduler will handle assignment
+        /// </param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryCommit(int jobId, out bool success, int agentId = -1)
         {
             Logger.Info("TryCommit({0},{1})", jobId, agentId);
@@ -34,6 +43,11 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Creates a new job
+        /// </summary>
+        /// <param name="jobData">Job data of new job instance</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryCreateJob(out JobData jobData)
         {
             Logger.Info("TryCreateJob()");
@@ -51,6 +65,13 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Creates a new list task
+        /// </summary>
+        /// <param name="parentTaskId">Parent list task Id</param>
+        /// <param name="isOrdered">True if list task is to be ordered</param>
+        /// <param name="listTaskId">Id of new list task</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryCreateListTask(int parentTaskId, bool isOrdered, out int listTaskId)
         {
             Logger.Info("TryCreateListTask({0},{1})", parentTaskId, isOrdered);
@@ -68,19 +89,28 @@ namespace SchedulingClients
             }
         }
 
-        public ServiceOperationResult TryCreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration, out int nodeTaskId)
+        /// <summary>
+        /// Creates a new servicing task
+        /// </summary>
+        /// <param name="parentListTaskId">Id of parent list task</param>
+        /// <param name="nodeId">Id of node for service to be carried out</param>
+        /// <param name="serviceType">Service type to be carried out</param>
+        /// <param name="serviceTaskId">Id of newly created servicing task</param>
+        /// <param name="expectedDuration">Expected duration of the task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan))
         {
-            Logger.Info("TryCreateNodeTask({0},{1})", parentTaskId, nodeId);
+            Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
 
             try
             {
-                var result = CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
-                nodeTaskId = result.Item1;
+                var result = CreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration);
+                serviceTaskId = result.Item1;
                 return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                nodeTaskId = -1;
+                serviceTaskId = -1;
                 return HandleClientException(ex);
             }
         }
@@ -101,7 +131,7 @@ namespace SchedulingClients
 
         private Tuple<bool, ServiceCallData> Commit(int jobId, int agentId = -1)
         {
-            Logger.Info("Commit({0},{1})", jobId, agentId);
+            Logger.Debug("Commit({0},{1})", jobId, agentId);
 
             if (isDisposed)
             {
@@ -122,7 +152,7 @@ namespace SchedulingClients
 
         private Tuple<JobData, ServiceCallData> CreateJob()
         {
-            Logger.Info("CreateJob()");
+            Logger.Debug("CreateJob()");
 
             if (isDisposed)
             {
@@ -143,7 +173,7 @@ namespace SchedulingClients
 
         private Tuple<int, ServiceCallData> CreateListTask(int parentTaskId, bool isOrdered)
         {
-            Logger.Info("CreateListTask({0},{1})", parentTaskId, isOrdered);
+            Logger.Debug("CreateListTask({0},{1})", parentTaskId, isOrdered);
 
             if (isDisposed)
             {
@@ -164,7 +194,7 @@ namespace SchedulingClients
 
         private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
-            Logger.Info("CreateServicingTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
+            Logger.Debug("CreateServicingTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
 
             if (isDisposed)
             {

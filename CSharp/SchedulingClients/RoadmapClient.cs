@@ -20,6 +20,11 @@ namespace SchedulingClients
         {
         }
 
+        /// <summary>
+        /// Gets all move data
+        /// </summary>
+        /// <param name="moveData">All moves in the roadmap</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetAllMoveData(out IEnumerable<MoveData> moveData)
         {
             Logger.Info("TryGetAllMoveData()");
@@ -37,6 +42,11 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Gets all node data
+        /// </summary>
+        /// <param name="nodeData">All nodes in the roadmap</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetAllNodeData(out IEnumerable<NodeData> nodeData)
         {
             Logger.Info("TryGetAllNodeData()");
@@ -54,6 +64,11 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Gets the mapping keycard signature
+        /// </summary>
+        /// <param name="signature">Byte signature of the roadmap</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetMappingKeyCardSignature(out byte[] signature)
         {
             Logger.Info("TryGetMappingKeyCardSignature()");
@@ -71,6 +86,12 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Gets the trajectory of a specific move
+        /// </summary>
+        /// <param name="moveId">Id of the move</param>
+        /// <param name="waypointData">Waypoints for this move</param>
+        /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetTrajectory(int moveId, out IEnumerable<WaypointData> waypointData)
         {
             Logger.Info("TryGetTrajectory({0})", moveId);
@@ -102,7 +123,7 @@ namespace SchedulingClients
 
         private Tuple<MoveData[], ServiceCallData> GetAllMoveData()
         {
-            Logger.Info("GetAllMoveData()");
+            Logger.Debug("GetAllMoveData()");
 
             if (isDisposed)
             {
@@ -123,7 +144,7 @@ namespace SchedulingClients
 
         private Tuple<NodeData[], ServiceCallData> GetAllNodeData()
         {
-            Logger.Info("GetAllNodeData()");
+            Logger.Debug("GetAllNodeData()");
 
             if (isDisposed)
             {
@@ -144,7 +165,7 @@ namespace SchedulingClients
 
         private Tuple<byte[], ServiceCallData> GetMappingKeyCardSignature()
         {
-            Logger.Info("GetMappingKeyCardSignature()");
+            Logger.Debug("GetMappingKeyCardSignature()");
 
             if (isDisposed)
             {
@@ -165,7 +186,7 @@ namespace SchedulingClients
 
         private Tuple<WaypointData[], ServiceCallData> GetTrajectory(int moveId)
         {
-            Logger.Info("GetTrajectory({0})", moveId);
+            Logger.Debug("GetTrajectory({0})", moveId);
 
             if (isDisposed)
             {
