@@ -15,7 +15,7 @@ namespace SchedulingClients
 
         private readonly Guid key = Guid.NewGuid();
 
-        private NetTcpBinding Binding = new NetTcpBinding(SecurityMode.None)
+        private NetTcpBinding binding = new NetTcpBinding(SecurityMode.None)
         {
             PortSharingEnabled = true
         };
@@ -109,7 +109,18 @@ namespace SchedulingClients
         public Logger Logger
         {
             get { return logger; }
-            set { logger = value; }
+
+            set
+            {
+                if (value == null)
+                {
+                    value = LogManager.CreateNullLogger();
+                }
+
+                logger = value;
+                logger.Info("Binding:{0} PortSharing:{1}", binding.Name, binding.PortSharingEnabled);
+                logger.Info("Endpoint Address:{0}", endpointAddress);
+            }
         }
 
         protected bool Terminate { get { return terminate; } }
@@ -121,7 +132,7 @@ namespace SchedulingClients
 
         protected DuplexChannelFactory<T> CreateChannelFactory()
         {
-            return new DuplexChannelFactory<T>(context, Binding, EndpointAddress);
+            return new DuplexChannelFactory<T>(context, binding, EndpointAddress);
         }
 
         protected virtual void Dispose(bool isDisposing)

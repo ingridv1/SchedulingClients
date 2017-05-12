@@ -62,7 +62,17 @@ namespace SchedulingClients
         public Logger Logger
         {
             get { return logger; }
-            set { logger = value; }
+
+            set
+            {
+                if (value == null)
+                {
+                    value = LogManager.CreateNullLogger();
+                }
+                logger = value;
+                logger.Info("Binding:{0} PortSharing:{1}", binding.Name, binding.PortSharingEnabled);
+                logger.Info("Endpoint Address:{0}", endpointAddress);
+            }
         }
 
         public void Dispose()
