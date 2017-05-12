@@ -59,6 +59,7 @@
     <Compile Include="JobsStateCallback.cs" />
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="JobStateClient.cs" />
+    <Compile Include="ServiceOperationResult.cs" />
     <Compile Include="RoadmapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentServiceReference\Reference.cs">
@@ -130,7 +131,7 @@
     <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.AgentData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.RejectionData.datasource">
+    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
@@ -155,7 +156,7 @@
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.RejectionData.datasource">
+    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobsStateServiceReference\jobsState.xsd">
@@ -177,7 +178,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobsStateServiceReference\JobsStateService1.wsdl" />
-    <None Include="Service References\JobsStateServiceReference\SchedulingClients.JobsStateServiceReference.RejectionData.datasource">
+    <None Include="Service References\JobsStateServiceReference\SchedulingClients.JobsStateServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobStateServiceReference\jobState.xsd">
@@ -199,7 +200,7 @@
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobStateData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.RejectionData.datasource">
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RoadmapServiceReference\roadmap.xsd">
@@ -227,13 +228,13 @@
     <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.NodeData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.RejectionData.datasource">
+    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.WaypointData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.RejectionData.datasource">
+    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">

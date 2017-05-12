@@ -138,6 +138,13 @@ namespace SchedulingClients
             isDisposed = true;
         }
 
+        protected ServiceOperationResult HandleClientException(Exception ex)
+        {
+            LastCaughtException = ex;
+            Logger.Error(ex);
+            return ServiceOperationResult.FromClientException(ex);
+        }
+
         protected abstract void HeartbeatThread();
 
         protected void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")

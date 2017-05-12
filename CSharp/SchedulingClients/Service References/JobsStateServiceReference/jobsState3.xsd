@@ -3,21 +3,21 @@
   <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:complexType name="TupleOfbooleanRejectionDatayG81JSvh">
+  <xs:complexType name="TupleOfbooleanServiceCallDatayG81JSvh">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
           <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
-          <GenericParameter Name="RejectionData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="m_Item1" type="xs:boolean" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q1:RejectionData" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q1:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfbooleanRejectionDatayG81JSvh" nillable="true" type="tns:TupleOfbooleanRejectionDatayG81JSvh" />
+  <xs:element name="TupleOfbooleanServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfbooleanServiceCallDatayG81JSvh" />
   <xs:complexType name="Exception">
     <xs:sequence>
       <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
@@ -25,19 +25,19 @@
     <xs:attribute ref="ser:FactoryType" />
   </xs:complexType>
   <xs:element name="Exception" nillable="true" type="tns:Exception" />
-  <xs:complexType name="TupleOfArrayOfintRejectionDataRJ0VdR0l">
+  <xs:complexType name="TupleOfArrayOfintServiceCallDataRJ0VdR0l">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
           <GenericParameter Name="ArrayOfint" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-          <GenericParameter Name="RejectionData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
       <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="m_Item1" nillable="true" type="q2:ArrayOfint" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q3:RejectionData" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q3:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfArrayOfintRejectionDataRJ0VdR0l" nillable="true" type="tns:TupleOfArrayOfintRejectionDataRJ0VdR0l" />
+  <xs:element name="TupleOfArrayOfintServiceCallDataRJ0VdR0l" nillable="true" type="tns:TupleOfArrayOfintServiceCallDataRJ0VdR0l" />
 </xs:schema>

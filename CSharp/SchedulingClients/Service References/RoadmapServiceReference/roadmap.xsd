@@ -3,21 +3,21 @@
   <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
   <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
   <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="TupleOfArrayOfMoveDataRejectionDatazDQi_Syxv">
+  <xs:complexType name="TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
           <GenericParameter Name="ArrayOfMoveData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-          <GenericParameter Name="RejectionData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q1:ArrayOfMoveData" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q2:RejectionData" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q2:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfArrayOfMoveDataRejectionDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfMoveDataRejectionDatazDQi_Syxv" />
+  <xs:element name="TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv" />
   <xs:complexType name="Exception">
     <xs:sequence>
       <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
@@ -25,49 +25,49 @@
     <xs:attribute ref="ser:FactoryType" />
   </xs:complexType>
   <xs:element name="Exception" nillable="true" type="tns:Exception" />
-  <xs:complexType name="TupleOfArrayOfNodeDataRejectionDatazDQi_Syxv">
+  <xs:complexType name="TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
           <GenericParameter Name="ArrayOfNodeData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-          <GenericParameter Name="RejectionData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
       <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q3:ArrayOfNodeData" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:RejectionData" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfArrayOfNodeDataRejectionDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfNodeDataRejectionDatazDQi_Syxv" />
-  <xs:complexType name="TupleOfbase64BinaryRejectionDatayG81JSvh">
+  <xs:element name="TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv" />
+  <xs:complexType name="TupleOfbase64BinaryServiceCallDatayG81JSvh">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
           <GenericParameter Name="base64Binary" Namespace="http://www.w3.org/2001/XMLSchema" />
-          <GenericParameter Name="RejectionData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="m_Item1" nillable="true" type="xs:base64Binary" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q5:RejectionData" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q5:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfbase64BinaryRejectionDatayG81JSvh" nillable="true" type="tns:TupleOfbase64BinaryRejectionDatayG81JSvh" />
-  <xs:complexType name="TupleOfArrayOfWaypointDataRejectionDatazDQi_Syxv">
+  <xs:element name="TupleOfbase64BinaryServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfbase64BinaryServiceCallDatayG81JSvh" />
+  <xs:complexType name="TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
           <GenericParameter Name="ArrayOfWaypointData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-          <GenericParameter Name="RejectionData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
       <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q6:ArrayOfWaypointData" />
-      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q7:RejectionData" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q7:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfArrayOfWaypointDataRejectionDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfWaypointDataRejectionDatazDQi_Syxv" />
+  <xs:element name="TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" />
 </xs:schema>

@@ -14,7 +14,7 @@
   <xs:element name="CommitJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CommitJobResult" nillable="true" type="q1:TupleOfbooleanRejectionDatayG81JSvh" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CommitJobResult" nillable="true" type="q1:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -26,7 +26,7 @@
   <xs:element name="CreateJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateJobResult" nillable="true" type="q2:TupleOfJobDataRejectionDatazDQi_Syxv" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateJobResult" nillable="true" type="q2:TupleOfJobDataServiceCallDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -41,7 +41,7 @@
   <xs:element name="CreateListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateListTaskResult" nillable="true" type="q3:TupleOfintRejectionDatayG81JSvh" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateListTaskResult" nillable="true" type="q3:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -58,7 +58,7 @@
   <xs:element name="CreateServicingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q6:TupleOfintRejectionDatayG81JSvh" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -23,7 +23,7 @@
   <xs:element name="GetOutstandingServiceRequestsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q2:TupleOfArrayOfServiceStateDataRejectionDatazDQi_Syxv" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q2:TupleOfArrayOfServiceStateDataServiceCallDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -37,7 +37,7 @@
   <xs:element name="SetServiceCompleteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q3:TupleOfbooleanRejectionDatayG81JSvh" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q3:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

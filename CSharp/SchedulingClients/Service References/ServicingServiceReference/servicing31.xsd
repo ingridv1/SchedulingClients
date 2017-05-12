@@ -2,22 +2,18 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="RejectionData">
+  <xs:complexType name="ServiceCallData">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Code" type="tns:RejectCode" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Exception" nillable="true" type="q1:Exception" />
+      <xs:element minOccurs="0" name="ServiceCode" type="tns:ServiceCode" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ServiceException" nillable="true" type="q1:Exception" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="RejectionData" nillable="true" type="tns:RejectionData" />
-  <xs:simpleType name="RejectCode">
+  <xs:element name="ServiceCallData" nillable="true" type="tns:ServiceCallData" />
+  <xs:simpleType name="ServiceCode">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="SERVICENOTCONFIGURED">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
+      <xs:enumeration value="NOERROR" />
+      <xs:enumeration value="SERVICENOTCONFIGURED" />
+      <xs:enumeration value="CLIENTEXCEPTION" />
       <xs:enumeration value="COMMITJOBFAILED">
         <xs:annotation>
           <xs:appinfo>
@@ -95,7 +91,7 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="GETMAPPIGNKEYCARDSIGNATUREFAILED">
+      <xs:enumeration value="GETMAPPINGKEYCARDSIGNATUREFAILED">
         <xs:annotation>
           <xs:appinfo>
             <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4003</EnumerationValue>
@@ -139,5 +135,5 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="RejectCode" nillable="true" type="tns:RejectCode" />
+  <xs:element name="ServiceCode" nillable="true" type="tns:ServiceCode" />
 </xs:schema>

@@ -11,46 +11,43 @@ namespace SchedulingClients.UserControls
     {
         public static void MultiPickJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
         {
-            try
+            JobData jobData;
+
+            if (jobBuilder.TryCreateJob(out jobData) == true)
             {
-                JobData jobData = jobBuilder.CreateJob();
-
-                int unorderedListTaskId = jobBuilder.CreateListTask(jobData.OrderedListTaskId, false).Item1;
-
-                for (int i = 0; i < 3; i++)
+                int unorderedListTaskId;
+                if (jobBuilder.TryCreateListTask(jobData.OrderedListTaskId, false, out unorderedListTaskId) == true)
                 {
-                    NodeData pickNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Pick);
-
-                    if (pickNode != null)
+                    for (int i = 0; i < 3; i++)
                     {
-                        jobBuilder.CreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.Pick, TimeSpan.FromSeconds(30));
+                        NodeData pickNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Pick);
+
+                        if (pickNode != null)
+                        {
+                            int nodeTaskId;
+                            jobBuilder.TryCreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.Pick, TimeSpan.FromSeconds(30), out nodeTaskId);
+                        }
+                    }
+
+                    NodeData dropNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Drop);
+
+                    if (dropNode != null)
+                    {
+                        int dropNodeId;
+                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.Drop, TimeSpan.FromSeconds(10), out dropNodeId);
+                    }
+
+                    NodeData parkNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Park);
+
+                    if (parkNode != null)
+                    {
+                        int parkNodeId;
+                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, TimeSpan.FromSeconds(10), out parkNodeId);
                     }
                 }
 
-                NodeData dropNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Drop);
-                if (dropNode != null)
-                {
-                    jobBuilder.CreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.Drop, TimeSpan.FromSeconds(10));
-                }
-
-                NodeData parkNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Park);
-                if (parkNode != null)
-                {
-                    jobBuilder.CreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, TimeSpan.FromSeconds(10));
-                }
-
-                jobBuilder.Commit(jobData.JobId);
-            }
-            catch (Exception ex)
-            {
-                if (ex is EndpointNotFoundException)
-                {
-                    jobBuilder.Logger.Warn("EndpointNotFoundException - is the server running?");
-                }
-                else
-                {
-                    jobBuilder.Logger.Error(ex);
-                }
+                bool success;
+                jobBuilder.TryCommit(jobData.JobId, out success);
             }
         }
 

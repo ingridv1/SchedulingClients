@@ -45,74 +45,6 @@ namespace SchedulingClients
             }
         }
 
-        /// <summary>
-        /// Aborts all jobs
-        /// </summary>
-        public void AbortAllJobs()
-        {
-            Logger.Info("AbortAllJobs()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobsStateClient");
-            }
-
-            ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
-            IJobsStateService channel = channelFactory.CreateChannel();
-
-            channel.AbortAllJobs();
-            channelFactory.Close();
-        }
-
-        /// <summary>
-        /// Aborts a specific job
-        /// </summary>
-        /// <param name="jobId">Id of the the to be aborted</param>
-        /// <returns>True if succesfully aborted</returns>
-        public bool AbortJob(int jobId)
-        {
-            Logger.Info("AbortJob({0})", jobId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobsStateClient");
-            }
-
-            ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
-            IJobsStateService channel = channelFactory.CreateChannel();
-
-            bool result = channel.AbortJob(jobId);
-            channelFactory.Close();
-
-            return result;
-        }
-
-        /// <summary>
-        /// Gets active jobs for a specific agent
-        /// </summary>
-        /// <param name="agentId">Id of agent</param>
-        /// <returns>Enumerable of all job ids in the waiting or inProgress state</returns>
-        public IEnumerable<int> GetActiveJobIdsForAgent(int agentId)
-        {
-            Logger.Info("GetActiveJobIdsForAgent({0})", agentId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobsStateClient");
-            }
-
-            ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
-            IJobsStateService channel = channelFactory.CreateChannel();
-
-            IEnumerable<int> jobIds = channel.GetActiveJobIdsForAgent(agentId);
-            channelFactory.Close();
-            return jobIds;
-        }
-
-        /// <summary>
-        /// Tries to abort all jobs
-        /// </summary>
-        /// <returns>True if succesfull, otherwise false</returns>
         public bool TryAbortAllJobs()
         {
             Logger.Info("TryAbortAllJobs()");
@@ -129,49 +61,37 @@ namespace SchedulingClients
             }
         }
 
-        /// <summary>
-        /// Tries to abort a specific job
-        /// </summary>
-        /// <param name="jobId">Id of the job to abort</param>
-        /// <param name="couldAbort">True if job could be aborted</param>
-        /// <returns>True if succesfull, otherwise false</returns>
-        public bool TryAbortJob(int jobId, out bool couldAbort)
+        public ServiceOperationResult TryAbortJob(int jobId, out bool couldAbort)
         {
             Logger.Info("TryAbortJob({0})", jobId);
 
             try
             {
-                couldAbort = AbortJob(jobId);
-                return true;
+                var result = AbortJob(jobId);
+                couldAbort = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 couldAbort = false;
-                return false;
+                return HandleClientException(ex);
             }
         }
 
-        /// <summary>
-        /// Tries to get active job ids for agent
-        /// </summary>
-        /// <param name="agentId">Id of agent</param>
-        /// <param name="jobIds">Enumerable of all job ids in the waiting or inProgress state</param>
-        /// <returns>True if succesfull, otherwise false</returns>
-        public bool TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
+        public ServiceOperationResult TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds)
         {
             Logger.Info("TryGetActiveJobIdsForAgent({0})", agentId);
 
             try
             {
-                jobIds = GetActiveJobIdsForAgent(agentId);
-                return true;
+                var result = GetActiveJobIdsForAgent(agentId);
+                jobIds = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 jobIds = Enumerable.Empty<int>();
-                return false;
+                return HandleClientException(ex);
             }
         }
 
@@ -241,9 +161,73 @@ namespace SchedulingClients
             this.context = new InstanceContext(this.callback);
         }
 
+        private Tuple<bool, ServiceCallData> AbortAllJobs()
+        {
+            Logger.Info("AbortAllJobs()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobsStateClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobsStateService channel = channelFactory.CreateChannel();
+
+                result = channel.AbortAllJobs();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> AbortJob(int jobId)
+        {
+            Logger.Info("AbortJob({0})", jobId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobsStateClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobsStateService channel = channelFactory.CreateChannel();
+                result = channel.AbortJob(jobId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
         private void Callback_JobsStateChange(JobsStateData newJobsStateData)
         {
             JobsStateData = newJobsStateData;
+        }
+
+        private Tuple<int[], ServiceCallData> GetActiveJobIdsForAgent(int agentId)
+        {
+            Logger.Info("GetActiveJobIdsForAgent({0})", agentId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobsStateClient");
+            }
+
+            Tuple<int[], ServiceCallData> result;
+
+            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobsStateService channel = channelFactory.CreateChannel();
+                result = channel.GetActiveJobIdsForAgent(agentId);
+                channelFactory.Close();
+            }
+
+            return result;
         }
     }
 }

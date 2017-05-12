@@ -32,37 +32,20 @@ namespace SchedulingClients
         /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
-        public bool SetServiceComplete(int taskId)
-        {
-            Logger.Info("SetServiceComplete({0})", taskId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            ChannelFactory<IServicingService> channelFactory = CreateChannelFactory();
-            IServicingService channel = channelFactory.CreateChannel();
-
-            bool result = channel.SetServiceComplete(taskId);
-            channelFactory.Close();
-            return result;
-        }
-
-        public bool TrySetServiceComplete(int taskId, out bool success)
+        public ServiceOperationResult TrySetServiceComplete(int taskId, out bool success)
         {
             Logger.Info("TrySetServiceComplete({0})", taskId);
 
             try
             {
-                success = SetServiceComplete(taskId);
-                return true;
+                var result = SetServiceComplete(taskId);
+                success = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 success = false;
-                return false;
+                return HandleClientException(ex);
             }
         }
 
@@ -129,6 +112,27 @@ namespace SchedulingClients
         protected override void SetInstanceContext()
         {
             this.context = new InstanceContext(this.callback);
+        }
+
+        private Tuple<bool, ServiceCallData> SetServiceComplete(int taskId)
+        {
+            Logger.Info("SetServiceComplete({0})", taskId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IServicingService> channelFactory = CreateChannelFactory())
+            {
+                IServicingService channel = channelFactory.CreateChannel();
+                result = channel.SetServiceComplete(taskId);
+                channelFactory.Close();
+            }
+
+            return result;
         }
     }
 }

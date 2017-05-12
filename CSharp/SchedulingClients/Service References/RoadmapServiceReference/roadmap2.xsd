@@ -9,7 +9,7 @@
   <xs:element name="GetAllMoveDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetAllMoveDataResult" nillable="true" type="q1:TupleOfArrayOfMoveDataRejectionDatazDQi_Syxv" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetAllMoveDataResult" nillable="true" type="q1:TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -21,7 +21,7 @@
   <xs:element name="GetAllNodeDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetAllNodeDataResult" nillable="true" type="q2:TupleOfArrayOfNodeDataRejectionDatazDQi_Syxv" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetAllNodeDataResult" nillable="true" type="q2:TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -33,7 +33,7 @@
   <xs:element name="GetMappingKeyCardSignatureResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetMappingKeyCardSignatureResult" nillable="true" type="q3:TupleOfbase64BinaryRejectionDatayG81JSvh" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetMappingKeyCardSignatureResult" nillable="true" type="q3:TupleOfbase64BinaryServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -47,7 +47,7 @@
   <xs:element name="GetTrajectoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetTrajectoryResult" nillable="true" type="q4:TupleOfArrayOfWaypointDataRejectionDatazDQi_Syxv" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetTrajectoryResult" nillable="true" type="q4:TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

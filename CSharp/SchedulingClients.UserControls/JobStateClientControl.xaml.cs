@@ -32,7 +32,7 @@ namespace SchedulingClients.UserControls
             JobStateData jobStateData;
 
             JobStateClient jobStateClient = DataContext as JobStateClient;
-            if (jobStateClient.TryGetJobState((int)getJobStateId.Value, out jobStateData))
+            if (jobStateClient.TryGetJobState((int)getJobStateId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
             }

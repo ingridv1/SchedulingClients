@@ -124,18 +124,18 @@ namespace SchedulingClients.RoadmapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RejectionData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
-    public partial class RejectionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.RoadmapServiceReference.RejectCode CodeField;
+        private SchedulingClients.RoadmapServiceReference.ServiceCode ServiceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Exception ExceptionField;
+        private System.Exception ServiceExceptionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -148,27 +148,27 @@ namespace SchedulingClients.RoadmapServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.RoadmapServiceReference.RejectCode Code {
+        public SchedulingClients.RoadmapServiceReference.ServiceCode ServiceCode {
             get {
-                return this.CodeField;
+                return this.ServiceCodeField;
             }
             set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
+                if ((this.ServiceCodeField.Equals(value) != true)) {
+                    this.ServiceCodeField = value;
+                    this.RaisePropertyChanged("ServiceCode");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Exception Exception {
+        public System.Exception ServiceException {
             get {
-                return this.ExceptionField;
+                return this.ServiceExceptionField;
             }
             set {
-                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
-                    this.ExceptionField = value;
-                    this.RaisePropertyChanged("Exception");
+                if ((object.ReferenceEquals(this.ServiceExceptionField, value) != true)) {
+                    this.ServiceExceptionField = value;
+                    this.RaisePropertyChanged("ServiceException");
                 }
             }
         }
@@ -184,11 +184,17 @@ namespace SchedulingClients.RoadmapServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RejectCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
-    public enum RejectCode : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    public enum ServiceCode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NOERROR = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SERVICENOTCONFIGURED = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLIENTEXCEPTION = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
@@ -224,7 +230,7 @@ namespace SchedulingClients.RoadmapServiceReference {
         GETALLNODEDATAFAILED = 4002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETMAPPIGNKEYCARDSIGNATUREFAILED = 4003,
+        GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETTRAJECTORYFAILED = 4004,
@@ -488,28 +494,28 @@ namespace SchedulingClients.RoadmapServiceReference {
     public interface IRoadmapService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllMoveData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllMoveDataResponse")]
-        System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllMoveData();
+        System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetAllMoveData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllMoveData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllMoveDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllMoveDataAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetAllMoveDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllNodeData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllNodeDataResponse")]
-        System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllNodeData();
+        System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetAllNodeData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetAllNodeData", ReplyAction="http://tempuri.org/IRoadmapService/GetAllNodeDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllNodeDataAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetAllNodeDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignature", ReplyAction="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignatureResponse")]
-        System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData> GetMappingKeyCardSignature();
+        System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetMappingKeyCardSignature();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignature", ReplyAction="http://tempuri.org/IRoadmapService/GetMappingKeyCardSignatureResponse")]
-        System.Threading.Tasks.Task<System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetMappingKeyCardSignatureAsync();
+        System.Threading.Tasks.Task<System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetMappingKeyCardSignatureAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetTrajectory", ReplyAction="http://tempuri.org/IRoadmapService/GetTrajectoryResponse")]
-        System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetTrajectory(int moveId);
+        System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetTrajectory(int moveId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoadmapService/GetTrajectory", ReplyAction="http://tempuri.org/IRoadmapService/GetTrajectoryResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetTrajectoryAsync(int moveId);
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -539,35 +545,35 @@ namespace SchedulingClients.RoadmapServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllMoveData() {
+        public System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetAllMoveData() {
             return base.Channel.GetAllMoveData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllMoveDataAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.MoveData[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetAllMoveDataAsync() {
             return base.Channel.GetAllMoveDataAsync();
         }
         
-        public System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetAllNodeData() {
+        public System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetAllNodeData() {
             return base.Channel.GetAllNodeData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetAllNodeDataAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.NodeData[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetAllNodeDataAsync() {
             return base.Channel.GetAllNodeDataAsync();
         }
         
-        public System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData> GetMappingKeyCardSignature() {
+        public System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetMappingKeyCardSignature() {
             return base.Channel.GetMappingKeyCardSignature();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetMappingKeyCardSignatureAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<byte[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetMappingKeyCardSignatureAsync() {
             return base.Channel.GetMappingKeyCardSignatureAsync();
         }
         
-        public System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData> GetTrajectory(int moveId) {
+        public System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.ServiceCallData> GetTrajectory(int moveId) {
             return base.Channel.GetTrajectory(moveId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.RejectionData>> GetTrajectoryAsync(int moveId) {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.RoadmapServiceReference.WaypointData[], SchedulingClients.RoadmapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId) {
             return base.Channel.GetTrajectoryAsync(moveId);
         }
     }

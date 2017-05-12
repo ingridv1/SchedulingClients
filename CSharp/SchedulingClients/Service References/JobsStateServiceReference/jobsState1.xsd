@@ -23,7 +23,7 @@
   <xs:element name="AbortAllJobsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortAllJobsResult" nillable="true" type="q2:TupleOfbooleanRejectionDatayG81JSvh" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortAllJobsResult" nillable="true" type="q2:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -37,7 +37,7 @@
   <xs:element name="AbortAllJobsForAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortAllJobsForAgentResult" nillable="true" type="q3:TupleOfbooleanRejectionDatayG81JSvh" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortAllJobsForAgentResult" nillable="true" type="q3:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,7 +51,7 @@
   <xs:element name="AbortJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortJobResult" nillable="true" type="q4:TupleOfbooleanRejectionDatayG81JSvh" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortJobResult" nillable="true" type="q4:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,7 +65,7 @@
   <xs:element name="GetActiveJobIdsForAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q5:TupleOfArrayOfintRejectionDataRJ0VdR0l" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q5:TupleOfArrayOfintServiceCallDataRJ0VdR0l" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

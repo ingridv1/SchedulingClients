@@ -17,200 +17,71 @@ namespace SchedulingClients
         {
         }
 
-        /// <summary>
-        /// Commits a job , ready for assignment
-        /// </summary>
-        /// <param name="jobId">Id of the job to be comitted</param>
-        /// <param name="agentId">Id of the agent to be assigned, -1 if unspecified</param>
-        public bool Commit(int jobId, int agentId = -1)
-        {
-            Logger.Info("Commit({0},{1})", jobId, agentId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
-
-            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
-            IJobBuilderService channel = channelFactory.CreateChannel();
-
-            bool success = channel.CommitJob(jobId, agentId).Item1;
-            channelFactory.Close();
-            return success;
-        }
-
-        /// <summary>
-        /// Creates a new job
-        /// </summary>
-        /// <returns>JobData of created job</returns>
-        public JobData CreateJob()
-        {
-            Logger.Info("CreateJob()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
-
-            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
-            IJobBuilderService channel = channelFactory.CreateChannel();
-
-            JobData jobData = channel.CreateJob();
-            channelFactory.Close();
-            return jobData;
-        }
-
-        /// <summary>
-        /// Creates a new list task
-        /// </summary>
-        /// <param name="parentTaskId">Parent task of this list task</param>
-        /// <param name="isOrdered">true if job is ordered, false if is unordered</param>
-        /// <returns>Tuple of new list tast id and error string</returns>
-        public Tuple<int, string> CreateListTask(int parentTaskId, bool isOrdered)
-        {
-            Logger.Info("CreateListTask({0},{1})", parentTaskId, isOrdered);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
-
-            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
-            IJobBuilderService channel = channelFactory.CreateChannel();
-
-            Tuple<int, string> listTask = channel.CreateListTask(parentTaskId, isOrdered);
-            channelFactory.Close();
-            return listTask;
-        }
-
-        /// <summary>
-        /// Creates a new servicing task
-        /// </summary>
-        /// <param name="parentTaskId">Parent task of this service task</param>
-        /// <param name="nodeId">Id of the node to service at</param>
-        /// <param name="serviceType">ServiceType to perform</param>
-        /// <param name="expectedDuration">Estimated duration of the service task</param>
-        /// <returns>Tuple of new task id and error string</returns>
-        public Tuple<int, string> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
-        {
-            Logger.Info("CreateServicingTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
-
-            ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
-            IJobBuilderService channel = channelFactory.CreateChannel();
-
-            Tuple<int, string> nodeTask = channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
-            channelFactory.Close();
-            return nodeTask;
-        }
-
-        /// <summary>
-        /// Tries to commit a job, ready for assignment
-        /// </summary>
-        /// <param name="jobId">Id of the job to be comitted</param>
-        /// <param name="agentId">Id of the agent to be assigned, -1 if unspecified</param>
-        /// <returns>True if succesfull, otherwise false</returns>
-        public bool TryCommit(int jobId, int agentId = -1)
+        public ServiceOperationResult TryCommit(int jobId, out bool success, int agentId = -1)
         {
             Logger.Info("TryCommit({0},{1})", jobId, agentId);
 
             try
             {
-                ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory();
-                IJobBuilderService channel = channelFactory.CreateChannel();
-
-                Tuple<bool, string> result = channel.CommitJob(jobId, agentId);
-                channelFactory.Close();
-
-                if (result.Item1)
-                {
-                    return true;
-                }
-                else
-                {
-                    throw new Exception(result.Item2);
-                }
+                var result = Commit(jobId, agentId);
+                success = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
-                return false;
+                success = false;
+                return HandleClientException(ex);
             }
         }
 
-        /// <summary>
-        /// Tries to create a new job
-        /// </summary>
-        /// <param name="jobData">Job data of the created job</param>
-        /// <returns>True if operation succesfull, otherwise false</returns>
-        public bool TryCreateJob(out JobData jobData)
+        public ServiceOperationResult TryCreateJob(out JobData jobData)
         {
             Logger.Info("TryCreateJob()");
 
             try
             {
-                jobData = CreateJob();
-                return true;
+                var result = CreateJob();
+                jobData = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
                 jobData = new JobData() { JobId = -1 };
-                LastCaughtException = ex;
-                return false;
+                return HandleClientException(ex);
             }
         }
 
-        /// <summary>
-        /// Tries to create a new list task
-        /// </summary>
-        /// <param name="parentTaskId">Parent task of this list task</param>
-        /// <param name="isOrdered">True if job is ordered, false if is unordered</param>
-        /// <param name="listTaskId">TaskId of the new list task</param>
-        /// <returns>True if operation succesfull, otherwise false</returns>
-        public bool TryCreateListTask(int parentTaskId, bool isOrdered, out Tuple<int, string> result)
+        public ServiceOperationResult TryCreateListTask(int parentTaskId, bool isOrdered, out int listTaskId)
         {
             Logger.Info("TryCreateListTask({0},{1})", parentTaskId, isOrdered);
 
             try
             {
-                result = CreateListTask(parentTaskId, isOrdered);
-                return true;
+                var result = CreateListTask(parentTaskId, isOrdered);
+                listTaskId = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                result = new Tuple<int, string>(-1, ex.Message);
-                LastCaughtException = ex;
-                return false;
+                listTaskId = -1;
+                return HandleClientException(ex);
             }
         }
 
-        /// <summary>
-        /// Tries to create a new node task
-        /// </summary>
-        /// <param name="parentTaskId">Parent task of this service task</param>
-        /// <param name="nodeId">Id of the node to service at</param>
-        /// <param name="serviceType">ServiceType to perform</param>
-        /// <param name="expectedDuration">Estimated duration of the service task</param>
-        /// <param name="serviceTaskId">TaskId of the new service task</param>
-        /// <returns>True if operation succesfull, otherwise false</returns>
-        public bool TryCreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration, out Tuple<int, string> result)
+        public ServiceOperationResult TryCreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration, out int nodeTaskId)
         {
             Logger.Info("TryCreateNodeTask({0},{1})", parentTaskId, nodeId);
 
             try
             {
-                result = CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
-                return true;
+                var result = CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
+                nodeTaskId = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                result = new Tuple<int, string>(-1, ex.Message);
-                LastCaughtException = ex;
-                return false;
+                nodeTaskId = -1;
+                return HandleClientException(ex);
             }
         }
 
@@ -226,6 +97,90 @@ namespace SchedulingClients
             isDisposed = true;
 
             base.Dispose(isDisposing);
+        }
+
+        private Tuple<bool, ServiceCallData> Commit(int jobId, int agentId = -1)
+        {
+            Logger.Info("Commit({0},{1})", jobId, agentId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CommitJob(jobId, agentId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<JobData, ServiceCallData> CreateJob()
+        {
+            Logger.Info("CreateJob()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<JobData, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateJob();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<int, ServiceCallData> CreateListTask(int parentTaskId, bool isOrdered)
+        {
+            Logger.Info("CreateListTask({0},{1})", parentTaskId, isOrdered);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateListTask(parentTaskId, isOrdered);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
+        {
+            Logger.Info("CreateServicingTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
+                channelFactory.Close();
+            }
+
+            return result;
         }
     }
 }

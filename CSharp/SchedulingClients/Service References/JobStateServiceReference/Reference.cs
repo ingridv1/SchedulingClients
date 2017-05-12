@@ -108,18 +108,18 @@ namespace SchedulingClients.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RejectionData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
-    public partial class RejectionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.JobStateServiceReference.RejectCode CodeField;
+        private SchedulingClients.JobStateServiceReference.ServiceCode ServiceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Exception ExceptionField;
+        private System.Exception ServiceExceptionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -132,27 +132,27 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.JobStateServiceReference.RejectCode Code {
+        public SchedulingClients.JobStateServiceReference.ServiceCode ServiceCode {
             get {
-                return this.CodeField;
+                return this.ServiceCodeField;
             }
             set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
+                if ((this.ServiceCodeField.Equals(value) != true)) {
+                    this.ServiceCodeField = value;
+                    this.RaisePropertyChanged("ServiceCode");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Exception Exception {
+        public System.Exception ServiceException {
             get {
-                return this.ExceptionField;
+                return this.ServiceExceptionField;
             }
             set {
-                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
-                    this.ExceptionField = value;
-                    this.RaisePropertyChanged("Exception");
+                if ((object.ReferenceEquals(this.ServiceExceptionField, value) != true)) {
+                    this.ServiceExceptionField = value;
+                    this.RaisePropertyChanged("ServiceException");
                 }
             }
         }
@@ -304,11 +304,17 @@ namespace SchedulingClients.JobStateServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RejectCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
-    public enum RejectCode : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    public enum ServiceCode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NOERROR = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SERVICENOTCONFIGURED = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLIENTEXCEPTION = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
@@ -344,7 +350,7 @@ namespace SchedulingClients.JobStateServiceReference {
         GETALLNODEDATAFAILED = 4002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETMAPPIGNKEYCARDSIGNATUREFAILED = 4003,
+        GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETTRAJECTORYFAILED = 4004,
@@ -367,10 +373,10 @@ namespace SchedulingClients.JobStateServiceReference {
     public interface IJobStateService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobState", ReplyAction="http://tempuri.org/IJobStateService/GetJobStateResponse")]
-        System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.RejectionData> GetJobState(int jobId);
+        System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobState(int jobId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobState", ReplyAction="http://tempuri.org/IJobStateService/GetJobStateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.RejectionData>> GetJobStateAsync(int jobId);
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobStateAsync(int jobId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -400,11 +406,11 @@ namespace SchedulingClients.JobStateServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.RejectionData> GetJobState(int jobId) {
+        public System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobState(int jobId) {
             return base.Channel.GetJobState(jobId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.RejectionData>> GetJobStateAsync(int jobId) {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobStateAsync(int jobId) {
             return base.Channel.GetJobStateAsync(jobId);
         }
     }
