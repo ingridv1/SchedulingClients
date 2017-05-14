@@ -22,6 +22,8 @@
     <MetadataSource Address="http://127.0.0.1:41916/jobsState.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="jobsState4.xsd" MetadataType="Schema" ID="94694316-f688-4ac8-bdf9-398ec46354f3" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd5" />
+    <MetadataFile FileName="jobsState41.xsd" MetadataType="Schema" ID="c44a5e80-f051-44a9-b7b4-1c7e1457d40c" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd4" />
     <MetadataFile FileName="jobsState.xsd" MetadataType="Schema" ID="28f7340b-e870-4cc9-933e-f73cf3b03f4f" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" />
     <MetadataFile FileName="jobsState1.xsd" MetadataType="Schema" ID="6d51c9b7-add9-46c7-a052-07a31f582a19" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd0" />
     <MetadataFile FileName="jobsState2.xsd" MetadataType="Schema" ID="abf6f2ca-315a-4361-a279-7ef02b8ebf23" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" />

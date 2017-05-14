@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobsState.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
   <xs:element name="SubscriptionHeartbeat">
     <xs:complexType>
       <xs:sequence>
@@ -22,7 +22,9 @@
   </xs:element>
   <xs:element name="AbortAllJobsResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortAllJobsResult" nillable="true" type="q2:TupleOfbooleanServiceCallDatayG81JSvh" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AbortAllJobsForAgent">
@@ -34,7 +36,9 @@
   </xs:element>
   <xs:element name="AbortAllJobsForAgentResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortAllJobsForAgentResult" nillable="true" type="q3:TupleOfbooleanServiceCallDatayG81JSvh" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AbortJob">
@@ -47,7 +51,7 @@
   <xs:element name="AbortJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AbortJobResult" type="xs:boolean" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AbortJobResult" nillable="true" type="q4:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -61,14 +65,14 @@
   <xs:element name="GetActiveJobIdsForAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q2:ArrayOfint" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q5:TupleOfArrayOfintServiceCallDataRJ0VdR0l" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnJobsStateChange">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="jobsStateData" nillable="true" type="q3:JobsStateData" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="jobsStateData" nillable="true" type="q6:JobsStateData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

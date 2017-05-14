@@ -25,8 +25,10 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IRoadmapService_GetAllMoveData_InputMessage">

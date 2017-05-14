@@ -12,6 +12,11 @@ namespace SchedulingClients
 
         private bool isDisposed = false;
 
+        /// <summary>
+        /// Creates a new servicing client
+        /// </summary>
+        /// <param name="netTcpUri">net.tcp address of the servicing service</param>
+        /// <param name="heartbeat">Heartbeat</param>
         public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
                     : base(netTcpUri)
         {
@@ -32,37 +37,26 @@ namespace SchedulingClients
         /// </summary>
         public TimeSpan Heartbeat { get { return heartbeat; } }
 
-        public bool SetServiceComplete(int taskId)
-        {
-            Logger.Info("SetServiceComplete({0})", taskId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            ChannelFactory<IServicingService> channelFactory = CreateChannelFactory();
-            IServicingService channel = channelFactory.CreateChannel();
-
-            bool result = channel.SetServiceComplete(taskId);
-            channelFactory.Close();
-            return result;
-        }
-
-        public bool TrySetServiceComplete(int taskId, out bool success)
+        /// <summary>
+        /// Sets a service to complete
+        /// </summary>
+        /// <param name="taskId">Id of the service task</param>
+        /// <param name="success">True if successfull</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TrySetServiceComplete(int taskId, out bool success)
         {
             Logger.Info("TrySetServiceComplete({0})", taskId);
 
             try
             {
-                success = SetServiceComplete(taskId);
-                return true;
+                var result = SetServiceComplete(taskId);
+                success = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 success = false;
-                return false;
+                return HandleClientException(ex);
             }
         }
 
@@ -129,6 +123,27 @@ namespace SchedulingClients
         protected override void SetInstanceContext()
         {
             this.context = new InstanceContext(this.callback);
+        }
+
+        private Tuple<bool, ServiceCallData> SetServiceComplete(int taskId)
+        {
+            Logger.Debug("SetServiceComplete({0})", taskId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IServicingService> channelFactory = CreateChannelFactory())
+            {
+                IServicingService channel = channelFactory.CreateChannel();
+                result = channel.SetServiceComplete(taskId);
+                channelFactory.Close();
+            }
+
+            return result;
         }
     }
 }

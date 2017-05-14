@@ -20,148 +20,92 @@ namespace SchedulingClients
         {
         }
 
-        public IEnumerable<MoveData> GetAllMoveData()
-        {
-            Logger.Info("GetAllMoveData()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory();
-            IRoadmapService channel = channelFactory.CreateChannel();
-
-            MoveData[] moveData = channel.GetAllMoveData();
-            channelFactory.Close();
-            return moveData;
-        }
-
         /// <summary>
-        /// Gets node data for every node in the roadmap
+        /// Gets all move data
         /// </summary>
-        /// <returns>IEnumerable of NodeData</returns>
-        public IEnumerable<NodeData> GetAllNodeData()
-        {
-            Logger.Info("GetAllNodeData()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory();
-            IRoadmapService channel = channelFactory.CreateChannel();
-
-            NodeData[] nodeData = channel.GetAllNodeData();
-            channelFactory.Close();
-            return nodeData;
-        }
-
-        public byte[] GetMappingKeyCardSignature()
-        {
-            Logger.Info("GetMappingKeyCardSignature()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory();
-            IRoadmapService channel = channelFactory.CreateChannel();
-
-            byte[] signature = channel.GetMappingKeyCardSignature();
-            channelFactory.Close();
-            return signature;
-        }
-
-        public IEnumerable<WaypointData> GetTrajectory(int moveId)
-        {
-            Logger.Info("GetTrajectory({0})", moveId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory();
-            IRoadmapService channel = channelFactory.CreateChannel();
-
-            WaypointData[] waypointData = channel.GetTrajectory(moveId);
-            channelFactory.Close();
-            return waypointData;
-        }
-
-        public bool TryGetAllMoveData(out IEnumerable<MoveData> moveData)
+        /// <param name="moveData">All moves in the roadmap</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetAllMoveData(out IEnumerable<MoveData> moveData)
         {
             Logger.Info("TryGetAllMoveData()");
 
             try
             {
-                moveData = GetAllMoveData();
-                return true;
+                var result = GetAllMoveData();
+                moveData = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 moveData = Enumerable.Empty<MoveData>();
-                return false;
+                return HandleClientException(ex);
             }
         }
 
         /// <summary>
-        /// Tries to get node data for every node in the roadmap
+        /// Gets all node data
         /// </summary>
-        /// <param name="nodeData">IEnumerable of NodeData</param>
-        /// <returns>True if operation succesfull, otherwise false</returns>
-        public bool TryGetAllNodeData(out IEnumerable<NodeData> nodeData)
+        /// <param name="nodeData">All nodes in the roadmap</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetAllNodeData(out IEnumerable<NodeData> nodeData)
         {
             Logger.Info("TryGetAllNodeData()");
 
             try
             {
-                nodeData = GetAllNodeData();
-                return true;
+                var result = GetAllNodeData();
+                nodeData = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 nodeData = Enumerable.Empty<NodeData>();
-                return false;
+                return HandleClientException(ex);
             }
         }
 
-        public bool TryGetMappingKeyCardSignature(out byte[] signature)
+        /// <summary>
+        /// Gets the mapping keycard signature
+        /// </summary>
+        /// <param name="signature">Byte signature of the roadmap</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetMappingKeyCardSignature(out byte[] signature)
         {
             Logger.Info("TryGetMappingKeyCardSignature()");
 
             try
             {
-                signature = GetMappingKeyCardSignature();
-                return true;
+                var result = GetMappingKeyCardSignature();
+                signature = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
                 signature = null;
-                return false;
+                return HandleClientException(ex);
             }
         }
 
-        public bool TryGetTrajectory(int moveId, out IEnumerable<WaypointData> waypointData)
+        /// <summary>
+        /// Gets the trajectory of a specific move
+        /// </summary>
+        /// <param name="moveId">Id of the move</param>
+        /// <param name="waypointData">Waypoints for this move</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetTrajectory(int moveId, out IEnumerable<WaypointData> waypointData)
         {
             Logger.Info("TryGetTrajectory({0})", moveId);
 
             try
             {
-                waypointData = GetTrajectory(moveId);
-                return true;
+                var result = GetTrajectory(moveId);
+                waypointData = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                LastCaughtException = ex;
-                waypointData = Enumerable.Empty<WaypointData>();
-                return false;
+                waypointData = null;
+                return HandleClientException(ex);
             }
         }
 
@@ -175,6 +119,90 @@ namespace SchedulingClients
             isDisposed = true;
 
             base.Dispose(isDisposing);
+        }
+
+        private Tuple<MoveData[], ServiceCallData> GetAllMoveData()
+        {
+            Logger.Debug("GetAllMoveData()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<MoveData[], ServiceCallData> result;
+
+            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            {
+                IRoadmapService channel = channelFactory.CreateChannel();
+                result = channel.GetAllMoveData();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<NodeData[], ServiceCallData> GetAllNodeData()
+        {
+            Logger.Debug("GetAllNodeData()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<NodeData[], ServiceCallData> result;
+
+            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            {
+                IRoadmapService channel = channelFactory.CreateChannel();
+                result = channel.GetAllNodeData();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<byte[], ServiceCallData> GetMappingKeyCardSignature()
+        {
+            Logger.Debug("GetMappingKeyCardSignature()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<byte[], ServiceCallData> result;
+
+            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            {
+                IRoadmapService channel = channelFactory.CreateChannel();
+                result = channel.GetMappingKeyCardSignature();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<WaypointData[], ServiceCallData> GetTrajectory(int moveId)
+        {
+            Logger.Debug("GetTrajectory({0})", moveId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<WaypointData[], ServiceCallData> result;
+
+            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            {
+                IRoadmapService channel = channelFactory.CreateChannel();
+                result = channel.GetTrajectory(moveId);
+                channelFactory.Close();
+            }
+
+            return result;
         }
     }
 }

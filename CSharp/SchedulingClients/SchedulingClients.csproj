@@ -59,6 +59,7 @@
     <Compile Include="JobsStateCallback.cs" />
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="JobStateClient.cs" />
+    <Compile Include="ServiceOperationResult.cs" />
     <Compile Include="RoadmapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentServiceReference\Reference.cs">
@@ -120,8 +121,17 @@
     <None Include="Service References\AgentServiceReference\agent5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\AgentServiceReference\agent6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentServiceReference\agent61.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AgentServiceReference\AgentService.wsdl" />
     <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.AgentData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
@@ -139,8 +149,14 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobBuilderServiceReference\JobBuilderService1.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobsStateServiceReference\jobsState.xsd">
@@ -155,7 +171,16 @@
     <None Include="Service References\JobsStateServiceReference\jobsState3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobsStateServiceReference\jobsState4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobsStateServiceReference\jobsState41.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobsStateServiceReference\JobsStateService1.wsdl" />
+    <None Include="Service References\JobsStateServiceReference\SchedulingClients.JobsStateServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\JobStateServiceReference\jobState.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -165,8 +190,17 @@
     <None Include="Service References\JobStateServiceReference\jobState2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobStateServiceReference\jobState3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState31.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobStateData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RoadmapServiceReference\roadmap.xsd">
@@ -181,6 +215,12 @@
     <None Include="Service References\RoadmapServiceReference\roadmap3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\RoadmapServiceReference\roadmap4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoadmapServiceReference\roadmap41.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\RoadmapServiceReference\RoadmapService1.wsdl" />
     <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.MoveData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -188,7 +228,13 @@
     <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.NodeData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.WaypointData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">
@@ -201,6 +247,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServicingServiceReference\servicing2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing31.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />

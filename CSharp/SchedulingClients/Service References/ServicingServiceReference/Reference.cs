@@ -90,6 +90,132 @@ namespace SchedulingClients.ServicingServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.SerializableAttribute()]
+    public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.ServicingServiceReference.ServiceCode ServiceCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Exception ServiceExceptionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.ServicingServiceReference.ServiceCode ServiceCode {
+            get {
+                return this.ServiceCodeField;
+            }
+            set {
+                if ((this.ServiceCodeField.Equals(value) != true)) {
+                    this.ServiceCodeField = value;
+                    this.RaisePropertyChanged("ServiceCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Exception ServiceException {
+            get {
+                return this.ServiceExceptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServiceExceptionField, value) != true)) {
+                    this.ServiceExceptionField = value;
+                    this.RaisePropertyChanged("ServiceException");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    public enum ServiceCode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NOERROR = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICENOTCONFIGURED = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLIENTEXCEPTION = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITJOBFAILED = 1001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEJOBFAILED = 1002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATELISTTASKFAILED = 1003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESERVICINGTASKFAILED = 1004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFAILED = 2001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTALLJOBSFORAGENTFAILED = 2002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTJOBFAILED = 2003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETJOBSTATEFAILED = 3001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLMOVEDATAFAILED = 4001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLNODEDATAFAILED = 4002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETTRAJECTORYFAILED = 4004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDMOVEID = 4005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETSERVICECOMPLETEFAILED = 5002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLAGENTDATAFAILED = 6001,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicingServiceReference.IServicingService", CallbackContract=typeof(SchedulingClients.ServicingServiceReference.IServicingServiceCallback))]
     public interface IServicingService {
@@ -101,16 +227,16 @@ namespace SchedulingClients.ServicingServiceReference {
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/GetOutstandingServiceRequests", ReplyAction="http://tempuri.org/IServicingService/GetOutstandingServiceRequestsResponse")]
-        SchedulingClients.ServicingServiceReference.ServiceStateData[] GetOutstandingServiceRequests();
+        System.Tuple<SchedulingClients.ServicingServiceReference.ServiceStateData[], SchedulingClients.ServicingServiceReference.ServiceCallData> GetOutstandingServiceRequests();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/GetOutstandingServiceRequests", ReplyAction="http://tempuri.org/IServicingService/GetOutstandingServiceRequestsResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.ServicingServiceReference.ServiceStateData[]> GetOutstandingServiceRequestsAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.ServicingServiceReference.ServiceStateData[], SchedulingClients.ServicingServiceReference.ServiceCallData>> GetOutstandingServiceRequestsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/SetServiceComplete", ReplyAction="http://tempuri.org/IServicingService/SetServiceCompleteResponse")]
-        bool SetServiceComplete(int taskId);
+        System.Tuple<bool, SchedulingClients.ServicingServiceReference.ServiceCallData> SetServiceComplete(int taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/SetServiceComplete", ReplyAction="http://tempuri.org/IServicingService/SetServiceCompleteResponse")]
-        System.Threading.Tasks.Task<bool> SetServiceCompleteAsync(int taskId);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.ServicingServiceReference.ServiceCallData>> SetServiceCompleteAsync(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -156,19 +282,19 @@ namespace SchedulingClients.ServicingServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public SchedulingClients.ServicingServiceReference.ServiceStateData[] GetOutstandingServiceRequests() {
+        public System.Tuple<SchedulingClients.ServicingServiceReference.ServiceStateData[], SchedulingClients.ServicingServiceReference.ServiceCallData> GetOutstandingServiceRequests() {
             return base.Channel.GetOutstandingServiceRequests();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.ServicingServiceReference.ServiceStateData[]> GetOutstandingServiceRequestsAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.ServicingServiceReference.ServiceStateData[], SchedulingClients.ServicingServiceReference.ServiceCallData>> GetOutstandingServiceRequestsAsync() {
             return base.Channel.GetOutstandingServiceRequestsAsync();
         }
         
-        public bool SetServiceComplete(int taskId) {
+        public System.Tuple<bool, SchedulingClients.ServicingServiceReference.ServiceCallData> SetServiceComplete(int taskId) {
             return base.Channel.SetServiceComplete(taskId);
         }
         
-        public System.Threading.Tasks.Task<bool> SetServiceCompleteAsync(int taskId) {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.ServicingServiceReference.ServiceCallData>> SetServiceCompleteAsync(int taskId) {
             return base.Channel.SetServiceCompleteAsync(taskId);
         }
     }

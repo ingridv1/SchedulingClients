@@ -16,7 +16,8 @@ namespace SchedulingClients.UserControls
         private void abortAllJobsButton_Click(object sender, RoutedEventArgs e)
         {
             JobsStateClient jobsStateClient = DataContext as JobsStateClient;
-            jobsStateClient.TryAbortAllJobs();
+            bool success;
+            jobsStateClient.TryAbortAllJobs(out success);
         }
 
         private void abortJobButton_Click(object sender, RoutedEventArgs e)

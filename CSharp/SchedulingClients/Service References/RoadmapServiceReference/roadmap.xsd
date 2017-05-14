@@ -1,52 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SchedulingServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SchedulingServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps" />
-  <xs:complexType name="ArrayOfMoveData">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfMoveData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveData" nillable="true" type="tns:MoveData" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q1:ArrayOfMoveData" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q2:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfMoveData" nillable="true" type="tns:ArrayOfMoveData" />
-  <xs:complexType name="MoveData">
+  <xs:element name="TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfMoveDataServiceCallDatazDQi_Syxv" />
+  <xs:complexType name="Exception">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DestinationId" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Length" type="xs:double" />
-      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType" />
+  </xs:complexType>
+  <xs:element name="Exception" nillable="true" type="tns:Exception" />
+  <xs:complexType name="TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfNodeData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q3:ArrayOfNodeData" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="MoveData" nillable="true" type="tns:MoveData" />
-  <xs:complexType name="ArrayOfNodeData">
+  <xs:element name="TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfNodeDataServiceCallDatazDQi_Syxv" />
+  <xs:complexType name="TupleOfbase64BinaryServiceCallDatayG81JSvh">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="base64Binary" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeData" nillable="true" type="tns:NodeData" />
+      <xs:element name="m_Item1" nillable="true" type="xs:base64Binary" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q5:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfNodeData" nillable="true" type="tns:ArrayOfNodeData" />
-  <xs:complexType name="NodeData">
+  <xs:element name="TupleOfbase64BinaryServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfbase64BinaryServiceCallDatayG81JSvh" />
+  <xs:complexType name="TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfWaypointData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="HeadingRad" type="xs:double" />
-      <xs:element minOccurs="0" name="MapItemId" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps" minOccurs="0" name="Services" nillable="true" type="q1:ArrayOfServiceType" />
-      <xs:element minOccurs="0" name="X" type="xs:double" />
-      <xs:element minOccurs="0" name="Y" type="xs:double" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q6:ArrayOfWaypointData" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q7:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="NodeData" nillable="true" type="tns:NodeData" />
-  <xs:complexType name="ArrayOfWaypointData">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WaypointData" nillable="true" type="tns:WaypointData" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWaypointData" nillable="true" type="tns:ArrayOfWaypointData" />
-  <xs:complexType name="WaypointData">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="HeadingRad" type="xs:double" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="X" type="xs:double" />
-      <xs:element minOccurs="0" name="Y" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WaypointData" nillable="true" type="tns:WaypointData" />
+  <xs:element name="TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" />
 </xs:schema>

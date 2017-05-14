@@ -29,6 +29,8 @@
     <MetadataFile FileName="agent4.xsd" MetadataType="Schema" ID="19b5d091-6e6c-47f0-9862-fbba632f04cd" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd1" />
     <MetadataFile FileName="agent5.xsd" MetadataType="Schema" ID="e0539bb5-7993-4bb0-a657-13cfa6591c6f" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd0" />
     <MetadataFile FileName="AgentService.wsdl" MetadataType="Wsdl" ID="76dad62f-09d7-464a-8d01-4165437801a5" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc" />
+    <MetadataFile FileName="agent6.xsd" MetadataType="Schema" ID="8ab459b6-181c-49f3-a71c-40f05f1acc3a" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd7" />
+    <MetadataFile FileName="agent61.xsd" MetadataType="Schema" ID="74048417-9679-4043-b017-873edac597e0" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd6" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

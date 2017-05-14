@@ -1,48 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SchedulingServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SchedulingServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="JobStateData">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TupleOfJobStateDataServiceCallDatazDQi_Syxv">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="JobStateData" Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
-      <xs:element minOccurs="0" name="JobId" type="xs:int" />
-      <xs:element minOccurs="0" name="JobStatus" type="tns:JobStatus" />
-      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfTaskStateData" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SchedulingServices" name="m_Item1" nillable="true" type="q1:JobStateData" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q2:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="JobStateData" nillable="true" type="tns:JobStateData" />
-  <xs:simpleType name="JobStatus">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Assembly" />
-      <xs:enumeration value="Assigning" />
-      <xs:enumeration value="Waiting" />
-      <xs:enumeration value="InProgress" />
-      <xs:enumeration value="Complete" />
-      <xs:enumeration value="Aborted" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="JobStatus" nillable="true" type="tns:JobStatus" />
-  <xs:complexType name="ArrayOfTaskStateData">
+  <xs:element name="TupleOfJobStateDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfJobStateDataServiceCallDatazDQi_Syxv" />
+  <xs:complexType name="Exception">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskStateData" nillable="true" type="tns:TaskStateData" />
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
     </xs:sequence>
+    <xs:attribute ref="ser:FactoryType" />
   </xs:complexType>
-  <xs:element name="ArrayOfTaskStateData" nillable="true" type="tns:ArrayOfTaskStateData" />
-  <xs:complexType name="TaskStateData">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="MetaData" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
-      <xs:element minOccurs="0" name="TaskStatus" type="tns:TaskStatus" />
-      <xs:element minOccurs="0" name="TaskType" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TaskStateData" nillable="true" type="tns:TaskStateData" />
-  <xs:simpleType name="TaskStatus">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Unstarted" />
-      <xs:enumeration value="InProgress" />
-      <xs:enumeration value="Completed" />
-      <xs:enumeration value="Aborted" />
-      <xs:enumeration value="Assembly" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />
+  <xs:element name="Exception" nillable="true" type="tns:Exception" />
 </xs:schema>

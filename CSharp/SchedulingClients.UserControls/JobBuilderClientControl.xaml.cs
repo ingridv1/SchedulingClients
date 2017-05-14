@@ -35,7 +35,7 @@ namespace SchedulingClients.UserControls
             if (roadmapClient != null)
             {
                 IEnumerable<NodeData> nodeData;
-                if (roadmapClient.TryGetAllNodeData(out nodeData))
+                if (roadmapClient.TryGetAllNodeData(out nodeData) == true)
                 {
                     client.MultiPickJobTest(nodeData);
                 }
