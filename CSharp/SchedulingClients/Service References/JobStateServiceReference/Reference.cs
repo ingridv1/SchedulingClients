@@ -368,9 +368,76 @@ namespace SchedulingClients.JobStateServiceReference {
         GETALLAGENTDATAFAILED = 6001,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TaskProgressData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.SerializableAttribute()]
+    public partial class TaskProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TaskIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobStateServiceReference.TaskStatus TaskStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TaskId {
+            get {
+                return this.TaskIdField;
+            }
+            set {
+                if ((this.TaskIdField.Equals(value) != true)) {
+                    this.TaskIdField = value;
+                    this.RaisePropertyChanged("TaskId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobStateServiceReference.TaskStatus TaskStatus {
+            get {
+                return this.TaskStatusField;
+            }
+            set {
+                if ((this.TaskStatusField.Equals(value) != true)) {
+                    this.TaskStatusField = value;
+                    this.RaisePropertyChanged("TaskStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JobStateServiceReference.IJobStateService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JobStateServiceReference.IJobStateService", CallbackContract=typeof(SchedulingClients.JobStateServiceReference.IJobStateServiceCallback))]
     public interface IJobStateService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
+        void SubscriptionHeartbeat(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
+        System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobState", ReplyAction="http://tempuri.org/IJobStateService/GetJobStateResponse")]
         System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobState(int jobId);
@@ -380,30 +447,46 @@ namespace SchedulingClients.JobStateServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IJobStateServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/OnTaskProgressUpdate", ReplyAction="http://tempuri.org/IJobStateService/OnTaskProgressUpdateResponse")]
+        void OnTaskProgressUpdate(SchedulingClients.JobStateServiceReference.TaskProgressData taskProgressData);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IJobStateServiceChannel : SchedulingClients.JobStateServiceReference.IJobStateService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class JobStateServiceClient : System.ServiceModel.ClientBase<SchedulingClients.JobStateServiceReference.IJobStateService>, SchedulingClients.JobStateServiceReference.IJobStateService {
+    public partial class JobStateServiceClient : System.ServiceModel.DuplexClientBase<SchedulingClients.JobStateServiceReference.IJobStateService>, SchedulingClients.JobStateServiceReference.IJobStateService {
         
-        public JobStateServiceClient() {
+        public JobStateServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public JobStateServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public JobStateServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public JobStateServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public JobStateServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public JobStateServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public JobStateServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public JobStateServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public JobStateServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void SubscriptionHeartbeat(System.Guid guid) {
+            base.Channel.SubscriptionHeartbeat(guid);
+        }
+        
+        public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
+            return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
         public System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobState(int jobId) {

@@ -56,9 +56,10 @@
     <Compile Include="JobBuilderClient.cs" />
     <Compile Include="EndpointSettings.cs" />
     <Compile Include="EndpointSettings_ExtensionMethods.cs" />
-    <Compile Include="JobsStateCallback.cs" />
+    <Compile Include="JobsStateServiceCallback.cs" />
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="JobStateClient.cs" />
+    <Compile Include="JobStateServiceCallback.cs" />
     <Compile Include="ServiceOperationResult.cs" />
     <Compile Include="RoadmapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,7 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ServicingCallback.cs" />
+    <Compile Include="ServicingServiceCallback.cs" />
     <Compile Include="ServicingClient.cs" />
   </ItemGroup>
   <ItemGroup>

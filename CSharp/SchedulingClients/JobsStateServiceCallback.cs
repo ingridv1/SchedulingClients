@@ -3,9 +3,9 @@ using System;
 
 namespace SchedulingClients
 {
-    public class JobsStateCallback : IJobsStateServiceCallback
+    public class JobsStateServiceCallback : IJobsStateServiceCallback
     {
-        public JobsStateCallback()
+        public JobsStateServiceCallback()
         {
         }
 
