@@ -22,6 +22,12 @@ namespace SchedulingClients
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
+        public event Action<TaskProgressData> TaskStateUpdated
+        {
+            add { callback.TaskProgressUpdate += value; }
+            remove { callback.TaskProgressUpdate -= value; }
+        }
+
         /// <summary>
         /// Heartbeat time
         /// </summary>
