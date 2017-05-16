@@ -69,14 +69,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnJobsStateChange">
+  <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="jobsStateData" nillable="true" type="q6:JobsStateData" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="callbackObject" nillable="true" type="q6:JobsStateData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnJobsStateChangeResponse">
+  <xs:element name="OnCallbackResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

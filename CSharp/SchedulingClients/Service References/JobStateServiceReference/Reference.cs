@@ -449,8 +449,8 @@ namespace SchedulingClients.JobStateServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IJobStateServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/OnTaskProgressUpdate", ReplyAction="http://tempuri.org/IJobStateService/OnTaskProgressUpdateResponse")]
-        void OnTaskProgressUpdate(SchedulingClients.JobStateServiceReference.TaskProgressData taskProgressData);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/OnCallback", ReplyAction="http://tempuri.org/IJobStateService/OnCallbackResponse")]
+        void OnCallback(SchedulingClients.JobStateServiceReference.TaskProgressData callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

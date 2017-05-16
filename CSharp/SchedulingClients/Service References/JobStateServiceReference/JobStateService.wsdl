@@ -42,11 +42,11 @@
   <wsdl:message name="IJobStateService_GetJobState_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetJobStateResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobStateService_OnTaskProgressUpdate_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OnTaskProgressUpdate" />
+  <wsdl:message name="IJobStateService_OnCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallback" />
   </wsdl:message>
-  <wsdl:message name="IJobStateService_OnTaskProgressUpdate_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OnTaskProgressUpdateResponse" />
+  <wsdl:message name="IJobStateService_OnCallback_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IJobStateService">
     <wsdl:operation name="SubscriptionHeartbeat">
@@ -57,9 +57,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/GetJobState" message="tns:IJobStateService_GetJobState_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobStateService/GetJobStateResponse" message="tns:IJobStateService_GetJobState_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OnTaskProgressUpdate">
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobStateService/OnTaskProgressUpdate" message="tns:IJobStateService_OnTaskProgressUpdate_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/OnTaskProgressUpdateResponse" message="tns:IJobStateService_OnTaskProgressUpdate_InputCallbackMessage" />
+    <wsdl:operation name="OnCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobStateService/OnCallback" message="tns:IJobStateService_OnCallback_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/OnCallbackResponse" message="tns:IJobStateService_OnCallback_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJobStateService" type="tns:IJobStateService">
@@ -83,8 +83,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OnTaskProgressUpdate">
-      <soap12:operation soapAction="http://tempuri.org/IJobStateService/OnTaskProgressUpdate" style="document" />
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/OnCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -114,8 +114,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OnTaskProgressUpdate">
-      <soap12:operation soapAction="http://tempuri.org/IJobStateService/OnTaskProgressUpdate" style="document" />
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/OnCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

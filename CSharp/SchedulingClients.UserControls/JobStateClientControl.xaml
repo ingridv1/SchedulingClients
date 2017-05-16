@@ -13,6 +13,9 @@
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
+            <local:LabelContentControl Header="IsConnected">
+                <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+            </local:LabelContentControl>
             <local:LabelContentControl Header="Get Job State">
                 <StackPanel Orientation="Horizontal">
                     <toolkit:IntegerUpDown Minimum="0" x:Name="getJobStateId" DefaultValue="0" Value="0" />

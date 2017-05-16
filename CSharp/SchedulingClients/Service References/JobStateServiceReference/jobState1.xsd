@@ -29,14 +29,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnTaskProgressUpdate">
+  <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="taskProgressData" nillable="true" type="q3:TaskProgressData" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="callbackObject" nillable="true" type="q3:TaskProgressData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnTaskProgressUpdateResponse">
+  <xs:element name="OnCallbackResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

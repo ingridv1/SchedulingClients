@@ -11,7 +11,7 @@ namespace SchedulingClients
 
         public event Action<ServiceStateData> ServiceRequest;
 
-        public void OnServiceRequest(ServiceStateData serviceStateData)
+        public void OnCallback(ServiceStateData serviceStateData)
         {
             Action<ServiceStateData> handlers = ServiceRequest;
 

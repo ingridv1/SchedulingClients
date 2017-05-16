@@ -15,7 +15,7 @@ namespace SchedulingClients
 
         public event Action<TaskProgressData> TaskProgressUpdate;
 
-        public void OnTaskProgressUpdate(TaskProgressData taskProgressData)
+        public void OnCallback(TaskProgressData taskProgressData)
         {
             Action<TaskProgressData> handlers = TaskProgressUpdate;
 

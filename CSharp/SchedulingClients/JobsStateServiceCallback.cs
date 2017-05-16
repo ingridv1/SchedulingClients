@@ -11,7 +11,7 @@ namespace SchedulingClients
 
         public event Action<JobsStateData> JobsStateChange;
 
-        public void OnJobsStateChange(JobsStateData jobsStateData)
+        public void OnCallback(JobsStateData callbackObject)
         {
             Action<JobsStateData> handlers = JobsStateChange;
 
@@ -19,7 +19,7 @@ namespace SchedulingClients
             {
                 foreach (Action<JobsStateData> handler in handlers.GetInvocationList())
                 {
-                    handler.BeginInvoke(jobsStateData, null, null);
+                    handler.BeginInvoke(callbackObject, null, null);
                 }
             }
         }

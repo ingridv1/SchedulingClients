@@ -242,8 +242,8 @@ namespace SchedulingClients.ServicingServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IServicingServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/OnServiceRequest", ReplyAction="http://tempuri.org/IServicingService/OnServiceRequestResponse")]
-        void OnServiceRequest(SchedulingClients.ServicingServiceReference.ServiceStateData serviceStateData);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/OnCallback", ReplyAction="http://tempuri.org/IServicingService/OnCallbackResponse")]
+        void OnCallback(SchedulingClients.ServicingServiceReference.ServiceStateData callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
