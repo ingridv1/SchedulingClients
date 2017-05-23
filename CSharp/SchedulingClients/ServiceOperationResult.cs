@@ -67,66 +67,78 @@ namespace SchedulingClients
 
         public static ServiceOperationResult FromServiceCallData(rSR.ServiceCallData serviceCallData)
         {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
             return new ServiceOperationResult
                 (
                     (uint)serviceCallData.ServiceCode,
                     serviceCallData.ServiceCode.ToString(),
-                    serviceCallData.ServiceException,
+                    serviceException,
                     null
                 );
         }
 
         public static ServiceOperationResult FromServiceCallData(sSR.ServiceCallData serviceCallData)
         {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
             return new ServiceOperationResult
                 (
                     (uint)serviceCallData.ServiceCode,
                     serviceCallData.ServiceCode.ToString(),
-                    serviceCallData.ServiceException,
+                    serviceException,
                     null
                 );
         }
 
         public static ServiceOperationResult FromServiceCallData(jsSSR.ServiceCallData serviceCallData)
         {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
             return new ServiceOperationResult
                 (
                     (uint)serviceCallData.ServiceCode,
                     serviceCallData.ServiceCode.ToString(),
-                    serviceCallData.ServiceException,
+                    serviceException,
                     null
                 );
         }
 
         public static ServiceOperationResult FromServiceCallData(jSSR.ServiceCallData serviceCallData)
         {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
             return new ServiceOperationResult
                 (
                     (uint)serviceCallData.ServiceCode,
                     serviceCallData.ServiceCode.ToString(),
-                    serviceCallData.ServiceException,
+                    serviceException,
                     null
                 );
         }
 
         public static ServiceOperationResult FromServiceCallData(aSR.ServiceCallData serviceCallData)
         {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
             return new ServiceOperationResult
                 (
                     (uint)serviceCallData.ServiceCode,
                     serviceCallData.ServiceCode.ToString(),
-                    serviceCallData.ServiceException,
+                    serviceException,
                     null
                 );
         }
 
         public static ServiceOperationResult FromServiceCallData(jBSR.ServiceCallData serviceCallData)
         {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
             return new ServiceOperationResult
                 (
                     (uint)serviceCallData.ServiceCode,
                     serviceCallData.ServiceCode.ToString(),
-                    serviceCallData.ServiceException,
+                    serviceException,
                     null
                 );
         }
