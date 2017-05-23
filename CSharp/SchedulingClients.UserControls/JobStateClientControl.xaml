@@ -6,13 +6,18 @@
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d"
+             DataContextChanged="UserControl_DataContextChanged"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
+            <local:LabelContentControl Header="IsConnected">
+                <CheckBox IsEnabled="false" IsChecked="{Binding Path=IsConnected, Mode=OneWay}" />
+            </local:LabelContentControl>
             <local:LabelContentControl Header="Get Job State">
                 <StackPanel Orientation="Horizontal">
                     <toolkit:IntegerUpDown Minimum="0" x:Name="getJobStateId" DefaultValue="0" Value="0" />
@@ -21,5 +26,12 @@
             </local:LabelContentControl>
         </StackPanel>
         <local:JobStateDataControl x:Name="jobStateDataControl" Grid.Row="1" />
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Mode=OneWay}" x:Name="recentTaskProgressUpdatesDataGrid" AutoGenerateColumns="False"
+                      ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TaskId" Binding="{Binding TaskId}"  Width="1*" />
+                <DataGridTextColumn Header="TaskStatus" Binding="{Binding TaskStatus}" Width="2*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

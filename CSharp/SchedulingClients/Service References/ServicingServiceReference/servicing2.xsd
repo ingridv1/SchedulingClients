@@ -41,14 +41,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnServiceRequest">
+  <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="serviceStateData" nillable="true" type="q4:ServiceStateData" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="callbackObject" nillable="true" type="q4:ServiceStateData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnServiceRequestResponse">
+  <xs:element name="OnCallbackResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

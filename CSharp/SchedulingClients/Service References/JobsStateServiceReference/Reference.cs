@@ -254,8 +254,8 @@ namespace SchedulingClients.JobsStateServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IJobsStateServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/OnJobsStateChange", ReplyAction="http://tempuri.org/IJobsStateService/OnJobsStateChangeResponse")]
-        void OnJobsStateChange(SchedulingClients.JobsStateServiceReference.JobsStateData jobsStateData);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/OnCallback", ReplyAction="http://tempuri.org/IJobsStateService/OnCallbackResponse")]
+        void OnCallback(SchedulingClients.JobsStateServiceReference.JobsStateData callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

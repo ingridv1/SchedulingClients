@@ -45,4 +45,11 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />
+  <xs:complexType name="TaskProgressData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskStatus" type="tns:TaskStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskProgressData" nillable="true" type="tns:TaskProgressData" />
 </xs:schema>

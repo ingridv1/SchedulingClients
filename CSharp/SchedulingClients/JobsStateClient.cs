@@ -8,7 +8,7 @@ namespace SchedulingClients
 {
     public class JobsStateClient : AbstractCallbackClient<IJobsStateService>
     {
-        private JobsStateCallback callback = new JobsStateCallback();
+        private JobsStateServiceCallback callback = new JobsStateServiceCallback();
 
         private TimeSpan heartbeat;
 

@@ -4,18 +4,34 @@ using System.ServiceModel;
 
 namespace SchedulingClients
 {
-    public class JobStateClient : AbstractClient<IJobStateService>
+    public class JobStateClient : AbstractCallbackClient<IJobStateService>
     {
+        public JobStateServiceCallback callback = new JobStateServiceCallback();
+
+        private TimeSpan heartbeat;
+
         private bool isDisposed = false;
 
         /// <summary>
         /// Creates a JobStateClient
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the job state service</param>
-        public JobStateClient(Uri netTcpUri)
+        public JobStateClient(Uri netTcpUri, TimeSpan hearbeat = default(TimeSpan))
             : base(netTcpUri)
         {
+            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
+
+        public event Action<TaskProgressData> TaskStateUpdated
+        {
+            add { callback.TaskProgressUpdate += value; }
+            remove { callback.TaskProgressUpdate -= value; }
+        }
+
+        /// <summary>
+        /// Heartbeat time
+        /// </summary>
+        public TimeSpan Heartbeat { get { return heartbeat; } }
 
         /// <summary>
         /// Gets the state of a specific job
@@ -50,6 +66,57 @@ namespace SchedulingClients
             isDisposed = true;
 
             base.Dispose(isDisposing);
+        }
+
+        protected override void HeartbeatThread()
+        {
+            Logger.Debug("HeartbeatThread()");
+
+            ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory();
+            IJobStateService servicingService = channelFactory.CreateChannel();
+
+            bool? exceptionCaught;
+
+            while (!Terminate)
+            {
+                exceptionCaught = null;
+
+                try
+                {
+                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
+                    servicingService.SubscriptionHeartbeat(Key);
+                    IsConnected = true;
+                    exceptionCaught = false;
+                }
+                catch (EndpointNotFoundException)
+                {
+                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
+                    exceptionCaught = true;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex);
+                    exceptionCaught = true;
+                }
+
+                if (exceptionCaught == true)
+                {
+                    channelFactory.Abort();
+                    IsConnected = false;
+
+                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
+                    servicingService = channelFactory.CreateChannel();
+                }
+
+                heartbeatReset.WaitOne(Heartbeat);
+            }
+
+            Logger.Debug("HeartbeatThread exit");
+        }
+
+        protected override void SetInstanceContext()
+        {
+            this.context = new InstanceContext(this.callback);
         }
 
         private Tuple<JobStateData, ServiceCallData> GetJobState(int jobId)
