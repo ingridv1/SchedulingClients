@@ -100,10 +100,16 @@ namespace SchedulingClients.AgentServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SchedulingClients.AgentServiceReference.ServiceCode ServiceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Exception ServiceExceptionField;
+        private string SourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StackTraceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -112,6 +118,19 @@ namespace SchedulingClients.AgentServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
             }
         }
         
@@ -129,14 +148,27 @@ namespace SchedulingClients.AgentServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Exception ServiceException {
+        public string Source {
             get {
-                return this.ServiceExceptionField;
+                return this.SourceField;
             }
             set {
-                if ((object.ReferenceEquals(this.ServiceExceptionField, value) != true)) {
-                    this.ServiceExceptionField = value;
-                    this.RaisePropertyChanged("ServiceException");
+                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
+                    this.SourceField = value;
+                    this.RaisePropertyChanged("Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StackTrace {
+            get {
+                return this.StackTraceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StackTraceField, value) != true)) {
+                    this.StackTraceField = value;
+                    this.RaisePropertyChanged("StackTrace");
                 }
             }
         }
