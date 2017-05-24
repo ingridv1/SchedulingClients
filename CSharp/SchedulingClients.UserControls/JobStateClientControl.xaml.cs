@@ -50,6 +50,17 @@ namespace SchedulingClients.UserControls
             }
         }
 
+        private void getJobStateFromTaskIdButton_Click(object sender, RoutedEventArgs e)
+        {
+            JobStateData jobStateData;
+
+            JobStateClient jobStateClient = DataContext as JobStateClient;
+            if (jobStateClient.TryGetParentJobStateFromTaskId((int)getJobStateFromTaskId.Value, out jobStateData) == true)
+            {
+                jobStateDataControl.DataContext = jobStateData;
+            }
+        }
+
         private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
         {
             if (e.NewValue is JobStateClient)

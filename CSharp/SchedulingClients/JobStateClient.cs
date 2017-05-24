@@ -56,6 +56,29 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Gets the state of a specific job form the id one of its child tasks
+        /// </summary>
+        /// <param name="taskId">Task id</param>
+        /// <param name="jobState">State job is in</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetParentJobStateFromTaskId(int jobId, out JobStateData jobState)
+        {
+            Logger.Info("TryGetJobState()");
+
+            try
+            {
+                var result = GetParentJobStateFromTaskId(jobId);
+                jobState = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                jobState = null;
+                return HandleClientException(ex);
+            }
+        }
+
         protected override void Dispose(bool isDisposing)
         {
             if (isDisposed)
@@ -133,6 +156,27 @@ namespace SchedulingClients
             {
                 IJobStateService channel = channelFactory.CreateChannel();
                 result = channel.GetJobState(jobId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<JobStateData, ServiceCallData> GetParentJobStateFromTaskId(int taskId)
+        {
+            Logger.Debug("GetParentJobStateFromTaskId()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobStateClient");
+            }
+
+            Tuple<JobStateData, ServiceCallData> result;
+
+            using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobStateService channel = channelFactory.CreateChannel();
+                result = channel.GetParentJobStateFromTaskId(taskId);
                 channelFactory.Close();
             }
 
