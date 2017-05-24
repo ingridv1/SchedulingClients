@@ -51,6 +51,7 @@
     <Compile Include="AgentClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="FleetManagerClient.cs" />
     <Compile Include="ICallbackClient.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="JobBuilderClient.cs" />
@@ -60,6 +61,11 @@
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="JobStateClient.cs" />
     <Compile Include="JobStateServiceCallback.cs" />
+    <Compile Include="Service References\FleetManagerServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceOperationResult.cs" />
     <Compile Include="RoadmapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +139,37 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\FleetManagerService.wsdl" />
+    <None Include="Service References\FleetManagerServiceReference\SchedulingClients.FleetManagerServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
@@ -260,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
+    <WCFMetadataStorage Include="Service References\FleetManagerServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
@@ -334,6 +372,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobStateServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetManagerServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetManagerServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetManagerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

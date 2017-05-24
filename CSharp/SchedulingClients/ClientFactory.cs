@@ -13,6 +13,11 @@ namespace SchedulingClients
             return new AgentClient(portSettings.TcpAgentService());
         }
 
+        public static FleetManagerClient GetFleetManagerClient(EndpointSettings portSettings)
+        {
+            return new FleetManagerClient(portSettings.TcpFleetManagerService());
+        }
+
         public static JobBuilderClient GetJobBuilderClient(EndpointSettings portSettings)
         {
             return new JobBuilderClient(portSettings.TcpJobBuilderService());

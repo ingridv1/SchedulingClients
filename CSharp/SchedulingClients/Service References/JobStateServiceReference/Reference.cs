@@ -476,6 +476,12 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobState", ReplyAction="http://tempuri.org/IJobStateService/GetJobStateResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobStateAsync(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskIdResponse")]
+        System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobStateFromTaskId(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobStateFromTaskIdResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetParentJobStateFromTaskIdAsync(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -527,6 +533,14 @@ namespace SchedulingClients.JobStateServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobStateAsync(int jobId) {
             return base.Channel.GetJobStateAsync(jobId);
+        }
+        
+        public System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobStateFromTaskId(int taskId) {
+            return base.Channel.GetParentJobStateFromTaskId(taskId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobStateData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetParentJobStateFromTaskIdAsync(int taskId) {
+            return base.Channel.GetParentJobStateFromTaskIdAsync(taskId);
         }
     }
 }
