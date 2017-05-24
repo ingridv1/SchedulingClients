@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Windows" />
+  <xs:complexType name="ArrayOfWaypointData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WaypointData" nillable="true" type="tns:WaypointData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWaypointData" nillable="true" type="tns:ArrayOfWaypointData" />
+  <xs:complexType name="WaypointData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Curvature" type="xs:double" />
+      <xs:element minOccurs="0" name="EnhancedData" type="xs:short" />
+      <xs:element minOccurs="0" name="Heading" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEndOfMove" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="Point" type="q1:Point" />
+      <xs:element minOccurs="0" name="SpeedLimit" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaypointData" nillable="true" type="tns:WaypointData" />
+</xs:schema>

@@ -85,6 +85,9 @@
       <DependentUpon>AutoServicerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters.cs" />
+    <Compile Include="FleetManagerClientControl.xaml.cs">
+      <DependentUpon>FleetManagerClientControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="JobBuilderClientControl.xaml.cs">
       <DependentUpon>JobBuilderClientControl.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AutoServicerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FleetManagerClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

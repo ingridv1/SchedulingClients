@@ -5,6 +5,7 @@ using jSSR = SchedulingClients.JobStateServiceReference;
 using jsSSR = SchedulingClients.JobsStateServiceReference;
 using rSR = SchedulingClients.RoadmapServiceReference;
 using sSR = SchedulingClients.ServicingServiceReference;
+using fmSR = SchedulingClients.FleetManagerServiceReference;
 
 namespace SchedulingClients
 {
@@ -66,6 +67,19 @@ namespace SchedulingClients
         }
 
         public static ServiceOperationResult FromServiceCallData(rSR.ServiceCallData serviceCallData)
+        {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
+            return new ServiceOperationResult
+                (
+                    (uint)serviceCallData.ServiceCode,
+                    serviceCallData.ServiceCode.ToString(),
+                    serviceException,
+                    null
+                );
+        }
+
+        public static ServiceOperationResult FromServiceCallData(fmSR.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 
