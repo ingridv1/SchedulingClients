@@ -23,6 +23,9 @@ namespace SchedulingClients.AgentServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.AgentServiceReference.AgentLifetimeState AgentLifetimeStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AliasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -38,6 +41,19 @@ namespace SchedulingClients.AgentServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.AgentServiceReference.AgentLifetimeState AgentLifetimeState {
+            get {
+                return this.AgentLifetimeStateField;
+            }
+            set {
+                if ((this.AgentLifetimeStateField.Equals(value) != true)) {
+                    this.AgentLifetimeStateField = value;
+                    this.RaisePropertyChanged("AgentLifetimeState");
+                }
             }
         }
         
@@ -184,6 +200,20 @@ namespace SchedulingClients.AgentServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgentLifetimeState", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    public enum AgentLifetimeState : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OutOfService = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InService = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Decommissioned = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     public enum ServiceCode : int {
         
@@ -246,6 +276,15 @@ namespace SchedulingClients.AgentServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETALLAGENTDATAFAILED = 6001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITINSTRUCTIONFAILED = 7001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REQUESTFREEZEFAILED = 7002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REQUESTUNFREEZEFAILED = 7003,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -257,6 +296,12 @@ namespace SchedulingClients.AgentServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentData", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentDataResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
+        System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -292,6 +337,14 @@ namespace SchedulingClients.AgentServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentDataAsync() {
             return base.Channel.GetAllAgentDataAsync();
+        }
+        
+        public System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState) {
+            return base.Channel.GetAllAgentsInLifetimeState(lifetimeState);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState) {
+            return base.Channel.GetAllAgentsInLifetimeStateAsync(lifetimeState);
         }
     }
 }

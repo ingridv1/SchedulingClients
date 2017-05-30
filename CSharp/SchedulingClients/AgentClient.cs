@@ -40,6 +40,23 @@ namespace SchedulingClients
             }
         }
 
+        public ServiceOperationResult TryGetAllAgentsInLifetimeState(out IEnumerable<AgentData> agentDatas, AgentLifetimeState agentLifetimeState)
+        {
+            Logger.Info("");
+
+            try
+            {
+                var result = GetAllAgentsInLifetimeState(agentLifetimeState);
+                agentDatas = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                agentDatas = new AgentData[] { };
+                return HandleClientException(ex);
+            }
+        }
+
         protected override void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
@@ -69,6 +86,28 @@ namespace SchedulingClients
             {
                 IAgentService channel = channelFactory.CreateChannel();
                 result = channel.GetAllAgentData();
+                channelFactory.Close();
+                Logger.Trace("channelFactory closed");
+            }
+
+            return result;
+        }
+
+        private Tuple<AgentData[], ServiceCallData> GetAllAgentsInLifetimeState(AgentLifetimeState agentLifetimeState)
+        {
+            Logger.Debug("GetAllAgentsInLifetimeState()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("AgentClient");
+            }
+
+            Tuple<AgentData[], ServiceCallData> result;
+
+            using (ChannelFactory<IAgentService> channelFactory = CreateChannelFactory())
+            {
+                IAgentService channel = channelFactory.CreateChannel();
+                result = channel.GetAllAgentsInLifetimeState(agentLifetimeState);
                 channelFactory.Close();
                 Logger.Trace("channelFactory closed");
             }
