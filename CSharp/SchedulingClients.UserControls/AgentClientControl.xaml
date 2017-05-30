@@ -4,23 +4,62 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:asr="clr-namespace:SchedulingClients.AgentServiceReference;assembly=SchedulingClients"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                ObjectType="{x:Type system:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="asr:AgentLifetimeState" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        <local:LabelContentControl Grid.Row="0" Header="Get All Agent Data()">
-            <Button x:Name="getAllAgentDataButton" Click="getAllAgentDataButton_Click">Refresh</Button>
-        </local:LabelContentControl>
-        <DataGrid x:Name="agentDataDataGrid" Grid.Row="1" AutoGenerateColumns="False"
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <local:LabelContentControl Grid.Row="0" Header="Get All Agent Data()">
+                <Button x:Name="getAllAgentDataButton" Click="getAllAgentDataButton_Click">Refresh</Button>
+            </local:LabelContentControl>
+            <DataGrid x:Name="agentDataDataGrid" Grid.Row="1" AutoGenerateColumns="False"
                   Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="1*" />
-                <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" Width="2*" />
-                <DataGridTextColumn Header="IP Address" Binding="{Binding IPAddress}" Width="2*" />
-            </DataGrid.Columns>
-        </DataGrid>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="1*" />
+                    <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" Width="2*" />
+                    <DataGridTextColumn Header="IP Address" Binding="{Binding IPAddress}" Width="2*" />
+                    <DataGridTextColumn Header="Agent Lifetime State" Binding="{Binding AgentLifetimeState}" Width="2*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <local:LabelContentControl Grid.Row="0" Header="Get All Agent Data()">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}, Mode=OneTime}" x:Name="lifeTimeComboBox" SelectedIndex="0" VerticalAlignment="Center" />
+                    <Button x:Name="getAgentLifeTimeDataButton" Click="getAgentLifeTimeDataButton_Click">Refresh</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+            <DataGrid x:Name="agentDataLifeTimeDataGrid" Grid.Row="1" AutoGenerateColumns="False"
+                  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="1*" />
+                    <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" Width="2*" />
+                    <DataGridTextColumn Header="IP Address" Binding="{Binding IPAddress}" Width="2*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </UserControl>

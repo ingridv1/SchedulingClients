@@ -16,6 +16,17 @@ namespace SchedulingClients.UserControls
             InitializeComponent();
         }
 
+        private void getAgentLifeTimeDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            AgentClient client = DataContext as AgentClient;
+            AgentLifetimeState state = (AgentLifetimeState)lifeTimeComboBox.SelectedItem;
+            IEnumerable<AgentData> agentDatas;
+
+            client.TryGetAllAgentsInLifetimeState(out agentDatas, state);
+
+            agentDataLifeTimeDataGrid.ItemsSource = agentDatas;
+        }
+
         private void getAllAgentDataButton_Click(object sender, RoutedEventArgs e)
         {
             AgentClient client = DataContext as AgentClient;
