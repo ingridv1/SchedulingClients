@@ -209,6 +209,9 @@ namespace SchedulingClients.ServicingServiceReference {
         CREATESERVICINGTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        NOTACCEPTINGNEWJOBS = 1005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -222,6 +225,12 @@ namespace SchedulingClients.ServicingServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETJOBSTATEFAILED = 3001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDJOBID = 3002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDTASKID = 3003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETALLMOVEDATAFAILED = 4001,
@@ -246,6 +255,18 @@ namespace SchedulingClients.ServicingServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETALLAGENTDATAFAILED = 6001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETALLAGENTSINLIFETIMESTATEFAILED = 6002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITINSTRUCTIONFAILED = 7001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REQUESTFREEZEFAILED = 7002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REQUESTUNFREEZEFAILED = 7003,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
