@@ -71,10 +71,10 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    Roadmap Client
+                    Map Client
                 </TabItem.Header>
                 <Grid>
-                    <clientsUC:RoadmapClientControl x:Name="roadmapClientControl" DataContext="{Binding Path=RoadmapClient}" />
+                    <clientsUC:MapClientControl x:Name="roadmapClientControl" DataContext="{Binding Path=RoadmapClient}" />
                 </Grid>
             </TabItem>
             <TabItem>

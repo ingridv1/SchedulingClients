@@ -1,60 +1,46 @@
-﻿using System;
+﻿using SchedulingClients.MapServiceReference;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using SchedulingClients.RoadmapServiceReference;
-using NLog;
 
 namespace SchedulingClients.UserControls
 {
     public partial class MapClientControl : UserControl
     {
-        private Logger logger = LogManager.CreateNullLogger();
-
         public MapClientControl()
         {
             InitializeComponent();
         }
 
-        public Logger Logger
+        private void getAllMoveDataButton_Click(object sender, RoutedEventArgs e)
         {
-            get { return logger; }
+            MapClient client = DataContext as MapClient;
+            IEnumerable<MoveData> nodeDatas;
+            client.TryGetAllMoveData(out nodeDatas);
 
-            set
-            {
-                if (logger != value)
-                {
-                    logger = value;
-                }
-            }
+            moveDataDataGrid.ItemsSource = nodeDatas;
         }
 
         private void getAllNodeDataButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                RoadmapClient client = DataContext as RoadmapClient;
-                IEnumerable<NodeData> nodeDatas = client.GetAllNodeData();
+            MapClient client = DataContext as MapClient;
+            IEnumerable<NodeData> nodeDatas;
+            client.TryGetAllNodeData(out nodeDatas);
 
-                foreach (NodeData nodeData in nodeDatas.ToList())
-                {
-                    logger.Info("[MapClientControl] {0}", nodeData.ToNodeDataString());
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
+            nodeDataDataGrid.ItemsSource = nodeDatas;
+        }
+
+        private void getTrajectoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            int moveId = (int)trajectoryIdUpDown.Value;
+            MapClient client = DataContext as MapClient;
+            IEnumerable<WaypointData> waypoints;
+            client.TryGetTrajectory(moveId, out waypoints);
+
+            TrajectoryDialog dialog = new TrajectoryDialog();
+            dialog.DataContext = waypoints;
+            dialog.ShowDialog();
         }
     }
 }

@@ -94,11 +94,8 @@
       <DependentUpon>JobStateDataControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LabelContentControl.cs" />
-    <Compile Include="MappingKeyDialog.xaml.cs">
-      <DependentUpon>MappingKeyDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RoadmapClientControl.xaml.cs">
-      <DependentUpon>RoadmapClientControl.xaml</DependentUpon>
+    <Compile Include="MapClientControl.xaml.cs">
+      <DependentUpon>MapClientControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -165,11 +162,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MappingKeyDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RoadmapClientControl.xaml">
+    <Page Include="MapClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

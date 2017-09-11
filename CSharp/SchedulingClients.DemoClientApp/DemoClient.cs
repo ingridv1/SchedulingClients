@@ -53,7 +53,7 @@ namespace SchedulingClients.DemoClientApp
 
         public string LogFolderPath { get { return logFolderPath; } }
 
-        public RoadmapClient RoadmapClient { get { return (RoadmapClient)clients.FirstOrDefault(e => e is RoadmapClient); } }
+        public MapClient RoadmapClient { get { return (MapClient)clients.FirstOrDefault(e => e is MapClient); } }
 
         public ServicingClient ServicingClient { get { return (ServicingClient)clients.FirstOrDefault(e => e is ServicingClient); } }
 

@@ -33,9 +33,9 @@ namespace SchedulingClients
             return new JobStateClient(portSettings.TcpJobStateService());
         }
 
-        public static RoadmapClient GetRoadmapClient(EndpointSettings portSettings)
+        public static MapClient GetRoadmapClient(EndpointSettings portSettings)
         {
-            return new RoadmapClient(portSettings.TcpMapService());
+            return new MapClient(portSettings.TcpMapService());
         }
 
         public static ServicingClient GetServicingClient(EndpointSettings portSettings)

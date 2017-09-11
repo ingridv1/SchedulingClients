@@ -64,7 +64,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceOperationResult.cs" />
-    <Compile Include="RoadmapClient.cs" />
+    <Compile Include="MapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
