@@ -1,8 +1,7 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using System;
 using System.Linq;
-using System.ServiceModel;
-using SchedulingClients.RoadmapServiceReference;
+using SchedulingClients.MapServiceReference;
 using System.Collections.Generic;
 
 namespace SchedulingClients.UserControls
@@ -20,24 +19,24 @@ namespace SchedulingClients.UserControls
                 {
                     for (int i = 0; i < 3; i++)
                     {
-                        NodeData pickNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Pick);
+                        NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
 
                         if (pickNode != null)
                         {
                             int nodeTaskId;
-                            jobBuilder.TryCreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.Pick, out nodeTaskId, TimeSpan.FromSeconds(30));
+                            jobBuilder.TryCreateServicingTask(unorderedListTaskId, pickNode.MapItemId, JobBuilderServiceReference.ServiceType.ManualLoadHandling, out nodeTaskId, TimeSpan.FromSeconds(30));
                         }
                     }
 
-                    NodeData dropNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Drop);
+                    NodeData dropNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
 
                     if (dropNode != null)
                     {
                         int dropNodeId;
-                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.Drop, out dropNodeId, TimeSpan.FromSeconds(10));
+                        jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, dropNode.MapItemId, JobBuilderServiceReference.ServiceType.ManualLoadHandling, out dropNodeId, TimeSpan.FromSeconds(10));
                     }
 
-                    NodeData parkNode = GetRandomNode(nodes, RoadmapServiceReference.ServiceType.Park);
+                    NodeData parkNode = GetRandomNode(nodes, MapServiceReference.ServiceType.Park);
 
                     if (parkNode != null)
                     {
@@ -51,7 +50,7 @@ namespace SchedulingClients.UserControls
             }
         }
 
-        private static NodeData GetRandomNode(IEnumerable<NodeData> nodes, RoadmapServiceReference.ServiceType serviceType)
+        private static NodeData GetRandomNode(IEnumerable<NodeData> nodes, MapServiceReference.ServiceType serviceType)
         {
             List<NodeData> subSet = nodes.Where(e => e.Services.Contains(serviceType)).ToList();
 

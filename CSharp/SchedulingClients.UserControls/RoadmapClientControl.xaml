@@ -19,11 +19,6 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <local:LabelContentControl Grid.Row="0" Header="Get Mapping Keycard Signature">
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="keyCardRefreshButton" Click="keyCardRefreshButton_Click">Refresh</Button>
-            </StackPanel>
-        </local:LabelContentControl>
         <local:LabelContentControl Grid.Row="1" Header="Get All Node Data()">
             <Button x:Name="getAllNodeDataButton" Click="getAllNodeDataButton_Click">Refresh</Button>
         </local:LabelContentControl>

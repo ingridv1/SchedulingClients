@@ -1,4 +1,4 @@
-﻿using SchedulingClients.RoadmapServiceReference;
+﻿using SchedulingClients.MapServiceReference;
 using System;
 using System.Globalization;
 using System.Linq;

@@ -3,7 +3,7 @@ using aSR = SchedulingClients.AgentServiceReference;
 using jBSR = SchedulingClients.JobBuilderServiceReference;
 using jSSR = SchedulingClients.JobStateServiceReference;
 using jsSSR = SchedulingClients.JobsStateServiceReference;
-using rSR = SchedulingClients.RoadmapServiceReference;
+using rSR = SchedulingClients.MapServiceReference;
 using sSR = SchedulingClients.ServicingServiceReference;
 using fmSR = SchedulingClients.FleetManagerServiceReference;
 

@@ -1,4 +1,4 @@
-﻿using SchedulingClients.RoadmapServiceReference;
+﻿using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +7,14 @@ using NLog;
 
 namespace SchedulingClients
 {
-    public class RoadmapClient : AbstractClient<IRoadmapService>
+    public class RoadmapClient : AbstractClient<IMapService>
     {
         private bool isDisposed = false;
 
         /// <summary>
-        /// Creates a new RoadmapClient
+        /// Creates a new MapClient
         /// </summary>
-        /// <param name="netTcpUri">net.tcp address of the roadmap service</param>
+        /// <param name="netTcpUri">net.tcp address of the map service</param>
         public RoadmapClient(Uri netTcpUri)
                     : base(netTcpUri)
         {
@@ -65,28 +65,6 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Gets the mapping keycard signature
-        /// </summary>
-        /// <param name="signature">Byte signature of the roadmap</param>
-        /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetMappingKeyCardSignature(out byte[] signature)
-        {
-            Logger.Info("TryGetMappingKeyCardSignature()");
-
-            try
-            {
-                var result = GetMappingKeyCardSignature();
-                signature = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
-            }
-            catch (Exception ex)
-            {
-                signature = null;
-                return HandleClientException(ex);
-            }
-        }
-
-        /// <summary>
         /// Gets the trajectory of a specific move
         /// </summary>
         /// <param name="moveId">Id of the move</param>
@@ -132,9 +110,9 @@ namespace SchedulingClients
 
             Tuple<MoveData[], ServiceCallData> result;
 
-            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
             {
-                IRoadmapService channel = channelFactory.CreateChannel();
+                IMapService channel = channelFactory.CreateChannel();
                 result = channel.GetAllMoveData();
                 channelFactory.Close();
             }
@@ -153,31 +131,10 @@ namespace SchedulingClients
 
             Tuple<NodeData[], ServiceCallData> result;
 
-            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
             {
-                IRoadmapService channel = channelFactory.CreateChannel();
+                IMapService channel = channelFactory.CreateChannel();
                 result = channel.GetAllNodeData();
-                channelFactory.Close();
-            }
-
-            return result;
-        }
-
-        private Tuple<byte[], ServiceCallData> GetMappingKeyCardSignature()
-        {
-            Logger.Debug("GetMappingKeyCardSignature()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("RoadmapClient");
-            }
-
-            Tuple<byte[], ServiceCallData> result;
-
-            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
-            {
-                IRoadmapService channel = channelFactory.CreateChannel();
-                result = channel.GetMappingKeyCardSignature();
                 channelFactory.Close();
             }
 
@@ -190,14 +147,14 @@ namespace SchedulingClients
 
             if (isDisposed)
             {
-                throw new ObjectDisposedException("RoadmapClient");
+                throw new ObjectDisposedException("MapClient");
             }
 
             Tuple<WaypointData[], ServiceCallData> result;
 
-            using (ChannelFactory<IRoadmapService> channelFactory = CreateChannelFactory())
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
             {
-                IRoadmapService channel = channelFactory.CreateChannel();
+                IMapService channel = channelFactory.CreateChannel();
                 result = channel.GetTrajectory(moveId);
                 channelFactory.Close();
             }

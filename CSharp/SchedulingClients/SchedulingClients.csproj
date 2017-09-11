@@ -13,26 +13,17 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -67,6 +58,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MapServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceOperationResult.cs" />
     <Compile Include="RoadmapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,11 +82,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\JobStateServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\RoadmapServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -242,35 +233,35 @@
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap.xsd">
+    <None Include="Service References\MapServiceReference\map.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap1.xsd">
+    <None Include="Service References\MapServiceReference\map1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap2.xsd">
+    <None Include="Service References\MapServiceReference\map2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap3.xsd">
+    <None Include="Service References\MapServiceReference\map3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap4.xsd">
+    <None Include="Service References\MapServiceReference\map4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\roadmap41.xsd">
+    <None Include="Service References\MapServiceReference\map5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RoadmapServiceReference\RoadmapService1.wsdl" />
-    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.MoveData.datasource">
+    <None Include="Service References\MapServiceReference\MapService.wsdl" />
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.NodeData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.NodeData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.ServiceCallData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RoadmapServiceReference\SchedulingClients.RoadmapServiceReference.WaypointData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.WaypointData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
@@ -302,7 +293,7 @@
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
-    <WCFMetadataStorage Include="Service References\RoadmapServiceReference\" />
+    <WCFMetadataStorage Include="Service References\MapServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -313,18 +304,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobBuilderServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RoadmapServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RoadmapServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RoadmapServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -385,6 +364,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\FleetManagerServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

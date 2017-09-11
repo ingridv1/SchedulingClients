@@ -1,5 +1,5 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
-using SchedulingClients.RoadmapServiceReference;
+using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Windows;

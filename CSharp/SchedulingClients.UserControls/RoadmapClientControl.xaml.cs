@@ -1,4 +1,4 @@
-﻿using SchedulingClients.RoadmapServiceReference;
+﻿using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -40,17 +40,6 @@ namespace SchedulingClients.UserControls
 
             TrajectoryDialog dialog = new TrajectoryDialog();
             dialog.DataContext = waypoints;
-            dialog.ShowDialog();
-        }
-
-        private void keyCardRefreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            RoadmapClient client = DataContext as RoadmapClient;
-            byte[] keycard;
-            client.TryGetMappingKeyCardSignature(out keycard);
-
-            MappingKeyDialog dialog = new MappingKeyDialog();
-            dialog.DataContext = keycard.ToHexString();
             dialog.ShowDialog();
         }
     }

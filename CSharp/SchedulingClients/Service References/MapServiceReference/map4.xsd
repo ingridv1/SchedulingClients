@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/roadmap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:element name="GetAllMoveData">
     <xs:complexType>
       <xs:sequence />
@@ -25,18 +25,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMappingKeyCardSignature">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetMappingKeyCardSignatureResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetMappingKeyCardSignatureResult" nillable="true" type="q3:TupleOfbase64BinaryServiceCallDatayG81JSvh" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetTrajectory">
     <xs:complexType>
       <xs:sequence>
@@ -47,7 +35,7 @@
   <xs:element name="GetTrajectoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetTrajectoryResult" nillable="true" type="q4:TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetTrajectoryResult" nillable="true" type="q3:TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
