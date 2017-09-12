@@ -57,7 +57,7 @@ namespace SchedulingClients.UserControls
             if (subSet.Any())
             {
                 Random random = new Random();
-                return subSet[random.Next(0, subSet.Count - 1)];
+                return subSet[random.Next(0, subSet.Count)];
             }
 
             return null;
