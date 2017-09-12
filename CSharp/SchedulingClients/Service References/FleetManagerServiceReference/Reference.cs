@@ -26,7 +26,7 @@ namespace SchedulingClients.FleetManagerServiceReference {
         private double CurvatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short EnhancedDataField;
+        private byte[] EnhancedDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double HeadingField;
@@ -67,12 +67,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public short EnhancedData {
+        public byte[] EnhancedData {
             get {
                 return this.EnhancedDataField;
             }
             set {
-                if ((this.EnhancedDataField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.EnhancedDataField, value) != true)) {
                     this.EnhancedDataField = value;
                     this.RaisePropertyChanged("EnhancedData");
                 }

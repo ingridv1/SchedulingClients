@@ -1,5 +1,5 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
-using SchedulingClients.RoadmapServiceReference;
+using SchedulingClients.MapServiceReference;
 using System.Linq;
 using System.Text;
 
@@ -50,7 +50,7 @@ namespace SchedulingClients
             {
                 StringBuilder builder = new StringBuilder("Services: ");
 
-                foreach (RoadmapServiceReference.ServiceType serviceType in nodeData.Services)
+                foreach (MapServiceReference.ServiceType serviceType in nodeData.Services)
                 {
                     builder.AppendFormat("{0}", serviceType);
                 }

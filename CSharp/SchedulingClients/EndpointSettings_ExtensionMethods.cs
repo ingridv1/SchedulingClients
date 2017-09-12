@@ -32,7 +32,7 @@ namespace SchedulingClients
 
         public static Uri TcpMapService(this EndpointSettings portSettings)
         {
-            return new Uri(portSettings.ToTcpBase(), "roadmap.svc");
+            return new Uri(portSettings.ToTcpBase(), "map.svc");
         }
 
         public static Uri TcpServicingService(this EndpointSettings portSettings)

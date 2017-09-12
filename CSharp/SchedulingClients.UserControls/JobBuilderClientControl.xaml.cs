@@ -1,5 +1,5 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
-using SchedulingClients.RoadmapServiceReference;
+using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -9,14 +9,14 @@ namespace SchedulingClients.UserControls
 {
     public partial class JobBuilderClientControl : UserControl
     {
-        private RoadmapClient roadmapClient = null;
+        private MapClient roadmapClient = null;
 
         public JobBuilderClientControl()
         {
             InitializeComponent();
         }
 
-        public void Configure(RoadmapClient client)
+        public void Configure(MapClient client)
         {
             roadmapClient = client;
         }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="CommitJob">
     <xs:complexType>
@@ -50,7 +50,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps" minOccurs="0" name="serviceType" type="q4:ServiceType" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mapping" minOccurs="0" name="serviceType" type="q4:ServiceType" />
         <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q5:duration" />
       </xs:sequence>
     </xs:complexType>

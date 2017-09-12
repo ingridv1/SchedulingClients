@@ -254,26 +254,23 @@ namespace SchedulingClients.JobBuilderServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/Mapping.Roadmaps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/Mapping")]
     public enum ServiceType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Charge = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Null = 1,
+        Park = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Park = 2,
+        Fault = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Fault = 3,
+        ManualLoadHandling = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pick = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Drop = 5,
+        GoTo = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
