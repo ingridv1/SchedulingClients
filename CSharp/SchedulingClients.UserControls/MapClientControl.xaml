@@ -43,7 +43,6 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="SourceId" Binding="{Binding SourceId}" />
                 <DataGridTextColumn Header="DestinationId" Binding="{Binding DestinationId}" />
-                <DataGridTextColumn Header="Length (m)" Binding="{Binding Length, StringFormat={}{0:N3}}" />
             </DataGrid.Columns>
         </DataGrid>
         <local:LabelContentControl Grid.Row="5" Header="Get Trajectory">
