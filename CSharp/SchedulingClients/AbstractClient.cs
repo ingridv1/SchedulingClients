@@ -77,6 +77,7 @@ namespace SchedulingClients
 
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             Dispose(true);
         }
 
@@ -87,6 +88,8 @@ namespace SchedulingClients
 
         protected virtual void Dispose(bool isDisposing)
         {
+            Logger.Debug("Dispose({0})", isDisposing);
+
             if (isDisposed)
             {
                 return;

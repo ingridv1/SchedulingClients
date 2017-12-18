@@ -18,6 +18,19 @@ namespace SchedulingClients
         {
         }
 
+        protected override void Dispose(bool isDisposing)
+        {
+            Logger.Debug("Dispose({0})", isDisposing);
+
+            if (isDisposed)
+            {
+                return;
+            }
+
+            isDisposed = true;
+            base.Dispose(isDisposing);
+        }
+
         /// <summary>
         /// Gets all available data on registered agents
         /// </summary>
@@ -55,20 +68,6 @@ namespace SchedulingClients
                 agentDatas = new AgentData[] { };
                 return HandleClientException(ex);
             }
-        }
-
-        protected override void Dispose(bool isDisposing)
-        {
-            Logger.Debug("Dispose({0})", isDisposing);
-
-            if (isDisposed)
-            {
-                return;
-            }
-
-            isDisposed = true;
-
-            base.Dispose(isDisposing);
         }
 
         private Tuple<AgentData[], ServiceCallData> GetAllAgentData()

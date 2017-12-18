@@ -41,6 +41,7 @@
     <Compile Include="AbstractCallbackClient.cs" />
     <Compile Include="AbstractClient.cs" />
     <Compile Include="AgentClient.cs" />
+    <Compile Include="AgentBatteryStatusClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FleetManagerClient.cs" />
@@ -53,6 +54,11 @@
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="JobStateClient.cs" />
     <Compile Include="JobStateServiceCallback.cs" />
+    <Compile Include="Service References\AgentBatteryStatusServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\FleetManagerServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +108,28 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentBatteryStatusServiceReference\AgentBatteryStatusService.wsdl" />
+    <None Include="Service References\AgentBatteryStatusServiceReference\SchedulingClients.AgentBatteryStatusServiceReference.AgentBatteryStatusData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgentBatteryStatusServiceReference\SchedulingClients.AgentBatteryStatusServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AgentServiceReference\agent.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -288,6 +316,7 @@
     <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AgentBatteryStatusServiceReference\" />
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
     <WCFMetadataStorage Include="Service References\FleetManagerServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
@@ -378,6 +407,19 @@
     <None Include="Service References\MapServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentBatteryStatusServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentBatteryStatusServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentBatteryStatusServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

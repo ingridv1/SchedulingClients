@@ -6,6 +6,7 @@ using jsSSR = SchedulingClients.JobsStateServiceReference;
 using rSR = SchedulingClients.MapServiceReference;
 using sSR = SchedulingClients.ServicingServiceReference;
 using fmSR = SchedulingClients.FleetManagerServiceReference;
+using absSR = SchedulingClients.AgentBatteryStatusServiceReference;
 
 namespace SchedulingClients
 {
@@ -132,6 +133,19 @@ namespace SchedulingClients
         }
 
         public static ServiceOperationResult FromServiceCallData(aSR.ServiceCallData serviceCallData)
+        {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
+            return new ServiceOperationResult
+                (
+                    (uint)serviceCallData.ServiceCode,
+                    serviceCallData.ServiceCode.ToString(),
+                    serviceException,
+                    null
+                );
+        }
+
+        public static ServiceOperationResult FromServiceCallData(absSR.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 

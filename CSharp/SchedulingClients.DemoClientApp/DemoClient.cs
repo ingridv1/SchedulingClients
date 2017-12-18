@@ -39,6 +39,8 @@ namespace SchedulingClients.DemoClientApp
 
         public AgentClient AgentClient { get { return (AgentClient)clients.FirstOrDefault(e => e is AgentClient); } }
 
+        public AgentBatteryStatusClient AgentBatteryStatusClient { get { return (AgentBatteryStatusClient)clients.FirstOrDefault(e => e is AgentBatteryStatusClient); } }
+
         public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
         public FleetManagerClient FleetManagerClient { get { return (FleetManagerClient)clients.FirstOrDefault(e => e is FleetManagerClient); } }
@@ -60,6 +62,7 @@ namespace SchedulingClients.DemoClientApp
         public void Configure()
         {
             clients.Add(ClientFactory.GetAgentClient(endpointSettings));
+            clients.Add(ClientFactory.GetAgentBatteryStatusClient(endpointSettings));
             clients.Add(ClientFactory.GetFleetManagerClient(endpointSettings));
 
             clients.Add(ClientFactory.GetJobBuilderClient(endpointSettings));

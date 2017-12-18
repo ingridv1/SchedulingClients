@@ -10,6 +10,11 @@ namespace SchedulingClients
             return new Uri(portSettings.ToTcpBase(), "agent.svc");
         }
 
+        public static Uri TcpAgentBatteryStatusService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "agentBatteryStatus.svc");
+        }
+
         public static Uri TcpFleetManagerService(this EndpointSettings portSettings)
         {
             return new Uri(portSettings.ToTcpBase(), "fleetManager.svc");
