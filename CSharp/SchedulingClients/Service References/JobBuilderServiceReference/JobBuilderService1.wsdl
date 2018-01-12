@@ -29,6 +29,9 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJobBuilderService_CommitJob_InputMessage">
@@ -55,6 +58,36 @@
   <wsdl:message name="IJobBuilderService_CreateServicingTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTaskResponse" />
   </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueEnumDirective_InputMessage">
+    <wsdl:part name="parameters" element="tns:IssueEnumDirective" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueEnumDirective_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueEnumDirectiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueShortDirective_InputMessage">
+    <wsdl:part name="parameters" element="tns:IssueShortDirective" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueShortDirective_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueShortDirectiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueUShortDirective_InputMessage">
+    <wsdl:part name="parameters" element="tns:IssueUShortDirective" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueUShortDirective_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueUShortDirectiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueFloatDirective_InputMessage">
+    <wsdl:part name="parameters" element="tns:IssueFloatDirective" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueFloatDirective_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueFloatDirectiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueIPAddressDirective_InputMessage">
+    <wsdl:part name="parameters" element="tns:IssueIPAddressDirective" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_IssueIPAddressDirective_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueIPAddressDirectiveResponse" />
+  </wsdl:message>
   <wsdl:portType name="IJobBuilderService">
     <wsdl:operation name="CommitJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CommitJob" message="tns:IJobBuilderService_CommitJob_InputMessage" />
@@ -71,6 +104,26 @@
     <wsdl:operation name="CreateServicingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse" message="tns:IJobBuilderService_CreateServicingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEnumDirective">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueEnumDirective" message="tns:IJobBuilderService_IssueEnumDirective_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueEnumDirectiveResponse" message="tns:IJobBuilderService_IssueEnumDirective_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueShortDirective">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueShortDirective" message="tns:IJobBuilderService_IssueShortDirective_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueShortDirectiveResponse" message="tns:IJobBuilderService_IssueShortDirective_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueUShortDirective">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueUShortDirective" message="tns:IJobBuilderService_IssueUShortDirective_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueUShortDirectiveResponse" message="tns:IJobBuilderService_IssueUShortDirective_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueFloatDirective">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueFloatDirective" message="tns:IJobBuilderService_IssueFloatDirective_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueFloatDirectiveResponse" message="tns:IJobBuilderService_IssueFloatDirective_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueIPAddressDirective">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" message="tns:IJobBuilderService_IssueIPAddressDirective_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirectiveResponse" message="tns:IJobBuilderService_IssueIPAddressDirective_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJobBuilderService" type="tns:IJobBuilderService">
@@ -112,6 +165,51 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="IssueEnumDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueEnumDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueShortDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueShortDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueUShortDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueUShortDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueFloatDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueFloatDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueIPAddressDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSDualHttpBinding_IJobBuilderService" type="tns:IJobBuilderService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IJobBuilderService_policy" />
@@ -145,6 +243,51 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEnumDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueEnumDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueShortDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueShortDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueUShortDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueUShortDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueFloatDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueFloatDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueIPAddressDirective">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

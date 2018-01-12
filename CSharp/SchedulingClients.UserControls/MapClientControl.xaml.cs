@@ -42,5 +42,14 @@ namespace SchedulingClients.UserControls
             dialog.DataContext = waypoints;
             dialog.ShowDialog();
         }
+
+        private void getAllParameterDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            MapClient client = DataContext as MapClient;
+            IEnumerable<ParameterData> parameterDatas;
+            client.TryGetAllParameterData(out parameterDatas);
+
+            parameterDataDataGrid.ItemsSource = parameterDatas;
+        }
     }
 }

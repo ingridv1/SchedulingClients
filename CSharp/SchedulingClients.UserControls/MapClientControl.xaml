@@ -13,6 +13,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -45,7 +47,18 @@
                 <DataGridTextColumn Header="DestinationId" Binding="{Binding DestinationId}" />
             </DataGrid.Columns>
         </DataGrid>
-        <local:LabelContentControl Grid.Row="5" Header="Get Trajectory">
+        <local:LabelContentControl Grid.Row="5" Header="Get All Parameter Data()">
+            <Button x:Name="getAllParameterDataButton" Click="getAllParameterDataButton_Click">Refresh</Button>
+        </local:LabelContentControl>
+        <DataGrid x:Name="parameterDataDataGrid" Grid.Row="6" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Alias" Binding="{Binding Alias, Mode=OneWay}" Width="*" />
+                <DataGridTextColumn Header="ParameterId" Binding="{Binding ParameterId, Mode=OneWay}" Width="*" />
+                <DataGridTextColumn Header="AGVType" Binding="{Binding AGVType, Mode=OneWay}" Width="*" />
+                <DataGridTextColumn Header="DataType" Binding="{Binding DataType, Mode=OneWay}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <local:LabelContentControl Grid.Row="7" Header="Get Trajectory">
             <StackPanel Orientation="Horizontal">
                 <toolkit:IntegerUpDown x:Name="trajectoryIdUpDown" Minimum="0" DefaultValue="0" DisplayDefaultValueOnEmptyText="True" />
                 <Button x:Name="getTrajectoryButton" Click="getTrajectoryButton_Click">Get</Button>

@@ -31,6 +31,12 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IMapService_GetAllParameterData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllParameterData" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetAllParameterData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllParameterDataResponse" />
+  </wsdl:message>
   <wsdl:message name="IMapService_GetAllMoveData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMoveData" />
   </wsdl:message>
@@ -50,6 +56,10 @@
     <wsdl:part name="parameters" element="tns:GetTrajectoryResponse" />
   </wsdl:message>
   <wsdl:portType name="IMapService">
+    <wsdl:operation name="GetAllParameterData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetAllParameterData" message="tns:IMapService_GetAllParameterData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetAllParameterDataResponse" message="tns:IMapService_GetAllParameterData_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllMoveData">
       <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetAllMoveData" message="tns:IMapService_GetAllMoveData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetAllMoveDataResponse" message="tns:IMapService_GetAllMoveData_OutputMessage" />
@@ -66,6 +76,15 @@
   <wsdl:binding name="NetTcpBinding_IMapService" type="tns:IMapService">
     <wsp:PolicyReference URI="#NetTcpBinding_IMapService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAllParameterData">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetAllParameterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllMoveData">
       <soap12:operation soapAction="http://tempuri.org/IMapService/GetAllMoveData" style="document" />
       <wsdl:input>
@@ -97,6 +116,15 @@
   <wsdl:binding name="WSDualHttpBinding_IMapService" type="tns:IMapService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IMapService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllParameterData">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetAllParameterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllMoveData">
       <soap12:operation soapAction="http://tempuri.org/IMapService/GetAllMoveData" style="document" />
       <wsdl:input>

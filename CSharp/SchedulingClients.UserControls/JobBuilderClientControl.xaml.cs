@@ -2,6 +2,7 @@
 using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -40,6 +41,14 @@ namespace SchedulingClients.UserControls
                     client.MultiPickJobTest(nodeData);
                 }
             }
+        }
+
+        private void directiveTest_Click(object sender, RoutedEventArgs e)
+        {
+            JobBuilderClient client = DataContext as JobBuilderClient;
+
+#warning Unsafe
+            client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterIdUpDown.Value ?? 0, (ushort)(valueUpDown.Value ?? 0));
         }
     }
 }

@@ -65,6 +65,28 @@ namespace SchedulingClients
         }
 
         /// <summary>
+        /// Gets all parameter data
+        /// </summary>
+        /// <param name="parameterData">All parameters in the map</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetAllParameterData(out IEnumerable<ParameterData> parameterData)
+        {
+            Logger.Info("TryGetAllParameterData()");
+
+            try
+            {
+                var result = GetAllParameterData();
+                parameterData = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                parameterData = Enumerable.Empty<ParameterData>();
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
         /// Gets the trajectory of a specific move
         /// </summary>
         /// <param name="moveId">Id of the move</param>
@@ -135,6 +157,27 @@ namespace SchedulingClients
             {
                 IMapService channel = channelFactory.CreateChannel();
                 result = channel.GetAllNodeData();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<ParameterData[], ServiceCallData> GetAllParameterData()
+        {
+            Logger.Debug("GetAllParameterData()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("RoadmapClient");
+            }
+
+            Tuple<ParameterData[], ServiceCallData> result;
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                result = channel.GetAllParameterData();
                 channelFactory.Close();
             }
 

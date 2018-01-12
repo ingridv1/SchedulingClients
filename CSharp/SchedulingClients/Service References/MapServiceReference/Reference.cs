@@ -15,24 +15,24 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
     [System.SerializableAttribute()]
-    public partial class MoveData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ParameterData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AGVTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AliasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DestinationIdField;
+        private string DataTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SourceIdField;
+        private int ParameterIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -41,6 +41,19 @@ namespace SchedulingClients.MapServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AGVType {
+            get {
+                return this.AGVTypeField;
+            }
+            set {
+                if ((this.AGVTypeField.Equals(value) != true)) {
+                    this.AGVTypeField = value;
+                    this.RaisePropertyChanged("AGVType");
+                }
             }
         }
         
@@ -58,40 +71,27 @@ namespace SchedulingClients.MapServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DestinationId {
+        public string DataType {
             get {
-                return this.DestinationIdField;
+                return this.DataTypeField;
             }
             set {
-                if ((this.DestinationIdField.Equals(value) != true)) {
-                    this.DestinationIdField = value;
-                    this.RaisePropertyChanged("DestinationId");
+                if ((object.ReferenceEquals(this.DataTypeField, value) != true)) {
+                    this.DataTypeField = value;
+                    this.RaisePropertyChanged("DataType");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
+        public int ParameterId {
             get {
-                return this.IdField;
+                return this.ParameterIdField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SourceId {
-            get {
-                return this.SourceIdField;
-            }
-            set {
-                if ((this.SourceIdField.Equals(value) != true)) {
-                    this.SourceIdField = value;
-                    this.RaisePropertyChanged("SourceId");
+                if ((this.ParameterIdField.Equals(value) != true)) {
+                    this.ParameterIdField = value;
+                    this.RaisePropertyChanged("ParameterId");
                 }
             }
         }
@@ -228,6 +228,12 @@ namespace SchedulingClients.MapServiceReference {
         NOTACCEPTINGNEWJOBS = 1005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        DIRECTIVENOTALLOWED = 1006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDNODETASKID = 1007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -283,6 +289,99 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         REQUESTUNFREEZEFAILED = 7003,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.SerializableAttribute()]
+    public partial class MoveData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AliasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DestinationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SourceIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Alias {
+            get {
+                return this.AliasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
+                    this.AliasField = value;
+                    this.RaisePropertyChanged("Alias");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DestinationId {
+            get {
+                return this.DestinationIdField;
+            }
+            set {
+                if ((this.DestinationIdField.Equals(value) != true)) {
+                    this.DestinationIdField = value;
+                    this.RaisePropertyChanged("DestinationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SourceId {
+            get {
+                return this.SourceIdField;
+            }
+            set {
+                if ((this.SourceIdField.Equals(value) != true)) {
+                    this.SourceIdField = value;
+                    this.RaisePropertyChanged("SourceId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -527,6 +626,12 @@ namespace SchedulingClients.MapServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MapServiceReference.IMapService")]
     public interface IMapService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
+        System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
         System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData();
         
@@ -571,6 +676,14 @@ namespace SchedulingClients.MapServiceReference {
         
         public MapServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData() {
+            return base.Channel.GetAllParameterData();
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync() {
+            return base.Channel.GetAllParameterDataAsync();
         }
         
         public System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData() {
