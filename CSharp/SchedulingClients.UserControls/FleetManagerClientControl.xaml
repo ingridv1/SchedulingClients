@@ -14,6 +14,9 @@
             <local:LabelContentControl Header="Requests unfreeze">
                 <Button x:Name="unfreezeButton" Click="unfreezeButton_Click">Unfreeze</Button>
             </local:LabelContentControl>
+            <local:LabelContentControl Header="Subscibe to FleetCast Heartbeat">
+                <Button x:Name="subscribeButton" Click="subscribeButton_Click">Subscribe</Button>
+            </local:LabelContentControl>
         </StackPanel>
     </Grid>
 </UserControl>

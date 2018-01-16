@@ -26,8 +26,9 @@ namespace SchedulingClients.DemoClientApp
 
             int http = (int)httpPort.Value;
             int tcp = (int)tcpPort.Value;
+            int udp = (int)udpPort.Value;
 
-            DemoClient demoClient = new DemoClient(ipAddress, http, tcp);
+            DemoClient demoClient = new DemoClient(ipAddress, http, tcp, udp);
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Configure(demoClient);

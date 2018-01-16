@@ -8,18 +8,25 @@ namespace SchedulingClients
 
         public const int DEFAULTTCPPORT = 41917;
 
+        public const int DEFAULTUDPPORT = 41918;
+
         private readonly int httpPort;
 
         private readonly IPAddress ipAddress;
 
         private readonly int tcpPort;
 
-        public EndpointSettings(IPAddress ipAddress = default(IPAddress), int httpPort = DEFAULTHTTPPORT, int tcpPort = DEFAULTTCPPORT)
+        private readonly int udpPort;
+
+        public EndpointSettings(IPAddress ipAddress = default(IPAddress), int httpPort = DEFAULTHTTPPORT, int tcpPort = DEFAULTTCPPORT, int udpPort = DEFAULTUDPPORT)
         {
             this.ipAddress = ipAddress == null ? IPAddress.Loopback : ipAddress;
             this.httpPort = httpPort;
             this.tcpPort = tcpPort;
+            this.udpPort = udpPort;
         }
+
+        public int UdpPort { get { return udpPort; } }
 
         public int HttpPort { get { return httpPort; } }
 

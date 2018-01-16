@@ -21,9 +21,9 @@ namespace SchedulingClients.DemoClientApp
 
         private ReadOnlyObservableCollection<IClient> readOnlyClients;
 
-        public DemoClient(IPAddress ipAddress, int httpPort, int tcpPort)
+        public DemoClient(IPAddress ipAddress, int httpPort, int tcpPort, int udpPort)
         {
-            this.endpointSettings = new EndpointSettings(ipAddress, httpPort, tcpPort);
+            this.endpointSettings = new EndpointSettings(ipAddress, httpPort, tcpPort, udpPort);
             readOnlyClients = new ReadOnlyObservableCollection<IClient>(clients);
 
             logFolderPath = Path.Combine(Path.GetTempPath(), "Scheduling Clients Demo Client App");

@@ -15,7 +15,7 @@ namespace SchedulingClients
 
         public static FleetManagerClient GetFleetManagerClient(EndpointSettings portSettings)
         {
-            return new FleetManagerClient(portSettings.TcpFleetManagerService());
+            return new FleetManagerClient(portSettings.TcpFleetManagerService(), portSettings.UdpPort);
         }
 
         public static JobBuilderClient GetJobBuilderClient(EndpointSettings portSettings)

@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
+using System.Net;
 
 namespace SchedulingClients
 {

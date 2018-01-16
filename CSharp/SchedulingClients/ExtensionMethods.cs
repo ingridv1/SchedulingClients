@@ -1,12 +1,32 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using SchedulingClients.MapServiceReference;
 using System.Linq;
+using System.Net;
+using System.ServiceModel;
 using System.Text;
 
 namespace SchedulingClients
 {
     public static class ExtensionMethods
     {
+
+        /// <summary>
+        /// Converts endpoint address to IP address.
+        /// </summary>
+        /// <returns>IPAddress</returns>
+        public static IPAddress ToIPAddress(this EndpointAddress endpointAddress)
+        {
+            try
+            {
+                string hostString = endpointAddress.Uri.Host;
+                return System.Net.IPAddress.Parse(hostString);
+            }
+            catch
+            {
+                return System.Net.IPAddress.None;
+            }
+        }
+
         public static string ToHexString(this byte[] bytes)
         {
             if (bytes == null)

@@ -39,12 +39,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractCallbackClient.cs" />
+    <Compile Include="AbstractCast.cs" />
     <Compile Include="AbstractClient.cs" />
     <Compile Include="AgentClient.cs" />
     <Compile Include="AgentBatteryStatusClient.cs" />
+    <Compile Include="ByteArrayCast.cs" />
+    <Compile Include="ByteArrayUDPClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FleetManagerClient.cs" />
+    <Compile Include="GenericUDPClient.cs" />
     <Compile Include="ICallbackClient.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="JobBuilderClient.cs" />
