@@ -15,6 +15,9 @@
             <local:LabelContentControl Header="Creates a simple multi pick job, consisting of three picks, a drop and a park">
                 <Button x:Name="multiPickJobTest" Click="multiPickJobTest_Click"  >Multi</Button>
             </local:LabelContentControl>
+            <local:LabelContentControl Header="Creates a job consisting of two pipelined move tasks">
+                <Button x:Name="moveJobButton" Click="moveJobButton_Click">Pipeline</Button>
+            </local:LabelContentControl>
             <StackPanel>
                 <local:LabelContentControl Header="Task">
                     <toolkit:IntegerUpDown x:Name="taskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />

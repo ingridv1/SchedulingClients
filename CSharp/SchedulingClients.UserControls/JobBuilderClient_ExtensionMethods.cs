@@ -15,7 +15,7 @@ namespace SchedulingClients.UserControls
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
                 int unorderedListTaskId;
-                if (jobBuilder.TryCreateListTask(jobData.OrderedListTaskId, false, out unorderedListTaskId) == true)
+                if (jobBuilder.TryCreateListTask(jobData.OrderedListTaskId, ListTaskType.Unordered, out unorderedListTaskId) == true)
                 {
                     for (int i = 0; i < 3; i++)
                     {
@@ -44,6 +44,27 @@ namespace SchedulingClients.UserControls
                         jobBuilder.TryCreateServicingTask(jobData.OrderedListTaskId, parkNode.MapItemId, JobBuilderServiceReference.ServiceType.Park, out parkNodeId, TimeSpan.FromSeconds(10));
                     }
                 }
+
+                bool success;
+                jobBuilder.TryCommit(jobData.JobId, out success);
+            }
+        }
+
+        public static void MoveJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
+        {
+            JobData jobData;
+
+            if (jobBuilder.TryCreateJob(out jobData) == true)
+            {
+                int piplineId;
+                jobBuilder.TryCreateListTask(jobData.OrderedListTaskId, ListTaskType.Pipelined, out piplineId);
+
+                NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
+                NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);
+
+                int pickNodeId, pickNodeId2;
+                jobBuilder.TryCreateMovingTask(piplineId, pickNode.MapItemId, out pickNodeId);
+                jobBuilder.TryCreateMovingTask(piplineId, pickNode2.MapItemId, out pickNodeId2);
 
                 bool success;
                 jobBuilder.TryCommit(jobData.JobId, out success);

@@ -1,5 +1,7 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.ServiceModel;
 
@@ -70,16 +72,16 @@ namespace SchedulingClients
         /// Creates a new list task
         /// </summary>
         /// <param name="parentTaskId">Parent list task Id</param>
-        /// <param name="isOrdered">True if list task is to be ordered</param>
+        /// <param name="listTaskType">Type of new list task</param>
         /// <param name="listTaskId">Id of new list task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateListTask(int parentTaskId, bool isOrdered, out int listTaskId)
+        public ServiceOperationResult TryCreateListTask(int parentTaskId, ListTaskType listTaskType, out int listTaskId)
         {
-            Logger.Info("TryCreateListTask({0},{1})", parentTaskId, isOrdered);
+            Logger.Info("TryCreateListTask({0},{1})", parentTaskId, listTaskType.ToString());
 
             try
             {
-                var result = CreateListTask(parentTaskId, isOrdered);
+                var result = CreateListTask(parentTaskId, listTaskType);
                 listTaskId = result.Item1;
                 return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
@@ -112,6 +114,56 @@ namespace SchedulingClients
             catch (Exception ex)
             {
                 serviceTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new sleeping task
+        /// </summary>
+        /// <param name="parentListTaskId">Id of parent list task</param>
+        /// <param name="nodeId">Id of node for service to be carried out</param>
+        /// <param name="sleepingTaskId">Id of newly created sleeping task</param>
+        /// <param name="expectedDuration">Expected duration of the task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateSleepingTask(int parentListTaskId, int nodeId, out int sleepingTaskId, TimeSpan expectedDuration = default(TimeSpan))
+        {
+            Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
+
+            try
+            {
+                var result = CreateSleepingTask(parentListTaskId, nodeId, expectedDuration);
+                sleepingTaskId = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                sleepingTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new manoeuvre task
+        /// </summary>
+        /// <param name="parentListTaskId">Id of parent list task</param>
+        /// <param name="nodeId">Id of node for service to be carried out</param>
+        /// <param name="moveTaskId">Id of newly created manoeuvre task</param>
+        /// <param name="expectedDuration">Expected duration of the task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId, TimeSpan expectedDuration = default(TimeSpan))
+        {
+            Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
+
+            try
+            {
+                var result = CreateMovingTask(parentListTaskId, nodeId, expectedDuration);
+                moveTaskId = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                moveTaskId = -1;
                 return HandleClientException(ex);
             }
         }
@@ -282,9 +334,9 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateListTask(int parentTaskId, bool isOrdered)
+        private Tuple<int, ServiceCallData> CreateListTask(int parentTaskId, ListTaskType listTaskType)
         {
-            Logger.Debug("CreateListTask({0},{1})", parentTaskId, isOrdered);
+            Logger.Debug("CreateListTask({0},{1})", parentTaskId, listTaskType.ToString());
 
             if (isDisposed)
             {
@@ -296,7 +348,7 @@ namespace SchedulingClients
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateListTask(parentTaskId, isOrdered);
+                result = channel.CreateListTask(parentTaskId, listTaskType);
                 channelFactory.Close();
             }
 
@@ -305,7 +357,7 @@ namespace SchedulingClients
 
         private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
-            Logger.Debug("CreateServicingTask({0},{1})", parentTaskId, nodeId, serviceType, expectedDuration);
+            Logger.Debug("CreateServicingTask({0},{1},{2},{3})", parentTaskId, nodeId, serviceType, expectedDuration);
 
             if (isDisposed)
             {
@@ -318,6 +370,48 @@ namespace SchedulingClients
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
                 result = channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<int, ServiceCallData> CreateSleepingTask(int parentTaskId, int nodeId, TimeSpan expectedDuration)
+        {
+            Logger.Debug("CreateSleepingTask({0},{1},{2})", parentTaskId, nodeId, expectedDuration);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateSleepingTask(parentTaskId, nodeId, expectedDuration);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<int, ServiceCallData> CreateMovingTask(int parentTaskId, int nodeId, TimeSpan expectedDuration)
+        {
+            Logger.Debug("CreateMovingTask({0},{1},{2})", parentTaskId, nodeId, expectedDuration);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateMovingTask(parentTaskId, nodeId, expectedDuration);
                 channelFactory.Close();
             }
 

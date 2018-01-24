@@ -50,5 +50,19 @@ namespace SchedulingClients.UserControls
 #warning Unsafe
             client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterIdUpDown.Value ?? 0, (ushort)(valueUpDown.Value ?? 0));
         }
+
+        private void moveJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            JobBuilderClient client = DataContext as JobBuilderClient;
+
+            if (roadmapClient != null)
+            {
+                IEnumerable<NodeData> nodeData;
+                if (roadmapClient.TryGetAllNodeData(out nodeData) == true)
+                {
+                    client.MoveJobTest(nodeData);
+                }
+            }
+        }
     }
 }

@@ -28,10 +28,11 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Tasks" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJobBuilderService_CommitJob_InputMessage">
@@ -57,6 +58,18 @@
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateServicingTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateSleepingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSleepingTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateSleepingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSleepingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateMovingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMovingTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateMovingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMovingTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_IssueEnumDirective_InputMessage">
     <wsdl:part name="parameters" element="tns:IssueEnumDirective" />
@@ -104,6 +117,14 @@
     <wsdl:operation name="CreateServicingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse" message="tns:IJobBuilderService_CreateServicingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSleepingTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateSleepingTask" message="tns:IJobBuilderService_CreateSleepingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateSleepingTaskResponse" message="tns:IJobBuilderService_CreateSleepingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMovingTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateMovingTask" message="tns:IJobBuilderService_CreateMovingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateMovingTaskResponse" message="tns:IJobBuilderService_CreateMovingTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="IssueEnumDirective">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueEnumDirective" message="tns:IJobBuilderService_IssueEnumDirective_InputMessage" />
@@ -158,6 +179,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSleepingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateSleepingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMovingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateMovingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -243,6 +282,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSleepingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateSleepingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMovingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateMovingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
