@@ -1,14 +1,39 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using SchedulingClients.MapServiceReference;
+using System;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
 using System.Text;
+using UDPCasts;
+using System.Collections.Generic;
 
 namespace SchedulingClients
 {
     public static class ExtensionMethods
     {
+        public static bool IsCurrentByteTickLarger(this byte current, byte other)
+        {
+            return (current < other && (other - current) > 128) || (current > other && (current - other) < 128);
+        }
+
+        public static double DegToRad(this double value)
+        {
+            return (value * Math.PI) / 180.0d;
+        }
+
+        public static IEnumerable<ControllerState> ToControllerStates(this ByteArrayCast byteArrayCast)
+        {
+            List<ControllerState> controllerStates = new List<ControllerState>();
+
+            foreach(byte[] bytes in byteArrayCast.ByteArray)
+            {
+                ControllerState controllerState = new ControllerState(bytes);
+                controllerStates.Add(controllerState);
+            }
+
+            return controllerStates;
+        }
 
         /// <summary>
         /// Converts endpoint address to IP address.

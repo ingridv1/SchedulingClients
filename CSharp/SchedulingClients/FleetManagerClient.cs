@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SchedulingClients.FleetManagerServiceReference;
 using System.ServiceModel;
 using System.Net;
+using UDPCasts;
 
 namespace SchedulingClients
 {
@@ -17,7 +18,7 @@ namespace SchedulingClients
 
         public int UDPPort { get { return udpPort; } }
 
-        private ByteArrayUDPClient byteArrayUDPClient;
+        private UDPClient<FleetPoseIPCast> udpClient;
 
         private Queue<byte[]> buffer = new Queue<byte[]>();
 
@@ -29,13 +30,28 @@ namespace SchedulingClients
             : base(netTcpUri)
         {
             this.udpPort = udpPort;
-            byteArrayUDPClient = new ByteArrayUDPClient(udpPort, EndpointAddress.ToIPAddress());
-            byteArrayUDPClient.Received += ByteArrayUDPClient_Received;
+            udpClient = new UDPClient<FleetPoseIPCast>(udpPort, EndpointAddress.ToIPAddress());
+            udpClient.Received += ByteArrayUDPClient_Received;
         }
 
-        private void ByteArrayUDPClient_Received(ByteArrayCast obj)
+        private FleetPoseIPCast lastCastReceived = null;
+
+        public FleetPoseIPCast LastCastReceived
         {
-            throw new NotImplementedException();
+            get { return lastCastReceived; }
+            set
+            {
+                if (lastCastReceived == null || value.Tick.IsCurrentByteTickLarger(lastCastReceived.Tick))
+                {
+                    lastCastReceived = value;
+                    OnNotifyPropertyChanged();
+                }
+            }
+        }
+
+        private void ByteArrayUDPClient_Received(FleetPoseIPCast fleetPoseIPCast)
+        {
+            LastCastReceived = fleetPoseIPCast;
         }
 
         /// <summary>
@@ -110,7 +126,7 @@ namespace SchedulingClients
 
             if (isDisposing)
             {
-                byteArrayUDPClient.Dispose();
+                udpClient.Dispose();
             }
 
             isDisposed = true;

@@ -7,7 +7,11 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
             <local:LabelContentControl Header="Requests freeze">
                 <Button x:Name="freezeButton" Click="freezeButton_Click">Freeze</Button>
             </local:LabelContentControl>
@@ -18,5 +22,35 @@
                 <Button x:Name="subscribeButton" Click="subscribeButton_Click">Subscribe</Button>
             </local:LabelContentControl>
         </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <Label>
+                    Last Cast Received:
+                </Label>
+                <local:LabelContentControl Header="Tick">
+                    <TextBox Text="{Binding Path=LastCastReceived.Tick, Mode=OneWay}"/>
+                </local:LabelContentControl>
+            </StackPanel>
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding Path=LastCastReceived.DataSet, Mode=OneWay}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBox>
+                            <TextBox.Text>
+                                <MultiBinding StringFormat="{}IPAddress: {0} X: {1} Y: {2} Heading: {3}">
+                                    <Binding Path="IPAddress" Mode="OneWay"/>
+                                    <Binding Path="X" Mode="OneWay"/>
+                                    <Binding Path="Y" Mode="OneWay"/>
+                                    <Binding Path="Heading" Mode="OneWay"/>
+                                </MultiBinding>
+                            </TextBox.Text>         
+                        </TextBox>
+                    </DataTemplate>       
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
     </Grid>
 </UserControl>
