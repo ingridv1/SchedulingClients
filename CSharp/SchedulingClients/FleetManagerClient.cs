@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SchedulingClients.FleetManagerServiceReference;
 using System.ServiceModel;
+using System.Net;
+using UDPCasts;
 
 namespace SchedulingClients
 {
@@ -12,13 +14,44 @@ namespace SchedulingClients
     {
         private bool isDisposed = false;
 
+        private readonly int udpPort;
+
+        public int UDPPort { get { return udpPort; } }
+
+        private UDPClient<FleetPoseIPCast> udpClient;
+
+        private Queue<byte[]> buffer = new Queue<byte[]>();
+
         /// <summary>
         /// Creates a new FleetManagerClient
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the job builder service</param>
-        public FleetManagerClient(Uri netTcpUri)
+        public FleetManagerClient(Uri netTcpUri, int udpPort)
             : base(netTcpUri)
         {
+            this.udpPort = udpPort;
+            udpClient = new UDPClient<FleetPoseIPCast>(udpPort, EndpointAddress.ToIPAddress());
+            udpClient.Received += ByteArrayUDPClient_Received;
+        }
+
+        private FleetPoseIPCast lastCastReceived = null;
+
+        public FleetPoseIPCast LastCastReceived
+        {
+            get { return lastCastReceived; }
+            set
+            {
+                if (lastCastReceived == null || value.Tick.IsCurrentByteTickLarger(lastCastReceived.Tick))
+                {
+                    lastCastReceived = value;
+                    OnNotifyPropertyChanged();
+                }
+            }
+        }
+
+        private void ByteArrayUDPClient_Received(FleetPoseIPCast fleetPoseIPCast)
+        {
+            LastCastReceived = fleetPoseIPCast;
         }
 
         /// <summary>
@@ -33,6 +66,23 @@ namespace SchedulingClients
             try
             {
                 var result = RequestFreeze();
+                success = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
+        public ServiceOperationResult TrySubscribeFleetStateCastHeartbeat(out bool success)
+        {
+            Logger.Info("TrySubscribeFleetStateCastHeartbeat()");
+
+            try
+            {
+                var result = SubscribeFleetStateCastHeartbeat();
                 success = result.Item1;
                 return ServiceOperationResult.FromServiceCallData(result.Item2);
             }
@@ -72,6 +122,11 @@ namespace SchedulingClients
             if (isDisposed)
             {
                 return;
+            }
+
+            if (isDisposing)
+            {
+                udpClient.Dispose();
             }
 
             isDisposed = true;
@@ -116,6 +171,27 @@ namespace SchedulingClients
                 IFleetManagerService channel = channelFactory.CreateChannel();
                 result = channel.RequestUnfreeze();
                 channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> SubscribeFleetStateCastHeartbeat()
+        { 
+            Logger.Debug("SubscribeFleetStateCastHeartbeat()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("FleetManagerClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+            {
+                IFleetManagerService channel = channelFactory.CreateChannel();
+                IPAddress ipAddress = EndpointAddress.ToIPAddress();
+                result = channel.SubscribeFleetStateCastHeartbeat(ipAddress);
             }
 
             return result;

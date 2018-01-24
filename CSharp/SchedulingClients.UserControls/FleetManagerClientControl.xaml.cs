@@ -38,5 +38,12 @@ namespace SchedulingClients.UserControls
             bool success;
             fleetManagerClient.TryRequestUnfreeze(out success);
         }
+
+        private void subscribeButton_Click(object sender, RoutedEventArgs e)
+        {
+            FleetManagerClient fleetManagerClient = DataContext as FleetManagerClient;
+            bool success;
+            fleetManagerClient.TrySubscribeFleetStateCastHeartbeat(out success);
+        }
     }
 }

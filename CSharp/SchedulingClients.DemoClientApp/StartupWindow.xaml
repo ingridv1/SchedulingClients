@@ -64,6 +64,10 @@
                 <toolkit:IntegerUpDown x:Name="tcpPort" Value="41917" Minimum="1024" Maximum="49151" HorizontalAlignment="Right"
                          DefaultValue="41917" DisplayDefaultValueOnEmptyText="True" />
             </clientsUC:LabelContentControl>
+            <clientsUC:LabelContentControl Header="UDP port:" ToolTip="Port used by the server to receive UDP casts">
+                <toolkit:IntegerUpDown x:Name="udpPort" Value="41918" Minimum="1024" MaxHeight="41951" HorizontalAlignment="Right"
+                         DefaultValue="41918" DisplayDefaultValueOnEmptyText="True" />
+            </clientsUC:LabelContentControl>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="okButton" Click="okButton_Click">
