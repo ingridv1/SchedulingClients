@@ -37,7 +37,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UDPCasts, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\UDPCasts.3.1.0\lib\net462\UDPCasts.dll</HintPath>
+      <HintPath>..\packages\UDPCasts.3.1.1\lib\net462\UDPCasts.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
