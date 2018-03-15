@@ -15,7 +15,7 @@ namespace SchedulingClients.UserControls
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
                 int unorderedListTaskId;
-                if (jobBuilder.TryCreateListTask(jobData.OrderedListTaskId, ListTaskType.Unordered, out unorderedListTaskId) == true)
+                if (jobBuilder.TryCreateUnorderedListTask(jobData.OrderedListTaskId, out unorderedListTaskId) == true)
                 {
                     for (int i = 0; i < 3; i++)
                     {
@@ -57,7 +57,7 @@ namespace SchedulingClients.UserControls
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
                 int piplineId;
-                jobBuilder.TryCreateListTask(jobData.OrderedListTaskId, ListTaskType.Pipelined, out piplineId);
+                jobBuilder.TryCreatePipelinedTask(jobData.OrderedListTaskId, out piplineId);
 
                 NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
                 NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);

@@ -64,5 +64,58 @@ namespace SchedulingClients.UserControls
                 }
             }
         }
-    }
+
+		private void beginEditingJobButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			client.TryBeginEditingJob(jobIdUpDown.Value ?? 0);
+		}
+
+		private void finishEditingJobButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			client.TryFinishEditingJob(jobIdUpDown.Value ?? 0);
+		}
+
+		private void finaliseButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			client.TryFinaliseTask(taskToFinaliseUpDown.Value ?? 0);
+		}
+
+		private void beginEditingTaskButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			client.TryBeginEditingTask(editTaskIdUpDown.Value ?? 0);
+		}
+
+		private void finishEditingTaskButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			client.TryFinishEditingTask(editTaskIdUpDown.Value ?? 0);
+		}
+
+		private void nonFinalisedTaskButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			int newTaskId;
+
+			client.TryCreateOrderedListTask(parentTaskIdUpDown.Value ?? 0, false, out newTaskId);
+		}
+
+		private void addNodeTaskToParentButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobBuilderClient client = DataContext as JobBuilderClient;
+
+			int newMoveId;
+
+			client.TryCreateMovingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newMoveId);
+		}
+	}
 }

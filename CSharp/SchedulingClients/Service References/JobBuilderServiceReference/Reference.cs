@@ -126,25 +126,46 @@ namespace SchedulingClients.JobBuilderServiceReference {
         CREATEJOBFAILED = 1002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATELISTTASKFAILED = 1003,
+        CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESERVICINGTASKFAILED = 1004,
+        CREATEPIPELINEDTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOTACCEPTINGNEWJOBS = 1005,
+        CREATEORDEREDLISTTASKFAILED = 1005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DIRECTIVENOTALLOWED = 1006,
+        CREATESERVICINGTASKFAILED = 1006,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDNODETASKID = 1007,
+        NOTACCEPTINGNEWJOBS = 1007,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESLEEPINGTASKFAILED = 1008,
+        DIRECTIVENOTALLOWED = 1008,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEMOVINGTASKFAILED = 1009,
+        INVALIDNODETASKID = 1009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESLEEPINGTASKFAILED = 1010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEMOVINGTASKFAILED = 1011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINALISETASKFAILED = 1012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGJOBFAILED = 1013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGJOBFAILED = 1014,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGTASKFAILED = 1015,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGTASKFAILED = 1016,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
@@ -266,20 +287,6 @@ namespace SchedulingClients.JobBuilderServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListTaskType", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Tasks")]
-    public enum ListTaskType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unordered = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ordered = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pipelined = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/Mapping")]
     public enum ServiceType : int {
         
@@ -303,6 +310,24 @@ namespace SchedulingClients.JobBuilderServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JobBuilderServiceReference.IJobBuilderService")]
     public interface IJobBuilderService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        int VersionMajor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        System.Threading.Tasks.Task<int> VersionMajorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        int VersionMinor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        System.Threading.Tasks.Task<int> VersionMinorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        int VersionPatch();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        System.Threading.Tasks.Task<int> VersionPatchAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CommitJob", ReplyAction="http://tempuri.org/IJobBuilderService/CommitJobResponse")]
         System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CommitJob(int jobId, int agentId);
         
@@ -315,11 +340,23 @@ namespace SchedulingClients.JobBuilderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateJob", ReplyAction="http://tempuri.org/IJobBuilderService/CreateJobResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateJobAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateListTaskResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateListTask(int parentTaskId, SchedulingClients.JobBuilderServiceReference.ListTaskType listTaskType);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTaskResponse")]
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateUnorderedListTask(int parentTaskId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateListTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateListTaskAsync(int parentTaskId, SchedulingClients.JobBuilderServiceReference.ListTaskType listTaskType);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTaskResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateUnorderedListTaskAsync(int parentTaskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateOrderedListTaskResponse")]
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateOrderedListTaskResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateOrderedListTaskAsync(int parentTaskId, bool isFinalised);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTaskResponse")]
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreatePipelinedTask(int parentTaskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTaskResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreatePipelinedTaskAsync(int parentTaskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
         System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
@@ -368,6 +405,36 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirectiveResponse")]
         System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueIPAddressDirectiveAsync(int taskId, int parameterId, System.Net.IPAddress value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingJobResponse")]
+        SchedulingClients.JobBuilderServiceReference.ServiceCallData BeginEditingJob(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingJobResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> BeginEditingJobAsync(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingJobResponse")]
+        SchedulingClients.JobBuilderServiceReference.ServiceCallData FinishEditingJob(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingJobResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinishEditingJobAsync(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingTaskResponse")]
+        SchedulingClients.JobBuilderServiceReference.ServiceCallData BeginEditingTask(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingTaskResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> BeginEditingTaskAsync(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingTaskResponse")]
+        SchedulingClients.JobBuilderServiceReference.ServiceCallData FinishEditingTask(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingTaskResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinishEditingTaskAsync(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinaliseTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinaliseTaskResponse")]
+        SchedulingClients.JobBuilderServiceReference.ServiceCallData FinaliseTask(int taskId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinaliseTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinaliseTaskResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinaliseTaskAsync(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -397,6 +464,30 @@ namespace SchedulingClients.JobBuilderServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public int VersionMajor() {
+            return base.Channel.VersionMajor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
+            return base.Channel.VersionMajorAsync();
+        }
+        
+        public int VersionMinor() {
+            return base.Channel.VersionMinor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
+            return base.Channel.VersionMinorAsync();
+        }
+        
+        public int VersionPatch() {
+            return base.Channel.VersionPatch();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
+            return base.Channel.VersionPatchAsync();
+        }
+        
         public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CommitJob(int jobId, int agentId) {
             return base.Channel.CommitJob(jobId, agentId);
         }
@@ -413,12 +504,28 @@ namespace SchedulingClients.JobBuilderServiceReference {
             return base.Channel.CreateJobAsync();
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateListTask(int parentTaskId, SchedulingClients.JobBuilderServiceReference.ListTaskType listTaskType) {
-            return base.Channel.CreateListTask(parentTaskId, listTaskType);
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateUnorderedListTask(int parentTaskId) {
+            return base.Channel.CreateUnorderedListTask(parentTaskId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateListTaskAsync(int parentTaskId, SchedulingClients.JobBuilderServiceReference.ListTaskType listTaskType) {
-            return base.Channel.CreateListTaskAsync(parentTaskId, listTaskType);
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateUnorderedListTaskAsync(int parentTaskId) {
+            return base.Channel.CreateUnorderedListTaskAsync(parentTaskId);
+        }
+        
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised) {
+            return base.Channel.CreateOrderedListTask(parentTaskId, isFinalised);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateOrderedListTaskAsync(int parentTaskId, bool isFinalised) {
+            return base.Channel.CreateOrderedListTaskAsync(parentTaskId, isFinalised);
+        }
+        
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreatePipelinedTask(int parentTaskId) {
+            return base.Channel.CreatePipelinedTask(parentTaskId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreatePipelinedTaskAsync(int parentTaskId) {
+            return base.Channel.CreatePipelinedTaskAsync(parentTaskId);
         }
         
         public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
@@ -483,6 +590,46 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueIPAddressDirectiveAsync(int taskId, int parameterId, System.Net.IPAddress value) {
             return base.Channel.IssueIPAddressDirectiveAsync(taskId, parameterId, value);
+        }
+        
+        public SchedulingClients.JobBuilderServiceReference.ServiceCallData BeginEditingJob(int jobId) {
+            return base.Channel.BeginEditingJob(jobId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> BeginEditingJobAsync(int jobId) {
+            return base.Channel.BeginEditingJobAsync(jobId);
+        }
+        
+        public SchedulingClients.JobBuilderServiceReference.ServiceCallData FinishEditingJob(int jobId) {
+            return base.Channel.FinishEditingJob(jobId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinishEditingJobAsync(int jobId) {
+            return base.Channel.FinishEditingJobAsync(jobId);
+        }
+        
+        public SchedulingClients.JobBuilderServiceReference.ServiceCallData BeginEditingTask(int taskId) {
+            return base.Channel.BeginEditingTask(taskId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> BeginEditingTaskAsync(int taskId) {
+            return base.Channel.BeginEditingTaskAsync(taskId);
+        }
+        
+        public SchedulingClients.JobBuilderServiceReference.ServiceCallData FinishEditingTask(int taskId) {
+            return base.Channel.FinishEditingTask(taskId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinishEditingTaskAsync(int taskId) {
+            return base.Channel.FinishEditingTaskAsync(taskId);
+        }
+        
+        public SchedulingClients.JobBuilderServiceReference.ServiceCallData FinaliseTask(int taskId) {
+            return base.Channel.FinaliseTask(taskId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinaliseTaskAsync(int taskId) {
+            return base.Channel.FinaliseTaskAsync(taskId);
         }
     }
 }
