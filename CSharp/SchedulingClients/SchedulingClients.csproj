@@ -225,9 +225,6 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder62.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder7.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\JobBuilderServiceReference\JobBuilderService1.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

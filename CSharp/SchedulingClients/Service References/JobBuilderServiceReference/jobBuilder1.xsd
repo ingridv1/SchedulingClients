@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Tasks" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services" />
+  <xs:element name="VersionMajor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionMajorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VersionMajorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionMinor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionMinorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VersionMinorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionPatch">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionPatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VersionPatchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CommitJob">
     <xs:complexType>
       <xs:sequence>
@@ -32,18 +68,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateListTask">
+  <xs:element name="CreateUnorderedListTask">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SchedulingServices.Tasks" minOccurs="0" name="listTaskType" type="q3:ListTaskType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateListTaskResponse">
+  <xs:element name="CreateUnorderedListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateListTaskResult" nillable="true" type="q4:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateUnorderedListTaskResult" nillable="true" type="q3:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrderedListTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
+        <xs:element minOccurs="0" name="isFinalised" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrderedListTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateOrderedListTaskResult" nillable="true" type="q4:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePipelinedTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePipelinedTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatePipelinedTaskResult" nillable="true" type="q5:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -52,15 +116,15 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mapping" minOccurs="0" name="serviceType" type="q5:ServiceType" />
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q6:duration" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mapping" minOccurs="0" name="serviceType" type="q6:ServiceType" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q7:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateServicingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q7:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q8:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -69,14 +133,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q8:duration" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q9:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateSleepingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateSleepingTaskResult" nillable="true" type="q9:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateSleepingTaskResult" nillable="true" type="q10:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -85,14 +149,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q10:duration" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q11:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateMovingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q11:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q12:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -108,7 +172,7 @@
   <xs:element name="IssueEnumDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q12:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q13:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -124,7 +188,7 @@
   <xs:element name="IssueShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q13:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q14:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -140,7 +204,7 @@
   <xs:element name="IssueUShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q14:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q15:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -156,7 +220,7 @@
   <xs:element name="IssueFloatDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q15:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q16:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -165,14 +229,84 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
         <xs:element minOccurs="0" name="parameterId" type="xs:int" />
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q16:IPAddress" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q17:IPAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="IssueIPAddressDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q17:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q18:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginEditingJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginEditingJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="BeginEditingJobResult" nillable="true" type="q19:ServiceCallData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishEditingJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishEditingJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinishEditingJobResult" nillable="true" type="q20:ServiceCallData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginEditingTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginEditingTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="BeginEditingTaskResult" nillable="true" type="q21:ServiceCallData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishEditingTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishEditingTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinishEditingTaskResult" nillable="true" type="q22:ServiceCallData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinaliseTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinaliseTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinaliseTaskResult" nillable="true" type="q23:ServiceCallData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

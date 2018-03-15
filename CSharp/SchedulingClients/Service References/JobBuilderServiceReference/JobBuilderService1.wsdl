@@ -28,13 +28,30 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Tasks" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IJobBuilderService_VersionMajor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajor" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_VersionMajor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_VersionMinor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinor" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_VersionMinor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_VersionPatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatch" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_VersionPatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
+  </wsdl:message>
   <wsdl:message name="IJobBuilderService_CommitJob_InputMessage">
     <wsdl:part name="parameters" element="tns:CommitJob" />
   </wsdl:message>
@@ -47,11 +64,23 @@
   <wsdl:message name="IJobBuilderService_CreateJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateJobResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateListTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateListTask" />
+  <wsdl:message name="IJobBuilderService_CreateUnorderedListTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUnorderedListTask" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateListTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateListTaskResponse" />
+  <wsdl:message name="IJobBuilderService_CreateUnorderedListTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUnorderedListTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateOrderedListTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderedListTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateOrderedListTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderedListTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreatePipelinedTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePipelinedTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreatePipelinedTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePipelinedTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateServicingTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTask" />
@@ -101,7 +130,49 @@
   <wsdl:message name="IJobBuilderService_IssueIPAddressDirective_OutputMessage">
     <wsdl:part name="parameters" element="tns:IssueIPAddressDirectiveResponse" />
   </wsdl:message>
+  <wsdl:message name="IJobBuilderService_BeginEditingJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginEditingJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_BeginEditingJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginEditingJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_FinishEditingJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishEditingJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_FinishEditingJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishEditingJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_BeginEditingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginEditingTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_BeginEditingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginEditingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_FinishEditingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishEditingTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_FinishEditingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishEditingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_FinaliseTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinaliseTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_FinaliseTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinaliseTaskResponse" />
+  </wsdl:message>
   <wsdl:portType name="IJobBuilderService">
+    <wsdl:operation name="VersionMajor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IJobBuilderService_VersionMajor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMajorResponse" message="tns:IJobBuilderService_VersionMajor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMinor" message="tns:IJobBuilderService_VersionMinor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMinorResponse" message="tns:IJobBuilderService_VersionMinor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IJobBuilderService_VersionPatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IJobBuilderService_VersionPatch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CommitJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CommitJob" message="tns:IJobBuilderService_CommitJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CommitJobResponse" message="tns:IJobBuilderService_CommitJob_OutputMessage" />
@@ -110,9 +181,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateJob" message="tns:IJobBuilderService_CreateJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateJobResponse" message="tns:IJobBuilderService_CreateJob_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateListTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateListTask" message="tns:IJobBuilderService_CreateListTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateListTaskResponse" message="tns:IJobBuilderService_CreateListTask_OutputMessage" />
+    <wsdl:operation name="CreateUnorderedListTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" message="tns:IJobBuilderService_CreateUnorderedListTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTaskResponse" message="tns:IJobBuilderService_CreateUnorderedListTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderedListTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTask" message="tns:IJobBuilderService_CreateOrderedListTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTaskResponse" message="tns:IJobBuilderService_CreateOrderedListTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePipelinedTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTask" message="tns:IJobBuilderService_CreatePipelinedTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTaskResponse" message="tns:IJobBuilderService_CreatePipelinedTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
@@ -146,10 +225,57 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" message="tns:IJobBuilderService_IssueIPAddressDirective_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirectiveResponse" message="tns:IJobBuilderService_IssueIPAddressDirective_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="BeginEditingJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingJob" message="tns:IJobBuilderService_BeginEditingJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingJobResponse" message="tns:IJobBuilderService_BeginEditingJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishEditingJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingJob" message="tns:IJobBuilderService_FinishEditingJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingJobResponse" message="tns:IJobBuilderService_FinishEditingJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginEditingTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingTask" message="tns:IJobBuilderService_BeginEditingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingTaskResponse" message="tns:IJobBuilderService_BeginEditingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishEditingTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingTask" message="tns:IJobBuilderService_FinishEditingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingTaskResponse" message="tns:IJobBuilderService_FinishEditingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinaliseTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinaliseTask" message="tns:IJobBuilderService_FinaliseTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/FinaliseTaskResponse" message="tns:IJobBuilderService_FinaliseTask_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJobBuilderService" type="tns:IJobBuilderService">
     <wsp:PolicyReference URI="#NetTcpBinding_IJobBuilderService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CommitJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CommitJob" style="document" />
       <wsdl:input>
@@ -168,8 +294,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateListTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateListTask" style="document" />
+    <wsdl:operation name="CreateUnorderedListTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderedListTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateOrderedListTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePipelinedTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -242,6 +386,51 @@
     </wsdl:operation>
     <wsdl:operation name="IssueIPAddressDirective">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginEditingJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishEditingJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginEditingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishEditingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinaliseTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinaliseTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -253,6 +442,33 @@
   <wsdl:binding name="WSDualHttpBinding_IJobBuilderService" type="tns:IJobBuilderService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IJobBuilderService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CommitJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CommitJob" style="document" />
       <wsdl:input>
@@ -271,8 +487,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateListTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateListTask" style="document" />
+    <wsdl:operation name="CreateUnorderedListTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderedListTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateOrderedListTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePipelinedTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -345,6 +579,51 @@
     </wsdl:operation>
     <wsdl:operation name="IssueIPAddressDirective">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginEditingJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishEditingJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginEditingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishEditingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinaliseTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinaliseTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
