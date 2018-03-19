@@ -353,10 +353,10 @@ namespace SchedulingClients.JobBuilderServiceReference {
         System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateOrderedListTaskAsync(int parentTaskId, bool isFinalised);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTaskResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreatePipelinedTask(int parentTaskId);
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreatePipelinedTask(int parentTaskId, bool isFinalised);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreatePipelinedTaskAsync(int parentTaskId);
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreatePipelinedTaskAsync(int parentTaskId, bool isFinalised);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
         System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
@@ -520,12 +520,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
             return base.Channel.CreateOrderedListTaskAsync(parentTaskId, isFinalised);
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreatePipelinedTask(int parentTaskId) {
-            return base.Channel.CreatePipelinedTask(parentTaskId);
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreatePipelinedTask(int parentTaskId, bool isFinalised) {
+            return base.Channel.CreatePipelinedTask(parentTaskId, isFinalised);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreatePipelinedTaskAsync(int parentTaskId) {
-            return base.Channel.CreatePipelinedTaskAsync(parentTaskId);
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreatePipelinedTaskAsync(int parentTaskId, bool isFinalised) {
+            return base.Channel.CreatePipelinedTaskAsync(parentTaskId, isFinalised);
         }
         
         public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {

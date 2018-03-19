@@ -57,7 +57,7 @@ namespace SchedulingClients.UserControls
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
                 int piplineId;
-                jobBuilder.TryCreatePipelinedTask(jobData.OrderedListTaskId, out piplineId);
+                jobBuilder.TryCreatePipelinedTask(jobData.OrderedListTaskId, true, out piplineId);
 
                 NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
                 NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);

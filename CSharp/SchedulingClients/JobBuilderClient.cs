@@ -121,13 +121,13 @@ namespace SchedulingClients
 		/// <param name="parentTaskId">Parent list task Id</param>
 		/// <param name="listTaskId">Id of new list task</param>
 		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryCreatePipelinedTask(int parentTaskId, out int listTaskId)
+		public ServiceOperationResult TryCreatePipelinedTask(int parentTaskId, bool isFinalised, out int listTaskId)
 		{
 			Logger.Info("TryCreatePipelinedTask({0})", parentTaskId);
 
 			try
 			{
-				var result = CreatePipelinedTask(parentTaskId);
+				var result = CreatePipelinedTask(parentTaskId, isFinalised);
 				listTaskId = result.Item1;
 				return ServiceOperationResult.FromServiceCallData(result.Item2);
 			}
@@ -522,7 +522,7 @@ namespace SchedulingClients
 			return result;
 		}
 
-		private Tuple<int, ServiceCallData> CreatePipelinedTask(int parentTaskId)
+		private Tuple<int, ServiceCallData> CreatePipelinedTask(int parentTaskId, bool isFinalised)
 		{
 			Logger.Debug("CreateListTask({0})", parentTaskId);
 
@@ -536,7 +536,7 @@ namespace SchedulingClients
 			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
 			{
 				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.CreatePipelinedTask(parentTaskId);
+				result = channel.CreatePipelinedTask(parentTaskId, isFinalised);
 				channelFactory.Close();
 			}
 
