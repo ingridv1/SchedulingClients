@@ -34,6 +34,12 @@
                     <Button x:Name="abortJobButton" Click="abortJobButton_Click">Abort Job</Button>
                 </StackPanel>
             </local:LabelContentControl>
+            <local:LabelContentControl Header="Abort Task">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown Minimum="0" x:Name="abortTaskId" DefaultValue="0" Value="0" />
+                    <Button x:Name="abortTaskButton" Click="abortTaskButton_Click">Abort Task</Button>
+                </StackPanel>
+            </local:LabelContentControl>
         </StackPanel>
     </Grid>
 </UserControl>

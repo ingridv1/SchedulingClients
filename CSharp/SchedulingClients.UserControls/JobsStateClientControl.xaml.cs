@@ -32,5 +32,13 @@ namespace SchedulingClients.UserControls
         {
             JobsStateClient jobsStateClient = DataContext as JobsStateClient;
         }
+
+        private void abortTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool couldAbort;
+
+            JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            jobsStateClient.TryAbortTask((int)abortTaskId.Value, out couldAbort);
+        }
     }
 }
