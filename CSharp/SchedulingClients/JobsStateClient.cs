@@ -96,6 +96,29 @@ namespace SchedulingClients
         }
 
         /// <summary>
+        /// Abort a specific task
+        /// </summary>
+        /// <param name="taskId">Id of task to abort</param>
+        /// <param name="success">True if successfull</param>
+        /// <returns></returns>
+        public ServiceOperationResult TryAbortTask(int taskId, out bool success)
+        {
+            Logger.Info("TryAbortTask({0})", taskId);
+
+            try
+            {
+                var result = AbortTask(taskId);
+                success = result.Item1;
+                return ServiceOperationResult.FromServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
         /// Gets all active jobs for a specifc agent
         /// </summary>
         /// <param name="agentId">Id of agent</param>
@@ -221,6 +244,27 @@ namespace SchedulingClients
             {
                 IJobsStateService channel = channelFactory.CreateChannel();
                 result = channel.AbortJob(jobId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> AbortTask(int taskId)
+        {
+            Logger.Debug("AbortTask({0})", taskId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobsStateClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobsStateService channel = channelFactory.CreateChannel();
+                result = channel.AbortTask(taskId);
                 channelFactory.Close();
             }
 
