@@ -1,4 +1,5 @@
-﻿using SchedulingClients.ServicingServiceReference;
+﻿using GAClients;
+using SchedulingClients.ServicingServiceReference;
 using System;
 using System.ServiceModel;
 
@@ -51,7 +52,7 @@ namespace SchedulingClients
             {
                 var result = SetServiceComplete(taskId);
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromServicingServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {

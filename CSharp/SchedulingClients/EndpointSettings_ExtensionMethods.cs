@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using GAClients;
 
 namespace SchedulingClients
 {
@@ -43,16 +44,6 @@ namespace SchedulingClients
         public static Uri TcpServicingService(this EndpointSettings portSettings)
         {
             return new Uri(portSettings.ToTcpBase(), "servicing.svc");
-        }
-
-        private static Uri ToHttpBase(this EndpointSettings portSettings)
-        {
-            return new Uri("http://" + new IPEndPoint(portSettings.IPAddress, portSettings.HttpPort).ToString());
-        }
-
-        private static Uri ToTcpBase(this EndpointSettings portSettings)
-        {
-            return new Uri("net.tcp://" + new IPEndPoint(portSettings.IPAddress, portSettings.TcpPort).ToString());
         }
     }
 }

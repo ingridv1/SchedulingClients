@@ -2,6 +2,7 @@
 using System.ServiceModel;
 using SchedulingClients.AgentServiceReference;
 using System.Collections.Generic;
+using GAClients;
 
 namespace SchedulingClients
 {
@@ -18,19 +19,6 @@ namespace SchedulingClients
         {
         }
 
-        protected override void Dispose(bool isDisposing)
-        {
-            Logger.Debug("Dispose({0})", isDisposing);
-
-            if (isDisposed)
-            {
-                return;
-            }
-
-            isDisposed = true;
-            base.Dispose(isDisposing);
-        }
-
         /// <summary>
         /// Gets all available data on registered agents
         /// </summary>
@@ -44,7 +32,7 @@ namespace SchedulingClients
             {
                 var result = GetAllAgentData();
                 agentDatas = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromAgentServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -61,7 +49,7 @@ namespace SchedulingClients
             {
                 var result = GetAllAgentsInLifetimeState(agentLifetimeState);
                 agentDatas = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromAgentServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {

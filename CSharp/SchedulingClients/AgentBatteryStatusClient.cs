@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SchedulingClients.AgentBatteryStatusServiceReference;
 using System.ServiceModel;
+using GAClients;
 
 namespace SchedulingClients
 {
@@ -19,19 +20,6 @@ namespace SchedulingClients
         public AgentBatteryStatusClient(Uri netTcpUri)
             : base(netTcpUri)
         {
-        }
-
-        protected override void Dispose(bool isDisposing)
-        {
-            Logger.Debug("Dispose({0})", isDisposing);
-
-            if (isDisposed)
-            {
-                return;
-            }
-
-            isDisposed = true;
-            base.Dispose(isDisposing);
         }
 
         private Tuple<AgentBatteryStatusData[], ServiceCallData> GetAllAgentBatteryStatusData()
@@ -69,7 +57,7 @@ namespace SchedulingClients
             {
                 var result = GetAllAgentBatteryStatusData();
                 agentBatteryStatusDatas = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromAgentBatterServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
