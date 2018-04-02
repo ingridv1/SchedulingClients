@@ -1,6 +1,7 @@
 ﻿using System;
 using SchedulingClients.JobStateServiceReference;
 using System.ServiceModel;
+using GAClients;
 
 namespace SchedulingClients
 {
@@ -47,7 +48,7 @@ namespace SchedulingClients
             {
                 var result = GetJobState(jobId);
                 jobState = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -70,7 +71,7 @@ namespace SchedulingClients
             {
                 var result = GetParentJobStateFromTaskId(jobId);
                 jobState = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {

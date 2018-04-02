@@ -6,6 +6,7 @@ using NLog;
 using System.IO;
 using NLog.Targets;
 using NLog.Config;
+using GAClients;
 
 namespace SchedulingClients.DemoClientApp
 {
@@ -95,7 +96,11 @@ namespace SchedulingClients.DemoClientApp
 
             foreach (IClient client in clients.ToList())
             {
-                client.Dispose();
+                if (client is IDisposable)
+                {
+                    (client as IDisposable).Dispose();
+                }
+
                 clients.Remove(client);
             }
 

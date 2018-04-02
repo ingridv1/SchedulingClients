@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using GAClients;
 using System.ServiceModel;
 
 namespace SchedulingClients
@@ -37,7 +38,7 @@ namespace SchedulingClients
             {
                 var result = Commit(jobId, agentId);
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -59,7 +60,7 @@ namespace SchedulingClients
             {
                 var result = CreateJob();
                 jobData = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -83,7 +84,7 @@ namespace SchedulingClients
             {
                 var result = CreateOrderedListTask(parentTaskId, isFinalised);
                 listTaskId = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -106,7 +107,7 @@ namespace SchedulingClients
 			{
 				var result = CreateUnorderedListTask(parentTaskId);
 				listTaskId = result.Item1;
-				return ServiceOperationResult.FromServiceCallData(result.Item2);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
 			}
 			catch (Exception ex)
 			{
@@ -129,7 +130,7 @@ namespace SchedulingClients
 			{
 				var result = CreatePipelinedTask(parentTaskId, isFinalised);
 				listTaskId = result.Item1;
-				return ServiceOperationResult.FromServiceCallData(result.Item2);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
 			}
 			catch (Exception ex)
 			{
@@ -155,7 +156,7 @@ namespace SchedulingClients
             {
                 var result = CreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration);
                 serviceTaskId = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -180,7 +181,7 @@ namespace SchedulingClients
             {
                 var result = CreateSleepingTask(parentListTaskId, nodeId, expectedDuration);
                 sleepingTaskId = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -205,7 +206,7 @@ namespace SchedulingClients
             {
                 var result = CreateMovingTask(parentListTaskId, nodeId, expectedDuration);
                 moveTaskId = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -228,7 +229,7 @@ namespace SchedulingClients
             try
             {
                 var result = IssueDirective(taskId, parameterId, value);
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -250,7 +251,7 @@ namespace SchedulingClients
             try
             {
                 var result = IssueDirective(taskId, parameterId, value);
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -272,7 +273,7 @@ namespace SchedulingClients
             try
             {
                 var result = IssueDirective(taskId, parameterId, value);
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -294,7 +295,7 @@ namespace SchedulingClients
             try
             {
                 var result = IssueDirective(taskId, parameterId, value);
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -316,7 +317,7 @@ namespace SchedulingClients
             try
             {
                 var result = IssueDirective(taskId, parameterId, value);
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -336,7 +337,7 @@ namespace SchedulingClients
 			try
 			{
 				var result = FinaliseTask(taskId);
-				return ServiceOperationResult.FromServiceCallData(result);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
 			}
 			catch (Exception ex)
 			{
@@ -356,7 +357,7 @@ namespace SchedulingClients
 			try
 			{
 				var result = BeginEditingJob(jobId);
-				return ServiceOperationResult.FromServiceCallData(result);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
 			}
 			catch (Exception ex)
 			{
@@ -376,7 +377,7 @@ namespace SchedulingClients
 			try
 			{
 				var result = FinishEditingJob(jobId);
-				return ServiceOperationResult.FromServiceCallData(result);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
 			}
 			catch (Exception ex)
 			{
@@ -396,7 +397,7 @@ namespace SchedulingClients
 			try
 			{
 				var result = BeginEditingTask(taskId);
-				return ServiceOperationResult.FromServiceCallData(result);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
 			}
 			catch (Exception ex)
 			{
@@ -416,27 +417,13 @@ namespace SchedulingClients
 			try
 			{
 				var result = FinishEditingTask(taskId);
-				return ServiceOperationResult.FromServiceCallData(result);
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
 			}
 			catch (Exception ex)
 			{
 				return HandleClientException(ex);
 			}
 		}
-
-		protected override void Dispose(bool isDisposing)
-        {
-            Logger.Debug("Dispose({0})", isDisposing);
-
-            if (isDisposed)
-            {
-                return;
-            }
-
-            isDisposed = true;
-
-            base.Dispose(isDisposing);
-        }
 
         private Tuple<bool, ServiceCallData> Commit(int jobId, int agentId = -1)
         {

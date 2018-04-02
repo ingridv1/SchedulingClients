@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SchedulingClients.FleetManagerServiceReference;
 using System.ServiceModel;
 using System.Net;
 using UDPCasts;
+using GAClients;
 
 namespace SchedulingClients
 {
-    public class FleetManagerClient : AbstractClient<IFleetManagerService>
+    public class FleetManagerClient : AbstractClient<IFleetManagerService>, IDisposable
     {
         private bool isDisposed = false;
 
@@ -32,6 +30,16 @@ namespace SchedulingClients
             this.udpPort = udpPort;
             udpClient = new UDPClient<FleetPoseIPCast>(udpPort, EndpointAddress.ToIPAddress());
             udpClient.Received += ByteArrayUDPClient_Received;
+        }
+
+        ~FleetManagerClient()
+        {
+            Dispose(false);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
         }
 
         private FleetPoseIPCast lastCastReceived = null;
@@ -67,7 +75,7 @@ namespace SchedulingClients
             {
                 var result = RequestFreeze();
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromFleetManagertServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -84,7 +92,7 @@ namespace SchedulingClients
             {
                 var result = SubscribeFleetStateCastHeartbeat();
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromFleetManagertServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -106,7 +114,7 @@ namespace SchedulingClients
             {
                 var result = RequestUnfreeze();
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromFleetManagertServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -115,7 +123,7 @@ namespace SchedulingClients
             }
         }
 
-        protected override void Dispose(bool isDisposing)
+        private void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
@@ -130,8 +138,6 @@ namespace SchedulingClients
             }
 
             isDisposed = true;
-
-            base.Dispose(isDisposing);
         }
 
         private Tuple<bool, ServiceCallData> RequestFreeze()

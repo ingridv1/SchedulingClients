@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using NLog;
+using GAClients;
 
 namespace SchedulingClients
 {
@@ -33,7 +34,7 @@ namespace SchedulingClients
             {
                 var result = GetAllMoveData();
                 moveData = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -55,7 +56,7 @@ namespace SchedulingClients
             {
                 var result = GetAllNodeData();
                 nodeData = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -77,7 +78,7 @@ namespace SchedulingClients
             {
                 var result = GetAllParameterData();
                 parameterData = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -100,25 +101,13 @@ namespace SchedulingClients
             {
                 var result = GetTrajectory(moveId);
                 waypointData = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
                 waypointData = null;
                 return HandleClientException(ex);
             }
-        }
-
-        protected override void Dispose(bool isDisposing)
-        {
-            if (isDisposed)
-            {
-                return;
-            }
-
-            isDisposed = true;
-
-            base.Dispose(isDisposing);
         }
 
         private Tuple<MoveData[], ServiceCallData> GetAllMoveData()

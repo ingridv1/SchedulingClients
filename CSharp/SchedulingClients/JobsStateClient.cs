@@ -1,4 +1,5 @@
-﻿using SchedulingClients.JobsStateServiceReference;
+﻿using GAClients;
+using SchedulingClients.JobsStateServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +64,7 @@ namespace SchedulingClients
             {
                 var result = AbortAllJobs();
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -86,7 +87,7 @@ namespace SchedulingClients
             {
                 var result = AbortJob(jobId);
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -109,7 +110,7 @@ namespace SchedulingClients
             {
                 var result = AbortTask(taskId);
                 success = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -132,7 +133,7 @@ namespace SchedulingClients
             {
                 var result = GetActiveJobIdsForAgent(agentId);
                 jobIds = result.Item1;
-                return ServiceOperationResult.FromServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
