@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <local:AutoServicer x:Key="autoServicer" />
-        </ResourceDictionary>
+        </ResourceDictionary>        
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>

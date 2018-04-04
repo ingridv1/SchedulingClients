@@ -8,15 +8,13 @@ using GAClients;
 
 namespace SchedulingClients
 {
-    public class FleetManagerClient : AbstractClient<IFleetManagerService>, IDisposable
+    public class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>
     {
+        private FleetManagerServiceCallback callback = new FleetManagerServiceCallback();
+
         private bool isDisposed = false;
 
-        private readonly int udpPort;
-
-        public int UDPPort { get { return udpPort; } }
-
-        private UDPClient<FleetPoseIPCast> udpClient;
+        private TimeSpan heartbeat;
 
         private Queue<byte[]> buffer = new Queue<byte[]>();
 
@@ -24,44 +22,90 @@ namespace SchedulingClients
         /// Creates a new FleetManagerClient
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the job builder service</param>
-        public FleetManagerClient(Uri netTcpUri, int udpPort)
+        public FleetManagerClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
             : base(netTcpUri)
         {
-            this.udpPort = udpPort;
-            udpClient = new UDPClient<FleetPoseIPCast>(udpPort, EndpointAddress.ToIPAddress());
-            udpClient.Received += ByteArrayUDPClient_Received;
+            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
+            this.callback.FleetStateUpdate += Callback_FleetStateUpdate;
         }
+
+        private void Callback_FleetStateUpdate(FleetState fleetState)
+        {
+            LastFleetStateReceived = fleetState;
+        }
+
+        public TimeSpan Heartbeat { get { return heartbeat; } }
 
         ~FleetManagerClient()
         {
             Dispose(false);
         }
 
-        public void Dispose()
+        protected override void HeartbeatThread()
         {
-            Dispose(true);
+            Logger.Debug("HeartbeatThread()");
+
+            ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory();
+            IFleetManagerService fleetManagerService = channelFactory.CreateChannel();
+
+            bool? exceptionCaught;
+
+            while (!Terminate)
+            {
+                exceptionCaught = null;
+
+                try
+                {
+                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
+                    fleetManagerService.SubscriptionHeartbeat(Key);
+                    IsConnected = true;
+                    exceptionCaught = false;
+                }
+                catch (EndpointNotFoundException)
+                {
+                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
+                    exceptionCaught = true;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex);
+                    exceptionCaught = true;
+                }
+
+                if (exceptionCaught == true)
+                {
+                    channelFactory.Abort();
+                    IsConnected = false;
+
+                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
+                    fleetManagerService = channelFactory.CreateChannel();
+                }
+
+                heartbeatReset.WaitOne(Heartbeat);
+            }
+
+            Logger.Debug("HeartbeatThread exit");
         }
 
-        private FleetPoseIPCast lastCastReceived = null;
-
-        public FleetPoseIPCast LastCastReceived
+        protected override void SetInstanceContext()
         {
-            get { return lastCastReceived; }
+            this.context = new InstanceContext(this.callback);
+        }
+
+        private FleetState lastFleetStateReceived = null;
+
+        public FleetState LastFleetStateReceived
+        {
+            get { return lastFleetStateReceived; }
             set
             {
-                if (lastCastReceived == null || value.Tick.IsCurrentByteTickLarger(lastCastReceived.Tick))
+                if (lastFleetStateReceived == null || value.Tick.IsCurrentByteTickLarger(lastFleetStateReceived.Tick))
                 {
-                    lastCastReceived = value;
+                    lastFleetStateReceived = value;
                     OnNotifyPropertyChanged();
                 }
             }
         }
-
-        private void ByteArrayUDPClient_Received(FleetPoseIPCast fleetPoseIPCast)
-        {
-            LastCastReceived = fleetPoseIPCast;
-        }
-
         /// <summary>
         /// Requests fleet manager freeze
         /// </summary>
@@ -75,7 +119,7 @@ namespace SchedulingClients
             {
                 var result = RequestFreeze();
                 success = result.Item1;
-                return ServiceOperationResultFactory.FromFleetManagertServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -84,22 +128,28 @@ namespace SchedulingClients
             }
         }
 
-        public ServiceOperationResult TrySubscribeFleetStateCastHeartbeat(out bool success)
+        /// <summary>
+        /// Commit extended waypoints to a kingpin
+        /// </summary>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCommitExtendedWaypoints(IPAddress ipAddress, int instructionId, byte[] extendedWaypoints,  out bool success)
         {
-            Logger.Info("TrySubscribeFleetStateCastHeartbeat()");
+            Logger.Info("TryCommitExtendedWaypoints()");
 
             try
             {
-                var result = SubscribeFleetStateCastHeartbeat();
+                Tuple<bool,ServiceCallData> result = CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypoints);
                 success = result.Item1;
-                return ServiceOperationResultFactory.FromFleetManagertServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
                 success = false;
                 return HandleClientException(ex);
             }
+
         }
+
 
         /// <summary>
         /// Requests fleet manager unfreeze
@@ -114,7 +164,7 @@ namespace SchedulingClients
             {
                 var result = RequestUnfreeze();
                 success = result.Item1;
-                return ServiceOperationResultFactory.FromFleetManagertServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
@@ -123,7 +173,7 @@ namespace SchedulingClients
             }
         }
 
-        private void Dispose(bool isDisposing)
+        protected override void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
@@ -134,7 +184,7 @@ namespace SchedulingClients
 
             if (isDisposing)
             {
-                udpClient.Dispose();
+                this.callback.FleetStateUpdate -= Callback_FleetStateUpdate;
             }
 
             isDisposed = true;
@@ -161,6 +211,25 @@ namespace SchedulingClients
             return result;
         }
 
+        private Tuple<bool,ServiceCallData> CommitExtendedWaypoints(IPAddress ipAddress, int instructionId, byte[] extendedWaypoints)
+        {
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("FleetManagerClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+            {
+                IFleetManagerService channel = channelFactory.CreateChannel();
+                result = channel.CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypoints);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
         private Tuple<bool, ServiceCallData> RequestUnfreeze()
         {
             Logger.Debug("RequestUnfreeze()");
@@ -177,27 +246,6 @@ namespace SchedulingClients
                 IFleetManagerService channel = channelFactory.CreateChannel();
                 result = channel.RequestUnfreeze();
                 channelFactory.Close();
-            }
-
-            return result;
-        }
-
-        private Tuple<bool, ServiceCallData> SubscribeFleetStateCastHeartbeat()
-        { 
-            Logger.Debug("SubscribeFleetStateCastHeartbeat()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("FleetManagerClient");
-            }
-
-            Tuple<bool, ServiceCallData> result;
-
-            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
-            {
-                IFleetManagerService channel = channelFactory.CreateChannel();
-                IPAddress ipAddress = EndpointAddress.ToIPAddress();
-                result = channel.SubscribeFleetStateCastHeartbeat(ipAddress);
             }
 
             return result;
