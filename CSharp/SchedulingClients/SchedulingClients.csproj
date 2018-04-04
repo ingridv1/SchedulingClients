@@ -60,6 +60,7 @@
     <Compile Include="ControllerState.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FleetManagerClient.cs" />
+    <Compile Include="FleetManagerServiceCallback.cs" />
     <Compile Include="JobBuilderClient.cs" />
     <Compile Include="EndpointSettings_ExtensionMethods.cs" />
     <Compile Include="JobsStateServiceCallback.cs" />
@@ -186,9 +187,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetManagerServiceReference\fleetManager4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetManagerServiceReference\fleetManager6.xsd">

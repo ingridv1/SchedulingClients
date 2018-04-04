@@ -78,7 +78,7 @@ namespace SchedulingClients
                 );
         }
 
-        public static ServiceOperationResult FromFleetManagertServiceCallData(fleetManager.ServiceCallData serviceCallData)
+        public static ServiceOperationResult FromFleetManagerServiceCallData(fleetManager.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 

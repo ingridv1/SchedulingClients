@@ -1,22 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:element name="CommitInstruction">
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
+  <xs:element name="VersionMajor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionMajorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="ipAddress" nillable="true" type="q1:IPAddress" />
-        <xs:element minOccurs="0" name="instructionId" type="xs:int" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" minOccurs="0" name="waypoints" nillable="true" type="q2:ArrayOfWaypointData" />
-        <xs:element minOccurs="0" name="summary" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionMajorResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CommitInstructionResponse">
+  <xs:element name="VersionMinor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionMinorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CommitInstructionResult" nillable="true" type="q3:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element minOccurs="0" name="VersionMinorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionPatch">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionPatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VersionPatchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscriptionHeartbeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="guid" type="q1:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscriptionHeartbeatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommitExtendedWaypoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="ipAddress" nillable="true" type="q2:IPAddress" />
+        <xs:element minOccurs="0" name="instructionId" type="xs:int" />
+        <xs:element minOccurs="0" name="extendedWaypointBytes" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommitExtendedWaypointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CommitExtendedWaypointsResult" nillable="true" type="q3:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -44,18 +92,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SubscribeFleetStateCastHeartbeat">
+  <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="ipAddress" nillable="true" type="q6:IPAddress" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" minOccurs="0" name="callbackObject" nillable="true" type="q6:FleetState" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SubscribeFleetStateCastHeartbeatResponse">
+  <xs:element name="OnCallbackResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SubscribeFleetStateCastHeartbeatResult" nillable="true" type="q7:TupleOfbooleanServiceCallDatayG81JSvh" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

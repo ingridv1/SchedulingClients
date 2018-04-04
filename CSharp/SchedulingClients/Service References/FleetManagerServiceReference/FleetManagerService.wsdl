@@ -28,17 +28,40 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Windows" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IFleetManagerService_CommitInstruction_InputMessage">
-    <wsdl:part name="parameters" element="tns:CommitInstruction" />
+  <wsdl:message name="IFleetManagerService_VersionMajor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajor" />
   </wsdl:message>
-  <wsdl:message name="IFleetManagerService_CommitInstruction_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CommitInstructionResponse" />
+  <wsdl:message name="IFleetManagerService_VersionMajor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_VersionMinor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinor" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_VersionMinor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_VersionPatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatch" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_VersionPatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_SubscriptionHeartbeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscriptionHeartbeat" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_SubscriptionHeartbeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscriptionHeartbeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_CommitExtendedWaypoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommitExtendedWaypoints" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_CommitExtendedWaypoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommitExtendedWaypointsResponse" />
   </wsdl:message>
   <wsdl:message name="IFleetManagerService_RequestFreeze_InputMessage">
     <wsdl:part name="parameters" element="tns:RequestFreeze" />
@@ -52,16 +75,32 @@
   <wsdl:message name="IFleetManagerService_RequestUnfreeze_OutputMessage">
     <wsdl:part name="parameters" element="tns:RequestUnfreezeResponse" />
   </wsdl:message>
-  <wsdl:message name="IFleetManagerService_SubscribeFleetStateCastHeartbeat_InputMessage">
-    <wsdl:part name="parameters" element="tns:SubscribeFleetStateCastHeartbeat" />
+  <wsdl:message name="IFleetManagerService_OnCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallback" />
   </wsdl:message>
-  <wsdl:message name="IFleetManagerService_SubscribeFleetStateCastHeartbeat_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SubscribeFleetStateCastHeartbeatResponse" />
+  <wsdl:message name="IFleetManagerService_OnCallback_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IFleetManagerService">
-    <wsdl:operation name="CommitInstruction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/CommitInstruction" message="tns:IFleetManagerService_CommitInstruction_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/CommitInstructionResponse" message="tns:IFleetManagerService_CommitInstruction_OutputMessage" />
+    <wsdl:operation name="VersionMajor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IFleetManagerService_VersionMajor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMajorResponse" message="tns:IFleetManagerService_VersionMajor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMinor" message="tns:IFleetManagerService_VersionMinor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMinorResponse" message="tns:IFleetManagerService_VersionMinor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IFleetManagerService_VersionPatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IFleetManagerService_VersionPatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IFleetManagerService_SubscriptionHeartbeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse" message="tns:IFleetManagerService_SubscriptionHeartbeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitExtendedWaypoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints" message="tns:IFleetManagerService_CommitExtendedWaypoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse" message="tns:IFleetManagerService_CommitExtendedWaypoints_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RequestFreeze">
       <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/RequestFreeze" message="tns:IFleetManagerService_RequestFreeze_InputMessage" />
@@ -71,16 +110,52 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/RequestUnfreeze" message="tns:IFleetManagerService_RequestUnfreeze_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/RequestUnfreezeResponse" message="tns:IFleetManagerService_RequestUnfreeze_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SubscribeFleetStateCastHeartbeat">
-      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeat" message="tns:IFleetManagerService_SubscribeFleetStateCastHeartbeat_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeatResponse" message="tns:IFleetManagerService_SubscribeFleetStateCastHeartbeat_OutputMessage" />
+    <wsdl:operation name="OnCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/OnCallback" message="tns:IFleetManagerService_OnCallback_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/OnCallbackResponse" message="tns:IFleetManagerService_OnCallback_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IFleetManagerService" type="tns:IFleetManagerService">
     <wsp:PolicyReference URI="#NetTcpBinding_IFleetManagerService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="CommitInstruction">
-      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/CommitInstruction" style="document" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitExtendedWaypoints">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -106,8 +181,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SubscribeFleetStateCastHeartbeat">
-      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeat" style="document" />
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/OnCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -119,8 +194,44 @@
   <wsdl:binding name="WSDualHttpBinding_IFleetManagerService" type="tns:IFleetManagerService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IFleetManagerService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="CommitInstruction">
-      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/CommitInstruction" style="document" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitExtendedWaypoints">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -146,8 +257,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SubscribeFleetStateCastHeartbeat">
-      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeat" style="document" />
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/OnCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

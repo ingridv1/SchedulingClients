@@ -7,7 +7,14 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        <local:DegStringConverter x:Key="degStringConverter"/>
+        <ResourceDictionary>
+            <ContextMenu x:Key="rowMenu" x:Name="rowMenu">
+                <MenuItem Header="Commit Waypoints" x:Name="commitMenuItem" Click="commitMenuItem_Click"/>
+            </ContextMenu>            
+            <Style x:Key="defaultRowStyle" TargetType="{x:Type DataGridRow}">
+                <Setter Property="ContextMenu" Value="{StaticResource rowMenu}"/>
+            </Style>
+        </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -21,9 +28,6 @@
             <local:LabelContentControl Header="Requests unfreeze">
                 <Button x:Name="unfreezeButton" Click="unfreezeButton_Click">Unfreeze</Button>
             </local:LabelContentControl>
-            <local:LabelContentControl Header="Subscibe to FleetCast Heartbeat">
-                <Button x:Name="subscribeButton" Click="subscribeButton_Click">Subscribe</Button>
-            </local:LabelContentControl>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -32,26 +36,26 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
                 <Label>
-                    Last Cast Received:
+                    Last Fleet State Cast Received:
                 </Label>
                 <local:LabelContentControl Header="Tick">
-                    <TextBox Text="{Binding Path=LastCastReceived.Tick, Mode=OneWay}"/>
+                    <TextBox Text="{Binding Path=LastFleetStateReceived.Tick, Mode=OneWay}"/>
                 </local:LabelContentControl>
             </StackPanel>
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding Path=LastCastReceived.DataSet, Mode=OneWay}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox Text="{Binding Mode=OneWay}" Grid.Column="0"/>
-                            <TextBox Text="{Binding Mode=OneWay, Converter={StaticResource degStringConverter}}" Grid.Column="1"/>
-                        </Grid>        
-                    </DataTemplate>       
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <DataGrid x:Name="dataGrid"
+                      Grid.Row="1" ItemsSource="{Binding Path=LastFleetStateReceived.KingpinStates, Mode=OneWay}"
+                      AutoGenerateColumns="False"
+                      RowStyle="{StaticResource defaultRowStyle}"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="IPAddress" Binding="{Binding IPAddress}"/>
+                    <DataGridTextColumn Header="X" Binding="{Binding X}"/>
+                    <DataGridTextColumn Header="Y" Binding="{Binding Y}"/>
+                    <DataGridTextColumn Header="Heading" Binding="{Binding Heading}"/>
+                    <DataGridTextColumn Header="WaypointNextId" Binding="{Binding WaypointNextId}"/>
+                    <DataGridTextColumn Header="WaypointLastId" Binding="{Binding WaypointLastId}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </UserControl>

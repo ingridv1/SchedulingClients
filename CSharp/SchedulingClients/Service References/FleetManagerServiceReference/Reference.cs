@@ -15,205 +15,6 @@ namespace SchedulingClients.FleetManagerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="WaypointData", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet")]
-    [System.SerializableAttribute()]
-    public partial class WaypointData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CurvatureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] EnhancedDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double HeadingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsEndOfMoveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.FleetManagerServiceReference.Point PointField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double SpeedLimitField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Curvature {
-            get {
-                return this.CurvatureField;
-            }
-            set {
-                if ((this.CurvatureField.Equals(value) != true)) {
-                    this.CurvatureField = value;
-                    this.RaisePropertyChanged("Curvature");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] EnhancedData {
-            get {
-                return this.EnhancedDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EnhancedDataField, value) != true)) {
-                    this.EnhancedDataField = value;
-                    this.RaisePropertyChanged("EnhancedData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Heading {
-            get {
-                return this.HeadingField;
-            }
-            set {
-                if ((this.HeadingField.Equals(value) != true)) {
-                    this.HeadingField = value;
-                    this.RaisePropertyChanged("Heading");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsEndOfMove {
-            get {
-                return this.IsEndOfMoveField;
-            }
-            set {
-                if ((this.IsEndOfMoveField.Equals(value) != true)) {
-                    this.IsEndOfMoveField = value;
-                    this.RaisePropertyChanged("IsEndOfMove");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.FleetManagerServiceReference.Point Point {
-            get {
-                return this.PointField;
-            }
-            set {
-                if ((this.PointField.Equals(value) != true)) {
-                    this.PointField = value;
-                    this.RaisePropertyChanged("Point");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double SpeedLimit {
-            get {
-                return this.SpeedLimitField;
-            }
-            set {
-                if ((this.SpeedLimitField.Equals(value) != true)) {
-                    this.SpeedLimitField = value;
-                    this.RaisePropertyChanged("SpeedLimit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Point", Namespace="http://schemas.datacontract.org/2004/07/System.Windows")]
-    [System.SerializableAttribute()]
-    public partial struct Point : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private double _xField;
-        
-        private double _yField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public double _x {
-            get {
-                return this._xField;
-            }
-            set {
-                if ((this._xField.Equals(value) != true)) {
-                    this._xField = value;
-                    this.RaisePropertyChanged("_x");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public double _y {
-            get {
-                return this._yField;
-            }
-            set {
-                if ((this._yField.Equals(value) != true)) {
-                    this._yField = value;
-                    this.RaisePropertyChanged("_y");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
     public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -325,13 +126,46 @@ namespace SchedulingClients.FleetManagerServiceReference {
         CREATEJOBFAILED = 1002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATELISTTASKFAILED = 1003,
+        CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESERVICINGTASKFAILED = 1004,
+        CREATEPIPELINEDTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOTACCEPTINGNEWJOBS = 1005,
+        CREATEORDEREDLISTTASKFAILED = 1005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESERVICINGTASKFAILED = 1006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NOTACCEPTINGNEWJOBS = 1007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DIRECTIVENOTALLOWED = 1008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDNODETASKID = 1009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESLEEPINGTASKFAILED = 1010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEMOVINGTASKFAILED = 1011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINALISETASKFAILED = 1012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGJOBFAILED = 1013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGJOBFAILED = 1014,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGTASKFAILED = 1015,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGTASKFAILED = 1016,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
@@ -344,6 +178,15 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTTASKFAILED = 2005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDJOBFAILED = 2006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDTASKFAILED = 2007,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETJOBSTATEFAILED = 3001,
@@ -389,17 +232,236 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         REQUESTUNFREEZEFAILED = 7003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DOWNLOADFAILED = 8001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPLOADFAILED = 8002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETFILENAMESFAILED = 8003,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FleetState", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet")]
+    [System.SerializableAttribute()]
+    public partial class FleetState : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.KingpinState[] KingpinStatesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte TickField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.KingpinState[] KingpinStates {
+            get {
+                return this.KingpinStatesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KingpinStatesField, value) != true)) {
+                    this.KingpinStatesField = value;
+                    this.RaisePropertyChanged("KingpinStates");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte Tick {
+            get {
+                return this.TickField;
+            }
+            set {
+                if ((this.TickField.Equals(value) != true)) {
+                    this.TickField = value;
+                    this.RaisePropertyChanged("Tick");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="KingpinState", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet")]
+    [System.SerializableAttribute()]
+    public partial class KingpinState : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float HeadingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Net.IPAddress IPAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WaypointLastIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WaypointNextIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float YField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Heading {
+            get {
+                return this.HeadingField;
+            }
+            set {
+                if ((this.HeadingField.Equals(value) != true)) {
+                    this.HeadingField = value;
+                    this.RaisePropertyChanged("Heading");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Net.IPAddress IPAddress {
+            get {
+                return this.IPAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IPAddressField, value) != true)) {
+                    this.IPAddressField = value;
+                    this.RaisePropertyChanged("IPAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WaypointLastId {
+            get {
+                return this.WaypointLastIdField;
+            }
+            set {
+                if ((this.WaypointLastIdField.Equals(value) != true)) {
+                    this.WaypointLastIdField = value;
+                    this.RaisePropertyChanged("WaypointLastId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WaypointNextId {
+            get {
+                return this.WaypointNextIdField;
+            }
+            set {
+                if ((this.WaypointNextIdField.Equals(value) != true)) {
+                    this.WaypointNextIdField = value;
+                    this.RaisePropertyChanged("WaypointNextId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FleetManagerServiceReference.IFleetManagerService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FleetManagerServiceReference.IFleetManagerService", CallbackContract=typeof(SchedulingClients.FleetManagerServiceReference.IFleetManagerServiceCallback))]
     public interface IFleetManagerService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitInstruction", ReplyAction="http://tempuri.org/IFleetManagerService/CommitInstructionResponse")]
-        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitInstruction(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.WaypointData[] waypoints, string summary);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        int VersionMajor();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitInstruction", ReplyAction="http://tempuri.org/IFleetManagerService/CommitInstructionResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitInstructionAsync(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.WaypointData[] waypoints, string summary);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        System.Threading.Tasks.Task<int> VersionMajorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        int VersionMinor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        System.Threading.Tasks.Task<int> VersionMinorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        int VersionPatch();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        System.Threading.Tasks.Task<int> VersionPatchAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
+        void SubscriptionHeartbeat(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
+        System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestFreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestFreezeResponse")]
         System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestFreeze();
@@ -412,12 +474,13 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestUnfreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestUnfreezeResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestUnfreezeAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IFleetManagerServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeat", ReplyAction="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeatResponse")]
-        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> SubscribeFleetStateCastHeartbeat(System.Net.IPAddress ipAddress);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeat", ReplyAction="http://tempuri.org/IFleetManagerService/SubscribeFleetStateCastHeartbeatResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> SubscribeFleetStateCastHeartbeatAsync(System.Net.IPAddress ipAddress);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/OnCallback", ReplyAction="http://tempuri.org/IFleetManagerService/OnCallbackResponse")]
+        void OnCallback(SchedulingClients.FleetManagerServiceReference.FleetState callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -426,33 +489,66 @@ namespace SchedulingClients.FleetManagerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class FleetManagerServiceClient : System.ServiceModel.ClientBase<SchedulingClients.FleetManagerServiceReference.IFleetManagerService>, SchedulingClients.FleetManagerServiceReference.IFleetManagerService {
+    public partial class FleetManagerServiceClient : System.ServiceModel.DuplexClientBase<SchedulingClients.FleetManagerServiceReference.IFleetManagerService>, SchedulingClients.FleetManagerServiceReference.IFleetManagerService {
         
-        public FleetManagerServiceClient() {
+        public FleetManagerServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public FleetManagerServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public FleetManagerServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public FleetManagerServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public FleetManagerServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public FleetManagerServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public FleetManagerServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public FleetManagerServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public FleetManagerServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
-        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitInstruction(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.WaypointData[] waypoints, string summary) {
-            return base.Channel.CommitInstruction(ipAddress, instructionId, waypoints, summary);
+        public int VersionMajor() {
+            return base.Channel.VersionMajor();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitInstructionAsync(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.WaypointData[] waypoints, string summary) {
-            return base.Channel.CommitInstructionAsync(ipAddress, instructionId, waypoints, summary);
+        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
+            return base.Channel.VersionMajorAsync();
+        }
+        
+        public int VersionMinor() {
+            return base.Channel.VersionMinor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
+            return base.Channel.VersionMinorAsync();
+        }
+        
+        public int VersionPatch() {
+            return base.Channel.VersionPatch();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
+            return base.Channel.VersionPatchAsync();
+        }
+        
+        public void SubscriptionHeartbeat(System.Guid guid) {
+            base.Channel.SubscriptionHeartbeat(guid);
+        }
+        
+        public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
+            return base.Channel.SubscriptionHeartbeatAsync(guid);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
+            return base.Channel.CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypointBytes);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
+            return base.Channel.CommitExtendedWaypointsAsync(ipAddress, instructionId, extendedWaypointBytes);
         }
         
         public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestFreeze() {
@@ -469,14 +565,6 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestUnfreezeAsync() {
             return base.Channel.RequestUnfreezeAsync();
-        }
-        
-        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> SubscribeFleetStateCastHeartbeat(System.Net.IPAddress ipAddress) {
-            return base.Channel.SubscribeFleetStateCastHeartbeat(ipAddress);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> SubscribeFleetStateCastHeartbeatAsync(System.Net.IPAddress ipAddress) {
-            return base.Channel.SubscribeFleetStateCastHeartbeatAsync(ipAddress);
         }
     }
 }
