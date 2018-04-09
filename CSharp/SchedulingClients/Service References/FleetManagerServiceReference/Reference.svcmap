@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="21627c2c-f2e7-43e0-80ea-5cd61b8435fd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0de1eefe-72a6-4a4e-892c-d7a4aad6b75c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,15 +22,15 @@
     <MetadataSource Address="http://127.0.0.1:41916/fleetManager.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="fleetManager.xsd" MetadataType="Schema" ID="78b1d8c3-12b1-4b1c-9404-8003a8c3984e" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd2" />
-    <MetadataFile FileName="fleetManager1.xsd" MetadataType="Schema" ID="88dca271-9f37-41b9-9b55-4e5c0ca02c84" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" />
-    <MetadataFile FileName="fleetManager2.xsd" MetadataType="Schema" ID="a988960b-fd1d-4d5e-9428-10f5a53d022a" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd0" />
-    <MetadataFile FileName="fleetManager3.xsd" MetadataType="Schema" ID="024cc81c-01d0-4040-91be-976712dfd21d" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd1" />
-    <MetadataFile FileName="FleetManagerService.wsdl" MetadataType="Wsdl" ID="d60ed376-21cf-494b-8848-bf744887b75d" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc" />
-    <MetadataFile FileName="fleetManager4.xsd" MetadataType="Schema" ID="29413c79-9581-4f6b-b1fe-23968b122222" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" />
-    <MetadataFile FileName="fleetManager6.xsd" MetadataType="Schema" ID="f050d561-c283-47ea-8387-1b0eaafcb8d1" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd3" />
-    <MetadataFile FileName="fleetManager7.xsd" MetadataType="Schema" ID="ea8c46ff-681f-46f0-8059-fb2958962ac7" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" />
-    <MetadataFile FileName="fleetManager8.xsd" MetadataType="Schema" ID="50571481-462d-446b-a65f-1aa9c608e936" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd4" />
+    <MetadataFile FileName="fleetManager.xsd" MetadataType="Schema" ID="d1c7c154-2b7f-4145-88c8-b207725f8bb0" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="fleetManager1.xsd" MetadataType="Schema" ID="2d87b75b-77cb-4e03-9ce8-9fdebe0cc462" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" />
+    <MetadataFile FileName="fleetManager2.xsd" MetadataType="Schema" ID="fd3b5121-f800-48f7-8826-3dacbf6c1a49" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="fleetManager3.xsd" MetadataType="Schema" ID="2027a10f-b0f1-4930-b9f4-7e92523ac7c0" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="FleetManagerService.wsdl" MetadataType="Wsdl" ID="01b8806b-513e-48b1-8ac9-80fbcb9c4d22" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc" />
+    <MetadataFile FileName="fleetManager4.xsd" MetadataType="Schema" ID="dafd3388-1382-446b-9af9-269867ad5aa0" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" />
+    <MetadataFile FileName="fleetManager5.xsd" MetadataType="Schema" ID="b4316c51-cb4a-4a14-9e72-7f5d6b1e20a3" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd3" />
+    <MetadataFile FileName="fleetManager6.xsd" MetadataType="Schema" ID="f0e2a473-cc2c-43e4-85e5-ac0443df3413" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" />
+    <MetadataFile FileName="fleetManager7.xsd" MetadataType="Schema" ID="8b3b7b02-1a6a-40d5-afbd-0aeab03d6f10" SourceId="1" SourceUrl="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

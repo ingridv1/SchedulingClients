@@ -234,6 +234,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         REQUESTUNFREEZEFAILED = 7003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        INCORRECTNUMBEROFBYTES = 7004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -320,6 +326,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         private System.Net.IPAddress IPAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LastCompletedInstructionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan StationaryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WaypointLastIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -363,6 +375,32 @@ namespace SchedulingClients.FleetManagerServiceReference {
                 if ((object.ReferenceEquals(this.IPAddressField, value) != true)) {
                     this.IPAddressField = value;
                     this.RaisePropertyChanged("IPAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LastCompletedInstructionId {
+            get {
+                return this.LastCompletedInstructionIdField;
+            }
+            set {
+                if ((this.LastCompletedInstructionIdField.Equals(value) != true)) {
+                    this.LastCompletedInstructionIdField = value;
+                    this.RaisePropertyChanged("LastCompletedInstructionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan Stationary {
+            get {
+                return this.StationaryField;
+            }
+            set {
+                if ((this.StationaryField.Equals(value) != true)) {
+                    this.StationaryField = value;
+                    this.RaisePropertyChanged("Stationary");
                 }
             }
         }
