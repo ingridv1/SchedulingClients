@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SchedulingClients.UserControls.AgentAttentionClientControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchedulingClients.UserControls"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<Grid>
+		<StackPanel>
+			<local:LabelContentControl Header="OnCallback">
+				<Button x:Name="onCallbackButton" Click="onCallbackButton_Click" Width="auto" >OnCallback</Button>
+			</local:LabelContentControl>
+			<local:LabelContentControl Header="Subscribe to agent Heartbeat">
+				<StackPanel Orientation="Horizontal">
+					<toolkit:IntegerUpDown x:Name="agentIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+					<Button x:Name="heartbeatButton" Click="heartbeatButton_Click" Width="auto">Subscribe</Button>
+				</StackPanel>
+			</local:LabelContentControl>
+		</StackPanel>
+	</Grid>
+</UserControl>

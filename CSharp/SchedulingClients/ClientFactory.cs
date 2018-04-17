@@ -48,5 +48,15 @@ namespace SchedulingClients
         {
             return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
         }
+
+		public static AgentAttentionClient GetAgentAttentionClient(EndpointSettings portSettings)
+		{
+			return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
+		}
+
+		public static AgentStatecastClient GetAgentStatecastClient(EndpointSettings portSettings)
+		{
+			return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
+		}
     }
 }

@@ -180,6 +180,15 @@ namespace SchedulingClients.JobBuilderServiceReference {
         GETACTIVEJOBSFORAGENTFAILED = 2004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTTASKFAILED = 2005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDJOBFAILED = 2006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDTASKFAILED = 2007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         GETJOBSTATEFAILED = 3001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -223,6 +232,21 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         REQUESTUNFREEZEFAILED = 7003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INCORRECTNUMBEROFBYTES = 7004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DOWNLOADFAILED = 8001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPLOADFAILED = 8002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETFILENAMESFAILED = 8003,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

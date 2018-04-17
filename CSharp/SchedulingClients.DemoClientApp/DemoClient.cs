@@ -74,6 +74,9 @@ namespace SchedulingClients.DemoClientApp
             clients.Add(ClientFactory.GetRoadmapClient(endpointSettings));
             clients.Add(ClientFactory.GetServicingClient(endpointSettings));
 
+			clients.Add(ClientFactory.GetAgentAttentionClient(endpointSettings));
+			clients.Add(ClientFactory.GetAgentStatecastClient(endpointSettings));
+
             LogManager.Configuration = new LoggingConfiguration();
 
             foreach (IClient client in clients)

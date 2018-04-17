@@ -105,6 +105,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ResolveFaultedJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveFaultedJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ResolveFaultedJobResult" nillable="true" type="q6:TupleOfbooleanServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveFaultedTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveFaultedTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ResolveFaultedTaskResult" nillable="true" type="q7:TupleOfbooleanServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetActiveJobIdsForAgent">
     <xs:complexType>
       <xs:sequence>
@@ -115,14 +143,14 @@
   <xs:element name="GetActiveJobIdsForAgentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q6:TupleOfArrayOfintServiceCallDataRJ0VdR0l" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetActiveJobIdsForAgentResult" nillable="true" type="q8:TupleOfArrayOfintServiceCallDataRJ0VdR0l" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="callbackObject" nillable="true" type="q7:JobsStateData" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="callbackObject" nillable="true" type="q9:JobsStateData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

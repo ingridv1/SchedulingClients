@@ -79,6 +79,18 @@
   <wsdl:message name="IJobsStateService_AbortTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:AbortTaskResponse" />
   </wsdl:message>
+  <wsdl:message name="IJobsStateService_ResolveFaultedJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveFaultedJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_ResolveFaultedJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveFaultedJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_ResolveFaultedTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveFaultedTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobsStateService_ResolveFaultedTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveFaultedTaskResponse" />
+  </wsdl:message>
   <wsdl:message name="IJobsStateService_GetActiveJobIdsForAgent_InputMessage">
     <wsdl:part name="parameters" element="tns:GetActiveJobIdsForAgent" />
   </wsdl:message>
@@ -123,6 +135,14 @@
     <wsdl:operation name="AbortTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/AbortTask" message="tns:IJobsStateService_AbortTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/AbortTaskResponse" message="tns:IJobsStateService_AbortTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveFaultedJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/ResolveFaultedJob" message="tns:IJobsStateService_ResolveFaultedJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/ResolveFaultedJobResponse" message="tns:IJobsStateService_ResolveFaultedJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveFaultedTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/ResolveFaultedTask" message="tns:IJobsStateService_ResolveFaultedTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobsStateService/ResolveFaultedTaskResponse" message="tns:IJobsStateService_ResolveFaultedTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetActiveJobIdsForAgent">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent" message="tns:IJobsStateService_GetActiveJobIdsForAgent_InputMessage" />
@@ -201,6 +221,24 @@
     </wsdl:operation>
     <wsdl:operation name="AbortTask">
       <soap12:operation soapAction="http://tempuri.org/IJobsStateService/AbortTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveFaultedJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/ResolveFaultedJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveFaultedTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/ResolveFaultedTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -295,6 +333,24 @@
     </wsdl:operation>
     <wsdl:operation name="AbortTask">
       <soap12:operation soapAction="http://tempuri.org/IJobsStateService/AbortTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveFaultedJob">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/ResolveFaultedJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolveFaultedTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobsStateService/ResolveFaultedTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

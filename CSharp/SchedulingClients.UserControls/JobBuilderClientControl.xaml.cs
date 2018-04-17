@@ -60,7 +60,7 @@ namespace SchedulingClients.UserControls
                 IEnumerable<NodeData> nodeData;
                 if (roadmapClient.TryGetAllNodeData(out nodeData) == true)
                 {
-                    client.MoveJobTest(nodeData);
+                    client.MoveJobTest(nodeData, finalisedPipelineCheck.IsChecked ?? true);
                 }
             }
         }

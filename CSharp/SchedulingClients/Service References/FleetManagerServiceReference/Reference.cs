@@ -234,6 +234,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         REQUESTUNFREEZEFAILED = 7003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        INCORRECTNUMBEROFBYTES = 7004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]

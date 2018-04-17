@@ -216,10 +216,31 @@ namespace SchedulingClients.JobStateServiceReference {
         InProgress = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Complete = 4,
+        Completed = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Aborted = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Editing = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Aborting = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InProgressUnderFault = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FailureImminent = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Failed = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CompletedUnderFault = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EditingUnderFault = 12,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -333,6 +354,36 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Assembly = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttemptingAbort = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitingAbort = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PendingFurtherInstruction = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Editing = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InProgressUnderFault = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CompletedUnderFault = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttemptingEarlyFailure = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitingEarlyFailure = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitingFailure = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Failed = 14,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -355,13 +406,46 @@ namespace SchedulingClients.JobStateServiceReference {
         CREATEJOBFAILED = 1002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATELISTTASKFAILED = 1003,
+        CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESERVICINGTASKFAILED = 1004,
+        CREATEPIPELINEDTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOTACCEPTINGNEWJOBS = 1005,
+        CREATEORDEREDLISTTASKFAILED = 1005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESERVICINGTASKFAILED = 1006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NOTACCEPTINGNEWJOBS = 1007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DIRECTIVENOTALLOWED = 1008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDNODETASKID = 1009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESLEEPINGTASKFAILED = 1010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEMOVINGTASKFAILED = 1011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINALISETASKFAILED = 1012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGJOBFAILED = 1013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGJOBFAILED = 1014,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGTASKFAILED = 1015,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGTASKFAILED = 1016,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
@@ -374,6 +458,15 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTTASKFAILED = 2005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDJOBFAILED = 2006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDTASKFAILED = 2007,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETJOBSTATEFAILED = 3001,
@@ -419,6 +512,21 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         REQUESTUNFREEZEFAILED = 7003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INCORRECTNUMBEROFBYTES = 7004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DOWNLOADFAILED = 8001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPLOADFAILED = 8002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETFILENAMESFAILED = 8003,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -486,6 +594,24 @@ namespace SchedulingClients.JobStateServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JobStateServiceReference.IJobStateService", CallbackContract=typeof(SchedulingClients.JobStateServiceReference.IJobStateServiceCallback))]
     public interface IJobStateService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        int VersionMajor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        System.Threading.Tasks.Task<int> VersionMajorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        int VersionMinor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        System.Threading.Tasks.Task<int> VersionMinorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        int VersionPatch();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        System.Threading.Tasks.Task<int> VersionPatchAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         void SubscriptionHeartbeat(System.Guid guid);
         
@@ -538,6 +664,30 @@ namespace SchedulingClients.JobStateServiceReference {
         
         public JobStateServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public int VersionMajor() {
+            return base.Channel.VersionMajor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
+            return base.Channel.VersionMajorAsync();
+        }
+        
+        public int VersionMinor() {
+            return base.Channel.VersionMinor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
+            return base.Channel.VersionMinorAsync();
+        }
+        
+        public int VersionPatch() {
+            return base.Channel.VersionPatch();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
+            return base.Channel.VersionPatchAsync();
         }
         
         public void SubscriptionHeartbeat(System.Guid guid) {
