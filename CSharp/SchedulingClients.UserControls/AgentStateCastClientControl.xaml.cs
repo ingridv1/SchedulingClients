@@ -74,7 +74,7 @@ namespace SchedulingClients.UserControls
 		private void descriptionButton_Click(object sender, RoutedEventArgs e)
 		{
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			CastType castType;
+			CastType castType = new CastType();
 
 			client.TryGetStatecastDescription(descriptionUpDown.Value ?? 0, out castType);
 			StringBuilder builder = new StringBuilder();
