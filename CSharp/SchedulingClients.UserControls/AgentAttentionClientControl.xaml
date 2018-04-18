@@ -8,16 +8,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 	<Grid>
-		<StackPanel>
-			<local:LabelContentControl Header="OnCallback">
-				<Button x:Name="onCallbackButton" Click="onCallbackButton_Click" Width="auto" >OnCallback</Button>
-			</local:LabelContentControl>
-			<local:LabelContentControl Header="Subscribe to agent Heartbeat">
-				<StackPanel Orientation="Horizontal">
-					<toolkit:IntegerUpDown x:Name="agentIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
-					<Button x:Name="heartbeatButton" Click="heartbeatButton_Click" Width="auto">Subscribe</Button>
-				</StackPanel>
-			</local:LabelContentControl>
-		</StackPanel>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<local:LabelContentControl Grid.Row="0" Header="Get All Attention Data">
+			<Button x:Name="attentionRefreshButton" Click="attentionRefreshButton_Click" Width="auto">Refresh</Button>
+		</local:LabelContentControl>
+		<DataGrid x:Name="agentAttentionDataGrid" Grid.Row="1" AutoGenerateColumns="False" 
+				  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Id" Binding="{Binding Item1}" Width="1*" />
+				<DataGridTextColumn Header="AttentionRequired" Binding="{Binding Item2}" Width="4*" />
+			</DataGrid.Columns>
+		</DataGrid >
 	</Grid>
 </UserControl>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SchedulingClients.AgentAttentionServiceReference;
 
 namespace SchedulingClients.UserControls
 {
@@ -25,14 +26,10 @@ namespace SchedulingClients.UserControls
 			InitializeComponent();
 		}
 
-		private void onCallbackButton_Click(object sender, RoutedEventArgs e)
+		private void attentionRefreshButton_Click(object sender, RoutedEventArgs e)
 		{
-			
-		}
-
-		private void heartbeatButton_Click(object sender, RoutedEventArgs e)
-		{
-
+			AgentAttentionClient agentAttentionClient = DataContext as AgentAttentionClient;
+			agentAttentionDataGrid.ItemsSource = agentAttentionClient.AgentAttentionData.RequiringAttention;
 		}
 	}
 }
