@@ -40,6 +40,18 @@
                     <Button x:Name="abortTaskButton" Click="abortTaskButton_Click">Abort Task</Button>
                 </StackPanel>
             </local:LabelContentControl>
+			<local:LabelContentControl Header="Resolve Faulted Task">
+				<StackPanel Orientation="Horizontal">
+					<toolkit:IntegerUpDown Minimum="0" x:Name="resolveTaskFaultId" DefaultValue="0" Value="0" />
+					<Button x:Name="resolveTaskFaultButton" Click="resolveTaskFaultButton_Click">Resolve Fault</Button>
+				</StackPanel>
+			</local:LabelContentControl>
+			<local:LabelContentControl Header="Resolve Faulted Job">
+				<StackPanel Orientation="Horizontal">
+					<toolkit:IntegerUpDown Minimum="0" x:Name="resolveJobFaultId" DefaultValue="0" Value="0" />
+					<Button x:Name="resolveJobFaultButton" Click="resolveJobFaultButton_Click">Resolve Fault</Button>
+				</StackPanel>
+			</local:LabelContentControl>
         </StackPanel>
     </Grid>
 </UserControl>
