@@ -596,6 +596,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         private System.TimeSpan StationaryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LastCompletedInstructionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan StationaryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WaypointLastIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]

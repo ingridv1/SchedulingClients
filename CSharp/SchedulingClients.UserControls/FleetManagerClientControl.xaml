@@ -54,6 +54,8 @@
                     <DataGridTextColumn Header="Heading" Binding="{Binding Heading}"/>
                     <DataGridTextColumn Header="WaypointNextId" Binding="{Binding WaypointNextId}"/>
                     <DataGridTextColumn Header="WaypointLastId" Binding="{Binding WaypointLastId}"/>
+                    <DataGridTextColumn Header="Stationary" Binding="{Binding Stationary}"/>
+                    <DataGridTextColumn Header="LastCompletedInstructionId" Binding="{Binding LastCompletedInstructionId}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

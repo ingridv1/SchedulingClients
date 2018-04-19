@@ -247,13 +247,13 @@
     <None Include="Service References\FleetManagerServiceReference\fleetManager4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\FleetManagerServiceReference\fleetManager6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetManagerServiceReference\fleetManager7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager8.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetManagerServiceReference\FleetManagerService.wsdl" />
@@ -468,18 +468,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FleetManagerServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FleetManagerServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FleetManagerServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -502,6 +490,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetManagerServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetManagerServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetManagerServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
