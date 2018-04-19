@@ -7,6 +7,10 @@ https://www.nuget.org/packages/SchedulingClients/
 
 ## Release Notes
 
+## v8.0.0
+
+Supports tool chain for resolving tasks and jobs in a fault state.
+
 ## v7.2.0
 
 Adds time to stationary and last completed instruction Id to the kingpin state
