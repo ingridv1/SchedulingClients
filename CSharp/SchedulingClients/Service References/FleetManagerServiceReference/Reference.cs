@@ -15,267 +15,6 @@ namespace SchedulingClients.FleetManagerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IPAddress", Namespace="http://schemas.datacontract.org/2004/07/System.Net")]
-    [System.SerializableAttribute()]
-    public partial class IPAddress : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private long m_AddressField;
-        
-        private SchedulingClients.FleetManagerServiceReference.AddressFamily m_FamilyField;
-        
-        private int m_HashCodeField;
-        
-        private ushort[] m_NumbersField;
-        
-        private long m_ScopeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long m_Address {
-            get {
-                return this.m_AddressField;
-            }
-            set {
-                if ((this.m_AddressField.Equals(value) != true)) {
-                    this.m_AddressField = value;
-                    this.RaisePropertyChanged("m_Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public SchedulingClients.FleetManagerServiceReference.AddressFamily m_Family {
-            get {
-                return this.m_FamilyField;
-            }
-            set {
-                if ((this.m_FamilyField.Equals(value) != true)) {
-                    this.m_FamilyField = value;
-                    this.RaisePropertyChanged("m_Family");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int m_HashCode {
-            get {
-                return this.m_HashCodeField;
-            }
-            set {
-                if ((this.m_HashCodeField.Equals(value) != true)) {
-                    this.m_HashCodeField = value;
-                    this.RaisePropertyChanged("m_HashCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ushort[] m_Numbers {
-            get {
-                return this.m_NumbersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_NumbersField, value) != true)) {
-                    this.m_NumbersField = value;
-                    this.RaisePropertyChanged("m_Numbers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long m_ScopeId {
-            get {
-                return this.m_ScopeIdField;
-            }
-            set {
-                if ((this.m_ScopeIdField.Equals(value) != true)) {
-                    this.m_ScopeIdField = value;
-                    this.RaisePropertyChanged("m_ScopeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddressFamily", Namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets")]
-    public enum AddressFamily : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unknown = -1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unspecified = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unix = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InterNetwork = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpLink = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pup = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Chaos = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NS = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ipx = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Iso = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Osi = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ecma = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DataKit = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ccitt = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Sna = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DecNet = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DataLink = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Lat = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HyperChannel = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AppleTalk = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NetBios = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VoiceView = 18,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FireFox = 19,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Banyan = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Atm = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InterNetworkV6 = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Cluster = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ieee12844 = 25,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Irda = 26,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NetworkDesigners = 28,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Max = 29,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TupleOfbooleanServiceCallDatayG81JSvh", Namespace="http://schemas.datacontract.org/2004/07/System")]
-    [System.SerializableAttribute()]
-    public partial class TupleOfbooleanServiceCallDatayG81JSvh : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private bool m_Item1Field;
-        
-        private SchedulingClients.FleetManagerServiceReference.ServiceCallData m_Item2Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool m_Item1 {
-            get {
-                return this.m_Item1Field;
-            }
-            set {
-                if ((this.m_Item1Field.Equals(value) != true)) {
-                    this.m_Item1Field = value;
-                    this.RaisePropertyChanged("m_Item1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public SchedulingClients.FleetManagerServiceReference.ServiceCallData m_Item2 {
-            get {
-                return this.m_Item2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_Item2Field, value) != true)) {
-                    this.m_Item2Field = value;
-                    this.RaisePropertyChanged("m_Item2");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
     public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -587,13 +326,7 @@ namespace SchedulingClients.FleetManagerServiceReference {
         private float HeadingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.FleetManagerServiceReference.IPAddress IPAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LastCompletedInstructionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan StationaryField;
+        private System.Net.IPAddress IPAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LastCompletedInstructionIdField;
@@ -637,7 +370,7 @@ namespace SchedulingClients.FleetManagerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.FleetManagerServiceReference.IPAddress IPAddress {
+        public System.Net.IPAddress IPAddress {
             get {
                 return this.IPAddressField;
             }
@@ -766,22 +499,22 @@ namespace SchedulingClients.FleetManagerServiceReference {
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
-        SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh CommitExtendedWaypoints(SchedulingClients.FleetManagerServiceReference.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh> CommitExtendedWaypointsAsync(SchedulingClients.FleetManagerServiceReference.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestFreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestFreezeResponse")]
-        SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh RequestFreeze();
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestFreeze();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestFreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestFreezeResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh> RequestFreezeAsync();
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestFreezeAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestUnfreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestUnfreezeResponse")]
-        SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh RequestUnfreeze();
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestUnfreeze();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestUnfreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestUnfreezeResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh> RequestUnfreezeAsync();
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestUnfreezeAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -851,27 +584,27 @@ namespace SchedulingClients.FleetManagerServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh CommitExtendedWaypoints(SchedulingClients.FleetManagerServiceReference.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
             return base.Channel.CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypointBytes);
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh> CommitExtendedWaypointsAsync(SchedulingClients.FleetManagerServiceReference.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
             return base.Channel.CommitExtendedWaypointsAsync(ipAddress, instructionId, extendedWaypointBytes);
         }
         
-        public SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh RequestFreeze() {
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestFreeze() {
             return base.Channel.RequestFreeze();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh> RequestFreezeAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestFreezeAsync() {
             return base.Channel.RequestFreezeAsync();
         }
         
-        public SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh RequestUnfreeze() {
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestUnfreeze() {
             return base.Channel.RequestUnfreeze();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.FleetManagerServiceReference.TupleOfbooleanServiceCallDatayG81JSvh> RequestUnfreezeAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestUnfreezeAsync() {
             return base.Channel.RequestUnfreezeAsync();
         }
     }
