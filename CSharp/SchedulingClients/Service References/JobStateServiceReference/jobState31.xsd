@@ -15,8 +15,15 @@
       <xs:enumeration value="Assigning" />
       <xs:enumeration value="Waiting" />
       <xs:enumeration value="InProgress" />
-      <xs:enumeration value="Complete" />
+      <xs:enumeration value="Completed" />
       <xs:enumeration value="Aborted" />
+      <xs:enumeration value="Editing" />
+      <xs:enumeration value="Aborting" />
+      <xs:enumeration value="InProgressUnderFault" />
+      <xs:enumeration value="FailureImminent" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="CompletedUnderFault" />
+      <xs:enumeration value="EditingUnderFault" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="JobStatus" nillable="true" type="tns:JobStatus" />
@@ -42,6 +49,16 @@
       <xs:enumeration value="Completed" />
       <xs:enumeration value="Aborted" />
       <xs:enumeration value="Assembly" />
+      <xs:enumeration value="AttemptingAbort" />
+      <xs:enumeration value="AwaitingAbort" />
+      <xs:enumeration value="PendingFurtherInstruction" />
+      <xs:enumeration value="Editing" />
+      <xs:enumeration value="InProgressUnderFault" />
+      <xs:enumeration value="CompletedUnderFault" />
+      <xs:enumeration value="AttemptingEarlyFailure" />
+      <xs:enumeration value="AwaitingEarlyFailure" />
+      <xs:enumeration value="AwaitingFailure" />
+      <xs:enumeration value="Failed" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />

@@ -30,6 +30,24 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IAgentBatteryStatusService_VersionMajor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajor" />
+  </wsdl:message>
+  <wsdl:message name="IAgentBatteryStatusService_VersionMajor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentBatteryStatusService_VersionMinor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinor" />
+  </wsdl:message>
+  <wsdl:message name="IAgentBatteryStatusService_VersionMinor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentBatteryStatusService_VersionPatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatch" />
+  </wsdl:message>
+  <wsdl:message name="IAgentBatteryStatusService_VersionPatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
+  </wsdl:message>
   <wsdl:message name="IAgentBatteryStatusService_GetAllAgentBatteryStatusData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAgentBatteryStatusData" />
   </wsdl:message>
@@ -37,6 +55,18 @@
     <wsdl:part name="parameters" element="tns:GetAllAgentBatteryStatusDataResponse" />
   </wsdl:message>
   <wsdl:portType name="IAgentBatteryStatusService">
+    <wsdl:operation name="VersionMajor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IAgentBatteryStatusService_VersionMajor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMajorResponse" message="tns:IAgentBatteryStatusService_VersionMajor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMinor" message="tns:IAgentBatteryStatusService_VersionMinor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMinorResponse" message="tns:IAgentBatteryStatusService_VersionMinor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IAgentBatteryStatusService_VersionPatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IAgentBatteryStatusService_VersionPatch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllAgentBatteryStatusData">
       <wsdl:input wsaw:Action="http://tempuri.org/IAgentBatteryStatusService/GetAllAgentBatteryStatusData" message="tns:IAgentBatteryStatusService_GetAllAgentBatteryStatusData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAgentBatteryStatusService/GetAllAgentBatteryStatusDataResponse" message="tns:IAgentBatteryStatusService_GetAllAgentBatteryStatusData_OutputMessage" />
@@ -45,6 +75,33 @@
   <wsdl:binding name="NetTcpBinding_IAgentBatteryStatusService" type="tns:IAgentBatteryStatusService">
     <wsp:PolicyReference URI="#NetTcpBinding_IAgentBatteryStatusService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllAgentBatteryStatusData">
       <soap12:operation soapAction="http://tempuri.org/IAgentBatteryStatusService/GetAllAgentBatteryStatusData" style="document" />
       <wsdl:input>
@@ -58,6 +115,33 @@
   <wsdl:binding name="WSDualHttpBinding_IAgentBatteryStatusService" type="tns:IAgentBatteryStatusService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IAgentBatteryStatusService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllAgentBatteryStatusData">
       <soap12:operation soapAction="http://tempuri.org/IAgentBatteryStatusService/GetAllAgentBatteryStatusData" style="document" />
       <wsdl:input>

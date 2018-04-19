@@ -1,8 +1,6 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using SchedulingClients.MapServiceReference;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -60,7 +58,7 @@ namespace SchedulingClients.UserControls
                 IEnumerable<NodeData> nodeData;
                 if (roadmapClient.TryGetAllNodeData(out nodeData) == true)
                 {
-                    client.MoveJobTest(nodeData);
+                    client.MoveJobTest(nodeData, finalisedPipelineCheck.IsChecked ?? true);
                 }
             }
         }

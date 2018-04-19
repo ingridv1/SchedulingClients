@@ -50,14 +50,14 @@ namespace SchedulingClients.UserControls
             }
         }
 
-        public static void MoveJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
+        public static void MoveJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes, bool isFinalised)
         {
             JobData jobData;
 
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
                 int piplineId;
-                jobBuilder.TryCreatePipelinedTask(jobData.OrderedListTaskId, true, out piplineId);
+                jobBuilder.TryCreatePipelinedTask(jobData.OrderedListTaskId, isFinalised, out piplineId);
 
                 NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
                 NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);

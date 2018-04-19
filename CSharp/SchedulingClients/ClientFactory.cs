@@ -1,9 +1,4 @@
 ﻿using GAClients;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
@@ -48,5 +43,15 @@ namespace SchedulingClients
         {
             return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
         }
+
+		public static AgentAttentionClient GetAgentAttentionClient(EndpointSettings portSettings)
+		{
+			return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
+		}
+
+		public static AgentStatecastClient GetAgentStatecastClient(EndpointSettings portSettings)
+		{
+			return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
+		}
     }
 }

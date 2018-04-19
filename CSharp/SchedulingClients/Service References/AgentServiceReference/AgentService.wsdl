@@ -33,6 +33,24 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Services" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IAgentService_VersionMajor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajor" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_VersionMajor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMajorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_VersionMinor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinor" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_VersionMinor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionMinorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_VersionPatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatch" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_VersionPatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
+  </wsdl:message>
   <wsdl:message name="IAgentService_GetAllAgentData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAgentData" />
   </wsdl:message>
@@ -46,6 +64,18 @@
     <wsdl:part name="parameters" element="tns:GetAllAgentsInLifetimeStateResponse" />
   </wsdl:message>
   <wsdl:portType name="IAgentService">
+    <wsdl:operation name="VersionMajor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IAgentService_VersionMajor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMajorResponse" message="tns:IAgentService_VersionMajor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMinor" message="tns:IAgentService_VersionMinor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMinorResponse" message="tns:IAgentService_VersionMinor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IAgentService_VersionPatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IAgentService_VersionPatch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllAgentData">
       <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/GetAllAgentData" message="tns:IAgentService_GetAllAgentData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/GetAllAgentDataResponse" message="tns:IAgentService_GetAllAgentData_OutputMessage" />
@@ -58,6 +88,33 @@
   <wsdl:binding name="NetTcpBinding_IAgentService" type="tns:IAgentService">
     <wsp:PolicyReference URI="#NetTcpBinding_IAgentService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllAgentData">
       <soap12:operation soapAction="http://tempuri.org/IAgentService/GetAllAgentData" style="document" />
       <wsdl:input>
@@ -80,6 +137,33 @@
   <wsdl:binding name="WSDualHttpBinding_IAgentService" type="tns:IAgentService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IAgentService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VersionMajor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionMinor">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VersionPatch">
+      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllAgentData">
       <soap12:operation soapAction="http://tempuri.org/IAgentService/GetAllAgentData" style="document" />
       <wsdl:input>

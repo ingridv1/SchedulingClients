@@ -15,8 +15,11 @@
 			<local:LabelContentControl Header="Creates a simple multi pick job, consisting of three picks, a drop and a park">
 				<Button x:Name="multiPickJobTest" Click="multiPickJobTest_Click"  >Multi</Button>
 			</local:LabelContentControl>
-			<local:LabelContentControl Header="Creates a job consisting of two pipelined move tasks">
-				<Button x:Name="moveJobButton" Click="moveJobButton_Click">Pipeline</Button>
+			<local:LabelContentControl Header="Creates a job consisting of two pipelined move tasks, uncheck the box to make it unfinalised">
+				<StackPanel Orientation="Horizontal">
+					<CheckBox x:Name="finalisedPipelineCheck" IsChecked="True" VerticalAlignment="Center">Finalised</CheckBox>
+					<Button x:Name="moveJobButton" Click="moveJobButton_Click" VerticalAlignment="Center">Pipeline</Button>
+				</StackPanel>
 			</local:LabelContentControl>
 			<StackPanel>
 				<local:LabelContentControl Header="Task">

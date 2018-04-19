@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using GAClients;
 
 namespace SchedulingClients
@@ -45,5 +44,15 @@ namespace SchedulingClients
         {
             return new Uri(portSettings.ToTcpBase(), "servicing.svc");
         }
+
+		public static Uri TcpAgentAttentionService(this EndpointSettings portSettings)
+		{
+			return new Uri(portSettings.ToTcpBase(), "agentAttention.svc");
+		}
+
+		public static Uri TcpAgentStatecastService(this EndpointSettings portSettings)
+		{
+			return new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");
+		}
     }
 }

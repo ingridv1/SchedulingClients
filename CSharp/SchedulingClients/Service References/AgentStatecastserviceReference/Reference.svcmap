@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d528fb44-0951-4d36-86ce-80c4e442ad5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:41916/agentStatecast.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="agentStatecast.xsd" MetadataType="Schema" ID="b6045bc9-b819-4171-8fd9-7be25101b4d0" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd3" />
+    <MetadataFile FileName="agentStatecast1.xsd" MetadataType="Schema" ID="f40063d6-8608-4f07-aaae-a413ee6248d4" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd0" />
+    <MetadataFile FileName="agentStatecast2.xsd" MetadataType="Schema" ID="306b1562-4711-45a9-9983-747d4fc3f297" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd1" />
+    <MetadataFile FileName="agentStatecast3.xsd" MetadataType="Schema" ID="ac0cc37e-b614-4bf3-92da-98217d663584" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd2" />
+    <MetadataFile FileName="agentStatecast4.xsd" MetadataType="Schema" ID="ca130ed7-2a1c-4d5d-846e-d74cac3f8a1f" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd7" />
+    <MetadataFile FileName="agentStatecast5.xsd" MetadataType="Schema" ID="8417df06-3dc2-4956-9cee-b8a0496781b6" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd4" />
+    <MetadataFile FileName="agentStatecast6.xsd" MetadataType="Schema" ID="a0281dc9-046b-4552-8c46-2a798cc91ebb" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd5" />
+    <MetadataFile FileName="agentStatecast7.xsd" MetadataType="Schema" ID="7f0eb4a8-880f-4bc4-9392-d54daf070daf" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd6" />
+    <MetadataFile FileName="AgentStatecastService.wsdl" MetadataType="Wsdl" ID="c4c11687-9724-4eed-a7df-e939e3d0975e" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentStatecast.svc" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

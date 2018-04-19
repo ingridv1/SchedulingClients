@@ -219,19 +219,46 @@ namespace SchedulingClients.MapServiceReference {
         CREATEJOBFAILED = 1002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATELISTTASKFAILED = 1003,
+        CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESERVICINGTASKFAILED = 1004,
+        CREATEPIPELINEDTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOTACCEPTINGNEWJOBS = 1005,
+        CREATEORDEREDLISTTASKFAILED = 1005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DIRECTIVENOTALLOWED = 1006,
+        CREATESERVICINGTASKFAILED = 1006,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDNODETASKID = 1007,
+        NOTACCEPTINGNEWJOBS = 1007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DIRECTIVENOTALLOWED = 1008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDNODETASKID = 1009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATESLEEPINGTASKFAILED = 1010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEMOVINGTASKFAILED = 1011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINALISETASKFAILED = 1012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGJOBFAILED = 1013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGJOBFAILED = 1014,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BEGINEDITINGTASKFAILED = 1015,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FINISHEDITINGTASKFAILED = 1016,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
@@ -244,6 +271,15 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETACTIVEJOBSFORAGENTFAILED = 2004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ABORTTASKFAILED = 2005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDJOBFAILED = 2006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESOLVEFAULTEDTASKFAILED = 2007,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETJOBSTATEFAILED = 3001,
@@ -289,6 +325,21 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         REQUESTUNFREEZEFAILED = 7003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INCORRECTNUMBEROFBYTES = 7004,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DOWNLOADFAILED = 8001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPLOADFAILED = 8002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETFILENAMESFAILED = 8003,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -626,6 +677,24 @@ namespace SchedulingClients.MapServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MapServiceReference.IMapService")]
     public interface IMapService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        int VersionMajor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
+        System.Threading.Tasks.Task<int> VersionMajorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        int VersionMinor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
+        System.Threading.Tasks.Task<int> VersionMinorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        int VersionPatch();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
+        System.Threading.Tasks.Task<int> VersionPatchAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
         System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData();
         
@@ -676,6 +745,30 @@ namespace SchedulingClients.MapServiceReference {
         
         public MapServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public int VersionMajor() {
+            return base.Channel.VersionMajor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
+            return base.Channel.VersionMajorAsync();
+        }
+        
+        public int VersionMinor() {
+            return base.Channel.VersionMinor();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
+            return base.Channel.VersionMinorAsync();
+        }
+        
+        public int VersionPatch() {
+            return base.Channel.VersionPatch();
+        }
+        
+        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
+            return base.Channel.VersionPatchAsync();
         }
         
         public System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData() {

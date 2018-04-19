@@ -38,11 +38,15 @@ namespace SchedulingClients.DemoClientApp
             Dispose(false);
         }
 
-        public AgentClient AgentClient { get { return (AgentClient)clients.FirstOrDefault(e => e is AgentClient); } }
+		public AgentAttentionClient AgentAttentionClient { get { return (AgentAttentionClient)clients.FirstOrDefault(e => e is AgentAttentionClient); } }
+
+		public AgentClient AgentClient { get { return (AgentClient)clients.FirstOrDefault(e => e is AgentClient); } }
 
         public AgentBatteryStatusClient AgentBatteryStatusClient { get { return (AgentBatteryStatusClient)clients.FirstOrDefault(e => e is AgentBatteryStatusClient); } }
 
-        public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
+		public AgentStatecastClient AgentStatecastClient { get { return (AgentStatecastClient)clients.FirstOrDefault(e => e is AgentStatecastClient); } }
+
+		public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
         public FleetManagerClient FleetManagerClient { get { return (FleetManagerClient)clients.FirstOrDefault(e => e is FleetManagerClient); } }
 
@@ -73,6 +77,9 @@ namespace SchedulingClients.DemoClientApp
 
             clients.Add(ClientFactory.GetRoadmapClient(endpointSettings));
             clients.Add(ClientFactory.GetServicingClient(endpointSettings));
+
+			clients.Add(ClientFactory.GetAgentAttentionClient(endpointSettings));
+			clients.Add(ClientFactory.GetAgentStatecastClient(endpointSettings));
 
             LogManager.Configuration = new LoggingConfiguration();
 

@@ -93,6 +93,22 @@
                     <clientsUC:ServicingClientControl x:Name="servicingClientControl" DataContext="{Binding Path=ServicingClient}" />
                 </Grid>
             </TabItem>
+			<TabItem>
+				<TabItem.Header>
+					Agent Attention Client
+				</TabItem.Header>
+				<Grid>
+					<clientsUC:AgentAttentionClientControl x:Name="agentAttentionClientControl" DataContext="{Binding Path=AgentAttentionClient}" />
+				</Grid>
+			</TabItem>
+			<TabItem>
+				<TabItem.Header>
+					Agent StateCast Client
+				</TabItem.Header>
+				<Grid>
+					<clientsUC:AgentStateCastClientControl x:Name="agentStateCastClientControl" DataContext="{Binding Path=AgentStatecastClient}" />
+				</Grid>
+			</TabItem>
         </TabControl>
     </Grid>
 </Window>
