@@ -1,26 +1,15 @@
-﻿using SchedulingClients.AgentStatecastserviceReference;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using SchedulingClients.AgentStateCastServiceReference;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SchedulingClients.UserControls
 {
-	/// <summary>
-	/// Interaction logic for AgentStateCastClientControl.xaml
-	/// </summary>
-	public partial class AgentStateCastClientControl : UserControl
+    /// <summary>
+    /// Interaction logic for AgentStateCastClientControl.xaml
+    /// </summary>
+    public partial class AgentStateCastClientControl : UserControl
 	{
 		public AgentStateCastClientControl()
 		{
@@ -74,20 +63,23 @@ namespace SchedulingClients.UserControls
 		private void descriptionButton_Click(object sender, RoutedEventArgs e)
 		{
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			CastType castType = new CastType();
+			CastType castType;
 
 			client.TryGetStatecastDescription(descriptionUpDown.Value ?? 0, out castType);
-			StringBuilder builder = new StringBuilder();
-			builder.AppendLine(string.Format("Code:{0}", castType.Code.ToString()));
-			builder.AppendLine(string.Format("Label:{0}", castType.Label));
-			builder.AppendLine(string.Format("NumBytes:{0}", castType.NumBytes.ToString()));
-			builder.AppendLine(string.Format("ExtensionData:{0}", castType.ExtensionData.ToString()));
-			builder.AppendLine("Variables:");
-			foreach (var var in castType.Variables)
-			{
-				builder.AppendLine(string.Format("-{0}", var.ToString()));
-			}
-			MessageBox.Show(builder.ToString());
+
+            if (castType != null)
+            {
+                StringBuilder builder = new StringBuilder();
+                builder.AppendLine(string.Format("Code:{0}", castType.Code.ToString()));
+                builder.AppendLine(string.Format("Label:{0}", castType.Label));
+                builder.AppendLine(string.Format("NumBytes:{0}", castType.NumBytes.ToString()));
+                builder.AppendLine("Variables:");
+                foreach (var var in castType.Variables)
+                {
+                    builder.AppendLine(string.Format("-{0}", var.ToString()));
+                }
+                MessageBox.Show(builder.ToString());
+            }
 		}
 	}
 }

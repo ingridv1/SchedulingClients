@@ -1,7 +1,5 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using GAClients;
 using System.ServiceModel;

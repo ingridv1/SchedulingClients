@@ -1,15 +1,11 @@
 ﻿using GAClients;
 using SchedulingClients.AgentAttentionServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public class AgentAttentionClient : AbstractCallbackClient<IAgentAttentionService>
+    public class AgentAttentionClient : AbstractCallbackClient<IAgentAttentionService>
 	{
 		private AgentAttentionServiceCallback callback = new AgentAttentionServiceCallback();
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using SchedulingClients.FleetManagerServiceReference;
 using System.ServiceModel;
 using System.Net;
-using UDPCasts;
 using GAClients;
 
 namespace SchedulingClients

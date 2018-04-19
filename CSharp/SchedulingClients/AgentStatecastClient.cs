@@ -1,16 +1,12 @@
 ﻿using GAClients;
-using SchedulingClients.AgentStatecastserviceReference;
+using SchedulingClients.AgentStateCastServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public class AgentStatecastClient : AbstractClient<IAgentStatecastService>
+    public class AgentStatecastClient : AbstractClient<IAgentStatecastService>
 	{
 		private bool isDisposed = false;
 
@@ -116,7 +112,7 @@ namespace SchedulingClients
 			}
 			catch (Exception ex)
 			{
-				statecastDescription = new CastType();
+                statecastDescription = null;
 				return HandleClientException(ex);
 			}
 		}

@@ -8,7 +8,7 @@ using jobs = SchedulingClients.JobsStateServiceReference;
 using maps = SchedulingClients.MapServiceReference;
 using job = SchedulingClients.JobStateServiceReference;
 using servicing = SchedulingClients.ServicingServiceReference;
-using agentStatecast = SchedulingClients.AgentStatecastserviceReference;
+using agentStatecast = SchedulingClients.AgentStateCastServiceReference;
 
 namespace SchedulingClients
 {
