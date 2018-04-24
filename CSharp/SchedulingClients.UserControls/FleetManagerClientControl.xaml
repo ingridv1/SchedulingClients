@@ -5,11 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContextChanged="UserControl_DataContextChanged">
     <UserControl.Resources>
         <ResourceDictionary>
             <ContextMenu x:Key="rowMenu" x:Name="rowMenu">
                 <MenuItem Header="Commit Waypoints" x:Name="commitMenuItem" Click="commitMenuItem_Click"/>
+                <MenuItem Header="Get Kingpin Description" x:Name="getKingpinDescription" Click="getKingpinDescription_Click"/>
             </ContextMenu>            
             <Style x:Key="defaultRowStyle" TargetType="{x:Type DataGridRow}">
                 <Setter Property="ContextMenu" Value="{StaticResource rowMenu}"/>
@@ -43,19 +45,19 @@
                 </local:LabelContentControl>
             </StackPanel>
             <DataGrid x:Name="dataGrid"
-                      Grid.Row="1" ItemsSource="{Binding Path=LastFleetStateReceived.KingpinStates, Mode=OneWay}"
+                      Grid.Row="1"
                       AutoGenerateColumns="False"
                       RowStyle="{StaticResource defaultRowStyle}"
                       SelectionMode="Single">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="IPAddress" Binding="{Binding IPAddress}"/>
-                    <DataGridTextColumn Header="X" Binding="{Binding X}"/>
-                    <DataGridTextColumn Header="Y" Binding="{Binding Y}"/>
-                    <DataGridTextColumn Header="Heading" Binding="{Binding Heading}"/>
-                    <DataGridTextColumn Header="WaypointNextId" Binding="{Binding WaypointNextId}"/>
-                    <DataGridTextColumn Header="WaypointLastId" Binding="{Binding WaypointLastId}"/>
-                    <DataGridTextColumn Header="Stationary" Binding="{Binding Stationary}"/>
-                    <DataGridTextColumn Header="LastCompletedInstructionId" Binding="{Binding LastCompletedInstructionId}"/>
+                    <DataGridTextColumn Header="IPAddress" Binding="{Binding KingpinState.IPAddress}"/>
+                    <DataGridTextColumn Header="X" Binding="{Binding KingpinState.X}"/>
+                    <DataGridTextColumn Header="Y" Binding="{Binding KingpinState.Y}"/>
+                    <DataGridTextColumn Header="Heading" Binding="{Binding KingpinState.Heading}"/>
+                    <DataGridTextColumn Header="WaypointNextId" Binding="{Binding KingpinState.WaypointNextId}"/>
+                    <DataGridTextColumn Header="WaypointLastId" Binding="{Binding KingpinState.WaypointLastId}"/>
+                    <DataGridTextColumn Header="Stationary" Binding="{Binding KingpinState.Stationary}"/>
+                    <DataGridTextColumn Header="LastCompletedInstructionId" Binding="{Binding KingpinState.LastCompletedInstructionId}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

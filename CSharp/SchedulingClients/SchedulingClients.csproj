@@ -135,6 +135,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Net.IPAddress.datasource" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
     <None Include="Service References\AgentAttentionServiceReference\agentAttention.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -254,6 +255,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetManagerServiceReference\fleetManager7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetManagerServiceReference\fleetManager81.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetManagerServiceReference\FleetManagerService.wsdl" />

@@ -240,6 +240,9 @@ namespace SchedulingClients.FleetManagerServiceReference {
         COMMITEXTENDEDWAYPOINTSFAILED = 7005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETKINGPINDESCRIPTIONFAILED = 7008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -323,13 +326,40 @@ namespace SchedulingClients.FleetManagerServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double BatteryChargePercentageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.DynamicLimiterStatus DynamicLimiterStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.ExtendedDataFaultStatus ExtendedDataFaultStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.FrozenState FrozenStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private float HeadingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Net.IPAddress IPAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsChargingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LastCompletedInstructionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.NavigationStatus NavigationStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.PositionControlStatus PositionControlStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SpeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] StateCastExtendedDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.TimeSpan StationaryField;
@@ -353,6 +383,58 @@ namespace SchedulingClients.FleetManagerServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double BatteryChargePercentage {
+            get {
+                return this.BatteryChargePercentageField;
+            }
+            set {
+                if ((this.BatteryChargePercentageField.Equals(value) != true)) {
+                    this.BatteryChargePercentageField = value;
+                    this.RaisePropertyChanged("BatteryChargePercentage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.DynamicLimiterStatus DynamicLimiterStatus {
+            get {
+                return this.DynamicLimiterStatusField;
+            }
+            set {
+                if ((this.DynamicLimiterStatusField.Equals(value) != true)) {
+                    this.DynamicLimiterStatusField = value;
+                    this.RaisePropertyChanged("DynamicLimiterStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.ExtendedDataFaultStatus ExtendedDataFaultStatus {
+            get {
+                return this.ExtendedDataFaultStatusField;
+            }
+            set {
+                if ((this.ExtendedDataFaultStatusField.Equals(value) != true)) {
+                    this.ExtendedDataFaultStatusField = value;
+                    this.RaisePropertyChanged("ExtendedDataFaultStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.FrozenState FrozenState {
+            get {
+                return this.FrozenStateField;
+            }
+            set {
+                if ((this.FrozenStateField.Equals(value) != true)) {
+                    this.FrozenStateField = value;
+                    this.RaisePropertyChanged("FrozenState");
+                }
             }
         }
         
@@ -383,6 +465,19 @@ namespace SchedulingClients.FleetManagerServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCharging {
+            get {
+                return this.IsChargingField;
+            }
+            set {
+                if ((this.IsChargingField.Equals(value) != true)) {
+                    this.IsChargingField = value;
+                    this.RaisePropertyChanged("IsCharging");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int LastCompletedInstructionId {
             get {
                 return this.LastCompletedInstructionIdField;
@@ -391,6 +486,58 @@ namespace SchedulingClients.FleetManagerServiceReference {
                 if ((this.LastCompletedInstructionIdField.Equals(value) != true)) {
                     this.LastCompletedInstructionIdField = value;
                     this.RaisePropertyChanged("LastCompletedInstructionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.NavigationStatus NavigationStatus {
+            get {
+                return this.NavigationStatusField;
+            }
+            set {
+                if ((this.NavigationStatusField.Equals(value) != true)) {
+                    this.NavigationStatusField = value;
+                    this.RaisePropertyChanged("NavigationStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.PositionControlStatus PositionControlStatus {
+            get {
+                return this.PositionControlStatusField;
+            }
+            set {
+                if ((this.PositionControlStatusField.Equals(value) != true)) {
+                    this.PositionControlStatusField = value;
+                    this.RaisePropertyChanged("PositionControlStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Speed {
+            get {
+                return this.SpeedField;
+            }
+            set {
+                if ((this.SpeedField.Equals(value) != true)) {
+                    this.SpeedField = value;
+                    this.RaisePropertyChanged("Speed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] StateCastExtendedData {
+            get {
+                return this.StateCastExtendedDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateCastExtendedDataField, value) != true)) {
+                    this.StateCastExtendedDataField = value;
+                    this.RaisePropertyChanged("StateCastExtendedData");
                 }
             }
         }
@@ -470,6 +617,100 @@ namespace SchedulingClients.FleetManagerServiceReference {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DynamicLimiterStatus", Namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts")]
+    public enum DynamicLimiterStatus : ushort {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OK = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SafetySensor = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Warning_1 = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Warning_2 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MotorFault = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unknown = 65535,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExtendedDataFaultStatus", Namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts")]
+    public enum ExtendedDataFaultStatus : byte {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OK = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Fault = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FrozenState", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles")]
+    public enum FrozenState : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Frozen = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unfrozen = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NavigationStatus", Namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts")]
+    public enum NavigationStatus : ushort {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OK = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Lost = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AssociationFailure = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HighUncertainty = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PoorAssociaton = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unknown = 65535,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PositionControlStatus", Namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts")]
+    public enum PositionControlStatus : ushort {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OK = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabled = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabling = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoWaypoints = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OutOfPosition = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WaypointDiscontinuity = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unknown = 65535,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FleetManagerServiceReference.IFleetManagerService", CallbackContract=typeof(SchedulingClients.FleetManagerServiceReference.IFleetManagerServiceCallback))]
     public interface IFleetManagerService {
@@ -497,6 +738,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/GetKingpinDescription", ReplyAction="http://tempuri.org/IFleetManagerService/GetKingpinDescriptionResponse")]
+        System.Tuple<System.Xml.Linq.XElement, SchedulingClients.FleetManagerServiceReference.ServiceCallData> GetKingpinDescription(System.Net.IPAddress ipAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/GetKingpinDescription", ReplyAction="http://tempuri.org/IFleetManagerService/GetKingpinDescriptionResponse")]
+        System.Threading.Tasks.Task<System.Tuple<System.Xml.Linq.XElement, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> GetKingpinDescriptionAsync(System.Net.IPAddress ipAddress);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
         System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
@@ -582,6 +829,14 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
+        }
+        
+        public System.Tuple<System.Xml.Linq.XElement, SchedulingClients.FleetManagerServiceReference.ServiceCallData> GetKingpinDescription(System.Net.IPAddress ipAddress) {
+            return base.Channel.GetKingpinDescription(ipAddress);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<System.Xml.Linq.XElement, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> GetKingpinDescriptionAsync(System.Net.IPAddress ipAddress) {
+            return base.Channel.GetKingpinDescriptionAsync(ipAddress);
         }
         
         public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {

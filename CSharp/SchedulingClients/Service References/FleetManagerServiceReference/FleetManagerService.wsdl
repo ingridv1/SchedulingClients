@@ -31,6 +31,8 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Services" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IFleetManagerService_VersionMajor_InputMessage">
@@ -56,6 +58,12 @@
   </wsdl:message>
   <wsdl:message name="IFleetManagerService_SubscriptionHeartbeat_OutputMessage">
     <wsdl:part name="parameters" element="tns:SubscriptionHeartbeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_GetKingpinDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKingpinDescription" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_GetKingpinDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKingpinDescriptionResponse" />
   </wsdl:message>
   <wsdl:message name="IFleetManagerService_CommitExtendedWaypoints_InputMessage">
     <wsdl:part name="parameters" element="tns:CommitExtendedWaypoints" />
@@ -97,6 +105,10 @@
     <wsdl:operation name="SubscriptionHeartbeat">
       <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IFleetManagerService_SubscriptionHeartbeat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse" message="tns:IFleetManagerService_SubscriptionHeartbeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKingpinDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/GetKingpinDescription" message="tns:IFleetManagerService_GetKingpinDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/GetKingpinDescriptionResponse" message="tns:IFleetManagerService_GetKingpinDescription_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CommitExtendedWaypoints">
       <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints" message="tns:IFleetManagerService_CommitExtendedWaypoints_InputMessage" />
@@ -147,6 +159,15 @@
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKingpinDescription">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/GetKingpinDescription" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -223,6 +244,15 @@
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKingpinDescription">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/GetKingpinDescription" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
