@@ -118,6 +118,7 @@
     <Compile Include="JobStateDataControl.xaml.cs">
       <DependentUpon>JobStateDataControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KingpinStateMailbox.cs" />
     <Compile Include="LabelContentControl.cs" />
     <Compile Include="MapClientControl.xaml.cs">
       <DependentUpon>MapClientControl.xaml</DependentUpon>

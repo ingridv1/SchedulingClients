@@ -4,6 +4,7 @@ using SchedulingClients.FleetManagerServiceReference;
 using System.ServiceModel;
 using System.Net;
 using GAClients;
+using System.Xml.Linq;
 
 namespace SchedulingClients
 {
@@ -128,6 +129,31 @@ namespace SchedulingClients
         }
 
         /// <summary>
+        /// Get xDocument of kingpin description
+        /// </summary>
+        /// <param name="ipAddress">IPAddress</param>
+        /// <param name="xDocument">kingpin.xml xDocument</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryGetKingpinDescription(IPAddress ipAddress, out XDocument xDocument)
+        {
+            Logger.Info("TryGetKingpinDescription()");
+
+            try
+            {
+                var result = GetKingpinDescription(ipAddress);
+                XElement xElement = result.Item1;
+                xDocument = new XDocument(xElement);
+
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                xDocument = null;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
         /// Commit extended waypoints to a kingpin
         /// </summary>
         /// <returns>ServiceOperationResult</returns>
@@ -146,9 +172,9 @@ namespace SchedulingClients
                 success = false;
                 return HandleClientException(ex);
             }
-
         }
 
+   
 
         /// <summary>
         /// Requests fleet manager unfreeze
@@ -187,6 +213,27 @@ namespace SchedulingClients
             }
 
             isDisposed = true;
+        }
+
+        private Tuple<XElement,ServiceCallData> GetKingpinDescription(IPAddress ipAddress)
+        {
+            Logger.Debug("GetKingpinDescription()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("FleetManagerClient");
+            }
+
+            Tuple<XElement, ServiceCallData> result;
+
+            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+            {
+                IFleetManagerService channel = channelFactory.CreateChannel();
+                result = channel.GetKingpinDescription(ipAddress);
+                channelFactory.Close();
+            }
+
+            return result;
         }
 
         private Tuple<bool, ServiceCallData> RequestFreeze()
