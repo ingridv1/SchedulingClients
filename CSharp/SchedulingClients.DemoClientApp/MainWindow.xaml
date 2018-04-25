@@ -87,6 +87,14 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
+                    Map Client Blocking Mandates
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:MapClientBlockingMandatesControl x:Name="roadmapClientBlockingMandatesControl" DataContext="{Binding Path=RoadmapClient}" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
                     Servicing Client
                 </TabItem.Header>
                 <Grid>

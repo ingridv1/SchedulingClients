@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="SchedulingClients.UserControls.MapClientBlockingMandatesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchedulingClients.UserControls"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <TextBlock>Blocking Mandates</TextBlock>
+                <Button x:Name="getAllNodeDataButton" Click="getAllNodeDataButton_Click" HorizontalAlignment="Left" Width="120">Refresh Nodes</Button>
+                <DataGrid x:Name="nodeDataDataGrid" Grid.Row="2" AutoGenerateColumns="False" ColumnWidth="*"
+                  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Alias" Binding="{Binding Alias}" />
+                        <DataGridTextColumn Header="MapItemId" Binding="{Binding MapItemId}" />
+                        <DataGridTextColumn Header="X (m)" Binding="{Binding X, StringFormat={}{0:N3}}" />
+                        <DataGridTextColumn Header="Y (m)" Binding="{Binding Y, StringFormat={}{0:N3}}" />
+                        <DataGridTextColumn Header="Heading (rad)" Binding="{Binding HeadingRad, StringFormat={}{0:N2}}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <local:LabelContentControl Header="Mandate Id">
+                    <toolkit:IntegerUpDown x:Name="mandateIdUpDown" Maximum="-1" Value="-1"/>
+                </local:LabelContentControl>
+                <Button x:Name="registerBlockingMandateButton" Click="registerBlockingMandateButton_Click" HorizontalAlignment="Right">Register</Button>
+                <Button x:Name="clearBlockingMandateButton" Click="clearBlockingMandateButton_Click" HorizontalAlignment="Right">Clear</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

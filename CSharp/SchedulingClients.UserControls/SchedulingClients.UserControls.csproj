@@ -39,10 +39,12 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -120,6 +122,9 @@
     </Compile>
     <Compile Include="KingpinStateMailbox.cs" />
     <Compile Include="LabelContentControl.cs" />
+    <Compile Include="MapClientBlockingMandatesControl.xaml.cs">
+      <DependentUpon>MapClientBlockingMandatesControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapClientControl.xaml.cs">
       <DependentUpon>MapClientControl.xaml</DependentUpon>
     </Compile>
@@ -197,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JobStateDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClientBlockingMandatesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
