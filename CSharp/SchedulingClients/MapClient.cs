@@ -110,6 +110,51 @@ namespace SchedulingClients
             }
         }
 
+        /// <summary>
+        /// Attempts to block off an area of the map
+        /// </summary>
+        /// <param name="mapItemIds">Map Items to block off</param>
+        /// <param name="mandateId">Identifier for blocking operation (Must be non-zero and negative)</param>
+        /// <param name="millisecondsTimeout">Length of time to wait before abandoning the blocking attempt</param>
+        /// <param name="success">Whether or not the blocking was successful</param>
+        /// <returns></returns>
+        public ServiceOperationResult TryRegisterBlockingMandate(IEnumerable<int> mapItemIds, int mandateId, int millisecondsTimeout, out bool success)
+        {
+            Logger.Info("TryRegisterBlockingMandate() mandateId: {0}", mandateId);
+
+            try
+            {
+                var result = RegisterBlockingMandate(mapItemIds, mandateId, millisecondsTimeout);
+                success = result.Item1;
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Clears a previously blocked area of the map
+        /// </summary>
+        /// <param name="mandateId">Identifier previously used for blocking operation (Must be non-zero and negative)</param>
+        /// <returns></returns>
+        public ServiceOperationResult TryClearBlockingMandate(int mandateId)
+        {
+            Logger.Info("TryClearBlockingMandate() mandateId: {0}", mandateId);
+
+            try
+            {
+                var result = ClearBlockingMandate(mandateId);
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
+
         private Tuple<MoveData[], ServiceCallData> GetAllMoveData()
         {
             Logger.Debug("GetAllMoveData()");
@@ -188,6 +233,48 @@ namespace SchedulingClients
             {
                 IMapService channel = channelFactory.CreateChannel();
                 result = channel.GetTrajectory(moveId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> RegisterBlockingMandate(IEnumerable<int> mapItemIds, int mandateId, int millisecondsTimeout)
+        {
+            Logger.Debug("RegisterBlockingMandate() mandateId: {0}", mandateId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("MapClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                result = channel.RegisterBlockingMandate(mapItemIds.ToArray(), mandateId, millisecondsTimeout);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> ClearBlockingMandate(int mandateId)
+        {
+            Logger.Debug("ClearBlockingMandate() mandateId: {0}", mandateId);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("MapClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                result = channel.ClearBlockingMandate(mandateId);
                 channelFactory.Close();
             }
 

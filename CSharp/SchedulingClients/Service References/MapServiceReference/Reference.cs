@@ -306,6 +306,12 @@ namespace SchedulingClients.MapServiceReference {
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLEARBLOCKINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -333,6 +339,9 @@ namespace SchedulingClients.MapServiceReference {
         COMMITEXTENDEDWAYPOINTSFAILED = 7005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETKINGPINDESCRIPTIONFAILED = 7008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -340,6 +349,9 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETFILENAMESFAILED = 8003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDAGENTID = 9001,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -718,6 +730,18 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetTrajectory", ReplyAction="http://tempuri.org/IMapService/GetTrajectoryResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RegisterBlockingMandate", ReplyAction="http://tempuri.org/IMapService/RegisterBlockingMandateResponse")]
+        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> RegisterBlockingMandate(int[] mapItemIds, int mandateId, int millisecondsTimeout);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RegisterBlockingMandate", ReplyAction="http://tempuri.org/IMapService/RegisterBlockingMandateResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> RegisterBlockingMandateAsync(int[] mapItemIds, int mandateId, int millisecondsTimeout);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
+        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -801,6 +825,22 @@ namespace SchedulingClients.MapServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId) {
             return base.Channel.GetTrajectoryAsync(moveId);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> RegisterBlockingMandate(int[] mapItemIds, int mandateId, int millisecondsTimeout) {
+            return base.Channel.RegisterBlockingMandate(mapItemIds, mandateId, millisecondsTimeout);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> RegisterBlockingMandateAsync(int[] mapItemIds, int mandateId, int millisecondsTimeout) {
+            return base.Channel.RegisterBlockingMandateAsync(mapItemIds, mandateId, millisecondsTimeout);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId) {
+            return base.Channel.ClearBlockingMandate(mandateId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId) {
+            return base.Channel.ClearBlockingMandateAsync(mandateId);
         }
     }
 }

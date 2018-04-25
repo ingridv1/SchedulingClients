@@ -356,6 +356,9 @@
     <None Include="Service References\MapServiceReference\map5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MapServiceReference\map6.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MapServiceReference\MapService.wsdl" />
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

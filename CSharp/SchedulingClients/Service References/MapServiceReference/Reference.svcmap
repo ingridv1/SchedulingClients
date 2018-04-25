@@ -27,6 +27,7 @@
     <MetadataFile FileName="map2.xsd" MetadataType="Schema" ID="4853277e-ab66-40f8-958f-e9e881f63241" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd4" />
     <MetadataFile FileName="map3.xsd" MetadataType="Schema" ID="80ff284e-003c-45b2-95c9-dfe519ba3f72" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd5" />
     <MetadataFile FileName="map4.xsd" MetadataType="Schema" ID="0565b3cd-6584-4faa-8353-5fd0eed604fa" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd0" />
+    <MetadataFile FileName="map6.xsd" MetadataType="Schema" ID="4f77436e-b386-46f1-bb89-bbf4f48bc937" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd6" />
     <MetadataFile FileName="map5.xsd" MetadataType="Schema" ID="6d5f419b-744a-4e90-9ab1-70ef8a2435af" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd3" />
     <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="900e756f-7431-49f5-b2e6-4de2d605e8b3" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc" />
   </Metadata>

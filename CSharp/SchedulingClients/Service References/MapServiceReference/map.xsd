@@ -62,4 +62,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" nillable="true" type="tns:TupleOfArrayOfWaypointDataServiceCallDatazDQi_Syxv" />
+  <xs:complexType name="TupleOfbooleanServiceCallDatayG81JSvh">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="m_Item1" type="xs:boolean" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q9:ServiceCallData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TupleOfbooleanServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfbooleanServiceCallDatayG81JSvh" />
 </xs:schema>

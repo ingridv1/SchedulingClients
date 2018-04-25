@@ -29,6 +29,7 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IMapService_VersionMajor_InputMessage">
@@ -73,6 +74,18 @@
   <wsdl:message name="IMapService_GetTrajectory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTrajectoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IMapService_RegisterBlockingMandate_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterBlockingMandate" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_RegisterBlockingMandate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterBlockingMandateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_ClearBlockingMandate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearBlockingMandate" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_ClearBlockingMandate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearBlockingMandateResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMapService">
     <wsdl:operation name="VersionMajor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IMapService_VersionMajor_InputMessage" />
@@ -101,6 +114,14 @@
     <wsdl:operation name="GetTrajectory">
       <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetTrajectory" message="tns:IMapService_GetTrajectory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetTrajectoryResponse" message="tns:IMapService_GetTrajectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBlockingMandate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/RegisterBlockingMandate" message="tns:IMapService_RegisterBlockingMandate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/RegisterBlockingMandateResponse" message="tns:IMapService_RegisterBlockingMandate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearBlockingMandate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/ClearBlockingMandate" message="tns:IMapService_ClearBlockingMandate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/ClearBlockingMandateResponse" message="tns:IMapService_ClearBlockingMandate_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IMapService" type="tns:IMapService">
@@ -169,6 +190,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterBlockingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/RegisterBlockingMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearBlockingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/ClearBlockingMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSDualHttpBinding_IMapService" type="tns:IMapService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IMapService_policy" />
@@ -229,6 +268,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetTrajectory">
       <soap12:operation soapAction="http://tempuri.org/IMapService/GetTrajectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBlockingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/RegisterBlockingMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearBlockingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/ClearBlockingMandate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

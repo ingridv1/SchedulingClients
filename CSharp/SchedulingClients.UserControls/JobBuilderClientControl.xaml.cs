@@ -46,7 +46,7 @@ namespace SchedulingClients.UserControls
             JobBuilderClient client = DataContext as JobBuilderClient;
 
 #warning Unsafe
-            client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterIdUpDown.Value ?? 0, (ushort)(valueUpDown.Value ?? 0));
+            client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterIdUpDown.Value ?? 0, (byte)(valueUpDown.Value ?? 0));
         }
 
         private void moveJobButton_Click(object sender, RoutedEventArgs e)
