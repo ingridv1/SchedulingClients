@@ -7,6 +7,10 @@ https://www.nuget.org/packages/SchedulingClients/
 
 ## Release Notes
 
+## v8.1.0
+
+Supports extended fleet manager functionality for returning kingpin.xml
+
 ## v8.0.0
 
 Supports tool chain for resolving tasks and jobs in a fault state.
