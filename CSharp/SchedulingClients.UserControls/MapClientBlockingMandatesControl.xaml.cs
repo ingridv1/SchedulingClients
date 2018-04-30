@@ -25,19 +25,10 @@ namespace SchedulingClients.UserControls
         {
             InitializeComponent();
         }
-        
-        private void getAllNodeDataButton_Click(object sender, RoutedEventArgs e)
-        {
-            MapClient client = DataContext as MapClient;
-            IEnumerable<NodeData> nodeDatas;
-            client.TryGetAllNodeData(out nodeDatas);
-
-            nodeDataDataGrid.ItemsSource = nodeDatas;
-        }
 
         private void registerBlockingMandateButton_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<int> mapItemIds = nodeDataDataGrid.SelectedItems.Cast<NodeData>().Select(n => n.MapItemId);
+            IEnumerable<int> mapItemIds = nodeDataDataGrid.SelectedItems.Cast<NodeData>().Select(n => n.MapItemId).Union(moveDataDataGrid.SelectedItems.Cast<MoveData>().Select(m => m.Id));
             int mandateId = mandateIdUpDown.Value ?? -1;
 
             MapClient client = DataContext as MapClient;
@@ -61,6 +52,21 @@ namespace SchedulingClients.UserControls
             MapClient client = DataContext as MapClient;
 
             client.TryClearBlockingMandate(mandateId);
+        }
+
+        private void getMapDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            MapClient client = DataContext as MapClient;
+
+            IEnumerable<NodeData> nodeDatas;
+            client.TryGetAllNodeData(out nodeDatas);
+
+            nodeDataDataGrid.ItemsSource = nodeDatas;
+
+            IEnumerable<MoveData> moveDatas;
+            client.TryGetAllMoveData(out moveDatas);
+
+            moveDataDataGrid.ItemsSource = moveDatas;
         }
     }
 }
