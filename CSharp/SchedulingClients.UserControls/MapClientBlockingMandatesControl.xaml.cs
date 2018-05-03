@@ -33,7 +33,9 @@ namespace SchedulingClients.UserControls
 
             MapClient client = DataContext as MapClient;
 
-            client.TryRegisterBlockingMandate(mapItemIds, mandateId, 20000, out bool success);
+            bool success = false;
+
+            client.TryRegisterBlockingMandate(mapItemIds, mandateId, 20000, out success);
 
             if (success)
             {
