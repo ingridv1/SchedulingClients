@@ -90,11 +90,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\MapServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="MapClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentServiceReference\Reference.cs">
@@ -113,6 +108,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\JobStateServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MapServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -366,6 +366,9 @@
     <None Include="Service References\MapServiceReference\map6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MapServiceReference\map7.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MapServiceReference\MapService.wsdl" />
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -478,18 +481,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MapServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MapServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\AgentBatteryStatusServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -534,6 +525,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AgentStateCastServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
