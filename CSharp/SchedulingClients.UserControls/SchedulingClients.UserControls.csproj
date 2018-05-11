@@ -144,6 +144,9 @@
     <Compile Include="ServicingClientControl.xaml.cs">
       <DependentUpon>ServicingClientControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Spammer.xaml.cs">
+      <DependentUpon>Spammer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TrajectoryDialog.xaml.cs">
       <DependentUpon>TrajectoryDialog.xaml</DependentUpon>
     </Compile>
@@ -214,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ServicingClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Spammer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
