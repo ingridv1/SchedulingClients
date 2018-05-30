@@ -31,8 +31,8 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Services" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IFleetManagerService_VersionMajor_InputMessage">

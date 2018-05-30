@@ -3,19 +3,36 @@ using System;
 using System.Linq;
 using SchedulingClients.MapServiceReference;
 using System.Collections.Generic;
+using System.Windows;
+using GAClients;
 
 namespace SchedulingClients.UserControls
 {
     public static class JobBuilderClient_ExtensionMethods
     {
+        private static int HandleCreatedUnorderedListTask(JobBuilderClient jobBuilder, int parentListTaskId)
+        {
+            int unorderedListTaskId;
+
+            ServiceOperationResult result = jobBuilder.TryCreateUnorderedListTask(parentListTaskId, out unorderedListTaskId);
+
+            if (!result.IsSuccessfull)
+            {
+                MessageBox.Show("Failed to create unordered list task");
+            }
+
+            return unorderedListTaskId;
+        }
+
         public static void MultiPickJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
         {
             JobData jobData;
 
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
-                int unorderedListTaskId;
-                if (jobBuilder.TryCreateUnorderedListTask(jobData.OrderedListTaskId, out unorderedListTaskId) == true)
+                int unorderedListTaskId = HandleCreatedUnorderedListTask(jobBuilder, jobData.OrderedListTaskId);
+
+                if (unorderedListTaskId >= 0)
                 {
                     for (int i = 0; i < 3; i++)
                     {
@@ -46,7 +63,14 @@ namespace SchedulingClients.UserControls
                 }
 
                 bool success;
-                jobBuilder.TryCommit(jobData.JobId, out success);
+                if (jobBuilder.TryCommit(jobData.JobId, out success) != true)
+                {
+                    MessageBox.Show(string.Format("Failed to commit job with jobId: {0}", jobData.JobId));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Failed to create job.");
             }
         }
 

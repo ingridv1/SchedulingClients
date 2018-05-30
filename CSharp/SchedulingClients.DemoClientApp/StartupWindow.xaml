@@ -46,7 +46,7 @@
                             <Setter Property="VerticalAlignment" Value="Center" />
                             <Setter Property="FontWeight" Value="Bold" />
                         </Style>
-                    </Grid.Resources>
+                    </Grid.Resources> 
                     <toolkit:IntegerUpDown Grid.Column="0" x:Name="byteA" Value="127" DefaultValue="127" />
                     <TextBlock Grid.Column="1">.</TextBlock>
                     <toolkit:IntegerUpDown Grid.Column="2" x:Name="byteB" Value="0" DefaultValue="0" />
@@ -56,6 +56,12 @@
                     <toolkit:IntegerUpDown Grid.Column="6" x:Name="byteD" Value="1" DefaultValue="1" />
                 </Grid>
             </clientsUC:LabelContentControl>
+            <clientsUC:LabelContentControl Header="Use Monitrav Defaults:">
+                <Button x:Name="monitravDefaultsButton" Click="monitravDefaultsButton_Click">Set</Button>
+            </clientsUC:LabelContentControl>
+            <clientsUC:LabelContentControl Header="Use Orchestra Defaults">
+                <Button x:Name="orchestraDefaultsButton" Click="orchestraDefaultsButton_Click">Set</Button>
+            </clientsUC:LabelContentControl>
             <clientsUC:LabelContentControl Header="Http port:" ToolTip="Port used by the server to host http services">
                 <toolkit:IntegerUpDown x:Name="httpPort" Value="41916" Minimum="1024" Maximum="49151" HorizontalAlignment="Right"
                          DefaultValue="41916" DisplayDefaultValueOnEmptyText="True" />
@@ -63,10 +69,6 @@
             <clientsUC:LabelContentControl Header="TCP port:" ToolTip="Port used by the server to host tcp services">
                 <toolkit:IntegerUpDown x:Name="tcpPort" Value="41917" Minimum="1024" Maximum="49151" HorizontalAlignment="Right"
                          DefaultValue="41917" DisplayDefaultValueOnEmptyText="True" />
-            </clientsUC:LabelContentControl>
-            <clientsUC:LabelContentControl Header="UDP port:" ToolTip="Port used by the server to receive UDP casts">
-                <toolkit:IntegerUpDown x:Name="udpPort" Value="41918" Minimum="1024" MaxHeight="41951" HorizontalAlignment="Right"
-                         DefaultValue="41918" DisplayDefaultValueOnEmptyText="True" />
             </clientsUC:LabelContentControl>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">

@@ -213,6 +213,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLEARBLOCKINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -326,6 +332,9 @@ namespace SchedulingClients.FleetManagerServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.FleetManagerServiceReference.AgvMode AgvModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double BatteryChargePercentageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -383,6 +392,19 @@ namespace SchedulingClients.FleetManagerServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.FleetManagerServiceReference.AgvMode AgvMode {
+            get {
+                return this.AgvModeField;
+            }
+            set {
+                if ((this.AgvModeField.Equals(value) != true)) {
+                    this.AgvModeField = value;
+                    this.RaisePropertyChanged("AgvMode");
+                }
             }
         }
         
@@ -615,6 +637,17 @@ namespace SchedulingClients.FleetManagerServiceReference {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgvMode", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles")]
+    public enum AgvMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Automatic = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Manual = 0,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]

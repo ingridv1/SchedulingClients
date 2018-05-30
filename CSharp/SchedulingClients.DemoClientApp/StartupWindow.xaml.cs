@@ -26,15 +26,26 @@ namespace SchedulingClients.DemoClientApp
 
             int http = (int)httpPort.Value;
             int tcp = (int)tcpPort.Value;
-            int udp = (int)udpPort.Value;
-
-            DemoClient demoClient = new DemoClient(ipAddress, http, tcp, udp);
+ 
+            DemoClient demoClient = new DemoClient(ipAddress, http, tcp);
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Configure(demoClient);
             mainWindow.Show();
 
             Close();
+        }
+
+        private void orchestraDefaultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            httpPort.Value = 41926;
+            tcpPort.Value = 41927;
+        }
+
+        private void monitravDefaultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            httpPort.Value = 41916;
+            tcpPort.Value = 41917;
         }
     }
 }
