@@ -58,6 +58,9 @@
                     <DataGridTextColumn Header="WaypointLastId" Binding="{Binding KingpinState.WaypointLastId}"/>
                     <DataGridTextColumn Header="Stationary" Binding="{Binding KingpinState.Stationary}"/>
                     <DataGridTextColumn Header="LastCompletedInstructionId" Binding="{Binding KingpinState.LastCompletedInstructionId}"/>
+                    <DataGridTextColumn Header="DynamicLimiterStatus" Binding="{Binding KingpinState.DynamicLimiterStatus}"/>
+                    <DataGridTextColumn Header="NavigationStatus" Binding="{Binding KingpinState.NavigationStatus}"/>
+                    <DataGridTextColumn Header="PositionControlStatus" Binding="{Binding KingpinState.PositionControlStatus}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
