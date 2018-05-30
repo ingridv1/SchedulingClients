@@ -15,7 +15,7 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Maps")]
     [System.SerializableAttribute()]
     public partial class ParameterData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -356,7 +356,7 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Maps")]
     [System.SerializableAttribute()]
     public partial class MoveData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -449,7 +449,7 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Maps")]
     [System.SerializableAttribute()]
     public partial class NodeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

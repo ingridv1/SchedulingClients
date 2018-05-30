@@ -8,7 +8,7 @@ namespace SchedulingClients.UserControls
 {
     public partial class JobBuilderClientControl : UserControl
     {
-        private MapClient roadmapClient = null;
+        private MapClient mapClient = null;
 
         public JobBuilderClientControl()
         {
@@ -17,7 +17,7 @@ namespace SchedulingClients.UserControls
 
         public void Configure(MapClient client)
         {
-            roadmapClient = client;
+            mapClient = client;
         }
 
         private void createJobButton_Click(object sender, RoutedEventArgs e)
@@ -31,13 +31,21 @@ namespace SchedulingClients.UserControls
         {
             JobBuilderClient client = DataContext as JobBuilderClient;
 
-            if (roadmapClient != null)
+            if (mapClient != null)
             {
                 IEnumerable<NodeData> nodeData;
-                if (roadmapClient.TryGetAllNodeData(out nodeData) == true)
+                if (mapClient.TryGetAllNodeData(out nodeData) == true)
                 {
                     client.MultiPickJobTest(nodeData);
                 }
+                else
+                {
+                    MessageBox.Show("Failed to get node data from map client");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Map client is null");
             }
         }
 
@@ -53,10 +61,10 @@ namespace SchedulingClients.UserControls
         {
             JobBuilderClient client = DataContext as JobBuilderClient;
 
-            if (roadmapClient != null)
+            if (mapClient != null)
             {
                 IEnumerable<NodeData> nodeData;
-                if (roadmapClient.TryGetAllNodeData(out nodeData) == true)
+                if (mapClient.TryGetAllNodeData(out nodeData) == true)
                 {
                     client.MoveJobTest(nodeData, finalisedPipelineCheck.IsChecked ?? true);
                 }
