@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.ServiceModel;
 using System.Text;
-using UDPCasts;
 using System.Collections.Generic;
 
 namespace SchedulingClients
@@ -20,19 +19,6 @@ namespace SchedulingClients
         public static double DegToRad(this double value)
         {
             return (value * Math.PI) / 180.0d;
-        }
-
-        public static IEnumerable<ControllerState> ToControllerStates(this ByteArrayCast byteArrayCast)
-        {
-            List<ControllerState> controllerStates = new List<ControllerState>();
-
-            foreach(byte[] bytes in byteArrayCast.ByteArray)
-            {
-                ControllerState controllerState = new ControllerState(bytes);
-                controllerStates.Add(controllerState);
-            }
-
-            return controllerStates;
         }
 
         /// <summary>
