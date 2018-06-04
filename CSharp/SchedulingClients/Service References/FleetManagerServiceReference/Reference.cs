@@ -259,6 +259,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         INVALIDAGENTID = 9001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETSCHEDULERVERSIONFAILED = 10001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETPLUGINVERSIONSFAILED = 10002,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

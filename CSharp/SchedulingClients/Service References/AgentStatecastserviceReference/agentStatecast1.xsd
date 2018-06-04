@@ -52,36 +52,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetShortStatecastValue">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="agentId" type="xs:int" />
-        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetShortStatecastValueResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetShortStatecastValueResult" nillable="true" type="q2:TupleOfshortServiceCallDatayG81JSvh" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUShortStatecastValue">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="agentId" type="xs:int" />
-        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUShortStatecastValueResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetUShortStatecastValueResult" nillable="true" type="q3:TupleOfunsignedShortServiceCallDatayG81JSvh" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetFloatStatecastValue">
     <xs:complexType>
       <xs:sequence>
@@ -93,7 +63,7 @@
   <xs:element name="GetFloatStatecastValueResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetFloatStatecastValueResult" nillable="true" type="q4:TupleOffloatServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetFloatStatecastValueResult" nillable="true" type="q2:TupleOffloatServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -108,7 +78,22 @@
   <xs:element name="GetIPAddressStatecastValueResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetIPAddressStatecastValueResult" nillable="true" type="q5:TupleOfIPAddressServiceCallDataTT52EBte" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetIPAddressStatecastValueResult" nillable="true" type="q3:TupleOfIPAddressServiceCallDataTT52EBte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShortStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShortStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetShortStatecastValueResult" nillable="true" type="q4:TupleOfshortServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -122,7 +107,22 @@
   <xs:element name="GetStatecastDescriptionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetStatecastDescriptionResult" nillable="true" type="q6:TupleOfCastTypeServiceCallDataBCm4Adu_P" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetStatecastDescriptionResult" nillable="true" type="q5:TupleOfCastTypeServiceCallDataBCm4Adu_P" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUShortStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUShortStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetUShortStatecastValueResult" nillable="true" type="q6:TupleOfunsignedShortServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

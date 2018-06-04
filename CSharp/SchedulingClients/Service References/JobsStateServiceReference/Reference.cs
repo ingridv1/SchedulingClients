@@ -213,6 +213,12 @@ namespace SchedulingClients.JobsStateServiceReference {
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLEARBLOCKINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -240,6 +246,9 @@ namespace SchedulingClients.JobsStateServiceReference {
         COMMITEXTENDEDWAYPOINTSFAILED = 7005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETKINGPINDESCRIPTIONFAILED = 7008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -247,11 +256,20 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETFILENAMESFAILED = 8003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDAGENTID = 9001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETSCHEDULERVERSIONFAILED = 10001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETPLUGINVERSIONSFAILED = 10002,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JobsStateData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JobsStateData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
     [System.SerializableAttribute()]
     public partial class JobsStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -378,6 +396,12 @@ namespace SchedulingClients.JobsStateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortTask", ReplyAction="http://tempuri.org/IJobsStateService/AbortTaskResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortTaskAsync(int taskId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
+        System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData>> GetActiveJobIdsForAgentAsync(int agentId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedJob", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedJobResponse")]
         System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedJob(int jobId);
         
@@ -389,12 +413,6 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedTask", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedTaskResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> ResolveFaultedTaskAsync(int taskId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
-        System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData>> GetActiveJobIdsForAgentAsync(int agentId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -496,6 +514,14 @@ namespace SchedulingClients.JobsStateServiceReference {
             return base.Channel.AbortTaskAsync(taskId);
         }
         
+        public System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId) {
+            return base.Channel.GetActiveJobIdsForAgent(agentId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData>> GetActiveJobIdsForAgentAsync(int agentId) {
+            return base.Channel.GetActiveJobIdsForAgentAsync(agentId);
+        }
+        
         public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedJob(int jobId) {
             return base.Channel.ResolveFaultedJob(jobId);
         }
@@ -510,14 +536,6 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> ResolveFaultedTaskAsync(int taskId) {
             return base.Channel.ResolveFaultedTaskAsync(taskId);
-        }
-        
-        public System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId) {
-            return base.Channel.GetActiveJobIdsForAgent(agentId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData>> GetActiveJobIdsForAgentAsync(int agentId) {
-            return base.Channel.GetActiveJobIdsForAgentAsync(agentId);
         }
     }
 }

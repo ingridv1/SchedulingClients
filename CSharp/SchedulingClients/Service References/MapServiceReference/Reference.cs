@@ -15,99 +15,6 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Maps")]
-    [System.SerializableAttribute()]
-    public partial class ParameterData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AGVTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AliasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DataTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ParameterIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AGVType {
-            get {
-                return this.AGVTypeField;
-            }
-            set {
-                if ((this.AGVTypeField.Equals(value) != true)) {
-                    this.AGVTypeField = value;
-                    this.RaisePropertyChanged("AGVType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Alias {
-            get {
-                return this.AliasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
-                    this.AliasField = value;
-                    this.RaisePropertyChanged("Alias");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DataType {
-            get {
-                return this.DataTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataTypeField, value) != true)) {
-                    this.DataTypeField = value;
-                    this.RaisePropertyChanged("DataType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ParameterId {
-            get {
-                return this.ParameterIdField;
-            }
-            set {
-                if ((this.ParameterIdField.Equals(value) != true)) {
-                    this.ParameterIdField = value;
-                    this.RaisePropertyChanged("ParameterId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
     public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -352,11 +259,17 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         INVALIDAGENTID = 9001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETSCHEDULERVERSIONFAILED = 10001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETPLUGINVERSIONSFAILED = 10002,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
     [System.SerializableAttribute()]
     public partial class MoveData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -449,7 +362,7 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
     [System.SerializableAttribute()]
     public partial class NodeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -594,7 +507,100 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="WaypointData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.SerializableAttribute()]
+    public partial class ParameterData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AGVTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AliasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DataTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ParameterIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AGVType {
+            get {
+                return this.AGVTypeField;
+            }
+            set {
+                if ((this.AGVTypeField.Equals(value) != true)) {
+                    this.AGVTypeField = value;
+                    this.RaisePropertyChanged("AGVType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Alias {
+            get {
+                return this.AliasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
+                    this.AliasField = value;
+                    this.RaisePropertyChanged("Alias");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DataType {
+            get {
+                return this.DataTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataTypeField, value) != true)) {
+                    this.DataTypeField = value;
+                    this.RaisePropertyChanged("DataType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ParameterId {
+            get {
+                return this.ParameterIdField;
+            }
+            set {
+                if ((this.ParameterIdField.Equals(value) != true)) {
+                    this.ParameterIdField = value;
+                    this.RaisePropertyChanged("ParameterId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WaypointData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
     [System.SerializableAttribute()]
     public partial class WaypointData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -707,11 +713,11 @@ namespace SchedulingClients.MapServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
         System.Threading.Tasks.Task<int> VersionPatchAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
-        System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
+        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
         System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData();
@@ -725,6 +731,12 @@ namespace SchedulingClients.MapServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllNodeData", ReplyAction="http://tempuri.org/IMapService/GetAllNodeDataResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.NodeData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllNodeDataAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
+        System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetTrajectory", ReplyAction="http://tempuri.org/IMapService/GetTrajectoryResponse")]
         System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData> GetTrajectory(int moveId);
         
@@ -736,12 +748,6 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RegisterBlockingMandate", ReplyAction="http://tempuri.org/IMapService/RegisterBlockingMandateResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> RegisterBlockingMandateAsync(int[] mapItemIds, int mandateId, int millisecondsTimeout);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
-        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -795,12 +801,12 @@ namespace SchedulingClients.MapServiceReference {
             return base.Channel.VersionPatchAsync();
         }
         
-        public System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData() {
-            return base.Channel.GetAllParameterData();
+        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId) {
+            return base.Channel.ClearBlockingMandate(mandateId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync() {
-            return base.Channel.GetAllParameterDataAsync();
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId) {
+            return base.Channel.ClearBlockingMandateAsync(mandateId);
         }
         
         public System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData() {
@@ -819,6 +825,14 @@ namespace SchedulingClients.MapServiceReference {
             return base.Channel.GetAllNodeDataAsync();
         }
         
+        public System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData() {
+            return base.Channel.GetAllParameterData();
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync() {
+            return base.Channel.GetAllParameterDataAsync();
+        }
+        
         public System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData> GetTrajectory(int moveId) {
             return base.Channel.GetTrajectory(moveId);
         }
@@ -833,14 +847,6 @@ namespace SchedulingClients.MapServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> RegisterBlockingMandateAsync(int[] mapItemIds, int mandateId, int millisecondsTimeout) {
             return base.Channel.RegisterBlockingMandateAsync(mapItemIds, mandateId, millisecondsTimeout);
-        }
-        
-        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId) {
-            return base.Channel.ClearBlockingMandate(mandateId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId) {
-            return base.Channel.ClearBlockingMandateAsync(mandateId);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SchedulingClients.AgentAttentionServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AgentAttentionData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgentAttentionData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents")]
     [System.SerializableAttribute()]
     public partial class AgentAttentionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -59,7 +59,7 @@ namespace SchedulingClients.AgentAttentionServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttentionType", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AttentionType", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents")]
     public enum AttentionType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]

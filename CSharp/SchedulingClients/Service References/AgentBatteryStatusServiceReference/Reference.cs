@@ -15,7 +15,7 @@ namespace SchedulingClients.AgentBatteryStatusServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AgentBatteryStatusData", Namespace="http://schemas.datacontract.org/2004/07/SchedulingServices")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgentBatteryStatusData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents")]
     [System.SerializableAttribute()]
     public partial class AgentBatteryStatusData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -274,6 +274,12 @@ namespace SchedulingClients.AgentBatteryStatusServiceReference {
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CLEARBLOCKINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -301,6 +307,9 @@ namespace SchedulingClients.AgentBatteryStatusServiceReference {
         COMMITEXTENDEDWAYPOINTSFAILED = 7005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETKINGPINDESCRIPTIONFAILED = 7008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -308,6 +317,15 @@ namespace SchedulingClients.AgentBatteryStatusServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETFILENAMESFAILED = 8003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDAGENTID = 9001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETSCHEDULERVERSIONFAILED = 10001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETPLUGINVERSIONSFAILED = 10002,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

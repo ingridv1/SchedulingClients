@@ -2,7 +2,7 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
   <xs:element name="VersionMajor">
     <xs:complexType>
       <xs:sequence />
@@ -59,7 +59,7 @@
   <xs:element name="GetOutstandingServiceRequestsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q2:TupleOfArrayOfServiceStateDataServiceCallDatazDQi_Syxv" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q2:TupleOfArrayOfServiceStateDataServiceCallDataHgvoD_S7T" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -80,7 +80,7 @@
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SchedulingServices" minOccurs="0" name="callbackObject" nillable="true" type="q4:ServiceStateData" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" minOccurs="0" name="callbackObject" nillable="true" type="q4:ServiceStateData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

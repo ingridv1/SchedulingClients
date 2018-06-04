@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e0eda24e-3b4e-41d8-a14c-74cbd430b2f6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e4f22506-dc1b-4ad4-b4af-5cf425f28a6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,15 +22,16 @@
     <MetadataSource Address="http://127.0.0.1:41916/agent.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="agent.xsd" MetadataType="Schema" ID="c6b90072-6fa4-4bae-946a-3c0016f6b50d" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd5" />
-    <MetadataFile FileName="agent1.xsd" MetadataType="Schema" ID="da1a91cc-a669-48d1-9714-35b490f4ef5a" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd4" />
-    <MetadataFile FileName="agent2.xsd" MetadataType="Schema" ID="4244d28d-ff1a-4ff8-b1b1-a4365f640ae2" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd3" />
-    <MetadataFile FileName="agent3.xsd" MetadataType="Schema" ID="6b4c0d83-0db3-47aa-9d15-b94163fb15cd" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd2" />
-    <MetadataFile FileName="agent4.xsd" MetadataType="Schema" ID="19b5d091-6e6c-47f0-9862-fbba632f04cd" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd1" />
-    <MetadataFile FileName="agent5.xsd" MetadataType="Schema" ID="e0539bb5-7993-4bb0-a657-13cfa6591c6f" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd0" />
-    <MetadataFile FileName="AgentService.wsdl" MetadataType="Wsdl" ID="76dad62f-09d7-464a-8d01-4165437801a5" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc" />
-    <MetadataFile FileName="agent6.xsd" MetadataType="Schema" ID="8ab459b6-181c-49f3-a71c-40f05f1acc3a" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd7" />
-    <MetadataFile FileName="agent61.xsd" MetadataType="Schema" ID="74048417-9679-4043-b017-873edac597e0" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd6" />
+    <MetadataFile FileName="agent.xsd" MetadataType="Schema" ID="69203b57-2322-4109-8f53-7702b33709fd" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd5" />
+    <MetadataFile FileName="agent1.xsd" MetadataType="Schema" ID="457d7e29-1dac-4d63-a9e7-b645e2454aab" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd4" />
+    <MetadataFile FileName="agent2.xsd" MetadataType="Schema" ID="1dc7f2dc-f61f-4ce7-b615-eac303080f53" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd3" />
+    <MetadataFile FileName="agent3.xsd" MetadataType="Schema" ID="e4dbda70-4865-4833-83ec-c3a91dc50c6e" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd2" />
+    <MetadataFile FileName="agent4.xsd" MetadataType="Schema" ID="b09b4961-1049-4d26-adc7-dfe2d961e9f5" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd1" />
+    <MetadataFile FileName="agent5.xsd" MetadataType="Schema" ID="9cbca3ea-a8cf-4223-aae0-90ba69c1524a" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd0" />
+    <MetadataFile FileName="AgentService.wsdl" MetadataType="Wsdl" ID="ea8f0890-a22b-4df0-9cf8-1560b7eaa3f2" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc" />
+    <MetadataFile FileName="agent6.xsd" MetadataType="Schema" ID="d5bdeafe-5309-49d6-9f2c-ebd88e39c34d" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd8" />
+    <MetadataFile FileName="agent61.xsd" MetadataType="Schema" ID="984a1a04-d8fd-4490-a378-18a4cb1f5586" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd7" />
+    <MetadataFile FileName="agent62.xsd" MetadataType="Schema" ID="278f28ee-8e77-4c4c-a331-cdf5304c41af" SourceId="1" SourceUrl="http://127.0.0.1:41916/agent.svc?xsd=xsd6" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

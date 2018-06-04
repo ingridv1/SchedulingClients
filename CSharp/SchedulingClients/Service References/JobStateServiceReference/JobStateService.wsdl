@@ -26,8 +26,9 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SchedulingServices" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Core" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Services" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJobStateService_VersionMajor_InputMessage">

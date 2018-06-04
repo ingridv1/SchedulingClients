@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="49e75004-b83c-418f-91b9-45d630d4958e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bc33dece-3e7e-4218-a45c-fc8f7d5a9674" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,18 +19,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1:41926/map.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1:41916/map.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="map.xsd" MetadataType="Schema" ID="ef4eb6e7-f6de-4ac9-b71a-42cb5371d1b9" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd1" />
-    <MetadataFile FileName="map1.xsd" MetadataType="Schema" ID="dcdbb08b-65ac-4c1f-8f9c-43e76e67c26f" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd4" />
-    <MetadataFile FileName="map2.xsd" MetadataType="Schema" ID="8f03ff5b-cefd-44c1-b828-06f659657609" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd2" />
-    <MetadataFile FileName="map3.xsd" MetadataType="Schema" ID="50e48351-0c26-45a4-8966-cb98975e923d" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd0" />
-    <MetadataFile FileName="map4.xsd" MetadataType="Schema" ID="7a6b676f-d359-4939-9616-9d118318e968" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd3" />
-    <MetadataFile FileName="map5.xsd" MetadataType="Schema" ID="7b18ed5f-85ce-4b42-b575-3e425a8b1a31" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd6" />
-    <MetadataFile FileName="map6.xsd" MetadataType="Schema" ID="e15d26c7-68da-4c14-addf-8a52eea07233" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd7" />
-    <MetadataFile FileName="map7.xsd" MetadataType="Schema" ID="1ebeb6b1-6088-41ef-8efd-659cc69f4161" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc?xsd=xsd5" />
-    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="c0ca5e1a-08a7-47c8-9d99-6b1e5f572e38" SourceId="1" SourceUrl="http://127.0.0.1:41926/map.svc" />
+    <MetadataFile FileName="map.xsd" MetadataType="Schema" ID="4911e6f3-743e-449c-be47-e6ab736c84e7" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd3" />
+    <MetadataFile FileName="map1.xsd" MetadataType="Schema" ID="d39dacd4-4d51-4acc-9691-2c701ec27104" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd6" />
+    <MetadataFile FileName="map2.xsd" MetadataType="Schema" ID="feea0544-e04c-4de4-82c0-209f2a205d98" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd4" />
+    <MetadataFile FileName="map3.xsd" MetadataType="Schema" ID="21fec173-06d9-4496-93d8-f6f4b8c25086" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd2" />
+    <MetadataFile FileName="map4.xsd" MetadataType="Schema" ID="07ba7466-9c0f-4436-a2bd-fde8c50e237e" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd5" />
+    <MetadataFile FileName="map5.xsd" MetadataType="Schema" ID="4becc958-2e04-4f05-82d5-92d8ce35ada8" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd0" />
+    <MetadataFile FileName="map6.xsd" MetadataType="Schema" ID="422c98c7-383f-4cc8-8379-28b334e6719f" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc?xsd=xsd1" />
+    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="34dfd8aa-db5b-4a38-96ac-10034a9437f7" SourceId="1" SourceUrl="http://127.0.0.1:41916/map.svc" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

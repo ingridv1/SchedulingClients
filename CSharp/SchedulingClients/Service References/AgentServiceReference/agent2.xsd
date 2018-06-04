@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SchedulingServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SchedulingServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Core" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/agent.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
   <xs:complexType name="ArrayOfAgentData">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AgentData" nillable="true" type="tns:AgentData" />
@@ -9,19 +10,11 @@
   <xs:element name="ArrayOfAgentData" nillable="true" type="tns:ArrayOfAgentData" />
   <xs:complexType name="AgentData">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AgentLifetimeState" type="tns:AgentLifetimeState" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="AgentLifetimeState" type="q1:AgentLifetimeState" />
       <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="IPAddress" nillable="true" type="q1:IPAddress" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="IPAddress" nillable="true" type="q2:IPAddress" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AgentData" nillable="true" type="tns:AgentData" />
-  <xs:simpleType name="AgentLifetimeState">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="OutOfService" />
-      <xs:enumeration value="InService" />
-      <xs:enumeration value="Decommissioned" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="AgentLifetimeState" nillable="true" type="tns:AgentLifetimeState" />
 </xs:schema>

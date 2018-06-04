@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Fr7xsvJC9fDl3kE8TZd/iq0RcMw=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="DlpufPRAxQcwomqcReZBobV0URs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IMapService">
       <properties>
@@ -215,10 +215,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IMapService" contract="MapServiceReference.IMapService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41927/map.svc" bindingConfiguration="NetTcpBinding_IMapService">
+    <endpoint name="NetTcpBinding_IMapService" contract="MapServiceReference.IMapService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41917/map.svc" bindingConfiguration="NetTcpBinding_IMapService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://127.0.0.1:41927/map.svc</serializedValue>
+          <serializedValue>net.tcp://127.0.0.1:41917/map.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -300,10 +300,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSDualHttpBinding_IMapService" contract="MapServiceReference.IMapService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41926/map.svc" bindingConfiguration="WSDualHttpBinding_IMapService">
+    <endpoint name="WSDualHttpBinding_IMapService" contract="MapServiceReference.IMapService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41916/map.svc" bindingConfiguration="WSDualHttpBinding_IMapService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1:41926/map.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:41916/map.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

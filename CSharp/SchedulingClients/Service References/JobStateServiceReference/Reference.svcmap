@@ -25,6 +25,7 @@
     <MetadataFile FileName="jobState3.xsd" MetadataType="Schema" ID="350d6609-3b41-40f0-a353-8929b85f5ed2" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" />
     <MetadataFile FileName="jobState2.xsd" MetadataType="Schema" ID="b0f3ef9e-3024-492c-ad8d-1a8d4aac2e16" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc?xsd=xsd2" />
     <MetadataFile FileName="jobState.xsd" MetadataType="Schema" ID="6af1ed34-879c-4f09-bc0d-e586f2415c40" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc?xsd=xsd1" />
+    <MetadataFile FileName="jobState4.xsd" MetadataType="Schema" ID="6e32a69c-c0e6-4405-a7be-2ce3fecd15a2" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc?xsd=xsd5" />
     <MetadataFile FileName="jobState31.xsd" MetadataType="Schema" ID="c6078f4a-4f3b-445c-8e77-4a1b39265908" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" />
     <MetadataFile FileName="JobStateService.wsdl" MetadataType="Wsdl" ID="272d5f4e-5ea7-4326-9eea-025229c06967" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc" />
     <MetadataFile FileName="jobState1.xsd" MetadataType="Schema" ID="f1eeb3b2-ee07-431f-be7d-6bd0d5e38a82" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobState.svc?xsd=xsd0" />
