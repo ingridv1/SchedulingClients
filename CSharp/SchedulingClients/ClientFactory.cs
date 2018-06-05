@@ -53,5 +53,10 @@ namespace SchedulingClients
 		{
 			return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
 		}
+
+        public static VersionClient GetVersionClient(EndpointSettings portSettings)
+        {
+            return new VersionClient(portSettings.TcpVersionService());
+        }
     }
 }

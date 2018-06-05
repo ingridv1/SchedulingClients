@@ -6,6 +6,7 @@ using System.Net;
 using System.ServiceModel;
 using System.Text;
 using System.Collections.Generic;
+using SchedulingClients.VersionServiceReference;
 
 namespace SchedulingClients
 {
@@ -90,6 +91,11 @@ namespace SchedulingClients
             }
 
             return "Services unsupported";
+        }
+
+        public static string ToSemVerString(this SemVerData semVerData)
+        {
+            return "v" + semVerData.Major + "." + semVerData.Minor + "." + semVerData.Patch;
         }
     }
 }

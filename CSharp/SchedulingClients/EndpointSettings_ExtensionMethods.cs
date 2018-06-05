@@ -54,5 +54,10 @@ namespace SchedulingClients
 		{
 			return new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");
 		}
+
+        public static Uri TcpVersionService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "versionService.svc");
+        }
     }
 }

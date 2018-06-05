@@ -33,11 +33,11 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GAClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\GenericClients.1.0.0\lib\net462\GAClients.dll</HintPath>
+    <Reference Include="GAClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenericClients.1.1.0\lib\net47\GAClients.dll</HintPath>
     </Reference>
-    <Reference Include="GAClients.Generic, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\GenericClients.1.0.0\lib\net462\GAClients.Generic.dll</HintPath>
+    <Reference Include="GAClients.Generic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenericClients.1.1.0\lib\net47\GAClients.Generic.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.5.6\lib\net45\NLog.dll</HintPath>
@@ -127,9 +127,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\VersionServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceOperationResultFactory.cs" />
     <Compile Include="ServicingServiceCallback.cs" />
     <Compile Include="ServicingClient.cs" />
+    <Compile Include="VersionClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -415,6 +421,28 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />
+    <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.SemVerData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VersionServiceReference\VersionService.wsdl" />
+    <None Include="Service References\VersionServiceReference\versionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VersionServiceReference\versionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VersionServiceReference\versionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VersionServiceReference\versionService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VersionServiceReference\versionService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AgentAttentionServiceReference\" />
@@ -427,6 +455,7 @@
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
+    <WCFMetadataStorage Include="Service References\VersionServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobBuilderServiceReference\configuration91.svcinfo" />
@@ -545,6 +574,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AgentServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VersionServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VersionServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VersionServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

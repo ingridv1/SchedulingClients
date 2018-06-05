@@ -125,6 +125,14 @@
 					<clientsUC:AgentStateCastClientControl x:Name="agentStateCastClientControl" DataContext="{Binding Path=AgentStatecastClient}" />
 				</Grid>
 			</TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Version Client
+                </TabItem.Header>
+                <Grid>
+                    <clientsUC:VersionClientControl x:Name="versionClientControl" DataContext="{Binding Path=VersionClient}" />
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

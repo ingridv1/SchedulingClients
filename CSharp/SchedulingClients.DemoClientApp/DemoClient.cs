@@ -64,6 +64,8 @@ namespace SchedulingClients.DemoClientApp
 
         public ServicingClient ServicingClient { get { return (ServicingClient)clients.FirstOrDefault(e => e is ServicingClient); } }
 
+        public VersionClient VersionClient { get { return (VersionClient)clients.FirstOrDefault(e => e is VersionClient); } }
+
         public void Configure()
         {
             clients.Add(ClientFactory.GetAgentClient(endpointSettings));
@@ -80,6 +82,8 @@ namespace SchedulingClients.DemoClientApp
 
 			clients.Add(ClientFactory.GetAgentAttentionClient(endpointSettings));
 			clients.Add(ClientFactory.GetAgentStatecastClient(endpointSettings));
+
+            clients.Add(ClientFactory.GetVersionClient(endpointSettings));
 
             LogManager.Configuration = new LoggingConfiguration();
 

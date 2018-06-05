@@ -9,6 +9,7 @@ using maps = SchedulingClients.MapServiceReference;
 using job = SchedulingClients.JobStateServiceReference;
 using servicing = SchedulingClients.ServicingServiceReference;
 using agentStatecast = SchedulingClients.AgentStateCastServiceReference;
+using version = SchedulingClients.VersionServiceReference;
 
 namespace SchedulingClients
 {
@@ -93,6 +94,19 @@ namespace SchedulingClients
         }
 
         public static ServiceOperationResult FromAgentServiceCallData(agent.ServiceCallData serviceCallData)
+        {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+
+            return new ServiceOperationResult
+                (
+                    (uint)serviceCallData.ServiceCode,
+                    serviceCallData.ServiceCode.ToString(),
+                    serviceException,
+                    null
+                );
+        }
+
+        public static ServiceOperationResult FromVersionServiceCallData(version.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 
