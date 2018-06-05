@@ -17,46 +17,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfSemVerDataServiceCallDataSl71cgxo" nillable="true" type="tns:TupleOfSemVerDataServiceCallDataSl71cgxo" />
-  <xs:complexType name="TupleOfArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8ServiceCallData4Z_SYfvgX">
+  <xs:complexType name="TupleOfArrayOfPluginDataServiceCallDataSl71cgxo">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfTupleOf{0}{1}{2}{#}" Namespace="http://schemas.datacontract.org/2004/07/System">
-            <GenericParameter Name="SemVerData" Namespace="http://schemas.datacontract.org/2004/07/Services.GenericServices" />
-            <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
-            <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
-          </GenericParameter>
+          <GenericParameter Name="ArrayOfPluginData" Namespace="http://schemas.datacontract.org/2004/07/Services.GenericServices" />
           <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="m_Item1" nillable="true" type="tns:ArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q3:ServiceCallData" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services.GenericServices" name="m_Item1" nillable="true" type="q3:ArrayOfPluginData" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8ServiceCallData4Z_SYfvgX" nillable="true" type="tns:TupleOfArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8ServiceCallData4Z_SYfvgX" />
-  <xs:complexType name="ArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TupleOfSemVerDatadateTimestringKXBCqUz8" nillable="true" type="tns:TupleOfSemVerDatadateTimestringKXBCqUz8" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8" nillable="true" type="tns:ArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8" />
-  <xs:complexType name="TupleOfSemVerDatadateTimestringKXBCqUz8">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="TupleOf{0}{1}{2}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SemVerData" Namespace="http://schemas.datacontract.org/2004/07/Services.GenericServices" />
-          <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
-          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services.GenericServices" name="m_Item1" nillable="true" type="q4:SemVerData" />
-      <xs:element name="m_Item2" type="xs:dateTime" />
-      <xs:element name="m_Item3" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TupleOfSemVerDatadateTimestringKXBCqUz8" nillable="true" type="tns:TupleOfSemVerDatadateTimestringKXBCqUz8" />
+  <xs:element name="TupleOfArrayOfPluginDataServiceCallDataSl71cgxo" nillable="true" type="tns:TupleOfArrayOfPluginDataServiceCallDataSl71cgxo" />
 </xs:schema>

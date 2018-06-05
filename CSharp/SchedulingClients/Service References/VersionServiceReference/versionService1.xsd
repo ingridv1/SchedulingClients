@@ -57,7 +57,7 @@
   <xs:element name="GetPluginVersionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetPluginVersionsResult" nillable="true" type="q2:TupleOfArrayOfTupleOfSemVerDatadateTimestringKXBCqUz8ServiceCallData4Z_SYfvgX" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetPluginVersionsResult" nillable="true" type="q2:TupleOfArrayOfPluginDataServiceCallDataSl71cgxo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -35,7 +35,7 @@ namespace SchedulingClients
             }
         }
 
-        public ServiceOperationResult TryGetPluginVersions(out IEnumerable<Tuple<SemVerData, DateTime, string>> pluginVersionDatas)
+        public ServiceOperationResult TryGetPluginVersions(out IEnumerable<PluginData> pluginVersionDatas)
         {
             Logger.Info("TryGetPluginVersions()");
 
@@ -74,7 +74,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<Tuple<SemVerData, DateTime, string>[], ServiceCallData> GetPluginVersions()
+        private Tuple<PluginData[], ServiceCallData> GetPluginVersions()
         {
             Logger.Debug("GetPluginVersions()");
 
@@ -83,7 +83,7 @@ namespace SchedulingClients
                 throw new ObjectDisposedException("VersionClient");
             }
 
-            Tuple<Tuple<SemVerData, DateTime, string>[], ServiceCallData> result;
+            Tuple<PluginData[], ServiceCallData> result;
 
             using (ChannelFactory<IVersionService> channelFactory = CreateChannelFactory())
             {

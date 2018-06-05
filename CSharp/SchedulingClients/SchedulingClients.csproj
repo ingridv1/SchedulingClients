@@ -421,6 +421,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />
+    <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.PluginData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.SemVerData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

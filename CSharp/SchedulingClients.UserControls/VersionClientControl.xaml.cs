@@ -34,9 +34,9 @@ namespace SchedulingClients.UserControls
             client.TryGetSchedulerVersion(out schedulerVersion);
             schedulerVersionText.Text = schedulerVersion.ToSemVerString();
 
-            IEnumerable<Tuple<SemVerData, DateTime, string>> pluginVersions;
+            IEnumerable<PluginData> pluginVersions;
             client.TryGetPluginVersions(out pluginVersions);
-            pluginVersionsGrid.ItemsSource = pluginVersions.Select(pv => new Tuple<string, string, string>(pv.Item1.ToSemVerString(), pv.Item2.ToString(), pv.Item3)).ToList();
+            pluginVersionsGrid.ItemsSource = pluginVersions.Select(pv => new Tuple<string, string, string, string>(pv.AssemblyName, pv.VersionData.ToSemVerString(), pv.TimeStamp.ToString(), pv.Guid.ToString())).ToList();
         }
     }
 }

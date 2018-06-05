@@ -12,11 +12,13 @@
             <local:LabelContentControl Header="Scheduler Version:">
                 <TextBlock x:Name="schedulerVersionText"/>
             </local:LabelContentControl>
-            <DataGrid x:Name="pluginVersionsGrid" AutoGenerateColumns="False">
+            <DataGrid x:Name="pluginVersionsGrid" AutoGenerateColumns="False"
+                      Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Plugin" Binding="{Binding Item3}"/>
-                    <DataGridTextColumn Header="Version" Binding="{Binding Item1}"/>
-                    <DataGridTextColumn Header="Date/Time" Binding="{Binding Item2}"/>
+                    <DataGridTextColumn Header="Plugin" Binding="{Binding Item1}"/>
+                    <DataGridTextColumn Header="Version" Binding="{Binding Item2}"/>
+                    <DataGridTextColumn Header="Timestamp" Binding="{Binding Item3}"/>
+                    <DataGridTextColumn Header="GUID" Binding="{Binding Item4}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

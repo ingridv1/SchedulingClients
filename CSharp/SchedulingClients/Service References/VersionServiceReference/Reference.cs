@@ -344,6 +344,99 @@ namespace SchedulingClients.VersionServiceReference {
         GETPLUGINVERSIONSFAILED = 10002,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PluginData", Namespace="http://schemas.datacontract.org/2004/07/Services.GenericServices")]
+    [System.SerializableAttribute()]
+    public partial class PluginData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AssemblyNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid GuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeStampField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.VersionServiceReference.SemVerData VersionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AssemblyName {
+            get {
+                return this.AssemblyNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AssemblyNameField, value) != true)) {
+                    this.AssemblyNameField = value;
+                    this.RaisePropertyChanged("AssemblyName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Guid {
+            get {
+                return this.GuidField;
+            }
+            set {
+                if ((this.GuidField.Equals(value) != true)) {
+                    this.GuidField = value;
+                    this.RaisePropertyChanged("Guid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TimeStamp {
+            get {
+                return this.TimeStampField;
+            }
+            set {
+                if ((this.TimeStampField.Equals(value) != true)) {
+                    this.TimeStampField = value;
+                    this.RaisePropertyChanged("TimeStamp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.VersionServiceReference.SemVerData VersionData {
+            get {
+                return this.VersionDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VersionDataField, value) != true)) {
+                    this.VersionDataField = value;
+                    this.RaisePropertyChanged("VersionData");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VersionServiceReference.IVersionService")]
     public interface IVersionService {
@@ -373,10 +466,10 @@ namespace SchedulingClients.VersionServiceReference {
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.VersionServiceReference.SemVerData, SchedulingClients.VersionServiceReference.ServiceCallData>> GetSchedulerVersionAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVersionService/GetPluginVersions", ReplyAction="http://tempuri.org/IVersionService/GetPluginVersionsResponse")]
-        System.Tuple<System.Tuple<SchedulingClients.VersionServiceReference.SemVerData, System.DateTime, string>[], SchedulingClients.VersionServiceReference.ServiceCallData> GetPluginVersions();
+        System.Tuple<SchedulingClients.VersionServiceReference.PluginData[], SchedulingClients.VersionServiceReference.ServiceCallData> GetPluginVersions();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVersionService/GetPluginVersions", ReplyAction="http://tempuri.org/IVersionService/GetPluginVersionsResponse")]
-        System.Threading.Tasks.Task<System.Tuple<System.Tuple<SchedulingClients.VersionServiceReference.SemVerData, System.DateTime, string>[], SchedulingClients.VersionServiceReference.ServiceCallData>> GetPluginVersionsAsync();
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.VersionServiceReference.PluginData[], SchedulingClients.VersionServiceReference.ServiceCallData>> GetPluginVersionsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -438,11 +531,11 @@ namespace SchedulingClients.VersionServiceReference {
             return base.Channel.GetSchedulerVersionAsync();
         }
         
-        public System.Tuple<System.Tuple<SchedulingClients.VersionServiceReference.SemVerData, System.DateTime, string>[], SchedulingClients.VersionServiceReference.ServiceCallData> GetPluginVersions() {
+        public System.Tuple<SchedulingClients.VersionServiceReference.PluginData[], SchedulingClients.VersionServiceReference.ServiceCallData> GetPluginVersions() {
             return base.Channel.GetPluginVersions();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<System.Tuple<SchedulingClients.VersionServiceReference.SemVerData, System.DateTime, string>[], SchedulingClients.VersionServiceReference.ServiceCallData>> GetPluginVersionsAsync() {
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.VersionServiceReference.PluginData[], SchedulingClients.VersionServiceReference.ServiceCallData>> GetPluginVersionsAsync() {
             return base.Channel.GetPluginVersionsAsync();
         }
     }
