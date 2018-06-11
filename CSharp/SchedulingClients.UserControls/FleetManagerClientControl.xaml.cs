@@ -127,5 +127,56 @@ namespace SchedulingClients.UserControls
                 System.Diagnostics.Process.Start(tempFile);
             }         
         }
+
+        private void createVirtualVehicleButton_Click(object sender, RoutedEventArgs e)
+        {
+            FleetManagerClient client = DataContext as FleetManagerClient;
+
+            bool success;
+            client.TryCreateVirtualVehicle(ipAddressControl.IPAddress, poseControl.Pose, out success);
+
+            if (success)
+            {
+                MessageBox.Show("Virtual vehicle creation was successful", "Virtual Vehicle Creation", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Virtual vehicle creation failed", "Virtual Vehicle Creation", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void removeVehicleButton_Click(object sender, RoutedEventArgs e)
+        {
+            FleetManagerClient client = DataContext as FleetManagerClient;
+
+            bool success;
+            client.TryRemoveVehicle(ipAddressControl.IPAddress, out success);
+
+            if (success)
+            {
+                MessageBox.Show("Vehicle removal was successful", "Vehicle Removal", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Vehicle removal failed", "Vehicle Removal", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void setPoseButton_Click(object sender, RoutedEventArgs e)
+        {
+            FleetManagerClient client = DataContext as FleetManagerClient;
+
+            bool success;
+            client.TrySetPose(ipAddressControl.IPAddress, poseControl.Pose, out success);
+
+            if (success)
+            {
+                MessageBox.Show("Pose setting was successful", "Set Pose", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Pose setting failed", "Set Pose", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }

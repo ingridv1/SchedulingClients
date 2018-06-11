@@ -106,6 +106,9 @@
     <Compile Include="FleetManagerClientControl.xaml.cs">
       <DependentUpon>FleetManagerClientControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IPAddressControl.xaml.cs">
+      <DependentUpon>IPAddressControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="JobBuilderClientControl.xaml.cs">
       <DependentUpon>JobBuilderClientControl.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,9 @@
     </Compile>
     <Compile Include="MapClientControl.xaml.cs">
       <DependentUpon>MapClientControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PoseControl.xaml.cs">
+      <DependentUpon>PoseControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -194,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IPAddressControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="JobBuilderClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +227,10 @@
     <Page Include="MapClientControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PoseControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ServicingClientControl.xaml">
       <SubType>Designer</SubType>

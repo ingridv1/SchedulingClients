@@ -23,38 +23,7 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <clientsUC:LabelContentControl Header="IP address:" ToolTip="IP address of the scheduling server">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.Resources>
-                        <Style TargetType="{x:Type toolkit:IntegerUpDown}">
-                            <Setter Property="Margin" Value="10" />
-                            <Setter Property="Minimum" Value="0" />
-                            <Setter Property="Maximum" Value="255" />
-                            <Setter Property="Margin" Value="10" />
-                            <Setter Property="DisplayDefaultValueOnEmptyText" Value="True" />
-                            <Setter Property="ShowButtonSpinner" Value="False" />
-                        </Style>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                            <Setter Property="FontWeight" Value="Bold" />
-                        </Style>
-                    </Grid.Resources> 
-                    <toolkit:IntegerUpDown Grid.Column="0" x:Name="byteA" Value="127" DefaultValue="127" />
-                    <TextBlock Grid.Column="1">.</TextBlock>
-                    <toolkit:IntegerUpDown Grid.Column="2" x:Name="byteB" Value="0" DefaultValue="0" />
-                    <TextBlock Grid.Column="3">.</TextBlock>
-                    <toolkit:IntegerUpDown Grid.Column="4" x:Name="byteC" Value="0" DefaultValue="0" />
-                    <TextBlock Grid.Column="5">.</TextBlock>
-                    <toolkit:IntegerUpDown Grid.Column="6" x:Name="byteD" Value="1" DefaultValue="1" />
-                </Grid>
+                <clientsUC:IPAddressControl x:Name="ipAddressControl" Margin="5"/>
             </clientsUC:LabelContentControl>
             <clientsUC:LabelContentControl Header="Use Monitrav Defaults:">
                 <Button x:Name="monitravDefaultsButton" Click="monitravDefaultsButton_Click">Set</Button>

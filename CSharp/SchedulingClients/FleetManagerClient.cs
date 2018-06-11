@@ -198,6 +198,57 @@ namespace SchedulingClients
             }
         }
 
+        public ServiceOperationResult TryCreateVirtualVehicle(IPAddress ipAddress, PoseData pose, out bool success)
+        {
+            Logger.Info("TryCreateVirtualVehicle()");
+
+            try
+            {
+                var result = CreateVirtualVehicle(ipAddress, pose);
+                success = result.Item1;
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
+        public ServiceOperationResult TryRemoveVehicle(IPAddress ipAddress, out bool success)
+        {
+            Logger.Info("TryRemoveVehicle()");
+
+            try
+            {
+                var result = RemoveVehicle(ipAddress);
+                success = result.Item1;
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
+        public ServiceOperationResult TrySetPose(IPAddress ipAddress, PoseData pose, out bool success)
+        {
+            Logger.Info("TryCreateVirtualVehicle()");
+
+            try
+            {
+                var result = SetPose(ipAddress, pose);
+                success = result.Item1;
+                return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
         protected override void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
@@ -291,6 +342,69 @@ namespace SchedulingClients
             {
                 IFleetManagerService channel = channelFactory.CreateChannel();
                 result = channel.RequestUnfreeze();
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> CreateVirtualVehicle(IPAddress ipAddress, PoseData pose)
+        {
+            Logger.Debug("CreateVirtualVehicle()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("FleetManagerClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+            {
+                IFleetManagerService channel = channelFactory.CreateChannel();
+                result = channel.CreateVirtualVehicle(ipAddress, pose);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> RemoveVehicle(IPAddress ipAddress)
+        {
+            Logger.Debug("RemoveVehicle()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("FleetManagerClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+            {
+                IFleetManagerService channel = channelFactory.CreateChannel();
+                result = channel.RemoveVehicle(ipAddress);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> SetPose(IPAddress ipAddress, PoseData pose)
+        {
+            Logger.Debug("SetPose()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("FleetManagerClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+            {
+                IFleetManagerService channel = channelFactory.CreateChannel();
+                result = channel.SetPose(ipAddress, pose);
                 channelFactory.Close();
             }
 

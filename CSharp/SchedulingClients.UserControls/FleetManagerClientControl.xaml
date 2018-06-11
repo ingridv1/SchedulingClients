@@ -30,6 +30,21 @@
             <local:LabelContentControl Header="Requests unfreeze">
                 <Button x:Name="unfreezeButton" Click="unfreezeButton_Click">Unfreeze</Button>
             </local:LabelContentControl>
+            <local:LabelContentControl Header="IP Address">
+                <local:IPAddressControl x:Name="ipAddressControl" Margin="5"/>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Pose">
+                <local:PoseControl x:Name="poseControl" Margin="5"/>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Creates Virtual Vehicle">
+                <Button x:Name="createVirtualVehicleButton" Click="createVirtualVehicleButton_Click">Create</Button>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Removes Vehicle">
+                <Button x:Name="removeVehicleButton" Click="removeVehicleButton_Click">Remove</Button>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Sets Vehicle Pose">
+                <Button x:Name="setPoseButton" Click="setPoseButton_Click">Set Pose</Button>
+            </local:LabelContentControl>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>

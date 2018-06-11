@@ -249,6 +249,15 @@ namespace SchedulingClients.FleetManagerServiceReference {
         GETKINGPINDESCRIPTIONFAILED = 7008,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEVIRTUALVEHICLEFAILED = 7009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REMOVEVEHICLEFAILED = 7010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETPOSEFAILED = 7011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -265,6 +274,83 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETPLUGINVERSIONSFAILED = 10002,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PoseData", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet")]
+    [System.SerializableAttribute()]
+    public partial class PoseData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HeadingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double XField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double YField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Heading {
+            get {
+                return this.HeadingField;
+            }
+            set {
+                if ((this.HeadingField.Equals(value) != true)) {
+                    this.HeadingField = value;
+                    this.RaisePropertyChanged("Heading");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y {
+            get {
+                return this.YField;
+            }
+            set {
+                if ((this.YField.Equals(value) != true)) {
+                    this.YField = value;
+                    this.RaisePropertyChanged("Y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -801,6 +887,24 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestUnfreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestUnfreezeResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestUnfreezeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CreateVirtualVehicle", ReplyAction="http://tempuri.org/IFleetManagerService/CreateVirtualVehicleResponse")]
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CreateVirtualVehicle(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CreateVirtualVehicle", ReplyAction="http://tempuri.org/IFleetManagerService/CreateVirtualVehicleResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CreateVirtualVehicleAsync(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RemoveVehicle", ReplyAction="http://tempuri.org/IFleetManagerService/RemoveVehicleResponse")]
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RemoveVehicle(System.Net.IPAddress ipAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RemoveVehicle", ReplyAction="http://tempuri.org/IFleetManagerService/RemoveVehicleResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RemoveVehicleAsync(System.Net.IPAddress ipAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/SetPose", ReplyAction="http://tempuri.org/IFleetManagerService/SetPoseResponse")]
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> SetPose(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/SetPose", ReplyAction="http://tempuri.org/IFleetManagerService/SetPoseResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> SetPoseAsync(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -900,6 +1004,30 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RequestUnfreezeAsync() {
             return base.Channel.RequestUnfreezeAsync();
+        }
+        
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CreateVirtualVehicle(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose) {
+            return base.Channel.CreateVirtualVehicle(ipAddress, pose);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CreateVirtualVehicleAsync(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose) {
+            return base.Channel.CreateVirtualVehicleAsync(ipAddress, pose);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RemoveVehicle(System.Net.IPAddress ipAddress) {
+            return base.Channel.RemoveVehicle(ipAddress);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> RemoveVehicleAsync(System.Net.IPAddress ipAddress) {
+            return base.Channel.RemoveVehicleAsync(ipAddress);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> SetPose(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose) {
+            return base.Channel.SetPose(ipAddress, pose);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> SetPoseAsync(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose) {
+            return base.Channel.SetPoseAsync(ipAddress, pose);
         }
     }
 }

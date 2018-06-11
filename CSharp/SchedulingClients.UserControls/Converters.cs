@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Data;
 
@@ -26,6 +27,24 @@ namespace SchedulingClients.UserControls
                 }
             }
             return builder.ToString();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class IPAddressToByteConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            IPAddress ipAddress = (IPAddress)value;
+
+            byte[] bytes = ipAddress.GetAddressBytes();
+            int index = int.Parse((string)parameter);
+
+            return bytes[index];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

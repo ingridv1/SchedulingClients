@@ -11,6 +11,7 @@ namespace SchedulingClients.DemoClientApp
         public StartupWindow()
         {
             InitializeComponent();
+            ipAddressControl.IPAddress = new IPAddress(new byte[] { 127, 0, 0, 1 });
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -22,12 +23,10 @@ namespace SchedulingClients.DemoClientApp
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            IPAddress ipAddress = new IPAddress(new byte[] { (byte)byteA.Value, (byte)byteB.Value, (byte)byteC.Value, (byte)byteD.Value, });
-
             int http = (int)httpPort.Value;
             int tcp = (int)tcpPort.Value;
  
-            DemoClient demoClient = new DemoClient(ipAddress, http, tcp);
+            DemoClient demoClient = new DemoClient(ipAddressControl.IPAddress, http, tcp);
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Configure(demoClient);

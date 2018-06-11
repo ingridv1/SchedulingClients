@@ -83,6 +83,24 @@
   <wsdl:message name="IFleetManagerService_RequestUnfreeze_OutputMessage">
     <wsdl:part name="parameters" element="tns:RequestUnfreezeResponse" />
   </wsdl:message>
+  <wsdl:message name="IFleetManagerService_CreateVirtualVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVirtualVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_CreateVirtualVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVirtualVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_RemoveVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_RemoveVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_SetPose_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPose" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_SetPose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPoseResponse" />
+  </wsdl:message>
   <wsdl:message name="IFleetManagerService_OnCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnCallback" />
   </wsdl:message>
@@ -121,6 +139,18 @@
     <wsdl:operation name="RequestUnfreeze">
       <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/RequestUnfreeze" message="tns:IFleetManagerService_RequestUnfreeze_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/RequestUnfreezeResponse" message="tns:IFleetManagerService_RequestUnfreeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVirtualVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/CreateVirtualVehicle" message="tns:IFleetManagerService_CreateVirtualVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/CreateVirtualVehicleResponse" message="tns:IFleetManagerService_CreateVirtualVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/RemoveVehicle" message="tns:IFleetManagerService_RemoveVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/RemoveVehicleResponse" message="tns:IFleetManagerService_RemoveVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPose">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService/SetPose" message="tns:IFleetManagerService_SetPose_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/SetPoseResponse" message="tns:IFleetManagerService_SetPose_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OnCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService/OnCallback" message="tns:IFleetManagerService_OnCallback_OutputCallbackMessage" />
@@ -195,6 +225,33 @@
     </wsdl:operation>
     <wsdl:operation name="RequestUnfreeze">
       <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/RequestUnfreeze" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVirtualVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/CreateVirtualVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/RemoveVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPose">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/SetPose" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -280,6 +337,33 @@
     </wsdl:operation>
     <wsdl:operation name="RequestUnfreeze">
       <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/RequestUnfreeze" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVirtualVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/CreateVirtualVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/RemoveVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPose">
+      <soap12:operation soapAction="http://tempuri.org/IFleetManagerService/SetPose" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
