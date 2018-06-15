@@ -6,25 +6,26 @@
       <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
       <xs:element minOccurs="0" name="JobId" type="xs:int" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
-      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfTaskStateData" />
+      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfNodeTaskStateData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JobStateData" nillable="true" type="tns:JobStateData" />
-  <xs:complexType name="ArrayOfTaskStateData">
+  <xs:complexType name="ArrayOfNodeTaskStateData">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskStateData" nillable="true" type="tns:TaskStateData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeTaskStateData" nillable="true" type="tns:NodeTaskStateData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfTaskStateData" nillable="true" type="tns:ArrayOfTaskStateData" />
-  <xs:complexType name="TaskStateData">
+  <xs:element name="ArrayOfNodeTaskStateData" nillable="true" type="tns:ArrayOfNodeTaskStateData" />
+  <xs:complexType name="NodeTaskStateData">
     <xs:sequence>
       <xs:element minOccurs="0" name="MetaData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeId" type="xs:int" />
       <xs:element minOccurs="0" name="TaskId" type="xs:int" />
       <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskStatus" type="q2:TaskStatus" />
       <xs:element minOccurs="0" name="TaskType" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TaskStateData" nillable="true" type="tns:TaskStateData" />
+  <xs:element name="NodeTaskStateData" nillable="true" type="tns:NodeTaskStateData" />
   <xs:complexType name="TaskProgressData">
     <xs:sequence>
       <xs:element minOccurs="0" name="TaskId" type="xs:int" />

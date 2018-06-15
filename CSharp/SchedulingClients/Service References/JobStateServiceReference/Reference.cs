@@ -32,7 +32,7 @@ namespace SchedulingClients.JobStateServiceReference {
         private SchedulingClients.JobStateServiceReference.JobStatus JobStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.JobStateServiceReference.TaskStateData[] TasksField;
+        private SchedulingClients.JobStateServiceReference.NodeTaskStateData[] TasksField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -84,7 +84,7 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.JobStateServiceReference.TaskStateData[] Tasks {
+        public SchedulingClients.JobStateServiceReference.NodeTaskStateData[] Tasks {
             get {
                 return this.TasksField;
             }
@@ -245,15 +245,18 @@ namespace SchedulingClients.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TaskStateData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NodeTaskStateData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
     [System.SerializableAttribute()]
-    public partial class TaskStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class NodeTaskStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MetaDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NodeIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TaskIdField;
@@ -283,6 +286,19 @@ namespace SchedulingClients.JobStateServiceReference {
                 if ((object.ReferenceEquals(this.MetaDataField, value) != true)) {
                     this.MetaDataField = value;
                     this.RaisePropertyChanged("MetaData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NodeId {
+            get {
+                return this.NodeIdField;
+            }
+            set {
+                if ((this.NodeIdField.Equals(value) != true)) {
+                    this.NodeIdField = value;
+                    this.RaisePropertyChanged("NodeId");
                 }
             }
         }
@@ -527,6 +543,15 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETKINGPINDESCRIPTIONFAILED = 7008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEVIRTUALVEHICLEFAILED = 7009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REMOVEVEHICLEFAILED = 7010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,

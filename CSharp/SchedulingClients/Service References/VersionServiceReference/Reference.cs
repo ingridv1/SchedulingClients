@@ -326,6 +326,15 @@ namespace SchedulingClients.VersionServiceReference {
         GETKINGPINDESCRIPTIONFAILED = 7008,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEVIRTUALVEHICLEFAILED = 7009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REMOVEVEHICLEFAILED = 7010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETPOSEFAILED = 7011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
