@@ -23,16 +23,16 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Services" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
+      <xsd:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Battenberg.Comms.Casts" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IFleetManagerService_VersionMajor_InputMessage">
@@ -383,15 +383,15 @@
   </wsdl:binding>
   <wsdl:service name="FleetManagerService">
     <wsdl:port name="NetTcpBinding_IFleetManagerService" binding="tns:NetTcpBinding_IFleetManagerService">
-      <soap12:address location="net.tcp://127.0.0.1:41917/fleetManager.svc" />
+      <soap12:address location="net.tcp://10.128.17.64:41917/fleetManager.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://127.0.0.1:41917/fleetManager.svc</wsa10:Address>
+        <wsa10:Address>net.tcp://10.128.17.64:41917/fleetManager.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSDualHttpBinding_IFleetManagerService" binding="tns:WSDualHttpBinding_IFleetManagerService">
-      <soap12:address location="http://127.0.0.1:41916/fleetManager.svc" />
+      <soap12:address location="http://10.128.17.64:41916/fleetManager.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://127.0.0.1:41916/fleetManager.svc</wsa10:Address>
+        <wsa10:Address>http://10.128.17.64:41916/fleetManager.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

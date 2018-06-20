@@ -157,13 +157,13 @@ namespace SchedulingClients
         /// Commit extended waypoints to a kingpin
         /// </summary>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCommitExtendedWaypoints(IPAddress ipAddress, int instructionId, byte[] extendedWaypoints,  out bool success)
+        public ServiceOperationResult TryCommitExtendedWaypoints(IPAddress ipAddress, int instructionId, BaseMovementType baseMovementType, byte[] extendedWaypoints,  out bool success)
         {
             Logger.Info("TryCommitExtendedWaypoints()");
 
             try
             {
-                Tuple<bool,ServiceCallData> result = CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypoints);
+                Tuple<bool,ServiceCallData> result = CommitExtendedWaypoints(ipAddress, instructionId, baseMovementType, extendedWaypoints);
                 success = result.Item1;
                 return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
             }
@@ -308,8 +308,10 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool,ServiceCallData> CommitExtendedWaypoints(IPAddress ipAddress, int instructionId, byte[] extendedWaypoints)
+        private Tuple<bool,ServiceCallData> CommitExtendedWaypoints(IPAddress ipAddress, int instructionId, BaseMovementType baseMovementType, byte[] extendedWaypoints)
         {
+            Logger.Debug("CommitExtendedWaypoints");
+  
             if (isDisposed)
             {
                 throw new ObjectDisposedException("FleetManagerClient");
@@ -320,7 +322,7 @@ namespace SchedulingClients
             using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
             {
                 IFleetManagerService channel = channelFactory.CreateChannel();
-                result = channel.CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypoints);
+                result = channel.CommitExtendedWaypoints(ipAddress, instructionId, baseMovementType, extendedWaypoints);
                 channelFactory.Close();
             }
 

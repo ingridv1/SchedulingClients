@@ -53,7 +53,7 @@ namespace SchedulingClients.UserControls
                 resFileStream.Read(bytes, 0, bytes.Length);
             }
             bool success;
-            fleetManagerClient.TryCommitExtendedWaypoints(state.IPAddress, 1, bytes, out success);
+            fleetManagerClient.TryCommitExtendedWaypoints(state.IPAddress, 1, BaseMovementType.Forwards, bytes, out success);
         }
 
         private ObservableCollection<KingpinStateMailbox> mailboxes = new ObservableCollection<KingpinStateMailbox>();
