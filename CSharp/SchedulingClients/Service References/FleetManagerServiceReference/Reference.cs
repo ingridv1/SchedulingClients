@@ -276,6 +276,26 @@ namespace SchedulingClients.FleetManagerServiceReference {
         GETPLUGINVERSIONSFAILED = 10002,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseMovementType", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles")]
+    public enum BaseMovementType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Forwards = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Backwards = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Stationary = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Rotate = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Miscellaneous = 4,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PoseData", Namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet")]
@@ -871,10 +891,10 @@ namespace SchedulingClients.FleetManagerServiceReference {
         System.Threading.Tasks.Task<System.Tuple<System.Xml.Linq.XElement, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> GetKingpinDescriptionAsync(System.Net.IPAddress ipAddress);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
-        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.BaseMovementType baseMovementType, byte[] extendedWaypointBytes);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/CommitExtendedWaypoints", ReplyAction="http://tempuri.org/IFleetManagerService/CommitExtendedWaypointsResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.BaseMovementType baseMovementType, byte[] extendedWaypointBytes);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/RequestFreeze", ReplyAction="http://tempuri.org/IFleetManagerService/RequestFreezeResponse")]
         System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestFreeze();
@@ -982,12 +1002,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
             return base.Channel.GetKingpinDescriptionAsync(ipAddress);
         }
         
-        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
-            return base.Channel.CommitExtendedWaypoints(ipAddress, instructionId, extendedWaypointBytes);
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> CommitExtendedWaypoints(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.BaseMovementType baseMovementType, byte[] extendedWaypointBytes) {
+            return base.Channel.CommitExtendedWaypoints(ipAddress, instructionId, baseMovementType, extendedWaypointBytes);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, byte[] extendedWaypointBytes) {
-            return base.Channel.CommitExtendedWaypointsAsync(ipAddress, instructionId, extendedWaypointBytes);
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> CommitExtendedWaypointsAsync(System.Net.IPAddress ipAddress, int instructionId, SchedulingClients.FleetManagerServiceReference.BaseMovementType baseMovementType, byte[] extendedWaypointBytes) {
+            return base.Channel.CommitExtendedWaypointsAsync(ipAddress, instructionId, baseMovementType, extendedWaypointBytes);
         }
         
         public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> RequestFreeze() {

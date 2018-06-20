@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="mPLg2XKJQFllgYABrVerd6XClII=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="NnflTuVfbwKESn6QQZbddTYThJw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IFleetManagerService">
       <properties>
@@ -215,10 +215,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IFleetManagerService" contract="FleetManagerServiceReference.IFleetManagerService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41917/fleetManager.svc" bindingConfiguration="NetTcpBinding_IFleetManagerService">
+    <endpoint name="NetTcpBinding_IFleetManagerService" contract="FleetManagerServiceReference.IFleetManagerService" bindingType="netTcpBinding" address="net.tcp://10.128.17.64:41917/fleetManager.svc" bindingConfiguration="NetTcpBinding_IFleetManagerService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://127.0.0.1:41917/fleetManager.svc</serializedValue>
+          <serializedValue>net.tcp://10.128.17.64:41917/fleetManager.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -300,10 +300,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSDualHttpBinding_IFleetManagerService" contract="FleetManagerServiceReference.IFleetManagerService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41916/fleetManager.svc" bindingConfiguration="WSDualHttpBinding_IFleetManagerService">
+    <endpoint name="WSDualHttpBinding_IFleetManagerService" contract="FleetManagerServiceReference.IFleetManagerService" bindingType="wsDualHttpBinding" address="http://10.128.17.64:41916/fleetManager.svc" bindingConfiguration="WSDualHttpBinding_IFleetManagerService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1:41916/fleetManager.svc</serializedValue>
+          <serializedValue>http://10.128.17.64:41916/fleetManager.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

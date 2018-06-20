@@ -241,37 +241,37 @@
     <None Include="Service References\AgentStateCastServiceReference\SchedulingClients.AgentStateCastServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager1.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager91.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager2.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager92.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager3.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager93.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager4.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager94.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager5.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager95.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager6.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager96.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager7.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager97.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager8.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager98.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager81.xsd">
+    <None Include="Service References\FleetManagerServiceReference\fleetManager99.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\FleetManagerService.wsdl" />
+    <None Include="Service References\FleetManagerServiceReference\FleetManagerService1.wsdl" />
     <None Include="Service References\FleetManagerServiceReference\SchedulingClients.FleetManagerServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
