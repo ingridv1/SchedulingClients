@@ -75,14 +75,14 @@ namespace SchedulingClients.UserControls
 		{
 			JobBuilderClient client = DataContext as JobBuilderClient;
 
-			client.TryBeginEditingJob(jobIdUpDown.Value ?? 0);
+			client.TryBeginEditingJob(editJobIdUpDown.Value ?? 0);
 		}
 
 		private void finishEditingJobButton_Click(object sender, RoutedEventArgs e)
 		{
 			JobBuilderClient client = DataContext as JobBuilderClient;
 
-			client.TryFinishEditingJob(jobIdUpDown.Value ?? 0);
+			client.TryFinishEditingJob(editJobIdUpDown.Value ?? 0);
 		}
 
 		private void finaliseButton_Click(object sender, RoutedEventArgs e)
@@ -123,5 +123,13 @@ namespace SchedulingClients.UserControls
 
 			client.TryCreateMovingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newMoveId);
 		}
-	}
+
+        private void commitJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            JobBuilderClient client = DataContext as JobBuilderClient;
+
+            bool success;
+            client.TryCommit(jobIdUpDown.Value ?? 1, out success);
+        }
+    }
 }
