@@ -40,19 +40,19 @@ namespace SchedulingClients
         /// <param name="jobId">Job id</param>
         /// <param name="jobState">State job is in</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobState)
+        public ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData)
         {
             Logger.Info("TryGetJobState()");
 
             try
             {
                 var result = GetJobState(jobId);
-                jobState = result.Item1;
+                jobStateData = result.Item1;
                 return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                jobState = null;
+                jobStateData = null;
                 return HandleClientException(ex);
             }
         }
@@ -63,19 +63,19 @@ namespace SchedulingClients
         /// <param name="taskId">Task id</param>
         /// <param name="jobState">State job is in</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetParentJobStateFromTaskId(int jobId, out JobStateData jobState)
+        public ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData)
         {
             Logger.Info("TryGetJobState()");
 
             try
             {
-                var result = GetParentJobStateFromTaskId(jobId);
-                jobState = result.Item1;
+                var result = GetParentJobStateFromTaskId(taskId);
+                jobStateData = result.Item1;
                 return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                jobState = null;
+                jobStateData = null;
                 return HandleClientException(ex);
             }
         }

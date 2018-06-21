@@ -20,7 +20,7 @@ namespace SchedulingClients.UserControls
 		{
 			byte var;
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			client.TryGetEnumStatecastParameter(enumVariableUpDown.Value ?? 0, enumAliasBox.Text, out var);
+			client.TryGetEnumStatecastValue(enumVariableUpDown.Value ?? 0, enumAliasBox.Text, out var);
 			enumBox.Text = var.ToString();
 		}
 
@@ -28,7 +28,7 @@ namespace SchedulingClients.UserControls
 		{
 			float var;
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			client.TryGetFloatStatecastParameter(floatVariableUpDown.Value ?? 0, floatAliasBox.Text, out var);
+			client.TryGetFloatStatecastValue(floatVariableUpDown.Value ?? 0, floatAliasBox.Text, out var);
 			floatBox.Text = var.ToString();
 		}
 
@@ -36,7 +36,7 @@ namespace SchedulingClients.UserControls
 		{
 			short var;
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			client.TryGetShortStatecastParameter(shortVariableUpDown.Value ?? 0, shortAliasBox.Text, out var);
+			client.TryGetShortStatecastValue(shortVariableUpDown.Value ?? 0, shortAliasBox.Text, out var);
 			shortBox.Text = var.ToString();
 		}
 
@@ -44,7 +44,7 @@ namespace SchedulingClients.UserControls
 		{
 			ushort var;
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			client.TryGetUShortStatecastParameter(ushortVariableUpDown.Value ?? 0, ushortAliasBox.Text, out var);
+			client.TryGetUShortStatecastValue(ushortVariableUpDown.Value ?? 0, ushortAliasBox.Text, out var);
 			ushortBox.Text = var.ToString();
 		}
 
@@ -52,7 +52,7 @@ namespace SchedulingClients.UserControls
 		{
 			IPAddress var;
 			AgentStatecastClient client = DataContext as AgentStatecastClient;
-			client.TryGetIPAddressStatecastParameter(ipVariableUpDown.Value ?? 0, ipAliasBox.Text, out var);
+			client.TryGetIPAddressStatecastValue(ipVariableUpDown.Value ?? 0, ipAliasBox.Text, out var);
 			var ipVar = var.GetAddressBytes();
 			ipBox1.Text = ipVar[0].ToString();
 			ipBox2.Text = ipVar[1].ToString();

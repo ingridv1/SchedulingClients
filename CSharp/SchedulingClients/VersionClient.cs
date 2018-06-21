@@ -35,19 +35,19 @@ namespace SchedulingClients
             }
         }
 
-        public ServiceOperationResult TryGetPluginVersions(out IEnumerable<PluginData> pluginVersionDatas)
+        public ServiceOperationResult TryGetPluginVersions(out IEnumerable<PluginData> pluginVersionData)
         {
             Logger.Info("TryGetPluginVersions()");
 
             try
             {
                 var result = GetPluginVersions();
-                pluginVersionDatas = result.Item1.ToList();
+                pluginVersionData = result.Item1.ToList();
                 return ServiceOperationResultFactory.FromVersionServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                pluginVersionDatas = null;
+                pluginVersionData = null;
                 return HandleClientException(ex);
             }
         }

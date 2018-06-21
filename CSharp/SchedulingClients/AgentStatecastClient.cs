@@ -15,87 +15,87 @@ namespace SchedulingClients
 		{
 		}
 
-		public ServiceOperationResult TryGetEnumStatecastParameter(int agentId, string parameterAlias, out byte parameterData)
+		public ServiceOperationResult TryGetEnumStatecastValue(int agentId, string parameterAlias, out byte parameterValue)
 		{
-			Logger.Info("TryGetEnumStatecastParameter()");
+			Logger.Info("TryGetEnumStatecastValue()");
 
 			try
 			{
-				var result = GetEnumStatecastParameter(agentId, parameterAlias);
-				parameterData = result.Item1;
+				var result = GetEnumStatecastValue(agentId, parameterAlias);
+				parameterValue = result.Item1;
 				return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
 			}
 			catch(Exception ex)
 			{
-				parameterData = 0;
+				parameterValue = 0;
 				return HandleClientException(ex);
 			}
 		}
 
-		public ServiceOperationResult TryGetFloatStatecastParameter(int agentId, string parameterAlias, out float parameterData)
+		public ServiceOperationResult TryGetFloatStatecastValue(int agentId, string parameterAlias, out float parameterValue)
 		{
-			Logger.Info("TryGetFloatStatecastParameter()");
+			Logger.Info("TryGetFloatStatecastValue()");
 
 			try
 			{
-				var result = GetFloatStatecastParameter(agentId, parameterAlias);
-				parameterData = result.Item1;
+				var result = GetFloatStatecastValue(agentId, parameterAlias);
+				parameterValue = result.Item1;
 				return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
 			}
 			catch (Exception ex)
 			{
-				parameterData = 0;
+				parameterValue = 0;
 				return HandleClientException(ex);
 			}
 		}
 
-		public ServiceOperationResult TryGetShortStatecastParameter(int agentId, string parameterAlias, out short parameterData)
+		public ServiceOperationResult TryGetShortStatecastValue(int agentId, string parameterAlias, out short parameterValue)
 		{
-			Logger.Info("TryGetShortStatecastParameter()");
+			Logger.Info("TryGetShortStatecastValue()");
 
 			try
 			{
-				var result = GetShortStatecastParameter(agentId, parameterAlias);
-				parameterData = result.Item1;
+				var result = GetShortStatecastValue(agentId, parameterAlias);
+				parameterValue = result.Item1;
 				return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
 			}
 			catch (Exception ex)
 			{
-				parameterData = 0;
+				parameterValue = 0;
 				return HandleClientException(ex);
 			}
 		}
 
-		public ServiceOperationResult TryGetUShortStatecastParameter(int agentId, string parameterAlias, out ushort parameterData)
+		public ServiceOperationResult TryGetUShortStatecastValue(int agentId, string parameterAlias, out ushort parameterValue)
 		{
-			Logger.Info("TryGetUShortStatecastParameter()");
+			Logger.Info("TryGetUShortStatecastValue()");
 
 			try
 			{
-				var result = GetUShortStatecastParameter(agentId, parameterAlias);
-				parameterData = result.Item1;
+				var result = GetUShortStatecastValue(agentId, parameterAlias);
+				parameterValue = result.Item1;
 				return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
 			}
 			catch (Exception ex)
 			{
-				parameterData = 0;
+				parameterValue = 0;
 				return HandleClientException(ex);
 			}
 		}
 
-		public ServiceOperationResult TryGetIPAddressStatecastParameter(int agentId, string parameterAlias, out IPAddress parameterData)
+		public ServiceOperationResult TryGetIPAddressStatecastValue(int agentId, string parameterAlias, out IPAddress parameterValue)
 		{
-			Logger.Info("TryGetfloatStatecastParameter()");
+			Logger.Info("TryGetfloatStatecastValue()");
 
 			try
 			{
-				var result = GetIPAddressStatecastParameter(agentId, parameterAlias);
-				parameterData = result.Item1;
+				var result = GetIPAddressStatecastValue(agentId, parameterAlias);
+				parameterValue = result.Item1;
 				return ServiceOperationResultFactory.FromAgentStatecastServiceCallData(result.Item2);
 			}
 			catch (Exception ex)
 			{
-				parameterData = IPAddress.None;
+				parameterValue = IPAddress.None;
 				return HandleClientException(ex);
 			}
 		}
@@ -117,9 +117,9 @@ namespace SchedulingClients
 			}
 		}
 
-		private Tuple<byte, ServiceCallData> GetEnumStatecastParameter(int agentId, string parameterAlias)
+		private Tuple<byte, ServiceCallData> GetEnumStatecastValue(int agentId, string parameterAlias)
 		{
-			Logger.Debug(String.Format("GetEnumStatecastParameter(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+			Logger.Debug(String.Format("GetEnumStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
 
 			if (isDisposed)
 			{
@@ -138,9 +138,9 @@ namespace SchedulingClients
 			return result;
 		}
 
-		private Tuple<float, ServiceCallData> GetFloatStatecastParameter(int agentId, string parameterAlias)
+		private Tuple<float, ServiceCallData> GetFloatStatecastValue(int agentId, string parameterAlias)
 		{
-			Logger.Debug(String.Format("GetFloatStatecastParameter(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+			Logger.Debug(String.Format("GetFloatStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
 
 			if (isDisposed)
 			{
@@ -159,9 +159,9 @@ namespace SchedulingClients
 			return result;
 		}
 
-		private Tuple<short, ServiceCallData> GetShortStatecastParameter(int agentId, string parameterAlias)
+		private Tuple<short, ServiceCallData> GetShortStatecastValue(int agentId, string parameterAlias)
 		{
-			Logger.Debug(String.Format("GetShortStatecastParameter(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+			Logger.Debug(String.Format("GetShortStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
 
 			if (isDisposed)
 			{
@@ -180,9 +180,9 @@ namespace SchedulingClients
 			return result;
 		}
 
-		private Tuple<ushort, ServiceCallData> GetUShortStatecastParameter(int agentId, string parameterAlias)
+		private Tuple<ushort, ServiceCallData> GetUShortStatecastValue(int agentId, string parameterAlias)
 		{
-			Logger.Debug(String.Format("GetUShortStatecastParameter(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+			Logger.Debug(String.Format("GetUShortStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
 
 			if (isDisposed)
 			{
@@ -201,9 +201,9 @@ namespace SchedulingClients
 			return result;
 		}
 
-		private Tuple<IPAddress, ServiceCallData> GetIPAddressStatecastParameter(int agentId, string parameterAlias)
+		private Tuple<IPAddress, ServiceCallData> GetIPAddressStatecastValue(int agentId, string parameterAlias)
 		{
-			Logger.Debug(String.Format("GetIPAddressStatecastParameter(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
+			Logger.Debug(String.Format("GetIPAddressStatecastValue(agentId:{0}, parameterAlias:{1})", agentId, parameterAlias));
 
 			if (isDisposed)
 			{
