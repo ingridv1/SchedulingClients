@@ -1,4 +1,5 @@
 ﻿using GAClients;
+using SchedulingClients.ServicingServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace SchedulingClients
 	public interface IServicingClient
 	{
 		ServiceOperationResult TrySetServiceComplete(int taskId, out bool success);
+
+		event Action<ServiceStateData> ServiceRequest;
 	}
 }

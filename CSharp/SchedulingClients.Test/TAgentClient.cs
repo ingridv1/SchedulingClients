@@ -29,7 +29,7 @@ namespace SchedulingClients.Test
 		public void CanGetAgentData()
 		{
 			//arrange
-			//CustomData
+			//Custom Data
 			AgentData agentData = new AgentData();
 			List<AgentData> agentDatas = new List<AgentData>();
 			agentDatas.Add(agentData);

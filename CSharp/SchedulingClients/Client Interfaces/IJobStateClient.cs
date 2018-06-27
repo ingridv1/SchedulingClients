@@ -13,5 +13,7 @@ namespace SchedulingClients
 		ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData);
 
 		ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData);
+
+		event Action<TaskProgressData> TaskStateUpdated;
 	}
 }
