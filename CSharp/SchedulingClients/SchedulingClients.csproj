@@ -58,6 +58,17 @@
     <Compile Include="AgentClient.cs" />
     <Compile Include="AgentBatteryStatusClient.cs" />
     <Compile Include="AgentStatecastClient.cs" />
+    <Compile Include="Client Interfaces\IAgentAttentionClient.cs" />
+    <Compile Include="Client Interfaces\IAgentBatteryStatusClient.cs" />
+    <Compile Include="Client Interfaces\IAgentClient.cs" />
+    <Compile Include="Client Interfaces\IAgentStatecastClient.cs" />
+    <Compile Include="Client Interfaces\IFleetManagerClient.cs" />
+    <Compile Include="Client Interfaces\IJobBuilderClient.cs" />
+    <Compile Include="Client Interfaces\IJobsStateClient.cs" />
+    <Compile Include="Client Interfaces\IJobStateClient.cs" />
+    <Compile Include="Client Interfaces\IMapClient.cs" />
+    <Compile Include="Client Interfaces\IServicingClient.cs" />
+    <Compile Include="Client Interfaces\IVersionClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="ControllerState.cs" />
     <Compile Include="ExtensionMethods.cs" />

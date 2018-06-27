@@ -7,7 +7,7 @@ using System.ServiceModel;
 
 namespace SchedulingClients
 {
-    public class JobsStateClient : AbstractCallbackClient<IJobsStateService>
+    public class JobsStateClient : AbstractCallbackClient<IJobsStateService>, IJobsStateClient
     {
         private JobsStateServiceCallback callback = new JobsStateServiceCallback();
 

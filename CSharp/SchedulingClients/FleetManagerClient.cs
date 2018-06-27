@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace SchedulingClients
 {
-    public class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>
+    public class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>, IFleetManagerClient
     {
         private FleetManagerServiceCallback callback = new FleetManagerServiceCallback();
 

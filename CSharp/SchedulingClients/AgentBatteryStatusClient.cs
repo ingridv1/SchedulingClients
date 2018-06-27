@@ -6,7 +6,7 @@ using GAClients;
 
 namespace SchedulingClients
 {
-    public class AgentBatteryStatusClient : AbstractClient<IAgentBatteryStatusService>
+    public class AgentBatteryStatusClient : AbstractClient<IAgentBatteryStatusService>, IAgentBatteryStatusClient
     {
         private bool isDisposed = false;
 

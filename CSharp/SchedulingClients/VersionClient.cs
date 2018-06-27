@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-    public class VersionClient : AbstractClient<IVersionService>
+    public class VersionClient : AbstractClient<IVersionService>, IVersionClient
     {
         private bool isDisposed = false;
 
