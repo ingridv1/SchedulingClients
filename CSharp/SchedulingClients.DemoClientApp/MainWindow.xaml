@@ -98,7 +98,7 @@
                     Spammer
                 </TabItem.Header>
                 <Grid>
-                    <clientsUC:Spammer x:Name="spammerControl" DataContext="{Binding Path=RoadmapClient}" />
+                    <clientsUC:Spammer x:Name="spammerControl" DataContext="{Binding Path=JobBuilderClient}" />
                 </Grid>
             </TabItem>
             <TabItem>
