@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using SchedulingClients.AgentAttentionServiceReference;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace SchedulingClients.UserControls
@@ -11,12 +12,15 @@ namespace SchedulingClients.UserControls
 		public AgentAttentionClientControl()
 		{
 			InitializeComponent();
-		}
 
-		private void attentionRefreshButton_Click(object sender, RoutedEventArgs e)
-		{
-			AgentAttentionClient agentAttentionClient = DataContext as AgentAttentionClient;
-			agentAttentionDataGrid.ItemsSource = agentAttentionClient.AgentAttentionData.RequiringAttention;
-		}
+            AgentAttentionClient agentAttentionClient = DataContext as AgentAttentionClient;
+
+            agentAttentionClient.AgentAttentionChange += AgentAttentionClient_AgentAttentionChange;
+        }
+
+        private void AgentAttentionClient_AgentAttentionChange(AgentAttentionData agentAttentionData)
+        {
+            agentAttentionDataGrid.ItemsSource = agentAttentionData.RequiringAttention;
+        }
 	}
 }
