@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContextChanged="UserControl_DataContextChanged">
 	<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
