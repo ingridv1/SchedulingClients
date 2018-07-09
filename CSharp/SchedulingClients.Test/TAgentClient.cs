@@ -11,7 +11,9 @@ using GAClients;
 namespace SchedulingClients.Test
 {
 	[TestFixture]
-	class TAgentClient
+    [Category("Moq Examples")]
+    [Description("AgentAttentionClient")]
+	public class TAgentClient
 	{
 		public bool VerifyAgents(IEnumerable<AgentData> agents)
 		{
@@ -28,23 +30,22 @@ namespace SchedulingClients.Test
 		[Test]
 		public void CanGetAgentData()
 		{
-			//arrange
-			//Custom Data
+			//Arrange
 			AgentData agentData = new AgentData();
 			List<AgentData> agentDatas = new List<AgentData>();
 			agentDatas.Add(agentData);
 			IEnumerable<AgentData> returnedAgentData = agentDatas as IEnumerable<AgentData>;
 			ServiceOperationResult result = new ServiceOperationResult(0, "Success", null, null);
-			//Mock
+
 			Mock<IAgentClient> mock = new Mock<IAgentClient>();
 			mock.Setup(e => e.TryGetAllAgentData(out returnedAgentData)).Returns(result);
 
-			//act
+			//Act
 			IEnumerable<AgentData> myAgentData;
 			ServiceOperationResult opResult = mock.Object.TryGetAllAgentData(out myAgentData);
 			bool finalResult = VerifyAgents(myAgentData);
 
-			//assert
+			//Assert
 			Assert.That(opResult.ClientException == null && opResult.ServiceException == null && finalResult);
 		}
 	}
