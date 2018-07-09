@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
-  <xs:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
-  <xs:import schemaLocation="http://10.128.17.64:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/fleetManager.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" />
   <xs:element name="VersionMajor">
     <xs:complexType>
       <xs:sequence />
@@ -152,10 +152,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ResetKingpin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="ipAddress" nillable="true" type="q17:IPAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetKingpinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ResetKingpinResult" nillable="true" type="q18:TupleOfbooleanServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="OnCallback">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" minOccurs="0" name="callbackObject" nillable="true" type="q17:FleetState" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Controllers.Vehicles.Fleet" minOccurs="0" name="callbackObject" nillable="true" type="q19:FleetState" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

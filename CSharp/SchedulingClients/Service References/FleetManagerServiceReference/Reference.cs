@@ -258,6 +258,9 @@ namespace SchedulingClients.FleetManagerServiceReference {
         SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -925,6 +928,12 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/SetPose", ReplyAction="http://tempuri.org/IFleetManagerService/SetPoseResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> SetPoseAsync(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/ResetKingpin", ReplyAction="http://tempuri.org/IFleetManagerService/ResetKingpinResponse")]
+        System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> ResetKingpin(System.Net.IPAddress ipAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetManagerService/ResetKingpin", ReplyAction="http://tempuri.org/IFleetManagerService/ResetKingpinResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> ResetKingpinAsync(System.Net.IPAddress ipAddress);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1048,6 +1057,14 @@ namespace SchedulingClients.FleetManagerServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> SetPoseAsync(System.Net.IPAddress ipAddress, SchedulingClients.FleetManagerServiceReference.PoseData pose) {
             return base.Channel.SetPoseAsync(ipAddress, pose);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData> ResetKingpin(System.Net.IPAddress ipAddress) {
+            return base.Channel.ResetKingpin(ipAddress);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.FleetManagerServiceReference.ServiceCallData>> ResetKingpinAsync(System.Net.IPAddress ipAddress) {
+            return base.Channel.ResetKingpinAsync(ipAddress);
         }
     }
 }

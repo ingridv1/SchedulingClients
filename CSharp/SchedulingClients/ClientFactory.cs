@@ -4,57 +4,57 @@ namespace SchedulingClients
 {
     public static class ClientFactory
     {
-        public static AgentClient GetAgentClient(EndpointSettings portSettings)
+        public static IAgentClient GetAgentClient(EndpointSettings portSettings)
         {
             return new AgentClient(portSettings.TcpAgentService());
         }
 
-        public static FleetManagerClient GetFleetManagerClient(EndpointSettings portSettings)
+        public static IFleetManagerClient GetFleetManagerClient(EndpointSettings portSettings)
         {
             return new FleetManagerClient(portSettings.TcpFleetManagerService());
         }
 
-        public static JobBuilderClient GetJobBuilderClient(EndpointSettings portSettings)
+        public static IJobBuilderClient GetJobBuilderClient(EndpointSettings portSettings)
         {
             return new JobBuilderClient(portSettings.TcpJobBuilderService());
         }
 
-        public static JobsStateClient GetJobsStateClient(EndpointSettings portSettings)
+        public static IJobsStateClient GetJobsStateClient(EndpointSettings portSettings)
         {
             return new JobsStateClient(portSettings.TcpJobsStateService());
         }
 
-        public static JobStateClient GetJobStateClient(EndpointSettings portSettings)
+        public static IJobStateClient GetJobStateClient(EndpointSettings portSettings)
         {
             return new JobStateClient(portSettings.TcpJobStateService());
         }
 
-        public static MapClient GetRoadmapClient(EndpointSettings portSettings)
+        public static IMapClient GetRoadmapClient(EndpointSettings portSettings)
         {
             return new MapClient(portSettings.TcpMapService());
         }
 
-        public static ServicingClient GetServicingClient(EndpointSettings portSettings)
+        public static IServicingClient GetServicingClient(EndpointSettings portSettings)
         {
             return new ServicingClient(portSettings.TcpServicingService());
         }
 
-        public static AgentBatteryStatusClient GetAgentBatteryStatusClient(EndpointSettings portSettings)
+        public static IAgentBatteryStatusClient GetAgentBatteryStatusClient(EndpointSettings portSettings)
         {
             return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
         }
 
-		public static AgentAttentionClient GetAgentAttentionClient(EndpointSettings portSettings)
+		public static IAgentAttentionClient GetAgentAttentionClient(EndpointSettings portSettings)
 		{
 			return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
 		}
 
-		public static AgentStatecastClient GetAgentStatecastClient(EndpointSettings portSettings)
+		public static IAgentStatecastClient GetAgentStatecastClient(EndpointSettings portSettings)
 		{
 			return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
 		}
 
-        public static VersionClient GetVersionClient(EndpointSettings portSettings)
+        public static IVersionClient GetVersionClient(EndpointSettings portSettings)
         {
             return new VersionClient(portSettings.TcpVersionService());
         }

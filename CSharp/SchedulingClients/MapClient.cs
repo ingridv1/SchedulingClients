@@ -8,7 +8,7 @@ using GAClients;
 
 namespace SchedulingClients
 {
-    public class MapClient : AbstractClient<IMapService>
+    public class MapClient : AbstractClient<IMapService>, IMapClient
     {
         private bool isDisposed = false;
 

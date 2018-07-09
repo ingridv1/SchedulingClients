@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.UserContr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.DemoClientApp", "SchedulingClients.DemoClientApp\SchedulingClients.DemoClientApp.csproj", "{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Test", "SchedulingClients.Test\SchedulingClients.Test.csproj", "{B0CA7A61-9502-40CB-BA07-844BEC10A33D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,6 +29,10 @@ Global
 		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Debug|x64.Build.0 = Debug|x64
 		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Release|x64.ActiveCfg = Release|x64
 		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Release|x64.Build.0 = Release|x64
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Debug|x64.ActiveCfg = Debug|x64
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Debug|x64.Build.0 = Debug|x64
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Release|x64.ActiveCfg = Release|x64
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

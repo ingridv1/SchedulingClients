@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace SchedulingClients
 {
-    public class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>
+    public class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>, IFleetManagerClient
     {
         private FleetManagerServiceCallback callback = new FleetManagerServiceCallback();
 
@@ -234,7 +234,7 @@ namespace SchedulingClients
 
         public ServiceOperationResult TrySetPose(IPAddress ipAddress, PoseData pose, out bool success)
         {
-            Logger.Info("TryCreateVirtualVehicle()");
+            Logger.Info("TrySetPose()");
 
             try
             {
@@ -248,6 +248,23 @@ namespace SchedulingClients
                 return HandleClientException(ex);
             }
         }
+
+		public ServiceOperationResult TryResetKingpin(IPAddress ipAddress, out bool success)
+		{
+			Logger.Info("TryResetKingpin()");
+
+			try
+			{
+				var result = ResetKingpin(ipAddress);
+				success = result.Item1;
+				return ServiceOperationResultFactory.FromFleetManagerServiceCallData(result.Item2);
+			}
+			catch (Exception ex)
+			{
+				success = false;
+				return HandleClientException(ex);
+			}
+		}
 
         protected override void Dispose(bool isDisposing)
         {
@@ -412,5 +429,26 @@ namespace SchedulingClients
 
             return result;
         }
+
+		private Tuple<bool, ServiceCallData> ResetKingpin(IPAddress ipAddress)
+		{
+			Logger.Debug("ResetKingpin()");
+
+			if (isDisposed)
+			{
+				throw new ObjectDisposedException("FleetManagerClient");
+			}
+
+			Tuple<bool, ServiceCallData> result;
+
+			using (ChannelFactory<IFleetManagerService> channelFactory = CreateChannelFactory())
+			{
+				IFleetManagerService channel = channelFactory.CreateChannel();
+				result = channel.ResetKingpin(ipAddress);
+				channelFactory.Close();
+			}
+
+			return result;
+		}
     }
 }
