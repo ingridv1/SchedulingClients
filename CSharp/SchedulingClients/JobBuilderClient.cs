@@ -175,6 +175,11 @@ namespace SchedulingClients
         {
             Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
 
+            if (expectedDuration == TimeSpan.Zero)
+            {
+                expectedDuration = TimeSpan.FromSeconds(1);
+            }
+
             try
             {
                 var result = CreateSleepingTask(parentListTaskId, nodeId, expectedDuration);
