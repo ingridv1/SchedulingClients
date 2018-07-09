@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IVersionClient
+	public interface IVersionClient : IClient
 	{
 		ServiceOperationResult TryGetSchedulerVersion(out SemVerData schedulerVersionData);
 

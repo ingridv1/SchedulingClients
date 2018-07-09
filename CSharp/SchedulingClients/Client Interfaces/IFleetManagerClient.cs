@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace SchedulingClients
 {
-	public interface IFleetManagerClient
+	public interface IFleetManagerClient : ICallbackClient
 	{
 		ServiceOperationResult TryRequestFreeze(out bool success);
 

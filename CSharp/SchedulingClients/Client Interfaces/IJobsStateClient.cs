@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IJobsStateClient
+	public interface IJobsStateClient : ICallbackClient
 	{
 		ServiceOperationResult TryAbortAllJobs(out bool success);
 

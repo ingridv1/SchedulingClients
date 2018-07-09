@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IAgentStatecastClient
+	public interface IAgentStatecastClient : IClient
 	{
 		ServiceOperationResult TryGetEnumStatecastValue(int agentId, string parameterAlias, out byte parameterValue);
 

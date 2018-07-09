@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IJobStateClient
+	public interface IJobStateClient : ICallbackClient
 	{
 		ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData);
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IJobBuilderClient
+	public interface IJobBuilderClient : IClient
 	{
 		ServiceOperationResult TryCommit(int jobId, out bool success, int agentId = -1);
 

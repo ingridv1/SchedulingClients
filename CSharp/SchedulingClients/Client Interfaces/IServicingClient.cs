@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IServicingClient
+	public interface IServicingClient : ICallbackClient
 	{
 		ServiceOperationResult TrySetServiceComplete(int taskId, out bool success);
 
