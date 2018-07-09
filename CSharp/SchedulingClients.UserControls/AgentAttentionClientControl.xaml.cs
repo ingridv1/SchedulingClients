@@ -16,7 +16,9 @@ namespace SchedulingClients.UserControls
         
         private void AgentAttentionClient_AgentAttentionChange(AgentAttentionData agentAttentionData)
         {
-            agentAttentionDataGrid.ItemsSource = agentAttentionData.RequiringAttention;
+            Application.Current.Dispatcher.Invoke(() =>
+                agentAttentionDataGrid.ItemsSource = agentAttentionData.RequiringAttention
+            );
         }
 
         private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
