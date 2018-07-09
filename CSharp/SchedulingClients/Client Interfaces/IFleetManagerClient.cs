@@ -26,6 +26,6 @@ namespace SchedulingClients
 
 		ServiceOperationResult TrySetPose(IPAddress ipAddress, PoseData pose, out bool success);
 
-
+		ServiceOperationResult TryResetKingpin(IPAddress ipAddress, out bool success);
 	}
 }

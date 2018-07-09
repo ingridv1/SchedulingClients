@@ -178,5 +178,22 @@ namespace SchedulingClients.UserControls
                 MessageBox.Show("Pose setting failed", "Set Pose", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-    }
+
+		private void resetKingpinButton_Click(object sender, RoutedEventArgs e)
+		{
+			FleetManagerClient client = DataContext as FleetManagerClient;
+
+			bool success;
+			client.TryResetKingpin(ipAddressControl.IPAddress, out success);
+
+			if (success)
+			{
+				MessageBox.Show("Kingpin reset was successful", "Reset Kingpin", MessageBoxButton.OK, MessageBoxImage.Information);
+			}
+			else
+			{
+				MessageBox.Show("Kingpin reset failed", "Reset Kingpin", MessageBoxButton.OK, MessageBoxImage.Information);
+			}
+		}
+	}
 }

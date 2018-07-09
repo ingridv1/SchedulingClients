@@ -45,6 +45,9 @@
             <local:LabelContentControl Header="Sets Vehicle Pose">
                 <Button x:Name="setPoseButton" Click="setPoseButton_Click">Set Pose</Button>
             </local:LabelContentControl>
+			<local:LabelContentControl Header="Resets Vehicle Waypoint Buffer">
+				<Button x:Name="resetKingpinButton" Click="resetKingpinButton_Click">Reset</Button>
+			</local:LabelContentControl>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
