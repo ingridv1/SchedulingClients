@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IMapClient
+	public interface IMapClient : IClient
 	{
 		ServiceOperationResult TryGetAllMoveData(out IEnumerable<MoveData> moveData);
 

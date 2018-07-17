@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IAgentBatteryStatusClient
+	public interface IAgentBatteryStatusClient : IClient
 	{
 		ServiceOperationResult TryGetAllAgentData(out IEnumerable<AgentBatteryStatusData> agentBatteryStatusDatas);
 	}

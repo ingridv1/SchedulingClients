@@ -1,14 +1,10 @@
 ﻿using GAClients;
 using SchedulingClients.VersionServiceReference;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IVersionClient
+    public interface IVersionClient : IClient
 	{
 		ServiceOperationResult TryGetSchedulerVersion(out SemVerData schedulerVersionData);
 

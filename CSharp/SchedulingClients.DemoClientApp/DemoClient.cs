@@ -68,22 +68,22 @@ namespace SchedulingClients.DemoClientApp
 
         public void Configure()
         {
-            clients.Add(ClientFactory.GetAgentClient(endpointSettings));
-            clients.Add(ClientFactory.GetAgentBatteryStatusClient(endpointSettings));
-            clients.Add(ClientFactory.GetFleetManagerClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpAgentClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpAgentBatteryStatusClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpFleetManagerClient(endpointSettings));
 
-            clients.Add(ClientFactory.GetJobBuilderClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpJobBuilderClient(endpointSettings));
 
-            clients.Add(ClientFactory.GetJobStateClient(endpointSettings));
-            clients.Add(ClientFactory.GetJobsStateClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpJobStateClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpJobsStateClient(endpointSettings));
 
-            clients.Add(ClientFactory.GetRoadmapClient(endpointSettings));
-            clients.Add(ClientFactory.GetServicingClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpRoadmapClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpServicingClient(endpointSettings));
 
-			clients.Add(ClientFactory.GetAgentAttentionClient(endpointSettings));
-			clients.Add(ClientFactory.GetAgentStatecastClient(endpointSettings));
+			clients.Add(ClientFactory.CreateTcpAgentAttentionClient(endpointSettings));
+			clients.Add(ClientFactory.CreateTcpAgentStatecastClient(endpointSettings));
 
-            clients.Add(ClientFactory.GetVersionClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpVersionClient(endpointSettings));
 
             LogManager.Configuration = new LoggingConfiguration();
 
@@ -107,11 +107,7 @@ namespace SchedulingClients.DemoClientApp
 
             foreach (IClient client in clients.ToList())
             {
-                if (client is IDisposable)
-                {
-                    (client as IDisposable).Dispose();
-                }
-
+                client.Dispose();         
                 clients.Remove(client);
             }
 

@@ -1,15 +1,11 @@
 ﻿using GAClients;
 using SchedulingClients.JobBuilderServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-	public interface IJobBuilderClient
+    public interface IJobBuilderClient : IClient
 	{
 		ServiceOperationResult TryCommit(int jobId, out bool success, int agentId = -1);
 

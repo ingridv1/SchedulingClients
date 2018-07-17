@@ -5,8 +5,8 @@ using System.ServiceModel;
 
 namespace SchedulingClients
 {
-    public class AgentAttentionClient : AbstractCallbackClient<IAgentAttentionService>
-	{
+    public class AgentAttentionClient : AbstractCallbackClient<IAgentAttentionService>, IAgentAttentionClient
+    {
 		private AgentAttentionServiceCallback callback = new AgentAttentionServiceCallback();
 
 		private TimeSpan heartbeat;
