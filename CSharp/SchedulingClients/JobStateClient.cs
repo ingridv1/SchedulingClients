@@ -5,7 +5,7 @@ using GAClients;
 
 namespace SchedulingClients
 {
-    public class JobStateClient : AbstractCallbackClient<IJobStateService>, IJobStateClient
+    internal class JobStateClient : AbstractCallbackClient<IJobStateService>, IJobStateClient
     {
         public JobStateServiceCallback callback = new JobStateServiceCallback();
 

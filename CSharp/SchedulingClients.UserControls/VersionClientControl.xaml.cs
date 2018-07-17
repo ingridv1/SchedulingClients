@@ -28,7 +28,7 @@ namespace SchedulingClients.UserControls
 
         private void refreshVersionInfo_Click(object sender, RoutedEventArgs e)
         {
-            VersionClient client = DataContext as VersionClient;
+            IVersionClient client = DataContext as IVersionClient;
 
             SemVerData schedulerVersion;
             client.TryGetSchedulerVersion(out schedulerVersion);

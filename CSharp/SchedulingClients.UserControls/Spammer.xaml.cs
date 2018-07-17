@@ -29,7 +29,7 @@ namespace SchedulingClients.UserControls
 
         private void spamButton_Click(object sender, RoutedEventArgs e)
         {
-            MapClient mapClient = DataContext as MapClient;
+            IMapClient mapClient = DataContext as IMapClient;
 
             rttLineSeries.Points.Clear();
 

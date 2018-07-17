@@ -6,7 +6,7 @@ using System.ServiceModel;
 
 namespace SchedulingClients
 {
-    public class JobBuilderClient : AbstractClient<IJobBuilderService>, IJobBuilderClient
+    internal class JobBuilderClient : AbstractClient<IJobBuilderService>, IJobBuilderClient
     {
         private bool isDisposed = false;
 

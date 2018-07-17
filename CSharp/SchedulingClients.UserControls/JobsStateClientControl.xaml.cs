@@ -15,7 +15,7 @@ namespace SchedulingClients.UserControls
 
         private void abortAllJobsButton_Click(object sender, RoutedEventArgs e)
         {
-            JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
             bool success;
             jobsStateClient.TryAbortAllJobs(out success);
         }
@@ -24,20 +24,20 @@ namespace SchedulingClients.UserControls
         {
             bool couldAbort;
 
-            JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
             jobsStateClient.TryAbortJob((int)abortJobId.Value, out couldAbort);
         }
 
         private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
         }
 
         private void abortTaskButton_Click(object sender, RoutedEventArgs e)
         {
             bool couldAbort;
 
-            JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
             jobsStateClient.TryAbortTask((int)abortTaskId.Value, out couldAbort);
         }
 
@@ -45,7 +45,7 @@ namespace SchedulingClients.UserControls
 		{
 			bool resolveSuccess;
 
-			JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
 			jobsStateClient.TryResolveFaultedTask((int)resolveTaskFaultId.Value, out resolveSuccess);
 		}
 
@@ -53,7 +53,7 @@ namespace SchedulingClients.UserControls
 		{
 			bool resolveSuccess;
 
-			JobsStateClient jobsStateClient = DataContext as JobsStateClient;
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
 			jobsStateClient.TryResolveFaultedJob((int)resolveJobFaultId.Value, out resolveSuccess);
 		}
 	}

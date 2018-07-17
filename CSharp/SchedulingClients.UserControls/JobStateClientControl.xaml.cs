@@ -31,7 +31,7 @@ namespace SchedulingClients.UserControls
         {
             JobStateData jobStateData;
 
-            JobStateClient jobStateClient = DataContext as JobStateClient;
+            IJobStateClient jobStateClient = DataContext as IJobStateClient;
             if (jobStateClient.TryGetJobState((int)getJobStateId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
@@ -42,7 +42,7 @@ namespace SchedulingClients.UserControls
         {
             JobStateData jobStateData;
 
-            JobStateClient jobStateClient = DataContext as JobStateClient;
+            IJobStateClient jobStateClient = DataContext as IJobStateClient;
             if (jobStateClient.TryGetParentJobStateFromTaskId((int)getJobStateFromTaskId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
@@ -51,9 +51,9 @@ namespace SchedulingClients.UserControls
 
         private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
         {
-            if (e.NewValue is JobStateClient)
+            if (e.NewValue is IJobStateClient)
             {
-                JobStateClient client = e.NewValue as JobStateClient;
+                IJobStateClient client = e.NewValue as IJobStateClient;
                 client.TaskStateUpdated += Client_TaskStateUpdated;
             }
         }

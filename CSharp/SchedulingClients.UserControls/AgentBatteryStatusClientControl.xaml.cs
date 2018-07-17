@@ -17,7 +17,7 @@ namespace SchedulingClients.UserControls
 
         private void refreshButton_Click(object sender, RoutedEventArgs e)
         {
-            AgentBatteryStatusClient agentBatteryStatusClient = DataContext as AgentBatteryStatusClient;
+            IAgentBatteryStatusClient agentBatteryStatusClient = DataContext as IAgentBatteryStatusClient;
             IEnumerable<AgentBatteryStatusData> agentBatteryStatusDatas;
             agentBatteryStatusClient.TryGetAllAgentData(out agentBatteryStatusDatas);
 

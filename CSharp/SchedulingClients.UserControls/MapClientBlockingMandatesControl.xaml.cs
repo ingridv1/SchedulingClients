@@ -31,7 +31,7 @@ namespace SchedulingClients.UserControls
             IEnumerable<int> mapItemIds = nodeDataDataGrid.SelectedItems.Cast<NodeData>().Select(n => n.MapItemId).Union(moveDataDataGrid.SelectedItems.Cast<MoveData>().Select(m => m.Id));
             int mandateId = mandateIdUpDown.Value ?? -1;
 
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
 
             bool success = false;
 
@@ -51,14 +51,14 @@ namespace SchedulingClients.UserControls
         {
             int mandateId = mandateIdUpDown.Value ?? -1;
 
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
 
             client.TryClearBlockingMandate(mandateId);
         }
 
         private void getMapDataButton_Click(object sender, RoutedEventArgs e)
         {
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
 
             IEnumerable<NodeData> nodeDatas;
             client.TryGetAllNodeData(out nodeDatas);

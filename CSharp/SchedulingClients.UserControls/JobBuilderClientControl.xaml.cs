@@ -8,28 +8,28 @@ namespace SchedulingClients.UserControls
 {
     public partial class JobBuilderClientControl : UserControl
     {
-        private MapClient mapClient = null;
+        private IMapClient mapClient = null;
 
         public JobBuilderClientControl()
         {
             InitializeComponent();
         }
 
-        public void Configure(MapClient client)
+        public void Configure(IMapClient client)
         {
             mapClient = client;
         }
 
         private void createJobButton_Click(object sender, RoutedEventArgs e)
         {
-            JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
             JobData jobData;
             client.TryCreateJob(out jobData);
         }
 
         private void multiPickJobTest_Click(object sender, RoutedEventArgs e)
         {
-            JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
             if (mapClient != null)
             {
@@ -51,7 +51,7 @@ namespace SchedulingClients.UserControls
 
         private void directiveTest_Click(object sender, RoutedEventArgs e)
         {
-            JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 #warning Unsafe
             client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterIdUpDown.Value ?? 0, (byte)(valueUpDown.Value ?? 0));
@@ -59,7 +59,7 @@ namespace SchedulingClients.UserControls
 
         private void moveJobButton_Click(object sender, RoutedEventArgs e)
         {
-            JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
             if (mapClient != null)
             {
@@ -73,42 +73,42 @@ namespace SchedulingClients.UserControls
 
 		private void beginEditingJobButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			client.TryBeginEditingJob(editJobIdUpDown.Value ?? 0);
 		}
 
 		private void finishEditingJobButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			client.TryFinishEditingJob(editJobIdUpDown.Value ?? 0);
 		}
 
 		private void finaliseButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			client.TryFinaliseTask(taskToFinaliseUpDown.Value ?? 0);
 		}
 
 		private void beginEditingTaskButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			client.TryBeginEditingTask(editTaskIdUpDown.Value ?? 0);
 		}
 
 		private void finishEditingTaskButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			client.TryFinishEditingTask(editTaskIdUpDown.Value ?? 0);
 		}
 
 		private void nonFinalisedTaskButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			int newTaskId;
 
@@ -117,7 +117,7 @@ namespace SchedulingClients.UserControls
 
 		private void addNodeTaskToParentButton_Click(object sender, RoutedEventArgs e)
 		{
-			JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			int newMoveId;
 
@@ -126,7 +126,7 @@ namespace SchedulingClients.UserControls
 
         private void commitJobButton_Click(object sender, RoutedEventArgs e)
         {
-            JobBuilderClient client = DataContext as JobBuilderClient;
+            IJobBuilderClient client = DataContext as IJobBuilderClient;
 
             bool success;
             client.TryCommit(jobIdUpDown.Value ?? 1, out success);

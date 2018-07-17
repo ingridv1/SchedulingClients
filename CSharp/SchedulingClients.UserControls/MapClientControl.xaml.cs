@@ -14,7 +14,7 @@ namespace SchedulingClients.UserControls
 
         private void getAllMoveDataButton_Click(object sender, RoutedEventArgs e)
         {
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
             IEnumerable<MoveData> nodeDatas;
             client.TryGetAllMoveData(out nodeDatas);
 
@@ -23,7 +23,7 @@ namespace SchedulingClients.UserControls
 
         private void getAllNodeDataButton_Click(object sender, RoutedEventArgs e)
         {
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
             IEnumerable<NodeData> nodeDatas;
             client.TryGetAllNodeData(out nodeDatas);
 
@@ -33,7 +33,7 @@ namespace SchedulingClients.UserControls
         private void getTrajectoryButton_Click(object sender, RoutedEventArgs e)
         {
             int moveId = (int)trajectoryIdUpDown.Value;
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
             IEnumerable<WaypointData> waypoints;
             client.TryGetTrajectory(moveId, out waypoints);
 
@@ -44,7 +44,7 @@ namespace SchedulingClients.UserControls
 
         private void getAllParameterDataButton_Click(object sender, RoutedEventArgs e)
         {
-            MapClient client = DataContext as MapClient;
+            IMapClient client = DataContext as IMapClient;
             IEnumerable<ParameterData> parameterDatas;
             client.TryGetAllParameterData(out parameterDatas);
 

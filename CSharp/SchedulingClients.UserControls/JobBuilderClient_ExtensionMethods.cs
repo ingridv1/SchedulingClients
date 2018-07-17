@@ -10,7 +10,7 @@ namespace SchedulingClients.UserControls
 {
     public static class JobBuilderClient_ExtensionMethods
     {
-        private static int HandleCreatedUnorderedListTask(JobBuilderClient jobBuilder, int parentListTaskId)
+        private static int HandleCreatedUnorderedListTask(IJobBuilderClient jobBuilder, int parentListTaskId)
         {
             int unorderedListTaskId;
 
@@ -24,7 +24,7 @@ namespace SchedulingClients.UserControls
             return unorderedListTaskId;
         }
 
-        public static void MultiPickJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
+        public static void MultiPickJobTest(this IJobBuilderClient jobBuilder, IEnumerable<NodeData> nodes)
         {
             JobData jobData;
 
@@ -74,7 +74,7 @@ namespace SchedulingClients.UserControls
             }
         }
 
-        public static void MoveJobTest(this JobBuilderClient jobBuilder, IEnumerable<NodeData> nodes, bool isFinalised)
+        public static void MoveJobTest(this IJobBuilderClient jobBuilder, IEnumerable<NodeData> nodes, bool isFinalised)
         {
             JobData jobData;
 

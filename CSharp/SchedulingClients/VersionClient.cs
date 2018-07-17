@@ -4,12 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-    public class VersionClient : AbstractClient<IVersionService>, IVersionClient
+    internal class VersionClient : AbstractClient<IVersionService>, IVersionClient
     {
         private bool isDisposed = false;
 

@@ -38,33 +38,33 @@ namespace SchedulingClients.DemoClientApp
             Dispose(false);
         }
 
-		public AgentAttentionClient AgentAttentionClient { get { return (AgentAttentionClient)clients.FirstOrDefault(e => e is AgentAttentionClient); } }
+		public IAgentAttentionClient AgentAttentionClient { get { return (IAgentAttentionClient)clients.FirstOrDefault(e => e is IAgentAttentionClient); } }
 
-		public AgentClient AgentClient { get { return (AgentClient)clients.FirstOrDefault(e => e is AgentClient); } }
+		public IAgentClient AgentClient { get { return (IAgentClient)clients.FirstOrDefault(e => e is IAgentClient); } }
 
-        public AgentBatteryStatusClient AgentBatteryStatusClient { get { return (AgentBatteryStatusClient)clients.FirstOrDefault(e => e is AgentBatteryStatusClient); } }
+        public IAgentBatteryStatusClient AgentBatteryStatusClient { get { return (IAgentBatteryStatusClient)clients.FirstOrDefault(e => e is IAgentBatteryStatusClient); } }
 
-		public AgentStatecastClient AgentStatecastClient { get { return (AgentStatecastClient)clients.FirstOrDefault(e => e is AgentStatecastClient); } }
+		public IAgentStatecastClient AgentStatecastClient { get { return (IAgentStatecastClient)clients.FirstOrDefault(e => e is IAgentStatecastClient); } }
 
 		public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
-        public FleetManagerClient FleetManagerClient { get { return (FleetManagerClient)clients.FirstOrDefault(e => e is FleetManagerClient); } }
+        public IFleetManagerClient FleetManagerClient { get { return (IFleetManagerClient)clients.FirstOrDefault(e => e is IFleetManagerClient); } }
 
         public bool IsDisposed { get { return isDisposed; } }
 
-        public JobBuilderClient JobBuilderClient { get { return (JobBuilderClient)clients.FirstOrDefault(e => e is JobBuilderClient); } }
+        public IJobBuilderClient JobBuilderClient { get { return (IJobBuilderClient)clients.FirstOrDefault(e => e is IJobBuilderClient); } }
 
-        public JobsStateClient JobsStateClient { get { return (JobsStateClient)clients.FirstOrDefault(e => e is JobsStateClient); } }
+        public IJobsStateClient JobsStateClient { get { return (IJobsStateClient)clients.FirstOrDefault(e => e is IJobsStateClient); } }
 
-        public JobStateClient JobStateClient { get { return (JobStateClient)clients.FirstOrDefault(e => e is JobStateClient); } }
+        public IJobStateClient JobStateClient { get { return (IJobStateClient)clients.FirstOrDefault(e => e is IJobStateClient); } }
 
         public string LogFolderPath { get { return logFolderPath; } }
 
-        public MapClient RoadmapClient { get { return (MapClient)clients.FirstOrDefault(e => e is MapClient); } }
+        public IMapClient RoadmapClient { get { return (IMapClient)clients.FirstOrDefault(e => e is IMapClient); } }
 
-        public ServicingClient ServicingClient { get { return (ServicingClient)clients.FirstOrDefault(e => e is ServicingClient); } }
+        public IServicingClient ServicingClient { get { return (IServicingClient)clients.FirstOrDefault(e => e is IServicingClient); } }
 
-        public VersionClient VersionClient { get { return (VersionClient)clients.FirstOrDefault(e => e is VersionClient); } }
+        public IVersionClient VersionClient { get { return (IVersionClient)clients.FirstOrDefault(e => e is IVersionClient); } }
 
         public void Configure()
         {

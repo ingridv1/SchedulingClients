@@ -62,7 +62,7 @@ namespace SchedulingClients.UserControls
             Dispatcher.BeginInvoke(new Action(() =>
             {
                 bool success;
-                ServicingClient client = DataContext as ServicingClient;
+                IServicingClient client = DataContext as IServicingClient;
                 client.TrySetServiceComplete(taskId, out success);
 
                 if (success)
@@ -75,9 +75,9 @@ namespace SchedulingClients.UserControls
 
         private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
         {
-            if (e.NewValue is ServicingClient)
+            if (e.NewValue is IServicingClient)
             {
-                ServicingClient client = e.NewValue as ServicingClient;
+                IServicingClient client = e.NewValue as IServicingClient;
                 client.ServiceRequest += Client_ServiceRequest;
             }
         }

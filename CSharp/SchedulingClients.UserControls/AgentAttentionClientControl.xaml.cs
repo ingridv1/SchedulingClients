@@ -15,7 +15,7 @@ namespace SchedulingClients.UserControls
 
 		private void attentionRefreshButton_Click(object sender, RoutedEventArgs e)
 		{
-			AgentAttentionClient agentAttentionClient = DataContext as AgentAttentionClient;
+            IAgentAttentionClient agentAttentionClient = DataContext as IAgentAttentionClient;
 			agentAttentionDataGrid.ItemsSource = agentAttentionClient.AgentAttentionData.RequiringAttention;
 		}
 	}

@@ -19,7 +19,7 @@ namespace SchedulingClients.UserControls
 		private void enumVariableButton_Click(object sender, RoutedEventArgs e)
 		{
 			byte var;
-			AgentStatecastClient client = DataContext as AgentStatecastClient;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
 			client.TryGetEnumStatecastValue(enumVariableUpDown.Value ?? 0, enumAliasBox.Text, out var);
 			enumBox.Text = var.ToString();
 		}
@@ -27,7 +27,7 @@ namespace SchedulingClients.UserControls
 		private void floatVariableButton_Click(object sender, RoutedEventArgs e)
 		{
 			float var;
-			AgentStatecastClient client = DataContext as AgentStatecastClient;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
 			client.TryGetFloatStatecastValue(floatVariableUpDown.Value ?? 0, floatAliasBox.Text, out var);
 			floatBox.Text = var.ToString();
 		}
@@ -35,7 +35,7 @@ namespace SchedulingClients.UserControls
 		private void shortVariableButton_Click(object sender, RoutedEventArgs e)
 		{
 			short var;
-			AgentStatecastClient client = DataContext as AgentStatecastClient;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
 			client.TryGetShortStatecastValue(shortVariableUpDown.Value ?? 0, shortAliasBox.Text, out var);
 			shortBox.Text = var.ToString();
 		}
@@ -43,7 +43,7 @@ namespace SchedulingClients.UserControls
 		private void ushortVariableButton_Click(object sender, RoutedEventArgs e)
 		{
 			ushort var;
-			AgentStatecastClient client = DataContext as AgentStatecastClient;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
 			client.TryGetUShortStatecastValue(ushortVariableUpDown.Value ?? 0, ushortAliasBox.Text, out var);
 			ushortBox.Text = var.ToString();
 		}
@@ -51,7 +51,7 @@ namespace SchedulingClients.UserControls
 		private void ipVariableButton_Click(object sender, RoutedEventArgs e)
 		{
 			IPAddress var;
-			AgentStatecastClient client = DataContext as AgentStatecastClient;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
 			client.TryGetIPAddressStatecastValue(ipVariableUpDown.Value ?? 0, ipAliasBox.Text, out var);
 			var ipVar = var.GetAddressBytes();
 			ipBox1.Text = ipVar[0].ToString();
@@ -62,7 +62,7 @@ namespace SchedulingClients.UserControls
 
 		private void descriptionButton_Click(object sender, RoutedEventArgs e)
 		{
-			AgentStatecastClient client = DataContext as AgentStatecastClient;
+            IAgentStatecastClient client = DataContext as IAgentStatecastClient;
 			CastType castType;
 
 			client.TryGetStatecastDescription(descriptionUpDown.Value ?? 0, out castType);
