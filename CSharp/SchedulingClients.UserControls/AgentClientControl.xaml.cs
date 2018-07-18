@@ -17,7 +17,7 @@ namespace SchedulingClients.UserControls
 
         private void getAgentLifeTimeDataButton_Click(object sender, RoutedEventArgs e)
         {
-            AgentClient client = DataContext as AgentClient;
+            IAgentClient client = DataContext as IAgentClient;
             AgentLifetimeState state = (AgentLifetimeState)lifeTimeComboBox.SelectedItem;
             IEnumerable<AgentData> agentDatas;
 
@@ -28,7 +28,7 @@ namespace SchedulingClients.UserControls
 
         private void getAllAgentDataButton_Click(object sender, RoutedEventArgs e)
         {
-            AgentClient client = DataContext as AgentClient;
+            IAgentClient client = DataContext as IAgentClient;
             IEnumerable<AgentData> agentDatas;
             client.TryGetAllAgentData(out agentDatas);
 

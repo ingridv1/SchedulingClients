@@ -24,23 +24,23 @@ namespace SchedulingClients.UserControls
 
         private void freezeButton_Click(object sender, RoutedEventArgs e)
         {
-            FleetManagerClient fleetManagerClient = DataContext as FleetManagerClient;
+            IFleetManagerClient fleetManagerClient = DataContext as IFleetManagerClient;
             bool success;
             fleetManagerClient.TryRequestFreeze(out success);
         }
 
         private void unfreezeButton_Click(object sender, RoutedEventArgs e)
         {
-            FleetManagerClient fleetManagerClient = DataContext as FleetManagerClient;
+            IFleetManagerClient fleetManagerClient = DataContext as IFleetManagerClient;
             bool success;
             fleetManagerClient.TryRequestUnfreeze(out success);
         }
 
         private void commitMenuItem_Click(object sender, RoutedEventArgs e)
-        {         
+        {
 
-            FleetManagerClient fleetManagerClient = DataContext as FleetManagerClient;
-            KingpinState state = fleetManagerClient.LastFleetStateReceived.KingpinStates.FirstOrDefault();
+            IFleetManagerClient fleetManagerClient = DataContext as IFleetManagerClient;
+            KingpinState state = fleetManagerClient.FleetState.KingpinStates.FirstOrDefault();
 
             // Crude bit of code to just add a straight line for a pose of zero and no waypoint
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -64,9 +64,9 @@ namespace SchedulingClients.UserControls
 
         private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (e.NewValue is FleetManagerClient)
+            if (e.NewValue is IFleetManagerClient)
             {
-                FleetManagerClient client = e.NewValue as FleetManagerClient;
+                IFleetManagerClient client = e.NewValue as IFleetManagerClient;
                 client.PropertyChanged += Client_PropertyChanged;
                 dataGrid.ItemsSource = mailboxes;
             }
@@ -98,8 +98,8 @@ namespace SchedulingClients.UserControls
             {
                 case "LastFleetStateReceived":
                     {
-                        FleetManagerClient client = sender as FleetManagerClient;
-                        HandleKingpinStates(client.LastFleetStateReceived.KingpinStates);
+                        IFleetManagerClient client = sender as IFleetManagerClient;
+                        HandleKingpinStates(client.FleetState.KingpinStates);
                         break;
                     }
 
@@ -112,7 +112,7 @@ namespace SchedulingClients.UserControls
 
         private void getKingpinDescription_Click(object sender, RoutedEventArgs e)
         {
-            FleetManagerClient client = DataContext as FleetManagerClient;
+            IFleetManagerClient client = DataContext as IFleetManagerClient;
 
             KingpinStateMailbox mailbox = dataGrid.SelectedItem as KingpinStateMailbox;
             XDocument xDocument;
@@ -130,7 +130,7 @@ namespace SchedulingClients.UserControls
 
         private void createVirtualVehicleButton_Click(object sender, RoutedEventArgs e)
         {
-            FleetManagerClient client = DataContext as FleetManagerClient;
+            IFleetManagerClient client = DataContext as IFleetManagerClient;
 
             bool success;
             client.TryCreateVirtualVehicle(ipAddressControl.IPAddress, poseControl.Pose, out success);
@@ -147,7 +147,7 @@ namespace SchedulingClients.UserControls
 
         private void removeVehicleButton_Click(object sender, RoutedEventArgs e)
         {
-            FleetManagerClient client = DataContext as FleetManagerClient;
+            IFleetManagerClient client = DataContext as IFleetManagerClient;
 
             bool success;
             client.TryRemoveVehicle(ipAddressControl.IPAddress, out success);
@@ -164,7 +164,7 @@ namespace SchedulingClients.UserControls
 
         private void setPoseButton_Click(object sender, RoutedEventArgs e)
         {
-            FleetManagerClient client = DataContext as FleetManagerClient;
+            IFleetManagerClient client = DataContext as IFleetManagerClient;
 
             bool success;
             client.TrySetPose(ipAddressControl.IPAddress, poseControl.Pose, out success);

@@ -6,7 +6,7 @@ using GAClients;
 
 namespace SchedulingClients
 {
-    public class AgentClient : AbstractClient<IAgentService>, IAgentClient
+    internal class AgentClient : AbstractClient<IAgentService>, IAgentClient
     {
         private bool isDisposed = false;
 

@@ -23,7 +23,7 @@ namespace SchedulingClients.UserControls
     /// </summary>
     public partial class Spammer : UserControl
     {
-        private MapClient mapClient = null;
+        private IMapClient mapClient = null;
 
         public Spammer()
         {
@@ -32,6 +32,7 @@ namespace SchedulingClients.UserControls
 
         public void Configure(MapClient mapClient)
         {
+            IMapClient mapClient = DataContext as IMapClient;
             this.mapClient = mapClient;
         }
 

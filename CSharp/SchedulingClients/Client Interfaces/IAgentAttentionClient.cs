@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GAClients;
 
 namespace SchedulingClients
 {
-	public interface IAgentAttentionClient : ICallbackClient
-	{
-		event Action<AgentAttentionData> AgentAttentionChange;
-	}
+    public interface IAgentAttentionClient : ICallbackClient
+    { 
+        AgentAttentionData AgentAttentionData { get; }
+        
+       event Action<AgentAttentionData> AgentAttentionChange;
+    } 
 }

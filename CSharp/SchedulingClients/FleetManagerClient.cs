@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace SchedulingClients
 {
-    public class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>, IFleetManagerClient
+    internal class FleetManagerClient : AbstractCallbackClient<IFleetManagerService>, IFleetManagerClient
     {
         private FleetManagerServiceCallback callback = new FleetManagerServiceCallback();
 
@@ -31,7 +31,7 @@ namespace SchedulingClients
 
         private void Callback_FleetStateUpdate(FleetState fleetState)
         {
-            LastFleetStateReceived = fleetState;
+            FleetState = fleetState;
         }
 
         public TimeSpan Heartbeat { get { return heartbeat; } }
@@ -92,16 +92,16 @@ namespace SchedulingClients
             this.context = new InstanceContext(this.callback);
         }
 
-        private FleetState lastFleetStateReceived = null;
+        private FleetState fleetState = null;
 
-        public FleetState LastFleetStateReceived
+        public FleetState FleetState
         {
-            get { return lastFleetStateReceived; }
+            get { return fleetState; }
             set
             {
-                if (lastFleetStateReceived == null || value.Tick.IsCurrentByteTickLarger(lastFleetStateReceived.Tick))
+                if (fleetState == null || value.Tick.IsCurrentByteTickLarger(fleetState.Tick))
                 {
-                    lastFleetStateReceived = value;
+                    fleetState = value;
                     OnNotifyPropertyChanged();
                 }
             }

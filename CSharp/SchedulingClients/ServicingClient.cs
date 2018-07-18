@@ -5,7 +5,7 @@ using System.ServiceModel;
 
 namespace SchedulingClients
 {
-    public class ServicingClient : AbstractCallbackClient<IServicingService>, IServicingClient
+    internal class ServicingClient : AbstractCallbackClient<IServicingService>, IServicingClient
     {
         private ServicingServiceCallback callback = new ServicingServiceCallback();
 

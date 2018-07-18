@@ -6,7 +6,7 @@ using System.ServiceModel;
 
 namespace SchedulingClients
 {
-    public class AgentStatecastClient : AbstractClient<IAgentStatecastService>, IAgentStatecastClient
+    internal class AgentStatecastClient : AbstractClient<IAgentStatecastService>, IAgentStatecastClient
 	{
 		private bool isDisposed = false;
 

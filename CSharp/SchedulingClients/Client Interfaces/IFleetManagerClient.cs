@@ -26,6 +26,8 @@ namespace SchedulingClients
 
 		ServiceOperationResult TrySetPose(IPAddress ipAddress, PoseData pose, out bool success);
 
+    FleetState FleetState { get; }
+    
 		ServiceOperationResult TryResetKingpin(IPAddress ipAddress, out bool success);
 	}
 }
