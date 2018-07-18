@@ -30,9 +30,9 @@ namespace SchedulingClients.UserControls
             InitializeComponent();
         }
 
-        public void Configure(MapClient mapClient)
+        public void Configure(IMapClient mapClient)
         {
-            IMapClient mapClient = DataContext as IMapClient;
+            DataContext = mapClient;
             this.mapClient = mapClient;
         }
 
@@ -67,7 +67,7 @@ namespace SchedulingClients.UserControls
 
         private void spamJobButton_Click(object sender, RoutedEventArgs e)
         {
-            JobBuilderClient jobBuilderClient = DataContext as JobBuilderClient;
+            IJobBuilderClient jobBuilderClient = DataContext as IJobBuilderClient;
 
             if (mapClient != null)
             {

@@ -20,16 +20,10 @@ namespace SchedulingClients.UserControls
             agentAttentionDataGrid.ItemsSource = agentAttentionData.RequiringAttention
         );
     }
-
-		private void attentionRefreshButton_Click(object sender, RoutedEventArgs e)
-		{
-        IAgentAttentionClient agentAttentionClient = DataContext as IAgentAttentionClient;
-        agentAttentionDataGrid.ItemsSource = agentAttentionClient.AgentAttentionData.RequiringAttention;
-		}
 	
     private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
-        IAgentAttentionClient agentAttentionClient = DataContext as AgentAttentionClient;
+        IAgentAttentionClient agentAttentionClient = DataContext as IAgentAttentionClient;
         agentAttentionClient.AgentAttentionChange += AgentAttentionClient_AgentAttentionChange;
     }
   }

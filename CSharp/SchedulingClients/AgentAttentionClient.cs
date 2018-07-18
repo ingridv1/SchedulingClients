@@ -13,8 +13,6 @@ namespace SchedulingClients
 
 		private bool isDisposed = false;
 
-		AgentAttentionData agentAttentionData = null;
-
 		/// <summary>
 		/// Creates an AgentAttentionClient
 		/// </summary>

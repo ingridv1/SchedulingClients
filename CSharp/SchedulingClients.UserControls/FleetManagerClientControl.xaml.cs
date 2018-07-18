@@ -181,7 +181,7 @@ namespace SchedulingClients.UserControls
 
 		private void resetKingpinButton_Click(object sender, RoutedEventArgs e)
 		{
-			FleetManagerClient client = DataContext as FleetManagerClient;
+			IFleetManagerClient client = DataContext as IFleetManagerClient;
 
 			bool success;
 			client.TryResetKingpin(ipAddressControl.IPAddress, out success);
