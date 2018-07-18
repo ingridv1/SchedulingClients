@@ -5,7 +5,7 @@ using System.Net;
 
 namespace SchedulingClients
 {
-    public interface IJobBuilderClient : IClient
+  public interface IJobBuilderClient : IClient
 	{
 		ServiceOperationResult TryCommit(int jobId, out bool success, int agentId = -1);
 

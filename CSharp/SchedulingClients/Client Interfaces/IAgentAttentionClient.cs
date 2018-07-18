@@ -1,4 +1,5 @@
 ﻿using SchedulingClients.AgentAttentionServiceReference;
+using GAClients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace SchedulingClients
     public interface IAgentAttentionClient : ICallbackClient
     { 
         AgentAttentionData AgentAttentionData { get; }
+        
+       event Action<AgentAttentionData> AgentAttentionChange;
     } 
 }

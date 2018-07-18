@@ -14,6 +14,7 @@ namespace SchedulingClients.DemoClientApp
         {
             DataContext = demoClient;
             jobBuilderClientControl.Configure(demoClient.RoadmapClient);
+            spammerControl.Configure(demoClient.RoadmapClient);
         }
 
         private void HandleShutdown()

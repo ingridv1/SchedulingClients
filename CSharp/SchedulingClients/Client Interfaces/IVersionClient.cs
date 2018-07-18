@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace SchedulingClients
 {
-    public interface IVersionClient : IClient
+	public interface IVersionClient : IClient
 	{
-		ServiceOperationResult TryGetSchedulerVersion(out SemVerData schedulerVersionData);
+    ServiceOperationResult TryGetSchedulerVersion(out SemVerData schedulerVersionData);
 
 		ServiceOperationResult TryGetPluginVersions(out IEnumerable<PluginData> pluginVersionData);
 	}

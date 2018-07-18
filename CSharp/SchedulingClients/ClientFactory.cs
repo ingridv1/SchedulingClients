@@ -44,15 +44,15 @@ namespace SchedulingClients
             return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
         }
 
-		public static IAgentAttentionClient CreateTcpAgentAttentionClient(EndpointSettings portSettings)
-		{
-			return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
-		}
+        public static IAgentAttentionClient CreateTcpAgentAttentionClient(EndpointSettings portSettings)
+        {
+          return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
+        }
 
-		public static IAgentStatecastClient CreateTcpAgentStatecastClient(EndpointSettings portSettings)
-		{
-			return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
-		}
+        public static IAgentStatecastClient CreateTcpAgentStatecastClient(EndpointSettings portSettings)
+        {
+          return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
+        }
 
         public static IVersionClient CreateTcpVersionClient(EndpointSettings portSettings)
         {

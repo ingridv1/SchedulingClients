@@ -24,28 +24,16 @@ namespace SchedulingClients
 			: base(netTcpUri)
 		{
 			this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
-			callback.AgentAttentionChange += Callback_AgentAttentionChange;
 		}
 
-		/// <summary>
-		/// The state of agents that require attention
-		/// </summary>
-		public AgentAttentionData AgentAttentionData
-		{
-			get
-			{
-				return agentAttentionData;
-			}
-
-			private set
-			{
-				if (agentAttentionData != value)
-				{
-					agentAttentionData = value;
-					OnNotifyPropertyChanged();
-				}
-			}
-		}
+        /// <summary>
+        /// Change to agent attention status
+        /// </summary>
+        public event Action<AgentAttentionData> AgentAttentionChange
+        {
+            add { callback.AgentAttentionChange += value; }
+            remove { callback.AgentAttentionChange -= value; }
+        }
 
 		/// <summary>
 		/// Hearbeat time
@@ -60,16 +48,10 @@ namespace SchedulingClients
 			{
 				return;
 			}
-
-			callback.AgentAttentionChange -= Callback_AgentAttentionChange;
+            
 			isDisposed = true;
 
 			base.Dispose(isDisposing);
-		}
-
-		private void Callback_AgentAttentionChange(AgentAttentionData newAgentAttentionData)
-		{
-			AgentAttentionData = newAgentAttentionData;
 		}
 
 		protected override void HeartbeatThread()

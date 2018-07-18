@@ -4,7 +4,7 @@ using GAClients;
 
 namespace SchedulingClients
 {
-    public interface IAgentClient : IClient
+  public interface IAgentClient : IClient
 	{
 		ServiceOperationResult TryGetAllAgentData(out IEnumerable<AgentData> agentDatas);
 

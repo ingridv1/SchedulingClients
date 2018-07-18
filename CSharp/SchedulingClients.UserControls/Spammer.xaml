@@ -15,7 +15,8 @@
         <StackPanel>
             <local:LabelContentControl Header="Spammer">
                 <StackPanel>
-                    <Button x:Name="spamButton" Click="spamButton_Click">Spam</Button>
+                    <Button x:Name="spamMapButton" Click="spamMapButton_Click">Spam Map Info Requests</Button>
+                    <Button x:Name="spamJobButton" Click="spamJobButton_Click">Spam Job Creation</Button>
                     <CheckBox x:Name="spamIndicator" IsEnabled="False" IsChecked="False"/>
                     <TextBox x:Name="rttText" IsEnabled="False"/>
                 </StackPanel>
