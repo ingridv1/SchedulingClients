@@ -40,7 +40,7 @@ namespace SchedulingClients.UserControls
         {
 
             IFleetManagerClient fleetManagerClient = DataContext as IFleetManagerClient;
-            KingpinState state = fleetManagerClient.LastFleetStateReceived.KingpinStates.FirstOrDefault();
+            KingpinState state = fleetManagerClient.FleetState.KingpinStates.FirstOrDefault();
 
             // Crude bit of code to just add a straight line for a pose of zero and no waypoint
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -99,7 +99,7 @@ namespace SchedulingClients.UserControls
                 case "LastFleetStateReceived":
                     {
                         IFleetManagerClient client = sender as IFleetManagerClient;
-                        HandleKingpinStates(client.LastFleetStateReceived.KingpinStates);
+                        HandleKingpinStates(client.FleetState.KingpinStates);
                         break;
                     }
 

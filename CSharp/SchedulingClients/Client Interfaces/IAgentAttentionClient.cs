@@ -8,7 +8,8 @@ using GAClients;
 
 namespace SchedulingClients
 {
-	public interface IAgentAttentionClient : ICallbackClient
-	{
-	}
+    public interface IAgentAttentionClient : ICallbackClient
+    { 
+        AgentAttentionData AgentAttentionData { get; }
+    } 
 }
