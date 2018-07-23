@@ -554,6 +554,9 @@ namespace SchedulingClients.JobStateServiceReference {
         SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -574,18 +577,21 @@ namespace SchedulingClients.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TaskProgressData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JobProgressData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
     [System.SerializableAttribute()]
-    public partial class TaskProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class JobProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TaskIdField;
+        private int AssignedAgentIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.JobStateServiceReference.TaskStatus TaskStatusField;
+        private int JobIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobStateServiceReference.JobStatus JobStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -598,27 +604,40 @@ namespace SchedulingClients.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TaskId {
+        public int AssignedAgentId {
             get {
-                return this.TaskIdField;
+                return this.AssignedAgentIdField;
             }
             set {
-                if ((this.TaskIdField.Equals(value) != true)) {
-                    this.TaskIdField = value;
-                    this.RaisePropertyChanged("TaskId");
+                if ((this.AssignedAgentIdField.Equals(value) != true)) {
+                    this.AssignedAgentIdField = value;
+                    this.RaisePropertyChanged("AssignedAgentId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.JobStateServiceReference.TaskStatus TaskStatus {
+        public int JobId {
             get {
-                return this.TaskStatusField;
+                return this.JobIdField;
             }
             set {
-                if ((this.TaskStatusField.Equals(value) != true)) {
-                    this.TaskStatusField = value;
-                    this.RaisePropertyChanged("TaskStatus");
+                if ((this.JobIdField.Equals(value) != true)) {
+                    this.JobIdField = value;
+                    this.RaisePropertyChanged("JobId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobStateServiceReference.JobStatus JobStatus {
+            get {
+                return this.JobStatusField;
+            }
+            set {
+                if ((this.JobStatusField.Equals(value) != true)) {
+                    this.JobStatusField = value;
+                    this.RaisePropertyChanged("JobStatus");
                 }
             }
         }
@@ -678,7 +697,7 @@ namespace SchedulingClients.JobStateServiceReference {
     public interface IJobStateServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/OnCallback", ReplyAction="http://tempuri.org/IJobStateService/OnCallbackResponse")]
-        void OnCallback(SchedulingClients.JobStateServiceReference.TaskProgressData callbackObject);
+        void OnCallback(SchedulingClients.JobStateServiceReference.JobProgressData callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

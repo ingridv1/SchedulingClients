@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using SchedulingClients.JobStateServiceReference;
 using System.Collections.ObjectModel;
+using SchedulingClients.TaskStateServiceReference;
 
 namespace SchedulingClients.UserControls
 {
@@ -11,7 +12,7 @@ namespace SchedulingClients.UserControls
     /// </summary>
     public partial class JobStateClientControl : UserControl
     {
-        private ObservableCollection<TaskProgressData> recentData = new ObservableCollection<TaskProgressData>();
+        private ObservableCollection<JobProgressData> recentData = new ObservableCollection<JobProgressData>();
 
         public JobStateClientControl()
         {
@@ -19,11 +20,11 @@ namespace SchedulingClients.UserControls
             recentTaskProgressUpdatesDataGrid.DataContext = recentData;
         }
 
-        private void Client_TaskStateUpdated(TaskProgressData obj)
+        private void Client_JobProgressUpdated(JobProgressData jobProgressData)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                recentData.Add(obj);
+                recentData.Add(jobProgressData);
             }));
         }
 
@@ -54,7 +55,7 @@ namespace SchedulingClients.UserControls
             if (e.NewValue is IJobStateClient)
             {
                 IJobStateClient client = e.NewValue as IJobStateClient;
-                client.TaskStateUpdated += Client_TaskStateUpdated;
+                client.JobProgressUpdated += Client_JobProgressUpdated;
             }
         }
     }

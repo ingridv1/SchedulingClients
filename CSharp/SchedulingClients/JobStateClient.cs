@@ -7,7 +7,7 @@ namespace SchedulingClients
 {
     internal class JobStateClient : AbstractCallbackClient<IJobStateService>, IJobStateClient
     {
-        public JobStateServiceCallback callback = new JobStateServiceCallback();
+        private JobStateServiceCallback callback = new JobStateServiceCallback();
 
         private TimeSpan heartbeat;
 
@@ -23,10 +23,10 @@ namespace SchedulingClients
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
-        public event Action<TaskProgressData> TaskStateUpdated
+        public event Action<JobProgressData> JobProgressUpdated
         {
-            add { callback.TaskProgressUpdate += value; }
-            remove { callback.TaskProgressUpdate -= value; }
+            add { callback.JobProgressUpdated += value; }
+            remove { callback.JobProgressUpdated -= value; }
         }
 
         /// <summary>

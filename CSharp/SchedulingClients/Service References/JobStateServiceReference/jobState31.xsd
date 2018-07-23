@@ -26,11 +26,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="NodeTaskStateData" nillable="true" type="tns:NodeTaskStateData" />
-  <xs:complexType name="TaskProgressData">
+  <xs:complexType name="JobProgressData">
     <xs:sequence>
-      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskStatus" type="q3:TaskStatus" />
+      <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="JobStatus" type="q3:JobStatus" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TaskProgressData" nillable="true" type="tns:TaskProgressData" />
+  <xs:element name="JobProgressData" nillable="true" type="tns:JobProgressData" />
 </xs:schema>

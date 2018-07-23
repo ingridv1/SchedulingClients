@@ -14,6 +14,6 @@ namespace SchedulingClients
 
 		ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData);
 
-		event Action<TaskProgressData> TaskStateUpdated;
-	}
+        event Action<JobProgressData> JobProgressUpdated;
+    }
 }
