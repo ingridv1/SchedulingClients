@@ -10,7 +10,7 @@ using Moq;
 namespace SchedulingClients.Tutorials
 {
     [TestFixture]
-    public partial class Basic
+    public partial class Examples
     {
         /// <summary>
         /// This describes how to create a job to simply send any agent

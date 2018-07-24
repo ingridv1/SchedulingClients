@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
+﻿using Moq;
 using NUnit.Framework;
 using SchedulingClients.JobBuilderServiceReference;
 using SchedulingClients.Client_Interfaces;
@@ -11,7 +6,7 @@ using SchedulingClients.Client_Interfaces;
 namespace SchedulingClients.Tutorials
 {
     [TestFixture]
-    public partial class Basic
+    public partial class Examples
     {
         /// <summary>
         /// This describes how to send any agent:
