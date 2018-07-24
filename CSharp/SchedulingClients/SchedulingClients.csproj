@@ -67,6 +67,7 @@
     <Compile Include="Client Interfaces\IAgentStatecastClient.cs" />
     <Compile Include="Client Interfaces\IFleetManagerClient.cs" />
     <Compile Include="Client Interfaces\IJobBuilderClient.cs" />
+    <Compile Include="Client Interfaces\IJobBuilderClient_ExtensionMethods.cs" />
     <Compile Include="Client Interfaces\IJobsStateClient.cs" />
     <Compile Include="Client Interfaces\IJobStateClient.cs" />
     <Compile Include="Client Interfaces\IMapClient.cs" />

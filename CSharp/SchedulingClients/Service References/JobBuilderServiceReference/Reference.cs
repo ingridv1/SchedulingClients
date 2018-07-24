@@ -258,6 +258,9 @@ namespace SchedulingClients.JobBuilderServiceReference {
         SETPOSEFAILED = 7011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -289,7 +292,7 @@ namespace SchedulingClients.JobBuilderServiceReference {
         private int JobIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderedListTaskIdField;
+        private int RootOrderedListTaskIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -315,14 +318,14 @@ namespace SchedulingClients.JobBuilderServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderedListTaskId {
+        public int RootOrderedListTaskId {
             get {
-                return this.OrderedListTaskIdField;
+                return this.RootOrderedListTaskIdField;
             }
             set {
-                if ((this.OrderedListTaskIdField.Equals(value) != true)) {
-                    this.OrderedListTaskIdField = value;
-                    this.RaisePropertyChanged("OrderedListTaskId");
+                if ((this.RootOrderedListTaskIdField.Equals(value) != true)) {
+                    this.RootOrderedListTaskIdField = value;
+                    this.RaisePropertyChanged("RootOrderedListTaskId");
                 }
             }
         }
@@ -355,6 +358,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoTo = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Execution = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Await = 6,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

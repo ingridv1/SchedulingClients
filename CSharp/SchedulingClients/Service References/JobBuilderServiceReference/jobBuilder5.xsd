@@ -7,6 +7,8 @@
       <xs:enumeration value="Fault" />
       <xs:enumeration value="ManualLoadHandling" />
       <xs:enumeration value="GoTo" />
+      <xs:enumeration value="Execution" />
+      <xs:enumeration value="Await" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />
