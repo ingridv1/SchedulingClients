@@ -10,9 +10,14 @@ namespace SchedulingClients
 {
 	public interface IJobStateClient : ICallbackClient
 	{
-		ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData);
+#warning no longer required?
+        //      ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData);
 
-		ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData);
+        //		ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData);
+
+        ServiceOperationResult TryGetJobSummary(int jobId, out JobSummaryData jobSummaryData);
+
+        ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData);
 
         event Action<JobProgressData> JobProgressUpdated;
     }

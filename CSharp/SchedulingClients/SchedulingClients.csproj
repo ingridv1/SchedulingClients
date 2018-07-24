@@ -372,7 +372,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
-    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobStateData.datasource">
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobSummaryData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">

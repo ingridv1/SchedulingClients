@@ -30,24 +30,31 @@ namespace SchedulingClients.UserControls
 
         private void getJobStateButton_Click(object sender, RoutedEventArgs e)
         {
+#warning NEEDS REFACTOR
+            throw new NotImplementedException();
+            /*
             JobStateData jobStateData;
 
             IJobStateClient jobStateClient = DataContext as IJobStateClient;
             if (jobStateClient.TryGetJobState((int)getJobStateId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
-            }
+            }*/
         }
 
         private void getJobStateFromTaskIdButton_Click(object sender, RoutedEventArgs e)
         {
+#warning NEEDS REFACTOR
+
+            throw new NotImplementedException();
+            /*
             JobStateData jobStateData;
 
             IJobStateClient jobStateClient = DataContext as IJobStateClient;
             if (jobStateClient.TryGetParentJobStateFromTaskId((int)getJobStateFromTaskId.Value, out jobStateData) == true)
             {
                 jobStateDataControl.DataContext = jobStateData;
-            }
+            }*/
         }
 
         private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)

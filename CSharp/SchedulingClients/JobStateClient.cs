@@ -40,42 +40,42 @@ namespace SchedulingClients
         /// <param name="jobId">Job id</param>
         /// <param name="jobState">State job is in</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetJobState(int jobId, out JobStateData jobStateData)
+        public ServiceOperationResult TryGetJobSummary(int jobId, out JobSummaryData jobSummaryData)
         {
             Logger.Info("TryGetJobState()");
 
             try
             {
-                var result = GetJobState(jobId);
-                jobStateData = result.Item1;
+                var result = GetJobSummary(jobId);
+                jobSummaryData = result.Item1;
                 return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                jobStateData = null;
+                jobSummaryData = null;
                 return HandleClientException(ex);
             }
         }
 
         /// <summary>
-        /// Gets the state of a specific job form the id one of its child tasks
+        /// Gets the summary of a specific job form the id one of its child tasks
         /// </summary>
         /// <param name="taskId">Task id</param>
-        /// <param name="jobState">State job is in</param>
+        /// <param name="jobSummaryData">State job is in</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetParentJobStateFromTaskId(int taskId, out JobStateData jobStateData)
+        public ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData)
         {
             Logger.Info("TryGetJobState()");
 
             try
             {
-                var result = GetParentJobStateFromTaskId(taskId);
-                jobStateData = result.Item1;
+                var result = GetParentJobSummaryFromTaskId(taskId);
+                jobSummaryData = result.Item1;
                 return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                jobStateData = null;
+                jobSummaryData = null;
                 return HandleClientException(ex);
             }
         }
@@ -143,41 +143,41 @@ namespace SchedulingClients
             this.context = new InstanceContext(this.callback);
         }
 
-        private Tuple<JobStateData, ServiceCallData> GetJobState(int jobId)
+        private Tuple<JobSummaryData, ServiceCallData> GetJobSummary(int jobId)
         {
-            Logger.Debug("GetJobState()");
+            Logger.Debug("GetJobSummary()");
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobStateClient");
             }
-            Tuple<JobStateData, ServiceCallData> result;
+            Tuple<JobSummaryData, ServiceCallData> result;
 
             using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
             {
                 IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetJobState(jobId);
+                result = channel.GetJobSummary(jobId);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<JobStateData, ServiceCallData> GetParentJobStateFromTaskId(int taskId)
+        private Tuple<JobSummaryData, ServiceCallData> GetParentJobSummaryFromTaskId(int taskId)
         {
-            Logger.Debug("GetParentJobStateFromTaskId()");
+            Logger.Debug("GetParentJobSummaryFromTaskId()");
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobStateClient");
             }
 
-            Tuple<JobStateData, ServiceCallData> result;
+            Tuple<JobSummaryData, ServiceCallData> result;
 
             using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
             {
                 IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetParentJobStateFromTaskId(taskId);
+                result = channel.GetParentJobSummaryFromTaskId(taskId);
                 channelFactory.Close();
             }
 
