@@ -1,4 +1,5 @@
 ﻿using GAClients;
+using SchedulingClients.Client_Interfaces;
 using SchedulingClients.TaskStateServiceReference;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
-    internal class TaskStateClient : AbstractCallbackClient<ITaskStateService>
+    internal class TaskStateClient : AbstractCallbackClient<ITaskStateService>, ITaskStateClient
     {
         private TaskStateServiceCallback callback = new TaskStateServiceCallback();
 
@@ -21,7 +22,7 @@ namespace SchedulingClients
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
-        public event Action<TaskProgressData> TaskrogressUpdated
+        public event Action<TaskProgressData> TaskProgressUpdated
         {
             add { callback.TaskProgressUpdated += value; }
             remove { callback.TaskProgressUpdated -= value; }

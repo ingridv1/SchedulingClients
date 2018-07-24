@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Basic.cs" />
     <Compile Include="BasicAwaitJobWithDirectives.cs" />
+    <Compile Include="EditAwaitJob.cs" />
     <Compile Include="JobProgressDataExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
