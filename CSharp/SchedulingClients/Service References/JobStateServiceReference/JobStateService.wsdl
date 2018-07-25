@@ -61,6 +61,12 @@
   <wsdl:message name="IJobStateService_GetJobSummary_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetJobSummaryResponse" />
   </wsdl:message>
+  <wsdl:message name="IJobStateService_GetCurrentJobSummaryForAgentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentJobSummaryForAgentId" />
+  </wsdl:message>
+  <wsdl:message name="IJobStateService_GetCurrentJobSummaryForAgentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentJobSummaryForAgentIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IJobStateService_GetParentJobSummaryFromTaskId_InputMessage">
     <wsdl:part name="parameters" element="tns:GetParentJobSummaryFromTaskId" />
   </wsdl:message>
@@ -93,6 +99,10 @@
     <wsdl:operation name="GetJobSummary">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/GetJobSummary" message="tns:IJobStateService_GetJobSummary_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobStateService/GetJobSummaryResponse" message="tns:IJobStateService_GetJobSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentJobSummaryForAgentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId" message="tns:IJobStateService_GetCurrentJobSummaryForAgentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse" message="tns:IJobStateService_GetCurrentJobSummaryForAgentId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetParentJobSummaryFromTaskId">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId" message="tns:IJobStateService_GetParentJobSummaryFromTaskId_InputMessage" />
@@ -144,6 +154,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetJobSummary">
       <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetJobSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentJobSummaryForAgentId">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -211,6 +230,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetJobSummary">
       <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetJobSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentJobSummaryForAgentId">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

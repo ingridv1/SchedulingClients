@@ -3,6 +3,7 @@ using Moq;
 using SchedulingClients.JobStateServiceReference;
 using SchedulingClients.Client_Interfaces;
 using SchedulingClients.JobBuilderServiceReference;
+using System.Collections.Generic;
 
 namespace SchedulingClients.Tutorials
 {
@@ -25,6 +26,43 @@ namespace SchedulingClients.Tutorials
             IJobBuilderClient jobBuilder = moqJobBuilder.Object;
 
             Mock<IJobStateClient> moqJobState = new Mock<IJobStateClient>();
+
+            JobSummaryData jobSummaryMoq = new JobSummaryData()
+            {
+                JobId = 5,
+                JobStatus = JobStatus.InProgress,
+                RootOrderedListTaskId = 7,
+                AssignedAgentId = 9,
+                TaskSummaries = new List<TaskSummaryData>
+                {
+                    new TaskSummaryData()
+                    {
+                        TaskId = 7,
+                        ParentTaskId = null,
+                        TaskStatus = TaskStatus.InProgress,
+                        TaskType = TaskType.OrderedList,
+                        NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = -1 } // -1 to indicate invalid for a list task
+                    },
+                    new TaskSummaryData() // Pick task
+                    {
+                        TaskId = 8,
+                        ParentTaskId = 7,
+                        TaskStatus = TaskStatus.Completed,
+                        TaskType = TaskType.ServiceAtNode,
+                        NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = 6 }
+                    },
+                    new TaskSummaryData() // Drop task
+                    {
+                        TaskId = 9,
+                        ParentTaskId = 7,
+                        TaskStatus = TaskStatus.InProgress,
+                        TaskType = TaskType.AwaitAtNode,
+                        NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = 10}
+                    }
+                }.ToArray()
+            };
+
+            moqJobState.Setup(e => e.TryGetJobSummary(5, out jobSummaryMoq));
             IJobStateClient jobState = moqJobState.Object;
 
             //////////////////
@@ -38,7 +76,7 @@ namespace SchedulingClients.Tutorials
 
             if (jobBuilder.TryBeginEditingJob(5).IsSuccessfull)
             {
-                // We can edit the job -- add a GoTo Task
+                // We can edit the job -- add a service Task
                 int serviceTaskId;
                 jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
 

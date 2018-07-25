@@ -61,7 +61,7 @@ namespace SchedulingClients
         /// Gets the summary of a specific job form the id one of its child tasks
         /// </summary>
         /// <param name="taskId">Task id</param>
-        /// <param name="jobSummaryData">State job is in</param>
+        /// <param name="jobSummaryData">Job summary</param>
         /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData)
         {
@@ -79,6 +79,51 @@ namespace SchedulingClients
                 return HandleClientException(ex);
             }
         }
+
+        /// <summary>
+        /// Gets the summary of the curent job for an agent
+        /// </summary>
+        /// <param name="agentId">Agent id</param>
+        /// <param name="jobSummaryData">Job summary</param>
+        /// <returns>ServiceOperationResult</return
+        public ServiceOperationResult TryGetCurrentJobSummaryForAgentId(int agentId, out JobSummaryData jobSummaryData)
+        {
+            Logger.Info("TryGetCurrentJobSummaryForAgentId()");
+
+            try
+            {
+                var result = GetCurrentJobSummaryForAgentId(agentId);
+                jobSummaryData = result.Item1;
+                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                jobSummaryData = null;
+                return HandleClientException(ex);
+            }
+        }
+
+
+        private Tuple<JobSummaryData, ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId)
+        {
+            Logger.Debug("GetCurrentJobSummaryForAgentId()");
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobStateClient");
+            }
+            Tuple<JobSummaryData, ServiceCallData> result;
+
+            using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobStateService channel = channelFactory.CreateChannel();
+                result = channel.GetCurrentJobSummaryForAgentId(agentId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
 
         protected override void Dispose(bool isDisposing)
         {

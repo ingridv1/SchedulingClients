@@ -166,9 +166,6 @@
     <None Include="Service References\AgentAttentionServiceReference\agentAttention.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\AgentAttentionServiceReference\agentAttention2.xsd">
       <SubType>Designer</SubType>
     </None>
