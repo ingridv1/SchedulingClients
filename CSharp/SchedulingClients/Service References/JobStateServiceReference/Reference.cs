@@ -269,6 +269,9 @@ namespace SchedulingClients.JobStateServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.JobStateServiceReference.NodeTaskSummaryData NodeTaskSummaryDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> ParentTaskIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -287,6 +290,19 @@ namespace SchedulingClients.JobStateServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.JobStateServiceReference.NodeTaskSummaryData NodeTaskSummaryData {
+            get {
+                return this.NodeTaskSummaryDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NodeTaskSummaryDataField, value) != true)) {
+                    this.NodeTaskSummaryDataField = value;
+                    this.RaisePropertyChanged("NodeTaskSummaryData");
+                }
             }
         }
         
@@ -339,6 +355,35 @@ namespace SchedulingClients.JobStateServiceReference {
                     this.TaskTypeField = value;
                     this.RaisePropertyChanged("TaskType");
                 }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NodeTaskSummaryData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs")]
+    [System.SerializableAttribute()]
+    public partial class NodeTaskSummaryData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
             }
         }
         
@@ -416,7 +461,16 @@ namespace SchedulingClients.JobStateServiceReference {
         PipelinedList = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Node = 3,
+        ServiceAtNode = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitAtNode = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SleepAtNode = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MoveToNode = 6,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]

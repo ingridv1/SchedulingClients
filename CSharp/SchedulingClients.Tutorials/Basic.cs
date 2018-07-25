@@ -13,8 +13,8 @@ namespace SchedulingClients.Tutorials
     public partial class Examples
     {
         /// <summary>
-        /// This describes how to create a job to simply send any agent
-        ///     GoTo node 6
+        /// This describes how to create a job to simply move any agent to a node
+        ///     Move to node 6
         /// </summary>
         [Test]
         public void GoTo()
@@ -43,7 +43,7 @@ namespace SchedulingClients.Tutorials
             // With the ServiceType GoTo:
 
             int gotoTaskId;
-            jobBuilderClient.TryCreateServicingTask(jobData.RootOrderedListTaskId, 6, ServiceType.GoTo, out gotoTaskId);
+            jobBuilderClient.TryCreateMovingTask(jobData.RootOrderedListTaskId, 6, out gotoTaskId);
 
             // Finally we commit the job
             bool success;

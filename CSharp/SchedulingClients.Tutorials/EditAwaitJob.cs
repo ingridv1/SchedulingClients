@@ -2,6 +2,7 @@
 using Moq;
 using SchedulingClients.JobStateServiceReference;
 using SchedulingClients.Client_Interfaces;
+using SchedulingClients.JobBuilderServiceReference;
 
 namespace SchedulingClients.Tutorials
 {
@@ -38,11 +39,11 @@ namespace SchedulingClients.Tutorials
             if (jobBuilder.TryBeginEditingJob(5).IsSuccessfull)
             {
                 // We can edit the job -- add a GoTo Task
-                int goToTaskId;
-                jobBuilder.TryCreateGoToTask(jobSummary.RootOrderedListTaskId, 15, out goToTaskId);
+                int serviceTaskId;
+                jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
 
                 // Add a directive
-                jobBuilder.TryIssueDirective(goToTaskId, '2', (byte)11); // Assume parameter id '2' vallue 11 is drop
+                jobBuilder.TryIssueDirective(serviceTaskId, '2', (byte)11); // Assume parameter id '2' vallue 11 is drop
 
                 // Finish editing
                 jobBuilder.TryFinishEditingJob(jobSummary.JobId);

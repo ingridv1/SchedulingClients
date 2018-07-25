@@ -4,6 +4,7 @@ using NUnit.Framework;
 using SchedulingClients.JobStateServiceReference;
 using SchedulingClients.Client_Interfaces;
 using System;
+using SchedulingClients.JobBuilderServiceReference;
 
 namespace SchedulingClients.Tutorials
 {
@@ -46,14 +47,14 @@ namespace SchedulingClients.Tutorials
                         TaskId = 8,
                         ParentTaskId = 7,
                         TaskStatus = TaskStatus.Completed,
-                        TaskType = TaskType.Node
+                        TaskType = TaskType.ServiceAtNode
                     },
                     new TaskSummaryData() // Drop task
                     {
                         TaskId = 9,
                         ParentTaskId = 7,
                         TaskStatus = TaskStatus.InProgress,
-                        TaskType = TaskType.Node
+                        TaskType = TaskType.ServiceAtNode
                     }
                 }.ToArray()               
             };
@@ -80,12 +81,12 @@ namespace SchedulingClients.Tutorials
                 {
                     // The drop had not been performed, so we succesfully abort
 
-                    // We can edit the job -- add a GoTo Task
-                    int goToTaskId;
-                    jobBuilder.TryCreateGoToTask(jobSummary.RootOrderedListTaskId, 15, out goToTaskId);
+                    // We can edit the job -- add a Execution Task
+                    int serviceTaskId;
+                    jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
 
                     // Add a directive
-                    jobBuilder.TryIssueDirective(goToTaskId, '2', (byte)11); // Assume parameter id '2' vallue 11 is drop
+                    jobBuilder.TryIssueDirective(serviceTaskId, '2', (byte)11); // Assume parameter id '2' vallue 11 is drop
 
                     // Finish editing
                     jobBuilder.TryFinishEditingJob(jobSummary.JobId);

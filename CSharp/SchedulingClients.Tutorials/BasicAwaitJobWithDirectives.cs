@@ -15,7 +15,7 @@ namespace SchedulingClients.Tutorials
         /// 
         ///     This breaks down into three main calls:
         /// 
-        ///     GoTo node 6
+        ///     Service at node 6 with service type execute
         ///     Use a directive at node 6
         ///     Then drive towards node 10 and await for tasks
         ///     
@@ -44,7 +44,7 @@ namespace SchedulingClients.Tutorials
 
             // Create a node task to go to the target node
             int node6TaskId;
-            jobBuilder.TryCreateGoToTask(jobData.RootOrderedListTaskId, 6, out node6TaskId);
+            jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, 6, ServiceType.Execution, out node6TaskId);
          
             // Issue a directive to this task, parameter 2, with value 10 'receive item'
             jobBuilder.TryIssueDirective(node6TaskId, '2', (byte)10);

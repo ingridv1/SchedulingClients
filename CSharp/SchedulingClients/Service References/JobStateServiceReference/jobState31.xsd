@@ -19,6 +19,7 @@
   <xs:element name="ArrayOfTaskSummaryData" nillable="true" type="tns:ArrayOfTaskSummaryData" />
   <xs:complexType name="TaskSummaryData">
     <xs:sequence>
+      <xs:element minOccurs="0" name="NodeTaskSummaryData" nillable="true" type="tns:NodeTaskSummaryData" />
       <xs:element minOccurs="0" name="ParentTaskId" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="TaskId" type="xs:int" />
       <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="TaskStatus" type="q2:TaskStatus" />
@@ -26,6 +27,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TaskSummaryData" nillable="true" type="tns:TaskSummaryData" />
+  <xs:complexType name="NodeTaskSummaryData">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="NodeTaskSummaryData" nillable="true" type="tns:NodeTaskSummaryData" />
   <xs:complexType name="JobProgressData">
     <xs:sequence>
       <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
