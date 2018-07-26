@@ -506,6 +506,18 @@ namespace SchedulingClients.AgentStateCastServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentStatecastService/GetUShortStatecastValue", ReplyAction="http://tempuri.org/IAgentStatecastService/GetUShortStatecastValueResponse")]
         System.Threading.Tasks.Task<System.Tuple<ushort, SchedulingClients.AgentStateCastServiceReference.ServiceCallData>> GetUShortStatecastValueAsync(int agentId, string alias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValue", ReplyAction="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValueResponse")]
+        System.Tuple<int, SchedulingClients.AgentStateCastServiceReference.ServiceCallData> GetIntegerStatecastValue(int agentId, string alias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValue", ReplyAction="http://tempuri.org/IAgentStatecastService/GetIntegerStatecastValueResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.AgentStateCastServiceReference.ServiceCallData>> GetIntegerStatecastValueAsync(int agentId, string alias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValue", ReplyAction="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValueResponse")]
+        System.Tuple<uint, SchedulingClients.AgentStateCastServiceReference.ServiceCallData> GetUIntegerStatecastValue(int agentId, string alias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValue", ReplyAction="http://tempuri.org/IAgentStatecastService/GetUIntegerStatecastValueResponse")]
+        System.Threading.Tasks.Task<System.Tuple<uint, SchedulingClients.AgentStateCastServiceReference.ServiceCallData>> GetUIntegerStatecastValueAsync(int agentId, string alias);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -605,6 +617,22 @@ namespace SchedulingClients.AgentStateCastServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<ushort, SchedulingClients.AgentStateCastServiceReference.ServiceCallData>> GetUShortStatecastValueAsync(int agentId, string alias) {
             return base.Channel.GetUShortStatecastValueAsync(agentId, alias);
+        }
+        
+        public System.Tuple<int, SchedulingClients.AgentStateCastServiceReference.ServiceCallData> GetIntegerStatecastValue(int agentId, string alias) {
+            return base.Channel.GetIntegerStatecastValue(agentId, alias);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.AgentStateCastServiceReference.ServiceCallData>> GetIntegerStatecastValueAsync(int agentId, string alias) {
+            return base.Channel.GetIntegerStatecastValueAsync(agentId, alias);
+        }
+        
+        public System.Tuple<uint, SchedulingClients.AgentStateCastServiceReference.ServiceCallData> GetUIntegerStatecastValue(int agentId, string alias) {
+            return base.Channel.GetUIntegerStatecastValue(agentId, alias);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<uint, SchedulingClients.AgentStateCastServiceReference.ServiceCallData>> GetUIntegerStatecastValueAsync(int agentId, string alias) {
+            return base.Channel.GetUIntegerStatecastValueAsync(agentId, alias);
         }
     }
 }
