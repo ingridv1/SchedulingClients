@@ -58,14 +58,14 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Gets the summary of a specific job form the id one of its child tasks
+        /// Gets the summary of a specific job from the id one of its child tasks
         /// </summary>
         /// <param name="taskId">Task id</param>
         /// <param name="jobSummaryData">Job summary</param>
         /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData)
         {
-            Logger.Info("TryGetJobState()");
+            Logger.Info("TryGetParentJobSummaryFromTaskId()");
 
             try
             {
