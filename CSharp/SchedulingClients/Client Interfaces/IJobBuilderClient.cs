@@ -23,7 +23,7 @@ namespace SchedulingClients
 
 		ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId);
 
-        ServiceOperationResult TryCreateAwaitTask(int parentListTaskId, int nodeId, out int awaitTaskId);
+        ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId);
 
 		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, byte value);
 

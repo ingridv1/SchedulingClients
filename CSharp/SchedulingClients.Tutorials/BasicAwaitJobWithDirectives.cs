@@ -51,7 +51,7 @@ namespace SchedulingClients.Tutorials
 
             // Create an await task
             int node10TaskId;
-            jobBuilder.TryCreateAwaitTask(jobData.RootOrderedListTaskId, 10, out node10TaskId);
+            jobBuilder.TryCreateAwaitingTask(jobData.RootOrderedListTaskId, 10, out node10TaskId);
 
             // Finally commit the job
             bool success;

@@ -201,13 +201,13 @@ namespace SchedulingClients
         /// <param name="nodeId">Id of node for await to be carried out</param>
         /// <param name="awaitTaskId">Id of newly created await task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateAwaitTask(int parentListTaskId, int nodeId, out int awaitTaskId)
+        public ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId)
         {
             Logger.Info("TryCreateAwaitTask({0},{1})", parentListTaskId, nodeId);
 
             try
             {
-                var result = CreateAwaitTask(parentListTaskId, nodeId);
+                var result = CreateAwaitingTask(parentListTaskId, nodeId);
                 awaitTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -599,9 +599,9 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateAwaitTask(int parentTaskId, int nodeId)
+        private Tuple<int, ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId)
         {
-            Logger.Debug("CreateAwaitTask({0},{1})", parentTaskId, nodeId);
+            Logger.Debug("CreateAwaitingTask({0},{1})", parentTaskId, nodeId);
 
             if (isDisposed)
             {
@@ -613,7 +613,7 @@ namespace SchedulingClients
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateAwaitTask(parentTaskId, nodeId);
+                result = channel.CreateAwaitingTask(parentTaskId, nodeId);
                 channelFactory.Close();
             }
 
