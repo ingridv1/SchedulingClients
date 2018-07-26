@@ -35,6 +35,9 @@ namespace SchedulingClients.JobStateServiceReference {
         private SchedulingClients.JobStateServiceReference.JobStatus JobStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] NotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RootOrderedListTaskIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -98,6 +101,19 @@ namespace SchedulingClients.JobStateServiceReference {
                 if ((this.JobStatusField.Equals(value) != true)) {
                     this.JobStatusField = value;
                     this.RaisePropertyChanged("JobStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
                 }
             }
         }
@@ -565,6 +581,9 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FINISHEDITINGTASKFAILED = 1016,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEAWAITINGTASKFAILED = 1017,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,

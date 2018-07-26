@@ -368,6 +368,9 @@
     <None Include="Service References\JobStateServiceReference\jobState4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobStateServiceReference\jobState5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobSummaryData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

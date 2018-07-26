@@ -168,6 +168,9 @@ namespace SchedulingClients.JobsStateServiceReference {
         FINISHEDITINGTASKFAILED = 1016,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEAWAITINGTASKFAILED = 1017,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
