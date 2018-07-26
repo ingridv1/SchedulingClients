@@ -16,8 +16,8 @@
         <DataGrid x:Name="agentAttentionDataGrid" Grid.Row="1" AutoGenerateColumns="False" 
 				  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
 			<DataGrid.Columns>
-				<DataGridTextColumn Header="Id" Binding="{Binding Item1}" Width="1*" />
-				<DataGridTextColumn Header="AttentionRequired" Binding="{Binding Item2}" Width="4*" />
+				<DataGridTextColumn Header="Id" Binding="{Binding AgentId}" Width="1*" />
+				<DataGridTextColumn Header="AttentionRequired" Binding="{Binding AttentionType}" Width="4*" />
 			</DataGrid.Columns>
 		</DataGrid >
 	</Grid>
