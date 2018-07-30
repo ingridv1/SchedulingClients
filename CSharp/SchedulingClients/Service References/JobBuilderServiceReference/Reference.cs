@@ -120,6 +120,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
         CLIENTEXCEPTION = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICEUNAVAILABLE = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICENOTIMPLEMENTED = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -470,34 +476,34 @@ namespace SchedulingClients.JobBuilderServiceReference {
         System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinishEditingTaskAsync(int taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueEnumDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueEnumDirectiveResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueEnumDirective(int taskId, int parameterId, byte value);
+        System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueEnumDirective(int taskId, string alias, byte value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueEnumDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueEnumDirectiveResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueEnumDirectiveAsync(int taskId, int parameterId, byte value);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueEnumDirectiveAsync(int taskId, string alias, byte value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueFloatDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueFloatDirectiveResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueFloatDirective(int taskId, int parameterId, float value);
+        System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueFloatDirective(int taskId, string alias, float value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueFloatDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueFloatDirectiveResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueFloatDirectiveAsync(int taskId, int parameterId, float value);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueFloatDirectiveAsync(int taskId, string alias, float value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirectiveResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueIPAddressDirective(int taskId, int parameterId, System.Net.IPAddress value);
+        System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueIPAddressDirective(int taskId, string alias, System.Net.IPAddress value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirectiveResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueIPAddressDirectiveAsync(int taskId, int parameterId, System.Net.IPAddress value);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueIPAddressDirectiveAsync(int taskId, string alias, System.Net.IPAddress value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueShortDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueShortDirectiveResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueShortDirective(int taskId, int parameterId, short value);
+        System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueShortDirective(int taskId, string alias, short value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueShortDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueShortDirectiveResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueShortDirectiveAsync(int taskId, int parameterId, short value);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueShortDirectiveAsync(int taskId, string alias, short value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueUShortDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueUShortDirectiveResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueUShortDirective(int taskId, int parameterId, ushort value);
+        System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueUShortDirective(int taskId, string alias, ushort value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/IssueUShortDirective", ReplyAction="http://tempuri.org/IJobBuilderService/IssueUShortDirectiveResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueUShortDirectiveAsync(int taskId, int parameterId, ushort value);
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueUShortDirectiveAsync(int taskId, string alias, ushort value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -663,44 +669,44 @@ namespace SchedulingClients.JobBuilderServiceReference {
             return base.Channel.FinishEditingTaskAsync(taskId);
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueEnumDirective(int taskId, int parameterId, byte value) {
-            return base.Channel.IssueEnumDirective(taskId, parameterId, value);
+        public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueEnumDirective(int taskId, string alias, byte value) {
+            return base.Channel.IssueEnumDirective(taskId, alias, value);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueEnumDirectiveAsync(int taskId, int parameterId, byte value) {
-            return base.Channel.IssueEnumDirectiveAsync(taskId, parameterId, value);
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueEnumDirectiveAsync(int taskId, string alias, byte value) {
+            return base.Channel.IssueEnumDirectiveAsync(taskId, alias, value);
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueFloatDirective(int taskId, int parameterId, float value) {
-            return base.Channel.IssueFloatDirective(taskId, parameterId, value);
+        public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueFloatDirective(int taskId, string alias, float value) {
+            return base.Channel.IssueFloatDirective(taskId, alias, value);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueFloatDirectiveAsync(int taskId, int parameterId, float value) {
-            return base.Channel.IssueFloatDirectiveAsync(taskId, parameterId, value);
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueFloatDirectiveAsync(int taskId, string alias, float value) {
+            return base.Channel.IssueFloatDirectiveAsync(taskId, alias, value);
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueIPAddressDirective(int taskId, int parameterId, System.Net.IPAddress value) {
-            return base.Channel.IssueIPAddressDirective(taskId, parameterId, value);
+        public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueIPAddressDirective(int taskId, string alias, System.Net.IPAddress value) {
+            return base.Channel.IssueIPAddressDirective(taskId, alias, value);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueIPAddressDirectiveAsync(int taskId, int parameterId, System.Net.IPAddress value) {
-            return base.Channel.IssueIPAddressDirectiveAsync(taskId, parameterId, value);
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueIPAddressDirectiveAsync(int taskId, string alias, System.Net.IPAddress value) {
+            return base.Channel.IssueIPAddressDirectiveAsync(taskId, alias, value);
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueShortDirective(int taskId, int parameterId, short value) {
-            return base.Channel.IssueShortDirective(taskId, parameterId, value);
+        public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueShortDirective(int taskId, string alias, short value) {
+            return base.Channel.IssueShortDirective(taskId, alias, value);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueShortDirectiveAsync(int taskId, int parameterId, short value) {
-            return base.Channel.IssueShortDirectiveAsync(taskId, parameterId, value);
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueShortDirectiveAsync(int taskId, string alias, short value) {
+            return base.Channel.IssueShortDirectiveAsync(taskId, alias, value);
         }
         
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueUShortDirective(int taskId, int parameterId, ushort value) {
-            return base.Channel.IssueUShortDirective(taskId, parameterId, value);
+        public System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData> IssueUShortDirective(int taskId, string alias, ushort value) {
+            return base.Channel.IssueUShortDirective(taskId, alias, value);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueUShortDirectiveAsync(int taskId, int parameterId, ushort value) {
-            return base.Channel.IssueUShortDirectiveAsync(taskId, parameterId, value);
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> IssueUShortDirectiveAsync(int taskId, string alias, ushort value) {
+            return base.Channel.IssueUShortDirectiveAsync(taskId, alias, value);
         }
     }
 }

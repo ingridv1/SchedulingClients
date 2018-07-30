@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:import schemaLocation="http://10.128.17.45:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services" />
+  <xs:import schemaLocation="http://10.128.17.45:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://10.128.17.45:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+  <xs:import schemaLocation="http://10.128.17.45:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://10.128.17.45:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
   <xs:element name="VersionMajor">
     <xs:complexType>
       <xs:sequence />
@@ -249,7 +249,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
-        <xs:element minOccurs="0" name="parameterId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="value" type="xs:unsignedByte" />
       </xs:sequence>
     </xs:complexType>
@@ -257,7 +257,7 @@
   <xs:element name="IssueEnumDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q18:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q18:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -265,7 +265,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
-        <xs:element minOccurs="0" name="parameterId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="value" type="xs:float" />
       </xs:sequence>
     </xs:complexType>
@@ -273,7 +273,7 @@
   <xs:element name="IssueFloatDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q19:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q19:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -281,7 +281,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
-        <xs:element minOccurs="0" name="parameterId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
         <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q20:IPAddress" />
       </xs:sequence>
     </xs:complexType>
@@ -289,7 +289,7 @@
   <xs:element name="IssueIPAddressDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q21:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q21:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -297,7 +297,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
-        <xs:element minOccurs="0" name="parameterId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="value" type="xs:short" />
       </xs:sequence>
     </xs:complexType>
@@ -305,7 +305,7 @@
   <xs:element name="IssueShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q22:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q22:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -313,7 +313,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
-        <xs:element minOccurs="0" name="parameterId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="value" type="xs:unsignedShort" />
       </xs:sequence>
     </xs:complexType>
@@ -321,7 +321,7 @@
   <xs:element name="IssueUShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q23:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q23:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -23,9 +23,9 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" />
+      <xsd:import schemaLocation="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAgentAttentionService_VersionMajor_InputMessage">
@@ -180,15 +180,15 @@
   </wsdl:binding>
   <wsdl:service name="AgentAttentionService">
     <wsdl:port name="NetTcpBinding_IAgentAttentionService" binding="tns:NetTcpBinding_IAgentAttentionService">
-      <soap12:address location="net.tcp://127.0.0.1:41917/agentAttention.svc" />
+      <soap12:address location="net.tcp://10.128.17.45:41917/agentAttention.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://127.0.0.1:41917/agentAttention.svc</wsa10:Address>
+        <wsa10:Address>net.tcp://10.128.17.45:41917/agentAttention.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSDualHttpBinding_IAgentAttentionService" binding="tns:WSDualHttpBinding_IAgentAttentionService">
-      <soap12:address location="http://127.0.0.1:41916/agentAttention.svc" />
+      <soap12:address location="http://10.128.17.45:41916/agentAttention.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://127.0.0.1:41916/agentAttention.svc</wsa10:Address>
+        <wsa10:Address>http://10.128.17.45:41916/agentAttention.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

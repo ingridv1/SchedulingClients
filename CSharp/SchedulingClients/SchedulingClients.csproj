@@ -294,34 +294,34 @@
     <None Include="Service References\FleetManagerServiceReference\SchedulingClients.FleetManagerServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder1.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder71.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder2.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder72.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder3.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder73.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder74.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder5.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder75.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder6.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder76.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder61.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder77.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder62.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder78.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\JobBuilderService1.wsdl" />
+    <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

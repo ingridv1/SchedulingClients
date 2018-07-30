@@ -79,16 +79,16 @@ namespace SchedulingClients.AgentAttentionServiceReference {
     public enum AttentionType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Physical = 0,
+        Physical = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GUI = 1,
+        GUI = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Comms = 2,
+        Comms = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 3,
+        NoneRequired = 0,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
