@@ -9,6 +9,7 @@ using SchedulingClients.JobBuilderServiceReference;
 namespace SchedulingClients.Tutorials
 {
     [TestFixture]
+    [Category("94-5069")]
     public partial class Examples
     {
         /// <summary>
@@ -39,13 +40,13 @@ namespace SchedulingClients.Tutorials
             {
                 JobId = 5,
                 JobStatus = JobStatus.InProgress,
-                RootOrderedListTaskId = 7,
+                RootOrderedListTaskId = 8,
                 AssignedAgentId = 9,
                 TaskSummaries = new List<TaskSummaryData>
                 {
                     new TaskSummaryData()
                     {
-                        TaskId = 7,
+                        TaskId = 8,
                         ParentTaskId = null,
                         TaskStatus = TaskStatus.InProgress,
                         TaskType = TaskType.OrderedList,
@@ -53,16 +54,16 @@ namespace SchedulingClients.Tutorials
                     },
                     new TaskSummaryData() // Pick task
                     {
-                        TaskId = 8,
-                        ParentTaskId = 7,
+                        TaskId = 9,
+                        ParentTaskId = 8,
                         TaskStatus = TaskStatus.Completed,
                         TaskType = TaskType.ServiceAtNode,
                         NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = 56 }
                     },
                     new TaskSummaryData() // Drop task
                     {
-                        TaskId = 9,
-                        ParentTaskId = 7,
+                        TaskId = 10,
+                        ParentTaskId = 8,
                         TaskStatus = TaskStatus.InProgress,
                         TaskType = TaskType.ServiceAtNode,
                         NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = 78}
@@ -79,33 +80,35 @@ namespace SchedulingClients.Tutorials
 
             if (jobBuilder.TryBeginEditingJob(5).IsSuccessfull)
             {
-
-                JobSummaryData jobSummary;
-                jobState.TryGetJobSummary(5, out jobSummary);
-
-                // From the job summary we can deduce that we want to abort task 9 and add another drop task. 
-
-                bool abortSuccess;
-                jobsState.TryAbortTask(9, out abortSuccess);
-
-                if (abortSuccess)
+                if (jobBuilder.TryBeginEditingTask(8).IsSuccessfull)
                 {
-                    // The drop had not been performed, so we succesfully abort
+                    JobSummaryData jobSummary;
+                    jobState.TryGetJobSummary(5, out jobSummary);
 
-                    // We can edit the job -- add a Execution Task
-                    int serviceTaskId;
-                    jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
+                    // From the job summary we can deduce that we want to abort task 10 and add another drop task. 
 
-                    // Add a directive
-                    jobBuilder.TryIssueDirective(serviceTaskId, '2', (byte)11); // Assume parameter id '2' value 11 is drop
+                    bool abortSuccess;
+                    jobsState.TryAbortTask(10, out abortSuccess);
 
-                    // Finish editing
-                    jobBuilder.TryFinishEditingJob(jobSummary.JobId);
-                }
-                else
-                {
-                    // Too late! Passed the point of no return. 
-                    throw new InvalidOperationException("Job passed point of no return - change destination not possible!");
+                    if (abortSuccess)
+                    {
+                        // The drop had not been performed, so we succesfully abort
+
+                        // We can edit the job -- add a Execution Task
+                        int serviceTaskId;
+                        jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
+
+                        // Add a directive
+                        jobBuilder.TryIssueDirective(serviceTaskId, "CoordinatedScenario", (byte)11); // Assume parameter id "CoordinatedSceario" value 11 is drop
+
+                        // Finish editing
+                        jobBuilder.TryFinishEditingJob(jobSummary.JobId);
+                    }
+                    else
+                    {
+                        // Too late! Passed the point of no return. 
+                        throw new InvalidOperationException("Job passed point of no return - change destination not possible!");
+                    }
                 }
             }
         }

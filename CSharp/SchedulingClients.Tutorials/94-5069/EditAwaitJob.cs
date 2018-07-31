@@ -8,6 +8,7 @@ using System.Collections.Generic;
 namespace SchedulingClients.Tutorials
 {
     [TestFixture]
+    [Category("94-5069")]
     public partial class Examples
     {
         /// <summary>
@@ -31,13 +32,13 @@ namespace SchedulingClients.Tutorials
             {
                 JobId = 5,
                 JobStatus = JobStatus.InProgress,
-                RootOrderedListTaskId = 7,
+                RootOrderedListTaskId = 8,
                 AssignedAgentId = 9,
                 TaskSummaries = new List<TaskSummaryData>
                 {
                     new TaskSummaryData()
                     {
-                        TaskId = 7,
+                        TaskId = 8,
                         ParentTaskId = null,
                         TaskStatus = TaskStatus.InProgress,
                         TaskType = TaskType.OrderedList,
@@ -45,16 +46,16 @@ namespace SchedulingClients.Tutorials
                     },
                     new TaskSummaryData() // Pick task
                     {
-                        TaskId = 8,
-                        ParentTaskId = 7,
+                        TaskId = 9,
+                        ParentTaskId = 8,
                         TaskStatus = TaskStatus.Completed,
                         TaskType = TaskType.ServiceAtNode,
                         NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = 6 }
                     },
                     new TaskSummaryData() // Drop task
                     {
-                        TaskId = 9,
-                        ParentTaskId = 7,
+                        TaskId = 10,
+                        ParentTaskId = 8,
                         TaskStatus = TaskStatus.InProgress,
                         TaskType = TaskType.AwaitAtNode,
                         NodeTaskSummaryData = new NodeTaskSummaryData() {NodeId = 10}
@@ -76,15 +77,19 @@ namespace SchedulingClients.Tutorials
 
             if (jobBuilder.TryBeginEditingJob(5).IsSuccessfull)
             {
-                // We can edit the job -- add a service Task
-                int serviceTaskId;
-                jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
+                if (jobBuilder.TryBeginEditingTask(8).IsSuccessfull)
+                {
+                    // We can edit the job -- add a service Task
+                    int serviceTaskId;
+                    jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
 
-                // Add a directive
-                jobBuilder.TryIssueDirective(serviceTaskId, '2', (byte)11); // Assume parameter id '2' vallue 11 is drop
+                    // Add a directive
+                    jobBuilder.TryIssueDirective(serviceTaskId, "CoordinatedSceario", (byte)11); // Assume parameter id '2' vallue 11 is drop
 
-                // Finish editing
-                jobBuilder.TryFinishEditingJob(jobSummary.JobId);
+                    // Finish editing
+                    jobBuilder.TryFinishEditingTask(8);
+                    jobBuilder.TryFinishEditingJob(jobSummary.JobId);
+                }
             }
         }
     }

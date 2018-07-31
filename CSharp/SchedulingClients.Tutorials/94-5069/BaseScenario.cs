@@ -6,6 +6,7 @@ using SchedulingClients.Client_Interfaces;
 namespace SchedulingClients.Tutorials
 {
     [TestFixture]
+    [Category("94-5069")]
     public partial class Examples
     {
         /// <summary>
@@ -28,7 +29,7 @@ namespace SchedulingClients.Tutorials
         {
             Mock<IJobBuilderClient> moqJobBuilder = new Mock<IJobBuilderClient>();
 
-            JobData jobDataMoq = new JobData() { JobId = 2, RootOrderedListTaskId = 3 };
+            JobData jobDataMoq = new JobData() { JobId = 5, RootOrderedListTaskId = 8 };
             moqJobBuilder.Setup(e => e.TryCreateJob(out jobDataMoq));
 
             IJobBuilderClient jobBuilder = moqJobBuilder.Object;
@@ -38,16 +39,18 @@ namespace SchedulingClients.Tutorials
             // Actual Calls //
             //////////////////
 
+            int nodeA = 6;
+
             // First we create a job
             JobData jobData;
             jobBuilder.TryCreateJob(out jobData);
 
             // Create a node task to go to the target node
-            int node6TaskId;
-            jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, 6, ServiceType.Execution, out node6TaskId);
+            int nodeATaskId;
+            jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, nodeA, ServiceType.Execution, out nodeATaskId);
          
-            // Issue a directive to this task, parameter 2, with value 10 'receive item'
-            jobBuilder.TryIssueDirective(node6TaskId, '2', (byte)10);
+            // Issue a directive to this task, parameter "CoordinatedScenario", with value 10 'receive item'
+            jobBuilder.TryIssueDirective(nodeATaskId, "CoordinatedScenario", (byte)10);
 
             // Create an await task
             int node10TaskId;
