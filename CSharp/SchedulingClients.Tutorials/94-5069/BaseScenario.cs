@@ -7,7 +7,7 @@ namespace SchedulingClients.Tutorials
 {
     [TestFixture]
     [Category("94-5069")]
-    public partial class Examples
+    public partial class Examples945069
     {
         /// <summary>
         /// This describes how to send any agent:

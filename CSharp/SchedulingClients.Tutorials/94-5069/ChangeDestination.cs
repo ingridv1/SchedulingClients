@@ -10,7 +10,7 @@ namespace SchedulingClients.Tutorials
 {
     [TestFixture]
     [Category("94-5069")]
-    public partial class Examples
+    public partial class Examples945069
     {
         /// <summary>
         /// This assumes that a job is in progress to pick from one node and drop at another. 

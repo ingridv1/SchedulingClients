@@ -7,7 +7,8 @@ using System.Net;
 namespace SchedulingClients.Tutorials
 {
     [TestFixture]
-    public partial class Examples
+    [Category("94-5069")]
+    public partial class Examples945069
     {
         /// <summary>
         /// This describes how the JobProgress event is fired
@@ -65,11 +66,11 @@ namespace SchedulingClients.Tutorials
 
             // We could now use this information to find out about a particular state cast item, for example:
             //
-            //  Parameter "routerIPAddress"
-            //  An IP address corresponding to that of the router on the AGV.            
+            //  Parameter "BAGVSerialNumber"
+            //  An unique identifier corresponding to the AGV.            
 
-            IPAddress routerIPAddress;
-            agentStateCastClient.TryGetIPAddressStatecastValue(receivedData.AssignedAgentId, "routerIPAddress", out routerIPAddress);
+            int bagVSerialNumber;
+            agentStateCastClient.TryGetIntegerStatecastValue(receivedData.AssignedAgentId, "BAGVSerialNumber", out bagVSerialNumber);
         }
 
         private void TriggerJobProgress(Mock<IJobStateClient> moqJobState, JobStatus jobStatus, int assignedAgentId = -1)
