@@ -21,8 +21,8 @@ namespace SchedulingClients.Tutorials
         ///     Then drive towards node 10 and await for tasks
         ///     
         /// Assumes that kingpin can perform a directive where 
-        ///     Parameter id 2 takes a byte value
-        ///     A byte value of 10 corresponds to receive an item 
+        ///     Parameter alias "BagV.CoordinatedScenario"
+        ///     A byte value of 83 corresponds to DOCK_RIGHT_LOAD 
         /// </summary>
         [Test]
         public void AwaitJobWithDirectives()
@@ -48,9 +48,9 @@ namespace SchedulingClients.Tutorials
             // Create a node task to go to the target node
             int nodeATaskId;
             jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, nodeA, ServiceType.Execution, out nodeATaskId);
-         
-            // Issue a directive to this task, parameter "CoordinatedScenario", with value 10 'receive item'
-            jobBuilder.TryIssueDirective(nodeATaskId, "CoordinatedScenario", (byte)10);
+
+            // Issue a directive to this task, parameter "BagV.CoordinatedScenario", with value 83 'DOCK_RIGHT_LOAD'
+            jobBuilder.TryIssueDirective(nodeATaskId, "BagV.CoordinatedScenario", (byte)83);
 
             // Create an await task
             int node10TaskId;

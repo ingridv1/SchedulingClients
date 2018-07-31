@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using Moq;
 using SchedulingClients.JobStateServiceReference;
-using SchedulingClients.Client_Interfaces;
 using SchedulingClients.JobBuilderServiceReference;
 using System.Collections.Generic;
 
@@ -12,13 +11,13 @@ namespace SchedulingClients.Tutorials
     public partial class Examples
     {
         /// <summary>
-        /// This assumes the job in the AwaitJobWithDirectives example is already present
+        /// This assumes the job in the BaseScenario example is already present
         /// 
         ///     Now we want to edit this further to make the agent drop the load at node 15
         ///    
         /// Assumes that kingpin can perform a directive where 
-        ///     Parameter id 2 takes a byte value
-        ///     A byte value of 11 corresponds to drop an item 
+        ///     Parameter alias "BagV.CoordinatedScenario"
+        ///     A byte value of 131 corresponds to DOCK_LEFT_UNLOAD 
         /// </summary>
         [Test]
         public void EditAwaitJob()
@@ -84,7 +83,7 @@ namespace SchedulingClients.Tutorials
                     jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
 
                     // Add a directive
-                    jobBuilder.TryIssueDirective(serviceTaskId, "CoordinatedSceario", (byte)11); // Assume parameter id '2' vallue 11 is drop
+                    jobBuilder.TryIssueDirective(serviceTaskId, "BagV.CoordinatedScenario", (byte)131); 
 
                     // Finish editing
                     jobBuilder.TryFinishEditingTask(8);

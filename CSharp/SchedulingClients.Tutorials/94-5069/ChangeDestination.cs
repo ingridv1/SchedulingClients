@@ -99,7 +99,7 @@ namespace SchedulingClients.Tutorials
                         jobBuilder.TryCreateServicingTask(jobSummary.RootOrderedListTaskId, 15, ServiceType.Execution, out serviceTaskId);
 
                         // Add a directive
-                        jobBuilder.TryIssueDirective(serviceTaskId, "CoordinatedScenario", (byte)11); // Assume parameter id "CoordinatedSceario" value 11 is drop
+                        jobBuilder.TryIssueDirective(serviceTaskId, "BagV.CoordinatedScenario", (byte)131);
 
                         // Finish editing
                         jobBuilder.TryFinishEditingJob(jobSummary.JobId);
