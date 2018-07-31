@@ -21,17 +21,19 @@ namespace SchedulingClients
 
 		ServiceOperationResult TryCreateSleepingTask(int parentListTaskId, int nodeId, out int sleepingTaskId, TimeSpan expectedDuration = default(TimeSpan));
 
-		ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId, TimeSpan expectedDuration = default(TimeSpan));
+		ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId);
 
-		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, byte value);
+        ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId);
 
-		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, short value);
+		ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, byte value);
 
-		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, ushort value);
+		ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, short value);
 
-		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, float value);
+		ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, ushort value);
 
-		ServiceOperationResult TryIssueDirective(int taskId, int parameterId, IPAddress value);
+		ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, float value);
+
+		ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, IPAddress value);
 
 		ServiceOperationResult TryFinaliseTask(int taskId);
 

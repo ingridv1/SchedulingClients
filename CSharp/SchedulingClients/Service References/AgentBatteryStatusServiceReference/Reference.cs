@@ -229,6 +229,9 @@ namespace SchedulingClients.AgentBatteryStatusServiceReference {
         FINISHEDITINGTASKFAILED = 1016,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        CREATEAWAITINGTASKFAILED = 1017,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         ABORTALLJOBSFAILED = 2001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -317,6 +320,9 @@ namespace SchedulingClients.AgentBatteryStatusServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SETPOSEFAILED = 7011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RESETKINGPINFAILED = 7012,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,

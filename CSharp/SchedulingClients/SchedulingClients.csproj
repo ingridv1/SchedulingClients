@@ -34,8 +34,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.5.6\lib\net45\NLog.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\NLog.4.5.7\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="Sparrow.Chart.Wpf.40, Version=13.1.0.118, Culture=neutral, PublicKeyToken=50f33fb8697e9a92, processorArchitecture=MSIL">
       <HintPath>..\packages\Sparrow.Chart.Wpf.13.1.0.118\lib\net40\Sparrow.Chart.Wpf.40.dll</HintPath>
@@ -71,6 +70,7 @@
     <Compile Include="Client Interfaces\IJobStateClient.cs" />
     <Compile Include="Client Interfaces\IMapClient.cs" />
     <Compile Include="Client Interfaces\IServicingClient.cs" />
+    <Compile Include="Client Interfaces\ITaskStateClient.cs" />
     <Compile Include="Client Interfaces\IVersionClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="ControllerState.cs" />
@@ -135,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TaskStateServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\VersionServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +148,8 @@
     <Compile Include="ServiceOperationResultFactory.cs" />
     <Compile Include="ServicingServiceCallback.cs" />
     <Compile Include="ServicingClient.cs" />
+    <Compile Include="TaskStateClient.cs" />
+    <Compile Include="TaskStateServiceCallback.cs" />
     <Compile Include="VersionClient.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -156,9 +163,6 @@
     <None Include="Properties\DataSources\System.Net.IPAddress.datasource" />
     <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
     <None Include="Service References\AgentAttentionServiceReference\agentAttention.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AgentAttentionServiceReference\agentAttention2.xsd">
@@ -289,34 +293,34 @@
     <None Include="Service References\FleetManagerServiceReference\SchedulingClients.FleetManagerServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder1.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder71.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder2.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder72.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder3.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder73.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder74.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder5.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder75.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder6.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder76.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder61.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder77.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder62.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder78.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\JobBuilderService1.wsdl" />
+    <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -363,8 +367,11 @@
     <None Include="Service References\JobStateServiceReference\jobState4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobStateServiceReference\jobState5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
-    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobStateData.datasource">
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobSummaryData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
@@ -429,6 +436,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />
+    <None Include="Service References\TaskStateServiceReference\taskState.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskStateServiceReference\taskState1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskStateServiceReference\taskState2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskStateServiceReference\taskState3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskStateServiceReference\TaskStateService.wsdl" />
     <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.PluginData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -466,6 +486,7 @@
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
+    <WCFMetadataStorage Include="Service References\TaskStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\VersionServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -597,6 +618,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\FleetManagerServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaskStateServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaskStateServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaskStateServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

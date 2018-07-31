@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" />
-  <xs:complexType name="ArrayOfTupleOfintAttentionTypemhFSb78F">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfAgentAttentionData">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TupleOfintAttentionTypemhFSb78F" nillable="true" type="tns:TupleOfintAttentionTypemhFSb78F" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgentAttentionData" nillable="true" type="tns:AgentAttentionData" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfTupleOfintAttentionTypemhFSb78F" nillable="true" type="tns:ArrayOfTupleOfintAttentionTypemhFSb78F" />
-  <xs:complexType name="TupleOfintAttentionTypemhFSb78F">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
-          <GenericParameter Name="AttentionType" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
+  <xs:element name="ArrayOfAgentAttentionData" nillable="true" type="tns:ArrayOfAgentAttentionData" />
+  <xs:complexType name="AgentAttentionData">
     <xs:sequence>
-      <xs:element name="m_Item1" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents" name="m_Item2" type="q1:AttentionType" />
+      <xs:element minOccurs="0" name="AgentId" type="xs:int" />
+      <xs:element minOccurs="0" name="AttentionType" type="tns:AttentionType" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="TupleOfintAttentionTypemhFSb78F" nillable="true" type="tns:TupleOfintAttentionTypemhFSb78F" />
+  <xs:element name="AgentAttentionData" nillable="true" type="tns:AgentAttentionData" />
+  <xs:simpleType name="AttentionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Physical">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GUI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Comms">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoneRequired">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttentionType" nillable="true" type="tns:AttentionType" />
 </xs:schema>

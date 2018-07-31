@@ -193,21 +193,45 @@ namespace SchedulingClients
             }
         }
 
+
         /// <summary>
-        /// Creates a new manoeuvre task
+        /// Creates a new await task
         /// </summary>
         /// <param name="parentListTaskId">Id of parent list task</param>
-        /// <param name="nodeId">Id of node for service to be carried out</param>
-        /// <param name="moveTaskId">Id of newly created manoeuvre task</param>
-        /// <param name="expectedDuration">Expected duration of the task</param>
+        /// <param name="nodeId">Id of node for await to be carried out</param>
+        /// <param name="awaitTaskId">Id of newly created await task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId, TimeSpan expectedDuration = default(TimeSpan))
+        public ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId)
         {
-            Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
+            Logger.Info("TryCreateAwaitTask({0},{1})", parentListTaskId, nodeId);
 
             try
             {
-                var result = CreateMovingTask(parentListTaskId, nodeId, expectedDuration);
+                var result = CreateAwaitingTask(parentListTaskId, nodeId);
+                awaitTaskId = result.Item1;
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                awaitTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Creates a task to move an agent to a node
+        /// </summary>
+        /// <param name="parentListTaskId">Id of parent list task</param>
+        /// <param name="nodeId">Id of node to move agent to</param>
+        /// <param name="moveTaskId">Id of newly created move  task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId)
+        {
+            Logger.Info("TryCreateMoveTask({0},{1})", parentListTaskId, nodeId);
+
+            try
+            {
+                var result = CreateMovingTask(parentListTaskId, nodeId);
                 moveTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -222,16 +246,16 @@ namespace SchedulingClients
         /// Issues a new directive
         /// </summary>
         /// <param name="taskId">Id of task directive is for</param>
-        /// <param name="parameterId">Id of parameter directive is for</param>
+        /// <param name="parameterAlias">Alias of parameter directive is for</param>
         /// <param name="value">Value assigned to directive</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryIssueDirective(int taskId, int parameterId, byte value)
+        public ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, byte value)
         {
-            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             try
             {
-                var result = IssueDirective(taskId, parameterId, value);
+                var result = IssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -244,16 +268,16 @@ namespace SchedulingClients
         /// Issues a new directive
         /// </summary>
         /// <param name="taskId">Id of task directive is for</param>
-        /// <param name="parameterId">Id of parameter directive is for</param>
+        /// <param name="parameterAlias">Alias of parameter directive is for</param>
         /// <param name="value">Value assigned to directive</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryIssueDirective(int taskId, int parameterId, short value)
+        public ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, short value)
         {
-            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             try
             {
-                var result = IssueDirective(taskId, parameterId, value);
+                var result = IssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -266,16 +290,16 @@ namespace SchedulingClients
         /// Issues a new directive
         /// </summary>
         /// <param name="taskId">Id of task directive is for</param>
-        /// <param name="parameterId">Id of parameter directive is for</param>
+        /// <param name="parameterAlias">Alias of parameter directive is for</param>
         /// <param name="value">Value assigned to directive</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryIssueDirective(int taskId, int parameterId, ushort value)
+        public ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, ushort value)
         {
-            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             try
             {
-                var result = IssueDirective(taskId, parameterId, value);
+                var result = IssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -288,16 +312,16 @@ namespace SchedulingClients
         /// Issues a new directive
         /// </summary>
         /// <param name="taskId">Id of task directive is for</param>
-        /// <param name="parameterId">Id of parameter directive is for</param>
+        /// <param name="parameterAlias">Alias of parameter directive is for</param>
         /// <param name="value">Value assigned to directive</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryIssueDirective(int taskId, int parameterId, float value)
+        public ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, float value)
         {
-            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             try
             {
-                var result = IssueDirective(taskId, parameterId, value);
+                var result = IssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -310,20 +334,20 @@ namespace SchedulingClients
         /// Issues a new directive
         /// </summary>
         /// <param name="taskId">Id of task directive is for</param>
-        /// <param name="parameterId">Id of parameter directive is for</param>
+        /// <param name="parameterAlias">Alias of parameter directive is for</param>
         /// <param name="value">Value assigned to directive</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryIssueDirective(int taskId, int parameterId, IPAddress value)
+        public ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, IPAddress value)
         {
-            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Info("TryIssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             try
             {
-                var result = IssueDirective(taskId, parameterId, value);
+                var result = IssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
-            {
+            { 
                 return HandleClientException(ex);
             }
         }
@@ -336,7 +360,7 @@ namespace SchedulingClients
 		public ServiceOperationResult TryFinaliseTask(int taskId)
 		{
 			Logger.Info("TryFinaliseTask({0})", taskId);
-
+            
 			try
 			{
 				var result = FinaliseTask(taskId);
@@ -575,9 +599,9 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateMovingTask(int parentTaskId, int nodeId, TimeSpan expectedDuration)
+        private Tuple<int, ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId)
         {
-            Logger.Debug("CreateMovingTask({0},{1},{2})", parentTaskId, nodeId, expectedDuration);
+            Logger.Debug("CreateAwaitingTask({0},{1})", parentTaskId, nodeId);
 
             if (isDisposed)
             {
@@ -589,16 +613,16 @@ namespace SchedulingClients
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateMovingTask(parentTaskId, nodeId, expectedDuration);
+                result = channel.CreateAwaitingTask(parentTaskId, nodeId);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<int, ServiceCallData> IssueDirective(int taskId, int parameterId, byte value)
+        private Tuple<int, ServiceCallData> CreateMovingTask(int parentTaskId, int nodeId)
         {
-            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Debug("CreateMovingTask({0},{1})", parentTaskId, nodeId);
 
             if (isDisposed)
             {
@@ -610,91 +634,112 @@ namespace SchedulingClients
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.IssueEnumDirective(taskId, parameterId, value);
+                result = channel.CreateMovingTask(parentTaskId, nodeId);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<int, ServiceCallData> IssueDirective(int taskId, int parameterId, short value)
+        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, byte value)
         {
-            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
-            Tuple<int, ServiceCallData> result;
+            Tuple<bool, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.IssueShortDirective(taskId, parameterId, value);
+                result = channel.IssueEnumDirective(taskId, parameterAlias, value);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<int, ServiceCallData> IssueDirective(int taskId, int parameterId, ushort value)
+        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, short value)
         {
-            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
-            Tuple<int, ServiceCallData> result;
+            Tuple<bool, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.IssueUShortDirective(taskId, parameterId, value);
+                result = channel.IssueShortDirective(taskId, parameterAlias, value);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<int, ServiceCallData> IssueDirective(int taskId, int parameterId, float value)
+        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, ushort value)
         {
-            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
-            Tuple<int, ServiceCallData> result;
+            Tuple<bool, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.IssueFloatDirective(taskId, parameterId, value);
+                result = channel.IssueUShortDirective(taskId, parameterAlias, value);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<int, ServiceCallData> IssueDirective(int taskId, int parameterId, IPAddress value)
+        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, float value)
         {
-            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterId, value);
+            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
             if (isDisposed)
             {
                 throw new ObjectDisposedException("JobBuilderClient");
             }
 
-            Tuple<int, ServiceCallData> result;
+            Tuple<bool, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.IssueIPAddressDirective(taskId, parameterId, value);
+                result = channel.IssueFloatDirective(taskId, parameterAlias, value);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, IPAddress value)
+        {
+            Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
+
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.IssueIPAddressDirective(taskId, parameterAlias, value);
                 channelFactory.Close();
             }
 
