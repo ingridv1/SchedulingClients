@@ -53,8 +53,10 @@ namespace SchedulingClients.UserControls
         {
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
+            string parameterAlias = parameterAliasTextBox.Text;
+
 #warning Unsafe
-            client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterIdUpDown.Value ?? 0, (byte)(valueUpDown.Value ?? 0));
+            client.TryIssueDirective(taskIdUpDown.Value ?? 0, parameterAlias, (byte)(valueUpDown.Value ?? 0));
         }
 
         private void moveJobButton_Click(object sender, RoutedEventArgs e)
