@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="94-5069\LostPayload.cs" />
+    <Compile Include="94-5070\BaseScenario.cs" />
     <Compile Include="Basic.cs" />
     <Compile Include="94-5069\BaseScenario.cs" />
     <Compile Include="94-5069\ChangeDestination.cs" />
