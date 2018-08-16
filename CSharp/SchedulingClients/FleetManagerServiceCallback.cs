@@ -1,27 +1,27 @@
-﻿using System;
-using SchedulingClients.FleetManagerServiceReference;
+﻿//using System;
+//using SchedulingClients.FleetManagerServiceReference;
 
-namespace SchedulingClients
-{
-    public class FleetManagerServiceCallback : IFleetManagerServiceCallback
-    {
-        public FleetManagerServiceCallback()
-        {
-        }
+//namespace SchedulingClients
+//{
+//    public class FleetManagerServiceCallback : IFleetManagerServiceCallback
+//    {
+//        public FleetManagerServiceCallback()
+//        {
+//        }
 
-        public event Action<FleetState> FleetStateUpdate;
+//        public event Action<FleetState> FleetStateUpdate;
 
-        public void OnCallback(FleetState fleetState)
-        {
-            Action<FleetState> handlers = FleetStateUpdate;
+//        public void OnCallback(FleetState fleetState)
+//        {
+//            Action<FleetState> handlers = FleetStateUpdate;
 
-            if(handlers != null)
-            {
-                foreach(Action<FleetState> handler in handlers.GetInvocationList())
-                {
-                    handler.BeginInvoke(fleetState, null, null);
-                }
-            }
-        }
-    }
-}
+//            if(handlers != null)
+//            {
+//                foreach(Action<FleetState> handler in handlers.GetInvocationList())
+//                {
+//                    handler.BeginInvoke(fleetState, null, null);
+//                }
+//            }
+//        }
+//    }
+//}

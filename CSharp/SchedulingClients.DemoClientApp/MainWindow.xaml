@@ -117,20 +117,12 @@
 					<clientsUC:AgentAttentionClientControl x:Name="agentAttentionClientControl" DataContext="{Binding Path=AgentAttentionClient}" />
 				</Grid>
 			</TabItem>
-			<TabItem>
-				<TabItem.Header>
-					Agent StateCast Client
-				</TabItem.Header>
-				<Grid>
-					<clientsUC:AgentStateCastClientControl x:Name="agentStateCastClientControl" DataContext="{Binding Path=AgentStatecastClient}" />
-				</Grid>
-			</TabItem>
             <TabItem>
                 <TabItem.Header>
-                    Version Client
+                    Agent StateCast Client
                 </TabItem.Header>
                 <Grid>
-                    <clientsUC:VersionClientControl x:Name="versionClientControl" DataContext="{Binding Path=VersionClient}" />
+                    <clientsUC:AgentStateCastClientControl x:Name="agentStateCastClientControl" DataContext="{Binding Path=AgentStatecastClient}" />
                 </Grid>
             </TabItem>
         </TabControl>
