@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using SchedulingClients.JobBuilderServiceReference;
-using SchedulingClients.Client_Interfaces;
+using SchedulingClients;
 
 namespace SchedulingClients.Tutorials
 {

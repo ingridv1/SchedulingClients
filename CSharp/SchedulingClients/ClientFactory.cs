@@ -1,5 +1,4 @@
 ﻿using GAClients;
-using SchedulingClients.Client_Interfaces;
 
 namespace SchedulingClients
 {

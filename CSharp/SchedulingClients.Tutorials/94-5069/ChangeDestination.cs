@@ -2,7 +2,6 @@
 using Moq;
 using NUnit.Framework;
 using SchedulingClients.JobStateServiceReference;
-using SchedulingClients.Client_Interfaces;
 using System;
 using SchedulingClients.JobBuilderServiceReference;
 
