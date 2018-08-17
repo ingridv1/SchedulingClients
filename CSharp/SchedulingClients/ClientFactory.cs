@@ -24,10 +24,10 @@ namespace SchedulingClients
             return new JobStateClient(portSettings.TcpJobStateService());
         }
 
-        //        public static IMapClient CreateTcpRoadmapClient(EndpointSettings portSettings)
-        //        {
-        //            return new MapClient(portSettings.TcpMapService());
-        //        }
+        public static IMapClient CreateTcpRoadmapClient(EndpointSettings portSettings)
+        {
+            return new MapClient(portSettings.TcpMapService());
+        }
 
         public static IServicingClient CreateTcpServicingClient(EndpointSettings portSettings)
         {
@@ -50,11 +50,9 @@ namespace SchedulingClients
         //        }
 
 
-        //        public static IAgentStatecastClient CreateTcpAgentStatecastClient(EndpointSettings portSettings)
-        //        {
-        //          return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
-        //        }
-
-
+        public static IAgentStatecastClient CreateTcpAgentStatecastClient(EndpointSettings portSettings)
+        {
+            return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
+        }
     }
 }

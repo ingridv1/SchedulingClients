@@ -126,6 +126,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MapServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServicingServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -327,6 +332,43 @@
     <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MapServiceReference\map.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\map1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\map2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\map3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\map4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\map5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\map6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\MapService.wsdl" />
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.NodeData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ParameterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.WaypointData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -358,6 +400,7 @@
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
+    <WCFMetadataStorage Include="Service References\MapServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -452,6 +495,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AgentStatecastServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

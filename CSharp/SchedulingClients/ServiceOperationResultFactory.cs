@@ -4,7 +4,7 @@ using agentbattery = SchedulingClients.AgentBatteryStatusServiceReference;
 using agent = SchedulingClients.AgentServiceReference;
 using jobBuilder = SchedulingClients.JobBuilderServiceReference;
 using jobs = SchedulingClients.JobsStateServiceReference;
-//using maps = SchedulingClients.MapServiceReference;
+using maps = SchedulingClients.MapServiceReference;
 using job = SchedulingClients.JobStateServiceReference;
 using servicing = SchedulingClients.ServicingServiceReference;
 using agentStatecast = SchedulingClients.AgentStatecastServiceReference;
@@ -26,18 +26,18 @@ namespace SchedulingClients
                 );
         }
 
-        //        public static ServiceOperationResult FromMapServiceCallData(maps.ServiceCallData serviceCallData)
-        //        {
-        //            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
+        public static ServiceOperationResult FromMapServiceCallData(maps.ServiceCallData serviceCallData)
+        {
+            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 
-        //            return new ServiceOperationResult
-        //                (
-        //                    (uint)serviceCallData.ServiceCode,
-        //                    serviceCallData.ServiceCode.ToString(),
-        //                    serviceException,
-        //                    null
-        //                );
-        //        }
+            return new ServiceOperationResult
+                (
+                    (uint)serviceCallData.ServiceCode,
+                    serviceCallData.ServiceCode.ToString(),
+                    serviceException,
+                    null
+                );
+        }
 
         public static ServiceOperationResult FromJobStateServiceCallData(job.ServiceCallData serviceCallData)
         {
