@@ -1,11 +1,11 @@
-﻿//using SchedulingClients.AgentAttentionServiceReference;
-//using GAClients;
-//using System;
+﻿using SchedulingClients.AgentAttentionServiceReference;
+using BaseClients;
+using System;
 
-//namespace SchedulingClients
-//{
-//    public interface IAgentAttentionClient : ICallbackClient
-//    { 
-//        event Action<AgentAttentionData[]> AgentAttentionChange;
-//    } 
-//}
+namespace SchedulingClients
+{
+    public interface IAgentAttentionClient : ICallbackClient
+    {
+        event Action<AgentAttentionData[]> AgentAttentionChange;
+    }
+}

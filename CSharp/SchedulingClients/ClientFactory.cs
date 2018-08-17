@@ -39,10 +39,10 @@ namespace SchedulingClients
             return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
         }
 
-        //        public static IAgentAttentionClient CreateTcpAgentAttentionClient(EndpointSettings portSettings)
-        //        {
-        //          return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
-        //        }
+        public static IAgentAttentionClient CreateTcpAgentAttentionClient(EndpointSettings portSettings)
+        {
+            return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
+        }
 
         //        public static ITaskStateClient CreateTcpTaskStatecastClient(EndpointSettings portSettings)
         //        {
