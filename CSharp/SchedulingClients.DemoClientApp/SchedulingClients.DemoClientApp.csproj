@@ -25,6 +25,10 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BaseClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseClients.1.0.0\lib\net47\BaseClients.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GAClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GenericClients.1.4.0\lib\net47\GAClients.dll</HintPath>
       <Private>True</Private>

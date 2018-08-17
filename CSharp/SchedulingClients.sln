@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients", "SchedulingClients\SchedulingClients.csproj", "{7D7CB56F-7546-43C2-B162-3F3024AEC279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients", "SchedulingClients\SchedulingClients.csproj", "{44C76564-FCEA-466C-B7A6-56747A99BADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.UserControls", "SchedulingClients.UserControls\SchedulingClients.UserControls.csproj", "{57E8C0BE-986B-4CD0-A8F8-634538EC7567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.DemoClientApp", "SchedulingClients.DemoClientApp\SchedulingClients.DemoClientApp.csproj", "{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Test", "SchedulingClients.Test\SchedulingClients.Test.csproj", "{B0CA7A61-9502-40CB-BA07-844BEC10A33D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Tutorials", "SchedulingClients.Tutorials\SchedulingClients.Tutorials.csproj", "{EB2A61A2-A941-408A-AFD8-1ECCE5EA3B63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7D7CB56F-7546-43C2-B162-3F3024AEC279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D7CB56F-7546-43C2-B162-3F3024AEC279}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D7CB56F-7546-43C2-B162-3F3024AEC279}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D7CB56F-7546-43C2-B162-3F3024AEC279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44C76564-FCEA-466C-B7A6-56747A99BADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E8C0BE-986B-4CD0-A8F8-634538EC7567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E8C0BE-986B-4CD0-A8F8-634538EC7567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E8C0BE-986B-4CD0-A8F8-634538EC7567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E8C0BE-986B-4CD0-A8F8-634538EC7567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0964EA44-2FF6-4650-A55A-B6B3E4B60EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0CA7A61-9502-40CB-BA07-844BEC10A33D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2A61A2-A941-408A-AFD8-1ECCE5EA3B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2A61A2-A941-408A-AFD8-1ECCE5EA3B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2A61A2-A941-408A-AFD8-1ECCE5EA3B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2A61A2-A941-408A-AFD8-1ECCE5EA3B63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {71431280-769E-4676-B09E-A3E1B4745EFF}
+		SolutionGuid = {7A8A7633-5315-44BE-9F59-E8B26AFB6C4E}
 	EndGlobalSection
 EndGlobal
