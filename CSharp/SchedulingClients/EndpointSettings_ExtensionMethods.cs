@@ -30,10 +30,10 @@ namespace SchedulingClients
         //            return new Uri(portSettings.ToTcpBase(), "jobsState.svc");
         //        }
 
-        //        public static Uri TcpJobStateService(this EndpointSettings portSettings)
-        //        {
-        //            return new Uri(portSettings.ToTcpBase(), "jobState.svc");
-        //        }
+        public static Uri TcpJobStateService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "jobState.svc");
+        }
 
         //        public static Uri TcpMapService(this EndpointSettings portSettings)
         //        {

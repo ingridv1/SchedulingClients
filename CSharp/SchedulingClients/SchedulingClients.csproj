@@ -111,6 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\JobStateServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServicingServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,6 +236,34 @@
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\JobStateServiceReference\jobState.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobSummaryData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -259,6 +292,7 @@
     <WCFMetadataStorage Include="Service References\AgentBatteryStatusServiceReference\" />
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
+    <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +351,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AgentAttentionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobStateServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobStateServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobStateServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

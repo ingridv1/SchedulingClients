@@ -19,10 +19,10 @@ namespace SchedulingClients
         //            return new JobsStateClient(portSettings.TcpJobsStateService());
         //        }
 
-        //        public static IJobStateClient CreateTcpJobStateClient(EndpointSettings portSettings)
-        //        {
-        //            return new JobStateClient(portSettings.TcpJobStateService());
-        //        }
+        public static IJobStateClient CreateTcpJobStateClient(EndpointSettings portSettings)
+        {
+            return new JobStateClient(portSettings.TcpJobStateService());
+        }
 
         //        public static IMapClient CreateTcpRoadmapClient(EndpointSettings portSettings)
         //        {
