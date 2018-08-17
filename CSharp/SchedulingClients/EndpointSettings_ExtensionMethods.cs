@@ -15,13 +15,10 @@ namespace SchedulingClients
         //            return new Uri(portSettings.ToTcpBase(), "taskState.svc");
         //        }
 
-
-        //        public static Uri TcpAgentBatteryStatusService(this EndpointSettings portSettings)
-        //        {
-        //            return new Uri(portSettings.ToTcpBase(), "agentBatteryStatus.svc");
-        //        }
-
-
+        public static Uri TcpAgentBatteryStatusService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "agentBatteryStatus.svc");
+        }
 
         public static Uri TcpJobBuilderService(this EndpointSettings portSettings)
         {
@@ -43,10 +40,10 @@ namespace SchedulingClients
         //            return new Uri(portSettings.ToTcpBase(), "map.svc");
         //        }
 
-        //        public static Uri TcpServicingService(this EndpointSettings portSettings)
-        //        {
-        //            return new Uri(portSettings.ToTcpBase(), "servicing.svc");
-        //        }
+        public static Uri TcpServicingService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "servicing.svc");
+        }
 
         //		public static Uri TcpAgentAttentionService(this EndpointSettings portSettings)
         //		{

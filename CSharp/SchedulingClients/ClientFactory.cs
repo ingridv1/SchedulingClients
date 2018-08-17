@@ -29,15 +29,15 @@ namespace SchedulingClients
         //            return new MapClient(portSettings.TcpMapService());
         //        }
 
-        //        public static IServicingClient CreateTcpServicingClient(EndpointSettings portSettings)
-        //        {
-        //            return new ServicingClient(portSettings.TcpServicingService());
-        //        }
+        public static IServicingClient CreateTcpServicingClient(EndpointSettings portSettings)
+        {
+            return new ServicingClient(portSettings.TcpServicingService());
+        }
 
-        //        public static IAgentBatteryStatusClient CreateTcpAgentBatteryStatusClient(EndpointSettings portSettings)
-        //        {
-        //            return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
-        //        }
+        public static IAgentBatteryStatusClient CreateTcpAgentBatteryStatusClient(EndpointSettings portSettings)
+        {
+            return new AgentBatteryStatusClient(portSettings.TcpAgentBatteryStatusService());
+        }
 
         //        public static IAgentAttentionClient CreateTcpAgentAttentionClient(EndpointSettings portSettings)
         //        {
