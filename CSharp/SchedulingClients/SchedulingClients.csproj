@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServicingServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceOperationResultFactory.cs" />
     <Compile Include="ServicingClient.cs" />
     <Compile Include="ServicingServiceCallback.cs" />
@@ -167,6 +172,28 @@
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\servicing4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicingServiceReference\ServicingService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
@@ -174,6 +201,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AgentServiceReference\configuration91.svcinfo" />
@@ -195,6 +223,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobBuilderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicingServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
