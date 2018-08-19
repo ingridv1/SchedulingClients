@@ -24,7 +24,7 @@ namespace SchedulingClients
             return new JobStateClient(portSettings.TcpJobStateService());
         }
 
-        public static IMapClient CreateTcpRoadmapClient(EndpointSettings portSettings)
+        public static IMapClient CreateTcpMapClient(EndpointSettings portSettings)
         {
             return new MapClient(portSettings.TcpMapService());
         }
