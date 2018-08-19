@@ -1,11 +1,11 @@
-﻿using GAClients;
+﻿using BaseClients;
 using SchedulingClients.JobStateServiceReference;
 using System;
 
 namespace SchedulingClients
 {
     public interface IJobStateClient : ICallbackClient
-	{
+    {
         ServiceOperationResult TryGetJobSummary(int jobId, out JobSummaryData jobSummaryData);
 
         ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a5eacb95-9990-4f79-bd2e-9d2fb10db9cd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e732aa13-3614-46d8-ab75-a509f2db1c5c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.128.17.45:41916/agentAttention.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1:41916/agentattention.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="agentAttention1.xsd" MetadataType="Schema" ID="cf37ef94-d47c-42c3-abf5-3e7d8cfee2e1" SourceId="1" SourceUrl="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd2" />
-    <MetadataFile FileName="AgentAttentionService1.wsdl" MetadataType="Wsdl" ID="c4c9f157-9a7f-4838-ac6e-09b9e7cd2629" SourceId="1" SourceUrl="http://10.128.17.45:41916/agentAttention.svc" />
-    <MetadataFile FileName="agentAttention11.xsd" MetadataType="Schema" ID="7b6c0459-5476-4ad9-9cbe-d27d8daa2ce0" SourceId="1" SourceUrl="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd0" />
-    <MetadataFile FileName="agentAttention12.xsd" MetadataType="Schema" ID="61a72f9e-d2cf-4dcd-82e8-36b4b7a7df96" SourceId="1" SourceUrl="http://10.128.17.45:41916/agentAttention.svc?xsd=xsd1" />
+    <MetadataFile FileName="agentAttention.xsd" MetadataType="Schema" ID="d00d06ec-4894-4882-9387-4ad3b5d40ce6" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd0" />
+    <MetadataFile FileName="agentAttention1.xsd" MetadataType="Schema" ID="974b1233-8584-4249-8141-8a153ff8126a" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd2" />
+    <MetadataFile FileName="agentAttention2.xsd" MetadataType="Schema" ID="ff79a55f-5d75-4998-820d-023e7a9eaa6b" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentAttention.svc?xsd=xsd1" />
+    <MetadataFile FileName="AgentAttentionService.wsdl" MetadataType="Wsdl" ID="fab44fe4-068e-4505-9cae-8353ff6660a3" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentattention.svc" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

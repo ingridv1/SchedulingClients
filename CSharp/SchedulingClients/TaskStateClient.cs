@@ -1,5 +1,5 @@
-﻿using GAClients;
-using SchedulingClients.Client_Interfaces;
+﻿using BaseClients;
+using SchedulingClients;
 using SchedulingClients.TaskStateServiceReference;
 using System;
 using System.Collections.Generic;

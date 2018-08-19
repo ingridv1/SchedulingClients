@@ -535,6 +535,12 @@ namespace SchedulingClients.JobStateServiceReference {
         CLIENTEXCEPTION = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICEUNAVAILABLE = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SERVICENOTIMPLEMENTED = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -689,6 +695,12 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         INVALIDAGENTID = 9001,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDSTATECASTVARIABLEALIAS = 9002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        STATECASTVARIABLEDATATYPEMISMATCH = 9003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETSCHEDULERVERSIONFAILED = 10001,

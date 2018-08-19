@@ -1,8 +1,8 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using System;
 using System.Net;
-using GAClients;
 using System.ServiceModel;
+using BaseClients;
 
 namespace SchedulingClients
 {
@@ -91,62 +91,62 @@ namespace SchedulingClients
             }
         }
 
-		/// <summary>
-		/// Creates a new unordered list task
-		/// </summary>
-		/// <param name="parentTaskId">Parent list task Id</param>
-		/// <param name="listTaskId">Id of new list task</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryCreateUnorderedListTask(int parentTaskId, out int listTaskId)
-		{
-			Logger.Info("TryCreateUnorderedListTask({0})", parentTaskId);
+        /// <summary>
+        /// Creates a new unordered list task
+        /// </summary>
+        /// <param name="parentTaskId">Parent list task Id</param>
+        /// <param name="listTaskId">Id of new list task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateUnorderedListTask(int parentTaskId, out int listTaskId)
+        {
+            Logger.Info("TryCreateUnorderedListTask({0})", parentTaskId);
 
-			try
-			{
-				var result = CreateUnorderedListTask(parentTaskId);
-				listTaskId = result.Item1;
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
-			}
-			catch (Exception ex)
-			{
-				listTaskId = -1;
-				return HandleClientException(ex);
-			}
-		}
+            try
+            {
+                var result = CreateUnorderedListTask(parentTaskId);
+                listTaskId = result.Item1;
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                listTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
 
-		/// <summary>
-		/// Creates a new pipelinedtask
-		/// </summary>
-		/// <param name="parentTaskId">Parent list task Id</param>
-		/// <param name="listTaskId">Id of new list task</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryCreatePipelinedTask(int parentTaskId, bool isFinalised, out int listTaskId)
-		{
-			Logger.Info("TryCreatePipelinedTask({0})", parentTaskId);
+        /// <summary>
+        /// Creates a new pipelinedtask
+        /// </summary>
+        /// <param name="parentTaskId">Parent list task Id</param>
+        /// <param name="listTaskId">Id of new list task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreatePipelinedTask(int parentTaskId, bool isFinalised, out int listTaskId)
+        {
+            Logger.Info("TryCreatePipelinedTask({0})", parentTaskId);
 
-			try
-			{
-				var result = CreatePipelinedTask(parentTaskId, isFinalised);
-				listTaskId = result.Item1;
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
-			}
-			catch (Exception ex)
-			{
-				listTaskId = -1;
-				return HandleClientException(ex);
-			}
-		}
+            try
+            {
+                var result = CreatePipelinedTask(parentTaskId, isFinalised);
+                listTaskId = result.Item1;
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                listTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
 
-		/// <summary>
-		/// Creates a new servicing task
-		/// </summary>
-		/// <param name="parentListTaskId">Id of parent list task</param>
-		/// <param name="nodeId">Id of node for service to be carried out</param>
-		/// <param name="serviceType">Service type to be carried out</param>
-		/// <param name="serviceTaskId">Id of newly created servicing task</param>
-		/// <param name="expectedDuration">Expected duration of the task</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan))
+        /// <summary>
+        /// Creates a new servicing task
+        /// </summary>
+        /// <param name="parentListTaskId">Id of parent list task</param>
+        /// <param name="nodeId">Id of node for service to be carried out</param>
+        /// <param name="serviceType">Service type to be carried out</param>
+        /// <param name="serviceTaskId">Id of newly created servicing task</param>
+        /// <param name="expectedDuration">Expected duration of the task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan))
         {
             Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
 
@@ -347,110 +347,110 @@ namespace SchedulingClients
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
-            { 
+            {
                 return HandleClientException(ex);
             }
         }
 
-		/// <summary>
-		/// Finalises an un-finalised ordered list task
-		/// </summary>
-		/// <param name="taskId">Ordered list task Id</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryFinaliseTask(int taskId)
-		{
-			Logger.Info("TryFinaliseTask({0})", taskId);
-            
-			try
-			{
-				var result = FinaliseTask(taskId);
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
-			}
-			catch (Exception ex)
-			{
-				return HandleClientException(ex);
-			}
-		}
+        /// <summary>
+        /// Finalises an un-finalised ordered list task
+        /// </summary>
+        /// <param name="taskId">Ordered list task Id</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryFinaliseTask(int taskId)
+        {
+            Logger.Info("TryFinaliseTask({0})", taskId);
 
-		/// <summary>
-		/// Puts a job into the editing state
-		/// </summary>
-		/// <param name="jobId">Id of the job to edit</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryBeginEditingJob(int jobId)
-		{
-			Logger.Info("TryFinaliseTask({0})", jobId);
+            try
+            {
+                var result = FinaliseTask(taskId);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
 
-			try
-			{
-				var result = BeginEditingJob(jobId);
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
-			}
-			catch (Exception ex)
-			{
-				return HandleClientException(ex);
-			}
-		}
+        /// <summary>
+        /// Puts a job into the editing state
+        /// </summary>
+        /// <param name="jobId">Id of the job to edit</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryBeginEditingJob(int jobId)
+        {
+            Logger.Info("TryFinaliseTask({0})", jobId);
 
-		/// <summary>
-		/// Puts a job in the editing state back to in progress
-		/// </summary>
-		/// <param name="jobId">Id of the job to finish editing</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryFinishEditingJob(int jobId)
-		{
-			Logger.Info("TryFinaliseTask({0})", jobId);
+            try
+            {
+                var result = BeginEditingJob(jobId);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
 
-			try
-			{
-				var result = FinishEditingJob(jobId);
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
-			}
-			catch (Exception ex)
-			{
-				return HandleClientException(ex);
-			}
-		}
+        /// <summary>
+        /// Puts a job in the editing state back to in progress
+        /// </summary>
+        /// <param name="jobId">Id of the job to finish editing</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryFinishEditingJob(int jobId)
+        {
+            Logger.Info("TryFinaliseTask({0})", jobId);
 
-		/// <summary>
-		/// Puts a job into the editing state
-		/// </summary>
-		/// <param name="taskId">Id of the task to edit</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryBeginEditingTask(int taskId)
-		{
-			Logger.Info("TryFinaliseTask({0})", taskId);
+            try
+            {
+                var result = FinishEditingJob(jobId);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
 
-			try
-			{
-				var result = BeginEditingTask(taskId);
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
-			}
-			catch (Exception ex)
-			{
-				return HandleClientException(ex);
-			}
-		}
+        /// <summary>
+        /// Puts a job into the editing state
+        /// </summary>
+        /// <param name="taskId">Id of the task to edit</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryBeginEditingTask(int taskId)
+        {
+            Logger.Info("TryFinaliseTask({0})", taskId);
 
-		/// <summary>
-		/// Puts a job in the editing state back to its previous state
-		/// </summary>
-		/// <param name="taskId">Id of the task to finish editing</param>
-		/// <returns>ServiceOperationResult</returns>
-		public ServiceOperationResult TryFinishEditingTask(int taskId)
-		{
-			Logger.Info("TryFinaliseTask({0})", taskId);
+            try
+            {
+                var result = BeginEditingTask(taskId);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
 
-			try
-			{
-				var result = FinishEditingTask(taskId);
-				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
-			}
-			catch (Exception ex)
-			{
-				return HandleClientException(ex);
-			}
-		}
+        /// <summary>
+        /// Puts a job in the editing state back to its previous state
+        /// </summary>
+        /// <param name="taskId">Id of the task to finish editing</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryFinishEditingTask(int taskId)
+        {
+            Logger.Info("TryFinaliseTask({0})", taskId);
+
+            try
+            {
+                var result = FinishEditingTask(taskId);
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
+            }
+            catch (Exception ex)
+            {
+                return HandleClientException(ex);
+            }
+        }
 
         private Tuple<bool, ServiceCallData> Commit(int jobId, int agentId = -1)
         {
@@ -515,49 +515,49 @@ namespace SchedulingClients
             return result;
         }
 
-		private Tuple<int, ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised)
-		{
-			Logger.Debug("CreateOrderedListTask({0})", parentTaskId);
+        private Tuple<int, ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised)
+        {
+            Logger.Debug("CreateOrderedListTask({0})", parentTaskId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			Tuple<int, ServiceCallData> result;
+            Tuple<int, ServiceCallData> result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.CreateOrderedListTask(parentTaskId, isFinalised);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateOrderedListTask(parentTaskId, isFinalised);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private Tuple<int, ServiceCallData> CreatePipelinedTask(int parentTaskId, bool isFinalised)
-		{
-			Logger.Debug("CreateListTask({0})", parentTaskId);
+        private Tuple<int, ServiceCallData> CreatePipelinedTask(int parentTaskId, bool isFinalised)
+        {
+            Logger.Debug("CreateListTask({0})", parentTaskId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			Tuple<int, ServiceCallData> result;
+            Tuple<int, ServiceCallData> result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.CreatePipelinedTask(parentTaskId, isFinalised);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreatePipelinedTask(parentTaskId, isFinalised);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
+        private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
             Logger.Debug("CreateServicingTask({0},{1},{2},{3})", parentTaskId, nodeId, serviceType, expectedDuration);
 
@@ -746,109 +746,109 @@ namespace SchedulingClients
             return result;
         }
 
-		private ServiceCallData FinaliseTask(int taskId)
-		{
-			Logger.Debug("FinaliseTask({0})", taskId);
+        private ServiceCallData FinaliseTask(int taskId)
+        {
+            Logger.Debug("FinaliseTask({0})", taskId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			ServiceCallData result;
+            ServiceCallData result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.FinaliseTask(taskId);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.FinaliseTask(taskId);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private ServiceCallData BeginEditingJob(int jobId)
-		{
-			Logger.Debug("BeginEditingJob({0})", jobId);
+        private ServiceCallData BeginEditingJob(int jobId)
+        {
+            Logger.Debug("BeginEditingJob({0})", jobId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			ServiceCallData result;
+            ServiceCallData result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.BeginEditingJob(jobId);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.BeginEditingJob(jobId);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private ServiceCallData FinishEditingJob(int jobId)
-		{
-			Logger.Debug("FinishEditingJob({0})", jobId);
+        private ServiceCallData FinishEditingJob(int jobId)
+        {
+            Logger.Debug("FinishEditingJob({0})", jobId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			ServiceCallData result;
+            ServiceCallData result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.FinishEditingJob(jobId);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.FinishEditingJob(jobId);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private ServiceCallData BeginEditingTask(int taskId)
-		{
-			Logger.Debug("BeginEditingTask({0})", taskId);
+        private ServiceCallData BeginEditingTask(int taskId)
+        {
+            Logger.Debug("BeginEditingTask({0})", taskId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			ServiceCallData result;
+            ServiceCallData result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.BeginEditingTask(taskId);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.BeginEditingTask(taskId);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private ServiceCallData FinishEditingTask(int taskId)
-		{
-			Logger.Debug("FinishEditingTask({0})", taskId);
+        private ServiceCallData FinishEditingTask(int taskId)
+        {
+            Logger.Debug("FinishEditingTask({0})", taskId);
 
-			if (isDisposed)
-			{
-				throw new ObjectDisposedException("JobBuilderClient");
-			}
+            if (isDisposed)
+            {
+                throw new ObjectDisposedException("JobBuilderClient");
+            }
 
-			ServiceCallData result;
+            ServiceCallData result;
 
-			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-			{
-				IJobBuilderService channel = channelFactory.CreateChannel();
-				result = channel.FinishEditingTask(taskId);
-				channelFactory.Close();
-			}
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.FinishEditingTask(taskId);
+                channelFactory.Close();
+            }
 
-			return result;
-		}
+            return result;
+        }
     }
 }

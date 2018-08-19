@@ -1,5 +1,5 @@
 ﻿using System;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients
 {
@@ -10,20 +10,14 @@ namespace SchedulingClients
             return new Uri(portSettings.ToTcpBase(), "agent.svc");
         }
 
-        public static Uri TcpTaskStateService(this EndpointSettings portSettings)
-        {
-            return new Uri(portSettings.ToTcpBase(), "taskState.svc");
-        }
-
+        //        public static Uri TcpTaskStateService(this EndpointSettings portSettings)
+        //        {
+        //            return new Uri(portSettings.ToTcpBase(), "taskState.svc");
+        //        }
 
         public static Uri TcpAgentBatteryStatusService(this EndpointSettings portSettings)
         {
             return new Uri(portSettings.ToTcpBase(), "agentBatteryStatus.svc");
-        }
-
-        public static Uri TcpFleetManagerService(this EndpointSettings portSettings)
-        {
-            return new Uri(portSettings.ToTcpBase(), "fleetManager.svc");
         }
 
         public static Uri TcpJobBuilderService(this EndpointSettings portSettings)
@@ -51,19 +45,14 @@ namespace SchedulingClients
             return new Uri(portSettings.ToTcpBase(), "servicing.svc");
         }
 
-		public static Uri TcpAgentAttentionService(this EndpointSettings portSettings)
-		{
-			return new Uri(portSettings.ToTcpBase(), "agentAttention.svc");
-		}
-
-		public static Uri TcpAgentStatecastService(this EndpointSettings portSettings)
-		{
-			return new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");
-		}
-
-        public static Uri TcpVersionService(this EndpointSettings portSettings)
+        public static Uri TcpAgentAttentionService(this EndpointSettings portSettings)
         {
-            return new Uri(portSettings.ToTcpBase(), "versionService.svc");
+            return new Uri(portSettings.ToTcpBase(), "agentAttention.svc");
+        }
+
+        public static Uri TcpAgentStatecastService(this EndpointSettings portSettings)
+        {
+            return new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");
         }
     }
 }

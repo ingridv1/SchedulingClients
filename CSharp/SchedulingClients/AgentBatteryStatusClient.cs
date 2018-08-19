@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using SchedulingClients.AgentBatteryStatusServiceReference;
 using System.ServiceModel;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients
 {
@@ -54,7 +54,7 @@ namespace SchedulingClients
             {
                 var result = GetAllAgentBatteryStatusData();
                 agentBatteryStatusDatas = result.Item1;
-                return ServiceOperationResultFactory.FromAgentBatterServiceCallData(result.Item2);
+                return ServiceOperationResultFactory.FromAgentBatteryServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {

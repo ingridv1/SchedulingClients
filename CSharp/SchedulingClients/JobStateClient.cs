@@ -1,7 +1,7 @@
 ﻿using System;
 using SchedulingClients.JobStateServiceReference;
 using System.ServiceModel;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients
 {

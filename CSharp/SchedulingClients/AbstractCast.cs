@@ -1,32 +1,32 @@
-﻿using System;
+﻿//using System;
 
-namespace SchedulingClients
-{
-    [Serializable]
-    public abstract class AbstractCast
-    {
-        private readonly byte tick;
+//namespace SchedulingClients
+//{
+//    [Serializable]
+//    public abstract class AbstractCast
+//    {
+//        private readonly byte tick;
 
-        public AbstractCast(byte tick)
-        {
-            this.tick = tick;
-        }
+//        public AbstractCast(byte tick)
+//        {
+//            this.tick = tick;
+//        }
 
-        public byte Tick { get { return tick; } }
+//        public byte Tick { get { return tick; } }
 
-        public override int GetHashCode()
-        {
-            return tick.GetHashCode();
-        }
+//        public override int GetHashCode()
+//        {
+//            return tick.GetHashCode();
+//        }
 
-        public override string ToString()
-        {
-            return ToTickString();
-        }
+//        public override string ToString()
+//        {
+//            return ToTickString();
+//        }
 
-        public string ToTickString()
-        {
-            return string.Format("Tick: {0}", tick);
-        }
-    }
-}
+//        public string ToTickString()
+//        {
+//            return string.Format("Tick: {0}", tick);
+//        }
+//    }
+//}

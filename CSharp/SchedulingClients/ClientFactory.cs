@@ -1,5 +1,4 @@
-﻿using GAClients;
-using SchedulingClients.Client_Interfaces;
+﻿using BaseClients;
 
 namespace SchedulingClients
 {
@@ -8,11 +7,6 @@ namespace SchedulingClients
         public static IAgentClient CreateTcpAgentClient(EndpointSettings portSettings)
         {
             return new AgentClient(portSettings.TcpAgentService());
-        }
-
-        public static IFleetManagerClient CreateTcpFleetManagerClient(EndpointSettings portSettings)
-        {
-            return new FleetManagerClient(portSettings.TcpFleetManagerService());
         }
 
         public static IJobBuilderClient CreateTcpJobBuilderClient(EndpointSettings portSettings)
@@ -30,7 +24,7 @@ namespace SchedulingClients
             return new JobStateClient(portSettings.TcpJobStateService());
         }
 
-        public static IMapClient CreateTcpRoadmapClient(EndpointSettings portSettings)
+        public static IMapClient CreateTcpMapClient(EndpointSettings portSettings)
         {
             return new MapClient(portSettings.TcpMapService());
         }
@@ -47,23 +41,18 @@ namespace SchedulingClients
 
         public static IAgentAttentionClient CreateTcpAgentAttentionClient(EndpointSettings portSettings)
         {
-          return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
+            return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
         }
 
-        public static ITaskStateClient CreateTcpTaskStatecastClient(EndpointSettings portSettings)
-        {
-            return new TaskStateClient(portSettings.TcpTaskStateService());
-        }
+        //        public static ITaskStateClient CreateTcpTaskStatecastClient(EndpointSettings portSettings)
+        //        {
+        //            return new TaskStateClient(portSettings.TcpTaskStateService());
+        //        }
 
 
         public static IAgentStatecastClient CreateTcpAgentStatecastClient(EndpointSettings portSettings)
         {
-          return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
-        }
-
-        public static IVersionClient CreateTcpVersionClient(EndpointSettings portSettings)
-        {
-            return new VersionClient(portSettings.TcpVersionService());
+            return new AgentStatecastClient(portSettings.TcpAgentStatecastService());
         }
     }
 }

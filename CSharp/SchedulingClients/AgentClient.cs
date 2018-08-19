@@ -2,7 +2,8 @@
 using System.ServiceModel;
 using SchedulingClients.AgentServiceReference;
 using System.Collections.Generic;
-using GAClients;
+using BaseClients;
+using NLog;
 
 namespace SchedulingClients
 {

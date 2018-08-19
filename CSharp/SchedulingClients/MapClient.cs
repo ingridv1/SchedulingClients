@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using NLog;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients
 {

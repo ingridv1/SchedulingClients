@@ -1,4 +1,4 @@
-﻿using GAClients;
+﻿using BaseClients;
 using SchedulingClients.AgentAttentionServiceReference;
 using System;
 using System.ServiceModel;
@@ -7,22 +7,22 @@ namespace SchedulingClients
 {
     internal class AgentAttentionClient : AbstractCallbackClient<IAgentAttentionService>, IAgentAttentionClient
     {
-		private AgentAttentionServiceCallback callback = new AgentAttentionServiceCallback();
+        private AgentAttentionServiceCallback callback = new AgentAttentionServiceCallback();
 
-		private TimeSpan heartbeat;
+        private TimeSpan heartbeat;
 
-		private bool isDisposed = false;
+        private bool isDisposed = false;
 
-		/// <summary>
-		/// Creates an AgentAttentionClient
-		/// </summary>
-		/// <param name="netTcpUri">net.tcp address of the job state service</param>
-		/// <param name="heartbeat">Heartbeat</param>
-		public AgentAttentionClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
-			: base(netTcpUri)
-		{
-			this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
-		}
+        /// <summary>
+        /// Creates an AgentAttentionClient
+        /// </summary>
+        /// <param name="netTcpUri">net.tcp address of the job state service</param>
+        /// <param name="heartbeat">Heartbeat</param>
+        public AgentAttentionClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
+            : base(netTcpUri)
+        {
+            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
+        }
 
         /// <summary>
         /// Change to agent attention status
@@ -33,74 +33,74 @@ namespace SchedulingClients
             remove { callback.AgentAttentionChange -= value; }
         }
 
-		/// <summary>
-		/// Hearbeat time
-		/// </summary>
-		public TimeSpan Heartbeat { get { return heartbeat; } }
+        /// <summary>
+        /// Hearbeat time
+        /// </summary>
+        public TimeSpan Heartbeat { get { return heartbeat; } }
 
-		protected override void Dispose(bool isDisposing)
-		{
-			Logger.Debug("Dispose({0})", isDisposing);
+        protected override void Dispose(bool isDisposing)
+        {
+            Logger.Debug("Dispose({0})", isDisposing);
 
-			if (isDisposed)
-			{
-				return;
-			}
-            
-			isDisposed = true;
+            if (isDisposed)
+            {
+                return;
+            }
 
-			base.Dispose(isDisposing);
-		}
+            isDisposed = true;
 
-		protected override void HeartbeatThread()
-		{
-			Logger.Debug("HeartbeatThread()");
+            base.Dispose(isDisposing);
+        }
 
-			ChannelFactory<IAgentAttentionService> channelFactory = CreateChannelFactory();
-			IAgentAttentionService agentAttentionService = channelFactory.CreateChannel();
+        protected override void HeartbeatThread()
+        {
+            Logger.Debug("HeartbeatThread()");
 
-			bool? exceptionCaught;
+            ChannelFactory<IAgentAttentionService> channelFactory = CreateChannelFactory();
+            IAgentAttentionService agentAttentionService = channelFactory.CreateChannel();
 
-			while (!Terminate)
-			{
-				exceptionCaught = null;
+            bool? exceptionCaught;
 
-				try
-				{
-					Logger.Trace("SubscriptionHeartbeat({0})", Key);
-					agentAttentionService.SubscriptionHeartbeat(Key);
-					IsConnected = true;
-					exceptionCaught = false;
-				}
-				catch (EndpointNotFoundException)
-				{
-					Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
-					exceptionCaught = true;
-				}
-				catch (Exception ex)
-				{
-					Logger.Error(ex);
-					exceptionCaught = true;
-				}
+            while (!Terminate)
+            {
+                exceptionCaught = null;
 
-				if (exceptionCaught == true)
-				{
-					channelFactory.Abort();
-					IsConnected = false;
+                try
+                {
+                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
+                    agentAttentionService.SubscriptionHeartbeat(Key);
+                    IsConnected = true;
+                    exceptionCaught = false;
+                }
+                catch (EndpointNotFoundException)
+                {
+                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
+                    exceptionCaught = true;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex);
+                    exceptionCaught = true;
+                }
 
-					channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
-					agentAttentionService = channelFactory.CreateChannel();
-				}
+                if (exceptionCaught == true)
+                {
+                    channelFactory.Abort();
+                    IsConnected = false;
 
-				heartbeatReset.WaitOne(Heartbeat);
-			}
+                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
+                    agentAttentionService = channelFactory.CreateChannel();
+                }
 
-			Logger.Debug("HeartbeatThread exit");
-		}
+                heartbeatReset.WaitOne(Heartbeat);
+            }
 
-		protected override void SetInstanceContext()
-		{
-			this.context = new InstanceContext(this.callback);
-		}
-	}
+            Logger.Debug("HeartbeatThread exit");
+        }
+
+        protected override void SetInstanceContext()
+        {
+            this.context = new InstanceContext(this.callback);
+        }
+    }
 }

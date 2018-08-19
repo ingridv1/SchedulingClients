@@ -1,15 +1,13 @@
 ﻿using System;
-using GAClients;
+using BaseClients;
 using agentbattery = SchedulingClients.AgentBatteryStatusServiceReference;
 using agent = SchedulingClients.AgentServiceReference;
-using fleetManager = SchedulingClients.FleetManagerServiceReference;
 using jobBuilder = SchedulingClients.JobBuilderServiceReference;
 using jobs = SchedulingClients.JobsStateServiceReference;
 using maps = SchedulingClients.MapServiceReference;
 using job = SchedulingClients.JobStateServiceReference;
 using servicing = SchedulingClients.ServicingServiceReference;
-using agentStatecast = SchedulingClients.AgentStateCastServiceReference;
-using version = SchedulingClients.VersionServiceReference;
+using agentStatecast = SchedulingClients.AgentStatecastServiceReference;
 
 namespace SchedulingClients
 {
@@ -80,19 +78,6 @@ namespace SchedulingClients
                 );
         }
 
-        public static ServiceOperationResult FromFleetManagerServiceCallData(fleetManager.ServiceCallData serviceCallData)
-        {
-            Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
-
-            return new ServiceOperationResult
-                (
-                    (uint)serviceCallData.ServiceCode,
-                    serviceCallData.ServiceCode.ToString(),
-                    serviceException,
-                    null
-                );
-        }
-
         public static ServiceOperationResult FromAgentServiceCallData(agent.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
@@ -106,7 +91,7 @@ namespace SchedulingClients
                 );
         }
 
-        public static ServiceOperationResult FromVersionServiceCallData(version.ServiceCallData serviceCallData)
+        public static ServiceOperationResult FromAgentBatteryServiceCallData(agentbattery.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 
@@ -119,7 +104,7 @@ namespace SchedulingClients
                 );
         }
 
-        public static ServiceOperationResult FromAgentBatterServiceCallData(agentbattery.ServiceCallData serviceCallData)
+        public static ServiceOperationResult FromAgentStatecastServiceCallData(agentStatecast.ServiceCallData serviceCallData)
         {
             Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
 
@@ -131,18 +116,5 @@ namespace SchedulingClients
                     null
                 );
         }
-
-		public static ServiceOperationResult FromAgentStatecastServiceCallData(agentStatecast.ServiceCallData serviceCallData)
-		{
-			Exception serviceException = string.IsNullOrEmpty(serviceCallData.Message) ? null : new Exception(serviceCallData.Message);
-
-			return new ServiceOperationResult
-				(
-					(uint)serviceCallData.ServiceCode,
-					serviceCallData.ServiceCode.ToString(),
-					serviceException,
-					null
-				);
-		}
-	}
+    }
 }

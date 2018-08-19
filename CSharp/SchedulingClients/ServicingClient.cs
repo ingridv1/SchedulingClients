@@ -1,4 +1,4 @@
-﻿using GAClients;
+﻿using BaseClients;
 using SchedulingClients.ServicingServiceReference;
 using System;
 using System.ServiceModel;

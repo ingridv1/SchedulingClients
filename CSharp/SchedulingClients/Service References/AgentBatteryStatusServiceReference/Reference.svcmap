@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9f64f48-afb9-4877-81b6-80bed932262f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3acdf0aa-f3d1-42b7-bc4b-01bffacb2ace" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://127.0.0.1:41916/agentBatteryStatus.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="agentBatteryStatus.xsd" MetadataType="Schema" ID="ddb88aed-233c-4403-9c77-eacf17fe2f49" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd4" />
-    <MetadataFile FileName="AgentBatteryStatusService.wsdl" MetadataType="Wsdl" ID="d18f77bb-c3bf-418d-a2e1-1114ae258d9d" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc" />
-    <MetadataFile FileName="agentBatteryStatus1.xsd" MetadataType="Schema" ID="3654c7a5-f13a-471f-9a2a-7112f28daa68" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd3" />
-    <MetadataFile FileName="agentBatteryStatus2.xsd" MetadataType="Schema" ID="9da91c92-2a56-4e7d-aaad-8a2979ab0ab2" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd2" />
-    <MetadataFile FileName="agentBatteryStatus3.xsd" MetadataType="Schema" ID="4515c739-a94e-456a-9071-a0106dc5f269" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd1" />
-    <MetadataFile FileName="agentBatteryStatus4.xsd" MetadataType="Schema" ID="861caa97-f17e-4d5f-877a-31d6fe807dbf" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd0" />
+    <MetadataFile FileName="agentBatteryStatus.xsd" MetadataType="Schema" ID="8b919c39-ec0a-45e8-b0c8-4293f2179af1" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd4" />
+    <MetadataFile FileName="AgentBatteryStatusService.wsdl" MetadataType="Wsdl" ID="53d19172-0e93-4f50-baa6-718fcb6f4a11" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc" />
+    <MetadataFile FileName="agentBatteryStatus1.xsd" MetadataType="Schema" ID="6fd83c7c-9601-4af1-b2f2-f636e06124cc" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd3" />
+    <MetadataFile FileName="agentBatteryStatus2.xsd" MetadataType="Schema" ID="a2602846-755a-4d7e-99f5-f845f3e3bad4" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd2" />
+    <MetadataFile FileName="agentBatteryStatus3.xsd" MetadataType="Schema" ID="736e21eb-6a7b-4462-9576-4f74d576bdd0" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd1" />
+    <MetadataFile FileName="agentBatteryStatus4.xsd" MetadataType="Schema" ID="6f9d53c4-b136-41b6-a71d-d3c076d1839d" SourceId="1" SourceUrl="http://127.0.0.1:41916/agentBatteryStatus.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

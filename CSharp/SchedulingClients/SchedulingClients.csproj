@@ -13,28 +13,38 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>bin\x64\Debug\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GAClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\GenericClients.1.3.0\lib\net47\GAClients.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="GAClients.Generic, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\GenericClients.1.3.0\lib\net47\GAClients.Generic.dll</HintPath>
+    <Reference Include="BaseClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseClients.1.0.0\lib\net47\BaseClients.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.5.7\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.5.8\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sparrow.Chart.Wpf.40, Version=13.1.0.118, Culture=neutral, PublicKeyToken=50f33fb8697e9a92, processorArchitecture=MSIL">
       <HintPath>..\packages\Sparrow.Chart.Wpf.13.1.0.118\lib\net40\Sparrow.Chart.Wpf.40.dll</HintPath>
@@ -57,32 +67,30 @@
     <Compile Include="AbstractCast.cs" />
     <Compile Include="AgentAttentionClient.cs" />
     <Compile Include="AgentAttentionServiceCallback.cs" />
-    <Compile Include="AgentClient.cs" />
     <Compile Include="AgentBatteryStatusClient.cs" />
+    <Compile Include="AgentClient.cs" />
     <Compile Include="AgentStatecastClient.cs" />
     <Compile Include="Client Interfaces\IAgentAttentionClient.cs" />
     <Compile Include="Client Interfaces\IAgentBatteryStatusClient.cs" />
     <Compile Include="Client Interfaces\IAgentClient.cs" />
     <Compile Include="Client Interfaces\IAgentStatecastClient.cs" />
-    <Compile Include="Client Interfaces\IFleetManagerClient.cs" />
     <Compile Include="Client Interfaces\IJobBuilderClient.cs" />
     <Compile Include="Client Interfaces\IJobsStateClient.cs" />
     <Compile Include="Client Interfaces\IJobStateClient.cs" />
     <Compile Include="Client Interfaces\IMapClient.cs" />
     <Compile Include="Client Interfaces\IServicingClient.cs" />
     <Compile Include="Client Interfaces\ITaskStateClient.cs" />
-    <Compile Include="Client Interfaces\IVersionClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="ControllerState.cs" />
-    <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="FleetManagerClient.cs" />
-    <Compile Include="FleetManagerServiceCallback.cs" />
-    <Compile Include="JobBuilderClient.cs" />
     <Compile Include="EndpointSettings_ExtensionMethods.cs" />
-    <Compile Include="JobsStateServiceCallback.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="JobBuilderClient.cs" />
     <Compile Include="JobsStateClient.cs" />
+    <Compile Include="JobsStateServiceCallback.cs" />
     <Compile Include="JobStateClient.cs" />
     <Compile Include="JobStateServiceCallback.cs" />
+    <Compile Include="MapClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentAttentionServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,14 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\AgentStateCastServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="MapClient.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\FleetManagerServiceReference\Reference.cs">
+    <Compile Include="Service References\AgentStatecastServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -140,17 +141,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\VersionServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="ServiceOperationResultFactory.cs" />
-    <Compile Include="ServicingServiceCallback.cs" />
     <Compile Include="ServicingClient.cs" />
+    <Compile Include="ServicingServiceCallback.cs" />
     <Compile Include="TaskStateClient.cs" />
     <Compile Include="TaskStateServiceCallback.cs" />
-    <Compile Include="VersionClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -161,14 +156,13 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Net.IPAddress.datasource" />
-    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
     <None Include="Service References\AgentAttentionServiceReference\agentAttention.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention2.xsd">
+    <None Include="Service References\AgentAttentionServiceReference\agentAttention1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentAttentionServiceReference\agentAttention3.xsd">
+    <None Include="Service References\AgentAttentionServiceReference\agentAttention2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AgentAttentionServiceReference\AgentAttentionService.wsdl" />
@@ -215,10 +209,10 @@
     <None Include="Service References\AgentServiceReference\agent6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentServiceReference\agent61.xsd">
+    <None Include="Service References\AgentServiceReference\agent7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentServiceReference\agent62.xsd">
+    <None Include="Service References\AgentServiceReference\agent8.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AgentServiceReference\AgentService.wsdl" />
@@ -228,96 +222,62 @@
     <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast1.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast2.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast3.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast4.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast5.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast6.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\agentStatecast7.xsd">
+    <None Include="Service References\AgentStatecastServiceReference\agentStatecast7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\AgentStatecastService.wsdl" />
-    <None Include="Service References\AgentStateCastServiceReference\SchedulingClients.AgentStateCastServiceReference.CastType.datasource">
+    <None Include="Service References\AgentStatecastServiceReference\AgentStatecastService.wsdl" />
+    <None Include="Service References\AgentStatecastServiceReference\SchedulingClients.AgentStatecastServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AgentStateCastServiceReference\SchedulingClients.AgentStateCastServiceReference.ServiceCallData.datasource">
+    <None Include="Service References\AgentStatecastServiceReference\SchedulingClients.AgentStatecastServiceReference.StateCastVariableDefinitionData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager1.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager2.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager3.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager4.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager5.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager6.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder6.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetManagerServiceReference\fleetManager9.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetManagerServiceReference\FleetManagerService.wsdl" />
-    <None Include="Service References\FleetManagerServiceReference\SchedulingClients.FleetManagerServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder71.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder72.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder73.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder74.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder75.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder76.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder77.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder78.xsd">
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder8.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
@@ -342,10 +302,10 @@
     <None Include="Service References\JobsStateServiceReference\jobsState4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobsStateServiceReference\jobsState41.xsd">
+    <None Include="Service References\JobsStateServiceReference\jobsState5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobsStateServiceReference\JobsStateService1.wsdl" />
+    <None Include="Service References\JobsStateServiceReference\JobsStateService.wsdl" />
     <None Include="Service References\JobsStateServiceReference\SchedulingClients.JobsStateServiceReference.ServiceCallData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -361,13 +321,13 @@
     <None Include="Service References\JobStateServiceReference\jobState3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobStateServiceReference\jobState31.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\JobStateServiceReference\jobState4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobStateServiceReference\jobState5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobStateServiceReference\jobState6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
@@ -432,10 +392,10 @@
     <None Include="Service References\ServicingServiceReference\servicing3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServicingServiceReference\servicing31.xsd">
+    <None Include="Service References\ServicingServiceReference\servicing4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServicingServiceReference\ServicingService1.wsdl" />
+    <None Include="Service References\ServicingServiceReference\ServicingService.wsdl" />
     <None Include="Service References\TaskStateServiceReference\taskState.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -449,45 +409,30 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\TaskStateServiceReference\TaskStateService.wsdl" />
-    <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.PluginData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.SemVerData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\VersionServiceReference\SchedulingClients.VersionServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\VersionServiceReference\VersionService.wsdl" />
-    <None Include="Service References\VersionServiceReference\versionService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VersionServiceReference\versionService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VersionServiceReference\versionService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VersionServiceReference\versionService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VersionServiceReference\versionService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AgentAttentionServiceReference\" />
     <WCFMetadataStorage Include="Service References\AgentBatteryStatusServiceReference\" />
     <WCFMetadataStorage Include="Service References\AgentServiceReference\" />
-    <WCFMetadataStorage Include="Service References\AgentStateCastServiceReference\" />
-    <WCFMetadataStorage Include="Service References\FleetManagerServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AgentStatecastServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobBuilderServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobsStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\JobStateServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapServiceReference\" />
     <WCFMetadataStorage Include="Service References\ServicingServiceReference\" />
     <WCFMetadataStorage Include="Service References\TaskStateServiceReference\" />
-    <WCFMetadataStorage Include="Service References\VersionServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JobBuilderServiceReference\configuration91.svcinfo" />
@@ -514,13 +459,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\JobsStateServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AgentBatteryStatusServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\JobsStateServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AgentBatteryStatusServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\JobsStateServiceReference\Reference.svcmap">
+    <None Include="Service References\AgentBatteryStatusServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentAttentionServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentAttentionServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgentAttentionServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -538,38 +495,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentBatteryStatusServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\JobsStateServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentBatteryStatusServiceReference\configuration.svcinfo" />
+    <None Include="Service References\JobsStateServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentBatteryStatusServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentAttentionServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentAttentionServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentAttentionServiceReference\Reference.svcmap">
+    <None Include="Service References\JobsStateServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentStateCastServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AgentStatecastServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentStateCastServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AgentStatecastServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AgentStateCastServiceReference\Reference.svcmap">
+    <None Include="Service References\AgentStatecastServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -582,42 +526,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MapServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AgentServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\VersionServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\VersionServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\VersionServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FleetManagerServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FleetManagerServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FleetManagerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

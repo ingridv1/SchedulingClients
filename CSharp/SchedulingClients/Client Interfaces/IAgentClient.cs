@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using SchedulingClients.AgentServiceReference;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients
 {
-  public interface IAgentClient : IClient
+    public interface IAgentClient : IClient
 	{
 		ServiceOperationResult TryGetAllAgentData(out IEnumerable<AgentData> agentDatas);
 

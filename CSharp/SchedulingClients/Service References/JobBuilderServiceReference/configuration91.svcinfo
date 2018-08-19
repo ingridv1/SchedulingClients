@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="YnUDAWQGXbOX9Aitos/7BiGBBWk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="GcfZtLlHAcjUMIJaj++ddg7Y3S8=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IJobBuilderService">
       <properties>
@@ -215,10 +215,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IJobBuilderService" contract="JobBuilderServiceReference.IJobBuilderService" bindingType="netTcpBinding" address="net.tcp://10.128.17.45:41917/jobBuilder.svc" bindingConfiguration="NetTcpBinding_IJobBuilderService">
+    <endpoint name="NetTcpBinding_IJobBuilderService" contract="JobBuilderServiceReference.IJobBuilderService" bindingType="netTcpBinding" address="net.tcp://127.0.0.1:41917/jobBuilder.svc" bindingConfiguration="NetTcpBinding_IJobBuilderService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://10.128.17.45:41917/jobBuilder.svc</serializedValue>
+          <serializedValue>net.tcp://127.0.0.1:41917/jobBuilder.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -300,10 +300,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSDualHttpBinding_IJobBuilderService" contract="JobBuilderServiceReference.IJobBuilderService" bindingType="wsDualHttpBinding" address="http://10.128.17.45:41916/jobBuilder.svc" bindingConfiguration="WSDualHttpBinding_IJobBuilderService">
+    <endpoint name="WSDualHttpBinding_IJobBuilderService" contract="JobBuilderServiceReference.IJobBuilderService" bindingType="wsDualHttpBinding" address="http://127.0.0.1:41916/jobBuilder.svc" bindingConfiguration="WSDualHttpBinding_IJobBuilderService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://10.128.17.45:41916/jobBuilder.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:41916/jobBuilder.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
