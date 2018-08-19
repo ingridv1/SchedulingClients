@@ -4,7 +4,7 @@ using System.Linq;
 using SchedulingClients.MapServiceReference;
 using System.Collections.Generic;
 using System.Windows;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients.UserControls
 {

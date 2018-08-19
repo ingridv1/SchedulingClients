@@ -6,7 +6,7 @@ using NLog;
 using System.IO;
 using NLog.Targets;
 using NLog.Config;
-using GAClients;
+using BaseClients;
 
 namespace SchedulingClients.DemoClientApp
 {
@@ -48,8 +48,6 @@ namespace SchedulingClients.DemoClientApp
 
 		public ReadOnlyObservableCollection<IClient> Clients { get { return readOnlyClients; } }
 
-        public IFleetManagerClient FleetManagerClient { get { return (IFleetManagerClient)clients.FirstOrDefault(e => e is IFleetManagerClient); } }
-
         public bool IsDisposed { get { return isDisposed; } }
 
         public IJobBuilderClient JobBuilderClient { get { return (IJobBuilderClient)clients.FirstOrDefault(e => e is IJobBuilderClient); } }
@@ -64,26 +62,21 @@ namespace SchedulingClients.DemoClientApp
 
         public IServicingClient ServicingClient { get { return (IServicingClient)clients.FirstOrDefault(e => e is IServicingClient); } }
 
-        public IVersionClient VersionClient { get { return (IVersionClient)clients.FirstOrDefault(e => e is IVersionClient); } }
-
         public void Configure()
         {
             clients.Add(ClientFactory.CreateTcpAgentClient(endpointSettings));
             clients.Add(ClientFactory.CreateTcpAgentBatteryStatusClient(endpointSettings));
-            clients.Add(ClientFactory.CreateTcpFleetManagerClient(endpointSettings));
 
             clients.Add(ClientFactory.CreateTcpJobBuilderClient(endpointSettings));
 
             clients.Add(ClientFactory.CreateTcpJobStateClient(endpointSettings));
             clients.Add(ClientFactory.CreateTcpJobsStateClient(endpointSettings));
 
-            clients.Add(ClientFactory.CreateTcpRoadmapClient(endpointSettings));
+            clients.Add(ClientFactory.CreateTcpMapClient(endpointSettings));
             clients.Add(ClientFactory.CreateTcpServicingClient(endpointSettings));
 
 			clients.Add(ClientFactory.CreateTcpAgentAttentionClient(endpointSettings));
 			clients.Add(ClientFactory.CreateTcpAgentStatecastClient(endpointSettings));
-
-            clients.Add(ClientFactory.CreateTcpVersionClient(endpointSettings));
 
             LogManager.Configuration = new LoggingConfiguration();
 

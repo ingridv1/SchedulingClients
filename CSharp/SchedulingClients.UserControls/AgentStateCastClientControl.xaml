@@ -58,27 +58,21 @@
                 </StackPanel>
             </local:LabelContentControl>
             <local:LabelContentControl Header="Get IPAddress Statecast Variable">
-				<StackPanel Orientation="Horizontal">
-					<StackPanel Orientation="Horizontal">
-						<TextBox x:Name="ipBox1" Text="0" IsEnabled="False" Width="auto" />
-						<TextBlock Text="." />
-						<TextBox x:Name="ipBox2" Text="0" IsEnabled="False" Width="auto" />
-						<TextBlock Text="." />
-						<TextBox x:Name="ipBox3" Text="0" IsEnabled="False" Width="auto" />
-						<TextBlock Text="." />
-						<TextBox x:Name="ipBox4" Text="0" IsEnabled="False" Width="auto" />
-					</StackPanel>
-					<TextBox x:Name="ipAliasBox" Text="[variable alias]" Width="auto" MinWidth="50" />
-					<toolkit:IntegerUpDown x:Name="ipVariableUpDown" Maximum="65535" Minimum="0" MinWidth="50" />
-					<Button x:Name="ipVariableButton" Click="ipVariableButton_Click" Width="auto">Retrieve</Button>
-				</StackPanel>
-			</local:LabelContentControl>
-			<local:LabelContentControl Header="Get Statecast Description">
-				<StackPanel Orientation="Horizontal">
-					<toolkit:IntegerUpDown x:Name="descriptionUpDown" Maximum="65535" Minimum="0" MinWidth="50" />
-					<Button x:Name="descriptionButton" Click="descriptionButton_Click" Width="Auto">Retrieve</Button>
-				</StackPanel>
-			</local:LabelContentControl>
-		</StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="ipBox1" Text="0" IsEnabled="False" Width="auto" />
+                        <TextBlock Text="." />
+                        <TextBox x:Name="ipBox2" Text="0" IsEnabled="False" Width="auto" />
+                        <TextBlock Text="." />
+                        <TextBox x:Name="ipBox3" Text="0" IsEnabled="False" Width="auto" />
+                        <TextBlock Text="." />
+                        <TextBox x:Name="ipBox4" Text="0" IsEnabled="False" Width="auto" />
+                    </StackPanel>
+                    <TextBox x:Name="ipAliasBox" Text="[variable alias]" Width="auto" MinWidth="50" />
+                    <toolkit:IntegerUpDown x:Name="ipVariableUpDown" Maximum="65535" Minimum="0" MinWidth="50" />
+                    <Button x:Name="ipVariableButton" Click="ipVariableButton_Click" Width="auto">Retrieve</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+        </StackPanel>
 	</Grid>
 </UserControl>

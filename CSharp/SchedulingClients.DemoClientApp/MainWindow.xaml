@@ -47,14 +47,6 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    Fleet Manager Client
-                </TabItem.Header>
-                <Grid>
-                    <clientsUC:FleetManagerClientControl x:Name="fleetManagerClientControl" DataContext="{Binding Path=FleetManagerClient}" />
-                </Grid>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
                     Job Builder Client
                 </TabItem.Header>
                 <Grid>
