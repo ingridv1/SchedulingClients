@@ -79,6 +79,8 @@
     <Compile Include="AbstractClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TJobBuilderClient.cs" />
+    <Compile Include="TJobsStateClient.cs" />
+    <Compile Include="TJobStateClient.cs" />
     <Compile Include="TMapClient.cs" />
   </ItemGroup>
   <ItemGroup>
