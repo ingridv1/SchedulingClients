@@ -23,7 +23,7 @@ namespace SchedulingClients.Test
             clients.Add(mapClient);
 
             IJobBuilderClient jobBuilderClient = ClientFactory.CreateTcpJobBuilderClient(settings);
-            clients.Add(jobBuilderClient);  
+            clients.Add(jobBuilderClient);
         }
 
         IJobBuilderClient JobBuilderClient => clients.First(e => e is IJobBuilderClient) as IJobBuilderClient;
@@ -31,13 +31,38 @@ namespace SchedulingClients.Test
         IMapClient MapClient => clients.First(e => e is IMapClient) as IMapClient;
 
         [Test]
+        public void CreateInvalidMovingTask()
+        {
+            int movingTaskId;
+            ServiceOperationResult result = JobBuilderClient.TryCreateMovingTask(1,2,out movingTaskId);
+
+            Assert.IsFalse(result.IsSuccessfull);
+            Assert.IsNull(result.ClientException);
+            Assert.IsTrue(result.IsServiceError);
+        }
+
+
+        [Test]
+        public void CommitInvalidJob()
+        {
+            bool success;
+
+            ServiceOperationResult result = JobBuilderClient.TryCommit(-1, out success);
+
+            Assert.IsFalse(result.IsSuccessfull);
+            Assert.IsNull(result.ClientException);
+            Assert.IsTrue(result.IsServiceError);
+        }
+
+        [Test]
         public void CreateJob()
         {
             JobData jobData = null;
-            ServiceOperationResult result = JobBuilderClient.TryCreateJob(out jobData);
 
-            Assert.IsNotNull(jobData);
+            ServiceOperationResult result = JobBuilderClient.TryCreateJob(out jobData);         
+
             Assert.IsTrue(result.IsSuccessfull);
+            Assert.IsNotNull(jobData);
         }
 	}
 }

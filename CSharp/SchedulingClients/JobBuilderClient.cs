@@ -484,6 +484,8 @@ namespace SchedulingClients
 
             Tuple<JobData, ServiceCallData> result;
 
+            EndpointAddress addy = this.EndpointAddress;
+
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
