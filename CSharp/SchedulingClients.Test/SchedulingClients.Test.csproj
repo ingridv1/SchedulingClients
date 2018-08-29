@@ -24,6 +24,14 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BaseClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BaseClients.1.0.0\lib\net47\BaseClients.dll</HintPath>
@@ -78,10 +86,18 @@
   <ItemGroup>
     <Compile Include="AbstractClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TAgentBatteryStatusClient_ClientExceptionNull.cs" />
+    <Compile Include="TAgentClient_ClientExceptionNull.cs" />
+    <Compile Include="TAgentStatecastClient_ClientExceptionNull.cs" />
     <Compile Include="TJobBuilderClient.cs" />
+    <Compile Include="TJobBuilderClient_ClientExceptionNull.cs" />
+    <Compile Include="TJobsStateClient_ClientExceptionNull.cs" />
+    <Compile Include="TJobStateClient_ClientExceptionNull.cs" />
     <Compile Include="TJobsStateClient.cs" />
     <Compile Include="TJobStateClient.cs" />
     <Compile Include="TMapClient.cs" />
+    <Compile Include="TMapClient_ClientExceptionNull.cs" />
+    <Compile Include="TServicingClient_ClientExceptionNull.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

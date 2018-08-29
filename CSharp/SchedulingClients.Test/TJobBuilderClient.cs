@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using BaseClients;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace SchedulingClients.Test
 {
@@ -63,6 +64,5 @@ namespace SchedulingClients.Test
             Assert.IsTrue(result.IsSuccessfull);
             Assert.IsNotNull(jobData);
         }
-
-    }
+	}
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using NUnit.Framework;
 using SchedulingClients.MapServiceReference;
+using BaseClients;
 
 namespace SchedulingClients.Test
 {
@@ -22,7 +23,7 @@ namespace SchedulingClients.Test
         IMapClient MapClient => clients.First(e => e is IMapClient) as IMapClient;
 
         [Test]
-        public void MapClient_GetMapItems()
+        public void GetMapItems()
         {
             IEnumerable<NodeData> nodeDataset;
             MapClient.TryGetAllNodeData(out nodeDataset);
@@ -36,7 +37,7 @@ namespace SchedulingClients.Test
         }
 
         [Test]
-        public void MapClient_GetTrajectory()
+        public void GetTrajectory()
         { 
             IEnumerable<MoveData> moveDataset;
             MapClient.TryGetAllMoveData(out moveDataset);
