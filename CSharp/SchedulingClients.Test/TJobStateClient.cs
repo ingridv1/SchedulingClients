@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 namespace SchedulingClients.Test
 {
     [TestFixture]
-    [Category("JobState")]
     public class TJobStateClient : AbstractClientTest
     {
         [OneTimeSetUp]
@@ -25,12 +24,13 @@ namespace SchedulingClients.Test
         IJobStateClient JobStateClient => clients.First(e => e is IJobStateClient) as IJobStateClient;
 
         [Test]
-        public void AssertZero()
+        [Category("ClientExceptionNull")]
+        public void TryGetJobSummary_ClientExceptionNull()
         {
             JobSummaryData jobSummaryData;
             ServiceOperationResult result = JobStateClient.TryGetJobSummary(-1, out jobSummaryData);
 
-            Assert.IsFalse(result.IsSuccessfull);
+            Assert.IsNull(result.ClientException);
         }
 
     }
