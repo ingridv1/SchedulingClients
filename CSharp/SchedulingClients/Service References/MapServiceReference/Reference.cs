@@ -292,6 +292,9 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETPLUGINVERSIONSFAILED = 10002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

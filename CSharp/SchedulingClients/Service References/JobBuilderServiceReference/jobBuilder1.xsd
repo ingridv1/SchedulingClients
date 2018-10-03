@@ -84,6 +84,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CreateAwaitingTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAwaitingTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateAwaitingTaskResult" nillable="true" type="q4:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CreateJob">
     <xs:complexType>
       <xs:sequence />
@@ -92,7 +107,7 @@
   <xs:element name="CreateJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateJobResult" nillable="true" type="q4:TupleOfJobDataServiceCallDatasRA0sedl" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateJobResult" nillable="true" type="q5:TupleOfJobDataServiceCallDatasRA0sedl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,22 +122,7 @@
   <xs:element name="CreateMovingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q5:TupleOfintServiceCallDatayG81JSvh" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreateAwaitingTask">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
-        <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreateAwaitingTaskResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateAwaitingTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

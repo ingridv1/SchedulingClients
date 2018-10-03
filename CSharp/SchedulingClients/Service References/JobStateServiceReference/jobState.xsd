@@ -47,6 +47,7 @@
       <xs:enumeration value="AwaitAtNode" />
       <xs:enumeration value="SleepAtNode" />
       <xs:enumeration value="MoveToNode" />
+      <xs:enumeration value="ChargeAtNode" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskType" nillable="true" type="tns:TaskType" />
