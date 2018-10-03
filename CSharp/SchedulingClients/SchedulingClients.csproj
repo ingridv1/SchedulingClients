@@ -165,7 +165,22 @@
     <None Include="Service References\AgentAttentionServiceReference\agentAttention2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\AgentAttentionServiceReference\agentAttention3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentAttentionServiceReference\agentAttention31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgentAttentionServiceReference\agentAttention32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AgentAttentionServiceReference\AgentAttentionService.wsdl" />
+    <None Include="Service References\AgentAttentionServiceReference\SchedulingClients.AgentAttentionServiceReference.AgentAttentionData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgentAttentionServiceReference\SchedulingClients.AgentAttentionServiceReference.ServiceCallData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AgentBatteryStatusServiceReference\agentBatteryStatus.xsd">
       <SubType>Designer</SubType>
     </None>

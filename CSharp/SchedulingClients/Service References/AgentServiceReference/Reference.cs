@@ -399,6 +399,9 @@ namespace SchedulingClients.AgentServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETPLUGINVERSIONSFAILED = 10002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

@@ -51,20 +51,6 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetJobSummary">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="jobId" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetJobSummaryResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetJobSummaryResult" nillable="true" type="q2:TupleOfJobSummaryDataServiceCallDatasRA0sedl" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetCurrentJobSummaryForAgentId">
     <xs:complexType>
       <xs:sequence>
@@ -75,7 +61,21 @@
   <xs:element name="GetCurrentJobSummaryForAgentIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetCurrentJobSummaryForAgentIdResult" nillable="true" type="q3:TupleOfJobSummaryDataServiceCallDatasRA0sedl" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetCurrentJobSummaryForAgentIdResult" nillable="true" type="q2:TupleOfJobSummaryDataServiceCallDatasRA0sedl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetJobSummaryResult" nillable="true" type="q3:TupleOfJobSummaryDataServiceCallDatasRA0sedl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

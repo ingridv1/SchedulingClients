@@ -17,21 +17,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfbooleanServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfbooleanServiceCallDatayG81JSvh" />
-  <xs:complexType name="TupleOfJobDataServiceCallDatasRA0sedl">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="JobData" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" />
-          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" name="m_Item1" nillable="true" type="q2:JobData" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q3:ServiceCallData" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TupleOfJobDataServiceCallDatasRA0sedl" nillable="true" type="tns:TupleOfJobDataServiceCallDatasRA0sedl" />
   <xs:complexType name="TupleOfintServiceCallDatayG81JSvh">
     <xs:annotation>
       <xs:appinfo>
@@ -43,8 +28,23 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="m_Item1" type="xs:int" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:ServiceCallData" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q2:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfintServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfintServiceCallDatayG81JSvh" />
+  <xs:complexType name="TupleOfJobDataServiceCallDatasRA0sedl">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="JobData" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" />
+          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" name="m_Item1" nillable="true" type="q3:JobData" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:ServiceCallData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TupleOfJobDataServiceCallDatasRA0sedl" nillable="true" type="tns:TupleOfJobDataServiceCallDatasRA0sedl" />
 </xs:schema>

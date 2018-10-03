@@ -519,6 +519,9 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         MoveToNode = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ChargeAtNode = 7,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -707,6 +710,9 @@ namespace SchedulingClients.JobStateServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETPLUGINVERSIONSFAILED = 10002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -814,17 +820,17 @@ namespace SchedulingClients.JobStateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
-        System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobSummary(int jobId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobSummaryAsync(int jobId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
         System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetCurrentJobSummaryForAgentIdAsync(int agentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
+        System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobSummary(int jobId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobSummaryAsync(int jobId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse")]
         System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobSummaryFromTaskId(int taskId);
@@ -900,20 +906,20 @@ namespace SchedulingClients.JobStateServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobSummary(int jobId) {
-            return base.Channel.GetJobSummary(jobId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobSummaryAsync(int jobId) {
-            return base.Channel.GetJobSummaryAsync(jobId);
-        }
-        
         public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId) {
             return base.Channel.GetCurrentJobSummaryForAgentId(agentId);
         }
         
         public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetCurrentJobSummaryForAgentIdAsync(int agentId) {
             return base.Channel.GetCurrentJobSummaryForAgentIdAsync(agentId);
+        }
+        
+        public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetJobSummary(int jobId) {
+            return base.Channel.GetJobSummary(jobId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData>> GetJobSummaryAsync(int jobId) {
+            return base.Channel.GetJobSummaryAsync(jobId);
         }
         
         public System.Tuple<SchedulingClients.JobStateServiceReference.JobSummaryData, SchedulingClients.JobStateServiceReference.ServiceCallData> GetParentJobSummaryFromTaskId(int taskId) {

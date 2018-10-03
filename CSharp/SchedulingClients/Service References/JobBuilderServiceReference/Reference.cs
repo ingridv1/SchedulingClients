@@ -292,6 +292,9 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETPLUGINVERSIONSFAILED = 10002,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -415,6 +418,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CommitJob", ReplyAction="http://tempuri.org/IJobBuilderService/CommitJobResponse")]
         System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CommitJobAsync(int jobId, int agentId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTaskResponse")]
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTaskResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateAwaitingTaskAsync(int parentTaskId, int nodeId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateJob", ReplyAction="http://tempuri.org/IJobBuilderService/CreateJobResponse")]
         System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateJob();
         
@@ -426,12 +435,6 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateMovingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateMovingTaskResponse")]
         System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateMovingTaskAsync(int parentTaskId, int nodeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTaskResponse")]
-        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateAwaitingTaskAsync(int parentTaskId, int nodeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateOrderedListTaskResponse")]
         System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised);
@@ -587,6 +590,14 @@ namespace SchedulingClients.JobBuilderServiceReference {
             return base.Channel.CommitJobAsync(jobId, agentId);
         }
         
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId) {
+            return base.Channel.CreateAwaitingTask(parentTaskId, nodeId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateAwaitingTaskAsync(int parentTaskId, int nodeId) {
+            return base.Channel.CreateAwaitingTaskAsync(parentTaskId, nodeId);
+        }
+        
         public System.Tuple<SchedulingClients.JobBuilderServiceReference.JobData, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateJob() {
             return base.Channel.CreateJob();
         }
@@ -601,14 +612,6 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateMovingTaskAsync(int parentTaskId, int nodeId) {
             return base.Channel.CreateMovingTaskAsync(parentTaskId, nodeId);
-        }
-        
-        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId) {
-            return base.Channel.CreateAwaitingTask(parentTaskId, nodeId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateAwaitingTaskAsync(int parentTaskId, int nodeId) {
-            return base.Channel.CreateAwaitingTaskAsync(parentTaskId, nodeId);
         }
         
         public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised) {

@@ -70,6 +70,12 @@
   <wsdl:message name="IJobBuilderService_CommitJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:CommitJobResponse" />
   </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateAwaitingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAwaitingTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateAwaitingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAwaitingTaskResponse" />
+  </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateJob_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateJob" />
   </wsdl:message>
@@ -81,12 +87,6 @@
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateMovingTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateMovingTaskResponse" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateAwaitingTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateAwaitingTask" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateAwaitingTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateAwaitingTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateOrderedListTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateOrderedListTask" />
@@ -191,6 +191,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CommitJob" message="tns:IJobBuilderService_CommitJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CommitJobResponse" message="tns:IJobBuilderService_CommitJob_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CreateAwaitingTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" message="tns:IJobBuilderService_CreateAwaitingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTaskResponse" message="tns:IJobBuilderService_CreateAwaitingTask_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CreateJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateJob" message="tns:IJobBuilderService_CreateJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateJobResponse" message="tns:IJobBuilderService_CreateJob_OutputMessage" />
@@ -198,10 +202,6 @@
     <wsdl:operation name="CreateMovingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateMovingTask" message="tns:IJobBuilderService_CreateMovingTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateMovingTaskResponse" message="tns:IJobBuilderService_CreateMovingTask_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateAwaitingTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" message="tns:IJobBuilderService_CreateAwaitingTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAwaitingTaskResponse" message="tns:IJobBuilderService_CreateAwaitingTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateOrderedListTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTask" message="tns:IJobBuilderService_CreateOrderedListTask_InputMessage" />
@@ -313,6 +313,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateAwaitingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateJob" style="document" />
       <wsdl:input>
@@ -324,15 +333,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateMovingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateMovingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateAwaitingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -515,6 +515,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateAwaitingTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateJob">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateJob" style="document" />
       <wsdl:input>
@@ -526,15 +535,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateMovingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateMovingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateAwaitingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
