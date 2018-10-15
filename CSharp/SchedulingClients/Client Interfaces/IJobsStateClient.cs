@@ -11,6 +11,8 @@ namespace SchedulingClients
     {
         ServiceOperationResult TryAbortAllJobs(out bool success);
 
+        ServiceOperationResult TryAbortAllJobsForAgent(int agentId, out bool success);
+
         ServiceOperationResult TryAbortJob(int jobId, out bool success);
 
         ServiceOperationResult TryAbortTask(int taskId, out bool success);

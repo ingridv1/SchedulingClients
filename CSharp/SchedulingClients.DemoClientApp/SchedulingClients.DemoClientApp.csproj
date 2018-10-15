@@ -37,14 +37,6 @@
       <HintPath>..\packages\BaseClients.1.0.0\lib\net47\BaseClients.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GAClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GenericClients.1.4.0\lib\net47\GAClients.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="GAClients.Generic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GenericClients.1.4.0\lib\net47\GAClients.Generic.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.5.8\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>

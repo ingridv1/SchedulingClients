@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5dcb351-0a77-4652-b43a-137d1a847fb9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="51072d2c-1feb-4421-b155-0af52bad7d8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -22,13 +21,13 @@
     <MetadataSource Address="http://127.0.0.1:41916/jobsState.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="jobsState.xsd" MetadataType="Schema" ID="8d380e82-7cd9-4d48-9220-0f4d241ff213" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd5" />
-    <MetadataFile FileName="jobsState1.xsd" MetadataType="Schema" ID="90316797-916d-4736-b660-e14ae2719620" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd4" />
-    <MetadataFile FileName="jobsState2.xsd" MetadataType="Schema" ID="d84c8133-eaba-406a-bf13-3dcf0edad549" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" />
-    <MetadataFile FileName="jobsState3.xsd" MetadataType="Schema" ID="812bff2e-c1e7-4646-baa8-440f7c123119" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd0" />
-    <MetadataFile FileName="jobsState4.xsd" MetadataType="Schema" ID="a98139d8-bc9b-444f-b16d-9a85e3d4ee83" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" />
-    <MetadataFile FileName="jobsState5.xsd" MetadataType="Schema" ID="e83efa8a-a9aa-4ca6-b55c-654366d1efe7" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" />
-    <MetadataFile FileName="JobsStateService.wsdl" MetadataType="Wsdl" ID="ce350b9f-a829-4cef-ada6-dd089f237754" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc" />
+    <MetadataFile FileName="jobsState.xsd" MetadataType="Schema" ID="ba30bd63-54f8-4a27-8c6f-e2c0189f7bae" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd5" />
+    <MetadataFile FileName="jobsState1.xsd" MetadataType="Schema" ID="7c3bc800-4445-4e91-9360-2fc21aae00b8" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd4" />
+    <MetadataFile FileName="jobsState2.xsd" MetadataType="Schema" ID="f8373528-1fe5-4462-b491-07a0ed4066e1" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd1" />
+    <MetadataFile FileName="jobsState3.xsd" MetadataType="Schema" ID="201f3afa-0813-4049-9b97-d9bf9055ae5c" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd0" />
+    <MetadataFile FileName="jobsState4.xsd" MetadataType="Schema" ID="cb3ad6cc-36ed-4f50-b32a-78150cd02481" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd3" />
+    <MetadataFile FileName="jobsState5.xsd" MetadataType="Schema" ID="27a19436-5e59-456c-b23b-38b2c54b8137" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc?xsd=xsd2" />
+    <MetadataFile FileName="JobsStateService.wsdl" MetadataType="Wsdl" ID="d13048c1-2c82-4874-a4b7-0af25a485c00" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobsState.svc" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

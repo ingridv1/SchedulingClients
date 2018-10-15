@@ -28,6 +28,12 @@
             <local:LabelContentControl Header="Abort All Jobs">
                 <Button x:Name="abortAllJobsButton" Click="abortAllJobsButton_Click">Abort All</Button>
             </local:LabelContentControl>
+            <local:LabelContentControl Header="Abort All Jobs For Agent">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown x:Name="abortAllJobsForAgentId" DefaultValue="0" Minimum="0" Maximum="99" DisplayDefaultValueOnEmptyText="True"/>
+                    <Button x:Name="abortAllJobsForAgentButton" Click="abortAllJobsForAgentButton_Click">Abort All</Button>
+                </StackPanel>
+            </local:LabelContentControl>
             <local:LabelContentControl Header="Abort Job">
                 <StackPanel Orientation="Horizontal">
                     <toolkit:IntegerUpDown Minimum="0" x:Name="abortJobId" DefaultValue="0" Value="0" />

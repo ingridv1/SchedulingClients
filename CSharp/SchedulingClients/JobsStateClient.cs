@@ -17,6 +17,10 @@ namespace SchedulingClients
 
         private JobsStateData jobsStateData = null;
 
+        private static readonly TimeSpan minimumHearbeat = TimeSpan.FromMilliseconds(10000);
+
+        public static TimeSpan MinimumHeartbeat => minimumHearbeat;
+
         /// <summary>
         /// Creates a JobsStateClient
         /// </summary>
@@ -25,14 +29,14 @@ namespace SchedulingClients
         public JobsStateClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
                     : base(netTcpUri)
         {
-            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
+            this.heartbeat = heartbeat < MinimumHeartbeat ? MinimumHeartbeat : heartbeat;
             callback.JobsStateChange += Callback_JobsStateChange;
         }
 
         /// <summary>
         /// Hearbeat time
         /// </summary>
-        public TimeSpan Heartbeat { get { return heartbeat; } }
+        public TimeSpan Heartbeat => heartbeat; 
 
         /// <summary>
         /// The current state of jobs in the server
@@ -73,6 +77,23 @@ namespace SchedulingClients
             }
         }
 
+        public ServiceOperationResult TryAbortAllJobsForAgent(int agentId, out bool success)
+        {
+            Logger.Info("TryAbortAllJobsForAgent() agentId:{0}", agentId);
+
+            try
+            {
+                Tuple<bool,ServiceCallData> result = AbortAllJobsForAgent(agentId);
+                success = result.Item1;
+                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                return HandleClientException(ex);
+            }
+        }
+
         /// <summary>
         /// Abort a specific job
         /// </summary>
@@ -85,7 +106,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = AbortJob(jobId);
+                Tuple<bool, ServiceCallData> result = AbortJob(jobId);
                 success = result.Item1;
                 return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
             }
@@ -276,21 +297,36 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> AbortJob(int jobId)
+        private Tuple<bool,ServiceCallData> AbortAllJobsForAgent(int agentId)
         {
-            Logger.Debug("AbortJob({0})", jobId);
+            Logger.Trace("AbortAllJobsForAgent() agentId: {0}", agentId);
 
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobsStateClient");
-            }
+            if (isDisposed) throw new ObjectDisposedException("JobsStateClient");
 
             Tuple<bool, ServiceCallData> result;
 
             using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
             {
                 IJobsStateService channel = channelFactory.CreateChannel();
-                result = channel.AbortJob(jobId);
+                result = channel.AbortAllJobsForAgent(agentId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private Tuple<bool, ServiceCallData> AbortJob(int jobId, string note = null)
+        {
+            Logger.Debug("AbortJob({0})", jobId);
+
+            if (isDisposed) throw new ObjectDisposedException("JobsStateClient");
+
+            Tuple<bool, ServiceCallData> result;
+
+            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
+            {
+                IJobsStateService channel = channelFactory.CreateChannel();
+                result = channel.AbortJob(jobId, note);
                 channelFactory.Close();
             }
 
@@ -311,7 +347,7 @@ namespace SchedulingClients
             using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
             {
                 IJobsStateService channel = channelFactory.CreateChannel();
-                result = channel.AbortTask(taskId);
+                result = channel.AbortTask(taskId);            
                 channelFactory.Close();
             }
 

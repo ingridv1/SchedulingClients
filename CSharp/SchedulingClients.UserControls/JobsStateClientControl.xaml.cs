@@ -56,5 +56,15 @@ namespace SchedulingClients.UserControls
             IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
 			jobsStateClient.TryResolveFaultedJob((int)resolveJobFaultId.Value, out resolveSuccess);
 		}
-	}
+
+        private void abortAllJobsForAgentButton_Click(object sender, RoutedEventArgs e)
+        {
+            int agentId = (int)abortAllJobsForAgentId.Value;
+
+            bool success;
+
+            IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
+            jobsStateClient.TryAbortAllJobsForAgent(agentId, out success);
+        }
+    }
 }

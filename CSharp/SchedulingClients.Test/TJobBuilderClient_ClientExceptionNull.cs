@@ -167,15 +167,6 @@ namespace SchedulingClients.Test
 
 		[Test]
 		[Category("ClientExceptionNull")]
-		public void TryFinaliseTask_ClientExceptionNull()
-		{
-			ServiceOperationResult result = JobBuilderClient.TryFinaliseTask(1);
-
-			Assert.IsNull(result.ClientException);
-		}
-
-		[Test]
-		[Category("ClientExceptionNull")]
 		public void TryBeginEditingJob_ClientExceptionNull()
 		{
 			ServiceOperationResult result = JobBuilderClient.TryBeginEditingJob(1);

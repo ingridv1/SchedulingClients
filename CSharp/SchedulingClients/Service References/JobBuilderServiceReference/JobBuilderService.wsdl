@@ -118,12 +118,6 @@
   <wsdl:message name="IJobBuilderService_CreateUnorderedListTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateUnorderedListTaskResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_FinaliseTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:FinaliseTask" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_FinaliseTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FinaliseTaskResponse" />
-  </wsdl:message>
   <wsdl:message name="IJobBuilderService_FinishEditingJob_InputMessage">
     <wsdl:part name="parameters" element="tns:FinishEditingJob" />
   </wsdl:message>
@@ -222,10 +216,6 @@
     <wsdl:operation name="CreateUnorderedListTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" message="tns:IJobBuilderService_CreateUnorderedListTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTaskResponse" message="tns:IJobBuilderService_CreateUnorderedListTask_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="FinaliseTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinaliseTask" message="tns:IJobBuilderService_FinaliseTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/FinaliseTaskResponse" message="tns:IJobBuilderService_FinaliseTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="FinishEditingJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/FinishEditingJob" message="tns:IJobBuilderService_FinishEditingJob_InputMessage" />
@@ -378,15 +368,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateUnorderedListTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FinaliseTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinaliseTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -580,15 +561,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateUnorderedListTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FinaliseTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinaliseTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

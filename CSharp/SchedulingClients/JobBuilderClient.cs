@@ -353,26 +353,6 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Finalises an un-finalised ordered list task
-        /// </summary>
-        /// <param name="taskId">Ordered list task Id</param>
-        /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryFinaliseTask(int taskId)
-        {
-            Logger.Info("TryFinaliseTask({0})", taskId);
-
-            try
-            {
-                var result = FinaliseTask(taskId);
-                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
-            }
-            catch (Exception ex)
-            {
-                return HandleClientException(ex);
-            }
-        }
-
-        /// <summary>
         /// Puts a job into the editing state
         /// </summary>
         /// <param name="jobId">Id of the job to edit</param>
@@ -742,27 +722,6 @@ namespace SchedulingClients
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
                 result = channel.IssueIPAddressDirective(taskId, parameterAlias, value);
-                channelFactory.Close();
-            }
-
-            return result;
-        }
-
-        private ServiceCallData FinaliseTask(int taskId)
-        {
-            Logger.Debug("FinaliseTask({0})", taskId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
-
-            ServiceCallData result;
-
-            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-            {
-                IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.FinaliseTask(taskId);
                 channelFactory.Close();
             }
 

@@ -87,12 +87,6 @@ namespace SchedulingClients.UserControls
 			client.TryFinishEditingJob(editJobIdUpDown.Value ?? 0);
 		}
 
-		private void finaliseButton_Click(object sender, RoutedEventArgs e)
-		{
-            IJobBuilderClient client = DataContext as IJobBuilderClient;
-
-			client.TryFinaliseTask(taskToFinaliseUpDown.Value ?? 0);
-		}
 
 		private void beginEditingTaskButton_Click(object sender, RoutedEventArgs e)
 		{

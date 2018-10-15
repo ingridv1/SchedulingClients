@@ -35,8 +35,6 @@ namespace SchedulingClients
 
         ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, IPAddress value);
 
-        ServiceOperationResult TryFinaliseTask(int taskId);
-
         ServiceOperationResult TryBeginEditingJob(int jobId);
 
         ServiceOperationResult TryFinishEditingJob(int jobId);

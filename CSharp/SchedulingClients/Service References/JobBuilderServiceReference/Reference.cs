@@ -466,12 +466,6 @@ namespace SchedulingClients.JobBuilderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTaskResponse")]
         System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateUnorderedListTaskAsync(int parentTaskId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinaliseTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinaliseTaskResponse")]
-        SchedulingClients.JobBuilderServiceReference.ServiceCallData FinaliseTask(int taskId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinaliseTask", ReplyAction="http://tempuri.org/IJobBuilderService/FinaliseTaskResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinaliseTaskAsync(int taskId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/FinishEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/FinishEditingJobResponse")]
         SchedulingClients.JobBuilderServiceReference.ServiceCallData FinishEditingJob(int jobId);
         
@@ -652,14 +646,6 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateUnorderedListTaskAsync(int parentTaskId) {
             return base.Channel.CreateUnorderedListTaskAsync(parentTaskId);
-        }
-        
-        public SchedulingClients.JobBuilderServiceReference.ServiceCallData FinaliseTask(int taskId) {
-            return base.Channel.FinaliseTask(taskId);
-        }
-        
-        public System.Threading.Tasks.Task<SchedulingClients.JobBuilderServiceReference.ServiceCallData> FinaliseTaskAsync(int taskId) {
-            return base.Channel.FinaliseTaskAsync(taskId);
         }
         
         public SchedulingClients.JobBuilderServiceReference.ServiceCallData FinishEditingJob(int jobId) {
