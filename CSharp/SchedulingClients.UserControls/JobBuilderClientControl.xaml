@@ -41,19 +41,13 @@
 				</local:LabelContentControl>
 				<Button x:Name="directiveTest" Click="directiveTest_Click" HorizontalAlignment="Right"  >Directive</Button>
 			</StackPanel>
-			<local:LabelContentControl Header="Create a non-finalised ordered list task with the specified parent task">
-				<StackPanel Orientation="Horizontal">
-					<toolkit:IntegerUpDown x:Name="parentTaskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
-					<Button x:Name="nonFinalisedTaskButton" Click="nonFinalisedTaskButton_Click" Width="auto">Non-Finalised Task</Button>
-				</StackPanel>
-			</local:LabelContentControl>
-			<local:LabelContentControl Header="Finalise a specified task">
-				<StackPanel Orientation="Horizontal">
-					<toolkit:IntegerUpDown x:Name="taskToFinaliseUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
-					<Button x:Name="finaliseButton" Click="finaliseButton_Click" Width="auto">Finalise Task</Button>
-				</StackPanel>
-			</local:LabelContentControl>
-			<local:LabelContentControl Header="Bring the specified job into or out of the Editing state">
+            <local:LabelContentControl Header="Create a non-finalised ordered list task with the specified parent task">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown x:Name="parentTaskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+                    <Button x:Name="nonFinalisedTaskButton" Click="nonFinalisedTaskButton_Click" Width="auto">Non-Finalised Task</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Bring the specified job into or out of the Editing state">
 				<StackPanel Orientation="Horizontal">
 					<toolkit:IntegerUpDown x:Name="editJobIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
 					<Button x:Name="beginEditingJobButton" Click="beginEditingJobButton_Click" Margin="5,0" Width="auto">Begin Editing</Button>

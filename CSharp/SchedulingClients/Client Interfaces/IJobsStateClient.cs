@@ -11,14 +11,16 @@ namespace SchedulingClients
     {
         ServiceOperationResult TryAbortAllJobs(out bool success);
 
+        ServiceOperationResult TryAbortAllJobsForAgent(int agentId, out bool success);
+
         ServiceOperationResult TryAbortJob(int jobId, out bool success);
 
         ServiceOperationResult TryAbortTask(int taskId, out bool success);
 
         ServiceOperationResult TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds);
 
-        ServiceOperationResult TryResolveFaultedTask(int taskId, out bool success);
+        ServiceOperationResult TryResolveFailingTask(int taskId, out bool success);
 
-        ServiceOperationResult TryResolveFaultedJob(int jobId, out bool success);
+        ServiceOperationResult TryResolveFailingJob(int jobId, out bool success);
     }
 }

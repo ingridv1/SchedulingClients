@@ -104,40 +104,22 @@ namespace SchedulingClients.TaskStateServiceReference {
         Completed = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Aborted = 3,
+        Aborting = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assembly = 4,
+        Aborted = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttemptingAbort = 5,
+        Failing = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AwaitingAbort = 6,
+        Failed = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PendingFurtherInstruction = 7,
+        Assembly = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Editing = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InProgressUnderFault = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CompletedUnderFault = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttemptingEarlyFailure = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AwaitingEarlyFailure = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AwaitingFailure = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Failed = 14,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

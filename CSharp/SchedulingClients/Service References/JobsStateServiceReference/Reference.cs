@@ -381,68 +381,35 @@ namespace SchedulingClients.JobsStateServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
         int VersionMajor();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
-        System.Threading.Tasks.Task<int> VersionMajorAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
         int VersionMinor();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
-        System.Threading.Tasks.Task<int> VersionMinorAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
         int VersionPatch();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
-        System.Threading.Tasks.Task<int> VersionPatchAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         void SubscriptionHeartbeat(System.Guid guid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
-        System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobs", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsResponse")]
         System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortAllJobs();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobs", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortAllJobsAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse")]
         System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortAllJobsForAgent(int agentId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortAllJobsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/AbortAllJobsForAgentResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortAllJobsForAgentAsync(int agentId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortJob", ReplyAction="http://tempuri.org/IJobsStateService/AbortJobResponse")]
-        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortJob(int jobId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortJob", ReplyAction="http://tempuri.org/IJobsStateService/AbortJobResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortJobAsync(int jobId);
+        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortJob(int jobId, string note);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortTask", ReplyAction="http://tempuri.org/IJobsStateService/AbortTaskResponse")]
         System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortTask(int taskId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/AbortTask", ReplyAction="http://tempuri.org/IJobsStateService/AbortTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortTaskAsync(int taskId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
         System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
-        System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData>> GetActiveJobIdsForAgentAsync(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedJob", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedJobResponse")]
         System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedJob(int jobId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedJob", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedJobResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> ResolveFaultedJobAsync(int jobId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedTask", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedTaskResponse")]
         System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedTask(int taskId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedTask", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedTaskResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> ResolveFaultedTaskAsync(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -484,88 +451,44 @@ namespace SchedulingClients.JobsStateServiceReference {
             return base.Channel.VersionMajor();
         }
         
-        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
-            return base.Channel.VersionMajorAsync();
-        }
-        
         public int VersionMinor() {
             return base.Channel.VersionMinor();
-        }
-        
-        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
-            return base.Channel.VersionMinorAsync();
         }
         
         public int VersionPatch() {
             return base.Channel.VersionPatch();
         }
         
-        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
-            return base.Channel.VersionPatchAsync();
-        }
-        
         public void SubscriptionHeartbeat(System.Guid guid) {
             base.Channel.SubscriptionHeartbeat(guid);
-        }
-        
-        public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
-            return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
         public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortAllJobs() {
             return base.Channel.AbortAllJobs();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortAllJobsAsync() {
-            return base.Channel.AbortAllJobsAsync();
-        }
-        
         public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortAllJobsForAgent(int agentId) {
             return base.Channel.AbortAllJobsForAgent(agentId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortAllJobsForAgentAsync(int agentId) {
-            return base.Channel.AbortAllJobsForAgentAsync(agentId);
-        }
-        
-        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortJob(int jobId) {
-            return base.Channel.AbortJob(jobId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortJobAsync(int jobId) {
-            return base.Channel.AbortJobAsync(jobId);
+        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortJob(int jobId, string note) {
+            return base.Channel.AbortJob(jobId, note);
         }
         
         public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> AbortTask(int taskId) {
             return base.Channel.AbortTask(taskId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> AbortTaskAsync(int taskId) {
-            return base.Channel.AbortTaskAsync(taskId);
-        }
-        
         public System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId) {
             return base.Channel.GetActiveJobIdsForAgent(agentId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData>> GetActiveJobIdsForAgentAsync(int agentId) {
-            return base.Channel.GetActiveJobIdsForAgentAsync(agentId);
         }
         
         public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedJob(int jobId) {
             return base.Channel.ResolveFaultedJob(jobId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> ResolveFaultedJobAsync(int jobId) {
-            return base.Channel.ResolveFaultedJobAsync(jobId);
-        }
-        
         public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedTask(int taskId) {
             return base.Channel.ResolveFaultedTask(taskId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData>> ResolveFaultedTaskAsync(int taskId) {
-            return base.Channel.ResolveFaultedTaskAsync(taskId);
         }
     }
 }
