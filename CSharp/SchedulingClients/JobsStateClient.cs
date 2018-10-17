@@ -169,7 +169,7 @@ namespace SchedulingClients
         /// <param name="taskId">Id of faulted task to resolve</param>
         /// <param name="success">True if successful</param>
         /// <returns></returns>
-        public ServiceOperationResult TryResolveFaultedTask(int taskId, out bool success)
+        public ServiceOperationResult TryResolveFailingTask(int taskId, out bool success)
         {
             Logger.Info("TryResolveFaultedTask({0})", taskId);
 
@@ -192,7 +192,7 @@ namespace SchedulingClients
         /// <param name="jobId">Id of faulted job to resolve</param>
         /// <param name="success">True if successful</param>
         /// <returns></returns>
-        public ServiceOperationResult TryResolveFaultedJob(int jobId, out bool success)
+        public ServiceOperationResult TryResolveFailingJob(int jobId, out bool success)
         {
             Logger.Info("TryResolveFaultedjob({0})", jobId);
 

@@ -67,7 +67,7 @@ namespace SchedulingClients.Test
 		public void TryResolveFaultedTask_ClientExceptionNull()
 		{
 			bool success;
-			ServiceOperationResult result = JobsStateClient.TryResolveFaultedTask(1, out success);
+			ServiceOperationResult result = JobsStateClient.TryResolveFailingTask(1, out success);
 
 			Assert.IsNull(result.ClientException);
 		}
@@ -77,7 +77,7 @@ namespace SchedulingClients.Test
 		public void TryResolveFaultedJob_ClientExceptionNull()
 		{
 			bool success;
-			ServiceOperationResult result = JobsStateClient.TryResolveFaultedJob(1, out success);
+			ServiceOperationResult result = JobsStateClient.TryResolveFailingJob(1, out success);
 
 			Assert.IsNull(result.ClientException);
 		}

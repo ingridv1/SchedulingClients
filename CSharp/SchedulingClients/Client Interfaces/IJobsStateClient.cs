@@ -19,8 +19,8 @@ namespace SchedulingClients
 
         ServiceOperationResult TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds);
 
-        ServiceOperationResult TryResolveFaultedTask(int taskId, out bool success);
+        ServiceOperationResult TryResolveFailingTask(int taskId, out bool success);
 
-        ServiceOperationResult TryResolveFaultedJob(int jobId, out bool success);
+        ServiceOperationResult TryResolveFailingJob(int jobId, out bool success);
     }
 }

@@ -46,7 +46,7 @@ namespace SchedulingClients.UserControls
 			bool resolveSuccess;
 
             IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
-			jobsStateClient.TryResolveFaultedTask((int)resolveTaskFaultId.Value, out resolveSuccess);
+			jobsStateClient.TryResolveFailingTask((int)resolveTaskFaultId.Value, out resolveSuccess);
 		}
 
 		private void resolveJobFaultButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace SchedulingClients.UserControls
 			bool resolveSuccess;
 
             IJobsStateClient jobsStateClient = DataContext as IJobsStateClient;
-			jobsStateClient.TryResolveFaultedJob((int)resolveJobFaultId.Value, out resolveSuccess);
+			jobsStateClient.TryResolveFailingJob((int)resolveJobFaultId.Value, out resolveSuccess);
 		}
 
         private void abortAllJobsForAgentButton_Click(object sender, RoutedEventArgs e)
