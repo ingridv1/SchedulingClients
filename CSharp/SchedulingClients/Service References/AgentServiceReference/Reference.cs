@@ -204,13 +204,16 @@ namespace SchedulingClients.AgentServiceReference {
     public enum AgentLifetimeState : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OutOfService = 0,
+        Decommissioned = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InService = 1,
+        Disconnected = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Decommissioned = 2,
+        OutOfService = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InService = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]

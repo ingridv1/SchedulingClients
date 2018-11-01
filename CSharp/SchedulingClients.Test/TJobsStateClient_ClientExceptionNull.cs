@@ -61,25 +61,5 @@ namespace SchedulingClients.Test
 
 			Assert.IsNull(result.ClientException);
 		}
-
-		[Test]
-		[Category("ClientExceptionNull")]
-		public void TryResolveFaultedTask_ClientExceptionNull()
-		{
-			bool success;
-			ServiceOperationResult result = JobsStateClient.TryResolveFailingTask(1, out success);
-
-			Assert.IsNull(result.ClientException);
-		}
-
-		[Test]
-		[Category("ClientExceptionNull")]
-		public void TryResolveFaultedJob_ClientExceptionNull()
-		{
-			bool success;
-			ServiceOperationResult result = JobsStateClient.TryResolveFailingJob(1, out success);
-
-			Assert.IsNull(result.ClientException);
-		}
 	}
 }

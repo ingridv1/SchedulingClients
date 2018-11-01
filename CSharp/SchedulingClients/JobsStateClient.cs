@@ -163,52 +163,6 @@ namespace SchedulingClients
             }
         }
 
-        /// <summary>
-        /// Resolve a faulted task
-        /// </summary>
-        /// <param name="taskId">Id of faulted task to resolve</param>
-        /// <param name="success">True if successful</param>
-        /// <returns></returns>
-        public ServiceOperationResult TryResolveFailingTask(int taskId, out bool success)
-        {
-            Logger.Info("TryResolveFaultedTask({0})", taskId);
-
-            try
-            {
-                var result = ResolveFaultedTask(taskId);
-                success = result.Item1;
-                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
-            }
-            catch (Exception ex)
-            {
-                success = false;
-                return HandleClientException(ex);
-            }
-        }
-
-        /// <summary>
-        /// Resolve a faulted job
-        /// </summary>
-        /// <param name="jobId">Id of faulted job to resolve</param>
-        /// <param name="success">True if successful</param>
-        /// <returns></returns>
-        public ServiceOperationResult TryResolveFailingJob(int jobId, out bool success)
-        {
-            Logger.Info("TryResolveFaultedjob({0})", jobId);
-
-            try
-            {
-                var result = ResolveFaultedJob(jobId);
-                success = result.Item1;
-                return ServiceOperationResultFactory.FromJobsStateServiceCallData(result.Item2);
-            }
-            catch (Exception ex)
-            {
-                success = false;
-                return HandleClientException(ex);
-            }
-        }
-
         protected override void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
@@ -374,48 +328,6 @@ namespace SchedulingClients
             {
                 IJobsStateService channel = channelFactory.CreateChannel();
                 result = channel.GetActiveJobIdsForAgent(agentId);
-                channelFactory.Close();
-            }
-
-            return result;
-        }
-
-        private Tuple<bool, ServiceCallData> ResolveFaultedTask(int taskId)
-        {
-            Logger.Debug("ResolveFaultedTask({0})", taskId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobsStateClient");
-            }
-
-            Tuple<bool, ServiceCallData> result;
-
-            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-            {
-                IJobsStateService channel = channelFactory.CreateChannel();
-                result = channel.ResolveFaultedTask(taskId);
-                channelFactory.Close();
-            }
-
-            return result;
-        }
-
-        private Tuple<bool, ServiceCallData> ResolveFaultedJob(int jobId)
-        {
-            Logger.Debug("ResolveFaultedJob({0})", jobId);
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobsStateClient");
-            }
-
-            Tuple<bool, ServiceCallData> result;
-
-            using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-            {
-                IJobsStateService channel = channelFactory.CreateChannel();
-                result = channel.ResolveFaultedJob(jobId);
                 channelFactory.Close();
             }
 

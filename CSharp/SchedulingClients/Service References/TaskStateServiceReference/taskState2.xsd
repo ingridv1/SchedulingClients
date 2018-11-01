@@ -9,8 +9,8 @@
       <xs:enumeration value="Aborted" />
       <xs:enumeration value="Failing" />
       <xs:enumeration value="Failed" />
-      <xs:enumeration value="Assembly" />
       <xs:enumeration value="Editing" />
+      <xs:enumeration value="PartiallyCompleted" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />

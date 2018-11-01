@@ -116,10 +116,10 @@ namespace SchedulingClients.TaskStateServiceReference {
         Failed = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assembly = 7,
+        Editing = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Editing = 8,
+        PartiallyCompleted = 8,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

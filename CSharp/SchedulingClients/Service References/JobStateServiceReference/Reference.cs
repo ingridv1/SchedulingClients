@@ -267,28 +267,22 @@ namespace SchedulingClients.JobStateServiceReference {
         Completed = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Aborted = 5,
+        Aborting = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Editing = 6,
+        Aborted = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Aborting = 7,
+        Editing = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InProgressUnderFault = 8,
+        Failing = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        FailureImminent = 9,
+        Failed = 9,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Failed = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CompletedUnderFault = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EditingUnderFault = 12,
+        PartiallyCompleted = 10,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -471,10 +465,10 @@ namespace SchedulingClients.JobStateServiceReference {
         Failed = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assembly = 7,
+        Editing = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Editing = 8,
+        PartiallyCompleted = 8,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -488,7 +482,7 @@ namespace SchedulingClients.JobStateServiceReference {
         OrderedList = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PipelinedList = 2,
+        PipelinedMoveList = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ServiceAtNode = 3,

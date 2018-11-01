@@ -404,12 +404,6 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgent", ReplyAction="http://tempuri.org/IJobsStateService/GetActiveJobIdsForAgentResponse")]
         System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedJob", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedJobResponse")]
-        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedJob(int jobId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobsStateService/ResolveFaultedTask", ReplyAction="http://tempuri.org/IJobsStateService/ResolveFaultedTaskResponse")]
-        System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedTask(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -481,14 +475,6 @@ namespace SchedulingClients.JobsStateServiceReference {
         
         public System.Tuple<int[], SchedulingClients.JobsStateServiceReference.ServiceCallData> GetActiveJobIdsForAgent(int agentId) {
             return base.Channel.GetActiveJobIdsForAgent(agentId);
-        }
-        
-        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedJob(int jobId) {
-            return base.Channel.ResolveFaultedJob(jobId);
-        }
-        
-        public System.Tuple<bool, SchedulingClients.JobsStateServiceReference.ServiceCallData> ResolveFaultedTask(int taskId) {
-            return base.Channel.ResolveFaultedTask(taskId);
         }
     }
 }

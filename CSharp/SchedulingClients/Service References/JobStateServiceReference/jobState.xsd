@@ -7,14 +7,12 @@
       <xs:enumeration value="Waiting" />
       <xs:enumeration value="InProgress" />
       <xs:enumeration value="Completed" />
+      <xs:enumeration value="Aborting" />
       <xs:enumeration value="Aborted" />
       <xs:enumeration value="Editing" />
-      <xs:enumeration value="Aborting" />
-      <xs:enumeration value="InProgressUnderFault" />
-      <xs:enumeration value="FailureImminent" />
+      <xs:enumeration value="Failing" />
       <xs:enumeration value="Failed" />
-      <xs:enumeration value="CompletedUnderFault" />
-      <xs:enumeration value="EditingUnderFault" />
+      <xs:enumeration value="PartiallyCompleted" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="JobStatus" nillable="true" type="tns:JobStatus" />
@@ -27,8 +25,8 @@
       <xs:enumeration value="Aborted" />
       <xs:enumeration value="Failing" />
       <xs:enumeration value="Failed" />
-      <xs:enumeration value="Assembly" />
       <xs:enumeration value="Editing" />
+      <xs:enumeration value="PartiallyCompleted" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskStatus" nillable="true" type="tns:TaskStatus" />
@@ -36,7 +34,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="UnorderedList" />
       <xs:enumeration value="OrderedList" />
-      <xs:enumeration value="PipelinedList" />
+      <xs:enumeration value="PipelinedMoveList" />
       <xs:enumeration value="ServiceAtNode" />
       <xs:enumeration value="AwaitAtNode" />
       <xs:enumeration value="SleepAtNode" />

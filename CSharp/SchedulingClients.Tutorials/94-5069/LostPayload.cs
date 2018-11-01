@@ -71,7 +71,7 @@ namespace SchedulingClients.Tutorials._94_5069
             //  Job progress is under fault
 
             // Do some validation on state -> perform behvaiour
-            if (receivedJobProgressData.JobStatus == JobStatus.InProgressUnderFault)
+            if (receivedJobProgressData.JobStatus == JobStatus.Failing)
             {
                 if (receivedAttentionData.Any(e => e.AgentId == receivedJobProgressData.AssignedAgentId
                     && e.AttentionType == AttentionType.Comms))
@@ -93,7 +93,7 @@ namespace SchedulingClients.Tutorials._94_5069
             moqJobState.Raise(e => e.JobProgressUpdated += null, new JobProgressData()
             {
                 JobId = 6,
-                JobStatus = JobStatus.InProgressUnderFault,
+                JobStatus = JobStatus.InProgress,
                 AssignedAgentId = 9
             });
         }
