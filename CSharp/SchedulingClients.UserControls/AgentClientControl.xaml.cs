@@ -34,5 +34,24 @@ namespace SchedulingClients.UserControls
 
             agentDataDataGrid.ItemsSource = agentDatas;
         }
+
+        private void setAgentLifetimeStateButton_Click(object sender, RoutedEventArgs e)
+        {
+            IAgentClient client = DataContext as IAgentClient;
+            AgentLifetimeState desired = (AgentLifetimeState)desiredLifetimeStateComboBox.SelectedItem;
+            int agentId = (int)agentLifetimeStateIdUpDown.Value;
+
+            bool success;
+            client.TrySetAgentLifetimeState(agentId, desired, out success);
+
+            if (success)
+            {
+                MessageBox.Show("Success");
+            }
+            else
+            {
+                MessageBox.Show("Failed to set agent lifetime state");
+            }
+        }
     }
 }
