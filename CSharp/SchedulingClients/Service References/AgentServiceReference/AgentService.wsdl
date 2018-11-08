@@ -64,6 +64,12 @@
   <wsdl:message name="IAgentService_GetAllAgentsInLifetimeState_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAgentsInLifetimeStateResponse" />
   </wsdl:message>
+  <wsdl:message name="IAgentService_SetAgentLifetimeState_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetAgentLifetimeState" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_SetAgentLifetimeState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetAgentLifetimeStateResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAgentService">
     <wsdl:operation name="VersionMajor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IAgentService_VersionMajor_InputMessage" />
@@ -84,6 +90,10 @@
     <wsdl:operation name="GetAllAgentsInLifetimeState">
       <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState" message="tns:IAgentService_GetAllAgentsInLifetimeState_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse" message="tns:IAgentService_GetAllAgentsInLifetimeState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAgentLifetimeState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/SetAgentLifetimeState" message="tns:IAgentService_SetAgentLifetimeState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse" message="tns:IAgentService_SetAgentLifetimeState_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAgentService" type="tns:IAgentService">
@@ -134,6 +144,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetAgentLifetimeState">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/SetAgentLifetimeState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSDualHttpBinding_IAgentService" type="tns:IAgentService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IAgentService_policy" />
@@ -176,6 +195,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllAgentsInLifetimeState">
       <soap12:operation soapAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAgentLifetimeState">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/SetAgentLifetimeState" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

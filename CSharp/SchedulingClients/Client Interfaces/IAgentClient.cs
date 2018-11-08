@@ -9,5 +9,7 @@ namespace SchedulingClients
 		ServiceOperationResult TryGetAllAgentData(out IEnumerable<AgentData> agentDatas);
 
 		ServiceOperationResult TryGetAllAgentsInLifetimeState(out IEnumerable<AgentData> agentDatas, AgentLifetimeState agentLifetimeState);
-	}
+
+        ServiceOperationResult TrySetAgentLifetimeState(int agentId, AgentLifetimeState desiredState, out bool success);
+    }
 }
