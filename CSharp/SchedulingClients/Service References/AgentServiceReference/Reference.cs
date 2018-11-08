@@ -350,6 +350,9 @@ namespace SchedulingClients.AgentServiceReference {
         GETALLAGENTSINLIFETIMESTATEFAILED = 6002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETAGENTLIFETIMESTATEFAILED = 6003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITINSTRUCTIONFAILED = 7001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -378,6 +381,21 @@ namespace SchedulingClients.AgentServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ENABLEALLVEHICLESFAILED = 7013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DISABLEALLVEHICLESFAILED = 7014,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDIPADDRESS = 7015,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ENABLEVEHICLEFAILED = 7016,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DISABLEVEHICLEFAILED = 7017,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
@@ -436,10 +454,16 @@ namespace SchedulingClients.AgentServiceReference {
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
-        System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState);
+        System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState);
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/SetAgentLifetimeState", ReplyAction="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse")]
+        System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData> SetAgentLifetimeState(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/SetAgentLifetimeState", ReplyAction="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse")]
+        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData>> SetAgentLifetimeStateAsync(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -501,12 +525,20 @@ namespace SchedulingClients.AgentServiceReference {
             return base.Channel.GetAllAgentDataAsync();
         }
         
-        public System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState) {
-            return base.Channel.GetAllAgentsInLifetimeState(lifetimeState);
+        public System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState) {
+            return base.Channel.GetAllAgentsInLifetimeState(agentLifetimeState);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState lifetimeState) {
-            return base.Channel.GetAllAgentsInLifetimeStateAsync(lifetimeState);
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState) {
+            return base.Channel.GetAllAgentsInLifetimeStateAsync(agentLifetimeState);
+        }
+        
+        public System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData> SetAgentLifetimeState(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState) {
+            return base.Channel.SetAgentLifetimeState(agentId, desiredState);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData>> SetAgentLifetimeStateAsync(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState) {
+            return base.Channel.SetAgentLifetimeStateAsync(agentId, desiredState);
         }
     }
 }

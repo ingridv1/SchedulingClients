@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SchedulingClients.UserControls"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:asr="clr-namespace:SchedulingClients.AgentServiceReference;assembly=SchedulingClients"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
@@ -20,10 +21,20 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <StackPanel Grid.Row="0">
+            <local:LabelContentControl Header="Set Agent Lifetime State">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown x:Name="agentLifetimeStateIdUpDown" Minimum="-1" Maximum="999" DisplayDefaultValueOnEmptyText="True" DefaultValue="-1"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}, Mode=OneTime}" x:Name="desiredLifetimeStateComboBox" SelectedIndex="0" VerticalAlignment="Center" />
+                    <Button x:Name="setAgentLifetimeStateButton" Click="setAgentLifetimeStateButton_Click">Set</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+        </StackPanel>
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -41,17 +52,19 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <local:LabelContentControl Grid.Row="0" Header="Get All Agent Data()">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}, Mode=OneTime}" x:Name="lifeTimeComboBox" SelectedIndex="0" VerticalAlignment="Center" />
-                    <Button x:Name="getAgentLifeTimeDataButton" Click="getAgentLifeTimeDataButton_Click">Refresh</Button>
-                </StackPanel>
-            </local:LabelContentControl>
+            <StackPanel Grid.Row="0">
+                <local:LabelContentControl Header="Get All Agent Data()">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}, Mode=OneTime}" x:Name="lifeTimeComboBox" SelectedIndex="0" VerticalAlignment="Center" />
+                        <Button x:Name="getAgentLifeTimeDataButton" Click="getAgentLifeTimeDataButton_Click">Refresh</Button>
+                    </StackPanel>
+                </local:LabelContentControl>
+            </StackPanel>
             <DataGrid x:Name="agentDataLifeTimeDataGrid" Grid.Row="1" AutoGenerateColumns="False"
                   Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
                 <DataGrid.Columns>

@@ -53,7 +53,7 @@
   <xs:element name="GetAllAgentsInLifetimeState">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="lifetimeState" type="q2:AgentLifetimeState" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="agentLifetimeState" type="q2:AgentLifetimeState" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -61,6 +61,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetAllAgentsInLifetimeStateResult" nillable="true" type="q3:TupleOfArrayOfAgentDataServiceCallDatamvMP2t26" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAgentLifetimeState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Core" minOccurs="0" name="desiredState" type="q4:AgentLifetimeState" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAgentLifetimeStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SetAgentLifetimeStateResult" nillable="true" type="q5:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
