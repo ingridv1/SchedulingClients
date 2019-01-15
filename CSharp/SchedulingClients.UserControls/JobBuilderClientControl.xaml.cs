@@ -129,12 +129,21 @@ namespace SchedulingClients.UserControls
             client.TryCreateAwaitingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newMoveId);
         }
 
-        private void commitJobButton_Click(object sender, RoutedEventArgs e)
+		private void addServiceTaskToParentButton_Click(object sender, RoutedEventArgs e)
+		{
+			IJobBuilderClient client = DataContext as IJobBuilderClient;
+
+			int newServiceId;
+
+			client.TryCreateServicingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, JobBuilderServiceReference.ServiceType.Execution, out newServiceId);
+		}
+
+		private void commitJobButton_Click(object sender, RoutedEventArgs e)
         {
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
             bool success;
             client.TryCommit(jobIdUpDown.Value ?? 1, out success);
-        }
-    }
+        }	
+	}
 }

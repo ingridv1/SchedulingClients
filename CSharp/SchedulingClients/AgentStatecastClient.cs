@@ -20,7 +20,7 @@ namespace SchedulingClients
         public ServiceOperationResult TryGetEnumStatecastValue(int agentId, string parameterAlias, out byte parameterValue)
         {
             Logger.Info("TryGetEnumStatecastValue()");
-
+			
             try
             {
                 var result = GetEnumStatecastValue(agentId, parameterAlias);
