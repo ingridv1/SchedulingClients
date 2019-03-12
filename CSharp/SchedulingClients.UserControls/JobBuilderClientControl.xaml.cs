@@ -143,7 +143,7 @@ namespace SchedulingClients.UserControls
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
             bool success;
-            client.TryCommit(jobIdUpDown.Value ?? 1, out success);
+            client.TryCommit(jobIdUpDown.Value ?? 1, out success, agentIdUpDown.Value ?? -1);
         }	
 	}
 }

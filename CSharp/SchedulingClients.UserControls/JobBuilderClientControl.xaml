@@ -13,7 +13,10 @@
                 <local:LabelContentControl Header="Job">
                     <toolkit:IntegerUpDown x:Name="jobIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
                 </local:LabelContentControl>
-                <local:LabelContentControl Header="Commits the specified job">
+                <local:LabelContentControl Header="AgentId">
+                    <toolkit:IntegerUpDown x:Name="agentIdUpDown" Minimum="-1" Maximum="65535" MinWidth="50" />
+                </local:LabelContentControl>
+                <local:LabelContentControl Header="Commits the specified job to the specified agent, or the most efficient agent if -1">
                     <Button x:Name="commitJobButton" Click="commitJobButton_Click">Commit</Button>
                 </local:LabelContentControl>
             </StackPanel>
