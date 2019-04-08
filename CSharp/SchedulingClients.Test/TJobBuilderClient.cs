@@ -31,10 +31,10 @@ namespace SchedulingClients.Test
         IMapClient MapClient => clients.First(e => e is IMapClient) as IMapClient;
 
         [Test]
-        public void CreateInvalidMovingTask()
+        public void CreateInvalidGoToTask()
         {
-            int movingTaskId;
-            ServiceOperationResult result = JobBuilderClient.TryCreateMovingTask(1,2,out movingTaskId);
+            int goToTaskId;
+            ServiceOperationResult result = JobBuilderClient.TryCreateGoToNodeTask(1,2,out goToTaskId);
 
             Assert.IsFalse(result.IsSuccessfull);
             Assert.IsNull(result.ClientException);

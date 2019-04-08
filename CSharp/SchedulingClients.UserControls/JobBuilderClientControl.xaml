@@ -44,10 +44,10 @@
 				</local:LabelContentControl>
 				<Button x:Name="directiveTest" Click="directiveTest_Click" HorizontalAlignment="Right"  >Directive</Button>
 			</StackPanel>
-            <local:LabelContentControl Header="Create a non-finalised ordered list task with the specified parent task">
+            <local:LabelContentControl Header="Create an ordered list task with the specified parent task">
                 <StackPanel Orientation="Horizontal">
                     <toolkit:IntegerUpDown x:Name="parentTaskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
-                    <Button x:Name="nonFinalisedTaskButton" Click="nonFinalisedTaskButton_Click" Width="auto">Non-Finalised Task</Button>
+                    <Button x:Name="orderedListTaskButton" Click="orderedListTaskButton_Click" Width="auto">Ordered List Task</Button>
                 </StackPanel>
             </local:LabelContentControl>
             <local:LabelContentControl Header="Bring the specified job into or out of the Editing state">
@@ -74,7 +74,7 @@
 					</local:LabelContentControl>
 					<local:LabelContentControl Header="Add Task to Parent">
                         <StackPanel>
-                            <Button x:Name="addMoveTaskToParentButton" Click="addMoveTaskToParentButton_Click" Width="auto">Create Move Task</Button>
+                            <Button x:Name="addGoToNodeTaskToParentButton" Click="addGoToNodeTaskToParentButton_Click" Width="auto">Create GoTo Node Task</Button>
                             <Button x:Name="addAwaitTaskToParentButton" Click="addAwaitTaskToParentButton_Click" Width="auto">Create Await Task</Button>
                             <Button x:Name="addServiceTaskToParentButton" Click="addServiceTaskToParentButton_Click" Width="auto">Create Service Task</Button>
                         </StackPanel>

@@ -43,10 +43,8 @@ namespace SchedulingClients.Tutorials
             // Now we create the GoTo task 
             // Here we are adding it the the orderedListTask
             // Sending to node 6
-            // With the ServiceType GoTo:
-
-            int moveTaskId;
-            jobBuilderClient.TryCreateMovingTask(jobData.RootOrderedListTaskId, 6, out moveTaskId);
+            int goToTaskId;
+            jobBuilderClient.TryCreateGoToNodeTask(jobData.RootOrderedListTaskId, 6, out goToTaskId);
 
             // Finally we commit the job
             bool success;

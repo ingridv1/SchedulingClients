@@ -15,7 +15,7 @@ namespace SchedulingClients
 
         ServiceOperationResult TryCreateUnorderedListTask(int parentTaskId, out int listTaskId);
 
-        ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, bool isFinalised, out int listTaskId);
+        ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, out int listTaskId);
 
         ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan));
 

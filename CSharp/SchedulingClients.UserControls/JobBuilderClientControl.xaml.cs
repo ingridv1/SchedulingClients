@@ -102,22 +102,22 @@ namespace SchedulingClients.UserControls
 			client.TryFinishEditingTask(editTaskIdUpDown.Value ?? 0);
 		}
 
-		private void nonFinalisedTaskButton_Click(object sender, RoutedEventArgs e)
+		private void orderedListTaskButton_Click(object sender, RoutedEventArgs e)
 		{
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
 			int newTaskId;
 
-			client.TryCreateOrderedListTask(parentTaskIdUpDown.Value ?? 0, false, out newTaskId);
+			client.TryCreateOrderedListTask(parentTaskIdUpDown.Value ?? 0, out newTaskId);
 		}
 
-		private void addMoveTaskToParentButton_Click(object sender, RoutedEventArgs e)
+		private void addGoToNodeTaskToParentButton_Click(object sender, RoutedEventArgs e)
 		{
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
-			int newMoveId;
+			int newGoToNodeTaskId;
 
-			client.TryCreateMovingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newMoveId);
+			client.TryCreateGoToNodeTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newGoToNodeTaskId);
 		}
 
         private void addAwaitTaskToParentButton_Click(object sender, RoutedEventArgs e)

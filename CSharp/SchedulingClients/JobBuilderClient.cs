@@ -119,13 +119,13 @@ namespace SchedulingClients
         /// <param name="parentTaskId">Parent list task Id</param>
         /// <param name="atomicMoveListTaskId">Id of new atomic move list task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, bool isFinalised, out int atomicMoveListTaskId)
+        public ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, out int atomicMoveListTaskId)
         {
             Logger.Info("TryCreateAtomicMoveListTask({0})", parentTaskId);
 
             try
             {
-                var result = HandleCreateAtomicMoveListTask(parentTaskId, isFinalised);
+                var result = HandleCreateAtomicMoveListTask(parentTaskId);
                 atomicMoveListTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -540,7 +540,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> HandleCreateAtomicMoveListTask(int parentTaskId, bool isFinalised)
+        private Tuple<int, ServiceCallData> HandleCreateAtomicMoveListTask(int parentTaskId)
         {
             Logger.Debug("CreateListTask({0})", parentTaskId);
 

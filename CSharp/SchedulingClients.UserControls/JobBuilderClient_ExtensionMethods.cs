@@ -76,19 +76,21 @@ namespace SchedulingClients.UserControls
 
         public static void MoveJobTest(this IJobBuilderClient jobBuilder, IEnumerable<NodeData> nodes, bool isFinalised)
         {
+#warning NEEDS REFACTOR
+
             JobData jobData;
 
             if (jobBuilder.TryCreateJob(out jobData) == true)
             {
-                int piplineId;
-                jobBuilder.TryCreatePipelinedTask(jobData.RootOrderedListTaskId, isFinalised, out piplineId);
+                int atomicMoveListTaskId;
+                jobBuilder.TryCreateAtomicMoveListTask(jobData.RootOrderedListTaskId, out atomicMoveListTaskId);
 
-                NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
-                NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);
+               // NodeData pickNode = GetRandomNode(nodes, MapServiceReference.ServiceType.ManualLoadHandling);
+                //NodeData pickNode2 = GetRandomNode(nodes, MapServiceReference.ServiceType.Charge);
 
                 int pickNodeId, pickNodeId2;
-                jobBuilder.TryCreateMovingTask(piplineId, pickNode.MapItemId, out pickNodeId);
-                jobBuilder.TryCreateMovingTask(piplineId, pickNode2.MapItemId, out pickNodeId2);
+               // jobBuilder.TryCreateMovingTask(piplineId, pickNode.MapItemId, out pickNodeId);
+                //jobBuilder.TryCreateMovingTask(piplineId, pickNode2.MapItemId, out pickNodeId2);
 
                 bool success;
                 jobBuilder.TryCommit(jobData.JobId, out success);

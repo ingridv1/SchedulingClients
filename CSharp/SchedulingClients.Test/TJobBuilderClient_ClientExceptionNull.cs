@@ -50,7 +50,7 @@ namespace SchedulingClients.Test
 		public void TryCreateOrderedListTask_ClientExceptionNull()
 		{
 			int taskId;
-			ServiceOperationResult result = JobBuilderClient.TryCreateOrderedListTask(1, true, out taskId);
+			ServiceOperationResult result = JobBuilderClient.TryCreateOrderedListTask(1, out taskId);
 
 			Assert.IsNull(result.ClientException);
 		}
@@ -67,10 +67,10 @@ namespace SchedulingClients.Test
 
 		[Test]
 		[Category("ClientExceptionNull")]
-		public void TryCreatePipelinedTask_ClientExceptionNull()
+		public void TryCreateAtomicMoveListTask_ClientExceptionNull()
 		{
 			int taskId;
-			ServiceOperationResult result = JobBuilderClient.TryCreatePipelinedTask(1, true, out taskId);
+			ServiceOperationResult result = JobBuilderClient.TryCreateAtomicMoveListTask(1, out taskId);
 
 			Assert.IsNull(result.ClientException);
 		}
@@ -97,10 +97,10 @@ namespace SchedulingClients.Test
 
 		[Test]
 		[Category("ClientExceptionNull")]
-		public void TryCreateMovingTask_ClientExceptionNull()
+		public void TryCreateGoToNodeTask_ClientExceptionNull()
 		{
-			int taskId;
-			ServiceOperationResult result = JobBuilderClient.TryCreateMovingTask(1, 1, out taskId);
+			int goToNodeTaskId;
+			ServiceOperationResult result = JobBuilderClient.TryCreateGoToNodeTask(1, 1, out goToNodeTaskId);
 
 			Assert.IsNull(result.ClientException);
 		}
