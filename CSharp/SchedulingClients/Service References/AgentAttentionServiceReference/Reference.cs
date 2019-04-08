@@ -213,7 +213,7 @@ namespace SchedulingClients.AgentAttentionServiceReference {
         CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEPIPELINEDTASKFAILED = 1004,
+        CREATEATOMICMOVELISTTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CREATEORDEREDLISTTASKFAILED = 1005,
@@ -234,10 +234,10 @@ namespace SchedulingClients.AgentAttentionServiceReference {
         CREATESLEEPINGTASKFAILED = 1010,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEMOVINGTASKFAILED = 1011,
+        CREATEGOTONODETASKFAILED = 1011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINALISETASKFAILED = 1012,
+        CREATEATOMICMOVETASKFAILED = 1012,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         BEGINEDITINGJOBFAILED = 1013,
@@ -318,6 +318,9 @@ namespace SchedulingClients.AgentAttentionServiceReference {
         GETALLAGENTSINLIFETIMESTATEFAILED = 6002,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETAGENTLIFETIMESTATEFAILED = 6003,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITINSTRUCTIONFAILED = 7001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -346,6 +349,27 @@ namespace SchedulingClients.AgentAttentionServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RESETKINGPINFAILED = 7012,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ENABLEALLVEHICLESFAILED = 7013,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DISABLEALLVEHICLESFAILED = 7014,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INVALIDIPADDRESS = 7015,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ENABLEVEHICLEFAILED = 7016,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DISABLEVEHICLEFAILED = 7017,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETFLEETSTATEFAILED = 7018,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETKINGPINSTATEFAILED = 7019,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,

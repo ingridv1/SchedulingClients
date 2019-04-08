@@ -71,16 +71,15 @@ namespace SchedulingClients
         /// Creates a new ordered list task
         /// </summary>
         /// <param name="parentTaskId">Parent list task Id</param>
-        /// <param name="isFinalised">Whether or not the task is finalised</param>
         /// <param name="listTaskId">Id of new list task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateOrderedListTask(int parentTaskId, bool isFinalised, out int listTaskId)
+        public ServiceOperationResult TryCreateOrderedListTask(int parentTaskId, out int listTaskId)
         {
             Logger.Info("TryCreateOrderedListTask({0})", parentTaskId);
 
             try
             {
-                var result = CreateOrderedListTask(parentTaskId, isFinalised);
+                var result = HandleCreateOrderedListTask(parentTaskId);
                 listTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -115,24 +114,24 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Creates a new pipelinedtask
+        /// Creates a new atomic move list task
         /// </summary>
         /// <param name="parentTaskId">Parent list task Id</param>
-        /// <param name="listTaskId">Id of new list task</param>
+        /// <param name="atomicMoveListTaskId">Id of new atomic move list task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreatePipelinedTask(int parentTaskId, bool isFinalised, out int listTaskId)
+        public ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, bool isFinalised, out int atomicMoveListTaskId)
         {
-            Logger.Info("TryCreatePipelinedTask({0})", parentTaskId);
+            Logger.Info("TryCreateAtomicMoveListTask({0})", parentTaskId);
 
             try
             {
-                var result = CreatePipelinedTask(parentTaskId, isFinalised);
-                listTaskId = result.Item1;
+                var result = HandleCreateAtomicMoveListTask(parentTaskId, isFinalised);
+                atomicMoveListTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                listTaskId = -1;
+                atomicMoveListTaskId = -1;
                 return HandleClientException(ex);
             }
         }
@@ -162,7 +161,7 @@ namespace SchedulingClients
                 return HandleClientException(ex);
             }
         }
-
+                                
         /// <summary>
         /// Creates a new sleeping task
         /// </summary>
@@ -219,28 +218,54 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Creates a task to move an agent to a node
+        /// Creates a task to send an agent to a node
         /// </summary>
         /// <param name="parentListTaskId">Id of parent list task</param>
         /// <param name="nodeId">Id of node to move agent to</param>
-        /// <param name="moveTaskId">Id of newly created move  task</param>
+        /// <param name="nodeTaskId">Id of newly created goto node task</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId)
+        public ServiceOperationResult TryCreateGoToNodeTask(int parentListTaskId, int nodeId, out int nodeTaskId)
         {
             Logger.Info("TryCreateMoveTask({0},{1})", parentListTaskId, nodeId);
 
             try
             {
-                var result = CreateMovingTask(parentListTaskId, nodeId);
-                moveTaskId = result.Item1;
+                var result = HandleCreateGoToNodeTask(parentListTaskId, nodeId);
+                nodeTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
             {
-                moveTaskId = -1;
+                nodeTaskId = -1;
                 return HandleClientException(ex);
             }
         }
+
+        /// <summary>
+        /// Creates an atmoic move task
+        /// </summary>
+        /// <param name="parentAtomicMoveListTaskId">Id of parent atomic move list task</param>
+        /// <param name="moveId">Id of move agent to follow</param>
+        /// <param name="atomicMoveTaskId">Id of newly created atomic move task</param>
+        /// <returns>ServiceOperationResult</returns>
+        public ServiceOperationResult TryCreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId, out int atomicMoveTaskId)
+        {
+            Logger.Info("TryHandleCreateAtomicMoveTask({0},{1})", parentAtomicMoveListTaskId, moveId);
+
+            try
+            {
+                var result = HandleCreateAtomicMoveTask(parentAtomicMoveListTaskId, moveId);
+                atomicMoveTaskId = result.Item1;
+                return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
+            }
+            catch (Exception ex)
+            {
+                atomicMoveTaskId = -1;
+                return HandleClientException(ex);
+            }
+        }
+
+        
 
         /// <summary>
         /// Issues a new directive
@@ -497,47 +522,60 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateOrderedListTask(int parentTaskId, bool isFinalised)
+        private Tuple<int, ServiceCallData> HandleCreateOrderedListTask(int parentTaskId)
         {
-            Logger.Debug("CreateOrderedListTask({0})", parentTaskId);
+            Logger.Debug("HandleCreateOrderedListTask({0})", parentTaskId);
 
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
+            if (isDisposed) throw new ObjectDisposedException("JobBuilderClient");
 
             Tuple<int, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateOrderedListTask(parentTaskId, isFinalised);
+                result = channel.CreateOrderedListTask(parentTaskId);
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreatePipelinedTask(int parentTaskId, bool isFinalised)
+        private Tuple<int, ServiceCallData> HandleCreateAtomicMoveListTask(int parentTaskId, bool isFinalised)
         {
             Logger.Debug("CreateListTask({0})", parentTaskId);
 
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
+            if (isDisposed) throw new ObjectDisposedException("JobBuilderClient");
 
             Tuple<int, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreatePipelinedTask(parentTaskId, isFinalised);
+                result = channel.CreateAtomicMoveListTask(parentTaskId);
                 channelFactory.Close();
             }
 
             return result;
         }
+
+        private Tuple<int, ServiceCallData> HandleCreateAtomicMoveTask(int parentAtomicListTaskId, int moveId)
+        {
+            Logger.Debug("HandleCreateAtomicMoveTask parentAtomicListTaskId:{0}, moveId:{1}", parentAtomicListTaskId, moveId);
+
+            if (isDisposed) throw new ObjectDisposedException("JobBuilderClient");
+
+            Tuple<int, ServiceCallData> result;
+
+            using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+            {
+                IJobBuilderService channel = channelFactory.CreateChannel();
+                result = channel.CreateAtomicMoveTask(parentAtomicListTaskId, moveId);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
 
         private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
@@ -602,21 +640,18 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateMovingTask(int parentTaskId, int nodeId)
+        private Tuple<int, ServiceCallData> HandleCreateGoToNodeTask(int parentTaskId, int nodeId)
         {
-            Logger.Debug("CreateMovingTask({0},{1})", parentTaskId, nodeId);
+            Logger.Debug("HandleCreateGoToNodeTask({0},{1})", parentTaskId, nodeId);
 
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobBuilderClient");
-            }
-
+            if (isDisposed) throw new ObjectDisposedException("JobBuilderClient");
+    
             Tuple<int, ServiceCallData> result;
 
             using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
             {
                 IJobBuilderService channel = channelFactory.CreateChannel();
-                result = channel.CreateMovingTask(parentTaskId, nodeId);
+                result = channel.CreateGoToNodeTask(parentTaskId, nodeId);
                 channelFactory.Close();
             }
 
