@@ -398,6 +398,12 @@ namespace SchedulingClients.AgentServiceReference {
         DISABLEVEHICLEFAILED = 7017,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETFLEETSTATEFAILED = 7018,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SETKINGPINSTATEFAILED = 7019,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         DOWNLOADFAILED = 8001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
