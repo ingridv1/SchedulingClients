@@ -20,5 +20,7 @@ namespace SchedulingClients
         ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout, out bool success);
 
         ServiceOperationResult TryClearOccupyingMandate();
+
+        OccupyingMandateProgressData OccupyingMandateProgressData { get; }
     }
 }
