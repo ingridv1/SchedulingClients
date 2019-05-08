@@ -8,17 +8,55 @@ using BaseClients;
 
 namespace SchedulingClients
 {
-    internal class MapClient : AbstractClient<IMapService>, IMapClient
+    internal class MapClient : AbstractCallbackClient<IMapService>, IMapClient
     {
         private bool isDisposed = false;
+
+        private TimeSpan heartbeat;
+
+        private MapServiceCallback callback = new MapServiceCallback();
+
+        public static TimeSpan MinimumHeartbeat => TimeSpan.FromMilliseconds(10000);
 
         /// <summary>
         /// Creates a new MapClient
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the map service</param>
-        public MapClient(Uri netTcpUri)
+        public MapClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
                     : base(netTcpUri)
         {
+            this.heartbeat = heartbeat < MinimumHeartbeat ? MinimumHeartbeat : heartbeat;
+            callback.OccupyingMandateProgressChange += Callback_OccupyingMandateProgressChange;
+
+        }
+
+        private OccupyingMandateProgressData occupyingMandateProgressData = null;
+
+        /// <summary>
+        /// The current state of progress of the occupying mandate
+        /// </summary>
+        public OccupyingMandateProgressData OccupyingMandateProgressData
+        {
+            get { return occupyingMandateProgressData; }
+
+            private set
+            {
+                if (occupyingMandateProgressData != value)
+                {
+                    occupyingMandateProgressData = value;
+                    OnNotifyPropertyChanged();
+                }
+            }
+        }
+
+        private void Callback_OccupyingMandateProgressChange(OccupyingMandateProgressData obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void SetInstanceContext()
+        {
+            this.context = new InstanceContext(this.callback);
         }
 
         /// <summary>
@@ -66,6 +104,57 @@ namespace SchedulingClients
         }
 
         /// <summary>
+        /// Hearbeat time
+        /// </summary>
+        public TimeSpan Heartbeat => heartbeat;
+
+        protected override void HeartbeatThread()
+        {
+            Logger.Debug("HeartbeatThread()");
+
+            ChannelFactory<IMapService> channelFactory = CreateChannelFactory();
+            IMapService mapsStateService = channelFactory.CreateChannel();
+
+            bool? exceptionCaught;
+
+            while (!Terminate)
+            {
+                exceptionCaught = null;
+
+                try
+                {
+                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
+                    mapsStateService.SubscriptionHeartbeat(Key);
+                    IsConnected = true;
+                    exceptionCaught = false;
+                }
+                catch (EndpointNotFoundException)
+                {
+                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
+                    exceptionCaught = true;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex);
+                    exceptionCaught = true;
+                }
+
+                if (exceptionCaught == true)
+                {
+                    channelFactory.Abort();
+                    IsConnected = false;
+
+                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
+                    mapsStateService = channelFactory.CreateChannel();
+                }
+
+                heartbeatReset.WaitOne(Heartbeat);
+            }
+
+            Logger.Debug("HeartbeatThread exit");
+        }
+
+        /// <summary>
         /// Gets all parameter data
         /// </summary>
         /// <param name="parameterData">All parameters in the map</param>
@@ -110,21 +199,37 @@ namespace SchedulingClients
             }
         }
 
-        /// <summary>
-        /// Attempts to block off an area of the map
-        /// </summary>
-        /// <param name="mapItemIds">Map Items to block off</param>
-        /// <param name="mandateId">Identifier for blocking operation (Must be non-zero and negative)</param>
-        /// <param name="millisecondsTimeout">Length of time to wait before abandoning the blocking attempt</param>
-        /// <param name="success">Whether or not the blocking was successful</param>
-        /// <returns></returns>
-        public ServiceOperationResult TryRegisterBlockingMandate(IEnumerable<int> mapItemIds, int mandateId, int millisecondsTimeout, out bool success)
+        public ServiceOperationResult TryGetOccupyingMandateProgressData(out OccupyingMandateProgressData occupyingMandateProgressData)
         {
-            Logger.Info("TryRegisterBlockingMandate() mandateId: {0}", mandateId);
+            Logger.Info("TryGetOccupyingMandateProgressData()");
 
             try
             {
-                var result = RegisterBlockingMandate(mapItemIds, mandateId, millisecondsTimeout);
+                var result = GetOccupyingMandateProgressData();
+                occupyingMandateProgressData = result.Item1;
+                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
+            }
+            catch(Exception ex)
+            {
+                occupyingMandateProgressData = null;
+                return HandleClientException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Attempts to remotely occupy an area of the map
+        /// </summary>
+        /// <param name="mapItemIds">Map Items to occupy off</param>
+        /// <param name="timeout">Length of time to wait before abandoning the occupation attempt</param>
+        /// <param name="success">Whether or not the blocking was successful</param>
+        /// <returns></returns>
+        public ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout, out bool success)
+        {
+            Logger.Info("TrySetOccupyingMandate()");
+
+            try
+            {
+                var result = SetOccupyingMandate(mapItemIds, timeout);
                 success = result.Item1;
                 return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
             }
@@ -136,23 +241,32 @@ namespace SchedulingClients
         }
 
         /// <summary>
-        /// Clears a previously blocked area of the map
+        /// Clears a previously occupied area of the map
         /// </summary>
-        /// <param name="mandateId">Identifier previously used for blocking operation (Must be non-zero and negative)</param>
-        /// <returns></returns>
-        public ServiceOperationResult TryClearBlockingMandate(int mandateId)
+        public ServiceOperationResult TryClearOccupyingMandate()
         {
-            Logger.Info("TryClearBlockingMandate() mandateId: {0}", mandateId);
+            Logger.Info("TryClearBlockingMandate()");
 
             try
             {
-                var result = ClearBlockingMandate(mandateId);
-                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
+                ServiceCallData result = ClearOccupyingMandate();
+                return ServiceOperationResultFactory.FromMapServiceCallData(result);
             }
             catch (Exception ex)
             {
                 return HandleClientException(ex);
             }
+        }
+
+        protected override void Dispose(bool isDisposing)
+        {
+            Logger.Debug("Dispose({0})", isDisposing);
+
+            if (isDisposed) return;
+
+            callback.OccupyingMandateProgressChange += Callback_OccupyingMandateProgressChange;
+   
+            base.Dispose(isDisposing);
         }
 
         private Tuple<MoveData[], ServiceCallData> GetAllMoveData()
@@ -239,42 +353,54 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> RegisterBlockingMandate(IEnumerable<int> mapItemIds, int mandateId, int millisecondsTimeout)
+        private Tuple<OccupyingMandateProgressData, ServiceCallData> GetOccupyingMandateProgressData()
         {
-            Logger.Debug("RegisterBlockingMandate() mandateId: {0}", mandateId);
+            Logger.Debug("GetOccupyingMandateProgressData()");
 
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("MapClient");
-            }
+            if (isDisposed) throw new ObjectDisposedException("MapClient");
 
-            Tuple<bool, ServiceCallData> result;
+            Tuple<OccupyingMandateProgressData, ServiceCallData> result;
 
             using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
             {
                 IMapService channel = channelFactory.CreateChannel();
-                result = channel.RegisterBlockingMandate(mapItemIds.ToArray(), mandateId, millisecondsTimeout);
+                result = channel.GetOccupyingMandateProgressData();
                 channelFactory.Close();
             }
 
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> ClearBlockingMandate(int mandateId)
+        private Tuple<bool, ServiceCallData> SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout)
         {
-            Logger.Debug("ClearBlockingMandate() mandateId: {0}", mandateId);
+            Logger.Debug("SetOccupyingMandate()");
 
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("MapClient");
-            }
+            if (isDisposed) throw new ObjectDisposedException("MapClient");
 
             Tuple<bool, ServiceCallData> result;
 
             using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
             {
                 IMapService channel = channelFactory.CreateChannel();
-                result = channel.ClearBlockingMandate(mandateId);
+                result = channel.SetOccupyingMandate(mapItemIds.ToArray(), timeout);
+                channelFactory.Close();
+            }
+
+            return result;
+        }
+
+        private ServiceCallData ClearOccupyingMandate()
+        {
+            Logger.Debug("ClearOccupyingMandate()");
+
+            if (isDisposed) throw new ObjectDisposedException("MapClient");
+
+            ServiceCallData result;
+
+            using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
+            {
+                IMapService channel = channelFactory.CreateChannel();
+                result = channel.ClearOccupyingMandate();
                 channelFactory.Close();
             }
 

@@ -90,6 +90,7 @@
     <Compile Include="JobStateClient.cs" />
     <Compile Include="JobStateServiceCallback.cs" />
     <Compile Include="MapClient.cs" />
+    <Compile Include="MapServiceCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentAttentionServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -373,11 +374,17 @@
     <None Include="Service References\MapServiceReference\map6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MapServiceReference\map7.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MapServiceReference\MapService.wsdl" />
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.NodeData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.OccupyingMandateProgressData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ParameterData.datasource">

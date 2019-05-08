@@ -28,14 +28,20 @@ namespace SchedulingClients.UserControls
 
         private void registerBlockingMandateButton_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<int> mapItemIds = nodeDataDataGrid.SelectedItems.Cast<NodeData>().Select(n => n.MapItemId).Union(moveDataDataGrid.SelectedItems.Cast<MoveData>().Select(m => m.Id));
+            HashSet<int> mapItemIds = new HashSet<int>();
+            
+            foreach(int id in nodeDataDataGrid.SelectedItems.Cast<NodeData>().Select(n => n.MapItemId).Union(moveDataDataGrid.SelectedItems.Cast<MoveData>().Select(m => m.Id)))
+            {
+                mapItemIds.Add(id);
+            }
+
             int mandateId = mandateIdUpDown.Value ?? -1;
 
             IMapClient client = DataContext as IMapClient;
 
             bool success = false;
 
-            client.TryRegisterBlockingMandate(mapItemIds, mandateId, 20000, out success);
+            client.TrySetOccupyingMandate(mapItemIds, TimeSpan.FromMilliseconds(20000), out success);
 
             if (success)
             {
@@ -53,7 +59,7 @@ namespace SchedulingClients.UserControls
 
             IMapClient client = DataContext as IMapClient;
 
-            client.TryClearBlockingMandate(mandateId);
+            client.TryClearOccupyingMandate();
         }
 
         private void getMapDataButton_Click(object sender, RoutedEventArgs e)
