@@ -58,10 +58,8 @@ namespace SchedulingClients.Test
 		public void TryRegisterBlockingMandate_ClientExceptionNull()
 		{
 			HashSet<int> ids = new HashSet<int> { 1, 2, 3 };
-			bool success;
 
-			ServiceOperationResult result = MapClient.TrySetOccupyingMandate(ids, TimeSpan.FromMinutes(2), out success);
-
+			ServiceOperationResult result = MapClient.TrySetOccupyingMandate(ids, TimeSpan.FromMinutes(2));
 			Assert.IsNull(result.ClientException);
 		}
 

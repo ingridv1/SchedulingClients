@@ -1,4 +1,5 @@
-﻿using SchedulingClients.MapServiceReference;
+﻿using BaseClients;
+using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,17 +40,15 @@ namespace SchedulingClients.UserControls
 
             IMapClient client = DataContext as IMapClient;
 
-            bool success = false;
+            ServiceOperationResult serviceOperationResult = client.TrySetOccupyingMandate(mapItemIds, TimeSpan.FromMilliseconds(20000));
 
-            client.TrySetOccupyingMandate(mapItemIds, TimeSpan.FromMilliseconds(20000), out success);
-
-            if (success)
+            if (serviceOperationResult.IsSuccessfull)
             {
-                MessageBox.Show("Blocking mandate registration successful");
+                MessageBox.Show("Occupying mandate registration successful");
             }
             else
             {
-                MessageBox.Show("Blocking mandate registration failed");
+                MessageBox.Show("Occupying mandate registration failed");
             }
         }
 

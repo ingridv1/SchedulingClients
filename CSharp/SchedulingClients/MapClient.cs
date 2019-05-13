@@ -221,21 +221,18 @@ namespace SchedulingClients
         /// </summary>
         /// <param name="mapItemIds">Map Items to occupy off</param>
         /// <param name="timeout">Length of time to wait before abandoning the occupation attempt</param>
-        /// <param name="success">Whether or not the blocking was successful</param>
         /// <returns></returns>
-        public ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout, out bool success)
+        public ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout)
         {
             Logger.Info("TrySetOccupyingMandate()");
 
             try
             {
-                var result = SetOccupyingMandate(mapItemIds, timeout);
-                success = result.Item1;
-                return ServiceOperationResultFactory.FromMapServiceCallData(result.Item2);
+                ServiceCallData result = SetOccupyingMandate(mapItemIds, timeout);   
+                return ServiceOperationResultFactory.FromMapServiceCallData(result);
             }
             catch (Exception ex)
             {
-                success = false;
                 return HandleClientException(ex);
             }
         }
@@ -371,13 +368,13 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout)
+        private ServiceCallData SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout)
         {
             Logger.Debug("SetOccupyingMandate()");
 
             if (isDisposed) throw new ObjectDisposedException("MapClient");
 
-            Tuple<bool, ServiceCallData> result;
+            ServiceCallData result;
 
             using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
             {

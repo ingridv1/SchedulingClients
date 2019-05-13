@@ -126,6 +126,9 @@ namespace SchedulingClients.MapServiceReference {
         SERVICENOTIMPLEMENTED = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        INTERNALERROR = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -232,6 +235,9 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CONTAINSINVALIDTIMEOUT = 4009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OCCUPATIONALREADYINPROGRESS = 4010,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
@@ -928,10 +934,10 @@ namespace SchedulingClients.MapServiceReference {
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData>> GetOccupyingMandateProgressDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
-        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout);
+        SchedulingClients.MapServiceReference.ServiceCallData SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout);
+        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
         System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData();
@@ -1041,11 +1047,11 @@ namespace SchedulingClients.MapServiceReference {
             return base.Channel.GetOccupyingMandateProgressDataAsync();
         }
         
-        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout) {
+        public SchedulingClients.MapServiceReference.ServiceCallData SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout) {
             return base.Channel.SetOccupyingMandate(mapItemIds, timeout);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout) {
+        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout) {
             return base.Channel.SetOccupyingMandateAsync(mapItemIds, timeout);
         }
         

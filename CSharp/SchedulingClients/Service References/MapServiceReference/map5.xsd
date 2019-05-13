@@ -88,7 +88,7 @@
   <xs:element name="SetOccupyingMandateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SetOccupyingMandateResult" nillable="true" type="q6:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="SetOccupyingMandateResult" nillable="true" type="q6:ServiceCallData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

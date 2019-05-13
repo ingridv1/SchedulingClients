@@ -17,21 +17,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfOccupyingMandateProgressDataServiceCallDatay10cTlVK" nillable="true" type="tns:TupleOfOccupyingMandateProgressDataServiceCallDatay10cTlVK" />
-  <xs:complexType name="TupleOfbooleanServiceCallDatayG81JSvh">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
-          <GenericParameter Name="ServiceCallData" Namespace="http://schemas.datacontract.org/2004/07/Services" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="m_Item1" type="xs:boolean" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q3:ServiceCallData" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TupleOfbooleanServiceCallDatayG81JSvh" nillable="true" type="tns:TupleOfbooleanServiceCallDatayG81JSvh" />
   <xs:complexType name="TupleOfArrayOfMoveDataServiceCallDatay10cTlVK">
     <xs:annotation>
       <xs:appinfo>
@@ -42,8 +27,8 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q4:ArrayOfMoveData" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q5:ServiceCallData" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q3:ArrayOfMoveData" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q4:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfArrayOfMoveDataServiceCallDatay10cTlVK" nillable="true" type="tns:TupleOfArrayOfMoveDataServiceCallDatay10cTlVK" />
@@ -57,8 +42,8 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q6:ArrayOfNodeData" />
-      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q7:ServiceCallData" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q5:ArrayOfNodeData" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q6:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfArrayOfNodeDataServiceCallDatay10cTlVK" nillable="true" type="tns:TupleOfArrayOfNodeDataServiceCallDatay10cTlVK" />
@@ -72,8 +57,8 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q8:ArrayOfParameterData" />
-      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q9:ServiceCallData" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q7:ArrayOfParameterData" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q8:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfArrayOfParameterDataServiceCallDatay10cTlVK" nillable="true" type="tns:TupleOfArrayOfParameterDataServiceCallDatay10cTlVK" />
@@ -87,8 +72,8 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q10:ArrayOfWaypointData" />
-      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q11:ServiceCallData" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" name="m_Item1" nillable="true" type="q9:ArrayOfWaypointData" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Services" name="m_Item2" nillable="true" type="q10:ServiceCallData" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TupleOfArrayOfWaypointDataServiceCallDatay10cTlVK" nillable="true" type="tns:TupleOfArrayOfWaypointDataServiceCallDatay10cTlVK" />

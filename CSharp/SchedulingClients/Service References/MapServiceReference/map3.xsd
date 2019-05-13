@@ -17,6 +17,7 @@
       <xs:enumeration value="CLIENTEXCEPTION" />
       <xs:enumeration value="SERVICEUNAVAILABLE" />
       <xs:enumeration value="SERVICENOTIMPLEMENTED" />
+      <xs:enumeration value="INTERNALERROR" />
       <xs:enumeration value="COMMITJOBFAILED">
         <xs:annotation>
           <xs:appinfo>
@@ -266,6 +267,13 @@
         <xs:annotation>
           <xs:appinfo>
             <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4009</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OCCUPATIONALREADYINPROGRESS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4010</EnumerationValue>
           </xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
