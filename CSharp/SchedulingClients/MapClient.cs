@@ -49,9 +49,9 @@ namespace SchedulingClients
             }
         }
 
-        private void Callback_OccupyingMandateProgressChange(OccupyingMandateProgressData obj)
+        private void Callback_OccupyingMandateProgressChange(OccupyingMandateProgressData newProgressData)
         {
-            throw new NotImplementedException();
+            OccupyingMandateProgressData = newProgressData;
         }
 
         protected override void SetInstanceContext()

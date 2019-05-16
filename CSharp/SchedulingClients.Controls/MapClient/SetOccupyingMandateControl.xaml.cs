@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,13 +34,26 @@ namespace SchedulingClients.Controls.MapClient
 
                 TimeSpan timeout = timeSpanUpDown.Value ?? TimeSpan.Zero;
 
-                HashSet<int> hash = new HashSet<int>();
-
-                ServiceOperationResult result = client.TrySetOccupyingMandate(hash, timeout);
+                ServiceOperationResult result = client.TrySetOccupyingMandate(MapItemIds.ToHashSet(), timeout);
             }
             catch (Exception ex)
             {
             }
+        }
+
+        public static readonly DependencyProperty MapItemIdsProperty =
+            DependencyProperty.Register
+            (
+                "MapItemIds",
+                typeof(HashSet<int>),
+                typeof(SetOccupyingMandateControl)
+                ,new PropertyMetadata(new HashSet<int>())
+            );
+
+        public HashSet<int> MapItemIds
+        {
+            get { return (HashSet<int>)GetValue(MapItemIdsProperty); }
+            set { SetValue(MapItemIdsProperty, value); }
         }
 
         private void PopulateButton_Click(object sender, RoutedEventArgs e)
@@ -52,6 +64,8 @@ namespace SchedulingClients.Controls.MapClient
 
                 getAllNodeDataControl.GetSelectedNodeData().ForEach(n => mapItemIds.Add(n.MapItemId));
                 getAllMoveDataControl.GetSelectedMoveData().ForEach(m => mapItemIds.Add(m.Id));
+
+                MapItemIds = mapItemIds;
             }
             catch (Exception ex)
             {
