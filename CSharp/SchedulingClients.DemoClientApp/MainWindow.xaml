@@ -64,6 +64,14 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
+                    Map Client Control
+                </TabItem.Header>
+                <Grid>
+                    <mapClientControls:MapClientControl DataContext="{Binding Path=RoadmapClient}"/>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
                     Job State Client
                 </TabItem.Header>
                 <Grid>
