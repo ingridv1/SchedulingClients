@@ -85,6 +85,9 @@
     <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
       <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClient\GetAllMoveDataControl.xaml.cs">
+      <DependentUpon>GetAllMoveDataControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapClient\GetAllNodeDataControl.xaml.cs">
       <DependentUpon>GetAllNodeDataControl.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MapClient\ClearOccupyingMandateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\GetAllMoveDataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
