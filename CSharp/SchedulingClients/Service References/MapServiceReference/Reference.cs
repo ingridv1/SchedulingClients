@@ -240,6 +240,9 @@ namespace SchedulingClients.MapServiceReference {
         OCCUPATIONALREADYINPROGRESS = 4010,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOCCUPYINGMANDATEPROGRESSDATAFAILED = 4011,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -460,13 +463,16 @@ namespace SchedulingClients.MapServiceReference {
     public enum OccupyingMandateState : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unstarted = 0,
+        None = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         InProgress = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Occupied = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimedOut = 3,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

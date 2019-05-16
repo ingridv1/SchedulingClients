@@ -40,6 +40,12 @@
     <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BaseClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseClients.1.0.0\lib\net47\BaseClients.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -56,6 +62,18 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
+      <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapClient\GetOccupyingMandateProgressDataControl.xaml.cs">
+      <DependentUpon>GetOccupyingMandateProgressDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapClient\OccupyingMandateControl.xaml.cs">
+      <DependentUpon>OccupyingMandateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapClient\OccupyingMandateProgressDataControl.xaml.cs">
+      <DependentUpon>OccupyingMandateProgressDataControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +91,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +102,24 @@
       <Project>{44c76564-fcea-466c-b7a6-56747a99bada}</Project>
       <Name>SchedulingClients</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MapClient\ClearOccupyingMandateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\GetOccupyingMandateProgressDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\OccupyingMandateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\OccupyingMandateProgressDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

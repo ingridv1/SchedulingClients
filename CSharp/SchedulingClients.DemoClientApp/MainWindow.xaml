@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchedulingClients.DemoClientApp"
+        xmlns:mapClientControls="clr-namespace:SchedulingClients.Controls.MapClient;assembly=SchedulingClients.Controls"
         xmlns:clientsUC="clr-namespace:SchedulingClients.UserControls;assembly=SchedulingClients.UserControls"
         mc:Ignorable="d"
         Closing="Window_Closing"
@@ -35,6 +36,14 @@
                 </TabItem.Header>
                 <Grid>
                     <clientsUC:AgentClientControl x:Name="agentClientControl" DataContext="{Binding Path=AgentClient}" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Occupying Mandate Control
+                </TabItem.Header>
+                <Grid>
+                    <mapClientControls:OccupyingMandateControl DataContext="{Binding Path=RoadmapClient}"/>
                 </Grid>
             </TabItem>
             <TabItem>
