@@ -473,6 +473,12 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         TimedOut = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitingPreProcess = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FailedPreProcessing = 5,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

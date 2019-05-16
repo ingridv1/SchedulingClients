@@ -10,7 +10,7 @@
         <StackPanel>
             <StatusBar>Occupying Mandate Progress Data</StatusBar>
             <TextBlock Text="Occupying Mandate State"/>
-            <TextBlock Text="{Binding OccupyingMandateState}"/>
+            <TextBlock Text="{Binding Path=OccupyingMandateState, FallbackValue=fallbackValue}"/>
         </StackPanel>     
     </Grid>
 </UserControl>

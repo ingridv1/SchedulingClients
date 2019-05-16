@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -33,11 +34,17 @@ namespace SchedulingClients.Controls.MapClient
                 IMapClient mapClient = DataContext as IMapClient;
                 OccupyingMandateProgressData data;
 
-                if (mapClient.TryGetOccupyingMandateProgressData(out data).IsSuccessfull) occupyingMandateProgressDataControl.DataContext = data;
+                if (mapClient.TryGetOccupyingMandateProgressData(out data).IsSuccessfull)
+                    occupyingMandateProgressDataControl.DataContext = data;
             }
             catch (Exception ex)
             {
             }
+        }
+
+        private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            refreshButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
     }
 }
