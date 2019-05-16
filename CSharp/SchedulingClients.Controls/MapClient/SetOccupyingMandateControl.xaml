@@ -13,6 +13,19 @@
             <TextBlock>Timeout</TextBlock>
             <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown"/>
             <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
+            <Button x:Name="populateButton" Click="PopulateButton_Click">Populate</Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <local:GetAllNodeDataControl x:Name="getAllNodeDataControl" Grid.Column="0">                    
+                </local:GetAllNodeDataControl>
+                <GridSplitter Grid.Column="1"/>
+                <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" Grid.Column="2">
+                </local:GetAllMoveDataControl>
+            </Grid>
         </StackPanel>   
     </Grid>
 </UserControl>

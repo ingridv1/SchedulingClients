@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BaseClients;
+using MoreLinq;
 
 namespace SchedulingClients.Controls.MapClient
 {
@@ -37,6 +38,20 @@ namespace SchedulingClients.Controls.MapClient
                 HashSet<int> hash = new HashSet<int>();
 
                 ServiceOperationResult result = client.TrySetOccupyingMandate(hash, timeout);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void PopulateButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                HashSet<int> mapItemIds = new HashSet<int>();
+
+                getAllNodeDataControl.GetSelectedNodeData().ForEach(n => mapItemIds.Add(n.MapItemId));
+                getAllMoveDataControl.GetSelectedMoveData().ForEach(m => mapItemIds.Add(m.Id));
             }
             catch (Exception ex)
             {

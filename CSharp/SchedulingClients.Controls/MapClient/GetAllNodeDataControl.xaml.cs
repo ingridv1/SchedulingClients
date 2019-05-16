@@ -45,6 +45,18 @@ namespace SchedulingClients.Controls.MapClient
             }
         }
 
+        public IEnumerable<NodeData> GetSelectedNodeData()
+        {
+            try
+            {
+                return dataGrid.SelectedItems.Cast<NodeData>();
+            }
+            catch(Exception ex)
+            {
+                return Enumerable.Empty<NodeData>();
+            }
+        }
+
         private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             refreshButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));

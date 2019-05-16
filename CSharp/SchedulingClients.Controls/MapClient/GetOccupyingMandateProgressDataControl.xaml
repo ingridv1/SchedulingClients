@@ -9,6 +9,7 @@
              DataContextChanged="UserControl_DataContextChanged">
     <Grid>
         <StackPanel>
+            <StatusBar>Get Occupying Mandate Progress Data</StatusBar>
             <Button x:Name="refreshButton" Click="RefreshButton_Click">Refresh</Button>
             <local:OccupyingMandateProgressDataControl x:Name="occupyingMandateProgressDataControl"/>
         </StackPanel>
