@@ -11,7 +11,11 @@
         <StackPanel>
             <StatusBar>Set Occupying Mandate</StatusBar>
             <TextBlock>Timeout</TextBlock>
-            <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown"/>
+            <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown"
+                                    Minimum="00:00:30"
+                                    DefaultValue="00:00:30"
+                                    Value="00:00:30"
+                                    Maximum="00:05:00"/>
             <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
             <Button x:Name="populateButton" Click="PopulateButton_Click">Populate</Button>
             <Grid>

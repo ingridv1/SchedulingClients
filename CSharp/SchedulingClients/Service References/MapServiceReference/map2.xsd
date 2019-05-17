@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping.Architecture" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
   <xs:complexType name="OccupyingMandateProgressData">
     <xs:sequence>
       <xs:element minOccurs="0" name="OccupyingMandateMapItemData" nillable="true" type="tns:ArrayOfOccupyingMandateMapItemData" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mapping.Architecture" minOccurs="0" name="OccupyingMandateState" type="q1:OccupyingMandateState" />
+      <xs:element minOccurs="0" name="TimeoutRemaining" type="ser:duration" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OccupyingMandateProgressData" nillable="true" type="tns:OccupyingMandateProgressData" />

@@ -27,7 +27,6 @@ namespace SchedulingClients
         {
             this.heartbeat = heartbeat < MinimumHeartbeat ? MinimumHeartbeat : heartbeat;
             callback.OccupyingMandateProgressChange += Callback_OccupyingMandateProgressChange;
-
         }
 
         private OccupyingMandateProgressData occupyingMandateProgressData = null;
@@ -121,6 +120,12 @@ namespace SchedulingClients
             {
                 exceptionCaught = null;
 
+                if (OccupyingMandateProgressData == null)
+                {
+                    OccupyingMandateProgressData refreshed;
+                    if (TryGetOccupyingMandateProgressData(out refreshed).IsSuccessfull) OccupyingMandateProgressData = refreshed;
+                }
+
                 try
                 {
                     Logger.Trace("SubscriptionHeartbeat({0})", Key);
@@ -143,6 +148,7 @@ namespace SchedulingClients
                 {
                     channelFactory.Abort();
                     IsConnected = false;
+                    OccupyingMandateProgressData = null;
 
                     channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
                     mapsStateService = channelFactory.CreateChannel();

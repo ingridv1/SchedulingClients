@@ -25,5 +25,6 @@ namespace SchedulingClients.Controls.MapClient
         {
             InitializeComponent();
         }
+
     }
 }

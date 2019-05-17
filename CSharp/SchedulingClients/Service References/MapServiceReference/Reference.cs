@@ -351,6 +351,9 @@ namespace SchedulingClients.MapServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SchedulingClients.MapServiceReference.OccupyingMandateState OccupyingMandateStateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan TimeoutRemainingField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -383,6 +386,19 @@ namespace SchedulingClients.MapServiceReference {
                 if ((this.OccupyingMandateStateField.Equals(value) != true)) {
                     this.OccupyingMandateStateField = value;
                     this.RaisePropertyChanged("OccupyingMandateState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan TimeoutRemaining {
+            get {
+                return this.TimeoutRemainingField;
+            }
+            set {
+                if ((this.TimeoutRemainingField.Equals(value) != true)) {
+                    this.TimeoutRemainingField = value;
+                    this.RaisePropertyChanged("TimeoutRemaining");
                 }
             }
         }

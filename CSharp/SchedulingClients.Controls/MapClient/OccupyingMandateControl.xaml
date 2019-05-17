@@ -9,6 +9,6 @@
     <StackPanel>
         <local:ClearOccupyingMandateControl/>
         <local:SetOccupyingMandateControl/>
-        <local:GetOccupyingMandateProgressDataControl/>
+        <local:OccupyingMandateProgressDataControl/>
     </StackPanel>
 </UserControl>
