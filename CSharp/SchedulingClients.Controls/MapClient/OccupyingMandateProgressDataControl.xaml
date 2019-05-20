@@ -4,11 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
+             xmlns:baseControls="clr-namespace:SchedulingClients.Controls"
              mc:Ignorable="d"             
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top">
+        <StackPanel DockPanel.Dock="Top">            
             <StatusBar>Occupying Mandate Progress Data</StatusBar>
+            <baseControls:IsConnectedControl/>
             <TextBlock Text="Occupying Mandate State"/>
             <TextBlock Text="{Binding Path=OccupyingMandateProgressData.OccupyingMandateState, FallbackValue=fallbackValue}"/>
         </StackPanel>

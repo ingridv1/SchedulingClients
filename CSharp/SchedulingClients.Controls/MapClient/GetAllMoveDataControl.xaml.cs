@@ -33,12 +33,11 @@ namespace SchedulingClients.Controls.MapClient
 
                 IEnumerable<MoveData> moveData;
                 ServiceOperationResult result = client.TryGetAllMoveData(out moveData);
-
+                               
                 dataGrid.ItemsSource = moveData;
             }
             catch (Exception ex)
-            {
-
+            {                
             }
         }
 

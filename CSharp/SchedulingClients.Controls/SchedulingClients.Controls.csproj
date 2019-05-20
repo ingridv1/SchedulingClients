@@ -88,6 +88,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IsConnectedControl.xaml.cs">
+      <DependentUpon>IsConnectedControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
       <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="IsConnectedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MapClient\ClearOccupyingMandateControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

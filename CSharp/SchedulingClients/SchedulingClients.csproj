@@ -77,6 +77,7 @@
     <Compile Include="Client Interfaces\IJobsStateClient.cs" />
     <Compile Include="Client Interfaces\IJobStateClient.cs" />
     <Compile Include="Client Interfaces\IMapClient.cs" />
+    <Compile Include="Client Interfaces\IMapClient_ExtensionMethods.cs" />
     <Compile Include="Client Interfaces\IServicingClient.cs" />
     <Compile Include="Client Interfaces\ITaskStateClient.cs" />
     <Compile Include="ClientFactory.cs" />
