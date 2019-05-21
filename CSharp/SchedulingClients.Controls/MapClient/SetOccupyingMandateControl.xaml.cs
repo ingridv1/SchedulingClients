@@ -35,6 +35,8 @@ namespace SchedulingClients.Controls.MapClient
                 TimeSpan timeout = timeSpanUpDown.Value ?? TimeSpan.Zero;
 
                 ServiceOperationResult result = client.TrySetOccupyingMandate(MapItemIds.ToHashSet(), timeout);
+
+                if (!result.IsSuccessfull) result.ShowMessageBox();
             }
             catch (Exception ex)
             {
