@@ -11,7 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Linq;
+using SchedulingClients.Client_Interfaces;
 using BaseClients;
+using SchedulingClients.MapServiceReference;
 using MoreLinq;
 
 namespace SchedulingClients.Controls.MapClient
@@ -34,7 +37,7 @@ namespace SchedulingClients.Controls.MapClient
 
                 TimeSpan timeout = timeSpanUpDown.Value ?? TimeSpan.Zero;
 
-                ServiceOperationResult result = client.TrySetOccupyingMandate(MapItemIds.ToHashSet(), timeout);
+                ServiceOperationResult result = client.TrySetOccupyingMandate(MoreEnumerable.ToHashSet(MapItemIds), timeout);
 
                 if (!result.IsSuccessfull) result.ShowMessageBox();
             }
@@ -63,6 +66,10 @@ namespace SchedulingClients.Controls.MapClient
             try
             {
                 HashSet<int> mapItemIds = new HashSet<int>();
+                IMapClient mapClient = DataContext as IMapClient;
+
+                mapClient.TryGetAllNodeData(out IEnumerable<NodeData> nodeData);
+                mapClient.TryGetAllMoveData(out IEnumerable<MoveData> moveData);
 
                 getAllNodeDataControl.GetSelectedNodeData().ForEach(n => mapItemIds.Add(n.MapItemId));
                 getAllMoveDataControl.GetSelectedMoveData().ForEach(m => mapItemIds.Add(m.Id));

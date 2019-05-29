@@ -13,6 +13,8 @@
             <baseControls:IsConnectedControl/>
             <TextBlock Text="Occupying Mandate State"/>
             <TextBlock Text="{Binding Path=OccupyingMandateProgressData.OccupyingMandateState, FallbackValue=fallbackValue}"/>
+            <TextBlock Text="Timeout remaining:"/>
+            <TextBlock Text="{Binding Path=OccupyingMandateProgressData.TimeoutRemaining, FallbackValue=fallbackValue}"/>
         </StackPanel>
         <ScrollViewer DockPanel.Dock="Top">
             <DataGrid ItemsSource="{Binding Path=OccupyingMandateProgressData.OccupyingMandateMapItemData, UpdateSourceTrigger=PropertyChanged}"

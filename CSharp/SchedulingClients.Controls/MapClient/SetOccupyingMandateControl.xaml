@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              x:Name="setOccupyingMandateControl"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
             <StatusBar>Set Occupying Mandate</StatusBar>
             <TextBlock>Timeout</TextBlock>
             <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown"
@@ -20,6 +20,11 @@
             <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
             <Button x:Name="populateButton" Click="PopulateButton_Click">Populate</Button>
             <ItemsControl ItemsSource="{Binding Path=MapItemIds, ElementName=setOccupyingMandateControl}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
                 <ItemsControl.Style>
                     <Style TargetType="{x:Type ItemsControl}">
                         <Style.Triggers>
@@ -36,18 +41,18 @@
                     </Style>
                 </ItemsControl.Style>
             </ItemsControl>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="5"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <local:GetAllNodeDataControl x:Name="getAllNodeDataControl" Grid.Column="0">                    
-                </local:GetAllNodeDataControl>
-                <GridSplitter Grid.Column="1"/>
-                <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" Grid.Column="2">
-                </local:GetAllMoveDataControl>
-            </Grid>
-        </StackPanel>   
-    </Grid>
+        </StackPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <local:GetAllNodeDataControl x:Name="getAllNodeDataControl" Grid.Column="0">
+            </local:GetAllNodeDataControl>
+            <GridSplitter Grid.Column="1"/>
+            <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" Grid.Column="2">
+            </local:GetAllMoveDataControl>
+        </Grid>
+    </DockPanel>
 </UserControl>
