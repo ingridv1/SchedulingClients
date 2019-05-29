@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SchedulingClients.UserControls</RootNamespace>
     <AssemblyName>SchedulingClients.UserControls</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -114,9 +114,6 @@
       <DependentUpon>JobStateDataControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LabelContentControl.cs" />
-    <Compile Include="MapClientBlockingMandatesControl.xaml.cs">
-      <DependentUpon>MapClientBlockingMandatesControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MapClientControl.xaml.cs">
       <DependentUpon>MapClientControl.xaml</DependentUpon>
     </Compile>
@@ -197,10 +194,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JobStateDataControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MapClientBlockingMandatesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

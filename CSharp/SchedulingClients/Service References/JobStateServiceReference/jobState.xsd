@@ -34,12 +34,13 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="UnorderedList" />
       <xs:enumeration value="OrderedList" />
-      <xs:enumeration value="PipelinedMoveList" />
+      <xs:enumeration value="AtomicMoveList" />
       <xs:enumeration value="ServiceAtNode" />
       <xs:enumeration value="AwaitAtNode" />
       <xs:enumeration value="SleepAtNode" />
-      <xs:enumeration value="MoveToNode" />
       <xs:enumeration value="ChargeAtNode" />
+      <xs:enumeration value="GoToNode" />
+      <xs:enumeration value="AtomicMove" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaskType" nillable="true" type="tns:TaskType" />

@@ -111,7 +111,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateMovingTask">
+  <xs:element name="CreateGoToNodeTask">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
@@ -119,10 +119,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateMovingTaskResponse">
+  <xs:element name="CreateGoToNodeTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateMovingTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateGoToNodeTaskResult" nillable="true" type="q6:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -130,7 +130,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
-        <xs:element minOccurs="0" name="isFinalised" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -141,18 +140,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreatePipelinedTask">
+  <xs:element name="CreateAtomicMoveListTask">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
-        <xs:element minOccurs="0" name="isFinalised" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreatePipelinedTaskResponse">
+  <xs:element name="CreateAtomicMoveListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatePipelinedTaskResult" nillable="true" type="q8:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateAtomicMoveListTaskResult" nillable="true" type="q8:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -173,19 +171,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CreateAtomicMoveTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentAtomicMoveListTaskId" type="xs:int" />
+        <xs:element minOccurs="0" name="moveId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAtomicMoveTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateAtomicMoveTaskResult" nillable="true" type="q12:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CreateSleepingTask">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q12:duration" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q13:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateSleepingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateSleepingTaskResult" nillable="true" type="q13:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateSleepingTaskResult" nillable="true" type="q14:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -199,7 +212,7 @@
   <xs:element name="CreateUnorderedListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateUnorderedListTaskResult" nillable="true" type="q14:TupleOfintServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreateUnorderedListTaskResult" nillable="true" type="q15:TupleOfintServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -213,7 +226,7 @@
   <xs:element name="FinishEditingJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinishEditingJobResult" nillable="true" type="q15:ServiceCallData" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinishEditingJobResult" nillable="true" type="q16:ServiceCallData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -227,7 +240,7 @@
   <xs:element name="FinishEditingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinishEditingTaskResult" nillable="true" type="q16:ServiceCallData" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Services" minOccurs="0" name="FinishEditingTaskResult" nillable="true" type="q17:ServiceCallData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -243,7 +256,7 @@
   <xs:element name="IssueEnumDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q17:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q18:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -259,7 +272,7 @@
   <xs:element name="IssueFloatDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q18:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q19:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -268,14 +281,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
         <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q19:IPAddress" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q20:IPAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="IssueIPAddressDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q20:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q21:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -291,7 +304,7 @@
   <xs:element name="IssueShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q21:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q22:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -307,7 +320,7 @@
   <xs:element name="IssueUShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q22:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q23:TupleOfbooleanServiceCallDatayG81JSvh" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -482,7 +482,7 @@ namespace SchedulingClients.JobStateServiceReference {
         OrderedList = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PipelinedMoveList = 2,
+        AtomicMoveList = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ServiceAtNode = 3,
@@ -494,10 +494,13 @@ namespace SchedulingClients.JobStateServiceReference {
         SleepAtNode = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MoveToNode = 6,
+        ChargeAtNode = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ChargeAtNode = 7,
+        GoToNode = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AtomicMove = 8,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -529,7 +532,7 @@ namespace SchedulingClients.JobStateServiceReference {
         CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEPIPELINEDTASKFAILED = 1004,
+        CREATEATOMICMOVELISTTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CREATEORDEREDLISTTASKFAILED = 1005,
@@ -550,10 +553,10 @@ namespace SchedulingClients.JobStateServiceReference {
         CREATESLEEPINGTASKFAILED = 1010,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEMOVINGTASKFAILED = 1011,
+        CREATEGOTONODETASKFAILED = 1011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINALISETASKFAILED = 1012,
+        CREATEATOMICMOVETASKFAILED = 1012,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         BEGINEDITINGJOBFAILED = 1013,
@@ -610,16 +613,22 @@ namespace SchedulingClients.JobStateServiceReference {
         GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETTRAJECTORYFAILED = 4004,
+        GETRAJECTORYFAILED = 4004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        SETOCCUPYINGMANDATEFAILED = 4006,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLEARBLOCKINGMANDATEFAILED = 4007,
+        CLEAROCCUPYINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CONTAINSINVALIDMAPITEMIDS = 4008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CONTAINSINVALIDTIMEOUT = 4009,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,

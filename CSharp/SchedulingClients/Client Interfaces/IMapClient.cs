@@ -1,10 +1,11 @@
 ﻿using BaseClients;
 using SchedulingClients.MapServiceReference;
+using System;
 using System.Collections.Generic;
 
 namespace SchedulingClients
 {
-    public interface IMapClient : IClient
+    public interface IMapClient : ICallbackClient
     {
         ServiceOperationResult TryGetAllMoveData(out IEnumerable<MoveData> moveData);
 
@@ -14,8 +15,12 @@ namespace SchedulingClients
 
         ServiceOperationResult TryGetTrajectory(int moveId, out IEnumerable<WaypointData> waypointData);
 
-        ServiceOperationResult TryRegisterBlockingMandate(IEnumerable<int> mapItemIds, int mandateId, int millisecondsTimeout, out bool success);
+        ServiceOperationResult TryGetOccupyingMandateProgressData(out OccupyingMandateProgressData occupyingMandateProgressData);
 
-        ServiceOperationResult TryClearBlockingMandate(int mandateId);
+        ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout);
+
+        ServiceOperationResult TryClearOccupyingMandate();
+
+        OccupyingMandateProgressData OccupyingMandateProgressData { get; }
     }
 }

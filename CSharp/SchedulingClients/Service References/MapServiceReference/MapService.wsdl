@@ -25,11 +25,12 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping.Architecture" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IMapService_VersionMajor_InputMessage">
@@ -50,11 +51,29 @@
   <wsdl:message name="IMapService_VersionPatch_OutputMessage">
     <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
   </wsdl:message>
-  <wsdl:message name="IMapService_ClearBlockingMandate_InputMessage">
-    <wsdl:part name="parameters" element="tns:ClearBlockingMandate" />
+  <wsdl:message name="IMapService_SubscriptionHeartbeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscriptionHeartbeat" />
   </wsdl:message>
-  <wsdl:message name="IMapService_ClearBlockingMandate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ClearBlockingMandateResponse" />
+  <wsdl:message name="IMapService_SubscriptionHeartbeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscriptionHeartbeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_ClearOccupyingMandate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearOccupyingMandate" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_ClearOccupyingMandate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearOccupyingMandateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetOccupyingMandateProgressData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOccupyingMandateProgressData" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_GetOccupyingMandateProgressData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOccupyingMandateProgressDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SetOccupyingMandate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOccupyingMandate" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SetOccupyingMandate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOccupyingMandateResponse" />
   </wsdl:message>
   <wsdl:message name="IMapService_GetAllMoveData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMoveData" />
@@ -80,11 +99,11 @@
   <wsdl:message name="IMapService_GetTrajectory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTrajectoryResponse" />
   </wsdl:message>
-  <wsdl:message name="IMapService_RegisterBlockingMandate_InputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterBlockingMandate" />
+  <wsdl:message name="IMapService_OnCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallback" />
   </wsdl:message>
-  <wsdl:message name="IMapService_RegisterBlockingMandate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterBlockingMandateResponse" />
+  <wsdl:message name="IMapService_OnCallback_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IMapService">
     <wsdl:operation name="VersionMajor">
@@ -99,9 +118,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IMapService_VersionPatch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IMapService_VersionPatch_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ClearBlockingMandate">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/ClearBlockingMandate" message="tns:IMapService_ClearBlockingMandate_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/ClearBlockingMandateResponse" message="tns:IMapService_ClearBlockingMandate_OutputMessage" />
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IMapService_SubscriptionHeartbeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse" message="tns:IMapService_SubscriptionHeartbeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearOccupyingMandate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/ClearOccupyingMandate" message="tns:IMapService_ClearOccupyingMandate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/ClearOccupyingMandateResponse" message="tns:IMapService_ClearOccupyingMandate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOccupyingMandateProgressData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetOccupyingMandateProgressData" message="tns:IMapService_GetOccupyingMandateProgressData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetOccupyingMandateProgressDataResponse" message="tns:IMapService_GetOccupyingMandateProgressData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOccupyingMandate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/SetOccupyingMandate" message="tns:IMapService_SetOccupyingMandate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/SetOccupyingMandateResponse" message="tns:IMapService_SetOccupyingMandate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllMoveData">
       <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetAllMoveData" message="tns:IMapService_GetAllMoveData_InputMessage" />
@@ -119,9 +150,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMapService/GetTrajectory" message="tns:IMapService_GetTrajectory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMapService/GetTrajectoryResponse" message="tns:IMapService_GetTrajectory_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RegisterBlockingMandate">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/RegisterBlockingMandate" message="tns:IMapService_RegisterBlockingMandate_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/RegisterBlockingMandateResponse" message="tns:IMapService_RegisterBlockingMandate_OutputMessage" />
+    <wsdl:operation name="OnCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/OnCallback" message="tns:IMapService_OnCallback_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/OnCallbackResponse" message="tns:IMapService_OnCallback_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IMapService" type="tns:IMapService">
@@ -154,8 +185,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ClearBlockingMandate">
-      <soap12:operation soapAction="http://tempuri.org/IMapService/ClearBlockingMandate" style="document" />
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearOccupyingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/ClearOccupyingMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOccupyingMandateProgressData">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetOccupyingMandateProgressData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOccupyingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/SetOccupyingMandate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -199,8 +257,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RegisterBlockingMandate">
-      <soap12:operation soapAction="http://tempuri.org/IMapService/RegisterBlockingMandate" style="document" />
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/OnCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -239,8 +297,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ClearBlockingMandate">
-      <soap12:operation soapAction="http://tempuri.org/IMapService/ClearBlockingMandate" style="document" />
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearOccupyingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/ClearOccupyingMandate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOccupyingMandateProgressData">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/GetOccupyingMandateProgressData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOccupyingMandate">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/SetOccupyingMandate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -284,8 +369,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RegisterBlockingMandate">
-      <soap12:operation soapAction="http://tempuri.org/IMapService/RegisterBlockingMandate" style="document" />
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IMapService/OnCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

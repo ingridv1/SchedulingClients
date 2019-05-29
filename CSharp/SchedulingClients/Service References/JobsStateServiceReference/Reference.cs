@@ -135,7 +135,7 @@ namespace SchedulingClients.JobsStateServiceReference {
         CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEPIPELINEDTASKFAILED = 1004,
+        CREATEATOMICMOVELISTTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CREATEORDEREDLISTTASKFAILED = 1005,
@@ -156,10 +156,10 @@ namespace SchedulingClients.JobsStateServiceReference {
         CREATESLEEPINGTASKFAILED = 1010,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEMOVINGTASKFAILED = 1011,
+        CREATEGOTONODETASKFAILED = 1011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINALISETASKFAILED = 1012,
+        CREATEATOMICMOVETASKFAILED = 1012,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         BEGINEDITINGJOBFAILED = 1013,
@@ -216,16 +216,22 @@ namespace SchedulingClients.JobsStateServiceReference {
         GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETTRAJECTORYFAILED = 4004,
+        GETRAJECTORYFAILED = 4004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        SETOCCUPYINGMANDATEFAILED = 4006,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLEARBLOCKINGMANDATEFAILED = 4007,
+        CLEAROCCUPYINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CONTAINSINVALIDMAPITEMIDS = 4008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CONTAINSINVALIDTIMEOUT = 4009,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,

@@ -11,17 +11,19 @@ namespace SchedulingClients
 
         ServiceOperationResult TryCreateJob(out JobData jobData);
 
-        ServiceOperationResult TryCreateOrderedListTask(int parentTaskId, bool isFinalised, out int listTaskId);
+        ServiceOperationResult TryCreateOrderedListTask(int parentTaskId, out int listTaskId);
 
         ServiceOperationResult TryCreateUnorderedListTask(int parentTaskId, out int listTaskId);
 
-        ServiceOperationResult TryCreatePipelinedTask(int parentTaskId, bool isFinalised, out int listTaskId);
+        ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, out int listTaskId);
 
         ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan));
 
         ServiceOperationResult TryCreateSleepingTask(int parentListTaskId, int nodeId, out int sleepingTaskId, TimeSpan expectedDuration = default(TimeSpan));
 
-        ServiceOperationResult TryCreateMovingTask(int parentListTaskId, int nodeId, out int moveTaskId);
+        ServiceOperationResult TryCreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId, out int atomicMoveTaskId);
+
+        ServiceOperationResult TryCreateGoToNodeTask(int parentListTaskId, int nodeId, out int goToNodeTaskId);
 
         ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId);
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SchedulingClients.JobsStateServiceReference;
 
 namespace SchedulingClients
 {
@@ -18,5 +19,7 @@ namespace SchedulingClients
         ServiceOperationResult TryAbortTask(int taskId, out bool success);
 
         ServiceOperationResult TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds);
+
+        JobsStateData JobsStateData { get; }
     }
 }

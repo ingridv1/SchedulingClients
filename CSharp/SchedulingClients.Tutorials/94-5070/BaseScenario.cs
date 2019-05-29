@@ -41,9 +41,9 @@ namespace SchedulingClients.Tutorials
             jobBuilder.TryCreateServicingTask(jobData.RootOrderedListTaskId, dropNodeId, ServiceType.Execution, out dropTaskId);
             jobBuilder.TryIssueDirective(receiveTaskId, "DockType", drop);
 
-            // Park back at the start
-            int parkTaskId;
-            jobBuilder.TryCreateMovingTask(jobData.RootOrderedListTaskId, receiveNodeId, out parkTaskId);
+            // Go to the start
+            int goToTaskId;
+            jobBuilder.TryCreateGoToNodeTask(jobData.RootOrderedListTaskId, receiveNodeId, out goToTaskId);
 
             bool success;
             jobBuilder.TryCommit(jobData.JobId, out success); // Commits this job for next available agent. 

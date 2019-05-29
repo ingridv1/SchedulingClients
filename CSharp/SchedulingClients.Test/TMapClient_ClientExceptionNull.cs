@@ -57,19 +57,17 @@ namespace SchedulingClients.Test
 		[Category("ClientExceptionNull")]
 		public void TryRegisterBlockingMandate_ClientExceptionNull()
 		{
-			List<int> ids = new List<int> { 1, 2, 3 };
-			bool success;
+			HashSet<int> ids = new HashSet<int> { 1, 2, 3 };
 
-			ServiceOperationResult result = MapClient.TryRegisterBlockingMandate(ids, 1, 10, out success);
-
+			ServiceOperationResult result = MapClient.TrySetOccupyingMandate(ids, TimeSpan.FromMinutes(2));
 			Assert.IsNull(result.ClientException);
 		}
 
 		[Test]
 		[Category("ClientExceptionNull")]
-		public void TryClearBlockingMandate_ClientExceptionNull()
+		public void TryClearOccupyingMandate_ClientExceptionNull()
 		{
-			ServiceOperationResult result = MapClient.TryClearBlockingMandate(1);
+			ServiceOperationResult result = MapClient.TryClearOccupyingMandate();
 
 			Assert.IsNull(result.ClientException);
 		}

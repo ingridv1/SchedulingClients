@@ -82,11 +82,11 @@
   <wsdl:message name="IJobBuilderService_CreateJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateJobResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateMovingTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateMovingTask" />
+  <wsdl:message name="IJobBuilderService_CreateGoToNodeTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGoToNodeTask" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateMovingTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateMovingTaskResponse" />
+  <wsdl:message name="IJobBuilderService_CreateGoToNodeTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGoToNodeTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateOrderedListTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateOrderedListTask" />
@@ -94,17 +94,23 @@
   <wsdl:message name="IJobBuilderService_CreateOrderedListTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateOrderedListTaskResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreatePipelinedTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePipelinedTask" />
+  <wsdl:message name="IJobBuilderService_CreateAtomicMoveListTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAtomicMoveListTask" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreatePipelinedTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePipelinedTaskResponse" />
+  <wsdl:message name="IJobBuilderService_CreateAtomicMoveListTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAtomicMoveListTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateServicingTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTask" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateServicingTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateAtomicMoveTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAtomicMoveTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateAtomicMoveTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAtomicMoveTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateSleepingTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateSleepingTask" />
@@ -193,21 +199,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateJob" message="tns:IJobBuilderService_CreateJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateJobResponse" message="tns:IJobBuilderService_CreateJob_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateMovingTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateMovingTask" message="tns:IJobBuilderService_CreateMovingTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateMovingTaskResponse" message="tns:IJobBuilderService_CreateMovingTask_OutputMessage" />
+    <wsdl:operation name="CreateGoToNodeTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateGoToNodeTask" message="tns:IJobBuilderService_CreateGoToNodeTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateGoToNodeTaskResponse" message="tns:IJobBuilderService_CreateGoToNodeTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateOrderedListTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTask" message="tns:IJobBuilderService_CreateOrderedListTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateOrderedListTaskResponse" message="tns:IJobBuilderService_CreateOrderedListTask_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreatePipelinedTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTask" message="tns:IJobBuilderService_CreatePipelinedTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreatePipelinedTaskResponse" message="tns:IJobBuilderService_CreatePipelinedTask_OutputMessage" />
+    <wsdl:operation name="CreateAtomicMoveListTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveListTask" message="tns:IJobBuilderService_CreateAtomicMoveListTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveListTaskResponse" message="tns:IJobBuilderService_CreateAtomicMoveListTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse" message="tns:IJobBuilderService_CreateServicingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAtomicMoveTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask" message="tns:IJobBuilderService_CreateAtomicMoveTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTaskResponse" message="tns:IJobBuilderService_CreateAtomicMoveTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateSleepingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateSleepingTask" message="tns:IJobBuilderService_CreateSleepingTask_InputMessage" />
@@ -321,8 +331,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateMovingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateMovingTask" style="document" />
+    <wsdl:operation name="CreateGoToNodeTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateGoToNodeTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -339,8 +349,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreatePipelinedTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTask" style="document" />
+    <wsdl:operation name="CreateAtomicMoveListTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveListTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -350,6 +360,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAtomicMoveTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -514,8 +533,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateMovingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateMovingTask" style="document" />
+    <wsdl:operation name="CreateGoToNodeTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateGoToNodeTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -532,8 +551,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreatePipelinedTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreatePipelinedTask" style="document" />
+    <wsdl:operation name="CreateAtomicMoveListTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveListTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -543,6 +562,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAtomicMoveTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchedulingClients.DemoClientApp"
+        xmlns:mapClientControls="clr-namespace:SchedulingClients.Controls.MapClient;assembly=SchedulingClients.Controls"
         xmlns:clientsUC="clr-namespace:SchedulingClients.UserControls;assembly=SchedulingClients.UserControls"
         mc:Ignorable="d"
         Closing="Window_Closing"
@@ -39,6 +40,14 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
+                    Occupying Mandate Control
+                </TabItem.Header>
+                <Grid>
+                    <mapClientControls:OccupyingMandateControl DataContext="{Binding Path=RoadmapClient}"/>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
                     Agent Battery Status Client
                 </TabItem.Header>
                 <Grid>
@@ -51,6 +60,14 @@
                 </TabItem.Header>
                 <Grid>
                     <clientsUC:JobBuilderClientControl x:Name="jobBuilderClientControl" DataContext="{Binding Path=JobBuilderClient}" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Map Client Control
+                </TabItem.Header>
+                <Grid>
+                    <mapClientControls:MapClientControl DataContext="{Binding Path=RoadmapClient}"/>
                 </Grid>
             </TabItem>
             <TabItem>
@@ -75,14 +92,6 @@
                 </TabItem.Header>
                 <Grid>
                     <clientsUC:MapClientControl x:Name="roadmapClientControl" DataContext="{Binding Path=RoadmapClient}" />
-                </Grid>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    Map Client Blocking Mandates
-                </TabItem.Header>
-                <Grid>
-                    <clientsUC:MapClientBlockingMandatesControl x:Name="roadmapClientBlockingMandatesControl" DataContext="{Binding Path=RoadmapClient}" />
                 </Grid>
             </TabItem>
             <TabItem>

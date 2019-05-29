@@ -126,6 +126,9 @@ namespace SchedulingClients.MapServiceReference {
         SERVICENOTIMPLEMENTED = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        INTERNALERROR = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -135,7 +138,7 @@ namespace SchedulingClients.MapServiceReference {
         CREATEUNORDEREDLISTTASKFAILED = 1003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEPIPELINEDTASKFAILED = 1004,
+        CREATEATOMICMOVELISTTASKFAILED = 1004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CREATEORDEREDLISTTASKFAILED = 1005,
@@ -156,10 +159,10 @@ namespace SchedulingClients.MapServiceReference {
         CREATESLEEPINGTASKFAILED = 1010,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEMOVINGTASKFAILED = 1011,
+        CREATEGOTONODETASKFAILED = 1011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINALISETASKFAILED = 1012,
+        CREATEATOMICMOVETASKFAILED = 1012,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         BEGINEDITINGJOBFAILED = 1013,
@@ -216,16 +219,28 @@ namespace SchedulingClients.MapServiceReference {
         GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETTRAJECTORYFAILED = 4004,
+        GETRAJECTORYFAILED = 4004,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         INVALIDMOVEID = 4005,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        REGISTERBLOCKINGMANDATEFAILED = 4006,
+        SETOCCUPYINGMANDATEFAILED = 4006,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLEARBLOCKINGMANDATEFAILED = 4007,
+        CLEAROCCUPYINGMANDATEFAILED = 4007,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CONTAINSINVALIDMAPITEMIDS = 4008,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CONTAINSINVALIDTIMEOUT = 4009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OCCUPATIONALREADYINPROGRESS = 4010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOCCUPYINGMANDATEPROGRESSDATAFAILED = 4011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
@@ -319,6 +334,167 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateProgressData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.SerializableAttribute()]
+    public partial class OccupyingMandateProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.MapServiceReference.OccupyingMandateMapItemData[] OccupyingMandateMapItemDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SchedulingClients.MapServiceReference.OccupyingMandateState OccupyingMandateStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan TimeoutRemainingField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.MapServiceReference.OccupyingMandateMapItemData[] OccupyingMandateMapItemData {
+            get {
+                return this.OccupyingMandateMapItemDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OccupyingMandateMapItemDataField, value) != true)) {
+                    this.OccupyingMandateMapItemDataField = value;
+                    this.RaisePropertyChanged("OccupyingMandateMapItemData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SchedulingClients.MapServiceReference.OccupyingMandateState OccupyingMandateState {
+            get {
+                return this.OccupyingMandateStateField;
+            }
+            set {
+                if ((this.OccupyingMandateStateField.Equals(value) != true)) {
+                    this.OccupyingMandateStateField = value;
+                    this.RaisePropertyChanged("OccupyingMandateState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan TimeoutRemaining {
+            get {
+                return this.TimeoutRemainingField;
+            }
+            set {
+                if ((this.TimeoutRemainingField.Equals(value) != true)) {
+                    this.TimeoutRemainingField = value;
+                    this.RaisePropertyChanged("TimeoutRemaining");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateMapItemData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.SerializableAttribute()]
+    public partial class OccupyingMandateMapItemData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsOccupiedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MapItemIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsOccupied {
+            get {
+                return this.IsOccupiedField;
+            }
+            set {
+                if ((this.IsOccupiedField.Equals(value) != true)) {
+                    this.IsOccupiedField = value;
+                    this.RaisePropertyChanged("IsOccupied");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MapItemId {
+            get {
+                return this.MapItemIdField;
+            }
+            set {
+                if ((this.MapItemIdField.Equals(value) != true)) {
+                    this.MapItemIdField = value;
+                    this.RaisePropertyChanged("MapItemId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateState", Namespace="http://schemas.datacontract.org/2004/07/Mapping.Architecture")]
+    public enum OccupyingMandateState : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InProgress = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Occupied = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimedOut = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AwaitingPreProcess = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FailedPreProcessing = 5,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -746,7 +922,7 @@ namespace SchedulingClients.MapServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MapServiceReference.IMapService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MapServiceReference.IMapService", CallbackContract=typeof(SchedulingClients.MapServiceReference.IMapServiceCallback))]
     public interface IMapService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
@@ -767,11 +943,29 @@ namespace SchedulingClients.MapServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
         System.Threading.Tasks.Task<int> VersionPatchAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
-        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
+        void SubscriptionHeartbeat(System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearBlockingMandate", ReplyAction="http://tempuri.org/IMapService/ClearBlockingMandateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
+        System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/ClearOccupyingMandateResponse")]
+        SchedulingClients.MapServiceReference.ServiceCallData ClearOccupyingMandate();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/ClearOccupyingMandateResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> ClearOccupyingMandateAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetOccupyingMandateProgressData", ReplyAction="http://tempuri.org/IMapService/GetOccupyingMandateProgressDataResponse")]
+        System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData> GetOccupyingMandateProgressData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetOccupyingMandateProgressData", ReplyAction="http://tempuri.org/IMapService/GetOccupyingMandateProgressDataResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData>> GetOccupyingMandateProgressDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
+        SchedulingClients.MapServiceReference.ServiceCallData SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
+        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
         System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData();
@@ -796,12 +990,13 @@ namespace SchedulingClients.MapServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetTrajectory", ReplyAction="http://tempuri.org/IMapService/GetTrajectoryResponse")]
         System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMapServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RegisterBlockingMandate", ReplyAction="http://tempuri.org/IMapService/RegisterBlockingMandateResponse")]
-        System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> RegisterBlockingMandate(int[] mapItemIds, int mandateId, int millisecondsTimeout);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/RegisterBlockingMandate", ReplyAction="http://tempuri.org/IMapService/RegisterBlockingMandateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> RegisterBlockingMandateAsync(int[] mapItemIds, int mandateId, int millisecondsTimeout);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/OnCallback", ReplyAction="http://tempuri.org/IMapService/OnCallbackResponse")]
+        void OnCallback(SchedulingClients.MapServiceReference.OccupyingMandateProgressData callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -810,25 +1005,26 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MapServiceClient : System.ServiceModel.ClientBase<SchedulingClients.MapServiceReference.IMapService>, SchedulingClients.MapServiceReference.IMapService {
+    public partial class MapServiceClient : System.ServiceModel.DuplexClientBase<SchedulingClients.MapServiceReference.IMapService>, SchedulingClients.MapServiceReference.IMapService {
         
-        public MapServiceClient() {
+        public MapServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public MapServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public MapServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public MapServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public MapServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public MapServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public MapServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public MapServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public MapServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public int VersionMajor() {
@@ -855,12 +1051,36 @@ namespace SchedulingClients.MapServiceReference {
             return base.Channel.VersionPatchAsync();
         }
         
-        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> ClearBlockingMandate(int mandateId) {
-            return base.Channel.ClearBlockingMandate(mandateId);
+        public void SubscriptionHeartbeat(System.Guid guid) {
+            base.Channel.SubscriptionHeartbeat(guid);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> ClearBlockingMandateAsync(int mandateId) {
-            return base.Channel.ClearBlockingMandateAsync(mandateId);
+        public System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid) {
+            return base.Channel.SubscriptionHeartbeatAsync(guid);
+        }
+        
+        public SchedulingClients.MapServiceReference.ServiceCallData ClearOccupyingMandate() {
+            return base.Channel.ClearOccupyingMandate();
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> ClearOccupyingMandateAsync() {
+            return base.Channel.ClearOccupyingMandateAsync();
+        }
+        
+        public System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData> GetOccupyingMandateProgressData() {
+            return base.Channel.GetOccupyingMandateProgressData();
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData>> GetOccupyingMandateProgressDataAsync() {
+            return base.Channel.GetOccupyingMandateProgressDataAsync();
+        }
+        
+        public SchedulingClients.MapServiceReference.ServiceCallData SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout) {
+            return base.Channel.SetOccupyingMandate(mapItemIds, timeout);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout) {
+            return base.Channel.SetOccupyingMandateAsync(mapItemIds, timeout);
         }
         
         public System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData() {
@@ -893,14 +1113,6 @@ namespace SchedulingClients.MapServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId) {
             return base.Channel.GetTrajectoryAsync(moveId);
-        }
-        
-        public System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData> RegisterBlockingMandate(int[] mapItemIds, int mandateId, int millisecondsTimeout) {
-            return base.Channel.RegisterBlockingMandate(mapItemIds, mandateId, millisecondsTimeout);
-        }
-        
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.MapServiceReference.ServiceCallData>> RegisterBlockingMandateAsync(int[] mapItemIds, int mandateId, int millisecondsTimeout) {
-            return base.Channel.RegisterBlockingMandateAsync(mapItemIds, mandateId, millisecondsTimeout);
         }
     }
 }
