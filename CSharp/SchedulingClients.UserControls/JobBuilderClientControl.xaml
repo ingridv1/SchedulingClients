@@ -77,6 +77,10 @@
                             <Button x:Name="addGoToNodeTaskToParentButton" Click="addGoToNodeTaskToParentButton_Click" Width="auto">Create GoTo Node Task</Button>
                             <Button x:Name="addAwaitTaskToParentButton" Click="addAwaitTaskToParentButton_Click" Width="auto">Create Await Task</Button>
                             <Button x:Name="addServiceTaskToParentButton" Click="addServiceTaskToParentButton_Click" Width="auto">Create Service Task</Button>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="sleepDurationBox" Text="Sleep time (s)" Width="auto" />
+                                <Button x:Name="addSleepTaskToParentButton" Click="addSleepTaskToParentButton_Click" Width="auto">Create Sleep Task</Button>
+                            </StackPanel>
                         </StackPanel>
 					</local:LabelContentControl>
 				</StackPanel>

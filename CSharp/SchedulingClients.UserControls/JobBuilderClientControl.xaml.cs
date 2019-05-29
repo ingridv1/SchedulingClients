@@ -1,5 +1,6 @@
 ﻿using SchedulingClients.JobBuilderServiceReference;
 using SchedulingClients.MapServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -138,12 +139,31 @@ namespace SchedulingClients.UserControls
 			client.TryCreateServicingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, JobBuilderServiceReference.ServiceType.Execution, out newServiceId);
 		}
 
+		private void addSleepTaskToParentButton_Click(object sender, RoutedEventArgs e)
+		{
+			IJobBuilderClient client = DataContext as IJobBuilderClient;
+
+			int newSleepId;
+			double sleepSeconds;
+			try
+			{
+				sleepSeconds = Convert.ToDouble(sleepDurationBox.Text);
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Could not convert the given value to a double. Please only use numerals for this value.", "Failed to parse integer", MessageBoxButton.OK);
+				return;
+			}
+
+			client.TryCreateSleepingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newSleepId, TimeSpan.FromSeconds(sleepSeconds));
+		}
+
 		private void commitJobButton_Click(object sender, RoutedEventArgs e)
         {
             IJobBuilderClient client = DataContext as IJobBuilderClient;
 
             bool success;
             client.TryCommit(jobIdUpDown.Value ?? 1, out success, agentIdUpDown.Value ?? -1);
-        }	
+        }
 	}
 }
