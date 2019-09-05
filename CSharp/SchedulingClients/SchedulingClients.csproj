@@ -296,8 +296,14 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder8.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder9.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.SemVerData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">

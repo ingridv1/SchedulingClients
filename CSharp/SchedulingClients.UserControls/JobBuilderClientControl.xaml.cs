@@ -139,6 +139,15 @@ namespace SchedulingClients.UserControls
 			client.TryCreateServicingTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, JobBuilderServiceReference.ServiceType.Execution, out newServiceId);
 		}
 
+		private void AddChargeTaskToParentButton_Click(object sender, RoutedEventArgs e)
+		{
+			IJobBuilderClient client = DataContext as IJobBuilderClient;
+
+			int newChargeId;
+
+			client.TryCreateChargeTask(addNodeTaskParentUpDown.Value ?? 0, addNodeTaskIdUpDown.Value ?? 0, out newChargeId);
+		}
+
 		private void addSleepTaskToParentButton_Click(object sender, RoutedEventArgs e)
 		{
 			IJobBuilderClient client = DataContext as IJobBuilderClient;
