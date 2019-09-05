@@ -23,8 +23,8 @@ namespace SchedulingClients.DemoClientApp
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            int http = (int)httpPort.Value;
-            int tcp = (int)tcpPort.Value;
+            ushort http = (ushort)httpPort.Value;
+            ushort tcp = (ushort)tcpPort.Value;
  
             DemoClient demoClient = new DemoClient(ipAddressControl.IPAddress, http, tcp);
 

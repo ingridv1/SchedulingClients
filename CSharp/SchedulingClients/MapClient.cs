@@ -293,7 +293,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<NodeData[], ServiceCallData> GetAllNodeData()
+		private Tuple<NodeData[], ServiceCallData> GetAllNodeData()
         {
             Logger.Debug("GetAllNodeData()");
 

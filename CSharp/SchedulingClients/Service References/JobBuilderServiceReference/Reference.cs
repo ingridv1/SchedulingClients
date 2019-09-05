@@ -15,6 +15,83 @@ namespace SchedulingClients.JobBuilderServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SemVerData", Namespace="http://schemas.datacontract.org/2004/07/GACore")]
+    [System.SerializableAttribute()]
+    public partial class SemVerData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MajorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MinorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PatchField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Major {
+            get {
+                return this.MajorField;
+            }
+            set {
+                if ((this.MajorField.Equals(value) != true)) {
+                    this.MajorField = value;
+                    this.RaisePropertyChanged("Major");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Minor {
+            get {
+                return this.MinorField;
+            }
+            set {
+                if ((this.MinorField.Equals(value) != true)) {
+                    this.MinorField = value;
+                    this.RaisePropertyChanged("Minor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Patch {
+            get {
+                return this.PatchField;
+            }
+            set {
+                if ((this.PatchField.Equals(value) != true)) {
+                    this.PatchField = value;
+                    this.RaisePropertyChanged("Patch");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
     [System.SerializableAttribute()]
     public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -126,6 +203,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
         SERVICENOTIMPLEMENTED = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        INTERNALERROR = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETSEMVERFAILED = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         COMMITJOBFAILED = 1001,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -232,6 +315,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CONTAINSINVALIDTIMEOUT = 4009,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OCCUPATIONALREADYINPROGRESS = 4010,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GETOCCUPYINGMANDATEPROGRESSDATAFAILED = 4011,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
@@ -412,23 +501,11 @@ namespace SchedulingClients.JobBuilderServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JobBuilderServiceReference.IJobBuilderService")]
     public interface IJobBuilderService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
-        int VersionMajor();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
+        System.Tuple<SchedulingClients.JobBuilderServiceReference.SemVerData, SchedulingClients.JobBuilderServiceReference.ServiceCallData> GetSemVer();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMajor", ReplyAction="http://tempuri.org/IService/VersionMajorResponse")]
-        System.Threading.Tasks.Task<int> VersionMajorAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
-        int VersionMinor();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionMinor", ReplyAction="http://tempuri.org/IService/VersionMinorResponse")]
-        System.Threading.Tasks.Task<int> VersionMinorAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
-        int VersionPatch();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/VersionPatch", ReplyAction="http://tempuri.org/IService/VersionPatchResponse")]
-        System.Threading.Tasks.Task<int> VersionPatchAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
+        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobBuilderServiceReference.SemVerData, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> GetSemVerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/BeginEditingJob", ReplyAction="http://tempuri.org/IJobBuilderService/BeginEditingJobResponse")]
         SchedulingClients.JobBuilderServiceReference.ServiceCallData BeginEditingJob(int jobId);
@@ -483,6 +560,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
         System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateChargeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse")]
+        System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateChargeTask(int parentTaskId, int nodeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateChargeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse")]
+        System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateChargeTaskAsync(int parentTaskId, int nodeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTaskResponse")]
         System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId);
@@ -572,28 +655,12 @@ namespace SchedulingClients.JobBuilderServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public int VersionMajor() {
-            return base.Channel.VersionMajor();
+        public System.Tuple<SchedulingClients.JobBuilderServiceReference.SemVerData, SchedulingClients.JobBuilderServiceReference.ServiceCallData> GetSemVer() {
+            return base.Channel.GetSemVer();
         }
         
-        public System.Threading.Tasks.Task<int> VersionMajorAsync() {
-            return base.Channel.VersionMajorAsync();
-        }
-        
-        public int VersionMinor() {
-            return base.Channel.VersionMinor();
-        }
-        
-        public System.Threading.Tasks.Task<int> VersionMinorAsync() {
-            return base.Channel.VersionMinorAsync();
-        }
-        
-        public int VersionPatch() {
-            return base.Channel.VersionPatch();
-        }
-        
-        public System.Threading.Tasks.Task<int> VersionPatchAsync() {
-            return base.Channel.VersionPatchAsync();
+        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.JobBuilderServiceReference.SemVerData, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> GetSemVerAsync() {
+            return base.Channel.GetSemVerAsync();
         }
         
         public SchedulingClients.JobBuilderServiceReference.ServiceCallData BeginEditingJob(int jobId) {
@@ -666,6 +733,14 @@ namespace SchedulingClients.JobBuilderServiceReference {
         
         public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateServicingTaskAsync(int parentTaskId, int nodeId, SchedulingClients.JobBuilderServiceReference.ServiceType serviceType, System.TimeSpan expectedDuration) {
             return base.Channel.CreateServicingTaskAsync(parentTaskId, nodeId, serviceType, expectedDuration);
+        }
+        
+        public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateChargeTask(int parentTaskId, int nodeId) {
+            return base.Channel.CreateChargeTask(parentTaskId, nodeId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData>> CreateChargeTaskAsync(int parentTaskId, int nodeId) {
+            return base.Channel.CreateChargeTaskAsync(parentTaskId, nodeId);
         }
         
         public System.Tuple<int, SchedulingClients.JobBuilderServiceReference.ServiceCallData> CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId) {
