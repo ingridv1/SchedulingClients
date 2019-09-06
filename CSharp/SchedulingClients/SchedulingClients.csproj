@@ -39,8 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BaseClients, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BaseClients.1.0.0\lib\net47\BaseClients.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\BaseClients.1.1.0\lib\net47\BaseClients.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.6.3\lib\net45\NLog.dll</HintPath>
@@ -297,8 +296,14 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder8.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\JobBuilderServiceReference\jobBuilder9.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.SemVerData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">

@@ -267,10 +267,12 @@ namespace SchedulingClients
 
             if (isDisposed) return;
 
-            callback.OccupyingMandateProgressChange += Callback_OccupyingMandateProgressChange;
-   
-            base.Dispose(isDisposing);
-        }
+            callback.OccupyingMandateProgressChange -= Callback_OccupyingMandateProgressChange;
+
+			isDisposed = true;
+
+			base.Dispose(isDisposing);
+		}
 
         private Tuple<MoveData[], ServiceCallData> GetAllMoveData()
         {
@@ -293,7 +295,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<NodeData[], ServiceCallData> GetAllNodeData()
+		private Tuple<NodeData[], ServiceCallData> GetAllNodeData()
         {
             Logger.Debug("GetAllNodeData()");
 

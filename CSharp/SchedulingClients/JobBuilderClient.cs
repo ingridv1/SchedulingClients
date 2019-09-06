@@ -34,7 +34,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = Commit(jobId, agentId);
+                var result = HandleCommit(jobId, agentId);
                 success = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -56,7 +56,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = CreateJob();
+                var result = HandleCreateJob();
                 jobData = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -102,7 +102,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = CreateUnorderedListTask(parentTaskId);
+                var result = HandleCreateUnorderedListTask(parentTaskId);
                 listTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -147,11 +147,11 @@ namespace SchedulingClients
         /// <returns>ServiceOperationResult</returns>
         public ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan))
         {
-            Logger.Info("TryCreateNodeTask({0},{1})", parentListTaskId, nodeId);
+            Logger.Info("TryCreateServicingTask({0},{1})", parentListTaskId, nodeId);
 
             try
             {
-                var result = CreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration);
+                var result = HandleCreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration);
                 serviceTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -161,6 +161,23 @@ namespace SchedulingClients
                 return HandleClientException(ex);
             }
         }
+
+		public ServiceOperationResult TryCreateChargeTask(int parentListTaskId, int nodeId, out int chargeTaskId)
+		{
+			Logger.Info($"TryCreateCharge({parentListTaskId}, {nodeId})");
+
+			try
+			{
+				var result = HandleCreateChargeTask(parentListTaskId, nodeId);
+				chargeTaskId = result.Item1;
+				return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
+			}
+			catch (Exception ex)
+			{
+				chargeTaskId = -1;
+				return HandleClientException(ex);
+			}
+		}
                                 
         /// <summary>
         /// Creates a new sleeping task
@@ -181,7 +198,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = CreateSleepingTask(parentListTaskId, nodeId, expectedDuration);
+                var result = HandleCreateSleepingTask(parentListTaskId, nodeId, expectedDuration);
                 sleepingTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -206,7 +223,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = CreateAwaitingTask(parentListTaskId, nodeId);
+                var result = HandleCreateAwaitingTask(parentListTaskId, nodeId);
                 awaitTaskId = result.Item1;
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
@@ -280,7 +297,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = IssueDirective(taskId, parameterAlias, value);
+                var result = HandleIssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -302,7 +319,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = IssueDirective(taskId, parameterAlias, value);
+                var result = HandleIssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -324,7 +341,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = IssueDirective(taskId, parameterAlias, value);
+                var result = HandleIssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -346,7 +363,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = IssueDirective(taskId, parameterAlias, value);
+                var result = HandleIssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -368,7 +385,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = IssueDirective(taskId, parameterAlias, value);
+                var result = HandleIssueDirective(taskId, parameterAlias, value);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result.Item2);
             }
             catch (Exception ex)
@@ -388,7 +405,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = BeginEditingJob(jobId);
+                var result = HandleBeginEditingJob(jobId);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
             }
             catch (Exception ex)
@@ -408,7 +425,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = FinishEditingJob(jobId);
+                var result = HandleFinishEditingJob(jobId);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
             }
             catch (Exception ex)
@@ -428,7 +445,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = BeginEditingTask(taskId);
+                var result = HandleBeginEditingTask(taskId);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
             }
             catch (Exception ex)
@@ -448,7 +465,7 @@ namespace SchedulingClients
 
             try
             {
-                var result = FinishEditingTask(taskId);
+                var result = HandleFinishEditingTask(taskId);
                 return ServiceOperationResultFactory.FromJobBuilderServiceCallData(result);
             }
             catch (Exception ex)
@@ -457,7 +474,7 @@ namespace SchedulingClients
             }
         }
 
-        private Tuple<bool, ServiceCallData> Commit(int jobId, int agentId = -1)
+        private Tuple<bool, ServiceCallData> HandleCommit(int jobId, int agentId = -1)
         {
             Logger.Debug("Commit({0},{1})", jobId, agentId);
 
@@ -478,7 +495,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<JobData, ServiceCallData> CreateJob()
+        private Tuple<JobData, ServiceCallData> HandleCreateJob()
         {
             Logger.Debug("CreateJob()");
 
@@ -501,7 +518,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateUnorderedListTask(int parentTaskId)
+        private Tuple<int, ServiceCallData> HandleCreateUnorderedListTask(int parentTaskId)
         {
             Logger.Debug("CreateListTask({0})", parentTaskId);
 
@@ -577,7 +594,7 @@ namespace SchedulingClients
         }
 
 
-        private Tuple<int, ServiceCallData> CreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
+        private Tuple<int, ServiceCallData> HandleCreateServicingTask(int parentTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration)
         {
             Logger.Debug("CreateServicingTask({0},{1},{2},{3})", parentTaskId, nodeId, serviceType, expectedDuration);
 
@@ -598,7 +615,28 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateSleepingTask(int parentTaskId, int nodeId, TimeSpan expectedDuration)
+		private Tuple<int, ServiceCallData> HandleCreateChargeTask(int parentTaskId, int nodeId)
+		{
+			Logger.Debug($"CreateChargeTask({parentTaskId},{nodeId})");
+
+			if (isDisposed)
+			{
+				throw new ObjectDisposedException("JobBuilderClient");
+			}
+
+			Tuple<int, ServiceCallData> result;
+
+			using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
+			{
+				IJobBuilderService channel = channelFactory.CreateChannel();
+				result = channel.CreateChargeTask(parentTaskId, nodeId);
+				channelFactory.Close();
+			}
+
+			return result;
+		}
+
+        private Tuple<int, ServiceCallData> HandleCreateSleepingTask(int parentTaskId, int nodeId, TimeSpan expectedDuration)
         {
             Logger.Debug("CreateSleepingTask({0},{1},{2})", parentTaskId, nodeId, expectedDuration);
 
@@ -619,7 +657,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<int, ServiceCallData> CreateAwaitingTask(int parentTaskId, int nodeId)
+        private Tuple<int, ServiceCallData> HandleCreateAwaitingTask(int parentTaskId, int nodeId)
         {
             Logger.Debug("CreateAwaitingTask({0},{1})", parentTaskId, nodeId);
 
@@ -658,7 +696,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, byte value)
+        private Tuple<bool, ServiceCallData> HandleIssueDirective(int taskId, string parameterAlias, byte value)
         {
             Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
@@ -679,7 +717,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, short value)
+        private Tuple<bool, ServiceCallData> HandleIssueDirective(int taskId, string parameterAlias, short value)
         {
             Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
@@ -700,7 +738,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, ushort value)
+        private Tuple<bool, ServiceCallData> HandleIssueDirective(int taskId, string parameterAlias, ushort value)
         {
             Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
@@ -721,7 +759,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, float value)
+        private Tuple<bool, ServiceCallData> HandleIssueDirective(int taskId, string parameterAlias, float value)
         {
             Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
@@ -742,7 +780,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private Tuple<bool, ServiceCallData> IssueDirective(int taskId, string parameterAlias, IPAddress value)
+        private Tuple<bool, ServiceCallData> HandleIssueDirective(int taskId, string parameterAlias, IPAddress value)
         {
             Logger.Debug("IssueDirective({0},{1},{2})", taskId, parameterAlias, value);
 
@@ -763,7 +801,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private ServiceCallData BeginEditingJob(int jobId)
+        private ServiceCallData HandleBeginEditingJob(int jobId)
         {
             Logger.Debug("BeginEditingJob({0})", jobId);
 
@@ -784,7 +822,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private ServiceCallData FinishEditingJob(int jobId)
+        private ServiceCallData HandleFinishEditingJob(int jobId)
         {
             Logger.Debug("FinishEditingJob({0})", jobId);
 
@@ -805,7 +843,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private ServiceCallData BeginEditingTask(int taskId)
+        private ServiceCallData HandleBeginEditingTask(int taskId)
         {
             Logger.Debug("BeginEditingTask({0})", taskId);
 
@@ -826,7 +864,7 @@ namespace SchedulingClients
             return result;
         }
 
-        private ServiceCallData FinishEditingTask(int taskId)
+        private ServiceCallData HandleFinishEditingTask(int taskId)
         {
             Logger.Debug("FinishEditingTask({0})", taskId);
 

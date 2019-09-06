@@ -22,7 +22,7 @@ namespace SchedulingClients.DemoClientApp
 
         private ReadOnlyObservableCollection<IClient> readOnlyClients;
 
-        public DemoClient(IPAddress ipAddress, int httpPort, int tcpPort )
+        public DemoClient(IPAddress ipAddress, ushort httpPort, ushort tcpPort )
         {
             this.endpointSettings = new EndpointSettings(ipAddress, httpPort, tcpPort);
             readOnlyClients = new ReadOnlyObservableCollection<IClient>(clients);

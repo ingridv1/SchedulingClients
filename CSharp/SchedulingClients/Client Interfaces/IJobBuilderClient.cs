@@ -19,6 +19,8 @@ namespace SchedulingClients
 
         ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan));
 
+		ServiceOperationResult TryCreateChargeTask(int parentListTaskId, int nodeId, out int chargeTaskId);
+
         ServiceOperationResult TryCreateSleepingTask(int parentListTaskId, int nodeId, out int sleepingTaskId, TimeSpan expectedDuration = default(TimeSpan));
 
         ServiceOperationResult TryCreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId, out int atomicMoveTaskId);

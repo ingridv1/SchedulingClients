@@ -25,32 +25,21 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GACore" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mapping" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IJobBuilderService_VersionMajor_InputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMajor" />
+  <wsdl:message name="IJobBuilderService_GetSemVer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSemVer" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_VersionMajor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMajorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_VersionMinor_InputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMinor" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_VersionMinor_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VersionMinorResponse" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_VersionPatch_InputMessage">
-    <wsdl:part name="parameters" element="tns:VersionPatch" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_VersionPatch_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VersionPatchResponse" />
+  <wsdl:message name="IJobBuilderService_GetSemVer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSemVerResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_BeginEditingJob_InputMessage">
     <wsdl:part name="parameters" element="tns:BeginEditingJob" />
@@ -105,6 +94,12 @@
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateServicingTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateChargeTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateChargeTask" />
+  </wsdl:message>
+  <wsdl:message name="IJobBuilderService_CreateChargeTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateChargeTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateAtomicMoveTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateAtomicMoveTask" />
@@ -167,17 +162,9 @@
     <wsdl:part name="parameters" element="tns:IssueUShortDirectiveResponse" />
   </wsdl:message>
   <wsdl:portType name="IJobBuilderService">
-    <wsdl:operation name="VersionMajor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMajor" message="tns:IJobBuilderService_VersionMajor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMajorResponse" message="tns:IJobBuilderService_VersionMajor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="VersionMinor">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionMinor" message="tns:IJobBuilderService_VersionMinor_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionMinorResponse" message="tns:IJobBuilderService_VersionMinor_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="VersionPatch">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/VersionPatch" message="tns:IJobBuilderService_VersionPatch_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/VersionPatchResponse" message="tns:IJobBuilderService_VersionPatch_OutputMessage" />
+    <wsdl:operation name="GetSemVer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSemVer" message="tns:IJobBuilderService_GetSemVer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSemVerResponse" message="tns:IJobBuilderService_GetSemVer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="BeginEditingJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/BeginEditingJob" message="tns:IJobBuilderService_BeginEditingJob_InputMessage" />
@@ -214,6 +201,10 @@
     <wsdl:operation name="CreateServicingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse" message="tns:IJobBuilderService_CreateServicingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChargeTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateChargeTask" message="tns:IJobBuilderService_CreateChargeTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse" message="tns:IJobBuilderService_CreateChargeTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateAtomicMoveTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask" message="tns:IJobBuilderService_CreateAtomicMoveTask_InputMessage" />
@@ -259,26 +250,8 @@
   <wsdl:binding name="NetTcpBinding_IJobBuilderService" type="tns:IJobBuilderService">
     <wsp:PolicyReference URI="#NetTcpBinding_IJobBuilderService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="VersionMajor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionMinor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionPatch">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+    <wsdl:operation name="GetSemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -360,6 +333,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateChargeTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateChargeTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -461,26 +443,8 @@
   <wsdl:binding name="WSDualHttpBinding_IJobBuilderService" type="tns:IJobBuilderService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IJobBuilderService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="VersionMajor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMajor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionMinor">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionMinor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VersionPatch">
-      <soap12:operation soapAction="http://tempuri.org/IService/VersionPatch" style="document" />
+    <wsdl:operation name="GetSemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -562,6 +526,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateChargeTask">
+      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateChargeTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
