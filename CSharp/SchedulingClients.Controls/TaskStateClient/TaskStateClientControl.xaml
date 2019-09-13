@@ -6,9 +6,35 @@
              xmlns:local="clr-namespace:SchedulingClients.Controls.TaskStateClient"
              mc:Ignorable="d" 
              xmlns:baseClients="clr-namespace:BaseClients.Controls;assembly=BaseClients.Controls"
+             DataContextChanged="UserControl_DataContextChanged"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:TaskProgressDataMonitor x:Key="tpdMonitor"/>
+    </UserControl.Resources>
     <StackPanel>
         <StatusBar>Task State Client</StatusBar>
         <baseClients:IsConnectedControl/>
+        <ItemsControl ItemsSource="{Binding Source={StaticResource tpdMonitor}, Path=Mailboxes}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:TPDMailboxControl/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.Style>
+                <Style TargetType="{x:Type ItemsControl}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBlock>No task state progress data received.</TextBlock>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.Style>
+        </ItemsControl>
     </StackPanel>
 </UserControl>
