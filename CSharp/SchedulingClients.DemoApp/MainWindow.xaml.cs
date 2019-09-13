@@ -14,6 +14,7 @@ using Markdig;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
+using SchedulingClients.Controls.TaskStateClient;
 using SchedulingClients.Client_Interfaces;
 using BaseClients;
 
@@ -24,6 +25,8 @@ namespace SchedulingClients.DemoApp
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		TaskStateClientControl nullControl = null;
+
 		public MainWindow()
 		{
 			InitializeComponent();
