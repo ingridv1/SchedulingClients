@@ -1,0 +1,3 @@
+# Scheduling Clients Demo App
+
+Demonstrates the functionality available in the SchedulingClients and SchedulingClients.Controls assemblies.

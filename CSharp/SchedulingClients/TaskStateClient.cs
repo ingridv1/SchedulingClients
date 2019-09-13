@@ -28,20 +28,14 @@ namespace SchedulingClients
             remove { callback.TaskProgressUpdated -= value; }
         }
 
-        /// <summary>
-        /// Heartbeat time
-        /// </summary>
-        public TimeSpan Heartbeat { get { return heartbeat; } }
+        public TimeSpan Heartbeat => heartbeat; 
 
         private bool isDisposed = false;
 
         protected override void Dispose(bool isDisposing)
         {
-            if (isDisposed)
-            {
-                return;
-            }
-
+            if (isDisposed) return;
+	
             isDisposed = true;
 
             base.Dispose(isDisposing);
