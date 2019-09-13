@@ -9,7 +9,12 @@
              DataContextChanged="UserControl_DataContextChanged"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <local:TaskProgressDataMonitor x:Key="tpdMonitor"/>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            <local:TaskProgressDataMonitor x:Key="tpdMonitor"/>
+        </ResourceDictionary>        
     </UserControl.Resources>
     <StackPanel>
         <StatusBar>Task State Client</StatusBar>

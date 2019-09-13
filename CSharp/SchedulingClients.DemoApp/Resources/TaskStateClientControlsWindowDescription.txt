@@ -1,2 +1,15 @@
 # Task State Client Controls
 
+A collection of controls used to display task state changes.
+
+## Components
+
+### TaskStateClientControl
+
+This listens to the ITaskStateClient TaskProgressUpdated event to update an observable collection of mailboxes every time TaskProgressData is received. Mailboxes are assigned to agents, and couple an agentId with the last received TaskProgressData. 
+
+When TaskProgressData is received, the relevant mailbox is updated. If no mailbox currently exists for that agent, a new one is created.
+
+### TPDMailboxControl
+
+This displays the current state of of a task progress data mailbox.
