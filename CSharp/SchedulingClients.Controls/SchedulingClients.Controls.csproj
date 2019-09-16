@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="GenericDataMonitor.cs" />
     <Compile Include="JobStateClient\JobStateClientControl.xaml.cs">
       <DependentUpon>JobStateClientControl.xaml</DependentUpon>
     </Compile>
