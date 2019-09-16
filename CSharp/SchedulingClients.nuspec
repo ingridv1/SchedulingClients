@@ -14,8 +14,8 @@
     <tags></tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7">
-        <dependency id="BaseClients" version="1.1.1" />
-        <dependency id="GACore" version="1.7.0" />
+        <dependency id="BaseClients" version="1.2.1" />
+        <dependency id="GACore" version="1.8.2" />
         <dependency id="morelinq" version="3.2.0" />
         <dependency id="NLog" version="4.6.7" />
         <dependency id="Extended.Wpf.Toolkit" version="3.5.0" />

@@ -11,7 +11,10 @@
 https://github.com/GuidanceAutomation/SchedulingClients
 https://www.guidanceautomation.com/
 
-v13.1.0 (xxth Sep 19)
+v13.1.0 (16th Sep 19)
+
+* Adds IJobStateClient control examples
+* Adds ITaskStateClient control examples
 
 v13.0.0 (29th May 19)
 
