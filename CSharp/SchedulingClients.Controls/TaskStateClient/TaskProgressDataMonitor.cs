@@ -10,30 +10,13 @@ using System.Windows.Data;
 
 namespace SchedulingClients.Controls.TaskStateClient
 {
-	public class TaskProgressDataMonitor : INotifyPropertyChanged
+	public class TaskProgressDataMonitor : GenericDataMonitor<TaskProgressDataMailbox>
 	{
-		private ObservableCollection<TaskProgressDataMailbox> mailboxes = new ObservableCollection<TaskProgressDataMailbox>();
-
-		private ReadOnlyObservableCollection<TaskProgressDataMailbox> readonlyMailboxes;
-
-		private readonly object lockObject = new object();
-
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		private void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
-
 		private ITaskStateClient client = null;
 
-		public ReadOnlyObservableCollection<TaskProgressDataMailbox> Mailboxes => readonlyMailboxes;
-
 		public TaskProgressDataMonitor()
+			:base()
 		{
-			readonlyMailboxes = new ReadOnlyObservableCollection<TaskProgressDataMailbox>(mailboxes);
-
-			BindingOperations.EnableCollectionSynchronization(Mailboxes, lockObject);
 		}
 
 		public void Configure(ITaskStateClient newClient)
@@ -54,11 +37,11 @@ namespace SchedulingClients.Controls.TaskStateClient
 		{
 			lock (lockObject)
 			{
-				TaskProgressDataMailbox messsageBox = mailboxes.FirstOrDefault(e => e.AgentId == taskProgressData.AssignedAgentId);
+				TaskProgressDataMailbox messsageBox = Mailboxes.FirstOrDefault(e => e.Key == taskProgressData.AssignedAgentId);
 
 				if (messsageBox == null)
 				{
-					mailboxes.Add(new TaskProgressDataMailbox(taskProgressData));
+					mailboxes.Add(new TaskProgressDataMailbox(taskProgressData.AssignedAgentId, taskProgressData));
 				}
 				else
 				{

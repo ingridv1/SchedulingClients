@@ -43,13 +43,13 @@
       <HintPath>..\packages\BaseClients.1.2.1\lib\net472\BaseClients.Controls.dll</HintPath>
     </Reference>
     <Reference Include="GACore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GACore.1.7.0\lib\net47\GACore.dll</HintPath>
+      <HintPath>..\packages\GACore.1.8.2\lib\net47\GACore.dll</HintPath>
     </Reference>
     <Reference Include="GACore.Architecture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GACore.1.7.0\lib\net47\GACore.Architecture.dll</HintPath>
+      <HintPath>..\packages\GACore.1.8.2\lib\net47\GACore.Architecture.dll</HintPath>
     </Reference>
     <Reference Include="GACore.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GACore.1.7.0\lib\net47\GACore.Controls.dll</HintPath>
+      <HintPath>..\packages\GACore.1.8.2\lib\net47\GACore.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Markdig, Version=0.17.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Markdig.0.17.1\lib\net40\Markdig.dll</HintPath>
@@ -88,9 +88,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="JobStateClientControlsWindow.xaml.cs">
+      <DependentUpon>JobStateClientControlsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskStateClientControlsWindow.xaml.cs">
       <DependentUpon>TaskStateClientControlsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="JobStateClientControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -150,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TaskStateClientControlsWindowDescription.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JobStateClientControlsWindowDescription.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

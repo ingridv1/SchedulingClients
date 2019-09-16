@@ -35,19 +35,43 @@ namespace SchedulingClients.DemoApp
 			webBrowser.NavigateToString(html);
 		}
 
-		private void TscControlButton_Click(object sender, RoutedEventArgs e)
+		private EndpointSettings? HandleCreateEndpointSetttings()
 		{
 			IPAddress ipAddress = ipV4Control.ToIPAddress();
 
 			if (ipAddress == null)
 			{
 				MessageBox.Show("IPv4 Address is invalid", "Invalid IP Address", MessageBoxButton.OK, MessageBoxImage.Error);
-				return;
+				return null;
 			}
 
-			using (ITaskStateClient client = SchedulingClients.ClientFactory.CreateTcpTaskStatecastClient(new EndpointSettings(ipAddress)))
+			return new EndpointSettings(ipAddress);
+		}
+
+		private void TscControlButton_Click(object sender, RoutedEventArgs e)
+		{
+			EndpointSettings? endpointSettings = HandleCreateEndpointSetttings();
+			if (endpointSettings == null) return;
+
+			using (ITaskStateClient client = SchedulingClients.ClientFactory.CreateTcpTaskStateClient((EndpointSettings)endpointSettings))
 			{
 				TaskStateClientControlsWindow window = new TaskStateClientControlsWindow()
+				{
+					DataContext = client
+				};
+
+				window.ShowDialog();
+			}
+		}
+
+		private void JscControlButton_Click(object sender, RoutedEventArgs e)
+		{
+			EndpointSettings? endpointSettings = HandleCreateEndpointSetttings();
+			if (endpointSettings == null) return;
+
+			using (IJobStateClient client = SchedulingClients.ClientFactory.CreateTcpJobStateClient((EndpointSettings)endpointSettings))
+			{
+				JobStateClientControlsWindow window = new JobStateClientControlsWindow()
 				{
 					DataContext = client
 				};
