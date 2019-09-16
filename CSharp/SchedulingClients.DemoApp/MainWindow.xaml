@@ -25,6 +25,9 @@
                 <gaCoreC:IPV4Control x:Name="ipV4Control" IPV4String="127.0.0.1"/>
             </gaCoreC:LabelContentControl>
             <StatusBar>Control Library</StatusBar>
+            <gaCoreC:LabelContentControl Header="Job State Client Controls">
+                <Button x:Name="jscControlButton" Click="JscControlButton_Click">Create</Button>
+            </gaCoreC:LabelContentControl>
             <gaCoreC:LabelContentControl Header="Task State Client Controls">
                 <Button x:Name="tscControlButton" Click="TscControlButton_Click">Create</Button>
             </gaCoreC:LabelContentControl>

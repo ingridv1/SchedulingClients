@@ -44,7 +44,7 @@ namespace SchedulingClients
             return new AgentAttentionClient(portSettings.TcpAgentAttentionService());
         }
 
-        public static ITaskStateClient CreateTcpTaskStatecastClient(EndpointSettings portSettings)
+        public static ITaskStateClient CreateTcpTaskStateClient(EndpointSettings portSettings)
         {
             return new TaskStateClient(portSettings.TcpTaskStateService());
         }

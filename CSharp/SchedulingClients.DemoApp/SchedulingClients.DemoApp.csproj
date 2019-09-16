@@ -88,9 +88,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="JobStateClientControlsWindow.xaml.cs">
+      <DependentUpon>JobStateClientControlsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskStateClientControlsWindow.xaml.cs">
       <DependentUpon>TaskStateClientControlsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="JobStateClientControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -150,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TaskStateClientControlsWindowDescription.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JobStateClientControlsWindowDescription.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

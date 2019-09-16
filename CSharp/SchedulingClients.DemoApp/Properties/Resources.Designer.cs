@@ -61,6 +61,15 @@ namespace SchedulingClients.DemoApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to # FOO BADGERS.
+        /// </summary>
+        internal static string JobStateClientControlsWindowDescription {
+            get {
+                return ResourceManager.GetString("JobStateClientControlsWindowDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to # Scheduling Clients Demo App
         ///
         ///Demonstrates the functionality available in the SchedulingClients and SchedulingClients.Controls assemblies..
@@ -74,7 +83,15 @@ namespace SchedulingClients.DemoApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to # Task State Client Controls
         ///
-        ///.
+        ///A collection of controls used to display task state changes.
+        ///
+        ///## Components
+        ///
+        ///### TaskStateClientControl
+        ///
+        ///This listens to the ITaskStateClient TaskProgressUpdated event to update an observable collection of mailboxes every time TaskProgressData is received. Mailboxes are assigned to agents, and couple an agentId with the last received TaskProgressData. 
+        ///
+        ///When TaskProgressData is received, the relevant mailbox is updated. If no mailbox currently exists for that agent, a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TaskStateClientControlsWindowDescription {
             get {

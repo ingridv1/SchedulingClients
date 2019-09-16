@@ -101,6 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="JobStateClient\JobStateClientControl.xaml.cs">
+      <DependentUpon>JobStateClientControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
       <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="JobStateClient\JobStateClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MapClient\ClearOccupyingMandateControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,8 +205,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JobStateClient\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
