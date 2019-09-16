@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using SchedulingClients.JobStateServiceReference;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SchedulingClients.Controls.JobStateClient
 {
@@ -25,8 +27,17 @@ namespace SchedulingClients.Controls.JobStateClient
 			}
 		}
 
+		private readonly HashSet<JobStatus> ignoredStatus = new HashSet<JobStatus>()
+		{
+			JobStatus.Assembly, JobStatus.Assigning, JobStatus.Waiting
+		};
+
 		private void Client_JobProgressUpdated(JobStateServiceReference.JobProgressData jobProgressData)
 		{
+			if (ignoredStatus.Contains(jobProgressData.JobStatus)) return;
+
+			if (jobProgressData.AssignedAgentId < 0) return;
+
 			lock (lockObject)
 			{
 				JobProgressDataMailbox messsageBox = Mailboxes.FirstOrDefault(e => e.Key == jobProgressData.AssignedAgentId);

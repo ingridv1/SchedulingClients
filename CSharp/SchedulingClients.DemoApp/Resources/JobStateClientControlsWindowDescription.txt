@@ -1,1 +1,17 @@
 # Job State Client Controls
+
+A collection of controls used to display job state changes.
+
+## Components
+
+This listens to the IJobStateClient JobProgressUpdated event to update an observable collection of mailboxes every time JobProgressData is received. Mailboxes are assigned to agents, and couple an agentId with the last received JobProgressData. 
+
+When JobProgressData is received, the relevant mailbox is updated. If no mailbox currently exists for that agent, a new one is created.
+
+JobProgressData not coupled to agent (e.g. in the assembly state) is ignored.
+
+JobProgressData in the JobStates Assembly, Assigning, Waiting states are ignored as this control shows the current state of the job the agent is consuming. 
+
+### JPDMailboxControl
+
+This displays the current state of a job progress data mailbox.
