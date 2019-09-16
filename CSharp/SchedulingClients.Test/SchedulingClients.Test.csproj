@@ -43,13 +43,13 @@
       <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="GACore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GACore.1.7.0\lib\net47\GACore.dll</HintPath>
+      <HintPath>..\packages\GACore.1.8.2\lib\net47\GACore.dll</HintPath>
     </Reference>
     <Reference Include="GACore.Architecture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GACore.1.7.0\lib\net47\GACore.Architecture.dll</HintPath>
+      <HintPath>..\packages\GACore.1.8.2\lib\net47\GACore.Architecture.dll</HintPath>
     </Reference>
     <Reference Include="GACore.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GACore.1.7.0\lib\net47\GACore.Controls.dll</HintPath>
+      <HintPath>..\packages\GACore.1.8.2\lib\net47\GACore.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Moq, Version=4.13.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.13.0\lib\net45\Moq.dll</HintPath>

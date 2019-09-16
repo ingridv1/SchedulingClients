@@ -16,15 +16,15 @@
     <Grid>
         <StackPanel>
             <StatusBar>
-                <TextBlock Text="{Binding Path=AgentId, StringFormat='AgentId: {0}'}"/>
+                <TextBlock Text="{Binding Path=Key, StringFormat='AgentId: {0}'}"/>
             </StatusBar>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="{Binding Path=TaskProgressData.TaskId, StringFormat='TaskId: {0}'}"/>
-                <TextBlock Grid.Column="1" Text="{Binding Path=TaskProgressData.TaskStatus, StringFormat='TaskStatus: {0}'}"/>
+                <TextBlock Grid.Column="0" Text="{Binding Path=Mail.TaskId, StringFormat='TaskId: {0}'}"/>
+                <TextBlock Grid.Column="1" Text="{Binding Path=Mail.TaskStatus, StringFormat='TaskStatus: {0}'}"/>
             </Grid>
         </StackPanel>
     </Grid>

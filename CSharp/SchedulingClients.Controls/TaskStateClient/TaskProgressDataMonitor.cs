@@ -54,11 +54,11 @@ namespace SchedulingClients.Controls.TaskStateClient
 		{
 			lock (lockObject)
 			{
-				TaskProgressDataMailbox messsageBox = mailboxes.FirstOrDefault(e => e.AgentId == taskProgressData.AssignedAgentId);
+				TaskProgressDataMailbox messsageBox = mailboxes.FirstOrDefault(e => e.Key == taskProgressData.AssignedAgentId);
 
 				if (messsageBox == null)
 				{
-					mailboxes.Add(new TaskProgressDataMailbox(taskProgressData));
+					mailboxes.Add(new TaskProgressDataMailbox(taskProgressData.AssignedAgentId, taskProgressData));
 				}
 				else
 				{
