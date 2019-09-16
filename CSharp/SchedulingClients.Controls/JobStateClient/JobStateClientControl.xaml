@@ -6,9 +6,40 @@
              xmlns:local="clr-namespace:SchedulingClients.Controls.JobStateClient"
              xmlns:baseClientsC="clr-namespace:BaseClients.Controls;assembly=BaseClients.Controls"
              mc:Ignorable="d" 
+             DataContextChanged="UserControl_DataContextChanged"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:JobProgressDataMonitor x:Key="jpdMonitor"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <StackPanel>
         <StatusBar>Job State Client</StatusBar>
         <baseClientsC:IsConnectedControl/>
+        <ItemsControl ItemsSource="{Binding Source={StaticResource jpdMonitor}, Path=Mailboxes}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:JPDMailboxControl/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.Style>
+                <Style TargetType="{x:Type ItemsControl}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBlock>No job state progress data received.</TextBlock>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.Style>
+        </ItemsControl>
     </StackPanel>
 </UserControl>

@@ -102,8 +102,13 @@
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="GenericDataMonitor.cs" />
+    <Compile Include="JobStateClient\JobProgressDataMailbox.cs" />
+    <Compile Include="JobStateClient\JobProgressDataMonitor.cs" />
     <Compile Include="JobStateClient\JobStateClientControl.xaml.cs">
       <DependentUpon>JobStateClientControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JobStateClient\JPDMailboxControl.xaml.cs">
+      <DependentUpon>JPDMailboxControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
       <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
@@ -166,6 +171,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="JobStateClient\JobStateClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JobStateClient\JPDMailboxControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
