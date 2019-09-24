@@ -25,33 +25,10 @@
             <gaCoreC:LabelContentControl Header="Timeout:">
                 <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown" Minimum="00:00:00" DefaultValue="00:00:30" Value="00:00:30" Maximum="00:05:00"/>
             </gaCoreC:LabelContentControl>
-            <local:BoundingBoxControl x:Name="boundingBoxControl"/>
+            <local:BoundingBoxControl x:Name="boundingBoxControl" BoundingBoxUpdated="BoundingBoxControl_BoundingBoxUpdated"/>
             <gaCoreC:LabelContentControl Header="Set Mandate:">
                 <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
             </gaCoreC:LabelContentControl>  
-            <Button x:Name="populateButton" Click="PopulateButton_Click">Populate</Button>
-            <ItemsControl ItemsSource="{Binding Path=MapItemIds, ElementName=setOccupyingMandateControl}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.Style>
-                    <Style TargetType="{x:Type ItemsControl}">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Path=Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate>
-                                            <TextBlock>No map items selected.</TextBlock>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </ItemsControl.Style>
-            </ItemsControl>
         </StackPanel>
         <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
@@ -59,11 +36,11 @@
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <local:GetAllNodeDataControl x:Name="getAllNodeDataControl"
+            <local:GetAllNodeDataControl x:Name="nodeDataControl"
                 DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=NodeDataSet}" Grid.Column="0">
             </local:GetAllNodeDataControl>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
-            <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" 
+            <local:GetAllMoveDataControl x:Name="moveDataControl" 
                 DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=MoveDataSet}" Grid.Column="2">
             </local:GetAllMoveDataControl>
         </Grid>

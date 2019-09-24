@@ -26,7 +26,7 @@
             <TextBlock Text="{Binding ElementName=xRange, Path=LowerValue, StringFormat=N2}" Grid.Column="0" HorizontalAlignment="Left"/>
             <TextBlock Text="{Binding ElementName=xRange, Path=HigherValue, StringFormat=N2}" Grid.Column="1" HorizontalAlignment="Right"/>
         </Grid>
-        <toolkit:RangeSlider Minimum="-100" Maximum="100" x:Name="xRange"/>
+        <toolkit:RangeSlider Minimum="-100" Maximum="100" LowerValue="0" HigherValue="0" x:Name="xRange" LowerValueChanged="XRange_LowerValueChanged" HigherValueChanged="XRange_HigherValueChanged"/>
         <StatusBar>Y Limits</StatusBar>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -36,6 +36,6 @@
             <TextBlock Text="{Binding ElementName=yRange, Path=LowerValue, StringFormat=N2}" Grid.Column="0" HorizontalAlignment="Left"/>
             <TextBlock Text="{Binding ElementName=yRange, Path=HigherValue, StringFormat=N2}" Grid.Column="1" HorizontalAlignment="Right"/>
         </Grid>
-        <toolkit:RangeSlider Minimum="-100" Maximum="100" x:Name="yRange"/>
+        <toolkit:RangeSlider Minimum="-100" Maximum="100" LowerValue="0" HigherValue="0" x:Name="yRange" LowerValueChanged="YRange_LowerValueChanged" HigherValueChanged="YRange_HigherValueChanged"/>
     </StackPanel>
 </UserControl>

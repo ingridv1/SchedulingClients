@@ -36,7 +36,18 @@ namespace SchedulingClients.Controls.MapClient
                 IMapClient client = DataContext as IMapClient;
                 TimeSpan timeout = timeSpanUpDown.Value ?? TimeSpan.Zero;
 
-                ServiceOperationResult result = client.TrySetOccupyingMandate(MoreEnumerable.ToHashSet(MapItemIds), timeout);
+				OccupyingMandateWrapper wrapper = FindResource("occupyingMandateWrapper") as OccupyingMandateWrapper;
+
+				Rect rect = boundingBoxControl.ToRect();
+
+				int[] nodeIds = wrapper.NodeDataSet.Within(rect).Select(e2 => e2.MapItemId).ToArray();
+				int[] moveIds = wrapper.MoveDataSet.Within(wrapper.NodeDataSet, rect).Select(m => m.Id).ToArray();
+
+				int[] ids = new int[nodeIds.Length + moveIds.Length];
+				nodeIds.CopyTo(ids, 0);
+				moveIds.CopyTo(ids, nodeIds.Length);
+
+				ServiceOperationResult result = client.TrySetOccupyingMandate(MoreEnumerable.ToHashSet(ids), timeout);
 
                 if (!result.IsSuccessfull) result.ShowMessageBox();
             }
@@ -44,42 +55,7 @@ namespace SchedulingClients.Controls.MapClient
             {
             }
         }
-
-        public static readonly DependencyProperty MapItemIdsProperty =
-            DependencyProperty.Register
-            (
-                "MapItemIds",
-                typeof(HashSet<int>),
-                typeof(SetOccupyingMandateControl)
-                ,new PropertyMetadata(new HashSet<int>())
-            );
-
-        public HashSet<int> MapItemIds
-        {
-            get { return (HashSet<int>)GetValue(MapItemIdsProperty); }
-            set { SetValue(MapItemIdsProperty, value); }
-        }
-
-        private void PopulateButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                HashSet<int> mapItemIds = new HashSet<int>();
-                IMapClient mapClient = DataContext as IMapClient;
-
-                mapClient.TryGetAllNodeData(out IEnumerable<NodeData> nodeData);
-                mapClient.TryGetAllMoveData(out IEnumerable<MoveData> moveData);
-
-                getAllNodeDataControl.GetSelectedNodeData().ForEach(n => mapItemIds.Add(n.MapItemId));
-                getAllMoveDataControl.GetSelectedMoveData().ForEach(m => mapItemIds.Add(m.Id));
-
-                MapItemIds = mapItemIds;
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
+			   		 
 		private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
 		{
 			if (e.NewValue is IMapClient)
@@ -87,6 +63,11 @@ namespace SchedulingClients.Controls.MapClient
 				OccupyingMandateWrapper wrapper = FindResource("occupyingMandateWrapper") as OccupyingMandateWrapper;
 				wrapper.Configure(e.NewValue as IMapClient);
 			}
+		}
+
+		private void BoundingBoxControl_BoundingBoxUpdated(object sender, RectRoutedEventArgs e)
+		{
+#warning TODO Update the node and move data controls here
 		}
 	}
 }

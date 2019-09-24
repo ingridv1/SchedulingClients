@@ -131,6 +131,7 @@
     <Compile Include="MapClient\OccupyingMandateProgressDataControl.xaml.cs">
       <DependentUpon>OccupyingMandateProgressDataControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClient\RectRoutedEventArgs.cs" />
     <Compile Include="MapClient\SetOccupyingMandateControl.xaml.cs">
       <DependentUpon>SetOccupyingMandateControl.xaml</DependentUpon>
     </Compile>
