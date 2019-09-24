@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SchedulingClients.DemoApp"
         xmlns:schedulingClientsCMC="clr-namespace:SchedulingClients.Controls.MapClient;assembly=SchedulingClients.Controls"
         mc:Ignorable="d"
-        Title="MapClientControlsWindow" Height="450" Width="800">
+        Title="MapClientControlsWindow" Width="1366" Height="768">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

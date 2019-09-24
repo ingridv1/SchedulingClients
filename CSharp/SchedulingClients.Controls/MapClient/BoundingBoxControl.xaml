@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="SchedulingClients.Controls.MapClient.BoundingBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
+             xmlns:gaCoreC="clr-namespace:GACore.Controls;assembly=GACore.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <StatusBar>Bounding Box</StatusBar>
+        <StatusBar>X Limits</StatusBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding ElementName=xRange, Path=LowerValue, StringFormat=N2}" Grid.Column="0" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding ElementName=xRange, Path=HigherValue, StringFormat=N2}" Grid.Column="1" HorizontalAlignment="Right"/>
+        </Grid>
+        <toolkit:RangeSlider Minimum="-100" Maximum="100" x:Name="xRange"/>
+        <StatusBar>Y Limits</StatusBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding ElementName=yRange, Path=LowerValue, StringFormat=N2}" Grid.Column="0" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding ElementName=yRange, Path=HigherValue, StringFormat=N2}" Grid.Column="1" HorizontalAlignment="Right"/>
+        </Grid>
+        <toolkit:RangeSlider Minimum="-100" Maximum="100" x:Name="yRange"/>
+    </StackPanel>
+</UserControl>

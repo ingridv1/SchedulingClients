@@ -110,6 +110,9 @@
     <Compile Include="JobStateClient\JPDMailboxControl.xaml.cs">
       <DependentUpon>JPDMailboxControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClient\BoundingBoxControl.xaml.cs">
+      <DependentUpon>BoundingBoxControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
       <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JobStateClient\JPDMailboxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\BoundingBoxControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

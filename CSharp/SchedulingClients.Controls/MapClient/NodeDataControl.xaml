@@ -13,9 +13,9 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding MapItemId, Mode=OneWay}" Width="1*"/>
                     <DataGridTextColumn Header="Alias" Binding="{Binding Alias, Mode=OneWay}" Width="2*"/>
-                    <DataGridTextColumn Header="X(m)" Binding="{Binding X, Mode=OneWay}" Width="1*"/>
-                    <DataGridTextColumn Header="Y(m)" Binding="{Binding Y, Mode=OneWay}" Width="1*"/>
-                    <DataGridTextColumn Header="Heading(rad)" Binding="{Binding HeadingRad, Mode=OneWay}" Width="1*"/>
+                    <DataGridTextColumn Header="X(m)" Binding="{Binding X, Mode=OneWay, StringFormat=N2}" Width="1*"/>
+                    <DataGridTextColumn Header="Y(m)" Binding="{Binding Y, Mode=OneWay, StringFormat=N2}" Width="1*"/>
+                    <DataGridTextColumn Header="Heading(rad)" Binding="{Binding HeadingRad, Mode=OneWay, StringFormat=N2}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
