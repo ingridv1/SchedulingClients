@@ -28,6 +28,9 @@
             <gaCoreC:LabelContentControl Header="Job State Client Controls">
                 <Button x:Name="jscControlButton" Click="JscControlButton_Click">Create</Button>
             </gaCoreC:LabelContentControl>
+            <gaCoreC:LabelContentControl Header="Map Client Controls">
+                <Button x:Name="mcControlButton" Click="McControlButton_Click">Create</Button>
+            </gaCoreC:LabelContentControl>
             <gaCoreC:LabelContentControl Header="Task State Client Controls">
                 <Button x:Name="tscControlButton" Click="TscControlButton_Click">Create</Button>
             </gaCoreC:LabelContentControl>

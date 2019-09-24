@@ -91,6 +91,9 @@
     <Compile Include="JobStateClientControlsWindow.xaml.cs">
       <DependentUpon>JobStateClientControlsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClientControlsWindow.xaml.cs">
+      <DependentUpon>MapClientControlsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskStateClientControlsWindow.xaml.cs">
       <DependentUpon>TaskStateClientControlsWindow.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MapClientControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TaskStateClientControlsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\JobStateClientControlsWindowDescription.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MapClientControlsDescription.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

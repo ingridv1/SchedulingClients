@@ -61,7 +61,17 @@ namespace SchedulingClients.DemoApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to # FOO BADGERS.
+        ///   Looks up a localized string similar to # Job State Client Controls
+        ///
+        ///A collection of controls used to display job state changes.
+        ///
+        ///## Components
+        ///
+        ///This listens to the IJobStateClient JobProgressUpdated event to update an observable collection of mailboxes every time JobProgressData is received. Mailboxes are assigned to agents, and couple an agentId with the last received JobProgressData. 
+        ///
+        ///When JobProgressData is received, the relevant mailbox is updated. If no mailbox currently exists for that agent, a new one is created.
+        ///
+        ///JobProgressDa [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string JobStateClientControlsWindowDescription {
             get {
@@ -77,6 +87,15 @@ namespace SchedulingClients.DemoApp.Properties {
         internal static string MainWindowDescription {
             get {
                 return ResourceManager.GetString("MainWindowDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Map Client Controls.
+        /// </summary>
+        internal static string MapClientControlsDescription {
+            get {
+                return ResourceManager.GetString("MapClientControlsDescription", resourceCulture);
             }
         }
         

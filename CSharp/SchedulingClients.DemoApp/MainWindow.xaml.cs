@@ -79,5 +79,21 @@ namespace SchedulingClients.DemoApp
 				window.ShowDialog();
 			}
 		}
+
+		private void McControlButton_Click(object sender, RoutedEventArgs e)
+		{
+			EndpointSettings? endpointSettings = HandleCreateEndpointSetttings();
+			if (endpointSettings == null) return;
+
+			using (IMapClient client = SchedulingClients.ClientFactory.CreateTcpMapClient((EndpointSettings)endpointSettings))
+			{
+				MapClientControlsWindow window = new MapClientControlsWindow()
+				{
+					DataContext = client
+				};
+
+				window.ShowDialog();
+			}
+		}
 	}
 }
