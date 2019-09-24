@@ -9,7 +9,7 @@
     <DockPanel>
         <StatusBar DockPanel.Dock="Top">Move Data</StatusBar>
         <ScrollViewer DockPanel.Dock="Top">
-            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}" Width="1*"/>
                     <DataGridTextColumn Header="Alias" Binding="{Binding Alias, Mode=OneWay}" Width="2*"/>

@@ -6,25 +6,28 @@
              xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
              xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:schedulingClients="clr-namespace:SchedulingClients;assembly=SchedulingClients"
+             xmlns:gaCoreC="clr-namespace:GACore.Controls;assembly=GACore.Controls"
              DataContextChanged="UserControl_DataContextChanged"
              mc:Ignorable="d" 
              x:Name="setOccupyingMandateControl"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
             <schedulingClients:OccupyingMandateWrapper x:Key="occupyingMandateWrapper"/>
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
             <StatusBar>Set Occupying Mandate</StatusBar>
-            <TextBlock>Timeout</TextBlock>
-            <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown"
-                                    Minimum="00:00:00"
-                                    DefaultValue="00:00:30"
-                                    Value="00:00:30"
-                                    Maximum="00:05:00"/>
-            <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
+            <gaCoreC:LabelContentControl Header="Timeout:">
+                <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown" Minimum="00:00:00" DefaultValue="00:00:30" Value="00:00:30" Maximum="00:05:00"/>
+            </gaCoreC:LabelContentControl>
+            <gaCoreC:LabelContentControl Header="Set Mandate:">
+                <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
+            </gaCoreC:LabelContentControl>  
             <Button x:Name="populateButton" Click="PopulateButton_Click">Populate</Button>
             <ItemsControl ItemsSource="{Binding Path=MapItemIds, ElementName=setOccupyingMandateControl}">
                 <ItemsControl.ItemsPanel>
@@ -51,14 +54,14 @@
         </StackPanel>
         <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <local:GetAllNodeDataControl x:Name="getAllNodeDataControl"
                 DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=NodeDataSet}" Grid.Column="0">
             </local:GetAllNodeDataControl>
-            <GridSplitter Grid.Column="1"/>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
             <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" 
                 DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=MoveDataSet}" Grid.Column="2">
             </local:GetAllMoveDataControl>

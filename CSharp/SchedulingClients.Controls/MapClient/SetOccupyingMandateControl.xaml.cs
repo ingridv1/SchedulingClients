@@ -34,7 +34,6 @@ namespace SchedulingClients.Controls.MapClient
             try
             {
                 IMapClient client = DataContext as IMapClient;
-
                 TimeSpan timeout = timeSpanUpDown.Value ?? TimeSpan.Zero;
 
                 ServiceOperationResult result = client.TrySetOccupyingMandate(MoreEnumerable.ToHashSet(MapItemIds), timeout);
