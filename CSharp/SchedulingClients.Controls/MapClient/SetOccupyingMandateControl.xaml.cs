@@ -80,5 +80,14 @@ namespace SchedulingClients.Controls.MapClient
             {
             }
         }
-    }
+
+		private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+		{
+			if (e.NewValue is IMapClient)
+			{
+				OccupyingMandateWrapper wrapper = FindResource("occupyingMandateWrapper") as OccupyingMandateWrapper;
+				wrapper.Configure(e.NewValue as IMapClient);
+			}
+		}
+	}
 }

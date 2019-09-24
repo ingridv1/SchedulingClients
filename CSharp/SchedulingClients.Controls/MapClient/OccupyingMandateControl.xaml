@@ -4,15 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
-             xmlns:schedulingClients="clr-namespace:SchedulingClients;assembly=SchedulingClients"
-             DataContextChanged="UserControl_DataContextChanged"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <schedulingClients:OccupyingMandateWrapper x:Key="occupyingMandateWrapper"/>
-        </ResourceDictionary>
-    </UserControl.Resources>
     <DockPanel>
         <StatusBar DockPanel.Dock="Top">Occupying Mandate</StatusBar>
         <TabControl DockPanel.Dock="Top">
