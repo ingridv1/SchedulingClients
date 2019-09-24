@@ -27,24 +27,7 @@ namespace SchedulingClients.Controls.MapClient
         {
             InitializeComponent();
         }
-
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                IMapClient client = DataContext as IMapClient;
-
-                IEnumerable<NodeData> nodeData;
-                ServiceOperationResult result = client.TryGetAllNodeData(out nodeData);
-
-                dataGrid.ItemsSource = nodeData;
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
-
+		
         public IEnumerable<NodeData> GetSelectedNodeData()
         {
             try
@@ -55,11 +38,6 @@ namespace SchedulingClients.Controls.MapClient
             {
                 return Enumerable.Empty<NodeData>();
             }
-        }
-
-        private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            refreshButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
     }
 }

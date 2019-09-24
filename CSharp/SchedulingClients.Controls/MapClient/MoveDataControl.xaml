@@ -5,11 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             DataContextChanged="UserControl_DataContextChanged">
+             d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <StatusBar DockPanel.Dock="Top">Get All Move Data</StatusBar>
-        <Button DockPanel.Dock="Top" x:Name="refreshButton" Click="RefreshButton_Click">Refresh</Button>
+        <StatusBar DockPanel.Dock="Top">Move Data</StatusBar>
         <ScrollViewer DockPanel.Dock="Top">
             <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
                 <DataGrid.Columns>

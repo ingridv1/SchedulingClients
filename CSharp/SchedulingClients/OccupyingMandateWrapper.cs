@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using SchedulingClients.MapServiceReference;
+using MoreLinq;
 using BaseClients;
 
 namespace SchedulingClients
@@ -35,6 +36,8 @@ namespace SchedulingClients
 			{
 				this.mapClient = mapClient;
 			}
+
+			RefreshDataSets(out ServiceOperationResult result);
 		}
 
 		public ReadOnlyObservableCollection<NodeData> NodeDataSet => readonlyNodeDataSet;
@@ -52,6 +55,8 @@ namespace SchedulingClients
 					nodeDataSet.Clear();
 					result = mapClient.TryGetAllNodeData(out IEnumerable<NodeData> nodeDatas);
 
+					nodeDatas.ForEach(e => nodeDataSet.Add(e));
+
 					if (!result.IsSuccessfull) return false;
 				}
 
@@ -59,6 +64,8 @@ namespace SchedulingClients
 				{
 					moveDataSet.Clear();
 					result = mapClient.TryGetAllMoveData(out IEnumerable<MoveData> moveDatas);
+
+					moveDatas.ForEach(e => moveDataSet.Add(e));
 
 					if (!result.IsSuccessfull) return false;
 				}

@@ -25,22 +25,6 @@ namespace SchedulingClients.Controls.MapClient
             InitializeComponent();
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                IMapClient client = DataContext as IMapClient;
-
-                IEnumerable<MoveData> moveData;
-                ServiceOperationResult result = client.TryGetAllMoveData(out moveData);
-                               
-                dataGrid.ItemsSource = moveData;
-            }
-            catch (Exception ex)
-            {                
-            }
-        }
-
         public IEnumerable<MoveData> GetSelectedMoveData()
         {
             try
@@ -51,11 +35,6 @@ namespace SchedulingClients.Controls.MapClient
             {
                 return Enumerable.Empty<MoveData>();
             }
-        }
-
-        private void UserControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            refreshButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
     }
 }

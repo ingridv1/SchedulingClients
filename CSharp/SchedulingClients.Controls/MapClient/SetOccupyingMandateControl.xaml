@@ -55,10 +55,12 @@
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <local:GetAllNodeDataControl x:Name="getAllNodeDataControl" Grid.Column="0">
+            <local:GetAllNodeDataControl x:Name="getAllNodeDataControl"
+                DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=NodeDataSet}" Grid.Column="0">
             </local:GetAllNodeDataControl>
             <GridSplitter Grid.Column="1"/>
-            <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" Grid.Column="2">
+            <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" 
+                DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=MoveDataSet}" Grid.Column="2">
             </local:GetAllMoveDataControl>
         </Grid>
     </DockPanel>
