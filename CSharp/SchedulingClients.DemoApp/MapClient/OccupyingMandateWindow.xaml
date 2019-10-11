@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchedulingClients.DemoApp.MapClient"
+        xmlns:schedulingClientsCMC="clr-namespace:SchedulingClients.Controls.MapClient;assembly=SchedulingClients.Controls"
         mc:Ignorable="d"
         Title="Occupying Mandate" Height="450" Width="800">
     <Grid>
@@ -12,6 +13,9 @@
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <schedulingClientsCMC:OccupyingMandateControl/>
+        </StackPanel>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
         <WebBrowser Grid.Column="2" x:Name="webBrowser"/>
     </Grid>

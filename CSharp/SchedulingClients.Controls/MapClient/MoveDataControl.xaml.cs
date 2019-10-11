@@ -18,9 +18,9 @@ using System.Windows.Shapes;
 
 namespace SchedulingClients.Controls.MapClient
 {
-    public partial class GetAllMoveDataControl : UserControl
+    public partial class MoveDataControl : UserControl
     {
-        public GetAllMoveDataControl()
+        public MoveDataControl()
         {
             InitializeComponent();
         }

@@ -36,13 +36,13 @@
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <local:GetAllNodeDataControl x:Name="nodeDataControl"
+            <local:NodeDataControl x:Name="nodeDataControl"
                 DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=NodeDataSet}" Grid.Column="0">
-            </local:GetAllNodeDataControl>
+            </local:NodeDataControl>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
-            <local:GetAllMoveDataControl x:Name="moveDataControl" 
+            <local:MoveDataControl x:Name="moveDataControl" 
                 DataContext="{Binding Source={StaticResource occupyingMandateWrapper}, Path=MoveDataSet}" Grid.Column="2">
-            </local:GetAllMoveDataControl>
+            </local:MoveDataControl>
         </Grid>
     </DockPanel>
 </UserControl>

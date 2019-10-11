@@ -18,12 +18,9 @@ using SchedulingClients.MapServiceReference;
 
 namespace SchedulingClients.Controls.MapClient
 {
-    /// <summary>
-    /// Interaction logic for GetAllNodeDataControl.xaml
-    /// </summary>
-    public partial class GetAllNodeDataControl : UserControl
+    public partial class NodeDataControl : UserControl
     {
-        public GetAllNodeDataControl()
+        public NodeDataControl()
         {
             InitializeComponent();
         }

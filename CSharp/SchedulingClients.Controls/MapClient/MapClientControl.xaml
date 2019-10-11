@@ -9,8 +9,8 @@
     <Grid>
         <StackPanel>
             <StatusBar>Map Client Control</StatusBar>
-            <local:GetAllNodeDataControl/>
-            <local:GetAllMoveDataControl/>
+            <local:NodeDataControl/>
+            <local:MoveDataControl/>
         </StackPanel>  
     </Grid>
 </UserControl>

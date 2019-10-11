@@ -94,6 +94,9 @@
     <Compile Include="MapClientControlsWindow.xaml.cs">
       <DependentUpon>MapClientControlsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClient\NodeDataWindow.xaml.cs">
+      <DependentUpon>NodeDataWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MapClient\OccupyingMandateWindow.xaml.cs">
       <DependentUpon>OccupyingMandateWindow.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MapClientControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\NodeDataWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
