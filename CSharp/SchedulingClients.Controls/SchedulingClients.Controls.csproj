@@ -116,6 +116,7 @@
     <Compile Include="MapClient\ClearOccupyingMandateControl.xaml.cs">
       <DependentUpon>ClearOccupyingMandateControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClient\Converters.cs" />
     <Compile Include="MapClient\MoveDataControl.xaml.cs">
       <DependentUpon>MoveDataControl.xaml</DependentUpon>
     </Compile>

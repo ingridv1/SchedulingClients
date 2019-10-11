@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:HasServicesConverter x:Key="hasServicesConverter"/>
+    </UserControl.Resources>
     <DockPanel>
         <StatusBar DockPanel.Dock="Top">Node Data</StatusBar>
         <ScrollViewer DockPanel.Dock="Top">
@@ -16,6 +19,7 @@
                     <DataGridTextColumn Header="X(m)" Binding="{Binding X, Mode=OneWay, StringFormat=N2}" Width="1*"/>
                     <DataGridTextColumn Header="Y(m)" Binding="{Binding Y, Mode=OneWay, StringFormat=N2}" Width="1*"/>
                     <DataGridTextColumn Header="Heading(rad)" Binding="{Binding HeadingRad, Mode=OneWay, StringFormat=N2}" Width="1*"/>
+                    <DataGridCheckBoxColumn Header="Services" Binding="{Binding Services, Mode=OneWay, Converter={StaticResource hasServicesConverter}}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
