@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <local:HasServicesConverter x:Key="hasServicesConverter"/>
+        <local:SerivcesToStringConverter x:Key="serivcesToStringConverter"/>
     </UserControl.Resources>
     <DockPanel>
         <StatusBar DockPanel.Dock="Top">Node Data</StatusBar>
@@ -19,7 +20,13 @@
                     <DataGridTextColumn Header="X(m)" Binding="{Binding X, Mode=OneWay, StringFormat=N2}" Width="1*"/>
                     <DataGridTextColumn Header="Y(m)" Binding="{Binding Y, Mode=OneWay, StringFormat=N2}" Width="1*"/>
                     <DataGridTextColumn Header="Heading(rad)" Binding="{Binding HeadingRad, Mode=OneWay, StringFormat=N2}" Width="1*"/>
-                    <DataGridCheckBoxColumn Header="Services" Binding="{Binding Services, Mode=OneWay, Converter={StaticResource hasServicesConverter}}" Width="1*"/>
+                    <DataGridCheckBoxColumn Header="Services" Binding="{Binding Services, Mode=OneWay, Converter={StaticResource hasServicesConverter}}" Width="1*">
+                        <DataGridCheckBoxColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ToolTip" Value="{Binding Services, Converter={StaticResource serivcesToStringConverter}}"/>
+                            </Style>
+                        </DataGridCheckBoxColumn.CellStyle>
+                    </DataGridCheckBoxColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
