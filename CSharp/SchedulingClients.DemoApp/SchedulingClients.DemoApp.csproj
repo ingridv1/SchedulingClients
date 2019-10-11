@@ -94,6 +94,9 @@
     <Compile Include="MapClientControlsWindow.xaml.cs">
       <DependentUpon>MapClientControlsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MapClient\OccupyingMandateWindow.xaml.cs">
+      <DependentUpon>OccupyingMandateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskStateClientControlsWindow.xaml.cs">
       <DependentUpon>TaskStateClientControlsWindow.xaml</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MapClientControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapClient\OccupyingMandateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MapClientControlsDescription.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OccupyingMandateWindowDescription.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

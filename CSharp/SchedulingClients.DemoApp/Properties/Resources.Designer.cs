@@ -100,6 +100,15 @@ namespace SchedulingClients.DemoApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to # Occupying Mandate Controls.
+        /// </summary>
+        internal static string OccupyingMandateWindowDescription {
+            get {
+                return ResourceManager.GetString("OccupyingMandateWindowDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to # Task State Client Controls
         ///
         ///A collection of controls used to display task state changes.
