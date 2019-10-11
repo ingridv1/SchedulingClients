@@ -1,12 +1,9 @@
 ﻿using SchedulingClients.MapServiceReference;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Text;
 
 namespace SchedulingClients.Controls.MapClient
 {
@@ -24,7 +21,7 @@ namespace SchedulingClients.Controls.MapClient
 
 			for (int i = 0; i < numServices; i++)
 			{
-				if (i == numServices -1) builder.Append(serviceTypes[i].ToString());
+				if (i == numServices - 1) builder.Append(serviceTypes[i].ToString());
 				else builder.AppendLine(serviceTypes[i].ToString());
 			}
 

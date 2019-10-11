@@ -20,7 +20,7 @@ namespace SchedulingClients.Controls.MapClient
 {
     public partial class NodeDataControl : UserControl
     {
-        public NodeDataControl()
+		public NodeDataControl()
         {
             InitializeComponent();
         }
