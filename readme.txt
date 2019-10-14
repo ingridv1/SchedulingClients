@@ -11,6 +11,11 @@
 https://github.com/GuidanceAutomation/SchedulingClients
 https://www.guidanceautomation.com/
 
+v14.0.0 (14th Oct 19)
+
+* Support for GACore enumerator definitions
+* MapClient controls
+
 v13.1.0 (16th Sep 19)
 
 * Adds IJobStateClient control examples

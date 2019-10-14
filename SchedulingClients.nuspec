@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SchedulingClients</id>
-    <version>13.1.0</version>
+    <version>14.0.0</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
@@ -15,7 +15,7 @@
     <dependencies>
       <group targetFramework=".NETFramework4.7">
         <dependency id="BaseClients" version="1.2.1" />
-        <dependency id="GACore" version="1.8.2" />
+        <dependency id="GACore" version="1.14.0" />
         <dependency id="morelinq" version="3.2.0" />
         <dependency id="NLog" version="4.6.7" />
         <dependency id="Extended.Wpf.Toolkit" version="3.5.0" />
