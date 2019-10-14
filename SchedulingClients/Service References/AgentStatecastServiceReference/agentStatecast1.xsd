@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/agentStatecast.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="GetSemVer">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSemVerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetSemVerResult" nillable="true" type="q1:TupleOfSemVerDataServiceCallData20ExA2_SX" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnumStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnumStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetEnumStatecastValueResult" nillable="true" type="q2:TupleOfunsignedByteServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFloatStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFloatStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetFloatStatecastValueResult" nillable="true" type="q3:TupleOffloatServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntegerStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntegerStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetIntegerStatecastValueResult" nillable="true" type="q4:TupleOfintServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIPAddressStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIPAddressStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetIPAddressStatecastValueResult" nillable="true" type="q5:TupleOfIPAddressServiceCallDataTT52EBte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShortStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShortStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetShortStatecastValueResult" nillable="true" type="q6:TupleOfshortServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateCastVariableDefinitionData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStateCastVariableDefinitionDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetStateCastVariableDefinitionDataResult" nillable="true" type="q7:TupleOfArrayOfStateCastVariableDefinitionDataServiceCallDatamvMP2t26" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIntegerStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIntegerStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetUIntegerStatecastValueResult" nillable="true" type="q8:TupleOfunsignedIntServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUShortStatecastValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="xs:int" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUShortStatecastValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetUShortStatecastValueResult" nillable="true" type="q9:TupleOfunsignedShortServiceCallDatayG81JSvh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

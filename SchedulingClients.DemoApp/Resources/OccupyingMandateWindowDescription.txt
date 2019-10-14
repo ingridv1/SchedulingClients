@@ -1,0 +1,3 @@
+# Occupying Mandate Controls
+
+Creation and clearing of an Occupying Mandate. 
