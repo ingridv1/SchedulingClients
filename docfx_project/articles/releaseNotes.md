@@ -14,6 +14,13 @@
 
 # Release Notes
 
+## v14.0.1 (8th June 20)
+
+* Strips out dead clients
+** Agent Attention
+** Agent Battery Status
+** Agent Statecast
+
 ## v14.0.0 (14th Oct 19)
 
 * Support for GACore enumerator definitions
