@@ -1581,10 +1581,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/releaseNotes.html",
-          "hash": "fvuVvY0anFKh1XV8LUoRRg=="
+          "hash": "oO9saUR52W54ZnGcnxLt6w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1648,7 +1648,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 5
+          "skipped_file_count": 4
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
