@@ -91,13 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="94-5069\LostPayload.cs" />
-    <Compile Include="94-5070\BaseScenario.cs" />
     <Compile Include="Basic.cs" />
-    <Compile Include="94-5069\BaseScenario.cs" />
-    <Compile Include="94-5069\ChangeDestination.cs" />
-    <Compile Include="94-5069\EditAwaitJob.cs" />
-    <Compile Include="94-5069\JobProgressDataExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="v13Alpha.cs" />
   </ItemGroup>

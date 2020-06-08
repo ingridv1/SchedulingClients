@@ -93,9 +93,7 @@
   <ItemGroup>
     <Compile Include="AbstractClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TAgentBatteryStatusClient_ClientExceptionNull.cs" />
     <Compile Include="TAgentClient_ClientExceptionNull.cs" />
-    <Compile Include="TAgentStatecastClient_ClientExceptionNull.cs" />
     <Compile Include="TJobBuilderClient.cs" />
     <Compile Include="TJobBuilderClient_ClientExceptionNull.cs" />
     <Compile Include="TJobsStateClient_ClientExceptionNull.cs" />
