@@ -5,210 +5,6 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceCallback.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceCallback.html",
-          "hash": "gwwBEz+zXZZ2JypuvWzbhw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.AgentAttentionData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.AgentAttentionData.html",
-          "hash": "+ymeb1K6h8nIIvIuwu7aOA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.AgentAttentionServiceClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.AgentAttentionServiceClient.html",
-          "hash": "wdGEAYOb98kNHbGY/bfecg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.AttentionType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.AttentionType.html",
-          "hash": "x79qJxfetS0gWClHsUe0PQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.IAgentAttentionService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.IAgentAttentionService.html",
-          "hash": "LqZ7A3j7lVUHCm21G3SMhQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.IAgentAttentionServiceCallback.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.IAgentAttentionServiceCallback.html",
-          "hash": "1dtowUBaIIiPVN1NqTm+cw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.IAgentAttentionServiceChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.IAgentAttentionServiceChannel.html",
-          "hash": "+JZCjBOR5akFWpsb2lm7QA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.ServiceCallData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.ServiceCallData.html",
-          "hash": "K317G8lpYzyZ4nRBh+rJ+Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.ServiceCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.ServiceCode.html",
-          "hash": "9DISKzrZsakVHgy5AmsnPg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentAttentionServiceReference.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentAttentionServiceReference.html",
-          "hash": "/AMon60YWQrtTLQsDNL71g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.AgentBatteryStatusData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.AgentBatteryStatusData.html",
-          "hash": "aXUb60wu6z64TTh/hEbtAQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.AgentBatteryStatusServiceClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.AgentBatteryStatusServiceClient.html",
-          "hash": "+sMsKo+cF6cESczStpDm6Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.IAgentBatteryStatusService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.IAgentBatteryStatusService.html",
-          "hash": "ve5Hymx/OqZp2ThKKvGPxQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.IAgentBatteryStatusServiceChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.IAgentBatteryStatusServiceChannel.html",
-          "hash": "08268rqkeYjvjze/NWf98Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.ServiceCallData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.ServiceCallData.html",
-          "hash": "mPn2rL52t476Ny/KkIaVuw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.ServiceCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.ServiceCode.html",
-          "hash": "ihX93cJLvRYka9Pjq7Ygxw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentBatteryStatusServiceReference.html",
-          "hash": "hwgY7adZ9aoJnT7BO4YTrw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SchedulingClients.AgentServiceReference.AgentData.yml",
       "output": {
         ".html": {
@@ -305,95 +101,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.AgentStatecastServiceClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.AgentStatecastServiceClient.html",
-          "hash": "Tpgx/WHiEqChlHOZjZLsbA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.IAgentStatecastService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.IAgentStatecastService.html",
-          "hash": "8bAQ8FqU0y/p54oO2HiRMA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.IAgentStatecastServiceChannel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.IAgentStatecastServiceChannel.html",
-          "hash": "RN9nbQxu9J3cNtpT5l+R+Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.ServiceCallData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.ServiceCallData.html",
-          "hash": "U6eczfJDeGMBK38UrFTrKQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.ServiceCode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.ServiceCode.html",
-          "hash": "VAwzUhJ16zlsJ5YXQYq7cA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.StateCastVariableDefinitionData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.StateCastVariableDefinitionData.html",
-          "hash": "gCBR3VwWRUY5AxZhj3xISQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.AgentStatecastServiceReference.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.AgentStatecastServiceReference.html",
-          "hash": "HZ5w6Mg5BQWjhDHQIOYjZw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SchedulingClients.ClientFactory.yml",
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.ClientFactory.html",
-          "hash": "3Ri4sqUp6VSCzKoFmS0uew=="
+          "hash": "x6nAo31mlrKVZ00lf0G63A=="
         }
       },
       "is_incremental": true,
@@ -749,47 +461,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.IAgentAttentionClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.IAgentAttentionClient.html",
-          "hash": "z49TTa30w426355j5RpUGQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.IAgentBatteryStatusClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.IAgentBatteryStatusClient.html",
-          "hash": "1U18dQqb+Va8e5Di4fDAEA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SchedulingClients.IAgentClient.yml",
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.IAgentClient.html",
           "hash": "QqSKnftEgxP+5gqOxNOrcg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.IAgentStatecastClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.IAgentStatecastClient.html",
-          "hash": "XCk2bEGBZWL4O4oWsvWB7A=="
         }
       },
       "is_incremental": true,
@@ -1601,59 +1277,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.Tutorials.BaseScenario_94_5070.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.Tutorials.BaseScenario_94_5070.html",
-          "hash": "WWh/62k+xFBMvJhencOskw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SchedulingClients.Tutorials.Examples.yml",
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Tutorials.Examples.html",
           "hash": "vqj9BmQWYHD/p18BR190nw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.Tutorials.Examples945069.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.Tutorials.Examples945069.html",
-          "hash": "B+SlG/VvrPMbOsQ0GyXM3w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.Tutorials._94_5069.Examples945069.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.Tutorials._94_5069.Examples945069.html",
-          "hash": "wUcioC4xIbzdz1tzIJuluQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.Tutorials._94_5069.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.Tutorials._94_5069.html",
-          "hash": "oh2F2ClENzkd7bLJgahnhg=="
         }
       },
       "is_incremental": true,
@@ -1677,31 +1305,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.Tutorials.html",
-          "hash": "mfraSx44RGL0rS0s8SAG8A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.UserControls.AgentAttentionClientControl.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.UserControls.AgentAttentionClientControl.html",
-          "hash": "rgsll1dFSYbkdBiUKeAUBQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.UserControls.AgentBatteryStatusClientControl.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.UserControls.AgentBatteryStatusClientControl.html",
-          "hash": "rLffhSufFMos1VsITNiiYQ=="
+          "hash": "CRRDWjLbuYFzxeHxcE+6rw=="
         }
       },
       "is_incremental": true,
@@ -1714,18 +1318,6 @@
         ".html": {
           "relative_path": "api/SchedulingClients.UserControls.AgentClientControl.html",
           "hash": "ORU2XBBdfZBIC24bU/966A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SchedulingClients.UserControls.AgentStateCastClientControl.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SchedulingClients.UserControls.AgentStateCastClientControl.html",
-          "hash": "GnM26/eTzcFSHUTpHPS9lA=="
         }
       },
       "is_incremental": true,
@@ -1917,7 +1509,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.UserControls.html",
-          "hash": "043IHtzQUd5j/G2BNZBw5g=="
+          "hash": "W8Hnufzvhhei2Dv8VMGnew=="
         }
       },
       "is_incremental": true,
@@ -1929,7 +1521,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SchedulingClients.html",
-          "hash": "NqZSMwbIGuO5aAPfeERKsg=="
+          "hash": "h5I+fRYgXCgRHKdM8j0CAQ=="
         }
       },
       "is_incremental": true,
@@ -1944,7 +1536,7 @@
           "hash": "CQw3DiC7ybccZhhEYKw2sg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1953,7 +1545,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "dUp067ufPBVUd6ZYZZASFA=="
+          "hash": "WKIVSFLJGuNs70QXahi7BQ=="
         }
       },
       "is_incremental": false,
@@ -1968,7 +1560,7 @@
           "hash": "YLwOvX7Lf18Idi+7jRNQdg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1980,7 +1572,7 @@
           "hash": "chGhmQTlhxKyDbrh0W5ptg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1992,7 +1584,7 @@
           "hash": "fvuVvY0anFKh1XV8LUoRRg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -2056,13 +1648,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 1
+          "skipped_file_count": 5
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 161,
-          "skipped_file_count": 161
+          "total_file_count": 127,
+          "skipped_file_count": 127
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
