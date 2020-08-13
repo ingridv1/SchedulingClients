@@ -189,6 +189,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GAAPICommon.Core.Dtos.SemVerDto.datasource" />
+    <None Include="Properties\DataSources\GAAPICommon.Core.Dtos.ServiceCallResultDto.datasource" />
     <None Include="Properties\DataSources\GACore.SemVerData.datasource" />
     <None Include="Properties\DataSources\System.Net.IPAddress.datasource" />
     <None Include="Service References\AgentServiceReference\agent.xsd">
@@ -209,23 +211,14 @@
     <None Include="Service References\AgentServiceReference\agent5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentServiceReference\agent6.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\AgentServiceReference\agent7.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AgentServiceReference\agent8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AgentServiceReference\agent9.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\AgentServiceReference\AgentService.wsdl" />
-    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.AgentData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.ServiceCallData.datasource">
+    <None Include="Service References\AgentServiceReference\SchedulingClients.AgentServiceReference.AgentDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder.xsd">
@@ -240,9 +233,6 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\JobBuilderServiceReference\jobBuilder5.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -255,18 +245,9 @@
     <None Include="Service References\JobBuilderServiceReference\jobBuilder8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobBuilderServiceReference\jobBuilder9.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\JobBuilderServiceReference\JobBuilderService.wsdl" />
-    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobData.datasource">
+    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.JobDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\JobBuilderServiceReference\SchedulingClients.JobBuilderServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\JobsStateServiceReference\jobsState.xsd">
-      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobsStateServiceReference\jobsState1.xsd">
       <SubType>Designer</SubType>
@@ -283,17 +264,8 @@
     <None Include="Service References\JobsStateServiceReference\jobsState5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobsStateServiceReference\jobsState6.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\JobsStateServiceReference\JobsStateService.wsdl" />
-    <None Include="Service References\JobsStateServiceReference\SchedulingClients.JobsStateServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\JobStateServiceReference\jobState.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\JobStateServiceReference\jobState1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\JobStateServiceReference\jobState2.xsd">
@@ -311,14 +283,8 @@
     <None Include="Service References\JobStateServiceReference\jobState6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\JobStateServiceReference\jobState7.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\JobStateServiceReference\JobStateService.wsdl" />
-    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobSummaryData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.ServiceCallData.datasource">
+    <None Include="Service References\JobStateServiceReference\SchedulingClients.JobStateServiceReference.JobSummaryDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MapServiceReference\map.xsd">
@@ -342,29 +308,20 @@
     <None Include="Service References\MapServiceReference\map6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MapServiceReference\map7.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\MapServiceReference\MapService.wsdl" />
-    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.MoveDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.NodeData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.NodeDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.OccupyingMandateProgressData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.OccupyingMandateProgressDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ParameterData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ParameterDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.WaypointData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceCallData.datasource">
+    <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.WaypointDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">
@@ -382,16 +339,7 @@
     <None Include="Service References\ServicingServiceReference\servicing3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServicingServiceReference\servicing4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicingServiceReference\servicing5.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ServicingServiceReference\ServicingService.wsdl" />
-    <None Include="Service References\TaskStateServiceReference\SchedulingClients.TaskStateServiceReference.ServiceCallData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\TaskStateServiceReference\taskState.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -402,12 +350,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\TaskStateServiceReference\taskState3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TaskStateServiceReference\taskState4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TaskStateServiceReference\taskState41.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\TaskStateServiceReference\taskState42.xsd">
