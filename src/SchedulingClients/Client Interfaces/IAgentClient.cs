@@ -8,9 +8,9 @@ namespace SchedulingClients
 {
     public interface IAgentClient : IClient
 	{
-		IServiceCallResult<IEnumerable<AgentDto>> GetAllAgentData();
+		IServiceCallResult<AgentDto[]> GetAllAgentData();
 
-        IServiceCallResult<IEnumerable<AgentDto>> GetAllAgentsInLifetimeState(AgentLifetimeState agentLifetimeState);
+        IServiceCallResult<AgentDto[]> GetAllAgentsInLifetimeState(AgentLifetimeState agentLifetimeState);
 
         IServiceCallResult SetAgentLifetimeState(int agentId, AgentLifetimeState desiredState);
     }
