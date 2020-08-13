@@ -2,7 +2,6 @@
 using GAAPICommon.Architecture;
 using GACore.Architecture;
 using SchedulingClients.AgentServiceReference;
-using System.Collections.Generic;
 
 namespace SchedulingClients
 {

@@ -1,4 +1,6 @@
 ﻿using BaseClients;
+using BaseClients.Architecture;
+using GAAPICommon.Architecture;
 using GACore.Architecture;
 using SchedulingClients.JobBuilderServiceReference;
 using System;
@@ -8,44 +10,44 @@ namespace SchedulingClients
 {
     public interface IJobBuilderClient : IClient
     {
-        ServiceOperationResult TryCommit(int jobId, out bool success, int agentId = -1);
+        IServiceCallResult CommitJob(int jobId, int agentId = -1);
 
-        ServiceOperationResult TryCreateJob(out JobData jobData);
+        IServiceCallResult<JobDto> CreateJob();
 
-        ServiceOperationResult TryCreateOrderedListTask(int parentTaskId, out int listTaskId);
+        IServiceCallResult<int> CreateOrderedListTask(int parentTaskId);
 
-        ServiceOperationResult TryCreateUnorderedListTask(int parentTaskId, out int listTaskId);
+        IServiceCallResult<int> CreateUnorderedListTask(int parentTaskId);
 
-        ServiceOperationResult TryCreateAtomicMoveListTask(int parentTaskId, out int listTaskId);
+        IServiceCallResult<int> CreateAtomicMoveListTask(int parentTaskId);
 
-        ServiceOperationResult TryCreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, out int serviceTaskId, TimeSpan expectedDuration = default(TimeSpan));
+        IServiceCallResult<int> CreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration = default);
 
-		ServiceOperationResult TryCreateChargeTask(int parentListTaskId, int nodeId, out int chargeTaskId);
+        IServiceCallResult<int> CreateChargeTask(int parentListTaskId, int nodeId);
 
-        ServiceOperationResult TryCreateSleepingTask(int parentListTaskId, int nodeId, out int sleepingTaskId, TimeSpan expectedDuration = default(TimeSpan));
+        IServiceCallResult<int> CreateSleepingTask(int parentListTaskId, int nodeId, TimeSpan expectedDuration = default);
 
-        ServiceOperationResult TryCreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId, out int atomicMoveTaskId);
+        IServiceCallResult<int> CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId);
 
-        ServiceOperationResult TryCreateGoToNodeTask(int parentListTaskId, int nodeId, out int goToNodeTaskId);
+        IServiceCallResult<int> CreateGoToNodeTask(int parentListTaskId, int nodeId);
 
-        ServiceOperationResult TryCreateAwaitingTask(int parentListTaskId, int nodeId, out int awaitTaskId);
+        IServiceCallResult<int> CreateAwaitingTask(int parentListTaskId, int nodeId);
 
-        ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, byte value);
+        IServiceCallResult IssueEnumDirective(int taskId, string parameterAlias, byte value);
 
-        ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, short value);
+        IServiceCallResult IssueShortDirective(int taskId, string parameterAlias, short value);
 
-        ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, ushort value);
+        IServiceCallResult IssueUShortDirective(int taskId, string parameterAlias, ushort value);
 
-        ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, float value);
+        IServiceCallResult IssueFloatDirective(int taskId, string parameterAlias, float value);
 
-        ServiceOperationResult TryIssueDirective(int taskId, string parameterAlias, IPAddress value);
+        IServiceCallResult IssueIPAddressDirective(int taskId, string parameterAlias, IPAddress value);
 
-        ServiceOperationResult TryBeginEditingJob(int jobId);
+        IServiceCallResult<bool> BeginEditingJob(int jobId);
 
-        ServiceOperationResult TryFinishEditingJob(int jobId);
+        IServiceCallResult FinishEditingJob(int jobId);
 
-        ServiceOperationResult TryBeginEditingTask(int taskId);
+        IServiceCallResult<bool> BeginEditingTask(int taskId);
 
-        ServiceOperationResult TryFinishEditingTask(int taskId);
+        IServiceCallResult FinishEditingTask(int taskId);
     }
 }
