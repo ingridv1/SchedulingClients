@@ -9,15 +9,15 @@ namespace SchedulingClients
         {
         }
 
-        public event Action<OccupyingMandateProgressData> OccupyingMandateProgressChange;
+        public event Action<OccupyingMandateProgressDto> OccupyingMandateProgressChange;
 
-        public void OnCallback(OccupyingMandateProgressData callbackObject)
+        public void OnCallback(OccupyingMandateProgressDto callbackObject)
         {
-            Action<OccupyingMandateProgressData> handlers = OccupyingMandateProgressChange;
+            Action<OccupyingMandateProgressDto> handlers = OccupyingMandateProgressChange;
 
             if (handlers != null)
             {
-                foreach(Action<OccupyingMandateProgressData> handler in handlers.GetInvocationList())
+                foreach(Action<OccupyingMandateProgressDto> handler in handlers.GetInvocationList())
                 {
                     handler.BeginInvoke(callbackObject, null, null);
                 }

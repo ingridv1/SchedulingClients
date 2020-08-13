@@ -212,11 +212,9 @@ namespace SchedulingClients
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
-            if (isDisposed)
-            {
+            if (isDisposed)            
                 return;
-            }
-
+   
             callback.JobsStateChange -= Callback_JobsStateChange;
             isDisposed = true;
 

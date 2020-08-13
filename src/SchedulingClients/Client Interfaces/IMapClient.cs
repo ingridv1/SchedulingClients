@@ -1,27 +1,29 @@
-﻿using BaseClients;
+﻿using BaseClients.Architecture;
+using GAAPICommon.Architecture;
 using SchedulingClients.MapServiceReference;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace SchedulingClients
 {
     public interface IMapClient : ICallbackClient
     {
-        ServiceOperationResult TryGetAllMoveData(out IEnumerable<MoveData> moveData);
+        IServiceCallResult<MoveDto[]> GetAllMoveData();
 
-        ServiceOperationResult TryGetAllNodeData(out IEnumerable<NodeData> nodeData);
+        IServiceCallResult<NodeDto[]> GetAllNodeData();
 
-        ServiceOperationResult TryGetAllParameterData(out IEnumerable<ParameterData> parameterData);
+        IServiceCallResult<ParameterDto[]> GetAllParameterData();
 
-        ServiceOperationResult TryGetTrajectory(int moveId, out IEnumerable<WaypointData> waypointData);
+        IServiceCallResult<WaypointDto[]> GetTrajectory(int moveId);
 
-        ServiceOperationResult TryGetOccupyingMandateProgressData(out OccupyingMandateProgressData occupyingMandateProgressData);
+        IServiceCallResult<OccupyingMandateMapItemDto> GetOccupyingMandateProgressData();
 
-        ServiceOperationResult TrySetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout);
+        IServiceCallResult SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout);
 
-        ServiceOperationResult TryClearOccupyingMandate();
+        IServiceCallResult ClearOccupyingMandate();
 
-        OccupyingMandateProgressData OccupyingMandateProgressData { get; }
+        OccupyingMandateProgressDto OccupyingMandateProgressDto { get; }
+
+        event Action<OccupyingMandateProgressDto> OccupyingMandateProgressUpdated;
     }
 }
