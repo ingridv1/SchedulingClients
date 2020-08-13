@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using BaseClients.Architecture;
+using GAAPICommon.Architecture;
+using GACore.Architecture;
 using SchedulingClients.AgentServiceReference;
-using BaseClients;
+using System.Collections.Generic;
 
 namespace SchedulingClients
 {
     public interface IAgentClient : IClient
 	{
-		ServiceOperationResult TryGetAllAgentData(out IEnumerable<AgentData> agentDatas);
+		IServiceCallResult<IEnumerable<AgentDto>> GetAllAgentData();
 
-		ServiceOperationResult TryGetAllAgentsInLifetimeState(out IEnumerable<AgentData> agentDatas, AgentLifetimeState agentLifetimeState);
+        IServiceCallResult<IEnumerable<AgentDto>> GetAllAgentsInLifetimeState(AgentLifetimeState agentLifetimeState);
 
-        ServiceOperationResult TrySetAgentLifetimeState(int agentId, AgentLifetimeState desiredState, out bool success);
+        IServiceCallResult SetAgentLifetimeState(int agentId, AgentLifetimeState desiredState);
     }
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
   <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
-  <xs:element name="GetSemVer">
+  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
+  <xs:element name="GetAPISemVer">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSemVerResponse">
+  <xs:element name="GetAPISemVerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetSemVerResult" nillable="true" type="q1:TupleOfSemVerDataServiceCallData20ExA2_SX" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAPISemVerResult" nillable="true" type="q1:ServiceCallResultDtoOfSemVerDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -35,7 +35,7 @@
   <xs:element name="GetOutstandingServiceRequestsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q3:TupleOfArrayOfServiceStateDataServiceCallDataHgvoD_S7T" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetOutstandingServiceRequestsResult" nillable="true" type="q3:ServiceCallResultDtoOfArrayOfServiceStateDataeGINPe74" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +49,7 @@
   <xs:element name="SetServiceCompleteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q4:TupleOfbooleanServiceCallDatayG81JSvh" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="SetServiceCompleteResult" nillable="true" type="q4:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

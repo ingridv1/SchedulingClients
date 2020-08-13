@@ -21,21 +21,48 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IServicingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GACore" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServicingService_GetSemVer_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSemVer" />
+  <wsdl:message name="IServicingService_GetAPISemVer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAPISemVer" />
   </wsdl:message>
-  <wsdl:message name="IServicingService_GetSemVer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSemVerResponse" />
+  <wsdl:message name="IServicingService_GetAPISemVer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAPISemVerResponse" />
   </wsdl:message>
   <wsdl:message name="IServicingService_SubscriptionHeartbeat_InputMessage">
     <wsdl:part name="parameters" element="tns:SubscriptionHeartbeat" />
@@ -62,9 +89,9 @@
     <wsdl:part name="parameters" element="tns:OnCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IServicingService">
-    <wsdl:operation name="GetSemVer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSemVer" message="tns:IServicingService_GetSemVer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSemVerResponse" message="tns:IServicingService_GetSemVer_OutputMessage" />
+    <wsdl:operation name="GetAPISemVer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAPISemVer" message="tns:IServicingService_GetAPISemVer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAPISemVerResponse" message="tns:IServicingService_GetAPISemVer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IServicingService_SubscriptionHeartbeat_InputMessage" />
@@ -86,8 +113,8 @@
   <wsdl:binding name="NetTcpBinding_IServicingService" type="tns:IServicingService">
     <wsp:PolicyReference URI="#NetTcpBinding_IServicingService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="GetSemVer">
-      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
+    <wsdl:operation name="GetAPISemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -135,8 +162,57 @@
   <wsdl:binding name="WSDualHttpBinding_IServicingService" type="tns:IServicingService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IServicingService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetSemVer">
-      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
+    <wsdl:operation name="GetAPISemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingServiceRequests">
+      <soap12:operation soapAction="http://tempuri.org/IServicingService/GetOutstandingServiceRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServiceComplete">
+      <soap12:operation soapAction="http://tempuri.org/IServicingService/SetServiceComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IServicingService/OnCallback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetNamedPipeBinding_IServicingService" type="tns:IServicingService">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IServicingService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="GetAPISemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -192,6 +268,15 @@
       <soap12:address location="http://127.0.0.1:41916/servicing.svc" />
       <wsa10:EndpointReference>
         <wsa10:Address>http://127.0.0.1:41916/servicing.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetNamedPipeBinding_IServicingService" binding="tns:NetNamedPipeBinding_IServicingService">
+      <soap12:address location="net.pipe://localhost/servicing.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/servicing.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>martin.davies@automation1.com</Upn>
+        </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

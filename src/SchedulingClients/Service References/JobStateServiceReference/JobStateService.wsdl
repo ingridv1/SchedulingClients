@@ -21,23 +21,50 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IJobStateService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GACore" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Services" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IJobStateService_GetSemVer_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSemVer" />
+  <wsdl:message name="IJobStateService_GetAPISemVer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAPISemVer" />
   </wsdl:message>
-  <wsdl:message name="IJobStateService_GetSemVer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSemVerResponse" />
+  <wsdl:message name="IJobStateService_GetAPISemVer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAPISemVerResponse" />
   </wsdl:message>
   <wsdl:message name="IJobStateService_SubscriptionHeartbeat_InputMessage">
     <wsdl:part name="parameters" element="tns:SubscriptionHeartbeat" />
@@ -70,9 +97,9 @@
     <wsdl:part name="parameters" element="tns:OnCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IJobStateService">
-    <wsdl:operation name="GetSemVer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSemVer" message="tns:IJobStateService_GetSemVer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSemVerResponse" message="tns:IJobStateService_GetSemVer_OutputMessage" />
+    <wsdl:operation name="GetAPISemVer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAPISemVer" message="tns:IJobStateService_GetAPISemVer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAPISemVerResponse" message="tns:IJobStateService_GetAPISemVer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IJobStateService_SubscriptionHeartbeat_InputMessage" />
@@ -98,8 +125,8 @@
   <wsdl:binding name="NetTcpBinding_IJobStateService" type="tns:IJobStateService">
     <wsp:PolicyReference URI="#NetTcpBinding_IJobStateService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="GetSemVer">
-      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
+    <wsdl:operation name="GetAPISemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -156,8 +183,66 @@
   <wsdl:binding name="WSDualHttpBinding_IJobStateService" type="tns:IJobStateService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IJobStateService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetSemVer">
-      <soap12:operation soapAction="http://tempuri.org/IService/GetSemVer" style="document" />
+    <wsdl:operation name="GetAPISemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscriptionHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentJobSummaryForAgentId">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobSummary">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetJobSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentJobSummaryFromTaskId">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IJobStateService/OnCallback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetNamedPipeBinding_IJobStateService" type="tns:IJobStateService">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IJobStateService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="GetAPISemVer">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -222,6 +307,15 @@
       <soap12:address location="http://127.0.0.1:41916/jobState.svc" />
       <wsa10:EndpointReference>
         <wsa10:Address>http://127.0.0.1:41916/jobState.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetNamedPipeBinding_IJobStateService" binding="tns:NetNamedPipeBinding_IJobStateService">
+      <soap12:address location="net.pipe://localhost/jobState.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/jobState.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>martin.davies@automation1.com</Upn>
+        </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

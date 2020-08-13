@@ -26,9 +26,7 @@
     <MetadataFile FileName="taskState1.xsd" MetadataType="Schema" ID="2acdff79-95e5-4a97-9e69-fedb475626a7" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd0" />
     <MetadataFile FileName="taskState2.xsd" MetadataType="Schema" ID="2841c2ec-a987-4dae-8ffc-933b9424995f" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd3" />
     <MetadataFile FileName="taskState3.xsd" MetadataType="Schema" ID="57f04879-df74-4211-a498-2040e41d37df" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd2" />
-    <MetadataFile FileName="taskState4.xsd" MetadataType="Schema" ID="b2a425b9-317b-49e2-b776-3bfaff085e02" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd5" />
     <MetadataFile FileName="TaskStateService.wsdl" MetadataType="Wsdl" ID="6344534f-2948-4523-9f40-f437916956d9" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc" />
-    <MetadataFile FileName="taskState41.xsd" MetadataType="Schema" ID="ee598040-128c-4cfc-9a9d-2865073d2b88" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd6" />
     <MetadataFile FileName="taskState42.xsd" MetadataType="Schema" ID="ebdda578-a9d2-424a-8f14-9762ef4f1870" SourceId="1" SourceUrl="http://127.0.0.1:41916/taskState.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>

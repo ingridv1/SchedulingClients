@@ -15,344 +15,15 @@ namespace SchedulingClients.AgentServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgentDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents.Dtos")]
     [System.SerializableAttribute()]
-    public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class AgentDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.AgentServiceReference.ServiceCode ServiceCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SourceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StackTraceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.AgentServiceReference.ServiceCode ServiceCode {
-            get {
-                return this.ServiceCodeField;
-            }
-            set {
-                if ((this.ServiceCodeField.Equals(value) != true)) {
-                    this.ServiceCodeField = value;
-                    this.RaisePropertyChanged("ServiceCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Source {
-            get {
-                return this.SourceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
-                    this.SourceField = value;
-                    this.RaisePropertyChanged("Source");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StackTrace {
-            get {
-                return this.StackTraceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StackTraceField, value) != true)) {
-                    this.StackTraceField = value;
-                    this.RaisePropertyChanged("StackTrace");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
-    public enum ServiceCode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOERROR = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERVICENOTCONFIGURED = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLIENTEXCEPTION = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERVICEUNAVAILABLE = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERVICENOTIMPLEMENTED = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INTERNALERROR = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETSEMVERFAILED = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COMMITJOBFAILED = 1001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEJOBFAILED = 1002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEUNORDEREDLISTTASKFAILED = 1003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEATOMICMOVELISTTASKFAILED = 1004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEORDEREDLISTTASKFAILED = 1005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESERVICINGTASKFAILED = 1006,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOTACCEPTINGNEWJOBS = 1007,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DIRECTIVENOTALLOWED = 1008,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDNODETASKID = 1009,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESLEEPINGTASKFAILED = 1010,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEGOTONODETASKFAILED = 1011,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEATOMICMOVETASKFAILED = 1012,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BEGINEDITINGJOBFAILED = 1013,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINISHEDITINGJOBFAILED = 1014,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BEGINEDITINGTASKFAILED = 1015,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINISHEDITINGTASKFAILED = 1016,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEAWAITINGTASKFAILED = 1017,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATECHARGETASKFAILED = 1018,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTALLJOBSFAILED = 2001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTALLJOBSFORAGENTFAILED = 2002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTJOBFAILED = 2003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETACTIVEJOBSFORAGENTFAILED = 2004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTTASKFAILED = 2005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RESOLVEFAULTEDJOBFAILED = 2006,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RESOLVEFAULTEDTASKFAILED = 2007,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETJOBSTATEFAILED = 3001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDJOBID = 3002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDTASKID = 3003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLMOVEDATAFAILED = 4001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLNODEDATAFAILED = 4002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETRAJECTORYFAILED = 4004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDMOVEID = 4005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETOCCUPYINGMANDATEFAILED = 4006,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLEAROCCUPYINGMANDATEFAILED = 4007,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CONTAINSINVALIDMAPITEMIDS = 4008,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CONTAINSINVALIDTIMEOUT = 4009,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OCCUPATIONALREADYINPROGRESS = 4010,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETOCCUPYINGMANDATEPROGRESSDATAFAILED = 4011,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETSERVICECOMPLETEFAILED = 5002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLAGENTDATAFAILED = 6001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLAGENTSINLIFETIMESTATEFAILED = 6002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETAGENTLIFETIMESTATEFAILED = 6003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COMMITINSTRUCTIONFAILED = 7001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        REQUESTFREEZEFAILED = 7002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        REQUESTUNFREEZEFAILED = 7003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INCORRECTNUMBEROFBYTES = 7004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETKINGPINDESCRIPTIONFAILED = 7008,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEVIRTUALVEHICLEFAILED = 7009,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        REMOVEVEHICLEFAILED = 7010,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETPOSEFAILED = 7011,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RESETKINGPINFAILED = 7012,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ENABLEALLVEHICLESFAILED = 7013,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DISABLEALLVEHICLESFAILED = 7014,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDIPADDRESS = 7015,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ENABLEVEHICLEFAILED = 7016,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DISABLEVEHICLEFAILED = 7017,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETFLEETSTATEFAILED = 7018,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETKINGPINSTATEFAILED = 7019,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DOWNLOADFAILED = 8001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UPLOADFAILED = 8002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETFILENAMESFAILED = 8003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDAGENTID = 9001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDSTATECASTVARIABLEALIAS = 9002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        STATECASTVARIABLEDATATYPEMISMATCH = 9003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETSCHEDULERVERSIONFAILED = 10001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETPLUGINVERSIONSFAILED = 10002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AgentData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Agents")]
-    [System.SerializableAttribute()]
-    public partial class AgentData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.AgentServiceReference.AgentLifetimeState AgentLifetimeStateField;
+        private GACore.Architecture.AgentLifetimeState AgentLifetimeStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AliasField;
@@ -374,7 +45,7 @@ namespace SchedulingClients.AgentServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.AgentServiceReference.AgentLifetimeState AgentLifetimeState {
+        public GACore.Architecture.AgentLifetimeState AgentLifetimeState {
             get {
                 return this.AgentLifetimeStateField;
             }
@@ -435,50 +106,35 @@ namespace SchedulingClients.AgentServiceReference {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AgentLifetimeState", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Core")]
-    public enum AgentLifetimeState : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Decommissioned = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disconnected = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OutOfService = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InService = 3,
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AgentServiceReference.IAgentService")]
     public interface IAgentService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
-        System.Tuple<GACore.SemVerData, SchedulingClients.AgentServiceReference.ServiceCallData> GetSemVer();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAPISemVer", ReplyAction="http://tempuri.org/IService/GetAPISemVerResponse")]
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto> GetAPISemVer();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
-        System.Threading.Tasks.Task<System.Tuple<GACore.SemVerData, SchedulingClients.AgentServiceReference.ServiceCallData>> GetSemVerAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentData", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentDataResponse")]
-        System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentData();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAPISemVer", ReplyAction="http://tempuri.org/IService/GetAPISemVerResponse")]
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>> GetAPISemVerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentData", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentDataAsync();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]> GetAllAgentData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentData", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentDataResponse")]
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]>> GetAllAgentDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
-        System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]> GetAllAgentsInLifetimeState(GACore.Architecture.AgentLifetimeState agentLifetimeState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]>> GetAllAgentsInLifetimeStateAsync(GACore.Architecture.AgentLifetimeState agentLifetimeState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/SetAgentLifetimeState", ReplyAction="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse")]
-        System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData> SetAgentLifetimeState(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
+        GAAPICommon.Core.Dtos.ServiceCallResultDto SetAgentLifetimeState(int agentId, GACore.Architecture.AgentLifetimeState desiredState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/SetAgentLifetimeState", ReplyAction="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse")]
-        System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData>> SetAgentLifetimeStateAsync(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetAgentLifetimeStateAsync(int agentId, GACore.Architecture.AgentLifetimeState desiredState);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -508,35 +164,35 @@ namespace SchedulingClients.AgentServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public System.Tuple<GACore.SemVerData, SchedulingClients.AgentServiceReference.ServiceCallData> GetSemVer() {
-            return base.Channel.GetSemVer();
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto> GetAPISemVer() {
+            return base.Channel.GetAPISemVer();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<GACore.SemVerData, SchedulingClients.AgentServiceReference.ServiceCallData>> GetSemVerAsync() {
-            return base.Channel.GetSemVerAsync();
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>> GetAPISemVerAsync() {
+            return base.Channel.GetAPISemVerAsync();
         }
         
-        public System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]> GetAllAgentData() {
             return base.Channel.GetAllAgentData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]>> GetAllAgentDataAsync() {
             return base.Channel.GetAllAgentDataAsync();
         }
         
-        public System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData> GetAllAgentsInLifetimeState(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]> GetAllAgentsInLifetimeState(GACore.Architecture.AgentLifetimeState agentLifetimeState) {
             return base.Channel.GetAllAgentsInLifetimeState(agentLifetimeState);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.AgentServiceReference.AgentData[], SchedulingClients.AgentServiceReference.ServiceCallData>> GetAllAgentsInLifetimeStateAsync(SchedulingClients.AgentServiceReference.AgentLifetimeState agentLifetimeState) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.AgentServiceReference.AgentDto[]>> GetAllAgentsInLifetimeStateAsync(GACore.Architecture.AgentLifetimeState agentLifetimeState) {
             return base.Channel.GetAllAgentsInLifetimeStateAsync(agentLifetimeState);
         }
         
-        public System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData> SetAgentLifetimeState(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto SetAgentLifetimeState(int agentId, GACore.Architecture.AgentLifetimeState desiredState) {
             return base.Channel.SetAgentLifetimeState(agentId, desiredState);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<bool, SchedulingClients.AgentServiceReference.ServiceCallData>> SetAgentLifetimeStateAsync(int agentId, SchedulingClients.AgentServiceReference.AgentLifetimeState desiredState) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetAgentLifetimeStateAsync(int agentId, GACore.Architecture.AgentLifetimeState desiredState) {
             return base.Channel.SetAgentLifetimeStateAsync(agentId, desiredState);
         }
     }

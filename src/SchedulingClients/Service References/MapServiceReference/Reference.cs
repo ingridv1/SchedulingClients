@@ -15,344 +15,15 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCallData", Namespace="http://schemas.datacontract.org/2004/07/Services")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateProgressDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
     [System.SerializableAttribute()]
-    public partial class ServiceCallData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class OccupyingMandateProgressDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.MapServiceReference.ServiceCode ServiceCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SourceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StackTraceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.MapServiceReference.ServiceCode ServiceCode {
-            get {
-                return this.ServiceCodeField;
-            }
-            set {
-                if ((this.ServiceCodeField.Equals(value) != true)) {
-                    this.ServiceCodeField = value;
-                    this.RaisePropertyChanged("ServiceCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Source {
-            get {
-                return this.SourceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
-                    this.SourceField = value;
-                    this.RaisePropertyChanged("Source");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StackTrace {
-            get {
-                return this.StackTraceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StackTraceField, value) != true)) {
-                    this.StackTraceField = value;
-                    this.RaisePropertyChanged("StackTrace");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCode", Namespace="http://schemas.datacontract.org/2004/07/Services")]
-    public enum ServiceCode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOERROR = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERVICENOTCONFIGURED = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLIENTEXCEPTION = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERVICEUNAVAILABLE = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERVICENOTIMPLEMENTED = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INTERNALERROR = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETSEMVERFAILED = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COMMITJOBFAILED = 1001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEJOBFAILED = 1002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEUNORDEREDLISTTASKFAILED = 1003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEATOMICMOVELISTTASKFAILED = 1004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEORDEREDLISTTASKFAILED = 1005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESERVICINGTASKFAILED = 1006,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NOTACCEPTINGNEWJOBS = 1007,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DIRECTIVENOTALLOWED = 1008,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDNODETASKID = 1009,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATESLEEPINGTASKFAILED = 1010,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEGOTONODETASKFAILED = 1011,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEATOMICMOVETASKFAILED = 1012,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BEGINEDITINGJOBFAILED = 1013,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINISHEDITINGJOBFAILED = 1014,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BEGINEDITINGTASKFAILED = 1015,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FINISHEDITINGTASKFAILED = 1016,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEAWAITINGTASKFAILED = 1017,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATECHARGETASKFAILED = 1018,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTALLJOBSFAILED = 2001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTALLJOBSFORAGENTFAILED = 2002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTJOBFAILED = 2003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETACTIVEJOBSFORAGENTFAILED = 2004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ABORTTASKFAILED = 2005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RESOLVEFAULTEDJOBFAILED = 2006,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RESOLVEFAULTEDTASKFAILED = 2007,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETJOBSTATEFAILED = 3001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDJOBID = 3002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDTASKID = 3003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLMOVEDATAFAILED = 4001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLNODEDATAFAILED = 4002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETMAPPINGKEYCARDSIGNATUREFAILED = 4003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETRAJECTORYFAILED = 4004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDMOVEID = 4005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETOCCUPYINGMANDATEFAILED = 4006,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CLEAROCCUPYINGMANDATEFAILED = 4007,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CONTAINSINVALIDMAPITEMIDS = 4008,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CONTAINSINVALIDTIMEOUT = 4009,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OCCUPATIONALREADYINPROGRESS = 4010,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETOCCUPYINGMANDATEPROGRESSDATAFAILED = 4011,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETOUTSTANDINGSERVICEREQUESTSFAILED = 5001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETSERVICECOMPLETEFAILED = 5002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLAGENTDATAFAILED = 6001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETALLAGENTSINLIFETIMESTATEFAILED = 6002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETAGENTLIFETIMESTATEFAILED = 6003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COMMITINSTRUCTIONFAILED = 7001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        REQUESTFREEZEFAILED = 7002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        REQUESTUNFREEZEFAILED = 7003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INCORRECTNUMBEROFBYTES = 7004,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COMMITEXTENDEDWAYPOINTSFAILED = 7005,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETKINGPINDESCRIPTIONFAILED = 7008,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CREATEVIRTUALVEHICLEFAILED = 7009,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        REMOVEVEHICLEFAILED = 7010,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETPOSEFAILED = 7011,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RESETKINGPINFAILED = 7012,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ENABLEALLVEHICLESFAILED = 7013,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DISABLEALLVEHICLESFAILED = 7014,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDIPADDRESS = 7015,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ENABLEVEHICLEFAILED = 7016,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DISABLEVEHICLEFAILED = 7017,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETFLEETSTATEFAILED = 7018,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SETKINGPINSTATEFAILED = 7019,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DOWNLOADFAILED = 8001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UPLOADFAILED = 8002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETFILENAMESFAILED = 8003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDAGENTID = 9001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        INVALIDSTATECASTVARIABLEALIAS = 9002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        STATECASTVARIABLEDATATYPEMISMATCH = 9003,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETSCHEDULERVERSIONFAILED = 10001,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETPLUGINVERSIONSFAILED = 10002,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GETOUTSTANDINGAGENTREQUESTSFAILED = 11001,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateProgressData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
-    [System.SerializableAttribute()]
-    public partial class OccupyingMandateProgressData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.MapServiceReference.OccupyingMandateMapItemData[] OccupyingMandateMapItemDataField;
+        private SchedulingClients.MapServiceReference.OccupyingMandateMapItemDto[] OccupyingMandateMapItemDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private GACore.Architecture.OccupyingMandateState OccupyingMandateStateField;
@@ -371,7 +42,7 @@ namespace SchedulingClients.MapServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.MapServiceReference.OccupyingMandateMapItemData[] OccupyingMandateMapItemData {
+        public SchedulingClients.MapServiceReference.OccupyingMandateMapItemDto[] OccupyingMandateMapItemData {
             get {
                 return this.OccupyingMandateMapItemDataField;
             }
@@ -421,9 +92,9 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateMapItemData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OccupyingMandateMapItemDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
     [System.SerializableAttribute()]
-    public partial class OccupyingMandateMapItemData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class OccupyingMandateMapItemDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -482,9 +153,9 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MoveData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MoveDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
     [System.SerializableAttribute()]
-    public partial class MoveData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class MoveDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -575,9 +246,9 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NodeData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NodeDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
     [System.SerializableAttribute()]
-    public partial class NodeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class NodeDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -700,9 +371,9 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ParameterDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
     [System.SerializableAttribute()]
-    public partial class ParameterData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ParameterDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -793,9 +464,9 @@ namespace SchedulingClients.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="WaypointData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WaypointDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
     [System.SerializableAttribute()]
-    public partial class WaypointData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class WaypointDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -888,11 +559,11 @@ namespace SchedulingClients.MapServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MapServiceReference.IMapService", CallbackContract=typeof(SchedulingClients.MapServiceReference.IMapServiceCallback))]
     public interface IMapService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
-        System.Tuple<GACore.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData> GetSemVer();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAPISemVer", ReplyAction="http://tempuri.org/IService/GetAPISemVerResponse")]
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto> GetAPISemVer();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSemVer", ReplyAction="http://tempuri.org/IService/GetSemVerResponse")]
-        System.Threading.Tasks.Task<System.Tuple<GACore.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData>> GetSemVerAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAPISemVer", ReplyAction="http://tempuri.org/IService/GetAPISemVerResponse")]
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>> GetAPISemVerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat", ReplyAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse")]
         void SubscriptionHeartbeat(System.Guid guid);
@@ -901,53 +572,65 @@ namespace SchedulingClients.MapServiceReference {
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/ClearOccupyingMandateResponse")]
-        SchedulingClients.MapServiceReference.ServiceCallData ClearOccupyingMandate();
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.OccupyingMandateProgressDto>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.MoveDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.NodeDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.ParameterDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.WaypointDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
+        GAAPICommon.Core.Dtos.ServiceCallResultDto ClearOccupyingMandate();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/ClearOccupyingMandateResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> ClearOccupyingMandateAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> ClearOccupyingMandateAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetOccupyingMandateProgressData", ReplyAction="http://tempuri.org/IMapService/GetOccupyingMandateProgressDataResponse")]
-        System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData> GetOccupyingMandateProgressData();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.OccupyingMandateProgressDto> GetOccupyingMandateProgressData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetOccupyingMandateProgressData", ReplyAction="http://tempuri.org/IMapService/GetOccupyingMandateProgressDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData>> GetOccupyingMandateProgressDataAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.OccupyingMandateProgressDto>> GetOccupyingMandateProgressDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
-        SchedulingClients.MapServiceReference.ServiceCallData SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.OccupyingMandateProgressDto>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.MoveDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.NodeDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.ParameterDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.WaypointDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
+        GAAPICommon.Core.Dtos.ServiceCallResultDto SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
-        System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
-        System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.MoveDto[]> GetAllMoveData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllMoveDataAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.MoveDto[]>> GetAllMoveDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllNodeData", ReplyAction="http://tempuri.org/IMapService/GetAllNodeDataResponse")]
-        System.Tuple<SchedulingClients.MapServiceReference.NodeData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllNodeData();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.NodeDto[]> GetAllNodeData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllNodeData", ReplyAction="http://tempuri.org/IMapService/GetAllNodeDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.NodeData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllNodeDataAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.NodeDto[]>> GetAllNodeDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
-        System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.ParameterDto[]> GetAllParameterData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.ParameterDto[]>> GetAllParameterDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetTrajectory", ReplyAction="http://tempuri.org/IMapService/GetTrajectoryResponse")]
-        System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData> GetTrajectory(int moveId);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.WaypointDto[]> GetTrajectory(int moveId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetTrajectory", ReplyAction="http://tempuri.org/IMapService/GetTrajectoryResponse")]
-        System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.WaypointDto[]>> GetTrajectoryAsync(int moveId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IMapServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/OnCallback", ReplyAction="http://tempuri.org/IMapService/OnCallbackResponse")]
-        void OnCallback(SchedulingClients.MapServiceReference.OccupyingMandateProgressData callbackObject);
+        void OnCallback(SchedulingClients.MapServiceReference.OccupyingMandateProgressDto callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -978,12 +661,12 @@ namespace SchedulingClients.MapServiceReference {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public System.Tuple<GACore.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData> GetSemVer() {
-            return base.Channel.GetSemVer();
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto> GetAPISemVer() {
+            return base.Channel.GetAPISemVer();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<GACore.SemVerData, SchedulingClients.MapServiceReference.ServiceCallData>> GetSemVerAsync() {
-            return base.Channel.GetSemVerAsync();
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>> GetAPISemVerAsync() {
+            return base.Channel.GetAPISemVerAsync();
         }
         
         public void SubscriptionHeartbeat(System.Guid guid) {
@@ -994,59 +677,59 @@ namespace SchedulingClients.MapServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public SchedulingClients.MapServiceReference.ServiceCallData ClearOccupyingMandate() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto ClearOccupyingMandate() {
             return base.Channel.ClearOccupyingMandate();
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> ClearOccupyingMandateAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> ClearOccupyingMandateAsync() {
             return base.Channel.ClearOccupyingMandateAsync();
         }
         
-        public System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData> GetOccupyingMandateProgressData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.OccupyingMandateProgressDto> GetOccupyingMandateProgressData() {
             return base.Channel.GetOccupyingMandateProgressData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.OccupyingMandateProgressData, SchedulingClients.MapServiceReference.ServiceCallData>> GetOccupyingMandateProgressDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.OccupyingMandateProgressDto>> GetOccupyingMandateProgressDataAsync() {
             return base.Channel.GetOccupyingMandateProgressDataAsync();
         }
         
-        public SchedulingClients.MapServiceReference.ServiceCallData SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto SetOccupyingMandate(int[] mapItemIds, System.TimeSpan timeout) {
             return base.Channel.SetOccupyingMandate(mapItemIds, timeout);
         }
         
-        public System.Threading.Tasks.Task<SchedulingClients.MapServiceReference.ServiceCallData> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout) {
             return base.Channel.SetOccupyingMandateAsync(mapItemIds, timeout);
         }
         
-        public System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllMoveData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.MoveDto[]> GetAllMoveData() {
             return base.Channel.GetAllMoveData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.MoveData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllMoveDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.MoveDto[]>> GetAllMoveDataAsync() {
             return base.Channel.GetAllMoveDataAsync();
         }
         
-        public System.Tuple<SchedulingClients.MapServiceReference.NodeData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllNodeData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.NodeDto[]> GetAllNodeData() {
             return base.Channel.GetAllNodeData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.NodeData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllNodeDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.NodeDto[]>> GetAllNodeDataAsync() {
             return base.Channel.GetAllNodeDataAsync();
         }
         
-        public System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData> GetAllParameterData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.ParameterDto[]> GetAllParameterData() {
             return base.Channel.GetAllParameterData();
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.ParameterData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetAllParameterDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.ParameterDto[]>> GetAllParameterDataAsync() {
             return base.Channel.GetAllParameterDataAsync();
         }
         
-        public System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData> GetTrajectory(int moveId) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.WaypointDto[]> GetTrajectory(int moveId) {
             return base.Channel.GetTrajectory(moveId);
         }
         
-        public System.Threading.Tasks.Task<System.Tuple<SchedulingClients.MapServiceReference.WaypointData[], SchedulingClients.MapServiceReference.ServiceCallData>> GetTrajectoryAsync(int moveId) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.MapServiceReference.WaypointDto[]>> GetTrajectoryAsync(int moveId) {
             return base.Channel.GetTrajectoryAsync(moveId);
         }
     }

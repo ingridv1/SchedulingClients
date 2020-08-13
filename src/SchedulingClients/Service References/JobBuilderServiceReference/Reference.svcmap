@@ -27,8 +27,6 @@
     <MetadataFile FileName="jobBuilder2.xsd" MetadataType="Schema" ID="37390ccb-5652-4653-b610-cd71bd9dda17" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" />
     <MetadataFile FileName="jobBuilder3.xsd" MetadataType="Schema" ID="2f28580b-93af-457f-8de3-b436ef7736b1" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" />
     <MetadataFile FileName="JobBuilderService.wsdl" MetadataType="Wsdl" ID="ba15354c-b5d0-4d3a-9cf3-a68b427609f9" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobbuilder.svc" />
-    <MetadataFile FileName="jobBuilder9.xsd" MetadataType="Schema" ID="bfe5cd57-ba07-4f2b-824b-c97c570fe180" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd9" />
-    <MetadataFile FileName="jobBuilder4.xsd" MetadataType="Schema" ID="b858ee79-760a-4a84-b306-4f8b30c31046" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd8" />
     <MetadataFile FileName="jobBuilder5.xsd" MetadataType="Schema" ID="22969fb3-42d2-47e3-b3c7-a5cbebf6a6da" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" />
     <MetadataFile FileName="jobBuilder6.xsd" MetadataType="Schema" ID="a131f430-796e-44cf-ab3a-5f80d5284060" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" />
     <MetadataFile FileName="jobBuilder7.xsd" MetadataType="Schema" ID="ee45d193-2488-4149-8a05-2acbe1cb87ad" SourceId="1" SourceUrl="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd7" />
