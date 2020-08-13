@@ -1,5 +1,7 @@
-﻿using SchedulingClients.JobsStateServiceReference;
+﻿using MoreLinq;
+using SchedulingClients.JobsStateServiceReference;
 using System;
+using System.Linq;
 
 namespace SchedulingClients
 {
@@ -9,19 +11,16 @@ namespace SchedulingClients
         {
         }
 
-        public event Action<JobsStateData> JobsStateChange;
+        public event Action<JobsStateDto> JobsStateChange;
 
-        public void OnCallback(JobsStateData callbackObject)
+        public void OnCallback(JobsStateDto callbackObject)
         {
-            Action<JobsStateData> handlers = JobsStateChange;
+            Action<JobsStateDto> handlers = JobsStateChange;
 
-            if (handlers != null)
-            {
-                foreach (Action<JobsStateData> handler in handlers.GetInvocationList())
-                {
-                    handler.BeginInvoke(callbackObject, null, null);
-                }
-            }
+            handlers?
+                   .GetInvocationList()
+                   .Cast<Action<JobsStateDto>>()
+                   .ForEach(e => e.BeginInvoke(callbackObject, null, null));
         }
     }
 }

@@ -1,25 +1,24 @@
-﻿using BaseClients;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BaseClients.Architecture;
+using GAAPICommon.Architecture;
 using SchedulingClients.JobsStateServiceReference;
+using System;
 
 namespace SchedulingClients
 {
     public interface IJobsStateClient : ICallbackClient
     {
-        ServiceOperationResult TryAbortAllJobs(out bool success);
+        IServiceCallResult AbortAllJobs();
 
-        ServiceOperationResult TryAbortAllJobsForAgent(int agentId, out bool success);
+        IServiceCallResult AbortAllJobsForAgent(int agentId);
 
-        ServiceOperationResult TryAbortJob(int jobId, out bool success);
+        IServiceCallResult AbortJob(int jobId, string note);
 
-        ServiceOperationResult TryAbortTask(int taskId, out bool success);
+        IServiceCallResult AbortTask(int taskId);
 
-        ServiceOperationResult TryGetActiveJobIdsForAgent(int agentId, out IEnumerable<int> jobIds);
+        IServiceCallResult<int[]> GetActiveJobIdsForAgent(int agentId);
 
-        JobsStateData JobsStateData { get; }
+        JobsStateDto JobsStateDto { get; }
+
+        event Action<JobsStateDto> JobsStateUpdated;
     }
 }
