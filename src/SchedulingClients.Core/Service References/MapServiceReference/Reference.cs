@@ -260,7 +260,7 @@ namespace SchedulingClients.Core.MapServiceReference {
         private double HeadingRadField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MapItemIdField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private GACore.Architecture.ServiceType[] ServicesField;
@@ -308,14 +308,14 @@ namespace SchedulingClients.Core.MapServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MapItemId {
+        public int Id {
             get {
-                return this.MapItemIdField;
+                return this.IdField;
             }
             set {
-                if ((this.MapItemIdField.Equals(value) != true)) {
-                    this.MapItemIdField = value;
-                    this.RaisePropertyChanged("MapItemId");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }

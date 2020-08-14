@@ -12,8 +12,8 @@ namespace SchedulingClients.Core
 
         public static bool IsWithin(this MoveDto move, IEnumerable<NodeDto> node, Rect boundingBox)
         {
-            NodeDto source = node.First(e => e.MapItemId == move.SourceId);
-            NodeDto dest = node.First(e => e.MapItemId == move.DestinationId);
+            NodeDto source = node.First(e => e.Id == move.SourceId);
+            NodeDto dest = node.First(e => e.Id == move.DestinationId);
 
             if (boundingBox.Contains(source.ToPoint()))
                 return true;

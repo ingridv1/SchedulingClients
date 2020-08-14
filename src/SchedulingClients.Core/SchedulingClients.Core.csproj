@@ -128,6 +128,7 @@
     <Compile Include="Client Interfaces\ITaskStateClient.cs" />
     <Compile Include="ClientFactory.cs" />
     <Compile Include="EndpointSettings_ExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="JobBuilderClient.cs" />
     <Compile Include="JobsStateClient.cs" />
     <Compile Include="JobsStateServiceCallback.cs" />
