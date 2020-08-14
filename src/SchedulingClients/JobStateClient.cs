@@ -2,6 +2,10 @@
 using SchedulingClients.JobStateServiceReference;
 using System.ServiceModel;
 using BaseClients;
+using BaseClients.Core;
+using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
+using GAAPICommon.Core;
 
 namespace SchedulingClients
 {
@@ -23,7 +27,7 @@ namespace SchedulingClients
             this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
         }
 
-        public event Action<JobProgressData> JobProgressUpdated
+        public event Action<JobProgressDto> JobProgressUpdated
         {
             add { callback.JobProgressUpdated += value; }
             remove { callback.JobProgressUpdated -= value; }
@@ -40,20 +44,25 @@ namespace SchedulingClients
         /// <param name="jobId">Job id</param>
         /// <param name="jobState">State job is in</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetJobSummary(int jobId, out JobSummaryData jobSummaryData)
+        public IServiceCallResult<JobSummaryDto> GetJobSummary(int jobId)
         {
-            Logger.Info("TryGetJobState()");
+            Logger.Trace($"GetJobSummary jobId:{jobId}");
 
             try
             {
-                var result = GetJobSummary(jobId);
-                jobSummaryData = result.Item1;
-                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
+                using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
+                {
+                    IJobStateService channel = channelFactory.CreateChannel();
+                    ServiceCallResultDto<JobSummaryDto> result = channel.GetJobSummary(jobId);
+                    channelFactory.Close();
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
-                jobSummaryData = null;
-                return HandleClientException(ex);
+                Logger.Error(ex);
+                return ServiceCallResultFactory<JobSummaryDto>.FromClientException(ex);
             }
         }
 
@@ -63,20 +72,25 @@ namespace SchedulingClients
         /// <param name="taskId">Task id</param>
         /// <param name="jobSummaryData">Job summary</param>
         /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData)
+        public IServiceCallResult<JobSummaryDto> GetParentJobSummaryFromTaskId(int taskId)
         {
-            Logger.Info("TryGetParentJobSummaryFromTaskId()");
+            Logger.Trace($"GetParentJobSummaryFromTaskId jobId:{taskId}");
 
             try
             {
-                var result = GetParentJobSummaryFromTaskId(taskId);
-                jobSummaryData = result.Item1;
-                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
+                using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
+                {
+                    IJobStateService channel = channelFactory.CreateChannel();
+                    ServiceCallResultDto<JobSummaryDto> result = channel.GetParentJobSummaryFromTaskId(taskId);
+                    channelFactory.Close();
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
-                jobSummaryData = null;
-                return HandleClientException(ex);
+                Logger.Error(ex);
+                return ServiceCallResultFactory<JobSummaryDto>.FromClientException(ex);
             }
         }
 
@@ -86,51 +100,33 @@ namespace SchedulingClients
         /// <param name="agentId">Agent id</param>
         /// <param name="jobSummaryData">Job summary</param>
         /// <returns>ServiceOperationResult</return
-        public ServiceOperationResult TryGetCurrentJobSummaryForAgentId(int agentId, out JobSummaryData jobSummaryData)
+        public IServiceCallResult<JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId)
         {
-            Logger.Info("TryGetCurrentJobSummaryForAgentId()");
+            Logger.Trace($"GetParentJobSummaryFromTaskId agentId:{agentId}");
 
             try
             {
-                var result = GetCurrentJobSummaryForAgentId(agentId);
-                jobSummaryData = result.Item1;
-                return ServiceOperationResultFactory.FromJobStateServiceCallData(result.Item2);
+                using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
+                {
+                    IJobStateService channel = channelFactory.CreateChannel();
+                    ServiceCallResultDto<JobSummaryDto> result = channel.GetCurrentJobSummaryForAgentId(agentId);
+                    channelFactory.Close();
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
-                jobSummaryData = null;
-                return HandleClientException(ex);
+                Logger.Error(ex);
+                return ServiceCallResultFactory<JobSummaryDto>.FromClientException(ex);
             }
-        }
-
-
-        private Tuple<JobSummaryData, ServiceCallData> GetCurrentJobSummaryForAgentId(int agentId)
-        {
-            Logger.Debug("GetCurrentJobSummaryForAgentId()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobStateClient");
-            }
-            Tuple<JobSummaryData, ServiceCallData> result;
-
-            using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
-            {
-                IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetCurrentJobSummaryForAgentId(agentId);
-                channelFactory.Close();
-            }
-
-            return result;
         }
 
 
         protected override void Dispose(bool isDisposing)
         {
             if (isDisposed)
-            {
                 return;
-            }
 
             isDisposed = true;
 
@@ -139,10 +135,10 @@ namespace SchedulingClients
 
         protected override void HeartbeatThread()
         {
-            Logger.Debug("HeartbeatThread()");
+            Logger.Trace("HeartbeatThread()");
 
             ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory();
-            IJobStateService servicingService = channelFactory.CreateChannel();
+            IJobStateService channel = channelFactory.CreateChannel();
 
             bool? exceptionCaught;
 
@@ -153,7 +149,7 @@ namespace SchedulingClients
                 try
                 {
                     Logger.Trace("SubscriptionHeartbeat({0})", Key);
-                    servicingService.SubscriptionHeartbeat(Key);
+                    channel.SubscriptionHeartbeat(Key);
                     IsConnected = true;
                     exceptionCaught = false;
                 }
@@ -174,59 +170,18 @@ namespace SchedulingClients
                     IsConnected = false;
 
                     channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
-                    servicingService = channelFactory.CreateChannel();
+                    channel = channelFactory.CreateChannel();
                 }
 
                 heartbeatReset.WaitOne(Heartbeat);
             }
 
-            Logger.Debug("HeartbeatThread exit");
+            Logger.Trace("HeartbeatThread exit");
         }
 
         protected override void SetInstanceContext()
         {
-            this.context = new InstanceContext(this.callback);
-        }
-
-        private Tuple<JobSummaryData, ServiceCallData> GetJobSummary(int jobId)
-        {
-            Logger.Debug("GetJobSummary()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobStateClient");
-            }
-            Tuple<JobSummaryData, ServiceCallData> result;
-
-            using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
-            {
-                IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetJobSummary(jobId);
-                channelFactory.Close();
-            }
-
-            return result;
-        }
-
-        private Tuple<JobSummaryData, ServiceCallData> GetParentJobSummaryFromTaskId(int taskId)
-        {
-            Logger.Debug("GetParentJobSummaryFromTaskId()");
-
-            if (isDisposed)
-            {
-                throw new ObjectDisposedException("JobStateClient");
-            }
-
-            Tuple<JobSummaryData, ServiceCallData> result;
-
-            using (ChannelFactory<IJobStateService> channelFactory = CreateChannelFactory())
-            {
-                IJobStateService channel = channelFactory.CreateChannel();
-                result = channel.GetParentJobSummaryFromTaskId(taskId);
-                channelFactory.Close();
-            }
-
-            return result;
+            context = new InstanceContext(callback);
         }
     }
 }

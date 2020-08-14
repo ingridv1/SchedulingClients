@@ -1,4 +1,5 @@
-﻿using BaseClients;
+﻿using BaseClients.Architecture;
+using GAAPICommon.Architecture;
 using SchedulingClients.JobStateServiceReference;
 using System;
 
@@ -6,12 +7,12 @@ namespace SchedulingClients
 {
     public interface IJobStateClient : ICallbackClient
     {
-        ServiceOperationResult TryGetJobSummary(int jobId, out JobSummaryData jobSummaryData);
+        IServiceCallResult<JobSummaryDto> GetJobSummary(int jobId);
 
-        ServiceOperationResult TryGetParentJobSummaryFromTaskId(int taskId, out JobSummaryData jobSummaryData);
+        IServiceCallResult<JobSummaryDto> GetParentJobSummaryFromTaskId(int taskId);
 
-        ServiceOperationResult TryGetCurrentJobSummaryForAgentId(int agentId, out JobSummaryData jobSummaryData);
+        IServiceCallResult<JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId);
 
-        event Action<JobProgressData> JobProgressUpdated;
+        event Action<JobProgressDto> JobProgressUpdated;
     }
 }
