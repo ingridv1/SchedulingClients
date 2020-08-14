@@ -175,7 +175,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ServiceOperationResultFactory.cs" />
     <Compile Include="ServicingClient.cs" />
     <Compile Include="ServicingServiceCallback.cs" />
     <Compile Include="TaskStateClient.cs" />

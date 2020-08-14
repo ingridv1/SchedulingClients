@@ -10,24 +10,25 @@ using BaseClients;
 
 namespace SchedulingClients
 {
+	/*
 	public class OccupyingMandateWrapper
 	{
 		private IMapClient mapClient = null;
 
 		private readonly object lockObject = new object();
 
-		private ObservableCollection<MoveData> moveDataSet = new ObservableCollection<MoveData>();
+		private readonly ObservableCollection<MoveDto> moveDataSet = new ObservableCollection<MoveDto>();
 
-		private ObservableCollection<NodeData> nodeDataSet = new ObservableCollection<NodeData>();
+		private readonly ObservableCollection<NodeDto> nodeDataSet = new ObservableCollection<NodeDto>();
 
-		private ReadOnlyObservableCollection<MoveData> readonlyMoveDataSet;
+		private readonly ReadOnlyObservableCollection<MoveDto> readonlyMoveDataSet;
 
-		private ReadOnlyObservableCollection<NodeData> readonlyNodeDataSet;
+		private readonly ReadOnlyObservableCollection<NodeDto> readonlyNodeDataSet;
 
 		public OccupyingMandateWrapper()
 		{
-			readonlyMoveDataSet = new ReadOnlyObservableCollection<MoveData>(moveDataSet);
-			readonlyNodeDataSet = new ReadOnlyObservableCollection<NodeData>(nodeDataSet);
+			readonlyMoveDataSet = new ReadOnlyObservableCollection<MoveDto>(moveDataSet);
+			readonlyNodeDataSet = new ReadOnlyObservableCollection<NodeDto>(nodeDataSet);
 		}
 
 		public void Configure(IMapClient mapClient)
@@ -40,9 +41,9 @@ namespace SchedulingClients
 			RefreshDataSets(out ServiceOperationResult result);
 		}
 
-		public ReadOnlyObservableCollection<NodeData> NodeDataSet => readonlyNodeDataSet;
+		public ReadOnlyObservableCollection<NodeDto> NodeDataSet => readonlyNodeDataSet;
 
-		public ReadOnlyObservableCollection<MoveData> MoveDataSet => readonlyMoveDataSet;
+		public ReadOnlyObservableCollection<MoveDto> MoveDataSet => readonlyMoveDataSet;
 
 		public bool RefreshDataSets(out ServiceOperationResult result)
 		{
@@ -75,5 +76,5 @@ namespace SchedulingClients
 				return true;
 			}
 		}
-	}
+	}*/
 }

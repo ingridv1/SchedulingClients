@@ -16,7 +16,7 @@ namespace SchedulingClients
 
         IServiceCallResult<WaypointDto[]> GetTrajectory(int moveId);
 
-        IServiceCallResult<OccupyingMandateMapItemDto> GetOccupyingMandateProgressData();
+        IServiceCallResult<OccupyingMandateProgressDto> GetOccupyingMandateProgressData();
 
         IServiceCallResult SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout);
 

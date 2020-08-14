@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SchedulingClients.JobBuilderServiceReference;
 using GACore.Architecture;
+using BaseClients.Core;
+using GAAPICommon.Architecture;
 
 namespace SchedulingClients.Tutorials
 {
@@ -33,8 +35,7 @@ namespace SchedulingClients.Tutorials
             IJobBuilderClient jobBuilderClient = ClientFactory.CreateTcpJobBuilderClient(new EndpointSettings());
 
             // First create job:
-            JobData jobData;
-            jobBuilderClient.TryCreateJob(out jobData);
+            IServiceCallResult<JobDto> createResult = jobBuilderClient.CreateJob();
 
             // Add the prepare at node 5
             int prepareTaskId;

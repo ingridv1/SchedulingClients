@@ -17,8 +17,6 @@ namespace SchedulingClients
     {
         private bool isDisposed = false;
 
-        private TimeSpan heartbeat;
-
         private MapServiceCallback callback = new MapServiceCallback();
 
         public static TimeSpan MinimumHeartbeat => TimeSpan.FromMilliseconds(10000);
@@ -27,10 +25,10 @@ namespace SchedulingClients
         /// Creates a new MapClient
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the map service</param>
-        public MapClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
+        public MapClient(Uri netTcpUri, TimeSpan heartbeat = default)
                     : base(netTcpUri)
         {
-            this.heartbeat = heartbeat < MinimumHeartbeat 
+            Heartbeat = heartbeat < MinimumHeartbeat 
                 ? MinimumHeartbeat 
                 : heartbeat;
 
@@ -136,7 +134,7 @@ namespace SchedulingClients
         /// <summary>
         /// Hearbeat time
         /// </summary>
-        public TimeSpan Heartbeat => heartbeat;
+        public TimeSpan Heartbeat { get; private set; }
 
         protected override void HeartbeatThread()
         {
@@ -239,7 +237,7 @@ namespace SchedulingClients
             }
         }
 
-        public IServiceCallResult<OccupyingMandateMapItemDto[]> GetOccupyingMandateProgressData()
+        public IServiceCallResult<OccupyingMandateProgressDto> GetOccupyingMandateProgressData()
         {
             Logger.Trace("GetOccupyingMandateProgressData()");
 
@@ -248,7 +246,7 @@ namespace SchedulingClients
                 using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
                 {
                     IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<OccupyingMandateMapItemDto[]> result = channel.GetOccupyingMandateProgressData();
+                    ServiceCallResultDto<OccupyingMandateProgressDto> result = channel.GetOccupyingMandateProgressData();
                     channelFactory.Close();
 
                     return result;
@@ -257,7 +255,7 @@ namespace SchedulingClients
             catch (Exception ex)
             {
                 Logger.Error(ex);
-                return ServiceCallResultFactory<OccupyingMandateMapItemDto[]>.FromClientException(ex);
+                return ServiceCallResultFactory<OccupyingMandateProgressDto>.FromClientException(ex);
             }
         }
 
