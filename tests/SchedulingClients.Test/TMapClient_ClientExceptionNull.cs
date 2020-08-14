@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using SchedulingClients.MapServiceReference;
 using BaseClients;
 
 namespace SchedulingClients.Test
 {
+	/*
 	[TestFixture]
 	[Category("Map")]
-	public class TMapClient_ClientExceptionNull : AbstractClientTest
+	public class TMapClient_ClientExceptionNull : AbstractInvalidServerClientTest
 	{
 		[OneTimeSetUp]
 		public override void OneTimeSetup()
@@ -81,5 +81,5 @@ namespace SchedulingClients.Test
 
 			Assert.IsNull(result.ClientException);
 		}
-	}
+	}*/
 }

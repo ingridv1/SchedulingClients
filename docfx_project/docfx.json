@@ -3,9 +3,8 @@
     {
       "src": [
         {
-          "files": [ "**.csproj" ],
-          "exclude": [ "**/bin/**", "**/obj/**", "**Console/", "**App/" ],
-          "src": "../src"
+          "files": [ "src/Plugins.PluginServiceConsumer.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**", "**Console/", "**App/" ]
         }
       ],
       "dest": "api",
