@@ -14,8 +14,6 @@ namespace SchedulingClients
     {
         private JobsStateServiceCallback callback = new JobsStateServiceCallback();
 
-        private TimeSpan heartbeat;
-
         private bool isDisposed = false;
 
         private JobsStateDto jobsStateDto = null;
@@ -30,7 +28,7 @@ namespace SchedulingClients
         public JobsStateClient(Uri netTcpUri, TimeSpan heartbeat = default)
                     : base(netTcpUri)
         {
-            this.heartbeat = heartbeat < MinimumHeartbeat 
+            Heartbeat = heartbeat < MinimumHeartbeat 
                 ? MinimumHeartbeat
                 : heartbeat;
 
@@ -40,7 +38,7 @@ namespace SchedulingClients
         /// <summary>
         /// Hearbeat time
         /// </summary>
-        public TimeSpan Heartbeat => heartbeat;
+        public TimeSpan Heartbeat { get; private set; }
 
         public event Action<JobsStateDto> JobsStateUpdated;
 

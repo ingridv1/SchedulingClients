@@ -1,12 +1,7 @@
-﻿using BaseClients;
-using SchedulingClients;
+﻿using BaseClients.Core;
 using SchedulingClients.TaskStateServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
@@ -14,27 +9,28 @@ namespace SchedulingClients
     {
         private TaskStateServiceCallback callback = new TaskStateServiceCallback();
 
-        private TimeSpan heartbeat;
-
-        public TaskStateClient(Uri netTcpUri, TimeSpan hearbeat = default(TimeSpan))
+        public TaskStateClient(Uri netTcpUri, TimeSpan heartbeat = default)
             : base(netTcpUri)
         {
-            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
+            Heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) 
+                ? TimeSpan.FromMilliseconds(1000) 
+                : heartbeat;
         }
 
-        public event Action<TaskProgressData> TaskProgressUpdated
+        public event Action<TaskProgressDto> TaskProgressUpdated
         {
             add { callback.TaskProgressUpdated += value; }
             remove { callback.TaskProgressUpdated -= value; }
         }
 
-        public TimeSpan Heartbeat => heartbeat; 
+        public TimeSpan Heartbeat { get; private set; }
 
         private bool isDisposed = false;
 
         protected override void Dispose(bool isDisposing)
         {
-            if (isDisposed) return;
+            if (isDisposed)
+                return;
 	
             isDisposed = true;
 
@@ -43,10 +39,10 @@ namespace SchedulingClients
 
         protected override void HeartbeatThread()
         {
-            Logger.Debug("HeartbeatThread()");
+            Logger.Trace("HeartbeatThread()");
 
             ChannelFactory<ITaskStateService> channelFactory = CreateChannelFactory();
-            ITaskStateService taskStateService = channelFactory.CreateChannel();
+            ITaskStateService channel = channelFactory.CreateChannel();
 
             bool? exceptionCaught;
 
@@ -57,7 +53,7 @@ namespace SchedulingClients
                 try
                 {
                     Logger.Trace("SubscriptionHeartbeat({0})", Key);
-                    taskStateService.SubscriptionHeartbeat(Key);
+                    channel.SubscriptionHeartbeat(Key);
                     IsConnected = true;
                     exceptionCaught = false;
                 }
@@ -78,19 +74,19 @@ namespace SchedulingClients
                     IsConnected = false;
 
                     channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
-                    taskStateService = channelFactory.CreateChannel();
+                    channel = channelFactory.CreateChannel();
                 }
 
                 heartbeatReset.WaitOne(Heartbeat);
             }
 
-            Logger.Debug("HeartbeatThread exit");
+            Logger.Trace("HeartbeatThread exit");
         }
 
 
         protected override void SetInstanceContext()
         {
-            this.context = new InstanceContext(this.callback);
+            context = new InstanceContext(callback);
         }
 
     }

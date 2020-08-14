@@ -1,4 +1,5 @@
-﻿using SchedulingClients.MapServiceReference;
+﻿using MoreLinq;
+using SchedulingClients.MapServiceReference;
 using System;
 using System.Linq;
 

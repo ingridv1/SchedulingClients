@@ -13,18 +13,16 @@ namespace SchedulingClients
     {
         private JobStateServiceCallback callback = new JobStateServiceCallback();
 
-        private TimeSpan heartbeat;
-
         private bool isDisposed = false;
 
         /// <summary>
         /// Creates a JobStateClient
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the job state service</param>
-        public JobStateClient(Uri netTcpUri, TimeSpan hearbeat = default(TimeSpan))
+        public JobStateClient(Uri netTcpUri, TimeSpan heartbeat = default)
             : base(netTcpUri)
         {
-            heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) 
+            Heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) 
                 ? TimeSpan.FromMilliseconds(1000)
                 : heartbeat;
         }
@@ -38,7 +36,7 @@ namespace SchedulingClients
         /// <summary>
         /// Heartbeat time
         /// </summary>
-        public TimeSpan Heartbeat { get { return heartbeat; } }
+        public TimeSpan Heartbeat { get; private set; }
 
         /// <summary>
         /// Gets the state of a specific job

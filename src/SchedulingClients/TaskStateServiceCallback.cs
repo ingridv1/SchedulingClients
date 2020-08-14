@@ -1,9 +1,7 @@
-﻿using SchedulingClients.TaskStateServiceReference;
+﻿using MoreLinq;
+using SchedulingClients.TaskStateServiceReference;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchedulingClients
 {
@@ -13,19 +11,16 @@ namespace SchedulingClients
         {
         }
 
-        public event Action<TaskProgressData> TaskProgressUpdated;
+        public event Action<TaskProgressDto> TaskProgressUpdated;
 
-        public void OnCallback(TaskProgressData taskProgressData)
+        public void OnCallback(TaskProgressDto taskProgressDto)
         {
-            Action<TaskProgressData> handlers = TaskProgressUpdated;
+            Action<TaskProgressDto> handlers = TaskProgressUpdated;
 
-            if (handlers != null)
-            {
-                foreach (Action<TaskProgressData> handler in handlers.GetInvocationList())
-                {
-                    handler.BeginInvoke(taskProgressData, null, null);
-                }
-            }
+            handlers?
+                   .GetInvocationList()
+                   .Cast<Action<TaskProgressDto>>()
+                   .ForEach(e => e.BeginInvoke(taskProgressDto, null, null));
         }
     }
 }
