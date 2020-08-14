@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/servicing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing.Dtos" />
   <xs:complexType name="ServiceCallResultDtoOfSemVerDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
@@ -36,21 +36,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SemVerDto" nillable="true" type="tns:SemVerDto" />
-  <xs:complexType name="ServiceCallResultDtoOfArrayOfServiceStateDataeGINPe74">
+  <xs:complexType name="ServiceCallResultDtoOfArrayOfServiceStateDtoNJ_PpSeaL">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="ServiceCallResultDtoOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfServiceStateData" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" />
+          <GenericParameter Name="ArrayOfServiceStateDto" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing.Dtos" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ServiceCallResultDto">
         <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing" minOccurs="0" name="Value" nillable="true" type="q1:ArrayOfServiceStateData" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing.Dtos" minOccurs="0" name="Value" nillable="true" type="q1:ArrayOfServiceStateDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ServiceCallResultDtoOfArrayOfServiceStateDataeGINPe74" nillable="true" type="tns:ServiceCallResultDtoOfArrayOfServiceStateDataeGINPe74" />
+  <xs:element name="ServiceCallResultDtoOfArrayOfServiceStateDtoNJ_PpSeaL" nillable="true" type="tns:ServiceCallResultDtoOfArrayOfServiceStateDtoNJ_PpSeaL" />
 </xs:schema>

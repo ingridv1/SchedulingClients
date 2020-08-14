@@ -1,4 +1,9 @@
 ﻿using BaseClients;
+using BaseClients.Core;
+using GAAPICommon.Architecture;
+using GAAPICommon.Core;
+using GAAPICommon.Core.Dtos;
+using NLog;
 using SchedulingClients.ServicingServiceReference;
 using System;
 using System.ServiceModel;
@@ -9,25 +14,25 @@ namespace SchedulingClients
     {
         private ServicingServiceCallback callback = new ServicingServiceCallback();
 
-        private TimeSpan heartbeat;
-
         private bool isDisposed = false;
 
         /// <summary>
         /// Creates a new servicing client
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the servicing service</param>
-        /// <param name="heartbeat">Heartbeat</param>
-        public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default(TimeSpan))
+        /// <param name="Heartbeat">Heartbeat</param>
+        public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default)
                     : base(netTcpUri)
         {
-            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
+            Heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) 
+                ? TimeSpan.FromMilliseconds(1000)
+                : Heartbeat;
         }
 
         /// <summary>
         /// New service request received
         /// </summary>
-        public event Action<ServiceStateData> ServiceRequest
+        public event Action<ServiceStateDto> ServiceRequest
         {
             add { callback.ServiceRequest += value; }
             remove { callback.ServiceRequest -= value; }
@@ -36,39 +41,42 @@ namespace SchedulingClients
         /// <summary>
         /// Heartbeat time
         /// </summary>
-        public TimeSpan Heartbeat { get { return heartbeat; } }
+        public TimeSpan Heartbeat { get; private set; } 
 
-        /// <summary>
-        /// Sets a service to complete
-        /// </summary>
-        /// <param name="taskId">Id of the service task</param>
-        /// <param name="success">True if successfull</param>
-        /// <returns>ServiceOperationResult</returns>
-        public ServiceOperationResult TrySetServiceComplete(int taskId, out bool success)
+    /// <summary>
+    /// Sets a service to complete
+    /// </summary>
+    /// <param name="taskId">Id of the service task</param>
+    /// <param name="success">True if successfull</param>
+    /// <returns>ServiceOperationResult</returns>
+    public IServiceCallResult SetServiceComplete(int taskId)
+    {
+        Logger.Trace($"SetServiceComplete taskId:{taskId}");
+
+        try
         {
-            Logger.Info("TrySetServiceComplete({0})", taskId);
+            using (ChannelFactory<IServicingService> channelFactory = CreateChannelFactory())
+            {
+                IServicingService channel = channelFactory.CreateChannel();
+                ServiceCallResultDto result = channel.SetServiceComplete(taskId);
+                channelFactory.Close();
 
-            try
-            {
-                var result = SetServiceComplete(taskId);
-                success = result.Item1;
-                return ServiceOperationResultFactory.FromServicingServiceCallData(result.Item2);
-            }
-            catch (Exception ex)
-            {
-                success = false;
-                return HandleClientException(ex);
+                return result;
             }
         }
+        catch (Exception ex)
+        {
+            Logger.Error(ex);
+            return ServiceCallResultFactory.FromClientException(ex);
+        }
+    }
 
-        protected override void Dispose(bool isDisposing)
+    protected override void Dispose(bool isDisposing)
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
-            if (isDisposed)
-            {
+            if (isDisposed)            
                 return;
-            }
 
             isDisposed = true;
 
@@ -77,10 +85,10 @@ namespace SchedulingClients
 
         protected override void HeartbeatThread()
         {
-            Logger.Debug("HeartbeatThread()");
+            Logger.Trace("HeartbeatThread()");
 
             ChannelFactory<IServicingService> channelFactory = CreateChannelFactory();
-            IServicingService servicingService = channelFactory.CreateChannel();
+            IServicingService channel = channelFactory.CreateChannel();
 
             bool? exceptionCaught;
 
@@ -91,7 +99,7 @@ namespace SchedulingClients
                 try
                 {
                     Logger.Trace("SubscriptionHeartbeat({0})", Key);
-                    servicingService.SubscriptionHeartbeat(Key);
+                    channel.SubscriptionHeartbeat(Key);
                     IsConnected = true;
                     exceptionCaught = false;
                 }
@@ -112,39 +120,40 @@ namespace SchedulingClients
                     IsConnected = false;
 
                     channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
-                    servicingService = channelFactory.CreateChannel();
+                    channel = channelFactory.CreateChannel();
                 }
 
                 heartbeatReset.WaitOne(Heartbeat);
             }
 
-            Logger.Debug("HeartbeatThread exit");
+            Logger.Trace("HeartbeatThread exit");
         }
 
         protected override void SetInstanceContext()
         {
-            this.context = new InstanceContext(this.callback);
+            context = new InstanceContext(callback);
         }
 
-        private Tuple<bool, ServiceCallData> SetServiceComplete(int taskId)
+        public IServiceCallResult<ServiceStateDto[]> GetOutstandingServiceRequests()
         {
-            Logger.Debug("SetServiceComplete({0})", taskId);
+            Logger.Trace($"GetOutstandingServiceRequests");
 
-            if (isDisposed)
+            try
             {
-                throw new ObjectDisposedException("RoadmapClient");
+                using (ChannelFactory<IServicingService> channelFactory = CreateChannelFactory())
+                {
+                    IServicingService channel = channelFactory.CreateChannel();
+                    ServiceCallResultDto<ServiceStateDto[]> result = channel.GetOutstandingServiceRequests();
+                    channelFactory.Close();
+
+                    return result;
+                }
             }
-
-            Tuple<bool, ServiceCallData> result;
-
-            using (ChannelFactory<IServicingService> channelFactory = CreateChannelFactory())
+            catch (Exception ex)
             {
-                IServicingService channel = channelFactory.CreateChannel();
-                result = channel.SetServiceComplete(taskId);
-                channelFactory.Close();
+                Logger.Error(ex);
+                return ServiceCallResultFactory<ServiceStateDto[]>.FromClientException(ex);
             }
-
-            return result;
         }
     }
 }

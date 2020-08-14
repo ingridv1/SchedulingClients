@@ -15,9 +15,9 @@ namespace SchedulingClients.ServicingServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceStateData", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceStateDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Servicing.Dtos")]
     [System.SerializableAttribute()]
-    public partial class ServiceStateData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ServiceStateDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -107,13 +107,13 @@ namespace SchedulingClients.ServicingServiceReference {
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/GetOutstandingServiceRequests", ReplyAction="http://tempuri.org/IServicingService/GetOutstandingServiceRequestsResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateData[]> GetOutstandingServiceRequests();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateDto[]> GetOutstandingServiceRequests();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/GetOutstandingServiceRequests", ReplyAction="http://tempuri.org/IServicingService/GetOutstandingServiceRequestsResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateData[]>> GetOutstandingServiceRequestsAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateDto[]>> GetOutstandingServiceRequestsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/SetServiceComplete", ReplyAction="http://tempuri.org/IServicingService/SetServiceCompleteResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateData[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
         GAAPICommon.Core.Dtos.ServiceCallResultDto SetServiceComplete(int taskId);
         
@@ -125,7 +125,7 @@ namespace SchedulingClients.ServicingServiceReference {
     public interface IServicingServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicingService/OnCallback", ReplyAction="http://tempuri.org/IServicingService/OnCallbackResponse")]
-        void OnCallback(SchedulingClients.ServicingServiceReference.ServiceStateData callbackObject);
+        void OnCallback(SchedulingClients.ServicingServiceReference.ServiceStateDto callbackObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -172,11 +172,11 @@ namespace SchedulingClients.ServicingServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateData[]> GetOutstandingServiceRequests() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateDto[]> GetOutstandingServiceRequests() {
             return base.Channel.GetOutstandingServiceRequests();
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateData[]>> GetOutstandingServiceRequestsAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.ServicingServiceReference.ServiceStateDto[]>> GetOutstandingServiceRequestsAsync() {
             return base.Channel.GetOutstandingServiceRequestsAsync();
         }
         

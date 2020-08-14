@@ -1,5 +1,6 @@
 ﻿using SchedulingClients.MapServiceReference;
 using System;
+using System.Linq;
 
 namespace SchedulingClients
 {
@@ -15,13 +16,10 @@ namespace SchedulingClients
         {
             Action<OccupyingMandateProgressDto> handlers = OccupyingMandateProgressChange;
 
-            if (handlers != null)
-            {
-                foreach(Action<OccupyingMandateProgressDto> handler in handlers.GetInvocationList())
-                {
-                    handler.BeginInvoke(callbackObject, null, null);
-                }
-            }
+            handlers?
+                   .GetInvocationList()
+                   .Cast<Action<OccupyingMandateProgressDto>>()
+                   .ForEach(e => e.BeginInvoke(callbackObject, null, null));
         }
     }
 }

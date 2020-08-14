@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using MoreLinq;
 using SchedulingClients.JobStateServiceReference;
 
 namespace SchedulingClients
@@ -15,13 +17,10 @@ namespace SchedulingClients
         {
             Action<JobProgressDto> handlers = JobProgressUpdated;
 
-            if (handlers != null)
-            {
-                foreach (Action<JobProgressDto> handler in handlers.GetInvocationList())
-                {
-                    handler.BeginInvoke(jobProgressDto, null, null);
-                }
-            }
+            handlers?
+                   .GetInvocationList()
+                   .Cast<Action<JobProgressDto>>()
+                   .ForEach(e => e.BeginInvoke(jobProgressDto, null, null));
         }
     }
 }

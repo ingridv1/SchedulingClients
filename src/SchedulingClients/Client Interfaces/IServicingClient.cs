@@ -1,4 +1,5 @@
-﻿using BaseClients;
+﻿using BaseClients.Architecture;
+using GAAPICommon.Architecture;
 using SchedulingClients.ServicingServiceReference;
 using System;
 
@@ -6,8 +7,10 @@ namespace SchedulingClients
 {
     public interface IServicingClient : ICallbackClient
     {
-        ServiceOperationResult TrySetServiceComplete(int taskId, out bool success);
+        IServiceCallResult<ServiceStateDto[]> GetOutstandingServiceRequests();
 
-        event Action<ServiceStateData> ServiceRequest;
+        IServiceCallResult SetServiceComplete(int taskId);
+
+        event Action<ServiceStateDto> ServiceRequest;
     }
 }

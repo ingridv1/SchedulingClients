@@ -324,7 +324,7 @@
     <None Include="Service References\MapServiceReference\SchedulingClients.MapServiceReference.WaypointDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateData.datasource">
+    <None Include="Service References\ServicingServiceReference\SchedulingClients.ServicingServiceReference.ServiceStateDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicingServiceReference\servicing.xsd">

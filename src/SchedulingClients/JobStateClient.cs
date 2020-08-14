@@ -24,7 +24,9 @@ namespace SchedulingClients
         public JobStateClient(Uri netTcpUri, TimeSpan hearbeat = default(TimeSpan))
             : base(netTcpUri)
         {
-            this.heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) ? TimeSpan.FromMilliseconds(1000) : heartbeat;
+            heartbeat = heartbeat < TimeSpan.FromMilliseconds(1000) 
+                ? TimeSpan.FromMilliseconds(1000)
+                : heartbeat;
         }
 
         public event Action<JobProgressDto> JobProgressUpdated

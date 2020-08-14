@@ -1,5 +1,7 @@
-﻿using SchedulingClients.ServicingServiceReference;
+﻿using MoreLinq;
+using SchedulingClients.ServicingServiceReference;
 using System;
+using System.Linq;
 
 namespace SchedulingClients
 {
@@ -9,19 +11,16 @@ namespace SchedulingClients
         {
         }
 
-        public event Action<ServiceStateData> ServiceRequest;
+        public event Action<ServiceStateDto> ServiceRequest;
 
-        public void OnCallback(ServiceStateData serviceStateData)
+        public void OnCallback(ServiceStateDto serviceStateData)
         {
-            Action<ServiceStateData> handlers = ServiceRequest;
+            Action<ServiceStateDto> handlers = ServiceRequest;
 
-            if (handlers != null)
-            {
-                foreach (Action<ServiceStateData> handler in handlers.GetInvocationList())
-                {
-                    handler.BeginInvoke(serviceStateData, null, null);
-                }
-            }
+            handlers?
+                   .GetInvocationList()
+                   .Cast<Action<ServiceStateDto>>()
+                   .ForEach(e => e.BeginInvoke(serviceStateData, null, null));
         }
     }
 }
