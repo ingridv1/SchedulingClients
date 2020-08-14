@@ -128,7 +128,6 @@
     <Compile Include="Client Interfaces\IServicingClient.cs" />
     <Compile Include="Client Interfaces\ITaskStateClient.cs" />
     <Compile Include="ClientFactory.cs" />
-    <Compile Include="ControllerState.cs" />
     <Compile Include="EndpointSettings_ExtensionMethods.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="JobBuilderClient.cs" />
@@ -138,7 +137,6 @@
     <Compile Include="JobStateServiceCallback.cs" />
     <Compile Include="MapClient.cs" />
     <Compile Include="MapServiceCallback.cs" />
-    <Compile Include="OccupyingMandateWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AgentServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
