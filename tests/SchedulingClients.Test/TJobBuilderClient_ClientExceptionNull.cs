@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using BaseClients;
-using SchedulingClients.JobBuilderServiceReference;
 using System.Net;
 using GACore.Architecture;
 
 namespace SchedulingClients.Test
 {
+	/*
 	[TestFixture]
 	[Category("JobBuilder")]
-	public class TJobBuilderClient_ClientExceptionNull : AbstractClientTest
+	public class TJobBuilderClient_ClientExceptionNull : AbstractInvalidServerClientTest
 	{
 		[OneTimeSetUp]
 		public override void OneTimeSetup()
@@ -201,5 +201,5 @@ namespace SchedulingClients.Test
 
 			Assert.IsNull(result.ClientException);
 		}
-	}
+	}*/
 }

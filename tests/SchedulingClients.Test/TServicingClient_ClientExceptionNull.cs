@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using BaseClients;
+using GAAPICommon.Architecture;
+using System.IO.IsolatedStorage;
+using SchedulingClients.Core;
 
 namespace SchedulingClients.Test
 {
+	
 	[TestFixture]
 	[Category("Servicing")]
-	public class TServicingClient_ClientExceptionNull : AbstractClientTest
+	public class TServicingClient_ClientExceptionNull : AbstractInvalidServerClientTest
 	{
 		[OneTimeSetUp]
 		public override void OneTimeSetup()
@@ -26,10 +30,10 @@ namespace SchedulingClients.Test
 		[Category("ClientExceptionNull")]
 		public void TryGetServicingClient_ClientExceptionNull()
 		{
-			bool success;
-			ServiceOperationResult result = ServicingClient.TrySetServiceComplete(1, out success);
+			IServiceCallResult result = ServicingClient.SetServiceComplete(1);
 
-			Assert.IsNull(result.ClientException);
+			Assert.IsFalse(result.IsSuccessful());
+			Assert.AreEqual(4, result.ServiceCode);
 		}
 	}
 }

@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using SchedulingClients.MapServiceReference;
 using BaseClients;
 
 namespace SchedulingClients.Test
 {
+    /*
     /// <summary>
     /// Requires a server to be running on local host to be succesfull with a populated map
     /// </summary>
     [Category("MapClient")]
-    public class TMapClient : AbstractClientTest
+    public class TMapClient : AbstractInvalidServerClientTest
     {
         [OneTimeSetUp]
         public override void OneTimeSetup()
@@ -53,5 +53,5 @@ namespace SchedulingClients.Test
                 CollectionAssert.IsNotEmpty(waypointData);
             }
         }
-    }
+    }*/
 }

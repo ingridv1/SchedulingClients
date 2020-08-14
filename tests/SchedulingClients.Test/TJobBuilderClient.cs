@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using SchedulingClients.JobBuilderServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +9,10 @@ using System.Net;
 
 namespace SchedulingClients.Test
 {
+    /*
     [TestFixture]
     [Category("JobBuilder")]
-    public class TJobBuilderClient : AbstractClientTest
+    public class TJobBuilderClient : AbstractInvalidServerClientTest
     {
         [OneTimeSetUp]
         public override void OneTimeSetup()
@@ -64,5 +64,5 @@ namespace SchedulingClients.Test
             Assert.IsTrue(result.IsSuccessfull);
             Assert.IsNotNull(jobData);
         }
-	}
+	}*/
 }

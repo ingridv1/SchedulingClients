@@ -1,17 +1,16 @@
-﻿using System;
+﻿using GAAPICommon.Architecture;
+using GACore.Architecture;
+using NUnit.Framework;
+using SchedulingClients.Core;
+using SchedulingClients.Core.AgentServiceReference;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using SchedulingClients.AgentServiceReference;
-using BaseClients;
 
 namespace SchedulingClients.Test
 {
-	[TestFixture]
+    [TestFixture]
 	[Category("Agent")]
-	public class TAgentClient_ClientExceptionNull : AbstractClientTest
+	public class TAgentClient_ClientExceptionNull : AbstractInvalidServerClientTest
 	{
 		[OneTimeSetUp]
 		public override void OneTimeSetup()
@@ -25,22 +24,22 @@ namespace SchedulingClients.Test
 
 		[Test]
 		[Category("ClientExceptionNull")]
-		public void TryGetAllAgentData_ClientExceptionNull()
+		public void GetAllAgentData_ClientException()
 		{
-			IEnumerable<AgentData> agentData;
-			ServiceOperationResult result = AgentClient.TryGetAllAgentData(out agentData);
+			IServiceCallResult result = AgentClient.GetAllAgentData();
 
-			Assert.IsNull(result.ClientException);
+			Assert.IsFalse(result.IsSuccessful());
+			Assert.AreEqual(4, result.ServiceCode);
 		}
 
 		[Test]
 		[Category("ClientExceptionNull")]
-		public void TryGetAllAgentsInLifetimeState_ClientExceptionNull()
+		public void GetAllAgentsInLifetimeState_ClientException()
 		{
-			IEnumerable<AgentData> agentData;
-			ServiceOperationResult result = AgentClient.TryGetAllAgentsInLifetimeState(out agentData, AgentLifetimeState.InService);
+			IServiceCallResult<AgentDto[]> result = AgentClient.GetAllAgentsInLifetimeState(AgentLifetimeState.InService);
 
-			Assert.IsNull(result.ClientException);
+			Assert.IsFalse(result.IsSuccessful());
+			Assert.AreEqual(4, result.ServiceCode);
 		}
 	}
 }
