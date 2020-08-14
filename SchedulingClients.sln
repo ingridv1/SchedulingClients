@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients", "src\SchedulingClients\SchedulingClients.csproj", "{44C76564-FCEA-466C-B7A6-56747A99BADA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.Core", "src\SchedulingClients.Core\SchedulingClients.Core.csproj", "{44C76564-FCEA-466C-B7A6-56747A99BADA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.UserControls", "src\SchedulingClients.UserControls\SchedulingClients.UserControls.csproj", "{57E8C0BE-986B-4CD0-A8F8-634538EC7567}"
 EndProject

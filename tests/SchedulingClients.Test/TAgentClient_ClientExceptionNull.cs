@@ -1,7 +1,8 @@
 ﻿using GAAPICommon.Architecture;
 using GACore.Architecture;
 using NUnit.Framework;
-using SchedulingClients.AgentServiceReference;
+using SchedulingClients.Core;
+using SchedulingClients.Core.AgentServiceReference;
 using System.Collections.Generic;
 using System.Linq;
 

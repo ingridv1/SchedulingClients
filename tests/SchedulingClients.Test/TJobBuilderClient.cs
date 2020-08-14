@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using SchedulingClients.JobBuilderServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -7,6 +7,7 @@ using NUnit.Framework;
 using BaseClients;
 using GAAPICommon.Architecture;
 using System.IO.IsolatedStorage;
+using SchedulingClients.Core;
 
 namespace SchedulingClients.Test
 {

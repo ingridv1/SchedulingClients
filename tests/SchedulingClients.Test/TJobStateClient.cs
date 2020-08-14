@@ -1,6 +1,5 @@
 ﻿using BaseClients;
 using NUnit.Framework;
-using SchedulingClients.JobStateServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;

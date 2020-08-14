@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using BaseClients;
-using SchedulingClients.JobBuilderServiceReference;
 using System.Net;
 using GACore.Architecture;
 

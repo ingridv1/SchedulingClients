@@ -141,9 +141,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\SchedulingClients\SchedulingClients.csproj">
+    <ProjectReference Include="..\..\src\SchedulingClients.Core\SchedulingClients.Core.csproj">
       <Project>{44C76564-FCEA-466C-B7A6-56747A99BADA}</Project>
-      <Name>SchedulingClients</Name>
+      <Name>SchedulingClients.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
