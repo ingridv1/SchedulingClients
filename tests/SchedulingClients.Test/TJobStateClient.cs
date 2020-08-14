@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients.Test
 {
+    /*
     [TestFixture]
-    public class TJobStateClient : AbstractClientTest
+    public class TJobStateClient : AbstractInvalidServerClientTest
     {
         [OneTimeSetUp]
         public override void OneTimeSetup()
@@ -33,5 +34,5 @@ namespace SchedulingClients.Test
             Assert.IsNull(result.ClientException);
         }
 
-    }
+    }*/
 }

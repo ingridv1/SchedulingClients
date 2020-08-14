@@ -8,9 +8,10 @@ using BaseClients;
 
 namespace SchedulingClients.Test
 {
+	/*
 	[TestFixture]
 	[Category("JobsState")]
-	public class TJobsStateClient_ClientExceptionNull : AbstractClientTest
+	public class TJobsStateClient_ClientExceptionNull : AbstractInvalidServerClientTest
 	{
 		[OneTimeSetUp]
 		public override void OneTimeSetup()
@@ -61,5 +62,5 @@ namespace SchedulingClients.Test
 
 			Assert.IsNull(result.ClientException);
 		}
-	}
+	}*/
 }

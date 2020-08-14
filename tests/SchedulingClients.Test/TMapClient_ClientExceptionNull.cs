@@ -9,9 +9,10 @@ using BaseClients;
 
 namespace SchedulingClients.Test
 {
+	/*
 	[TestFixture]
 	[Category("Map")]
-	public class TMapClient_ClientExceptionNull : AbstractClientTest
+	public class TMapClient_ClientExceptionNull : AbstractInvalidServerClientTest
 	{
 		[OneTimeSetUp]
 		public override void OneTimeSetup()
@@ -81,5 +82,5 @@ namespace SchedulingClients.Test
 
 			Assert.IsNull(result.ClientException);
 		}
-	}
+	}*/
 }

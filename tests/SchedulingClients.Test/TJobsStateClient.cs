@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace SchedulingClients.Test
 {
+    /*
     [TestFixture]
     [Category("JobsState")]
-    public class TJobsStateClient : AbstractClientTest
+    public class TJobsStateClient : AbstractInvalidServerClientTest
     {
         [OneTimeSetUp]
         public override void OneTimeSetup()
@@ -34,5 +35,5 @@ namespace SchedulingClients.Test
 
         }
 
-    }
+    }*/
 }
