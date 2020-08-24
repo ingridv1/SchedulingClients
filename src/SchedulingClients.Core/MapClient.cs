@@ -17,7 +17,7 @@ namespace SchedulingClients.Core
     {
         private bool isDisposed = false;
 
-        private MapServiceCallback callback = new MapServiceCallback();
+        private readonly MapServiceCallback callback = new MapServiceCallback();
 
         public static TimeSpan MinimumHeartbeat => TimeSpan.FromMilliseconds(10000);
 
@@ -26,12 +26,8 @@ namespace SchedulingClients.Core
         /// </summary>
         /// <param name="netTcpUri">net.tcp address of the map service</param>
         public MapClient(Uri netTcpUri, TimeSpan heartbeat = default)
-                    : base(netTcpUri)
+                    : base(netTcpUri, heartbeat)
         {
-            Heartbeat = heartbeat < MinimumHeartbeat 
-                ? MinimumHeartbeat 
-                : heartbeat;
-
             callback.OccupyingMandateProgressChange += Callback_OccupyingMandateProgressChange;
         }
 
@@ -85,23 +81,7 @@ namespace SchedulingClients.Core
         public IServiceCallResult<MoveDto[]> GetAllMoveData()
         {
             Logger.Trace("GetAllMoveData()");
-
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<MoveDto[]> result = channel.GetAllMoveData();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<MoveDto[]>.FromClientException(ex);
-            }
+            return HandleAPICall<MoveDto[]>(e => e.GetAllMoveData());
         }
 
         /// <summary>
@@ -112,76 +92,9 @@ namespace SchedulingClients.Core
         public IServiceCallResult<NodeDto[]> GetAllNodeData()
         {
             Logger.Trace("GetAllNodeData()");
-
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<NodeDto[]> result = channel.GetAllNodeData();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<NodeDto[]>.FromClientException(ex);
-            }
+            return HandleAPICall<NodeDto[]>(e => e.GetAllNodeData());
         }
-
-        /// <summary>
-        /// Hearbeat time
-        /// </summary>
-        public TimeSpan Heartbeat { get; private set; }
-
-        protected override void HeartbeatThread()
-        {
-            Logger.Trace("HeartbeatThread()");
-
-            ChannelFactory<IMapService> channelFactory = CreateChannelFactory();
-            IMapService channel = channelFactory.CreateChannel();
-
-            bool? exceptionCaught;
-
-            while (!Terminate)
-            {
-                exceptionCaught = null;
-
-                try
-                {
-                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
-                    channel.SubscriptionHeartbeat(Key);
-                    IsConnected = true;
-                    exceptionCaught = false;
-                }
-                catch (EndpointNotFoundException)
-                {
-                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
-                    exceptionCaught = true;
-                }
-                catch (Exception ex)
-                {
-                    Logger.Error(ex);
-                    exceptionCaught = true;
-                }
-
-                if (exceptionCaught == true)
-                {
-                    channelFactory.Abort();
-                    IsConnected = false;
-
-                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
-                    channel = channelFactory.CreateChannel();
-                }
-
-                heartbeatReset.WaitOne(Heartbeat);
-            }
-
-            Logger.Trace("HeartbeatThread exit");
-        }
-
+          
         /// <summary>
         /// Gets all parameter data
         /// </summary>
@@ -190,23 +103,7 @@ namespace SchedulingClients.Core
         public IServiceCallResult<ParameterDto[]> GetAllParameterData()
         {
             Logger.Trace("GetAllParameterData()");
-
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<ParameterDto[]> result = channel.GetAllParameterData();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<ParameterDto[]>.FromClientException(ex);
-            }
+            return HandleAPICall<ParameterDto[]>(e => e.GetAllParameterData());
         }
 
         /// <summary>
@@ -217,46 +114,14 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<WaypointDto[]> GetTrajectory(int moveId)
         {
-            Logger.Trace("GetTrajectory({0})",moveId);
-
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<WaypointDto[]> result = channel.GetTrajectory(moveId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<WaypointDto[]>.FromClientException(ex);
-            }
+            Logger.Trace($"GetTrajectory() moveId:{moveId}");
+            return HandleAPICall<WaypointDto[]>(e => e.GetTrajectory(moveId));
         }
 
         public IServiceCallResult<OccupyingMandateProgressDto> GetOccupyingMandateProgressData()
         {
             Logger.Trace("GetOccupyingMandateProgressData()");
-
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<OccupyingMandateProgressDto> result = channel.GetOccupyingMandateProgressData();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<OccupyingMandateProgressDto>.FromClientException(ex);
-            }
+            return HandleAPICall<OccupyingMandateProgressDto>(e => e.GetOccupyingMandateProgressData());
         }
 
         /// <summary>
@@ -267,24 +132,11 @@ namespace SchedulingClients.Core
         /// <returns></returns>
         public IServiceCallResult SetOccupyingMandate(HashSet<int> mapItemIds, TimeSpan timeout)
         {
-            Logger.Trace("SetOccupyingMandate()");
+            if (mapItemIds == null)
+                throw new ArgumentNullException("mapItemIds");
 
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.SetOccupyingMandate(mapItemIds.ToArray(), timeout);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"SetOccupyingMandate() {mapItemIds.Count} item(s)");
+            return HandleAPICall(e => e.SetOccupyingMandate(mapItemIds.ToArray(), timeout));
         }
 
         /// <summary>
@@ -293,23 +145,7 @@ namespace SchedulingClients.Core
         public IServiceCallResult ClearOccupyingMandate()
         {
             Logger.Info("ClearOccupyingMandate()");
-
-            try
-            {
-                using (ChannelFactory<IMapService> channelFactory = CreateChannelFactory())
-                {
-                    IMapService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.ClearOccupyingMandate();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            return HandleAPICall(e => e.ClearOccupyingMandate());
         }
 
         protected override void Dispose(bool isDisposing)
@@ -325,5 +161,10 @@ namespace SchedulingClients.Core
 
 			base.Dispose(isDisposing);
 		}
+
+        protected override void HandleSubscriptionHeartbeat(IMapService channel, Guid key)
+        {
+            channel.SubscriptionHeartbeat(key);
+        }
     }
 }

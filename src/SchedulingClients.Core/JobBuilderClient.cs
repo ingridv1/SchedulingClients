@@ -34,24 +34,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult CommitJob(int jobId, int agentId = -1)
         {
-            Logger.Trace("CreateJob()");
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.CommitJob(jobId, agentId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"CommitJob() jobId:{jobId} agentId:{agentId}");
+            return HandleAPICall(e => e.CommitJob(jobId, agentId));
         }
 
         /// <summary>
@@ -62,23 +46,7 @@ namespace SchedulingClients.Core
         public IServiceCallResult<JobDto> CreateJob()
         {
             Logger.Trace("CreateJob()");
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<JobDto> result = channel.CreateJob();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<JobDto>.FromClientException(ex);
-            }
+            return HandleAPICall<JobDto>(e => e.CreateJob());
         }
 
         /// <summary>
@@ -89,26 +57,9 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateOrderedListTask(int parentListTaskId)
         {
-            Logger.Trace("CreateOrderedListTask({0})", parentListTaskId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateOrderedListTask(parentListTaskId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateOrderedListTask() parentListTaskId:{parentListTaskId}");
+            return HandleAPICall<int>(e => e.CreateOrderedListTask(parentListTaskId));  
         }
-
 
         /// <summary>
         /// Creates a new unordered list task
@@ -118,24 +69,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateUnorderedListTask(int parentListTaskId)
         {
-            Logger.Trace("CreateUnorderedListTask({0})", parentListTaskId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateUnorderedListTask(parentListTaskId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateUnorderedListTask() parentListTaskId:{parentListTaskId}");
+            return HandleAPICall<int>(e => e.CreateUnorderedListTask(parentListTaskId));
         }
 
         /// <summary>
@@ -146,24 +81,9 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateAtomicMoveListTask(int parentListTaskId)
         {
-            Logger.Trace("CreateAtomicMoveListTask({0})", parentListTaskId);
+            Logger.Trace($"CreateAtomicMoveListTask() parentListTaskId:{parentListTaskId}");
+            return HandleAPICall<int>(e => e.CreateAtomicMoveListTask(parentListTaskId));
 
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateAtomicMoveListTask(parentListTaskId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
         }
 
         /// <summary>
@@ -177,46 +97,14 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration = default)
         {
-            Logger.Trace("CreateServicingTask({0},{1},{2},{3})", parentListTaskId, nodeId, serviceType, expectedDuration);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateServicingTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId} serviceType:{serviceType} expectedDuration:{expectedDuration}");
+            return HandleAPICall<int>(e => e.CreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration));
         }
 
         public IServiceCallResult<int> CreateChargeTask(int parentListTaskId, int nodeId)
         {
-            Logger.Trace("CreateChargeTask({0},{1})", parentListTaskId, nodeId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateChargeTask(parentListTaskId, nodeId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateChargeTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId}");
+            return HandleAPICall<int>(e => e.CreateChargeTask(parentListTaskId, nodeId));
         }
 
         /// <summary>
@@ -229,26 +117,9 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateSleepingTask(int parentListTaskId, int nodeId, TimeSpan expectedDuration = default)
         {
-            Logger.Trace("CreateSleepingTask({0},{1},{2})", parentListTaskId, nodeId, expectedDuration);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateSleepingTask(parentListTaskId, nodeId, expectedDuration);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateSleepingTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId} expectedDuration:{expectedDuration}");
+            return HandleAPICall<int>(e => e.CreateSleepingTask(parentListTaskId, nodeId, expectedDuration));
         }
-
 
         /// <summary>
         /// Creates a new await task
@@ -259,24 +130,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateAwaitingTask(int parentListTaskId, int nodeId)
         {
-            Logger.Trace("CreateAwaitingTask({0},{1})", parentListTaskId, nodeId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateAwaitingTask(parentListTaskId, nodeId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateAwaitingTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId})");
+            return HandleAPICall<int>(e => e.CreateAwaitingTask(parentListTaskId, nodeId));
         }
 
         /// <summary>
@@ -288,24 +143,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateGoToNodeTask(int parentListTaskId, int nodeId)
         {
-            Logger.Trace("CreateGoToNodeTask({0},{1})", parentListTaskId, nodeId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateGoToNodeTask(parentListTaskId, nodeId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateGoToNodeTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId}");
+            return HandleAPICall<int>(e => e.CreateGoToNodeTask(parentListTaskId, nodeId));
         }
 
         /// <summary>
@@ -316,24 +155,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int> CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId)
         {
-            Logger.Trace("CreateAtomicMoveTask({0},{1})", parentAtomicMoveListTaskId, moveId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int> result = channel.CreateAtomicMoveTask(parentAtomicMoveListTaskId, moveId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int>.FromClientException(ex);
-            }
+            Logger.Trace($"CreateAtomicMoveTask() parentAtomicMoveListTaskId:{parentAtomicMoveListTaskId} moveId:{moveId}");
+            return HandleAPICall<int>(e => e.CreateAtomicMoveTask(parentAtomicMoveListTaskId, moveId));
         }
 
         /// <summary>
@@ -348,24 +171,8 @@ namespace SchedulingClients.Core
             if (string.IsNullOrEmpty(parameterAlias))
                 throw new ArgumentOutOfRangeException("parameterAlias");
 
-            Logger.Trace("IssueEnumDirective({0},{1},{2})", taskId, parameterAlias, value);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.IssueEnumDirective(taskId, parameterAlias, value);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"IssueEnumDirective() taskId:{taskId} parameterAlias:{parameterAlias} value:{value}");
+            return HandleAPICall(e => e.IssueEnumDirective(taskId, parameterAlias, value));
         }
 
         /// <summary>
@@ -380,24 +187,8 @@ namespace SchedulingClients.Core
             if (string.IsNullOrEmpty(parameterAlias))
                 throw new ArgumentOutOfRangeException("parameterAlias");
 
-            Logger.Trace("IssueShortDirective({0},{1},{2})", taskId, parameterAlias, value);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.IssueShortDirective(taskId, parameterAlias, value);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"IssueShortDirective() taskId:{taskId} parameterAlias:{parameterAlias} value:{value}");
+            return HandleAPICall(e => e.IssueShortDirective(taskId, parameterAlias, value));
         }
 
 
@@ -413,24 +204,8 @@ namespace SchedulingClients.Core
             if (string.IsNullOrEmpty(parameterAlias))
                 throw new ArgumentOutOfRangeException("parameterAlias");
 
-            Logger.Trace("IssueUShortDirective({0},{1},{2})", taskId, parameterAlias, value);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.IssueUShortDirective(taskId, parameterAlias, value);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"IssueUShortDirective() taskId:{taskId} parameterAlias:{parameterAlias} value:{value}");
+            return HandleAPICall(e => e.IssueUShortDirective(taskId, parameterAlias, value));
         }
 
         /// <summary>
@@ -445,24 +220,8 @@ namespace SchedulingClients.Core
             if (string.IsNullOrEmpty(parameterAlias))
                 throw new ArgumentOutOfRangeException("parameterAlias");
 
-            Logger.Trace("IssueFloatDirective({0},{1},{2})", taskId, parameterAlias, value);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.IssueFloatDirective(taskId, parameterAlias, value);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"IssueFloatDirective() taskId:{taskId} parameterAlias:{parameterAlias} value:{value}");
+            return HandleAPICall(e => e.IssueFloatDirective(taskId, parameterAlias, value));
         }
 
 
@@ -481,24 +240,8 @@ namespace SchedulingClients.Core
             if (ipAddress == null)
                 throw new ArgumentNullException("ipAddress");
 
-            Logger.Trace("IssueIPAddressDirective({0},{1},{2})", taskId, parameterAlias, ipAddress);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.IssueIPAddressDirective(taskId, parameterAlias, ipAddress);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"IssueIPAddressDirective() taskId:{taskId} parameterAlias:{parameterAlias} ipAddress:{ipAddress}");
+            return HandleAPICall(e => e.IssueIPAddressDirective(taskId, parameterAlias, ipAddress));
         }
 
         /// <summary>
@@ -508,24 +251,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<bool> BeginEditingJob(int jobId)
         {
-            Logger.Trace("BeginEditingJob({0})", jobId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<bool> result = channel.BeginEditingJob(jobId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<bool>.FromClientException(ex);
-            }
+            Logger.Trace($"BeginEditingJob() jobId:{jobId}");
+            return HandleAPICall<bool>(e => e.BeginEditingJob(jobId));
         }
 
         /// <summary>
@@ -535,24 +262,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult FinishEditingJob(int jobId)
         {
-            Logger.Trace("FinishEditingJob({0})", jobId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.FinishEditingJob(jobId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"FinishEditingJob() jobId:{jobId}");
+            return HandleAPICall(e => e.FinishEditingJob(jobId));
         }
 
         /// <summary>
@@ -562,24 +273,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<bool> BeginEditingTask(int taskId)
         {
-            Logger.Trace("BeginEditingTask({0})", taskId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<bool> result = channel.BeginEditingTask(taskId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<bool>.FromClientException(ex);
-            }
+            Logger.Trace($"BeginEditingTask() taskId:{taskId}");
+            return HandleAPICall<bool>(e => e.BeginEditingTask(taskId));
         }
 
         /// <summary>
@@ -589,24 +284,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult FinishEditingTask(int taskId)
         {
-            Logger.Trace("FinishEditingTask({0})", taskId);
-
-            try
-            {
-                using (ChannelFactory<IJobBuilderService> channelFactory = CreateChannelFactory())
-                {
-                    IJobBuilderService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.FinishEditingTask(taskId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"FinishEditingTask() taskId:{taskId}");
+            return HandleAPICall(e => e.FinishEditingTask(taskId));
         }
     }
 }

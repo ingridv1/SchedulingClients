@@ -26,19 +26,10 @@ namespace SchedulingClients.Core
         /// <param name="netTcpUri">net.tcp address of the job state service</param>
         /// <param name="heartbeat">Heartbeat</param>
         public JobsStateClient(Uri netTcpUri, TimeSpan heartbeat = default)
-                    : base(netTcpUri)
+                    : base(netTcpUri, heartbeat)
         {
-            Heartbeat = heartbeat < MinimumHeartbeat 
-                ? MinimumHeartbeat
-                : heartbeat;
-
             callback.JobsStateChange += Callback_JobsStateChange;
         }
-
-        /// <summary>
-        /// Hearbeat time
-        /// </summary>
-        public TimeSpan Heartbeat { get; private set; }
 
         public event Action<JobsStateDto> JobsStateUpdated;
 
@@ -77,46 +68,14 @@ namespace SchedulingClients.Core
         public IServiceCallResult AbortAllJobs()
         {
             Logger.Trace("AbortAllJobs()");
-
-            try
-            {
-                using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-                {
-                    IJobsStateService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.AbortAllJobs();
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            return HandleAPICall(e => e.AbortAllJobs());
         }
 
 
         public IServiceCallResult AbortAllJobsForAgent(int agentId)
         {
-            Logger.Trace("AbortAllJobsForAgent({0})", agentId);
-
-            try
-            {
-                using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-                {
-                    IJobsStateService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.AbortAllJobsForAgent(agentId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"AbortAllJobsForAgent() agentId:{agentId}");
+            return HandleAPICall(e => e.AbortAllJobsForAgent(agentId));
         }
 
         /// <summary>
@@ -130,24 +89,8 @@ namespace SchedulingClients.Core
             if (string.IsNullOrEmpty(note))
                 note = "Unspecified";
 
-            Logger.Trace("AbortJob({0},{1})", jobId, note);
-
-            try
-            {
-                using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-                {
-                    IJobsStateService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.AbortJob(jobId, note);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"AbortJob() jobId:{jobId} note:{note}");
+            return HandleAPICall(e => e.AbortJob(jobId, note));
         }
 
         /// <summary>
@@ -158,24 +101,8 @@ namespace SchedulingClients.Core
         /// <returns></returns>
         public IServiceCallResult AbortTask(int taskId)
         {
-            Logger.Trace("Abort Task({0})", taskId);
-
-            try
-            {
-                using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-                {
-                    IJobsStateService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto result = channel.AbortTask(taskId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory.FromClientException(ex);
-            }
+            Logger.Trace($"AbortTask() taskId:{taskId}");
+            return HandleAPICall(e => e.AbortTask(taskId));
         }
 
         /// <summary>
@@ -186,24 +113,8 @@ namespace SchedulingClients.Core
         /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult<int[]> GetActiveJobIdsForAgent(int agentId)
         {
-            Logger.Trace("GetActiveJobIdsForAgent({0})", agentId);
-
-            try
-            {
-                using (ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory())
-                {
-                    IJobsStateService channel = channelFactory.CreateChannel();
-                    ServiceCallResultDto<int[]> result = channel.GetActiveJobIdsForAgent(agentId);
-                    channelFactory.Close();
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return ServiceCallResultFactory<int[]>.FromClientException(ex);
-            }
+            Logger.Trace($"GetActiveJobIdsForAgent() agentId:{agentId}");
+            return HandleAPICall<int[]>(e => e.GetActiveJobIdsForAgent(agentId));
         }
 
         protected override void Dispose(bool isDisposing)
@@ -218,53 +129,7 @@ namespace SchedulingClients.Core
 
             base.Dispose(isDisposing);
         }
-
-        protected override void HeartbeatThread()
-        {
-            Logger.Trace("HeartbeatThread()");
-
-            ChannelFactory<IJobsStateService> channelFactory = CreateChannelFactory();
-            IJobsStateService channel = channelFactory.CreateChannel();
-
-            bool? exceptionCaught;
-
-            while (!Terminate)
-            {
-                exceptionCaught = null;
-
-                try
-                {
-                    Logger.Trace("SubscriptionHeartbeat({0})", Key);
-                    channel.SubscriptionHeartbeat(Key);
-                    IsConnected = true;
-                    exceptionCaught = false;
-                }
-                catch (EndpointNotFoundException)
-                {
-                    Logger.Warn("HeartbeatThread - EndpointNotFoundException. Is the server running?");
-                    exceptionCaught = true;
-                }
-                catch (Exception ex)
-                {
-                    Logger.Error(ex);
-                    exceptionCaught = true;
-                }
-
-                if (exceptionCaught == true)
-                {
-                    channelFactory.Abort();
-                    IsConnected = false;
-
-                    channelFactory = CreateChannelFactory(); // Create a new channel as this one is dead
-                    channel = channelFactory.CreateChannel();
-                }
-
-                heartbeatReset.WaitOne(Heartbeat);
-            }
-
-            Logger.Trace("HeartbeatThread exit");
-        }
-
+           
         protected override void SetInstanceContext()
         {
             context = new InstanceContext(callback);
@@ -273,6 +138,11 @@ namespace SchedulingClients.Core
         private void Callback_JobsStateChange(JobsStateDto newJobsStateDto)
         {
             JobsStateDto = newJobsStateDto;
+        }
+
+        protected override void HandleSubscriptionHeartbeat(IJobsStateService channel, Guid key)
+        {
+            channel.SubscriptionHeartbeat(key);
         }
     }
 }
