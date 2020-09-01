@@ -23,7 +23,7 @@ namespace SchedulingClients.Core.AgentServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.AgentLifetimeState AgentLifetimeStateField;
+        private GAAPICommon.Architecture.AgentLifetimeState AgentLifetimeStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AliasField;
@@ -45,7 +45,7 @@ namespace SchedulingClients.Core.AgentServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.AgentLifetimeState AgentLifetimeState {
+        public GAAPICommon.Architecture.AgentLifetimeState AgentLifetimeState {
             get {
                 return this.AgentLifetimeStateField;
             }
@@ -123,18 +123,18 @@ namespace SchedulingClients.Core.AgentServiceReference {
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]>> GetAllAgentDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]> GetAllAgentsInLifetimeState(GACore.Architecture.AgentLifetimeState agentLifetimeState);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]> GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState agentLifetimeState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeState", ReplyAction="http://tempuri.org/IAgentService/GetAllAgentsInLifetimeStateResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]>> GetAllAgentsInLifetimeStateAsync(GACore.Architecture.AgentLifetimeState agentLifetimeState);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]>> GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState agentLifetimeState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/SetAgentLifetimeState", ReplyAction="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto SetAgentLifetimeState(int agentId, GACore.Architecture.AgentLifetimeState desiredState);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto SetAgentLifetimeState(int agentId, GAAPICommon.Architecture.AgentLifetimeState desiredState);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAgentService/SetAgentLifetimeState", ReplyAction="http://tempuri.org/IAgentService/SetAgentLifetimeStateResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetAgentLifetimeStateAsync(int agentId, GACore.Architecture.AgentLifetimeState desiredState);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetAgentLifetimeStateAsync(int agentId, GAAPICommon.Architecture.AgentLifetimeState desiredState);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -180,19 +180,19 @@ namespace SchedulingClients.Core.AgentServiceReference {
             return base.Channel.GetAllAgentDataAsync();
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]> GetAllAgentsInLifetimeState(GACore.Architecture.AgentLifetimeState agentLifetimeState) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]> GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState agentLifetimeState) {
             return base.Channel.GetAllAgentsInLifetimeState(agentLifetimeState);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]>> GetAllAgentsInLifetimeStateAsync(GACore.Architecture.AgentLifetimeState agentLifetimeState) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.AgentServiceReference.AgentDto[]>> GetAllAgentsInLifetimeStateAsync(GAAPICommon.Architecture.AgentLifetimeState agentLifetimeState) {
             return base.Channel.GetAllAgentsInLifetimeStateAsync(agentLifetimeState);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto SetAgentLifetimeState(int agentId, GACore.Architecture.AgentLifetimeState desiredState) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto SetAgentLifetimeState(int agentId, GAAPICommon.Architecture.AgentLifetimeState desiredState) {
             return base.Channel.SetAgentLifetimeState(agentId, desiredState);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetAgentLifetimeStateAsync(int agentId, GACore.Architecture.AgentLifetimeState desiredState) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetAgentLifetimeStateAsync(int agentId, GAAPICommon.Architecture.AgentLifetimeState desiredState) {
             return base.Channel.SetAgentLifetimeStateAsync(agentId, desiredState);
         }
     }
