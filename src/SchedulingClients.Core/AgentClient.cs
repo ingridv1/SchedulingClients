@@ -1,11 +1,7 @@
 ﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
-using GAAPICommon.Core;
-using GAAPICommon.Core.Dtos;
-using GACore.Architecture;
 using SchedulingClients.Core.AgentServiceReference;
 using System;
-using System.ServiceModel;
 
 namespace SchedulingClients.Core
 {

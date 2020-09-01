@@ -29,7 +29,7 @@ namespace SchedulingClients.Core.TaskStateServiceReference {
         private int TaskIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.TaskStatus TaskStatusField;
+        private GAAPICommon.Architecture.TaskStatus TaskStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -68,7 +68,7 @@ namespace SchedulingClients.Core.TaskStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.TaskStatus TaskStatus {
+        public GAAPICommon.Architecture.TaskStatus TaskStatus {
             get {
                 return this.TaskStatusField;
             }

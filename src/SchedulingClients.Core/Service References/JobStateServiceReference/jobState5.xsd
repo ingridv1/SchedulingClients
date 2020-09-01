@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="JobSummaryDto">
     <xs:sequence>
       <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="JobId" type="xs:int" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GACore.Architecture" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
       <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Notes" nillable="true" type="q2:ArrayOfstring" />
       <xs:element minOccurs="0" name="RootOrderedListTaskId" type="xs:int" />
       <xs:element minOccurs="0" name="TaskSummaries" nillable="true" type="tns:ArrayOfTaskSummaryDto" />
@@ -25,8 +25,8 @@
       <xs:element minOccurs="0" name="NodeTaskSummaryData" nillable="true" type="tns:NodeTaskSummaryDto" />
       <xs:element minOccurs="0" name="ParentTaskId" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="TaskId" type="xs:int" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GACore.Architecture" minOccurs="0" name="TaskStatus" type="q3:TaskStatus" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GACore.Architecture" minOccurs="0" name="TaskType" type="q4:TaskType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskStatus" type="q3:TaskStatus" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskType" type="q4:TaskType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TaskSummaryDto" nillable="true" type="tns:TaskSummaryDto" />
@@ -40,7 +40,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
       <xs:element minOccurs="0" name="JobId" type="xs:int" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GACore.Architecture" minOccurs="0" name="JobStatus" type="q5:JobStatus" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="JobStatus" type="q5:JobStatus" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JobProgressDto" nillable="true" type="tns:JobProgressDto" />

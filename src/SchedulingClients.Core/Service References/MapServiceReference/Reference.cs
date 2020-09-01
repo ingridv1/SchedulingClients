@@ -26,7 +26,7 @@ namespace SchedulingClients.Core.MapServiceReference {
         private SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto[] OccupyingMandateMapItemDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.OccupyingMandateState OccupyingMandateStateField;
+        private GAAPICommon.Architecture.OccupyingMandateState OccupyingMandateStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.TimeSpan TimeoutRemainingField;
@@ -55,7 +55,7 @@ namespace SchedulingClients.Core.MapServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.OccupyingMandateState OccupyingMandateState {
+        public GAAPICommon.Architecture.OccupyingMandateState OccupyingMandateState {
             get {
                 return this.OccupyingMandateStateField;
             }
@@ -263,7 +263,7 @@ namespace SchedulingClients.Core.MapServiceReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.ServiceType[] ServicesField;
+        private GAAPICommon.Architecture.ServiceType[] ServicesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double XField;
@@ -321,7 +321,7 @@ namespace SchedulingClients.Core.MapServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.ServiceType[] Services {
+        public GAAPICommon.Architecture.ServiceType[] Services {
             get {
                 return this.ServicesField;
             }
