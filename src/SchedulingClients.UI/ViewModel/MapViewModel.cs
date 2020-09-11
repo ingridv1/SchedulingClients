@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using GAAPICommon.Architecture;
+﻿using GAAPICommon.Architecture;
 using GACore;
 using GACore.Command;
-using GACore.UI.ViewModel;
 using SchedulingClients.Core;
 using SchedulingClients.Core.MapServiceReference;
+using System;
+using System.Windows.Input;
 
 namespace SchedulingClients.UI.ViewModel
 {
@@ -51,7 +46,7 @@ namespace SchedulingClients.UI.ViewModel
 
         private void HandleOption(MapOption mapOption)
         {
-            switch(mapOption)
+            switch (mapOption)
             {
                 case MapOption.GetMoves:
                     {
@@ -69,7 +64,6 @@ namespace SchedulingClients.UI.ViewModel
                     throw new NotImplementedException();
             }
         }
-
 
         private bool CanMapOptionClick(object obj) => true;
 

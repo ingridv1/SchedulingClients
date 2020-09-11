@@ -1,11 +1,8 @@
-﻿using System;
-using SchedulingClients.Core.JobStateServiceReference;
-using System.ServiceModel;
-using BaseClients;
-using BaseClients.Core;
+﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
-using GAAPICommon.Core.Dtos;
-using GAAPICommon.Core;
+using SchedulingClients.Core.JobStateServiceReference;
+using System;
+using System.ServiceModel;
 
 namespace SchedulingClients.Core
 {
@@ -66,7 +63,6 @@ namespace SchedulingClients.Core
             return HandleAPICall<JobSummaryDto>(e => e.GetCurrentJobSummaryForAgentId(agentId));
         }
 
-
         protected override void Dispose(bool isDisposing)
         {
             if (isDisposed)
@@ -76,7 +72,7 @@ namespace SchedulingClients.Core
 
             base.Dispose(isDisposing);
         }
-   
+
         protected override void SetInstanceContext()
         {
             context = new InstanceContext(callback);

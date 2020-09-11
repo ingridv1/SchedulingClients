@@ -1,5 +1,4 @@
-﻿using BaseClients;
-using BaseClients.Architecture;
+﻿using BaseClients.Architecture;
 using SchedulingClients.Core.TaskStateServiceReference;
 using System;
 

@@ -1,9 +1,5 @@
-﻿using BaseClients;
-using BaseClients.Core;
+﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
-using GAAPICommon.Core;
-using GAAPICommon.Core.Dtos;
-using NLog;
 using SchedulingClients.Core.ServicingServiceReference;
 using System;
 using System.ServiceModel;
@@ -35,7 +31,6 @@ namespace SchedulingClients.Core
             remove { callback.ServiceRequest -= value; }
         }
 
-
         /// <summary>
         /// Sets a service to complete
         /// </summary>
@@ -52,13 +47,13 @@ namespace SchedulingClients.Core
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
-            if (isDisposed)            
+            if (isDisposed)
                 return;
 
             isDisposed = true;
 
             base.Dispose(isDisposing);
-        }     
+        }
 
         protected override void SetInstanceContext()
         {

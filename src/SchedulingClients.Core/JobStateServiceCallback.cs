@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq;
-using MoreLinq;
+﻿using MoreLinq;
 using SchedulingClients.Core.JobStateServiceReference;
+using System;
+using System.Linq;
 
 namespace SchedulingClients.Core
 {

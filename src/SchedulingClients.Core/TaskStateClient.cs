@@ -26,12 +26,12 @@ namespace SchedulingClients.Core
         {
             if (isDisposed)
                 return;
-	
+
             isDisposed = true;
 
             base.Dispose(isDisposing);
         }
-   
+
         protected override void SetInstanceContext()
         {
             context = new InstanceContext(callback);

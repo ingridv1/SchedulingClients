@@ -1,5 +1,4 @@
-﻿using BaseClients;
-using BaseClients.Core;
+﻿using BaseClients.Core;
 
 namespace SchedulingClients.Core
 {

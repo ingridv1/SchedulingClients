@@ -1,12 +1,4 @@
-﻿using BaseClients;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchedulingClients.Test
+﻿namespace SchedulingClients.Test
 {
     /*
     [TestFixture]
@@ -32,6 +24,5 @@ namespace SchedulingClients.Test
 
             Assert.IsNull(result.ClientException);
         }
-
     }*/
 }

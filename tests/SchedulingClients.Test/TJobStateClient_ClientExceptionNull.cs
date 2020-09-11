@@ -1,14 +1,6 @@
-﻿using BaseClients;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchedulingClients.Test
+﻿namespace SchedulingClients.Test
 {
-	/*
+    /*
 	[TestFixture]
 	[Category("JobState")]
 	public class TJobStateClient_ClientExceptionNull : AbstractInvalidServerClientTest

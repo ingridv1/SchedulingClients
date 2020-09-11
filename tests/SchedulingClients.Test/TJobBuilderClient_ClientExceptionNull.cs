@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using BaseClients;
-using System.Net;
-using GACore.Architecture;
-
-namespace SchedulingClients.Test
+﻿namespace SchedulingClients.Test
 {
-	/*
+    /*
 	[TestFixture]
 	[Category("JobBuilder")]
 	public class TJobBuilderClient_ClientExceptionNull : AbstractInvalidServerClientTest

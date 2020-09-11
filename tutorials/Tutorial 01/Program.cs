@@ -19,9 +19,9 @@ namespace Tutorial_01
     ///     * Gets all the nodes in the map (via the map manager client API)
     ///     * Creates a job that sends the next available to a random node
     /// </summary>
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Here we create an endpoint settings object that defines where the fleet manager service is currently running
             // For this demo we are assuming it is running on localhost, using the default TCP port of 41917.
@@ -90,7 +90,7 @@ namespace Tutorial_01
                             break;
                         }
                 }
-            }         
+            }
         }
     }
 }

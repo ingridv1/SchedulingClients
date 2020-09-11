@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using BaseClients;
-using System.Net;
-using BaseClients.Architecture;
+﻿using BaseClients.Architecture;
 using BaseClients.Core;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Net;
 
 namespace SchedulingClients.Test
 {
@@ -27,7 +22,7 @@ namespace SchedulingClients.Test
         [OneTimeTearDown]
         public virtual void OneTimeTearDown()
         {
-            foreach(IClient client in clients)
+            foreach (IClient client in clients)
             {
                 client.Dispose();
             }

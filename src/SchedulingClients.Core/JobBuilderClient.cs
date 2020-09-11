@@ -1,12 +1,8 @@
 ﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
-using GAAPICommon.Core;
-using GAAPICommon.Core.Dtos;
-using GACore.Architecture;
 using SchedulingClients.Core.JobBuilderServiceReference;
 using System;
 using System.Net;
-using System.ServiceModel;
 
 namespace SchedulingClients.Core
 {
@@ -58,7 +54,7 @@ namespace SchedulingClients.Core
         public IServiceCallResult<int> CreateOrderedListTask(int parentListTaskId)
         {
             Logger.Trace($"CreateOrderedListTask() parentListTaskId:{parentListTaskId}");
-            return HandleAPICall<int>(e => e.CreateOrderedListTask(parentListTaskId));  
+            return HandleAPICall<int>(e => e.CreateOrderedListTask(parentListTaskId));
         }
 
         /// <summary>
@@ -83,7 +79,6 @@ namespace SchedulingClients.Core
         {
             Logger.Trace($"CreateAtomicMoveListTask() parentListTaskId:{parentListTaskId}");
             return HandleAPICall<int>(e => e.CreateAtomicMoveListTask(parentListTaskId));
-
         }
 
         /// <summary>
@@ -191,7 +186,6 @@ namespace SchedulingClients.Core
             return HandleAPICall(e => e.IssueShortDirective(taskId, parameterAlias, value));
         }
 
-
         /// <summary>
         /// Issues a new ushort directive
         /// </summary>
@@ -223,7 +217,6 @@ namespace SchedulingClients.Core
             Logger.Trace($"IssueFloatDirective() taskId:{taskId} parameterAlias:{parameterAlias} value:{value}");
             return HandleAPICall(e => e.IssueFloatDirective(taskId, parameterAlias, value));
         }
-
 
         /// <summary>
         /// Issues a new directive

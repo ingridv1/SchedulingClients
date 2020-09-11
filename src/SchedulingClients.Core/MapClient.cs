@@ -1,15 +1,11 @@
-﻿using SchedulingClients.Core.MapServiceReference;
+﻿using BaseClients.Core;
+using GAAPICommon.Architecture;
+using MoreLinq;
+using SchedulingClients.Core.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using NLog;
-using BaseClients;
-using BaseClients.Core;
-using MoreLinq;
-using GAAPICommon.Architecture;
-using GAAPICommon.Core.Dtos;
-using GAAPICommon.Core;
 
 namespace SchedulingClients.Core
 {
@@ -49,9 +45,8 @@ namespace SchedulingClients.Core
                 }
             }
         }
-        
-        public event Action<OccupyingMandateProgressDto> OccupyingMandateProgressUpdated;
 
+        public event Action<OccupyingMandateProgressDto> OccupyingMandateProgressUpdated;
 
         private void OnProgressUpdated(OccupyingMandateProgressDto occupyingMandateProgressDto)
         {
@@ -94,7 +89,7 @@ namespace SchedulingClients.Core
             Logger.Trace("GetAllNodeData()");
             return HandleAPICall<NodeDto[]>(e => e.GetAllNodeData());
         }
-          
+
         /// <summary>
         /// Gets all parameter data
         /// </summary>
@@ -152,15 +147,15 @@ namespace SchedulingClients.Core
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
-            if (isDisposed) 
+            if (isDisposed)
                 return;
 
             callback.OccupyingMandateProgressChange -= Callback_OccupyingMandateProgressChange;
 
-			isDisposed = true;
+            isDisposed = true;
 
-			base.Dispose(isDisposing);
-		}
+            base.Dispose(isDisposing);
+        }
 
         protected override void HandleSubscriptionHeartbeat(IMapService channel, Guid key)
         {

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using BaseClients.Core;
+﻿using BaseClients.Core;
 using SchedulingClients.Core;
-using System.Net;
 using SchedulingClients.UI.ViewModel;
+using System.Net;
 
 namespace SchedulingClients.DemoApp
 {

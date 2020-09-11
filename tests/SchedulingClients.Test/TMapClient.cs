@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
-using BaseClients;
-
-namespace SchedulingClients.Test
+﻿namespace SchedulingClients.Test
 {
     /*
     /// <summary>
@@ -38,7 +33,7 @@ namespace SchedulingClients.Test
 
         [Test]
         public void GetTrajectory()
-        { 
+        {
             IEnumerable<MoveData> moveDataset;
             MapClient.TryGetAllMoveData(out moveDataset);
 

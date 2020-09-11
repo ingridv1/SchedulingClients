@@ -1,7 +1,5 @@
 ﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
-using GAAPICommon.Core;
-using GAAPICommon.Core.Dtos;
 using MoreLinq;
 using SchedulingClients.Core.JobsStateServiceReference;
 using System;
@@ -71,7 +69,6 @@ namespace SchedulingClients.Core
             return HandleAPICall(e => e.AbortAllJobs());
         }
 
-
         public IServiceCallResult AbortAllJobsForAgent(int agentId)
         {
             Logger.Trace($"AbortAllJobsForAgent() agentId:{agentId}");
@@ -121,15 +118,15 @@ namespace SchedulingClients.Core
         {
             Logger.Debug("Dispose({0})", isDisposing);
 
-            if (isDisposed)            
+            if (isDisposed)
                 return;
-   
+
             callback.JobsStateChange -= Callback_JobsStateChange;
             isDisposed = true;
 
             base.Dispose(isDisposing);
         }
-           
+
         protected override void SetInstanceContext()
         {
             context = new InstanceContext(callback);

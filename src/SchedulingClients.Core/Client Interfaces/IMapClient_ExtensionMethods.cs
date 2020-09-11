@@ -18,7 +18,7 @@ namespace SchedulingClients.Core
             if (boundingBox.Contains(source.ToPoint()))
                 return true;
 
-            if (boundingBox.Contains(dest.ToPoint())) 
+            if (boundingBox.Contains(dest.ToPoint()))
                 return true;
 
             return false;
@@ -28,7 +28,7 @@ namespace SchedulingClients.Core
          => moves.Where(e => e.IsWithin(nodes, boundingBox));
 
         public static IEnumerable<NodeDto> Within(this IEnumerable<NodeDto> nodes, Rect boundingBox)
-            => nodes.Where(e => boundingBox.Contains(e.ToPoint()));      
+            => nodes.Where(e => boundingBox.Contains(e.ToPoint()));
 
         public static double ToPercentageComplete(this IEnumerable<OccupyingMandateMapItemDto> dataSet)
         {

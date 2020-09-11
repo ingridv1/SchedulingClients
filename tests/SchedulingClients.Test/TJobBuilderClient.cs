@@ -1,13 +1,4 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BaseClients;
-using System.Threading.Tasks;
-using System.Net;
-
-namespace SchedulingClients.Test
+﻿namespace SchedulingClients.Test
 {
     /*
     [TestFixture]
@@ -41,7 +32,6 @@ namespace SchedulingClients.Test
             Assert.IsTrue(result.IsServiceError);
         }
 
-
         [Test]
         public void CommitInvalidJob()
         {
@@ -59,7 +49,7 @@ namespace SchedulingClients.Test
         {
             JobData jobData = null;
 
-            ServiceOperationResult result = JobBuilderClient.TryCreateJob(out jobData);         
+            ServiceOperationResult result = JobBuilderClient.TryCreateJob(out jobData);
 
             Assert.IsTrue(result.IsSuccessfull);
             Assert.IsNotNull(jobData);
