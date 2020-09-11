@@ -4,11 +4,13 @@ using FleetClients.Core.Client_Interfaces;
 using GAAPICommon.Architecture;
 using SchedulingClients.Core;
 using SchedulingClients.Core.JobBuilderServiceReference;
+using SchedulingClients.Core.JobStateServiceReference;
 using SchedulingClients.Core.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 
 namespace Tutorial_01
 {
@@ -27,17 +29,9 @@ namespace Tutorial_01
             // For this demo we are assuming it is running on localhost, using the default TCP port of 41917.
             EndpointSettings endpointSettings = new EndpointSettings(IPAddress.Loopback, 41916, 41917);
 
-            // Now we create a fleet manager client using the client factory, and create a virtual vehicle at pose 0,0,0;
-            //  see: https://github.com/GuidanceAutomation/FleetClients
-            using (IFleetManagerClient fleetManagerClient = FleetClients.Core.ClientFactory.CreateTcpFleetManagerClient(endpointSettings))
-            {
-                IServiceCallResult result = fleetManagerClient.CreateVirtualVehicle(IPAddress.Parse("192.168.0.1"), 0, 0, 0);
-
-                if (!result.IsSuccessful())
-                    Console.WriteLine($"Failed to create virtual vehicle serviceCode:{result.ServiceCode}");
-            }
-
             IEnumerable<int> nodeIds = Enumerable.Empty<int>(); // Create an array to store node ids in
+
+            NodeDto startNode = null;
 
             // Using the map manager client, get the ids of all nodes in the map
             using (IMapClient mapClient = SchedulingClients.Core.ClientFactory.CreateTcpMapClient(endpointSettings))
@@ -48,7 +42,20 @@ namespace Tutorial_01
                     Console.WriteLine($"Failed to get nodes, serviceCode:{nodeResults.ServiceCode}");
                 else
                     nodeIds = nodeResults.Value.Select(e => e.Id);
+
+                startNode = nodeResults.Value.First();
             }
+            
+            // Now we create a fleet manager client using the client factory, and create a virtual vehicle at pose at the first node.
+            //  see: https://github.com/GuidanceAutomation/FleetClients
+            using (IFleetManagerClient fleetManagerClient = FleetClients.Core.ClientFactory.CreateTcpFleetManagerClient(endpointSettings))
+            {
+                IServiceCallResult result = fleetManagerClient.CreateVirtualVehicle(IPAddress.Parse("192.168.0.1"), startNode.X, startNode.Y, startNode.HeadingRad);
+
+                if (!result.IsSuccessful())
+                    Console.WriteLine($"Failed to create virtual vehicle serviceCode:{result.ServiceCode}");
+            }
+
 
             Random random = new Random(); // Random number generator
             bool continueFlag = true;
