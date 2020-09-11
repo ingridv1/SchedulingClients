@@ -137,10 +137,10 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateAtomicMoveListTaskAsync(int parentTaskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateServicingTask(int parentTaskId, int nodeId, GACore.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateServicingTask(int parentTaskId, int nodeId, GAAPICommon.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateServicingTaskAsync(int parentTaskId, int nodeId, GACore.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateServicingTaskAsync(int parentTaskId, int nodeId, GAAPICommon.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateChargeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse")]
         GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateChargeTask(int parentTaskId, int nodeId);
@@ -336,11 +336,11 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
             return base.Channel.CreateAtomicMoveListTaskAsync(parentTaskId);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateServicingTask(int parentTaskId, int nodeId, GACore.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateServicingTask(int parentTaskId, int nodeId, GAAPICommon.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration) {
             return base.Channel.CreateServicingTask(parentTaskId, nodeId, serviceType, expectedDuration);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateServicingTaskAsync(int parentTaskId, int nodeId, GACore.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateServicingTaskAsync(int parentTaskId, int nodeId, GAAPICommon.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration) {
             return base.Channel.CreateServicingTaskAsync(parentTaskId, nodeId, serviceType, expectedDuration);
         }
         

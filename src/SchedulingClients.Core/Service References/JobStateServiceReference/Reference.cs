@@ -32,7 +32,7 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         private int JobIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.JobStatus JobStatusField;
+        private GAAPICommon.Architecture.JobStatus JobStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] NotesField;
@@ -93,7 +93,7 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.JobStatus JobStatus {
+        public GAAPICommon.Architecture.JobStatus JobStatus {
             get {
                 return this.JobStatusField;
             }
@@ -173,10 +173,10 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         private int TaskIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.TaskStatus TaskStatusField;
+        private GAAPICommon.Architecture.TaskStatus TaskStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.TaskType TaskTypeField;
+        private GAAPICommon.Architecture.TaskType TaskTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -228,7 +228,7 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.TaskStatus TaskStatus {
+        public GAAPICommon.Architecture.TaskStatus TaskStatus {
             get {
                 return this.TaskStatusField;
             }
@@ -241,7 +241,7 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.TaskType TaskType {
+        public GAAPICommon.Architecture.TaskType TaskType {
             get {
                 return this.TaskTypeField;
             }
@@ -324,7 +324,7 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         private int JobIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GACore.Architecture.JobStatus JobStatusField;
+        private GAAPICommon.Architecture.JobStatus JobStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -363,7 +363,7 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GACore.Architecture.JobStatus JobStatus {
+        public GAAPICommon.Architecture.JobStatus JobStatus {
             get {
                 return this.JobStatusField;
             }

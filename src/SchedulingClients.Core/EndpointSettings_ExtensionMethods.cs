@@ -15,24 +15,24 @@ namespace SchedulingClients.Core
             => new Uri(portSettings.ToTcpBase(), "agentBatteryStatus.svc");
 
         public static Uri TcpJobBuilderService(this EndpointSettings portSettings)
-            =>new Uri(portSettings.ToTcpBase(), "jobBuilder.svc");        
+            => new Uri(portSettings.ToTcpBase(), "jobBuilder.svc");
 
         public static Uri TcpJobsStateService(this EndpointSettings portSettings)
             => new Uri(portSettings.ToTcpBase(), "jobsState.svc");
-        
+
         public static Uri TcpJobStateService(this EndpointSettings portSettings)
             => new Uri(portSettings.ToTcpBase(), "jobState.svc");
-        
+
         public static Uri TcpMapService(this EndpointSettings portSettings)
             => new Uri(portSettings.ToTcpBase(), "map.svc");
-        
+
         public static Uri TcpServicingService(this EndpointSettings portSettings)
-            => new Uri(portSettings.ToTcpBase(), "servicing.svc");        
+            => new Uri(portSettings.ToTcpBase(), "servicing.svc");
 
         public static Uri TcpAgentAttentionService(this EndpointSettings portSettings)
             => new Uri(portSettings.ToTcpBase(), "agentAttention.svc");
-        
+
         public static Uri TcpAgentStatecastService(this EndpointSettings portSettings)
-            => new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");        
+            => new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");
     }
 }

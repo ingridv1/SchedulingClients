@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SchedulingClients.Core
 {
-    public class ServicingServiceCallback : IServicingServiceCallback
+    internal class ServicingServiceCallback : IServicingServiceCallback
     {
         public ServicingServiceCallback()
         {

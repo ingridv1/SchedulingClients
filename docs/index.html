@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="styles/docfx.vendor.css">
     <link rel="stylesheet" href="styles/docfx.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <meta property="docfx:navrel" content="toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
     
     
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -60,41 +60,75 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="welcome-to-the-schedulingclients-homepage">Welcome to the <strong>SchedulingClients Homepage</strong></h1>
+<h1 id="welcome-to-the-schedulingclients-homepage">Welcome to the <strong>SchedulingClients</strong> Homepage</h1>
 
-<p>Base clients contains common components used in the Guidance Automation client wrapper family.</p>
+<p>The scheduling client interfaces allow remote manipulation of the scheduler, supporting:</p>
+<ul>
+<li>Agents
+<ul>
+<li>Active agents.</li>
+</ul>
+</li>
+<li>Job Building
+<ul>
+<li>Creating new jobs.</li>
+<li>Editing existing jobs.</li>
+</ul>
+</li>
+<li>Jobs State
+<ul>
+<li>Aborting active jobs.</li>
+<li>Jobs state updates.</li>
+</ul>
+</li>
+<li>Job State
+<ul>
+<li>Individual job summaries.</li>
+<li>Individual job progress updates.</li>
+</ul>
+</li>
+<li>Maps
+<ul>
+<li>Nodes in the Roadmap.</li>
+<li>Moves in the Roadmap.</li>
+<li>Individual move trajectories.</li>
+</ul>
+</li>
+<li>Servicing
+<ul>
+<li>Confirmation of manual load handling.</li>
+</ul>
+</li>
+<li>Task State
+<ul>
+<li>Individual task summaries.</li>
+<li>Individual task progress updates.</li>
+</ul>
+</li>
+</ul>
 <p>Here you can find:</p>
 <ul>
 <li>API documentation</li>
 <li>Example code</li>
-<li>Source code</li>
 </ul>
-<p>Nuget package available at <a href="https://www.nuget.org/packages/SchedulingClients/">nuget.org</a></p>
-<h2 id="guidance-automation-client-wrappers">Guidance Automation Client Wrappers:</h2>
+<p>With</p>
+<ul>
+<li>Source code available on <a href="https://github.com/GuidanceAutomation/SchedulingClients">GitHub</a></li>
+<li>Pre-built package available at <a href="https://www.nuget.org/packages/SchedulingClients/">nuget.org</a></li>
+</ul>
+<h2 id="quickstart">Quickstart</h2>
+<ul>
+<li><a href="articles/Tutorial_01.html">Tutorial 01 - Sending a vehicle to a random node</a></li>
+</ul>
+<h3 id="guidance-automation-client-wrappers">Guidance Automation Client Wrappers:</h3>
 <p>The client wrapper family consists of:</p>
-<h3 id="base-clients">Base Clients</h3>
-<p>Core component library.</p>
 <ul>
-<li><a href="https://guidanceautomation.github.io/BaseClients/">Documentation</a></li>
-<li><a href="https://github.com/GuidanceAutomation/BaseClients">Github</a></li>
-<li><a href="https://www.nuget.org/packages/BaseClients/">Nuget</a></li>
-</ul>
-<h3 id="fleet-clients">Fleet Clients</h3>
-<p>Remote fleet manager manipulation.</p>
-<ul>
-<li><a href="https://guidanceautomation.github.io/FleetClients/">Documentation</a></li>
-<li><a href="https://github.com/GuidanceAutomation/FleetClients">Github</a></li>
-<li><a href="https://www.nuget.org/packages/FleetClients/">Nuget</a></li>
-</ul>
-<h3 id="scheduling-clients">Scheduling Clients</h3>
-<p>Job creation, task tracking and map support.</p>
-<ul>
-<li><a href="https://guidanceautomation.github.io/SchedulingClients/">Documentation</a></li>
-<li><a href="https://github.com/GuidanceAutomation/SchedulingClients">Github</a></li>
-<li><a href="https://www.nuget.org/packages/SchedulingClients/">Nuget</a></li>
+<li><a href="https://guidanceautomation.github.io/BaseClients/">Base Clients</a> - Core component library for all client libraries</li>
+<li><a href="https://guidanceautomation.github.io/FleetClients/">Fleet Clients</a> - Remote fleet manager manipulation</li>
+<li><a href="https://guidanceautomation.github.io/SchedulingClients/">Scheduling Clients</a> - Job creation, task tracking and map support</li>
 </ul>
 <div style="text-align: right">
-  <img src="images/incaartBw.jpg" alt="AGV image" width="200">
+  <img src="images/incaartBw.png" alt="AGV image" width="200">
   <br>
   Beep! Beep! I'm the scheduling support AGV!<br>
   <a href="https://github.com/GuidanceAutomation">Here is my Github</a>
@@ -106,6 +140,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/devel/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -124,7 +161,7 @@
               <a href="#top">Back to top</a>
             </span>
             
-            <span>Copyright <strong>Guidance Automation Ltd</strong></span>
+            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>

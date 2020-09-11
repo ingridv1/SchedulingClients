@@ -56,7 +56,7 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/taskState.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/taskState.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/taskState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/taskState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GACore.Architecture" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/taskState.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ITaskStateService_GetAPISemVer_InputMessage">

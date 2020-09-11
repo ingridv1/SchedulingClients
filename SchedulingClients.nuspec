@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SchedulingClients</id>
-    <version>14.0.1</version>
+    <version>$version$</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
@@ -13,18 +13,17 @@
     <copyright>Copyright 2019</copyright>
     <tags></tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.7">
-        <dependency id="BaseClients" version="1.2.1" />
-        <dependency id="GACore" version="1.25.2" />
-        <dependency id="morelinq" version="3.2.0" />
-        <dependency id="NLog" version="4.6.7" />
-        <dependency id="Extended.Wpf.Toolkit" version="3.5.0" />
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="BaseClients" version="2.0.0" />
+		<dependency id="GAAPICommon" version="1.7.1" />
+        <dependency id="GACore" version="2.0.0" />
+        <dependency id="morelinq" version="3.3.2" />
+        <dependency id="NLog" version="4.7.4" />
+        <dependency id="System.ValueTuple" version="4.5.0" />
       </group>
     </dependencies>
   </metadata>
   <files>
-		<file src="readme.txt" target="" />
-		<file src="src\SchedulingClients\bin\Release\SchedulingClients.dll" target="lib\net47" />
-		<file src="src\SchedulingClients.Controls\bin\Release\SchedulingClients.Controls.dll" target="lib\net47" />
+		<file src="src\SchedulingClients.Core\bin\Release\SchedulingClients.Core.dll" target="lib\net472" />
   </files>
 </package>
