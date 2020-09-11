@@ -34,7 +34,7 @@ namespace SchedulingClients.Core
         /// <summary>
         /// The current state of jobs in the server
         /// </summary>
-        public JobsStateDto JobsStateDto
+        public JobsStateDto JobsState
         {
             get { return jobsStateDto; }
 
@@ -134,7 +134,7 @@ namespace SchedulingClients.Core
 
         private void Callback_JobsStateChange(JobsStateDto newJobsStateDto)
         {
-            JobsStateDto = newJobsStateDto;
+            JobsState = newJobsStateDto;
         }
 
         protected override void HandleSubscriptionHeartbeat(IJobsStateService channel, Guid key)
