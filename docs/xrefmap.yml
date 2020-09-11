@@ -661,19 +661,19 @@ references:
   commentId: T:SchedulingClients.Core.IAgentClient
   fullName: SchedulingClients.Core.IAgentClient
   nameWithType: IAgentClient
-- uid: SchedulingClients.Core.IAgentClient.GetAllAgentData
-  name: GetAllAgentData()
-  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgentData
-  commentId: M:SchedulingClients.Core.IAgentClient.GetAllAgentData
-  fullName: SchedulingClients.Core.IAgentClient.GetAllAgentData()
-  nameWithType: IAgentClient.GetAllAgentData()
-- uid: SchedulingClients.Core.IAgentClient.GetAllAgentData*
-  name: GetAllAgentData
-  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgentData_
-  commentId: Overload:SchedulingClients.Core.IAgentClient.GetAllAgentData
+- uid: SchedulingClients.Core.IAgentClient.GetAllAgents
+  name: GetAllAgents()
+  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgents
+  commentId: M:SchedulingClients.Core.IAgentClient.GetAllAgents
+  fullName: SchedulingClients.Core.IAgentClient.GetAllAgents()
+  nameWithType: IAgentClient.GetAllAgents()
+- uid: SchedulingClients.Core.IAgentClient.GetAllAgents*
+  name: GetAllAgents
+  href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgents_
+  commentId: Overload:SchedulingClients.Core.IAgentClient.GetAllAgents
   isSpec: "True"
-  fullName: SchedulingClients.Core.IAgentClient.GetAllAgentData
-  nameWithType: IAgentClient.GetAllAgentData
+  fullName: SchedulingClients.Core.IAgentClient.GetAllAgents
+  nameWithType: IAgentClient.GetAllAgents
 - uid: SchedulingClients.Core.IAgentClient.GetAllAgentsInLifetimeState(GAAPICommon.Architecture.AgentLifetimeState)
   name: GetAllAgentsInLifetimeState(AgentLifetimeState)
   href: api/SchedulingClients.Core.IAgentClient.html#SchedulingClients_Core_IAgentClient_GetAllAgentsInLifetimeState_GAAPICommon_Architecture_AgentLifetimeState_
@@ -1037,19 +1037,19 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IJobsStateClient.GetActiveJobIdsForAgent
   nameWithType: IJobsStateClient.GetActiveJobIdsForAgent
-- uid: SchedulingClients.Core.IJobsStateClient.JobsStateDto
-  name: JobsStateDto
-  href: api/SchedulingClients.Core.IJobsStateClient.html#SchedulingClients_Core_IJobsStateClient_JobsStateDto
-  commentId: P:SchedulingClients.Core.IJobsStateClient.JobsStateDto
-  fullName: SchedulingClients.Core.IJobsStateClient.JobsStateDto
-  nameWithType: IJobsStateClient.JobsStateDto
-- uid: SchedulingClients.Core.IJobsStateClient.JobsStateDto*
-  name: JobsStateDto
-  href: api/SchedulingClients.Core.IJobsStateClient.html#SchedulingClients_Core_IJobsStateClient_JobsStateDto_
-  commentId: Overload:SchedulingClients.Core.IJobsStateClient.JobsStateDto
+- uid: SchedulingClients.Core.IJobsStateClient.JobsState
+  name: JobsState
+  href: api/SchedulingClients.Core.IJobsStateClient.html#SchedulingClients_Core_IJobsStateClient_JobsState
+  commentId: P:SchedulingClients.Core.IJobsStateClient.JobsState
+  fullName: SchedulingClients.Core.IJobsStateClient.JobsState
+  nameWithType: IJobsStateClient.JobsState
+- uid: SchedulingClients.Core.IJobsStateClient.JobsState*
+  name: JobsState
+  href: api/SchedulingClients.Core.IJobsStateClient.html#SchedulingClients_Core_IJobsStateClient_JobsState_
+  commentId: Overload:SchedulingClients.Core.IJobsStateClient.JobsState
   isSpec: "True"
-  fullName: SchedulingClients.Core.IJobsStateClient.JobsStateDto
-  nameWithType: IJobsStateClient.JobsStateDto
+  fullName: SchedulingClients.Core.IJobsStateClient.JobsState
+  nameWithType: IJobsStateClient.JobsState
 - uid: SchedulingClients.Core.IJobsStateClient.JobsStateUpdated
   name: JobsStateUpdated
   href: api/SchedulingClients.Core.IJobsStateClient.html#SchedulingClients_Core_IJobsStateClient_JobsStateUpdated
@@ -1126,58 +1126,58 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient.ClearOccupyingMandate
   nameWithType: IMapClient.ClearOccupyingMandate
-- uid: SchedulingClients.Core.IMapClient.GetAllMoveData
-  name: GetAllMoveData()
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllMoveData
-  commentId: M:SchedulingClients.Core.IMapClient.GetAllMoveData
-  fullName: SchedulingClients.Core.IMapClient.GetAllMoveData()
-  nameWithType: IMapClient.GetAllMoveData()
-- uid: SchedulingClients.Core.IMapClient.GetAllMoveData*
-  name: GetAllMoveData
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllMoveData_
-  commentId: Overload:SchedulingClients.Core.IMapClient.GetAllMoveData
+- uid: SchedulingClients.Core.IMapClient.GetAllMoves
+  name: GetAllMoves()
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllMoves
+  commentId: M:SchedulingClients.Core.IMapClient.GetAllMoves
+  fullName: SchedulingClients.Core.IMapClient.GetAllMoves()
+  nameWithType: IMapClient.GetAllMoves()
+- uid: SchedulingClients.Core.IMapClient.GetAllMoves*
+  name: GetAllMoves
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllMoves_
+  commentId: Overload:SchedulingClients.Core.IMapClient.GetAllMoves
   isSpec: "True"
-  fullName: SchedulingClients.Core.IMapClient.GetAllMoveData
-  nameWithType: IMapClient.GetAllMoveData
-- uid: SchedulingClients.Core.IMapClient.GetAllNodeData
-  name: GetAllNodeData()
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllNodeData
-  commentId: M:SchedulingClients.Core.IMapClient.GetAllNodeData
-  fullName: SchedulingClients.Core.IMapClient.GetAllNodeData()
-  nameWithType: IMapClient.GetAllNodeData()
-- uid: SchedulingClients.Core.IMapClient.GetAllNodeData*
-  name: GetAllNodeData
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllNodeData_
-  commentId: Overload:SchedulingClients.Core.IMapClient.GetAllNodeData
+  fullName: SchedulingClients.Core.IMapClient.GetAllMoves
+  nameWithType: IMapClient.GetAllMoves
+- uid: SchedulingClients.Core.IMapClient.GetAllNodes
+  name: GetAllNodes()
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllNodes
+  commentId: M:SchedulingClients.Core.IMapClient.GetAllNodes
+  fullName: SchedulingClients.Core.IMapClient.GetAllNodes()
+  nameWithType: IMapClient.GetAllNodes()
+- uid: SchedulingClients.Core.IMapClient.GetAllNodes*
+  name: GetAllNodes
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllNodes_
+  commentId: Overload:SchedulingClients.Core.IMapClient.GetAllNodes
   isSpec: "True"
-  fullName: SchedulingClients.Core.IMapClient.GetAllNodeData
-  nameWithType: IMapClient.GetAllNodeData
-- uid: SchedulingClients.Core.IMapClient.GetAllParameterData
-  name: GetAllParameterData()
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllParameterData
-  commentId: M:SchedulingClients.Core.IMapClient.GetAllParameterData
-  fullName: SchedulingClients.Core.IMapClient.GetAllParameterData()
-  nameWithType: IMapClient.GetAllParameterData()
-- uid: SchedulingClients.Core.IMapClient.GetAllParameterData*
-  name: GetAllParameterData
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllParameterData_
-  commentId: Overload:SchedulingClients.Core.IMapClient.GetAllParameterData
+  fullName: SchedulingClients.Core.IMapClient.GetAllNodes
+  nameWithType: IMapClient.GetAllNodes
+- uid: SchedulingClients.Core.IMapClient.GetAllParameters
+  name: GetAllParameters()
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllParameters
+  commentId: M:SchedulingClients.Core.IMapClient.GetAllParameters
+  fullName: SchedulingClients.Core.IMapClient.GetAllParameters()
+  nameWithType: IMapClient.GetAllParameters()
+- uid: SchedulingClients.Core.IMapClient.GetAllParameters*
+  name: GetAllParameters
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetAllParameters_
+  commentId: Overload:SchedulingClients.Core.IMapClient.GetAllParameters
   isSpec: "True"
-  fullName: SchedulingClients.Core.IMapClient.GetAllParameterData
-  nameWithType: IMapClient.GetAllParameterData
-- uid: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData
-  name: GetOccupyingMandateProgressData()
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetOccupyingMandateProgressData
-  commentId: M:SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData
-  fullName: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData()
-  nameWithType: IMapClient.GetOccupyingMandateProgressData()
-- uid: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData*
-  name: GetOccupyingMandateProgressData
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetOccupyingMandateProgressData_
-  commentId: Overload:SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData
+  fullName: SchedulingClients.Core.IMapClient.GetAllParameters
+  nameWithType: IMapClient.GetAllParameters
+- uid: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress
+  name: GetOccupyingMandateProgress()
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetOccupyingMandateProgress
+  commentId: M:SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress
+  fullName: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress()
+  nameWithType: IMapClient.GetOccupyingMandateProgress()
+- uid: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress*
+  name: GetOccupyingMandateProgress
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetOccupyingMandateProgress_
+  commentId: Overload:SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress
   isSpec: "True"
-  fullName: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData
-  nameWithType: IMapClient.GetOccupyingMandateProgressData
+  fullName: SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress
+  nameWithType: IMapClient.GetOccupyingMandateProgress
 - uid: SchedulingClients.Core.IMapClient.GetTrajectory(System.Int32)
   name: GetTrajectory(Int32)
   href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_GetTrajectory_System_Int32_
@@ -1191,19 +1191,19 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient.GetTrajectory
   nameWithType: IMapClient.GetTrajectory
-- uid: SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto
-  name: OccupyingMandateProgressDto
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_OccupyingMandateProgressDto
-  commentId: P:SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto
-  fullName: SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto
-  nameWithType: IMapClient.OccupyingMandateProgressDto
-- uid: SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto*
-  name: OccupyingMandateProgressDto
-  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_OccupyingMandateProgressDto_
-  commentId: Overload:SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto
+- uid: SchedulingClients.Core.IMapClient.OccupyingMandateProgress
+  name: OccupyingMandateProgress
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_OccupyingMandateProgress
+  commentId: P:SchedulingClients.Core.IMapClient.OccupyingMandateProgress
+  fullName: SchedulingClients.Core.IMapClient.OccupyingMandateProgress
+  nameWithType: IMapClient.OccupyingMandateProgress
+- uid: SchedulingClients.Core.IMapClient.OccupyingMandateProgress*
+  name: OccupyingMandateProgress
+  href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_OccupyingMandateProgress_
+  commentId: Overload:SchedulingClients.Core.IMapClient.OccupyingMandateProgress
   isSpec: "True"
-  fullName: SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto
-  nameWithType: IMapClient.OccupyingMandateProgressDto
+  fullName: SchedulingClients.Core.IMapClient.OccupyingMandateProgress
+  nameWithType: IMapClient.OccupyingMandateProgress
 - uid: SchedulingClients.Core.IMapClient.OccupyingMandateProgressUpdated
   name: OccupyingMandateProgressUpdated
   href: api/SchedulingClients.Core.IMapClient.html#SchedulingClients_Core_IMapClient_OccupyingMandateProgressUpdated
@@ -2563,44 +2563,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobDto.RootOrderedListTaskId
   nameWithType: JobDto.RootOrderedListTaskId
-- uid: SchedulingClients.Core.JobsStateServiceCallback
-  name: JobsStateServiceCallback
-  href: api/SchedulingClients.Core.JobsStateServiceCallback.html
-  commentId: T:SchedulingClients.Core.JobsStateServiceCallback
-  fullName: SchedulingClients.Core.JobsStateServiceCallback
-  nameWithType: JobsStateServiceCallback
-- uid: SchedulingClients.Core.JobsStateServiceCallback.#ctor
-  name: JobsStateServiceCallback()
-  href: api/SchedulingClients.Core.JobsStateServiceCallback.html#SchedulingClients_Core_JobsStateServiceCallback__ctor
-  commentId: M:SchedulingClients.Core.JobsStateServiceCallback.#ctor
-  fullName: SchedulingClients.Core.JobsStateServiceCallback.JobsStateServiceCallback()
-  nameWithType: JobsStateServiceCallback.JobsStateServiceCallback()
-- uid: SchedulingClients.Core.JobsStateServiceCallback.#ctor*
-  name: JobsStateServiceCallback
-  href: api/SchedulingClients.Core.JobsStateServiceCallback.html#SchedulingClients_Core_JobsStateServiceCallback__ctor_
-  commentId: Overload:SchedulingClients.Core.JobsStateServiceCallback.#ctor
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobsStateServiceCallback.JobsStateServiceCallback
-  nameWithType: JobsStateServiceCallback.JobsStateServiceCallback
-- uid: SchedulingClients.Core.JobsStateServiceCallback.JobsStateChange
-  name: JobsStateChange
-  href: api/SchedulingClients.Core.JobsStateServiceCallback.html#SchedulingClients_Core_JobsStateServiceCallback_JobsStateChange
-  commentId: E:SchedulingClients.Core.JobsStateServiceCallback.JobsStateChange
-  fullName: SchedulingClients.Core.JobsStateServiceCallback.JobsStateChange
-  nameWithType: JobsStateServiceCallback.JobsStateChange
-- uid: SchedulingClients.Core.JobsStateServiceCallback.OnCallback(SchedulingClients.Core.JobsStateServiceReference.JobsStateDto)
-  name: OnCallback(JobsStateDto)
-  href: api/SchedulingClients.Core.JobsStateServiceCallback.html#SchedulingClients_Core_JobsStateServiceCallback_OnCallback_SchedulingClients_Core_JobsStateServiceReference_JobsStateDto_
-  commentId: M:SchedulingClients.Core.JobsStateServiceCallback.OnCallback(SchedulingClients.Core.JobsStateServiceReference.JobsStateDto)
-  fullName: SchedulingClients.Core.JobsStateServiceCallback.OnCallback(SchedulingClients.Core.JobsStateServiceReference.JobsStateDto)
-  nameWithType: JobsStateServiceCallback.OnCallback(JobsStateDto)
-- uid: SchedulingClients.Core.JobsStateServiceCallback.OnCallback*
-  name: OnCallback
-  href: api/SchedulingClients.Core.JobsStateServiceCallback.html#SchedulingClients_Core_JobsStateServiceCallback_OnCallback_
-  commentId: Overload:SchedulingClients.Core.JobsStateServiceCallback.OnCallback
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobsStateServiceCallback.OnCallback
-  nameWithType: JobsStateServiceCallback.OnCallback
 - uid: SchedulingClients.Core.JobsStateServiceReference
   name: SchedulingClients.Core.JobsStateServiceReference
   href: api/SchedulingClients.Core.JobsStateServiceReference.html
@@ -2940,44 +2902,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobsStateServiceReference.JobsStateServiceClient.SubscriptionHeartbeat
   nameWithType: JobsStateServiceClient.SubscriptionHeartbeat
-- uid: SchedulingClients.Core.JobStateServiceCallback
-  name: JobStateServiceCallback
-  href: api/SchedulingClients.Core.JobStateServiceCallback.html
-  commentId: T:SchedulingClients.Core.JobStateServiceCallback
-  fullName: SchedulingClients.Core.JobStateServiceCallback
-  nameWithType: JobStateServiceCallback
-- uid: SchedulingClients.Core.JobStateServiceCallback.#ctor
-  name: JobStateServiceCallback()
-  href: api/SchedulingClients.Core.JobStateServiceCallback.html#SchedulingClients_Core_JobStateServiceCallback__ctor
-  commentId: M:SchedulingClients.Core.JobStateServiceCallback.#ctor
-  fullName: SchedulingClients.Core.JobStateServiceCallback.JobStateServiceCallback()
-  nameWithType: JobStateServiceCallback.JobStateServiceCallback()
-- uid: SchedulingClients.Core.JobStateServiceCallback.#ctor*
-  name: JobStateServiceCallback
-  href: api/SchedulingClients.Core.JobStateServiceCallback.html#SchedulingClients_Core_JobStateServiceCallback__ctor_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceCallback.#ctor
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceCallback.JobStateServiceCallback
-  nameWithType: JobStateServiceCallback.JobStateServiceCallback
-- uid: SchedulingClients.Core.JobStateServiceCallback.JobProgressUpdated
-  name: JobProgressUpdated
-  href: api/SchedulingClients.Core.JobStateServiceCallback.html#SchedulingClients_Core_JobStateServiceCallback_JobProgressUpdated
-  commentId: E:SchedulingClients.Core.JobStateServiceCallback.JobProgressUpdated
-  fullName: SchedulingClients.Core.JobStateServiceCallback.JobProgressUpdated
-  nameWithType: JobStateServiceCallback.JobProgressUpdated
-- uid: SchedulingClients.Core.JobStateServiceCallback.OnCallback(SchedulingClients.Core.JobStateServiceReference.JobProgressDto)
-  name: OnCallback(JobProgressDto)
-  href: api/SchedulingClients.Core.JobStateServiceCallback.html#SchedulingClients_Core_JobStateServiceCallback_OnCallback_SchedulingClients_Core_JobStateServiceReference_JobProgressDto_
-  commentId: M:SchedulingClients.Core.JobStateServiceCallback.OnCallback(SchedulingClients.Core.JobStateServiceReference.JobProgressDto)
-  fullName: SchedulingClients.Core.JobStateServiceCallback.OnCallback(SchedulingClients.Core.JobStateServiceReference.JobProgressDto)
-  nameWithType: JobStateServiceCallback.OnCallback(JobProgressDto)
-- uid: SchedulingClients.Core.JobStateServiceCallback.OnCallback*
-  name: OnCallback
-  href: api/SchedulingClients.Core.JobStateServiceCallback.html#SchedulingClients_Core_JobStateServiceCallback_OnCallback_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceCallback.OnCallback
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceCallback.OnCallback
-  nameWithType: JobStateServiceCallback.OnCallback
 - uid: SchedulingClients.Core.JobStateServiceReference
   name: SchedulingClients.Core.JobStateServiceReference
   href: api/SchedulingClients.Core.JobStateServiceReference.html
@@ -3678,44 +3602,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType
   nameWithType: TaskSummaryDto.TaskType
-- uid: SchedulingClients.Core.MapServiceCallback
-  name: MapServiceCallback
-  href: api/SchedulingClients.Core.MapServiceCallback.html
-  commentId: T:SchedulingClients.Core.MapServiceCallback
-  fullName: SchedulingClients.Core.MapServiceCallback
-  nameWithType: MapServiceCallback
-- uid: SchedulingClients.Core.MapServiceCallback.#ctor
-  name: MapServiceCallback()
-  href: api/SchedulingClients.Core.MapServiceCallback.html#SchedulingClients_Core_MapServiceCallback__ctor
-  commentId: M:SchedulingClients.Core.MapServiceCallback.#ctor
-  fullName: SchedulingClients.Core.MapServiceCallback.MapServiceCallback()
-  nameWithType: MapServiceCallback.MapServiceCallback()
-- uid: SchedulingClients.Core.MapServiceCallback.#ctor*
-  name: MapServiceCallback
-  href: api/SchedulingClients.Core.MapServiceCallback.html#SchedulingClients_Core_MapServiceCallback__ctor_
-  commentId: Overload:SchedulingClients.Core.MapServiceCallback.#ctor
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceCallback.MapServiceCallback
-  nameWithType: MapServiceCallback.MapServiceCallback
-- uid: SchedulingClients.Core.MapServiceCallback.OccupyingMandateProgressChange
-  name: OccupyingMandateProgressChange
-  href: api/SchedulingClients.Core.MapServiceCallback.html#SchedulingClients_Core_MapServiceCallback_OccupyingMandateProgressChange
-  commentId: E:SchedulingClients.Core.MapServiceCallback.OccupyingMandateProgressChange
-  fullName: SchedulingClients.Core.MapServiceCallback.OccupyingMandateProgressChange
-  nameWithType: MapServiceCallback.OccupyingMandateProgressChange
-- uid: SchedulingClients.Core.MapServiceCallback.OnCallback(SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto)
-  name: OnCallback(OccupyingMandateProgressDto)
-  href: api/SchedulingClients.Core.MapServiceCallback.html#SchedulingClients_Core_MapServiceCallback_OnCallback_SchedulingClients_Core_MapServiceReference_OccupyingMandateProgressDto_
-  commentId: M:SchedulingClients.Core.MapServiceCallback.OnCallback(SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto)
-  fullName: SchedulingClients.Core.MapServiceCallback.OnCallback(SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto)
-  nameWithType: MapServiceCallback.OnCallback(OccupyingMandateProgressDto)
-- uid: SchedulingClients.Core.MapServiceCallback.OnCallback*
-  name: OnCallback
-  href: api/SchedulingClients.Core.MapServiceCallback.html#SchedulingClients_Core_MapServiceCallback_OnCallback_
-  commentId: Overload:SchedulingClients.Core.MapServiceCallback.OnCallback
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceCallback.OnCallback
-  nameWithType: MapServiceCallback.OnCallback
 - uid: SchedulingClients.Core.MapServiceReference
   name: SchedulingClients.Core.MapServiceReference
   href: api/SchedulingClients.Core.MapServiceReference.html
@@ -4803,44 +4689,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.MapServiceReference.WaypointDto.Y
   nameWithType: WaypointDto.Y
-- uid: SchedulingClients.Core.ServicingServiceCallback
-  name: ServicingServiceCallback
-  href: api/SchedulingClients.Core.ServicingServiceCallback.html
-  commentId: T:SchedulingClients.Core.ServicingServiceCallback
-  fullName: SchedulingClients.Core.ServicingServiceCallback
-  nameWithType: ServicingServiceCallback
-- uid: SchedulingClients.Core.ServicingServiceCallback.#ctor
-  name: ServicingServiceCallback()
-  href: api/SchedulingClients.Core.ServicingServiceCallback.html#SchedulingClients_Core_ServicingServiceCallback__ctor
-  commentId: M:SchedulingClients.Core.ServicingServiceCallback.#ctor
-  fullName: SchedulingClients.Core.ServicingServiceCallback.ServicingServiceCallback()
-  nameWithType: ServicingServiceCallback.ServicingServiceCallback()
-- uid: SchedulingClients.Core.ServicingServiceCallback.#ctor*
-  name: ServicingServiceCallback
-  href: api/SchedulingClients.Core.ServicingServiceCallback.html#SchedulingClients_Core_ServicingServiceCallback__ctor_
-  commentId: Overload:SchedulingClients.Core.ServicingServiceCallback.#ctor
-  isSpec: "True"
-  fullName: SchedulingClients.Core.ServicingServiceCallback.ServicingServiceCallback
-  nameWithType: ServicingServiceCallback.ServicingServiceCallback
-- uid: SchedulingClients.Core.ServicingServiceCallback.OnCallback(SchedulingClients.Core.ServicingServiceReference.ServiceStateDto)
-  name: OnCallback(ServiceStateDto)
-  href: api/SchedulingClients.Core.ServicingServiceCallback.html#SchedulingClients_Core_ServicingServiceCallback_OnCallback_SchedulingClients_Core_ServicingServiceReference_ServiceStateDto_
-  commentId: M:SchedulingClients.Core.ServicingServiceCallback.OnCallback(SchedulingClients.Core.ServicingServiceReference.ServiceStateDto)
-  fullName: SchedulingClients.Core.ServicingServiceCallback.OnCallback(SchedulingClients.Core.ServicingServiceReference.ServiceStateDto)
-  nameWithType: ServicingServiceCallback.OnCallback(ServiceStateDto)
-- uid: SchedulingClients.Core.ServicingServiceCallback.OnCallback*
-  name: OnCallback
-  href: api/SchedulingClients.Core.ServicingServiceCallback.html#SchedulingClients_Core_ServicingServiceCallback_OnCallback_
-  commentId: Overload:SchedulingClients.Core.ServicingServiceCallback.OnCallback
-  isSpec: "True"
-  fullName: SchedulingClients.Core.ServicingServiceCallback.OnCallback
-  nameWithType: ServicingServiceCallback.OnCallback
-- uid: SchedulingClients.Core.ServicingServiceCallback.ServiceRequest
-  name: ServiceRequest
-  href: api/SchedulingClients.Core.ServicingServiceCallback.html#SchedulingClients_Core_ServicingServiceCallback_ServiceRequest
-  commentId: E:SchedulingClients.Core.ServicingServiceCallback.ServiceRequest
-  fullName: SchedulingClients.Core.ServicingServiceCallback.ServiceRequest
-  nameWithType: ServicingServiceCallback.ServiceRequest
 - uid: SchedulingClients.Core.ServicingServiceReference
   name: SchedulingClients.Core.ServicingServiceReference
   href: api/SchedulingClients.Core.ServicingServiceReference.html
@@ -5206,44 +5054,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.ServicingServiceReference.ServicingServiceClient.SubscriptionHeartbeatAsync
   nameWithType: ServicingServiceClient.SubscriptionHeartbeatAsync
-- uid: SchedulingClients.Core.TaskStateServiceCallback
-  name: TaskStateServiceCallback
-  href: api/SchedulingClients.Core.TaskStateServiceCallback.html
-  commentId: T:SchedulingClients.Core.TaskStateServiceCallback
-  fullName: SchedulingClients.Core.TaskStateServiceCallback
-  nameWithType: TaskStateServiceCallback
-- uid: SchedulingClients.Core.TaskStateServiceCallback.#ctor
-  name: TaskStateServiceCallback()
-  href: api/SchedulingClients.Core.TaskStateServiceCallback.html#SchedulingClients_Core_TaskStateServiceCallback__ctor
-  commentId: M:SchedulingClients.Core.TaskStateServiceCallback.#ctor
-  fullName: SchedulingClients.Core.TaskStateServiceCallback.TaskStateServiceCallback()
-  nameWithType: TaskStateServiceCallback.TaskStateServiceCallback()
-- uid: SchedulingClients.Core.TaskStateServiceCallback.#ctor*
-  name: TaskStateServiceCallback
-  href: api/SchedulingClients.Core.TaskStateServiceCallback.html#SchedulingClients_Core_TaskStateServiceCallback__ctor_
-  commentId: Overload:SchedulingClients.Core.TaskStateServiceCallback.#ctor
-  isSpec: "True"
-  fullName: SchedulingClients.Core.TaskStateServiceCallback.TaskStateServiceCallback
-  nameWithType: TaskStateServiceCallback.TaskStateServiceCallback
-- uid: SchedulingClients.Core.TaskStateServiceCallback.OnCallback(SchedulingClients.Core.TaskStateServiceReference.TaskProgressDto)
-  name: OnCallback(TaskProgressDto)
-  href: api/SchedulingClients.Core.TaskStateServiceCallback.html#SchedulingClients_Core_TaskStateServiceCallback_OnCallback_SchedulingClients_Core_TaskStateServiceReference_TaskProgressDto_
-  commentId: M:SchedulingClients.Core.TaskStateServiceCallback.OnCallback(SchedulingClients.Core.TaskStateServiceReference.TaskProgressDto)
-  fullName: SchedulingClients.Core.TaskStateServiceCallback.OnCallback(SchedulingClients.Core.TaskStateServiceReference.TaskProgressDto)
-  nameWithType: TaskStateServiceCallback.OnCallback(TaskProgressDto)
-- uid: SchedulingClients.Core.TaskStateServiceCallback.OnCallback*
-  name: OnCallback
-  href: api/SchedulingClients.Core.TaskStateServiceCallback.html#SchedulingClients_Core_TaskStateServiceCallback_OnCallback_
-  commentId: Overload:SchedulingClients.Core.TaskStateServiceCallback.OnCallback
-  isSpec: "True"
-  fullName: SchedulingClients.Core.TaskStateServiceCallback.OnCallback
-  nameWithType: TaskStateServiceCallback.OnCallback
-- uid: SchedulingClients.Core.TaskStateServiceCallback.TaskProgressUpdated
-  name: TaskProgressUpdated
-  href: api/SchedulingClients.Core.TaskStateServiceCallback.html#SchedulingClients_Core_TaskStateServiceCallback_TaskProgressUpdated
-  commentId: E:SchedulingClients.Core.TaskStateServiceCallback.TaskProgressUpdated
-  fullName: SchedulingClients.Core.TaskStateServiceCallback.TaskProgressUpdated
-  nameWithType: TaskStateServiceCallback.TaskProgressUpdated
 - uid: SchedulingClients.Core.TaskStateServiceReference
   name: SchedulingClients.Core.TaskStateServiceReference
   href: api/SchedulingClients.Core.TaskStateServiceReference.html

@@ -73,7 +73,8 @@
   
   <h1 id="SchedulingClients_Core_IMapClient_ExtensionMethods" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods" class="text-break">Class IMapClient_ExtensionMethods
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Extension methods to the IMapClient interface.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -93,15 +94,16 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_SchedulingClients_Core_MapServiceReference_MoveDto_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(SchedulingClients.Core.MapServiceReference.MoveDto%2CSystem.Collections.Generic.IEnumerable%7BSchedulingClients.Core.MapServiceReference.NodeDto%7D%2CSystem.Windows.Rect)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L13">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L34">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_SchedulingClients_Core_MapServiceReference_MoveDto_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(SchedulingClients.Core.MapServiceReference.MoveDto,System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)">IsWithin(MoveDto, IEnumerable&lt;NodeDto&gt;, Rect)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines if a move is within a bounding box.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsWithin(this MoveDto move, IEnumerable&lt;NodeDto&gt; node, Rect boundingBox)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsWithin(this MoveDto move, IEnumerable&lt;NodeDto&gt; nodes, Rect boundingBox)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -116,17 +118,20 @@
       <tr>
         <td><a class="xref" href="SchedulingClients.Core.MapServiceReference.MoveDto.html">MoveDto</a></td>
         <td><span class="parametername">move</span></td>
-        <td></td>
+        <td><p>Target move</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.NodeDto.html">NodeDto</a>&gt;</td>
-        <td><span class="parametername">node</span></td>
-        <td></td>
+        <td><span class="parametername">nodes</span></td>
+        <td><p>Enumerable of all nodes in the roadmap</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Windows.Rect</span></td>
         <td><span class="parametername">boundingBox</span></td>
-        <td></td>
+        <td><p>Bounding box.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -141,7 +146,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the move is within the bounding box.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -150,15 +156,16 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods_ToPercentageComplete_SchedulingClients_Core_MapServiceReference_OccupyingMandateProgressDto_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete(SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L45">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L103">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ExtensionMethods_ToPercentageComplete_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ExtensionMethods_ToPercentageComplete_SchedulingClients_Core_MapServiceReference_OccupyingMandateProgressDto_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete(SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto)">ToPercentageComplete(OccupyingMandateProgressDto)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts occupying mandate progress to a progress percentage.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ToPercentageComplete(this OccupyingMandateProgressDto occupyingMandateProgressData)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double ToPercentageComplete(this OccupyingMandateProgressDto occupyingMandateProgress)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,7 +179,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto.html">OccupyingMandateProgressDto</a></td>
-        <td><span class="parametername">occupyingMandateProgressData</span></td>
+        <td><span class="parametername">occupyingMandateProgress</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -188,7 +195,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td></td>
+        <td><p>Percentage complete</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -197,11 +205,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods_ToPercentageComplete_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_OccupyingMandateMapItemDto__.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete(System.Collections.Generic.IEnumerable%7BSchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L33">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L85">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ExtensionMethods_ToPercentageComplete_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ExtensionMethods_ToPercentageComplete_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_OccupyingMandateMapItemDto__" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto})">ToPercentageComplete(IEnumerable&lt;OccupyingMandateMapItemDto&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a collection of occupying mandate map items to a progress percentage.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -220,7 +229,8 @@
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto.html">OccupyingMandateMapItemDto</a>&gt;</td>
         <td><span class="parametername">dataSet</span></td>
-        <td></td>
+        <td><p>Collection of occupying mandate map item dtos to be processed.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -235,7 +245,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td></td>
+        <td><p>Percentage complete</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -244,11 +255,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_SchedulingClients_Core_MapServiceReference_NodeDto_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(SchedulingClients.Core.MapServiceReference.NodeDto)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L10">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L19">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_SchedulingClients_Core_MapServiceReference_NodeDto_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(SchedulingClients.Core.MapServiceReference.NodeDto)">ToPoint(NodeDto)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a node to a point.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -267,7 +279,8 @@
       <tr>
         <td><a class="xref" href="SchedulingClients.Core.MapServiceReference.NodeDto.html">NodeDto</a></td>
         <td><span class="parametername">node</span></td>
-        <td></td>
+        <td><p>Node to convert</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -282,7 +295,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Windows.Point</span></td>
-        <td></td>
+        <td><p>Point containing XY position of node.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -291,11 +305,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_MoveDto__System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable%7BSchedulingClients.Core.MapServiceReference.MoveDto%7D%2CSystem.Collections.Generic.IEnumerable%7BSchedulingClients.Core.MapServiceReference.NodeDto%7D%2CSystem.Windows.Rect)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L27">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L68">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ExtensionMethods_Within_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.Within*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_MoveDto__System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.MoveDto},System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)">Within(IEnumerable&lt;MoveDto&gt;, IEnumerable&lt;NodeDto&gt;, Rect)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Filters an collection of moves that are within a bounding box.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -314,17 +329,20 @@
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.MoveDto.html">MoveDto</a>&gt;</td>
         <td><span class="parametername">moves</span></td>
-        <td></td>
+        <td><p>Moves to be filtered.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.NodeDto.html">NodeDto</a>&gt;</td>
         <td><span class="parametername">nodes</span></td>
-        <td></td>
+        <td><p>All nodes in the roadmap.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Windows.Rect</span></td>
         <td><span class="parametername">boundingBox</span></td>
-        <td></td>
+        <td><p>Bounding box.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -339,7 +357,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.MoveDto.html">MoveDto</a>&gt;</td>
-        <td></td>
+        <td><p>All moves within the bounding box.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -348,11 +367,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable%7BSchedulingClients.Core.MapServiceReference.NodeDto%7D%2CSystem.Windows.Rect)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L30">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L77">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ExtensionMethods_Within_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.Within*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_" data-uid="SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)">Within(IEnumerable&lt;NodeDto&gt;, Rect)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Filters a collection of nodes that are withing a bounding box.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -371,12 +391,14 @@
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.NodeDto.html">NodeDto</a>&gt;</td>
         <td><span class="parametername">nodes</span></td>
-        <td></td>
+        <td><p>Nodes to be filtered.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Windows.Rect</span></td>
         <td><span class="parametername">boundingBox</span></td>
-        <td></td>
+        <td><p>Bounding box.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -391,7 +413,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.NodeDto.html">NodeDto</a>&gt;</td>
-        <td></td>
+        <td><p>All nodes within the bounding box.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -406,7 +429,7 @@
                     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ExtensionMethods.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient_ExtensionMethods%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient_ExtensionMethods.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

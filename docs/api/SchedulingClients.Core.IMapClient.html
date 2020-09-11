@@ -73,7 +73,8 @@
   
   <h1 id="SchedulingClients_Core_IMapClient" data-uid="SchedulingClients.Core.IMapClient" class="text-break">Interface IMapClient
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>For obtaining map data and applying occupying mandates.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -115,18 +116,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_OccupyingMandateProgressDto.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_OccupyingMandateProgress.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.OccupyingMandateProgress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L25">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L62">View Source</a>
   </span>
-  <a id="SchedulingClients_Core_IMapClient_OccupyingMandateProgressDto_" data-uid="SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto*"></a>
-  <h4 id="SchedulingClients_Core_IMapClient_OccupyingMandateProgressDto" data-uid="SchedulingClients.Core.IMapClient.OccupyingMandateProgressDto">OccupyingMandateProgressDto</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="SchedulingClients_Core_IMapClient_OccupyingMandateProgress_" data-uid="SchedulingClients.Core.IMapClient.OccupyingMandateProgress*"></a>
+  <h4 id="SchedulingClients_Core_IMapClient_OccupyingMandateProgress" data-uid="SchedulingClients.Core.IMapClient.OccupyingMandateProgress">OccupyingMandateProgress</h4>
+  <div class="markdown level1 summary"><p>Current progress of the current occupying mandate.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">OccupyingMandateProgressDto OccupyingMandateProgressDto { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">OccupyingMandateProgressDto OccupyingMandateProgress { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -150,11 +152,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_ClearOccupyingMandate.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.ClearOccupyingMandate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L23">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L57">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_ClearOccupyingMandate_" data-uid="SchedulingClients.Core.IMapClient.ClearOccupyingMandate*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_ClearOccupyingMandate" data-uid="SchedulingClients.Core.IMapClient.ClearOccupyingMandate">ClearOccupyingMandate()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Clears any occupying mandate.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -171,24 +174,26 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
-        <td></td>
+        <td><p>Successful service call result on success.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetAllMoveData.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetAllMoveData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetAllMoves.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetAllMoves%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L11">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L18">View Source</a>
   </span>
-  <a id="SchedulingClients_Core_IMapClient_GetAllMoveData_" data-uid="SchedulingClients.Core.IMapClient.GetAllMoveData*"></a>
-  <h4 id="SchedulingClients_Core_IMapClient_GetAllMoveData" data-uid="SchedulingClients.Core.IMapClient.GetAllMoveData">GetAllMoveData()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="SchedulingClients_Core_IMapClient_GetAllMoves_" data-uid="SchedulingClients.Core.IMapClient.GetAllMoves*"></a>
+  <h4 id="SchedulingClients_Core_IMapClient_GetAllMoves" data-uid="SchedulingClients.Core.IMapClient.GetAllMoves">GetAllMoves()</h4>
+  <div class="markdown level1 summary"><p>Gets all moves in the roadmap.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;MoveDto[]&gt; GetAllMoveData()</code></pre>
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;MoveDto[]&gt; GetAllMoves()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -201,24 +206,26 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.MoveDto.html">MoveDto</a>[]&gt;</td>
-        <td></td>
+        <td><p>Array of move dtos.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetAllNodeData.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetAllNodeData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetAllNodes.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetAllNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L13">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L24">View Source</a>
   </span>
-  <a id="SchedulingClients_Core_IMapClient_GetAllNodeData_" data-uid="SchedulingClients.Core.IMapClient.GetAllNodeData*"></a>
-  <h4 id="SchedulingClients_Core_IMapClient_GetAllNodeData" data-uid="SchedulingClients.Core.IMapClient.GetAllNodeData">GetAllNodeData()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="SchedulingClients_Core_IMapClient_GetAllNodes_" data-uid="SchedulingClients.Core.IMapClient.GetAllNodes*"></a>
+  <h4 id="SchedulingClients_Core_IMapClient_GetAllNodes" data-uid="SchedulingClients.Core.IMapClient.GetAllNodes">GetAllNodes()</h4>
+  <div class="markdown level1 summary"><p>Gets all nodes in the roadmap.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;NodeDto[]&gt; GetAllNodeData()</code></pre>
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;NodeDto[]&gt; GetAllNodes()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,24 +238,26 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.NodeDto.html">NodeDto</a>[]&gt;</td>
-        <td></td>
+        <td><p>Array of node dtos.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetAllParameterData.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetAllParameterData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetAllParameters.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetAllParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L15">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L30">View Source</a>
   </span>
-  <a id="SchedulingClients_Core_IMapClient_GetAllParameterData_" data-uid="SchedulingClients.Core.IMapClient.GetAllParameterData*"></a>
-  <h4 id="SchedulingClients_Core_IMapClient_GetAllParameterData" data-uid="SchedulingClients.Core.IMapClient.GetAllParameterData">GetAllParameterData()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="SchedulingClients_Core_IMapClient_GetAllParameters_" data-uid="SchedulingClients.Core.IMapClient.GetAllParameters*"></a>
+  <h4 id="SchedulingClients_Core_IMapClient_GetAllParameters" data-uid="SchedulingClients.Core.IMapClient.GetAllParameters">GetAllParameters()</h4>
+  <div class="markdown level1 summary"><p>Gets all Kingpin parameters in the roadmap.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;ParameterDto[]&gt; GetAllParameterData()</code></pre>
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;ParameterDto[]&gt; GetAllParameters()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -261,24 +270,26 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.ParameterDto.html">ParameterDto</a>[]&gt;</td>
-        <td></td>
+        <td><p>An array of parameter dtos.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetOccupyingMandateProgressData.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetOccupyingMandateProgress.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L19">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L43">View Source</a>
   </span>
-  <a id="SchedulingClients_Core_IMapClient_GetOccupyingMandateProgressData_" data-uid="SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData*"></a>
-  <h4 id="SchedulingClients_Core_IMapClient_GetOccupyingMandateProgressData" data-uid="SchedulingClients.Core.IMapClient.GetOccupyingMandateProgressData">GetOccupyingMandateProgressData()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="SchedulingClients_Core_IMapClient_GetOccupyingMandateProgress_" data-uid="SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress*"></a>
+  <h4 id="SchedulingClients_Core_IMapClient_GetOccupyingMandateProgress" data-uid="SchedulingClients.Core.IMapClient.GetOccupyingMandateProgress">GetOccupyingMandateProgress()</h4>
+  <div class="markdown level1 summary"><p>Gets the state of the current occupying mandate.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;OccupyingMandateProgressDto&gt; GetOccupyingMandateProgressData()</code></pre>
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;OccupyingMandateProgressDto&gt; GetOccupyingMandateProgress()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -291,7 +302,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto.html">OccupyingMandateProgressDto</a>&gt;</td>
-        <td></td>
+        <td><p>Occupying mandate progress dto of current mandate.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -300,11 +312,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_GetTrajectory_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.GetTrajectory(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L17">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L37">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_GetTrajectory_" data-uid="SchedulingClients.Core.IMapClient.GetTrajectory*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_GetTrajectory_System_Int32_" data-uid="SchedulingClients.Core.IMapClient.GetTrajectory(System.Int32)">GetTrajectory(Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets an individual moevs trajectory.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -323,7 +336,8 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">moveId</span></td>
-        <td></td>
+        <td><p>Target move Id.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -338,7 +352,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<a class="xref" href="SchedulingClients.Core.MapServiceReference.WaypointDto.html">WaypointDto</a>[]&gt;</td>
-        <td></td>
+        <td><p>Waypoint dto for given move.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -347,11 +362,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_SetOccupyingMandate_System_Collections_Generic_HashSet_System_Int32__System_TimeSpan_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.SetOccupyingMandate(System.Collections.Generic.HashSet%7BSystem.Int32%7D%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L21">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L51">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IMapClient_SetOccupyingMandate_" data-uid="SchedulingClients.Core.IMapClient.SetOccupyingMandate*"></a>
   <h4 id="SchedulingClients_Core_IMapClient_SetOccupyingMandate_System_Collections_Generic_HashSet_System_Int32__System_TimeSpan_" data-uid="SchedulingClients.Core.IMapClient.SetOccupyingMandate(System.Collections.Generic.HashSet{System.Int32},System.TimeSpan)">SetOccupyingMandate(HashSet&lt;Int32&gt;, TimeSpan)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets a new occupying mandate.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -370,12 +386,14 @@
       <tr>
         <td><span class="xref">System.Collections.Generic.HashSet</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">mapItemIds</span></td>
-        <td></td>
+        <td><p>Hash set of map items to occupy.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td></td>
+        <td><p>Allotted time to successfully apply the mandate.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -390,7 +408,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
-        <td></td>
+        <td><p>Successful service call result on success.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -401,10 +420,11 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient_OccupyingMandateProgressUpdated.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient.OccupyingMandateProgressUpdated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L27">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L67">View Source</a>
   </span>
   <h4 id="SchedulingClients_Core_IMapClient_OccupyingMandateProgressUpdated" data-uid="SchedulingClients.Core.IMapClient.OccupyingMandateProgressUpdated">OccupyingMandateProgressUpdated</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Fired whenever occupying mandate progress is updated.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -436,7 +456,7 @@
                     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IMapClient.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IMapClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IMapClient.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

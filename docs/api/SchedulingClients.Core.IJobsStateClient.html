@@ -73,7 +73,8 @@
   
   <h1 id="SchedulingClients_Core_IJobsStateClient" data-uid="SchedulingClients.Core.IJobsStateClient" class="text-break">Interface IJobsStateClient
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>For aborting jobs and monitoring the state of all jobs in the system.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -115,18 +116,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_JobsStateDto.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.JobsStateDto%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_JobsState.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.JobsState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L20">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L51">View Source</a>
   </span>
-  <a id="SchedulingClients_Core_IJobsStateClient_JobsStateDto_" data-uid="SchedulingClients.Core.IJobsStateClient.JobsStateDto*"></a>
-  <h4 id="SchedulingClients_Core_IJobsStateClient_JobsStateDto" data-uid="SchedulingClients.Core.IJobsStateClient.JobsStateDto">JobsStateDto</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="SchedulingClients_Core_IJobsStateClient_JobsState_" data-uid="SchedulingClients.Core.IJobsStateClient.JobsState*"></a>
+  <h4 id="SchedulingClients_Core_IJobsStateClient_JobsState" data-uid="SchedulingClients.Core.IJobsStateClient.JobsState">JobsState</h4>
+  <div class="markdown level1 summary"><p>A summary of the current state of all jobs in the system.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">JobsStateDto JobsStateDto { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">JobsStateDto JobsState { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -150,11 +152,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_AbortAllJobs.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.AbortAllJobs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L10">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L17">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IJobsStateClient_AbortAllJobs_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortAllJobs*"></a>
   <h4 id="SchedulingClients_Core_IJobsStateClient_AbortAllJobs" data-uid="SchedulingClients.Core.IJobsStateClient.AbortAllJobs">AbortAllJobs()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Aborts all jobs in the system.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -171,7 +174,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
-        <td></td>
+        <td><p>Successful service call result on success.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -180,11 +184,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_AbortAllJobsForAgent_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.AbortAllJobsForAgent(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L12">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L24">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IJobsStateClient_AbortAllJobsForAgent_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortAllJobsForAgent*"></a>
   <h4 id="SchedulingClients_Core_IJobsStateClient_AbortAllJobsForAgent_System_Int32_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortAllJobsForAgent(System.Int32)">AbortAllJobsForAgent(Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Aborts all jobs for a specific agent.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -203,7 +208,8 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">agentId</span></td>
-        <td></td>
+        <td><p>Target agent Id.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -218,7 +224,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
-        <td></td>
+        <td><p>Successful service call result on success.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -227,11 +234,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_AbortJob_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.AbortJob(System.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L14">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L32">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IJobsStateClient_AbortJob_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortJob*"></a>
   <h4 id="SchedulingClients_Core_IJobsStateClient_AbortJob_System_Int32_System_String_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortJob(System.Int32,System.String)">AbortJob(Int32, String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Aborts a specific job.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -250,12 +258,14 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">jobId</span></td>
-        <td></td>
+        <td><p>Target job Id.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">note</span></td>
-        <td></td>
+        <td><p>Reason for abortion.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -270,7 +280,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
-        <td></td>
+        <td><p>Successful service call result on success.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -279,11 +290,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_AbortTask_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.AbortTask(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L16">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L39">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IJobsStateClient_AbortTask_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortTask*"></a>
   <h4 id="SchedulingClients_Core_IJobsStateClient_AbortTask_System_Int32_" data-uid="SchedulingClients.Core.IJobsStateClient.AbortTask(System.Int32)">AbortTask(Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Aborts a specific task.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -302,7 +314,8 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">taskId</span></td>
-        <td></td>
+        <td><p>Target task Id.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -317,7 +330,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
-        <td></td>
+        <td><p>Successful service call result on success.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -326,11 +340,12 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_GetActiveJobIdsForAgent_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.GetActiveJobIdsForAgent(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L18">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L46">View Source</a>
   </span>
   <a id="SchedulingClients_Core_IJobsStateClient_GetActiveJobIdsForAgent_" data-uid="SchedulingClients.Core.IJobsStateClient.GetActiveJobIdsForAgent*"></a>
   <h4 id="SchedulingClients_Core_IJobsStateClient_GetActiveJobIdsForAgent_System_Int32_" data-uid="SchedulingClients.Core.IJobsStateClient.GetActiveJobIdsForAgent(System.Int32)">GetActiveJobIdsForAgent(Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the active job Ids for a specific agent.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -349,7 +364,8 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">agentId</span></td>
-        <td></td>
+        <td><p>Target agent Id.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -364,7 +380,8 @@
     <tbody>
       <tr>
         <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>[]&gt;</td>
-        <td></td>
+        <td><p>Array of active job Ids.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -375,10 +392,11 @@
     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient_JobsStateUpdated.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient.JobsStateUpdated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L22">View Source</a>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L56">View Source</a>
   </span>
   <h4 id="SchedulingClients_Core_IJobsStateClient_JobsStateUpdated" data-uid="SchedulingClients.Core.IJobsStateClient.JobsStateUpdated">JobsStateUpdated</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Fired whenever the jobs state summary is updated.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -410,7 +428,7 @@
                     <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobsStateClient.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobsStateClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobsStateClient.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
