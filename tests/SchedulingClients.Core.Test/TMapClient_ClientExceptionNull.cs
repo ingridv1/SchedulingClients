@@ -1,4 +1,4 @@
-﻿namespace SchedulingClients.Test
+﻿namespace SchedulingClients.Core.Test
 {
     /*
 	[TestFixture]

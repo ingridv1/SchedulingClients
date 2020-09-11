@@ -4,7 +4,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Net;
 
-namespace SchedulingClients.Test
+namespace SchedulingClients.Core.Test
 {
     public abstract class AbstractInvalidServerClientTest
     {

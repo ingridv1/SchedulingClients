@@ -4,7 +4,7 @@ using SchedulingClients.Core;
 using SchedulingClients.Core.AgentServiceReference;
 using System.Linq;
 
-namespace SchedulingClients.Test
+namespace SchedulingClients.Core.Test
 {
     [TestFixture]
     [Category("Agent")]
