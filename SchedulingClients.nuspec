@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SchedulingClients</id>
-    <version>15.0.0-alpha01</version>
+    <version>15.0.0-alpha02</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
