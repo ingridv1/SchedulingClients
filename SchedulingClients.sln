@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.DemoApp",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingClients.UI", "src\SchedulingClients.UI\SchedulingClients.UI.csproj", "{98FDE265-F5F7-416D-9B85-499A6DDF75E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 01", "Tutorial 01\Tutorial 01.csproj", "{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 01", "tutorials\Tutorial 01\Tutorial 01.csproj", "{73EA04CD-143A-4129-8C8D-03DCF6D9F1FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

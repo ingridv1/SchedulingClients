@@ -3,8 +3,9 @@
     {
       "src": [
         {
-          "files": [ "src/Plugins.PluginServiceConsumer.csproj" ],
-          "exclude": [ "**/bin/**", "**/obj/**", "**Console/", "**App/" ]
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**", "**Console/", "**App/", "**Tutorial**/" ],
+          "src": "../src"
         }
       ],
       "dest": "api",
@@ -53,7 +54,7 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "templates/guidanceAutomation"
+      "templates/material"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",

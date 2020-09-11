@@ -1,0 +1,1165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IJobBuilderClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IJobBuilderClient
+   ">
+    <meta name="generator" content="docfx 2.52.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SchedulingClients.Core.IJobBuilderClient">
+  
+  
+  <h1 id="SchedulingClients_Core_IJobBuilderClient" data-uid="SchedulingClients.Core.IJobBuilderClient" class="text-break">Interface IJobBuilderClient
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">BaseClients.Architecture.IClient.EndpointAddress</span>
+    </div>
+    <div>
+      <span class="xref">BaseClients.Architecture.IClient.LastCaughtException</span>
+    </div>
+    <div>
+      <span class="xref">BaseClients.Architecture.IClient.Logger</span>
+    </div>
+    <div>
+      <span class="xref">System.IDisposable.Dispose()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SchedulingClients.Core.html">SchedulingClients.Core</a></h6>
+  <h6><strong>Assembly</strong>: SchedulingClients.Core.dll</h6>
+  <h5 id="SchedulingClients_Core_IJobBuilderClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IJobBuilderClient : IClient, IDisposable</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_BeginEditingJob_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.BeginEditingJob(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L45">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_BeginEditingJob_" data-uid="SchedulingClients.Core.IJobBuilderClient.BeginEditingJob*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_BeginEditingJob_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.BeginEditingJob(System.Int32)">BeginEditingJob(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;bool&gt; BeginEditingJob(int jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_BeginEditingTask_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.BeginEditingTask(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L49">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_BeginEditingTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.BeginEditingTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_BeginEditingTask_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.BeginEditingTask(System.Int32)">BeginEditingTask(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;bool&gt; BeginEditingTask(int taskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CommitJob_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CommitJob(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L13">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CommitJob_" data-uid="SchedulingClients.Core.IJobBuilderClient.CommitJob*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CommitJob_System_Int32_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CommitJob(System.Int32,System.Int32)">CommitJob(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult CommitJob(int jobId, int agentId = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">agentId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateAtomicMoveListTask_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateAtomicMoveListTask(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L21">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateAtomicMoveListTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateAtomicMoveListTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateAtomicMoveListTask_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateAtomicMoveListTask(System.Int32)">CreateAtomicMoveListTask(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateAtomicMoveListTask(int parentTaskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentTaskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateAtomicMoveTask_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateAtomicMoveTask(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L29">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateAtomicMoveTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateAtomicMoveTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateAtomicMoveTask_System_Int32_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateAtomicMoveTask(System.Int32,System.Int32)">CreateAtomicMoveTask(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentAtomicMoveListTaskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">moveId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateAwaitingTask_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateAwaitingTask(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L33">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateAwaitingTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateAwaitingTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateAwaitingTask_System_Int32_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateAwaitingTask(System.Int32,System.Int32)">CreateAwaitingTask(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateAwaitingTask(int parentListTaskId, int nodeId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentListTaskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateChargeTask_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateChargeTask(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L25">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateChargeTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateChargeTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateChargeTask_System_Int32_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateChargeTask(System.Int32,System.Int32)">CreateChargeTask(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateChargeTask(int parentListTaskId, int nodeId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentListTaskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateGoToNodeTask_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateGoToNodeTask(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L31">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateGoToNodeTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateGoToNodeTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateGoToNodeTask_System_Int32_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateGoToNodeTask(System.Int32,System.Int32)">CreateGoToNodeTask(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateGoToNodeTask(int parentListTaskId, int nodeId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentListTaskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateJob.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateJob%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L15">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateJob_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateJob*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateJob" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateJob">CreateJob()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;JobDto&gt; CreateJob()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<a class="xref" href="SchedulingClients.Core.JobBuilderServiceReference.JobDto.html">JobDto</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateOrderedListTask_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateOrderedListTask(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L17">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateOrderedListTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateOrderedListTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateOrderedListTask_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateOrderedListTask(System.Int32)">CreateOrderedListTask(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateOrderedListTask(int parentTaskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentTaskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateServicingTask_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32%2CSystem.Int32%2CGAAPICommon.Architecture.ServiceType%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L23">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateServicingTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateServicingTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateServicingTask_System_Int32_System_Int32_GAAPICommon_Architecture_ServiceType_System_TimeSpan_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateServicingTask(System.Int32,System.Int32,GAAPICommon.Architecture.ServiceType,System.TimeSpan)">CreateServicingTask(Int32, Int32, ServiceType, TimeSpan)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration = default(TimeSpan))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentListTaskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.ServiceType</span></td>
+        <td><span class="parametername">serviceType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">expectedDuration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateSleepingTask_System_Int32_System_Int32_System_TimeSpan_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateSleepingTask(System.Int32%2CSystem.Int32%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L27">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateSleepingTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateSleepingTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateSleepingTask_System_Int32_System_Int32_System_TimeSpan_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateSleepingTask(System.Int32,System.Int32,System.TimeSpan)">CreateSleepingTask(Int32, Int32, TimeSpan)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateSleepingTask(int parentListTaskId, int nodeId, TimeSpan expectedDuration = default(TimeSpan))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentListTaskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">expectedDuration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_CreateUnorderedListTask_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.CreateUnorderedListTask(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L19">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_CreateUnorderedListTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateUnorderedListTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_CreateUnorderedListTask_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.CreateUnorderedListTask(System.Int32)">CreateUnorderedListTask(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult&lt;int&gt; CreateUnorderedListTask(int parentTaskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentTaskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_FinishEditingJob_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.FinishEditingJob(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L47">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_FinishEditingJob_" data-uid="SchedulingClients.Core.IJobBuilderClient.FinishEditingJob*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_FinishEditingJob_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.FinishEditingJob(System.Int32)">FinishEditingJob(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult FinishEditingJob(int jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_FinishEditingTask_System_Int32_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.FinishEditingTask(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L51">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_FinishEditingTask_" data-uid="SchedulingClients.Core.IJobBuilderClient.FinishEditingTask*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_FinishEditingTask_System_Int32_" data-uid="SchedulingClients.Core.IJobBuilderClient.FinishEditingTask(System.Int32)">FinishEditingTask(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult FinishEditingTask(int taskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_IssueEnumDirective_System_Int32_System_String_System_Byte_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.IssueEnumDirective(System.Int32%2CSystem.String%2CSystem.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L35">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_IssueEnumDirective_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueEnumDirective*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_IssueEnumDirective_System_Int32_System_String_System_Byte_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueEnumDirective(System.Int32,System.String,System.Byte)">IssueEnumDirective(Int32, String, Byte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult IssueEnumDirective(int taskId, string parameterAlias, byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterAlias</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_IssueFloatDirective_System_Int32_System_String_System_Single_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.IssueFloatDirective(System.Int32%2CSystem.String%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L41">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_IssueFloatDirective_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueFloatDirective*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_IssueFloatDirective_System_Int32_System_String_System_Single_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueFloatDirective(System.Int32,System.String,System.Single)">IssueFloatDirective(Int32, String, Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult IssueFloatDirective(int taskId, string parameterAlias, float value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterAlias</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_IssueIPAddressDirective_System_Int32_System_String_System_Net_IPAddress_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.IssueIPAddressDirective(System.Int32%2CSystem.String%2CSystem.Net.IPAddress)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L43">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_IssueIPAddressDirective_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueIPAddressDirective*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_IssueIPAddressDirective_System_Int32_System_String_System_Net_IPAddress_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueIPAddressDirective(System.Int32,System.String,System.Net.IPAddress)">IssueIPAddressDirective(Int32, String, IPAddress)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult IssueIPAddressDirective(int taskId, string parameterAlias, IPAddress value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterAlias</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.IPAddress</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_IssueShortDirective_System_Int32_System_String_System_Int16_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.IssueShortDirective(System.Int32%2CSystem.String%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L37">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_IssueShortDirective_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueShortDirective*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_IssueShortDirective_System_Int32_System_String_System_Int16_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueShortDirective(System.Int32,System.String,System.Int16)">IssueShortDirective(Int32, String, Int16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult IssueShortDirective(int taskId, string parameterAlias, short value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterAlias</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient_IssueUShortDirective_System_Int32_System_String_System_UInt16_.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient.IssueUShortDirective(System.Int32%2CSystem.String%2CSystem.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L39">View Source</a>
+  </span>
+  <a id="SchedulingClients_Core_IJobBuilderClient_IssueUShortDirective_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueUShortDirective*"></a>
+  <h4 id="SchedulingClients_Core_IJobBuilderClient_IssueUShortDirective_System_Int32_System_String_System_UInt16_" data-uid="SchedulingClients.Core.IJobBuilderClient.IssueUShortDirective(System.Int32,System.String,System.UInt16)">IssueUShortDirective(Int32, String, UInt16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCallResult IssueUShortDirective(int taskId, string parameterAlias, ushort value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterAlias</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt16</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GAAPICommon.Architecture.IServiceCallResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/new/docfx_tidy/apiSpec/new?filename=SchedulingClients_Core_IJobBuilderClient.md&amp;value=---%0Auid%3A%20SchedulingClients.Core.IJobBuilderClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/GuidanceAutomation/SchedulingClients/blob/docfx_tidy/src/SchedulingClients.Core/Client Interfaces/IJobBuilderClient.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
