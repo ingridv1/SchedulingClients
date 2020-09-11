@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SchedulingClients.Core
 {
-    public class JobStateServiceCallback : IJobStateServiceCallback
+    internal class JobStateServiceCallback : IJobStateServiceCallback
     {
         public JobStateServiceCallback()
         {

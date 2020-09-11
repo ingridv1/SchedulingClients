@@ -34,7 +34,7 @@ namespace Tutorial_01
                 IServiceCallResult result = fleetManagerClient.CreateVirtualVehicle(IPAddress.Parse("192.168.0.1"), 0, 0, 0);
 
                 if (!result.IsSuccessful())
-                    throw new Exception();
+                    Console.WriteLine($"Failed to create virtual vehicle serviceCode:{result.ServiceCode}");
             }
 
             IEnumerable<int> nodeIds = Enumerable.Empty<int>(); // Create an array to store node ids in
@@ -45,7 +45,7 @@ namespace Tutorial_01
                 IServiceCallResult<NodeDto[]> nodeResults = mapClient.GetAllNodes();
 
                 if (!nodeResults.IsSuccessful())
-                    throw new Exception();
+                    Console.WriteLine($"Failed to get nodes, serviceCode:{nodeResults.ServiceCode}");
                 else
                     nodeIds = nodeResults.Value.Select(e => e.Id);
             }
@@ -67,8 +67,10 @@ namespace Tutorial_01
 
                     default:
                         {
+                            // Use the job builder client to create a new goto job. 
                             using (IJobBuilderClient jobBuilder = SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient(endpointSettings))
                             {
+                                // Boiler plate code to pick a random node from the array of nodes.
                                 int index = random.Next(0, nodeIds.Count());
                                 int nodeId = nodeIds.ElementAt(index);
 
@@ -76,15 +78,15 @@ namespace Tutorial_01
 
                                 IServiceCallResult<JobDto> createResult = jobBuilder.CreateJob();
                                 if (!createResult.IsSuccessful())
-                                    throw new Exception();
+                                    Console.WriteLine($"Failed to create job, serviceCode:{createResult.ServiceCode}");
 
                                 IServiceCallResult<int> gotoResult = jobBuilder.CreateGoToNodeTask(createResult.Value.RootOrderedListTaskId, nodeId);
                                 if (!gotoResult.IsSuccessful())
-                                    throw new Exception();
+                                    Console.WriteLine($"Failed to create goto task, serviceCode:{gotoResult.ServiceCode}");
 
                                 IServiceCallResult commitResult = jobBuilder.CommitJob(createResult.Value.JobId);
                                 if (!commitResult.IsSuccessful())
-                                    throw new Exception();
+                                    Console.WriteLine($"Failed to commit job, serviceCode:{commitResult.ServiceCode}");
                             }
 
                             break;

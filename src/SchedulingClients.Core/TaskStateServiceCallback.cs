@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SchedulingClients.Core
 {
-    public class TaskStateServiceCallback : ITaskStateServiceCallback
+    internal class TaskStateServiceCallback : ITaskStateServiceCallback
     {
         public TaskStateServiceCallback()
         {
