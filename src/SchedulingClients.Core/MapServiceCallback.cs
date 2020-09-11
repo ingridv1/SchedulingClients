@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SchedulingClients.Core
 {
-    public class MapServiceCallback : IMapServiceCallback
+    internal class MapServiceCallback : IMapServiceCallback
     {
         public MapServiceCallback()
         {

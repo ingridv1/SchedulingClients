@@ -1,9 +1,5 @@
 ﻿using SchedulingClients.Core.MapServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace SchedulingClients.Core
@@ -25,7 +21,6 @@ namespace SchedulingClients.Core
 
             return $"{node.Id},{node.Alias},{node.X},{node.Y},{node.HeadingRad}";
         }
-
 
         public static string ToCSVFile(this NodeDto[] nodes)
         {
@@ -50,7 +45,7 @@ namespace SchedulingClients.Core
 
             using (StreamWriter file = new StreamWriter(filePath))
             {
-                file.WriteLine("# Id, Alias SourceId, DestinationId");  
+                file.WriteLine("# Id, Alias SourceId, DestinationId");
 
                 foreach (MoveDto move in moves)
                 {
