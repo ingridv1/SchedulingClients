@@ -134,6 +134,7 @@
     <Compile Include="TJobStateClient_ClientExceptionNull.cs" />
     <Compile Include="TMapClient.cs" />
     <Compile Include="TMapClient_ClientExceptionNull.cs" />
+    <Compile Include="TMapClient_ExtensionMethods.cs" />
     <Compile Include="TServicingClient_ClientExceptionNull.cs" />
   </ItemGroup>
   <ItemGroup>

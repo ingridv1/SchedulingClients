@@ -92,7 +92,7 @@ namespace SchedulingClients.Core
             double numItems = listSet.Count;
             double numComplete = listSet.Where(e => e.IsOccupied).Count();
 
-            return (numItems / numComplete) * 100;
+            return ( numComplete/ numItems) * 100;
         }
 
         /// <summary>
