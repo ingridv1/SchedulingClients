@@ -7,20 +7,11 @@ namespace SchedulingClients.Core
 {
     internal class AgentClient : AbstractClient<IAgentService>, IAgentClient
     {
-        /// <summary>
-        /// Creates a new agent client
-        /// </summary>
-        /// <param name="netTcpUri">net .tcp address of the agent client service</param>
         public AgentClient(Uri netTcpUri)
             : base(netTcpUri)
         {
         }
 
-        /// <summary>
-        /// Gets all available data on registered agents
-        /// </summary>
-        /// <param name="agentDatas"></param>
-        /// <returns>Array of AgentDtos</returns>
         public IServiceCallResult<AgentDto[]> GetAllAgents()
         {
             Logger.Trace("GetAllAgentData()");

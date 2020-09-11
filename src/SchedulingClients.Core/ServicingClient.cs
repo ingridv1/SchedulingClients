@@ -12,31 +12,17 @@ namespace SchedulingClients.Core
 
         private bool isDisposed = false;
 
-        /// <summary>
-        /// Creates a new servicing client
-        /// </summary>
-        /// <param name="netTcpUri">net.tcp address of the servicing service</param>
-        /// <param name="Heartbeat">Heartbeat</param>
         public ServicingClient(Uri netTcpUri, TimeSpan heartbeat = default)
                     : base(netTcpUri, heartbeat)
         {
         }
 
-        /// <summary>
-        /// New service request received
-        /// </summary>
         public event Action<ServiceStateDto> ServiceRequest
         {
             add { callback.ServiceRequest += value; }
             remove { callback.ServiceRequest -= value; }
         }
 
-        /// <summary>
-        /// Sets a service to complete
-        /// </summary>
-        /// <param name="taskId">Id of the service task</param>
-        /// <param name="success">True if successfull</param>
-        /// <returns>ServiceOperationResult</returns>
         public IServiceCallResult SetServiceComplete(int taskId)
         {
             Logger.Trace($"SetServiceComplete() taskId:{taskId}");
