@@ -42,7 +42,7 @@ namespace Tutorial_01
             // Using the map manager client, get the ids of all nodes in the map
             using (IMapClient mapClient = SchedulingClients.Core.ClientFactory.CreateTcpMapClient(endpointSettings))
             {
-                IServiceCallResult<NodeDto[]> nodeResults = mapClient.GetAllNodeData();
+                IServiceCallResult<NodeDto[]> nodeResults = mapClient.GetAllNodes();
 
                 if (!nodeResults.IsSuccessful())
                     throw new Exception();

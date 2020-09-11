@@ -24,7 +24,7 @@ namespace SchedulingClients.UI.ViewModel
 
         private void HandleGetMoves()
         {
-            IServiceCallResult<MoveDto[]> result = Model.GetAllMoveData();
+            IServiceCallResult<MoveDto[]> result = Model.GetAllMoves();
 
             if (result.IsSuccessful())
             {
@@ -35,7 +35,7 @@ namespace SchedulingClients.UI.ViewModel
 
         private void HandleGetNodes()
         {
-            IServiceCallResult<NodeDto[]> result = Model.GetAllNodeData();
+            IServiceCallResult<NodeDto[]> result = Model.GetAllNodes();
 
             if (result.IsSuccessful())
             {

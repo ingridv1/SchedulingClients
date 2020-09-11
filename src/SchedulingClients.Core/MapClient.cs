@@ -32,7 +32,7 @@ namespace SchedulingClients.Core
         /// <summary>
         /// The current state of progress of the occupying mandate
         /// </summary>
-        public OccupyingMandateProgressDto OccupyingMandateProgressDto
+        public OccupyingMandateProgressDto OccupyingMandateProgress
         {
             get { return occupyingMandateProgressDto; }
 
@@ -60,7 +60,7 @@ namespace SchedulingClients.Core
 
         private void Callback_OccupyingMandateProgressChange(OccupyingMandateProgressDto newProgressData)
         {
-            OccupyingMandateProgressDto = newProgressData;
+            OccupyingMandateProgress = newProgressData;
         }
 
         protected override void SetInstanceContext()
@@ -73,7 +73,7 @@ namespace SchedulingClients.Core
         /// </summary>
         /// <param name="moveData">All moves in the roadmap</param>
         /// <returns>ServiceOperationResult</returns>
-        public IServiceCallResult<MoveDto[]> GetAllMoveData()
+        public IServiceCallResult<MoveDto[]> GetAllMoves()
         {
             Logger.Trace("GetAllMoveData()");
             return HandleAPICall<MoveDto[]>(e => e.GetAllMoveData());
@@ -84,7 +84,7 @@ namespace SchedulingClients.Core
         /// </summary>
         /// <param name="nodeData">All nodes in the roadmap</param>
         /// <returns>ServiceOperationResult</returns>
-        public IServiceCallResult<NodeDto[]> GetAllNodeData()
+        public IServiceCallResult<NodeDto[]> GetAllNodes()
         {
             Logger.Trace("GetAllNodeData()");
             return HandleAPICall<NodeDto[]>(e => e.GetAllNodeData());
@@ -95,7 +95,7 @@ namespace SchedulingClients.Core
         /// </summary>
         /// <param name="parameterData">All parameters in the map</param>
         /// <returns>ServiceOperationResult</returns>
-        public IServiceCallResult<ParameterDto[]> GetAllParameterData()
+        public IServiceCallResult<ParameterDto[]> GetAllParameters()
         {
             Logger.Trace("GetAllParameterData()");
             return HandleAPICall<ParameterDto[]>(e => e.GetAllParameterData());
@@ -113,7 +113,7 @@ namespace SchedulingClients.Core
             return HandleAPICall<WaypointDto[]>(e => e.GetTrajectory(moveId));
         }
 
-        public IServiceCallResult<OccupyingMandateProgressDto> GetOccupyingMandateProgressData()
+        public IServiceCallResult<OccupyingMandateProgressDto> GetOccupyingMandateProgress()
         {
             Logger.Trace("GetOccupyingMandateProgressData()");
             return HandleAPICall<OccupyingMandateProgressDto>(e => e.GetOccupyingMandateProgressData());
