@@ -95,12 +95,17 @@ namespace SchedulingClients.Core
             return (numItems / numComplete) * 100;
         }
 
-        public static double ToPercentageComplete(this OccupyingMandateProgressDto occupyingMandateProgressData)
+        /// <summary>
+        /// Converts occupying mandate progress to a progress percentage.
+        /// </summary>
+        /// <param name="occupyingMandateProgressData">Occupying mandate progress to be processed.</param>
+        /// <returns>Percentage complete</returns>
+        public static double ToPercentageComplete(this OccupyingMandateProgressDto occupyingMandateProgress)
         {
-            if (occupyingMandateProgressData == null)
+            if (occupyingMandateProgress == null)
                 return 0.0;
 
-            return occupyingMandateProgressData.OccupyingMandateMapItemData.ToPercentageComplete();
+            return occupyingMandateProgress.OccupyingMandateMapItemData.ToPercentageComplete();
         }
     }
 }
