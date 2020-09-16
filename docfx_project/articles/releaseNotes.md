@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v15.1.0 (16th Sep 20)
+
+* Named pipe support. 
+
 ## v15.0.0 (11th Sep 20)
 
 * Major refactor to ```IServiceResult``` and ```IServiceResult<T>``` implementation.
