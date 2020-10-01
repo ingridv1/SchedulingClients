@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="JobBuilderService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="NetTcpBinding_IJobBuilderService_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IJobBuilderService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -21,31 +13,10 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="NetNamedPipeBinding_IJobBuilderService_policy">
+  <wsp:Policy wsu:Id="NetTcpBinding_IJobBuilderService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -274,199 +245,6 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/IssueUShortDirectiveResponse" message="tns:IJobBuilderService_IssueUShortDirective_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="NetTcpBinding_IJobBuilderService" type="tns:IJobBuilderService">
-    <wsp:PolicyReference URI="#NetTcpBinding_IJobBuilderService_policy" />
-    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="GetAPISemVer">
-      <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BeginEditingJob">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BeginEditingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/BeginEditingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CommitJob">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CommitJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateAwaitingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAwaitingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateJob">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateGoToNodeTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateGoToNodeTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateOrderedListTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateOrderedListTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateAtomicMoveListTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveListTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateServicingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateChargeTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateChargeTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateAtomicMoveTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateSleepingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateSleepingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateUnorderedListTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateUnorderedListTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FinishEditingJob">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingJob" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FinishEditingTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/FinishEditingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IssueEnumDirective">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueEnumDirective" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IssueFloatDirective">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueFloatDirective" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IssueIPAddressDirective">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueIPAddressDirective" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IssueShortDirective">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueShortDirective" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IssueUShortDirective">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/IssueUShortDirective" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
   <wsdl:binding name="WSDualHttpBinding_IJobBuilderService" type="tns:IJobBuilderService">
     <wsp:PolicyReference URI="#WSDualHttpBinding_IJobBuilderService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -660,9 +438,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="NetNamedPipeBinding_IJobBuilderService" type="tns:IJobBuilderService">
-    <wsp:PolicyReference URI="#NetNamedPipeBinding_IJobBuilderService_policy" />
-    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+  <wsdl:binding name="NetTcpBinding_IJobBuilderService" type="tns:IJobBuilderService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IJobBuilderService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="GetAPISemVer">
       <soap12:operation soapAction="http://tempuri.org/IService/GetAPISemVer" style="document" />
       <wsdl:input>
@@ -854,25 +632,16 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="JobBuilderService">
-    <wsdl:port name="NetTcpBinding_IJobBuilderService" binding="tns:NetTcpBinding_IJobBuilderService">
-      <soap12:address location="net.tcp://127.0.0.1:41917/jobBuilder.svc" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://127.0.0.1:41917/jobBuilder.svc</wsa10:Address>
-      </wsa10:EndpointReference>
-    </wsdl:port>
     <wsdl:port name="WSDualHttpBinding_IJobBuilderService" binding="tns:WSDualHttpBinding_IJobBuilderService">
       <soap12:address location="http://127.0.0.1:41916/jobBuilder.svc" />
       <wsa10:EndpointReference>
         <wsa10:Address>http://127.0.0.1:41916/jobBuilder.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
-    <wsdl:port name="NetNamedPipeBinding_IJobBuilderService" binding="tns:NetNamedPipeBinding_IJobBuilderService">
-      <soap12:address location="net.pipe://localhost/jobBuilder.svc" />
+    <wsdl:port name="NetTcpBinding_IJobBuilderService" binding="tns:NetTcpBinding_IJobBuilderService">
+      <soap12:address location="net.tcp://127.0.0.1:41917/jobBuilder.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.pipe://localhost/jobBuilder.svc</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>martin.davies@automation1.com</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://127.0.0.1:41917/jobBuilder.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>
