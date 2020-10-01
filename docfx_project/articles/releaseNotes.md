@@ -14,13 +14,17 @@
 
 # Release Notes
 
+## v15.1.1 (1st Oct 20)
+
+* Updates dependencies for bug-fixes. No code changes. 
+
 ## v15.1.0 (16th Sep 20)
 
 * Named pipe support. 
 
 ## v15.0.0 (11th Sep 20)
 
-* Major refactor to ```IServiceResult``` and ```IServiceResult<T>``` implementation.
+* Major re-factor to ```IServiceResult``` and ```IServiceResult<T>``` implementation.
 * Consistent suffix renaming of all data transfer objects to ```dto```.
 * Uses ```GAAPICommon``` package for .NET Standard enumerator definitions.
 
