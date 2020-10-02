@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v15.1.2 (2nd Oct 20)
+
+* Uses GAAPICommon 1.16.0 to fix dependency issue with bad .dll version reporting. 
+
 ## v15.1.1 (1st Oct 20)
 
 * Updates dependencies for bug-fixes. No code changes. 
