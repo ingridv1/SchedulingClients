@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v15.1.3 (12th Feb 21)
+
+* Update all service references for explicit MTOM support.
+
 ## v15.1.2 (2nd Oct 20)
 
 * Uses GAAPICommon 1.16.0 to fix dependency issue with bad .dll version reporting. 
