@@ -24,7 +24,10 @@ namespace SchedulingClients.Core.SchedulingClientsConsole.Options
 
             if (result.IsSuccessful())
             {
-                Console.WriteLine($"JobId:{result.Value.JobId}");
+                if (result.Value != null)
+                    Console.WriteLine($"JobId:{result.Value.JobId}");
+                else
+                    Console.WriteLine($"No active job");
             }
             else
             {
