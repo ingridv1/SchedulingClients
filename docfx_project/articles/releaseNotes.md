@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v15.2.0 (15th Feb 21)
+
+* Expands client factory to include static constructors using explicit IPAddress and TCP port combination. 
+
 ## v15.1.3 (12th Feb 21)
 
 * Update all service references for explicit MTOM support.
