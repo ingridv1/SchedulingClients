@@ -109,6 +109,30 @@ namespace SchedulingClients.Core
             return CreateTcpJobStateClient(endpointSettings);
         }
 
+        /// <summary>
+        /// Creates a new Tcp based ISchedulingClient instance.
+        /// </summary>
+        /// <param name="endpointSettings">Endpoint settings specifying port and IP address to use</param>
+        /// <returns>Tcp based ISchedulingClient instance</returns>
+        public static ISchedulingClient CreateTcpSchedulingClient(EndpointSettings portSettings)
+        {
+            return new SchedulingClient(portSettings.TcpSchedulingService());
+        }
+
+        /// <summary>
+        /// Create a new Tcp based ISchedulingClient instance
+        /// </summary>
+        /// <param name="ipAddress">Scheduler IP address</param>
+        /// <param name="tcpPort">TCP port to use (default 41917)</param>
+        /// <returns>Tcp based ISchedulingClient instance</returns>
+        public static ISchedulingClient CreateTcpSchedulingClient(IPAddress ipAddress, ushort tcpPort = 41917)
+        {
+            if (ipAddress == null)
+                throw new ArgumentNullException("ipAddress");
+
+            EndpointSettings endpointSettings = new EndpointSettings(ipAddress, 41916, tcpPort);
+            return CreateTcpSchedulingClient(endpointSettings);
+        }
 
         /// <summary>
         /// Creates a new Tcp based IMapClient instance.
