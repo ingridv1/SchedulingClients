@@ -32,6 +32,9 @@ namespace SchedulingClients.Core
         public static Uri TcpAgentAttentionService(this EndpointSettings portSettings)
             => new Uri(portSettings.ToTcpBase(), "agentAttention.svc");
 
+        public static Uri TcpSchedulingService(this EndpointSettings portSettings)
+            => new Uri(portSettings.ToTcpBase(), "scheduling.svc");
+
         public static Uri TcpAgentStatecastService(this EndpointSettings portSettings)
             => new Uri(portSettings.ToTcpBase(), "agentStatecast.svc");
     }
