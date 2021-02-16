@@ -1,4 +1,5 @@
 ﻿using BaseClients.Core;
+using GACore.Extensions;
 using SchedulingClients.Core.SchedulingServiceReference;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,26 @@ namespace SchedulingClients.Core
         public SchedulingClient(Uri netTcpUri, TimeSpan heartbeat = default)
             : base(netTcpUri, heartbeat)
         {
+            callback.Updated += Callback_Updated;
         }
+
+        private void Callback_Updated(SchedulerStateDto schedulerState)
+        {
+            SchedulerState = schedulerState;
+        }
+
+        private SchedulerStateDto schedulerState = null;
+
+        public SchedulerStateDto SchedulerState
+        {
+            get { return schedulerState; }
+            set
+            {
+                if (schedulerState == null || value.Cycle.IsCurrentByteTickLarger(schedulerState.Cycle))
+                    schedulerState = value;
+            }
+        }
+        
 
         public event Action<SchedulerStateDto> Updated
         {
@@ -32,6 +52,9 @@ namespace SchedulingClients.Core
 
             if (isDisposed)
                 return;
+
+            if (isDisposing)
+                callback.Updated -= Callback_Updated;
 
             isDisposed = true;
 

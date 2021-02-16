@@ -11,5 +11,7 @@ namespace SchedulingClients.Core
     public interface ISchedulingClient : ICallbackClient
     {
         event Action<SchedulerStateDto> Updated;
+
+        SchedulerStateDto SchedulerState { get; }
     }
 }
