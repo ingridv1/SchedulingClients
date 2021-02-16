@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v16.0.0 (16th Feb 21)
+
+* Adds new scheduling service for monitoring the state of the scheduler. 
+
 ## v15.2.0 (15th Feb 21)
 
 * Expands client factory to include static constructors using explicit IPAddress and TCP port combination. 
