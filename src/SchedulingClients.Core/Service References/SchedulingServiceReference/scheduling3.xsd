@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
   <xs:complexType name="ServiceCallResultDtoOfSemVerDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
@@ -35,4 +36,78 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SemVerDto" nillable="true" type="tns:SemVerDto" />
+  <xs:complexType name="SpotManagerStateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChargingSpotStateDtos" nillable="true" type="tns:ArrayOfChargingSpotStateDto" />
+      <xs:element minOccurs="0" name="ParkingSpotStateDtos" nillable="true" type="tns:ArrayOfParkingSpotStateDto" />
+      <xs:element minOccurs="0" name="Tick" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpotManagerStateDto" nillable="true" type="tns:SpotManagerStateDto" />
+  <xs:complexType name="ArrayOfChargingSpotStateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChargingSpotStateDto" nillable="true" type="tns:ChargingSpotStateDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChargingSpotStateDto" nillable="true" type="tns:ArrayOfChargingSpotStateDto" />
+  <xs:complexType name="ChargingSpotStateDto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractSpotStateDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChargeBookingDto" nillable="true" type="tns:ChargeBookingStateDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChargingSpotStateDto" nillable="true" type="tns:ChargingSpotStateDto" />
+  <xs:complexType name="AbstractSpotStateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsBooked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NodeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractSpotStateDto" nillable="true" type="tns:AbstractSpotStateDto" />
+  <xs:complexType name="ChargeBookingStateDto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractBookingStateDto">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="ChargeType" type="q1:ChargeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChargeBookingStateDto" nillable="true" type="tns:ChargeBookingStateDto" />
+  <xs:complexType name="AbstractBookingStateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentId" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="BookingState" type="q2:BookingState" />
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractBookingStateDto" nillable="true" type="tns:AbstractBookingStateDto" />
+  <xs:complexType name="ArrayOfParkingSpotStateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParkingSpotStateDto" nillable="true" type="tns:ParkingSpotStateDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParkingSpotStateDto" nillable="true" type="tns:ArrayOfParkingSpotStateDto" />
+  <xs:complexType name="ParkingSpotStateDto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractSpotStateDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParkBookingDto" nillable="true" type="tns:ParkBookingStateDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParkingSpotStateDto" nillable="true" type="tns:ParkingSpotStateDto" />
+  <xs:complexType name="ParkBookingStateDto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractBookingStateDto">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParkBookingStateDto" nillable="true" type="tns:ParkBookingStateDto" />
 </xs:schema>

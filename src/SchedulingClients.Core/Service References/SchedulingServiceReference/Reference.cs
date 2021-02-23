@@ -29,6 +29,9 @@ namespace SchedulingClients.Core.SchedulingServiceReference {
         private System.Guid InstanceIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GAAPICommon.Core.Dtos.SpotManagerStateDto SpotManagerStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.TimeSpan UpTimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -63,6 +66,19 @@ namespace SchedulingClients.Core.SchedulingServiceReference {
                 if ((this.InstanceIdField.Equals(value) != true)) {
                     this.InstanceIdField = value;
                     this.RaisePropertyChanged("InstanceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GAAPICommon.Core.Dtos.SpotManagerStateDto SpotManagerState {
+            get {
+                return this.SpotManagerStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpotManagerStateField, value) != true)) {
+                    this.SpotManagerStateField = value;
+                    this.RaisePropertyChanged("SpotManagerState");
                 }
             }
         }
