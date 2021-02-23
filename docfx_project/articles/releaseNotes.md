@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v16.1.0 (23rd Feb 21)
+
+* Adds spot manager state support to the scheduler state dto.
+
 ## v16.0.0 (16th Feb 21)
 
 * Adds new scheduling service for monitoring the state of the scheduler. 

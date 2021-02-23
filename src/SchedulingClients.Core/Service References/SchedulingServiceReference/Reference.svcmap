@@ -27,6 +27,7 @@
     <MetadataFile FileName="scheduling2.xsd" MetadataType="Schema" ID="095f8361-ceca-4787-877a-b98af260dbd8" SourceId="1" SourceUrl="http://127.0.0.1:41916/scheduling.svc?xsd=xsd3" />
     <MetadataFile FileName="scheduling3.xsd" MetadataType="Schema" ID="4cf27b74-629b-4ab3-a1a7-13997646e34f" SourceId="1" SourceUrl="http://127.0.0.1:41916/scheduling.svc?xsd=xsd2" />
     <MetadataFile FileName="SchedulingService.wsdl" MetadataType="Wsdl" ID="345d7884-10c3-4e89-b26b-1615e592e5d5" SourceId="1" SourceUrl="http://127.0.0.1:41916/scheduling.svc" />
+    <MetadataFile FileName="scheduling4.xsd" MetadataType="Schema" ID="47ee0983-91d1-4377-ba7b-615499258ca2" SourceId="1" SourceUrl="http://127.0.0.1:41916/scheduling.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
