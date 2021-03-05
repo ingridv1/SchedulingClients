@@ -113,10 +113,10 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateAwaitingTaskAsync(int parentTaskId, int nodeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateJob", ReplyAction="http://tempuri.org/IJobBuilderService/CreateJobResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto> CreateJob();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto> CreateJob(GAAPICommon.Architecture.JobPriority jobPriority);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateJob", ReplyAction="http://tempuri.org/IJobBuilderService/CreateJobResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto>> CreateJobAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto>> CreateJobAsync(GAAPICommon.Architecture.JobPriority jobPriority);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateGoToNodeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateGoToNodeTaskResponse")]
         GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateGoToNodeTask(int parentTaskId, int nodeId);
@@ -304,12 +304,12 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
             return base.Channel.CreateAwaitingTaskAsync(parentTaskId, nodeId);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto> CreateJob() {
-            return base.Channel.CreateJob();
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto> CreateJob(GAAPICommon.Architecture.JobPriority jobPriority) {
+            return base.Channel.CreateJob(jobPriority);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto>> CreateJobAsync() {
-            return base.Channel.CreateJobAsync();
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobBuilderServiceReference.JobDto>> CreateJobAsync(GAAPICommon.Architecture.JobPriority jobPriority) {
+            return base.Channel.CreateJobAsync(jobPriority);
         }
         
         public GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateGoToNodeTask(int parentTaskId, int nodeId) {

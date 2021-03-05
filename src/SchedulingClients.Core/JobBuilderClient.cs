@@ -21,10 +21,10 @@ namespace SchedulingClients.Core
             return HandleAPICall(e => e.CommitJob(jobId, agentId));
         }
 
-        public IServiceCallResult<JobDto> CreateJob()
+        public IServiceCallResult<JobDto> CreateJob(JobPriority jobPriority = JobPriority.Normal)
         {
             Logger.Trace("CreateJob()");
-            return HandleAPICall<JobDto>(e => e.CreateJob());
+            return HandleAPICall<JobDto>(e => e.CreateJob(jobPriority));
         }
 
         public IServiceCallResult<int> CreateOrderedListTask(int parentListTaskId)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://127.0.0.1:41916/jobBuilder.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
   <xs:element name="GetAPISemVer">
@@ -76,13 +76,15 @@
   </xs:element>
   <xs:element name="CreateJob">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="jobPriority" type="q6:JobPriority" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateJobResult" nillable="true" type="q6:ServiceCallResultDtoOfJobDtoJlPR_P0vK" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateJobResult" nillable="true" type="q7:ServiceCallResultDtoOfJobDtoJlPR_P0vK" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -97,7 +99,7 @@
   <xs:element name="CreateGoToNodeTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateGoToNodeTaskResult" nillable="true" type="q7:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateGoToNodeTaskResult" nillable="true" type="q8:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -111,7 +113,7 @@
   <xs:element name="CreateOrderedListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateOrderedListTaskResult" nillable="true" type="q8:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateOrderedListTaskResult" nillable="true" type="q9:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -125,7 +127,7 @@
   <xs:element name="CreateAtomicMoveListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateAtomicMoveListTaskResult" nillable="true" type="q9:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateAtomicMoveListTaskResult" nillable="true" type="q10:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -134,15 +136,15 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="serviceType" type="q10:ServiceType" />
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q11:duration" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="serviceType" type="q11:ServiceType" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q12:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateServicingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q12:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateServicingTaskResult" nillable="true" type="q13:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +159,7 @@
   <xs:element name="CreateChargeTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateChargeTaskResult" nillable="true" type="q13:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateChargeTaskResult" nillable="true" type="q14:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -172,7 +174,7 @@
   <xs:element name="CreateAtomicMoveTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateAtomicMoveTaskResult" nillable="true" type="q14:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateAtomicMoveTaskResult" nillable="true" type="q15:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -181,14 +183,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="parentTaskId" type="xs:int" />
         <xs:element minOccurs="0" name="nodeId" type="xs:int" />
-        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q15:duration" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="expectedDuration" type="q16:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateSleepingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateSleepingTaskResult" nillable="true" type="q16:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateSleepingTaskResult" nillable="true" type="q17:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -202,7 +204,7 @@
   <xs:element name="CreateUnorderedListTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateUnorderedListTaskResult" nillable="true" type="q17:ServiceCallResultDtoOfint" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="CreateUnorderedListTaskResult" nillable="true" type="q18:ServiceCallResultDtoOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -216,7 +218,7 @@
   <xs:element name="FinishEditingJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="FinishEditingJobResult" nillable="true" type="q18:ServiceCallResultDto" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="FinishEditingJobResult" nillable="true" type="q19:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -230,7 +232,7 @@
   <xs:element name="FinishEditingTaskResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="FinishEditingTaskResult" nillable="true" type="q19:ServiceCallResultDto" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="FinishEditingTaskResult" nillable="true" type="q20:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,7 +248,7 @@
   <xs:element name="IssueEnumDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q20:ServiceCallResultDto" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueEnumDirectiveResult" nillable="true" type="q21:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -262,7 +264,7 @@
   <xs:element name="IssueFloatDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q21:ServiceCallResultDto" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueFloatDirectiveResult" nillable="true" type="q22:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -271,14 +273,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="taskId" type="xs:int" />
         <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q22:IPAddress" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="value" nillable="true" type="q23:IPAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="IssueIPAddressDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q23:ServiceCallResultDto" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueIPAddressDirectiveResult" nillable="true" type="q24:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -294,7 +296,7 @@
   <xs:element name="IssueShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q24:ServiceCallResultDto" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueShortDirectiveResult" nillable="true" type="q25:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -310,7 +312,7 @@
   <xs:element name="IssueUShortDirectiveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q25:ServiceCallResultDto" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="IssueUShortDirectiveResult" nillable="true" type="q26:ServiceCallResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
