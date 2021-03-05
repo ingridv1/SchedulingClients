@@ -1,7 +1,11 @@
 ﻿using BaseClients.Core;
+using MoreLinq;
 using SchedulingClients.Core;
 using System;
+using System.Linq;
 using System.Net;
+using GAAPICommon.Architecture;
+using GAAPICommon.Core;
 
 namespace Tutorial_02
 {
@@ -28,7 +32,24 @@ namespace Tutorial_02
 
         private static void OnUpdated(SchedulingClients.Core.SchedulingServiceReference.SchedulerStateDto dto)
         {
+            if (dto.Cycle % 128 != 0)
+                return;
+
+            Console.Clear();
+            Console.SetCursorPosition(0, 0);
+
             Console.WriteLine($"Cycle: {dto.Cycle.ToString("d3")}  Instance: {dto.InstanceId} UpTime: {dto.UpTime}");
+
+            if (dto.SpotManagerState != null)
+            {
+                Console.WriteLine($"Spot Manager Tick: {dto.SpotManagerState.Tick}");
+
+                Console.WriteLine($"Charging Spots: {dto.SpotManagerState.ChargingSpotStates.Count()}");
+                dto.SpotManagerState.ChargingSpotStates.ForEach(e => Console.WriteLine($"{e.ToChargingSpotStateString()}"));
+
+                Console.WriteLine($"Parking Spots: {dto.SpotManagerState.ParkingSpotStates.Count()}");
+                dto.SpotManagerState.ParkingSpotStates.ForEach(e => Console.WriteLine($"{e.ToParkingSpotStateString()}"));
+            }
         }
     }
 }

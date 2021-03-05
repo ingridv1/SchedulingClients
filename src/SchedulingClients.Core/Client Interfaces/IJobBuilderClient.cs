@@ -23,7 +23,7 @@ namespace SchedulingClients.Core
         /// Creates a new job and places it in the editing state.
         /// </summary>
         /// <returns>JobDto containing job Id and root ordered list task Id</returns>
-        IServiceCallResult<JobDto> CreateJob();
+        IServiceCallResult<JobDto> CreateJob(JobPriority jobPriority = JobPriority.Normal);
 
         /// <summary>
         /// Creates a new ordered list task (subtasks must be completed in order).

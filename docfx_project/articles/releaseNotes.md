@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v16.1.1 (5th Mar 21)
+
+* Adds JobPriority parameter to CreateJob().
+
 ## v16.1.0 (23rd Feb 21)
 
 * Adds spot manager state support to the scheduler state dto.
