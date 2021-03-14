@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/jobState.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="ServiceCallResultDtoOfSemVerDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
@@ -36,21 +37,55 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SemVerDto" nillable="true" type="tns:SemVerDto" />
-  <xs:complexType name="ServiceCallResultDtoOfJobSummaryDtoJlPR_P0vK">
+  <xs:complexType name="ServiceCallResultDtoOfJobSummaryDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="ServiceCallResultDtoOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="JobSummaryDto" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" />
+          <GenericParameter Name="JobSummaryDto" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ServiceCallResultDto">
         <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos" minOccurs="0" name="Value" nillable="true" type="q1:JobSummaryDto" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="tns:JobSummaryDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ServiceCallResultDtoOfJobSummaryDtoJlPR_P0vK" nillable="true" type="tns:ServiceCallResultDtoOfJobSummaryDtoJlPR_P0vK" />
+  <xs:element name="ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" nillable="true" type="tns:ServiceCallResultDtoOfJobSummaryDtoroFpNV7u" />
+  <xs:complexType name="JobSummaryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedAgentId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="JobStatus" type="q1:JobStatus" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Notes" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="RootOrderedListTaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskSummaries" nillable="true" type="tns:ArrayOfTaskSummaryDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobSummaryDto" nillable="true" type="tns:JobSummaryDto" />
+  <xs:complexType name="ArrayOfTaskSummaryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskSummaryDto" nillable="true" type="tns:TaskSummaryDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskSummaryDto" nillable="true" type="tns:ArrayOfTaskSummaryDto" />
+  <xs:complexType name="TaskSummaryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParentTaskId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RoadmapItemTaskSummary" nillable="true" type="tns:RoadmapItemTaskSummaryDto" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskStatus" type="q3:TaskStatus" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="TaskType" type="q4:TaskType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskSummaryDto" nillable="true" type="tns:TaskSummaryDto" />
+  <xs:complexType name="RoadmapItemTaskSummaryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoadmapItemId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoadmapItemTaskSummaryDto" nillable="true" type="tns:RoadmapItemTaskSummaryDto" />
 </xs:schema>

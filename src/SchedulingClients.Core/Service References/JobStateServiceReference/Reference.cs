@@ -15,301 +15,6 @@ namespace SchedulingClients.Core.JobStateServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JobSummaryDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos")]
-    [System.SerializableAttribute()]
-    public partial class JobSummaryDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AssignedAgentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int JobIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GAAPICommon.Architecture.JobStatus JobStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] NotesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RootOrderedListTaskIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto[] TaskSummariesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssignedAgentId {
-            get {
-                return this.AssignedAgentIdField;
-            }
-            set {
-                if ((this.AssignedAgentIdField.Equals(value) != true)) {
-                    this.AssignedAgentIdField = value;
-                    this.RaisePropertyChanged("AssignedAgentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int JobId {
-            get {
-                return this.JobIdField;
-            }
-            set {
-                if ((this.JobIdField.Equals(value) != true)) {
-                    this.JobIdField = value;
-                    this.RaisePropertyChanged("JobId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GAAPICommon.Architecture.JobStatus JobStatus {
-            get {
-                return this.JobStatusField;
-            }
-            set {
-                if ((this.JobStatusField.Equals(value) != true)) {
-                    this.JobStatusField = value;
-                    this.RaisePropertyChanged("JobStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RootOrderedListTaskId {
-            get {
-                return this.RootOrderedListTaskIdField;
-            }
-            set {
-                if ((this.RootOrderedListTaskIdField.Equals(value) != true)) {
-                    this.RootOrderedListTaskIdField = value;
-                    this.RaisePropertyChanged("RootOrderedListTaskId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto[] TaskSummaries {
-            get {
-                return this.TaskSummariesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TaskSummariesField, value) != true)) {
-                    this.TaskSummariesField = value;
-                    this.RaisePropertyChanged("TaskSummaries");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TaskSummaryDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos")]
-    [System.SerializableAttribute()]
-    public partial class TaskSummaryDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto NodeTaskSummaryDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ParentTaskIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TaskIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GAAPICommon.Architecture.TaskStatus TaskStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GAAPICommon.Architecture.TaskType TaskTypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto NodeTaskSummaryData {
-            get {
-                return this.NodeTaskSummaryDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NodeTaskSummaryDataField, value) != true)) {
-                    this.NodeTaskSummaryDataField = value;
-                    this.RaisePropertyChanged("NodeTaskSummaryData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ParentTaskId {
-            get {
-                return this.ParentTaskIdField;
-            }
-            set {
-                if ((this.ParentTaskIdField.Equals(value) != true)) {
-                    this.ParentTaskIdField = value;
-                    this.RaisePropertyChanged("ParentTaskId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TaskId {
-            get {
-                return this.TaskIdField;
-            }
-            set {
-                if ((this.TaskIdField.Equals(value) != true)) {
-                    this.TaskIdField = value;
-                    this.RaisePropertyChanged("TaskId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GAAPICommon.Architecture.TaskStatus TaskStatus {
-            get {
-                return this.TaskStatusField;
-            }
-            set {
-                if ((this.TaskStatusField.Equals(value) != true)) {
-                    this.TaskStatusField = value;
-                    this.RaisePropertyChanged("TaskStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GAAPICommon.Architecture.TaskType TaskType {
-            get {
-                return this.TaskTypeField;
-            }
-            set {
-                if ((this.TaskTypeField.Equals(value) != true)) {
-                    this.TaskTypeField = value;
-                    this.RaisePropertyChanged("TaskType");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NodeTaskSummaryDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos")]
-    [System.SerializableAttribute()]
-    public partial class NodeTaskSummaryDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NodeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NodeId {
-            get {
-                return this.NodeIdField;
-            }
-            set {
-                if ((this.NodeIdField.Equals(value) != true)) {
-                    this.NodeIdField = value;
-                    this.RaisePropertyChanged("NodeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="JobProgressDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Jobs.Dtos")]
     [System.SerializableAttribute()]
     public partial class JobProgressDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -402,22 +107,22 @@ namespace SchedulingClients.Core.JobStateServiceReference {
         System.Threading.Tasks.Task SubscriptionHeartbeatAsync(System.Guid guid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentId", ReplyAction="http://tempuri.org/IJobStateService/GetCurrentJobSummaryForAgentIdResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto>> GetCurrentJobSummaryForAgentIdAsync(int agentId);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto>> GetCurrentJobSummaryForAgentIdAsync(int agentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto> GetJobSummary(int jobId);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetJobSummary(int jobId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetJobSummary", ReplyAction="http://tempuri.org/IJobStateService/GetJobSummaryResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto>> GetJobSummaryAsync(int jobId);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto>> GetJobSummaryAsync(int jobId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto> GetParentJobSummaryFromTaskId(int taskId);
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetParentJobSummaryFromTaskId(int taskId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskId", ReplyAction="http://tempuri.org/IJobStateService/GetParentJobSummaryFromTaskIdResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto>> GetParentJobSummaryFromTaskIdAsync(int taskId);
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto>> GetParentJobSummaryFromTaskIdAsync(int taskId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -471,27 +176,27 @@ namespace SchedulingClients.Core.JobStateServiceReference {
             return base.Channel.SubscriptionHeartbeatAsync(guid);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetCurrentJobSummaryForAgentId(int agentId) {
             return base.Channel.GetCurrentJobSummaryForAgentId(agentId);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto>> GetCurrentJobSummaryForAgentIdAsync(int agentId) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto>> GetCurrentJobSummaryForAgentIdAsync(int agentId) {
             return base.Channel.GetCurrentJobSummaryForAgentIdAsync(agentId);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto> GetJobSummary(int jobId) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetJobSummary(int jobId) {
             return base.Channel.GetJobSummary(jobId);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto>> GetJobSummaryAsync(int jobId) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto>> GetJobSummaryAsync(int jobId) {
             return base.Channel.GetJobSummaryAsync(jobId);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto> GetParentJobSummaryFromTaskId(int taskId) {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto> GetParentJobSummaryFromTaskId(int taskId) {
             return base.Channel.GetParentJobSummaryFromTaskId(taskId);
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.JobStateServiceReference.JobSummaryDto>> GetParentJobSummaryFromTaskIdAsync(int taskId) {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.JobSummaryDto>> GetParentJobSummaryFromTaskIdAsync(int taskId) {
             return base.Channel.GetParentJobSummaryFromTaskIdAsync(taskId);
         }
     }

@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v16.1.2 (14th March 21)
+
+* Moves numerous dtos over to GAAPICommon.Core.Dtos, uses PoseDto where possible.
+
 ## v16.1.1 (5th Mar 21)
 
 * Adds JobPriority parameter to CreateJob().

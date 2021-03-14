@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using GAAPICommon.Architecture;
 using GAAPICommon.Core;
+using GAAPICommon.Core.Dtos;
 
 namespace Tutorial_02
 {
@@ -30,7 +31,7 @@ namespace Tutorial_02
             }
         }
 
-        private static void OnUpdated(SchedulingClients.Core.SchedulingServiceReference.SchedulerStateDto dto)
+        private static void OnUpdated(SchedulerStateDto dto)
         {
             if (dto.Cycle % 128 != 0)
                 return;

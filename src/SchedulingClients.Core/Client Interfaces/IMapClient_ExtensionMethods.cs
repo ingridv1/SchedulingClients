@@ -1,4 +1,5 @@
-﻿using SchedulingClients.Core.MapServiceReference;
+﻿using GAAPICommon.Core.Dtos;
+using SchedulingClients.Core.MapServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace SchedulingClients.Core
             if (node == null)
                 throw new ArgumentNullException("node");
 
-            return new Point(node.X, node.Y);
+            return new Point(node.Pose.X, node.Pose.Y);
         }
 
         /// <summary>

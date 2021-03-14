@@ -1,4 +1,5 @@
 ﻿using BaseClients.Architecture;
+using GAAPICommon.Core.Dtos;
 using SchedulingClients.Core.SchedulingServiceReference;
 using System;
 

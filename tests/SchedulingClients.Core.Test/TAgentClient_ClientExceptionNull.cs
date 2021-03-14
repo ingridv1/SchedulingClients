@@ -1,4 +1,5 @@
 ﻿using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using NUnit.Framework;
 using SchedulingClients.Core;
 using SchedulingClients.Core.AgentServiceReference;

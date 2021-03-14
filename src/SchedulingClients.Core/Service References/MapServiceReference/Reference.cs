@@ -153,224 +153,6 @@ namespace SchedulingClients.Core.MapServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MoveDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
-    [System.SerializableAttribute()]
-    public partial class MoveDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AliasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DestinationIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SourceIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Alias {
-            get {
-                return this.AliasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
-                    this.AliasField = value;
-                    this.RaisePropertyChanged("Alias");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DestinationId {
-            get {
-                return this.DestinationIdField;
-            }
-            set {
-                if ((this.DestinationIdField.Equals(value) != true)) {
-                    this.DestinationIdField = value;
-                    this.RaisePropertyChanged("DestinationId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SourceId {
-            get {
-                return this.SourceIdField;
-            }
-            set {
-                if ((this.SourceIdField.Equals(value) != true)) {
-                    this.SourceIdField = value;
-                    this.RaisePropertyChanged("SourceId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NodeDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos")]
-    [System.SerializableAttribute()]
-    public partial class NodeDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AliasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double HeadingRadField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GAAPICommon.Architecture.ServiceType[] ServicesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double XField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double YField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Alias {
-            get {
-                return this.AliasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AliasField, value) != true)) {
-                    this.AliasField = value;
-                    this.RaisePropertyChanged("Alias");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double HeadingRad {
-            get {
-                return this.HeadingRadField;
-            }
-            set {
-                if ((this.HeadingRadField.Equals(value) != true)) {
-                    this.HeadingRadField = value;
-                    this.RaisePropertyChanged("HeadingRad");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GAAPICommon.Architecture.ServiceType[] Services {
-            get {
-                return this.ServicesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServicesField, value) != true)) {
-                    this.ServicesField = value;
-                    this.RaisePropertyChanged("Services");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double X {
-            get {
-                return this.XField;
-            }
-            set {
-                if ((this.XField.Equals(value) != true)) {
-                    this.XField = value;
-                    this.RaisePropertyChanged("X");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Y {
-            get {
-                return this.YField;
-            }
-            set {
-                if ((this.YField.Equals(value) != true)) {
-                    this.YField = value;
-                    this.RaisePropertyChanged("Y");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ParameterDto", Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps")]
     [System.SerializableAttribute()]
     public partial class ParameterDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -573,8 +355,8 @@ namespace SchedulingClients.Core.MapServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/ClearOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/ClearOccupyingMandateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.MoveDto[]>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.NodeDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.NodeDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.ParameterDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.WaypointDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
@@ -591,8 +373,8 @@ namespace SchedulingClients.Core.MapServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/SetOccupyingMandate", ReplyAction="http://tempuri.org/IMapService/SetOccupyingMandateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.OccupyingMandateProgressDto>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.MoveDto[]>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.NodeDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.NodeDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.ParameterDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.WaypointDto[]>))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.SemVerDto>))]
@@ -602,16 +384,16 @@ namespace SchedulingClients.Core.MapServiceReference {
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto> SetOccupyingMandateAsync(int[] mapItemIds, System.TimeSpan timeout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.MoveDto[]> GetAllMoveData();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]> GetAllMoveData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllMoveData", ReplyAction="http://tempuri.org/IMapService/GetAllMoveDataResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.MoveDto[]>> GetAllMoveDataAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]>> GetAllMoveDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllNodeData", ReplyAction="http://tempuri.org/IMapService/GetAllNodeDataResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.NodeDto[]> GetAllNodeData();
+        GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.NodeDto[]> GetAllNodeData();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllNodeData", ReplyAction="http://tempuri.org/IMapService/GetAllNodeDataResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.NodeDto[]>> GetAllNodeDataAsync();
+        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.NodeDto[]>> GetAllNodeDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMapService/GetAllParameterData", ReplyAction="http://tempuri.org/IMapService/GetAllParameterDataResponse")]
         GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.ParameterDto[]> GetAllParameterData();
@@ -701,19 +483,19 @@ namespace SchedulingClients.Core.MapServiceReference {
             return base.Channel.SetOccupyingMandateAsync(mapItemIds, timeout);
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.MoveDto[]> GetAllMoveData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]> GetAllMoveData() {
             return base.Channel.GetAllMoveData();
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.MoveDto[]>> GetAllMoveDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.MoveDto[]>> GetAllMoveDataAsync() {
             return base.Channel.GetAllMoveDataAsync();
         }
         
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.NodeDto[]> GetAllNodeData() {
+        public GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.NodeDto[]> GetAllNodeData() {
             return base.Channel.GetAllNodeData();
         }
         
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<SchedulingClients.Core.MapServiceReference.NodeDto[]>> GetAllNodeDataAsync() {
+        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<GAAPICommon.Core.Dtos.NodeDto[]>> GetAllNodeDataAsync() {
             return base.Channel.GetAllNodeDataAsync();
         }
         

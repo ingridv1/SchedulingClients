@@ -1,4 +1,5 @@
 ﻿using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using GACore;
 using GACore.Command;
 using SchedulingClients.Core;

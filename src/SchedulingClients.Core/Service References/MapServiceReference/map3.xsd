@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" />
+  <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
   <xs:import schemaLocation="http://127.0.0.1:41916/map.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" />
   <xs:complexType name="ServiceCallResultDtoOfSemVerDtoroFpNV7u">
     <xs:annotation>
@@ -54,40 +55,78 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ServiceCallResultDtoOfOccupyingMandateProgressDtoB6RnT2op" nillable="true" type="tns:ServiceCallResultDtoOfOccupyingMandateProgressDtoB6RnT2op" />
-  <xs:complexType name="ServiceCallResultDtoOfArrayOfMoveDtoB6RnT2op">
+  <xs:complexType name="ServiceCallResultDtoOfArrayOfMoveDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="ServiceCallResultDtoOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfMoveDto" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" />
+          <GenericParameter Name="ArrayOfMoveDto" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ServiceCallResultDto">
         <xs:sequence>
-          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" minOccurs="0" name="Value" nillable="true" type="q2:ArrayOfMoveDto" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfMoveDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ServiceCallResultDtoOfArrayOfMoveDtoB6RnT2op" nillable="true" type="tns:ServiceCallResultDtoOfArrayOfMoveDtoB6RnT2op" />
-  <xs:complexType name="ServiceCallResultDtoOfArrayOfNodeDtoB6RnT2op">
+  <xs:element name="ServiceCallResultDtoOfArrayOfMoveDtoroFpNV7u" nillable="true" type="tns:ServiceCallResultDtoOfArrayOfMoveDtoroFpNV7u" />
+  <xs:complexType name="ArrayOfMoveDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveDto" nillable="true" type="tns:MoveDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoveDto" nillable="true" type="tns:ArrayOfMoveDto" />
+  <xs:complexType name="MoveDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveDto" nillable="true" type="tns:MoveDto" />
+  <xs:complexType name="ServiceCallResultDtoOfArrayOfNodeDtoroFpNV7u">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="ServiceCallResultDtoOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfNodeDto" Namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" />
+          <GenericParameter Name="ArrayOfNodeDto" Namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ServiceCallResultDto">
         <xs:sequence>
-          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" minOccurs="0" name="Value" nillable="true" type="q3:ArrayOfNodeDto" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfNodeDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ServiceCallResultDtoOfArrayOfNodeDtoB6RnT2op" nillable="true" type="tns:ServiceCallResultDtoOfArrayOfNodeDtoB6RnT2op" />
+  <xs:element name="ServiceCallResultDtoOfArrayOfNodeDtoroFpNV7u" nillable="true" type="tns:ServiceCallResultDtoOfArrayOfNodeDtoroFpNV7u" />
+  <xs:complexType name="ArrayOfNodeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeDto" nillable="true" type="tns:NodeDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNodeDto" nillable="true" type="tns:ArrayOfNodeDto" />
+  <xs:complexType name="NodeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Pose" nillable="true" type="tns:PoseDto" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="Services" nillable="true" type="q2:ArrayOfServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeDto" nillable="true" type="tns:NodeDto" />
+  <xs:complexType name="PoseDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Heading" type="xs:double" />
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PoseDto" nillable="true" type="tns:PoseDto" />
   <xs:complexType name="ServiceCallResultDtoOfArrayOfParameterDtodBU2_SIuL">
     <xs:annotation>
       <xs:appinfo>
@@ -99,7 +138,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ServiceCallResultDto">
         <xs:sequence>
-          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" minOccurs="0" name="Value" nillable="true" type="q4:ArrayOfParameterDto" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps" minOccurs="0" name="Value" nillable="true" type="q3:ArrayOfParameterDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -116,7 +155,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ServiceCallResultDto">
         <xs:sequence>
-          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" minOccurs="0" name="Value" nillable="true" type="q5:ArrayOfWaypointDto" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Scheduling.Services.Maps.Dtos" minOccurs="0" name="Value" nillable="true" type="q4:ArrayOfWaypointDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
