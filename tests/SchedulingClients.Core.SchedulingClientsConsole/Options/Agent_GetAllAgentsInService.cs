@@ -1,6 +1,7 @@
 ﻿using BaseClients.Core;
 using CommandLine;
 using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using SchedulingClients.Core.AgentServiceReference;
 using System;
 using System.Collections.Generic;

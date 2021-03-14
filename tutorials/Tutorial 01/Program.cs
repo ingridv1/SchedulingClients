@@ -2,6 +2,7 @@
 using FleetClients.Core;
 using FleetClients.Core.Client_Interfaces;
 using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using SchedulingClients.Core;
 using SchedulingClients.Core.JobBuilderServiceReference;
 using SchedulingClients.Core.JobStateServiceReference;
@@ -50,7 +51,7 @@ namespace Tutorial_01
             //  see: https://github.com/GuidanceAutomation/FleetClients
             using (IFleetManagerClient fleetManagerClient = FleetClients.Core.ClientFactory.CreateTcpFleetManagerClient(endpointSettings))
             {
-                IServiceCallResult result = fleetManagerClient.CreateVirtualVehicle(IPAddress.Parse("192.168.0.1"), startNode.X, startNode.Y, startNode.HeadingRad);
+                IServiceCallResult result = fleetManagerClient.CreateVirtualVehicle(IPAddress.Parse("192.168.0.1"), startNode.Pose.X, startNode.Pose.Y, startNode.Pose.Heading);
 
                 if (!result.IsSuccessful())
                     Console.WriteLine($"Failed to create virtual vehicle serviceCode:{result.ServiceCode}");

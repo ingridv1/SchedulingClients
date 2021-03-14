@@ -1,4 +1,5 @@
-﻿using MoreLinq;
+﻿using GAAPICommon.Core.Dtos;
+using MoreLinq;
 using SchedulingClients.Core.SchedulingServiceReference;
 using System;
 using System.Linq;

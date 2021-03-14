@@ -23,38 +23,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OccupyingMandateMapItemDto" nillable="true" type="tns:OccupyingMandateMapItemDto" />
-  <xs:complexType name="ArrayOfMoveDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveDto" nillable="true" type="tns:MoveDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfMoveDto" nillable="true" type="tns:ArrayOfMoveDto" />
-  <xs:complexType name="MoveDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DestinationId" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MoveDto" nillable="true" type="tns:MoveDto" />
-  <xs:complexType name="ArrayOfNodeDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeDto" nillable="true" type="tns:NodeDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfNodeDto" nillable="true" type="tns:ArrayOfNodeDto" />
-  <xs:complexType name="NodeDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="HeadingRad" type="xs:double" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" minOccurs="0" name="Services" nillable="true" type="q2:ArrayOfServiceType" />
-      <xs:element minOccurs="0" name="X" type="xs:double" />
-      <xs:element minOccurs="0" name="Y" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="NodeDto" nillable="true" type="tns:NodeDto" />
   <xs:complexType name="ArrayOfWaypointDto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="WaypointDto" nillable="true" type="tns:WaypointDto" />

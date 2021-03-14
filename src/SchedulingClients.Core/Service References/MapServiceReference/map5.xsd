@@ -75,7 +75,7 @@
   <xs:element name="GetAllMoveDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllMoveDataResult" nillable="true" type="q8:ServiceCallResultDtoOfArrayOfMoveDtoB6RnT2op" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllMoveDataResult" nillable="true" type="q8:ServiceCallResultDtoOfArrayOfMoveDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -87,7 +87,7 @@
   <xs:element name="GetAllNodeDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllNodeDataResult" nillable="true" type="q9:ServiceCallResultDtoOfArrayOfNodeDtoB6RnT2op" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" minOccurs="0" name="GetAllNodeDataResult" nillable="true" type="q9:ServiceCallResultDtoOfArrayOfNodeDtoroFpNV7u" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

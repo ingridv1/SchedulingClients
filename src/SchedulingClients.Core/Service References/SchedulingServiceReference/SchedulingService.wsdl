@@ -27,8 +27,7 @@
       <xsd:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Core.Dtos" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Scheduling.Services.Scheduling" />
-      <xsd:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
+      <xsd:import schemaLocation="http://127.0.0.1:41916/scheduling.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GAAPICommon.Architecture" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISchedulingService_GetAPISemVer_InputMessage">

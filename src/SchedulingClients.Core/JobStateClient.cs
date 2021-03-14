@@ -1,5 +1,6 @@
 ﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using SchedulingClients.Core.JobStateServiceReference;
 using System;
 using System.ServiceModel;

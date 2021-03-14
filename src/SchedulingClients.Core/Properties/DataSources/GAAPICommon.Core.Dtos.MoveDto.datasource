@@ -5,6 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="JobSummaryDto" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>SchedulingClients.Core.JobStateServiceReference.JobSummaryDto</TypeInfo>
+<GenericObjectDataSource DisplayName="MoveDto" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>GAAPICommon.Core.Dtos.MoveDto, GAAPICommon.Core, Version=1.35.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

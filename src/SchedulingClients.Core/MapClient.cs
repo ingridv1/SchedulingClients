@@ -1,5 +1,6 @@
 ﻿using BaseClients.Core;
 using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using MoreLinq;
 using SchedulingClients.Core.MapServiceReference;
 using System;

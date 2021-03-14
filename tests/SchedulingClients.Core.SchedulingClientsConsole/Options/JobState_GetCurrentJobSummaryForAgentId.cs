@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using SchedulingClients.Core.JobStateServiceReference;
 using System.Threading.Tasks;
+using GAAPICommon.Core.Dtos;
 
 namespace SchedulingClients.Core.SchedulingClientsConsole.Options
 {

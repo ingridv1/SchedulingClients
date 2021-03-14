@@ -1,4 +1,5 @@
-﻿using SchedulingClients.Core.MapServiceReference;
+﻿using GAAPICommon.Core.Dtos;
+using SchedulingClients.Core.MapServiceReference;
 using System;
 using System.IO;
 
@@ -19,7 +20,7 @@ namespace SchedulingClients.Core
             if (node == null)
                 throw new ArgumentNullException("node");
 
-            return $"{node.Id},{node.Alias},{node.X},{node.Y},{node.HeadingRad}";
+            return $"{node.Id},{node.Alias},{node.Pose.X},{node.Pose.Y},{node.Pose.Heading}";
         }
 
         public static string ToCSVFile(this NodeDto[] nodes)
