@@ -51,12 +51,6 @@ namespace SchedulingClients.Core
             return HandleAPICall<int>(e => e.CreateServicingTask(parentListTaskId, nodeId, serviceType, expectedDuration));
         }
 
-        public IServiceCallResult<int> CreateChargeTask(int parentListTaskId, int nodeId)
-        {
-            Logger.Trace($"CreateChargeTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId}");
-            return HandleAPICall<int>(e => e.CreateChargeTask(parentListTaskId, nodeId));
-        }
-
         public IServiceCallResult<int> CreateSleepingTask(int parentListTaskId, int nodeId, TimeSpan expectedDuration = default)
         {
             Logger.Trace($"CreateSleepingTask() parentListTaskId:{parentListTaskId} nodeId:{nodeId} expectedDuration:{expectedDuration}");

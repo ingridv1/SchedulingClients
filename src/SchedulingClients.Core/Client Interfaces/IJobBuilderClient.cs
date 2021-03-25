@@ -57,14 +57,6 @@ namespace SchedulingClients.Core
         IServiceCallResult<int> CreateServicingTask(int parentListTaskId, int nodeId, ServiceType serviceType, TimeSpan expectedDuration = default);
 
         /// <summary>
-        /// Creates a new charging task.
-        /// </summary>
-        /// <param name="parentListTaskId">Target parent task to attach to.</param>
-        /// <param name="nodeId">Target node for charging.</param>
-        /// <returns>Id of newly created charging task.</returns>
-        IServiceCallResult<int> CreateChargeTask(int parentListTaskId, int nodeId);
-
-        /// <summary>
         /// Creates a new sleeping task. (Sleep at a node for a predetermined time).
         /// </summary>
         /// <param name="parentListTaskId">Target parent task to attach to.</param>
