@@ -94,12 +94,6 @@
   <wsdl:message name="IJobBuilderService_CreateServicingTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateServicingTaskResponse" />
   </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateChargeTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateChargeTask" />
-  </wsdl:message>
-  <wsdl:message name="IJobBuilderService_CreateChargeTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateChargeTaskResponse" />
-  </wsdl:message>
   <wsdl:message name="IJobBuilderService_CreateAtomicMoveTask_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateAtomicMoveTask" />
   </wsdl:message>
@@ -200,10 +194,6 @@
     <wsdl:operation name="CreateServicingTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTask" message="tns:IJobBuilderService_CreateServicingTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse" message="tns:IJobBuilderService_CreateServicingTask_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateChargeTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateChargeTask" message="tns:IJobBuilderService_CreateChargeTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse" message="tns:IJobBuilderService_CreateChargeTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateAtomicMoveTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask" message="tns:IJobBuilderService_CreateAtomicMoveTask_InputMessage" />
@@ -332,15 +322,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateChargeTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateChargeTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -525,15 +506,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateServicingTask">
       <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateServicingTask" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateChargeTask">
-      <soap12:operation soapAction="http://tempuri.org/IJobBuilderService/CreateChargeTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

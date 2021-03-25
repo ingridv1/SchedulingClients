@@ -14,6 +14,10 @@
 
 # Release Notes
 
+## v16.1.3 (25th March 21)
+
+* Removes the abilty to set charge commands via the comms (AI-290 bugfix). Charging is now handled entirely via the spot manager. 
+
 ## v16.1.2 (14th March 21)
 
 * Moves numerous dtos over to GAAPICommon.Core.Dtos, uses PoseDto where possible.

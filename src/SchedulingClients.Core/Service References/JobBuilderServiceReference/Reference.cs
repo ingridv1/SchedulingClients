@@ -142,12 +142,6 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateServicingTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateServicingTaskResponse")]
         System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateServicingTaskAsync(int parentTaskId, int nodeId, GAAPICommon.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateChargeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse")]
-        GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateChargeTask(int parentTaskId, int nodeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateChargeTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateChargeTaskResponse")]
-        System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateChargeTaskAsync(int parentTaskId, int nodeId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTask", ReplyAction="http://tempuri.org/IJobBuilderService/CreateAtomicMoveTaskResponse")]
         GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId);
         
@@ -342,14 +336,6 @@ namespace SchedulingClients.Core.JobBuilderServiceReference {
         
         public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateServicingTaskAsync(int parentTaskId, int nodeId, GAAPICommon.Architecture.ServiceType serviceType, System.TimeSpan expectedDuration) {
             return base.Channel.CreateServicingTaskAsync(parentTaskId, nodeId, serviceType, expectedDuration);
-        }
-        
-        public GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateChargeTask(int parentTaskId, int nodeId) {
-            return base.Channel.CreateChargeTask(parentTaskId, nodeId);
-        }
-        
-        public System.Threading.Tasks.Task<GAAPICommon.Core.Dtos.ServiceCallResultDto<int>> CreateChargeTaskAsync(int parentTaskId, int nodeId) {
-            return base.Channel.CreateChargeTaskAsync(parentTaskId, nodeId);
         }
         
         public GAAPICommon.Core.Dtos.ServiceCallResultDto<int> CreateAtomicMoveTask(int parentAtomicMoveListTaskId, int moveId) {

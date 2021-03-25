@@ -19,96 +19,6 @@ references:
   commentId: N:SchedulingClients.Core.AgentServiceReference
   fullName: SchedulingClients.Core.AgentServiceReference
   nameWithType: SchedulingClients.Core.AgentServiceReference
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto
-  name: AgentDto
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html
-  commentId: T:SchedulingClients.Core.AgentServiceReference.AgentDto
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto
-  nameWithType: AgentDto
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.AgentLifetimeState
-  name: AgentLifetimeState
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_AgentLifetimeState
-  commentId: P:SchedulingClients.Core.AgentServiceReference.AgentDto.AgentLifetimeState
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.AgentLifetimeState
-  nameWithType: AgentDto.AgentLifetimeState
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.AgentLifetimeState*
-  name: AgentLifetimeState
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_AgentLifetimeState_
-  commentId: Overload:SchedulingClients.Core.AgentServiceReference.AgentDto.AgentLifetimeState
-  isSpec: "True"
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.AgentLifetimeState
-  nameWithType: AgentDto.AgentLifetimeState
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.Alias
-  name: Alias
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_Alias
-  commentId: P:SchedulingClients.Core.AgentServiceReference.AgentDto.Alias
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.Alias
-  nameWithType: AgentDto.Alias
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.Alias*
-  name: Alias
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_Alias_
-  commentId: Overload:SchedulingClients.Core.AgentServiceReference.AgentDto.Alias
-  isSpec: "True"
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.Alias
-  nameWithType: AgentDto.Alias
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.ExtensionData
-  name: ExtensionData
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_ExtensionData
-  commentId: P:SchedulingClients.Core.AgentServiceReference.AgentDto.ExtensionData
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.ExtensionData
-  nameWithType: AgentDto.ExtensionData
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.ExtensionData*
-  name: ExtensionData
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_ExtensionData_
-  commentId: Overload:SchedulingClients.Core.AgentServiceReference.AgentDto.ExtensionData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.ExtensionData
-  nameWithType: AgentDto.ExtensionData
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.Id
-  name: Id
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_Id
-  commentId: P:SchedulingClients.Core.AgentServiceReference.AgentDto.Id
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.Id
-  nameWithType: AgentDto.Id
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.Id*
-  name: Id
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_Id_
-  commentId: Overload:SchedulingClients.Core.AgentServiceReference.AgentDto.Id
-  isSpec: "True"
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.Id
-  nameWithType: AgentDto.Id
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.IPAddress
-  name: IPAddress
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_IPAddress
-  commentId: P:SchedulingClients.Core.AgentServiceReference.AgentDto.IPAddress
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.IPAddress
-  nameWithType: AgentDto.IPAddress
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.IPAddress*
-  name: IPAddress
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_IPAddress_
-  commentId: Overload:SchedulingClients.Core.AgentServiceReference.AgentDto.IPAddress
-  isSpec: "True"
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.IPAddress
-  nameWithType: AgentDto.IPAddress
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.PropertyChanged
-  name: PropertyChanged
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_PropertyChanged
-  commentId: E:SchedulingClients.Core.AgentServiceReference.AgentDto.PropertyChanged
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.PropertyChanged
-  nameWithType: AgentDto.PropertyChanged
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.RaisePropertyChanged(System.String)
-  name: RaisePropertyChanged(String)
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_RaisePropertyChanged_System_String_
-  commentId: M:SchedulingClients.Core.AgentServiceReference.AgentDto.RaisePropertyChanged(System.String)
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.RaisePropertyChanged(System.String)
-  nameWithType: AgentDto.RaisePropertyChanged(String)
-- uid: SchedulingClients.Core.AgentServiceReference.AgentDto.RaisePropertyChanged*
-  name: RaisePropertyChanged
-  href: api/SchedulingClients.Core.AgentServiceReference.AgentDto.html#SchedulingClients_Core_AgentServiceReference_AgentDto_RaisePropertyChanged_
-  commentId: Overload:SchedulingClients.Core.AgentServiceReference.AgentDto.RaisePropertyChanged
-  isSpec: "True"
-  fullName: SchedulingClients.Core.AgentServiceReference.AgentDto.RaisePropertyChanged
-  nameWithType: AgentDto.RaisePropertyChanged
 - uid: SchedulingClients.Core.AgentServiceReference.AgentServiceClient
   name: AgentServiceClient
   href: api/SchedulingClients.Core.AgentServiceReference.AgentServiceClient.html
@@ -384,6 +294,12 @@ references:
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpAgentClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpAgentClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpAgentClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpAgentClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpAgentClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpAgentClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpAgentClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpAgentClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpAgentClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpAgentClient*
   name: CreateTcpAgentClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpAgentClient_
@@ -397,6 +313,12 @@ references:
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpJobBuilderClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpJobBuilderClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpJobBuilderClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpJobBuilderClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpJobBuilderClient*
   name: CreateTcpJobBuilderClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpJobBuilderClient_
@@ -410,6 +332,12 @@ references:
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpJobsStateClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpJobsStateClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpJobsStateClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpJobsStateClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpJobsStateClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpJobsStateClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpJobsStateClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpJobsStateClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpJobsStateClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpJobsStateClient*
   name: CreateTcpJobsStateClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpJobsStateClient_
@@ -423,6 +351,12 @@ references:
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpJobStateClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpJobStateClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpJobStateClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpJobStateClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpJobStateClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpJobStateClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpJobStateClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpJobStateClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpJobStateClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpJobStateClient*
   name: CreateTcpJobStateClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpJobStateClient_
@@ -436,6 +370,12 @@ references:
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpMapClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpMapClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpMapClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpMapClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpMapClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpMapClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpMapClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpMapClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpMapClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpMapClient*
   name: CreateTcpMapClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpMapClient_
@@ -443,12 +383,37 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpMapClient
   nameWithType: ClientFactory.CreateTcpMapClient
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient(BaseClients.Core.EndpointSettings)
+  name: CreateTcpSchedulingClient(EndpointSettings)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpSchedulingClient_BaseClients_Core_EndpointSettings_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient(BaseClients.Core.EndpointSettings)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient(BaseClients.Core.EndpointSettings)
+  nameWithType: ClientFactory.CreateTcpSchedulingClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpSchedulingClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpSchedulingClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpSchedulingClient(IPAddress, UInt16)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient*
+  name: CreateTcpSchedulingClient
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpSchedulingClient_
+  commentId: Overload:SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient
+  isSpec: "True"
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpSchedulingClient
+  nameWithType: ClientFactory.CreateTcpSchedulingClient
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpServicingClient(BaseClients.Core.EndpointSettings)
   name: CreateTcpServicingClient(EndpointSettings)
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpServicingClient_BaseClients_Core_EndpointSettings_
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpServicingClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpServicingClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpServicingClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpServicingClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpServicingClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpServicingClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpServicingClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpServicingClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpServicingClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpServicingClient*
   name: CreateTcpServicingClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpServicingClient_
@@ -462,6 +427,12 @@ references:
   commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpTaskStateClient(BaseClients.Core.EndpointSettings)
   fullName: SchedulingClients.Core.ClientFactory.CreateTcpTaskStateClient(BaseClients.Core.EndpointSettings)
   nameWithType: ClientFactory.CreateTcpTaskStateClient(EndpointSettings)
+- uid: SchedulingClients.Core.ClientFactory.CreateTcpTaskStateClient(System.Net.IPAddress,System.UInt16)
+  name: CreateTcpTaskStateClient(IPAddress, UInt16)
+  href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpTaskStateClient_System_Net_IPAddress_System_UInt16_
+  commentId: M:SchedulingClients.Core.ClientFactory.CreateTcpTaskStateClient(System.Net.IPAddress,System.UInt16)
+  fullName: SchedulingClients.Core.ClientFactory.CreateTcpTaskStateClient(System.Net.IPAddress, System.UInt16)
+  nameWithType: ClientFactory.CreateTcpTaskStateClient(IPAddress, UInt16)
 - uid: SchedulingClients.Core.ClientFactory.CreateTcpTaskStateClient*
   name: CreateTcpTaskStateClient
   href: api/SchedulingClients.Core.ClientFactory.html#SchedulingClients_Core_ClientFactory_CreateTcpTaskStateClient_
@@ -579,6 +550,19 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpMapService
   nameWithType: EndpointSettings_ExtensionMethods.TcpMapService
+- uid: SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpSchedulingService(BaseClients.Core.EndpointSettings)
+  name: TcpSchedulingService(EndpointSettings)
+  href: api/SchedulingClients.Core.EndpointSettings_ExtensionMethods.html#SchedulingClients_Core_EndpointSettings_ExtensionMethods_TcpSchedulingService_BaseClients_Core_EndpointSettings_
+  commentId: M:SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpSchedulingService(BaseClients.Core.EndpointSettings)
+  fullName: SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpSchedulingService(BaseClients.Core.EndpointSettings)
+  nameWithType: EndpointSettings_ExtensionMethods.TcpSchedulingService(EndpointSettings)
+- uid: SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpSchedulingService*
+  name: TcpSchedulingService
+  href: api/SchedulingClients.Core.EndpointSettings_ExtensionMethods.html#SchedulingClients_Core_EndpointSettings_ExtensionMethods_TcpSchedulingService_
+  commentId: Overload:SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpSchedulingService
+  isSpec: "True"
+  fullName: SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpSchedulingService
+  nameWithType: EndpointSettings_ExtensionMethods.TcpSchedulingService
 - uid: SchedulingClients.Core.EndpointSettings_ExtensionMethods.TcpServicingService(BaseClients.Core.EndpointSettings)
   name: TcpServicingService(EndpointSettings)
   href: api/SchedulingClients.Core.EndpointSettings_ExtensionMethods.html#SchedulingClients_Core_EndpointSettings_ExtensionMethods_TcpServicingService_BaseClients_Core_EndpointSettings_
@@ -611,17 +595,17 @@ references:
   commentId: T:SchedulingClients.Core.ExtensionMethods
   fullName: SchedulingClients.Core.ExtensionMethods
   nameWithType: ExtensionMethods
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(SchedulingClients.Core.MapServiceReference.MoveDto)
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.MoveDto)
   name: ToCSV(MoveDto)
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_SchedulingClients_Core_MapServiceReference_MoveDto_
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(SchedulingClients.Core.MapServiceReference.MoveDto)
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(SchedulingClients.Core.MapServiceReference.MoveDto)
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_GAAPICommon_Core_Dtos_MoveDto_
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.MoveDto)
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.MoveDto)
   nameWithType: ExtensionMethods.ToCSV(MoveDto)
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(SchedulingClients.Core.MapServiceReference.NodeDto)
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.NodeDto)
   name: ToCSV(NodeDto)
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_SchedulingClients_Core_MapServiceReference_NodeDto_
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(SchedulingClients.Core.MapServiceReference.NodeDto)
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(SchedulingClients.Core.MapServiceReference.NodeDto)
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSV_GAAPICommon_Core_Dtos_NodeDto_
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.NodeDto)
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSV(GAAPICommon.Core.Dtos.NodeDto)
   nameWithType: ExtensionMethods.ToCSV(NodeDto)
 - uid: SchedulingClients.Core.ExtensionMethods.ToCSV*
   name: ToCSV
@@ -630,22 +614,22 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.ExtensionMethods.ToCSV
   nameWithType: ExtensionMethods.ToCSV
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.MoveDto[])
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto[])
   name: ToCSVFile(MoveDto[])
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_SchedulingClients_Core_MapServiceReference_MoveDto___
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.MoveDto[])
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_GAAPICommon_Core_Dtos_MoveDto___
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto[])
   name.vb: ToCSVFile(MoveDto())
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.MoveDto[])
-  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.MoveDto())
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto[])
+  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.MoveDto())
   nameWithType: ExtensionMethods.ToCSVFile(MoveDto[])
   nameWithType.vb: ExtensionMethods.ToCSVFile(MoveDto())
-- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.NodeDto[])
+- uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto[])
   name: ToCSVFile(NodeDto[])
-  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_SchedulingClients_Core_MapServiceReference_NodeDto___
-  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.NodeDto[])
+  href: api/SchedulingClients.Core.ExtensionMethods.html#SchedulingClients_Core_ExtensionMethods_ToCSVFile_GAAPICommon_Core_Dtos_NodeDto___
+  commentId: M:SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto[])
   name.vb: ToCSVFile(NodeDto())
-  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.NodeDto[])
-  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(SchedulingClients.Core.MapServiceReference.NodeDto())
+  fullName: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto[])
+  fullName.vb: SchedulingClients.Core.ExtensionMethods.ToCSVFile(GAAPICommon.Core.Dtos.NodeDto())
   nameWithType: ExtensionMethods.ToCSVFile(NodeDto[])
   nameWithType.vb: ExtensionMethods.ToCSVFile(NodeDto())
 - uid: SchedulingClients.Core.ExtensionMethods.ToCSVFile*
@@ -784,19 +768,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IJobBuilderClient.CreateAwaitingTask
   nameWithType: IJobBuilderClient.CreateAwaitingTask
-- uid: SchedulingClients.Core.IJobBuilderClient.CreateChargeTask(System.Int32,System.Int32)
-  name: CreateChargeTask(Int32, Int32)
-  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateChargeTask_System_Int32_System_Int32_
-  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateChargeTask(System.Int32,System.Int32)
-  fullName: SchedulingClients.Core.IJobBuilderClient.CreateChargeTask(System.Int32, System.Int32)
-  nameWithType: IJobBuilderClient.CreateChargeTask(Int32, Int32)
-- uid: SchedulingClients.Core.IJobBuilderClient.CreateChargeTask*
-  name: CreateChargeTask
-  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateChargeTask_
-  commentId: Overload:SchedulingClients.Core.IJobBuilderClient.CreateChargeTask
-  isSpec: "True"
-  fullName: SchedulingClients.Core.IJobBuilderClient.CreateChargeTask
-  nameWithType: IJobBuilderClient.CreateChargeTask
 - uid: SchedulingClients.Core.IJobBuilderClient.CreateGoToNodeTask(System.Int32,System.Int32)
   name: CreateGoToNodeTask(Int32, Int32)
   href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateGoToNodeTask_System_Int32_System_Int32_
@@ -810,12 +781,12 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IJobBuilderClient.CreateGoToNodeTask
   nameWithType: IJobBuilderClient.CreateGoToNodeTask
-- uid: SchedulingClients.Core.IJobBuilderClient.CreateJob
-  name: CreateJob()
-  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateJob
-  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateJob
-  fullName: SchedulingClients.Core.IJobBuilderClient.CreateJob()
-  nameWithType: IJobBuilderClient.CreateJob()
+- uid: SchedulingClients.Core.IJobBuilderClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  name: CreateJob(JobPriority)
+  href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateJob_GAAPICommon_Architecture_JobPriority_
+  commentId: M:SchedulingClients.Core.IJobBuilderClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  fullName: SchedulingClients.Core.IJobBuilderClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  nameWithType: IJobBuilderClient.CreateJob(JobPriority)
 - uid: SchedulingClients.Core.IJobBuilderClient.CreateJob*
   name: CreateJob
   href: api/SchedulingClients.Core.IJobBuilderClient.html#SchedulingClients_Core_IJobBuilderClient_CreateJob_
@@ -1232,13 +1203,13 @@ references:
   commentId: T:SchedulingClients.Core.IMapClient_ExtensionMethods
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods
   nameWithType: IMapClient_ExtensionMethods
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(SchedulingClients.Core.MapServiceReference.MoveDto,System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto,System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
   name: IsWithin(MoveDto, IEnumerable<NodeDto>, Rect)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_SchedulingClients_Core_MapServiceReference_MoveDto_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(SchedulingClients.Core.MapServiceReference.MoveDto,System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_IsWithin_GAAPICommon_Core_Dtos_MoveDto_System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_NodeDto__System_Windows_Rect_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto,System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
   name.vb: IsWithin(MoveDto, IEnumerable(Of NodeDto), Rect)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(SchedulingClients.Core.MapServiceReference.MoveDto, System.Collections.Generic.IEnumerable<SchedulingClients.Core.MapServiceReference.NodeDto>, System.Windows.Rect)
-  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(SchedulingClients.Core.MapServiceReference.MoveDto, System.Collections.Generic.IEnumerable(Of SchedulingClients.Core.MapServiceReference.NodeDto), System.Windows.Rect)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto, System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.NodeDto>, System.Windows.Rect)
+  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin(GAAPICommon.Core.Dtos.MoveDto, System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.NodeDto), System.Windows.Rect)
   nameWithType: IMapClient_ExtensionMethods.IsWithin(MoveDto, IEnumerable<NodeDto>, Rect)
   nameWithType.vb: IMapClient_ExtensionMethods.IsWithin(MoveDto, IEnumerable(Of NodeDto), Rect)
 - uid: SchedulingClients.Core.IMapClient_ExtensionMethods.IsWithin*
@@ -1270,11 +1241,11 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPercentageComplete
   nameWithType: IMapClient_ExtensionMethods.ToPercentageComplete
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(SchedulingClients.Core.MapServiceReference.NodeDto)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(GAAPICommon.Core.Dtos.NodeDto)
   name: ToPoint(NodeDto)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_SchedulingClients_Core_MapServiceReference_NodeDto_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(SchedulingClients.Core.MapServiceReference.NodeDto)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(SchedulingClients.Core.MapServiceReference.NodeDto)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_ToPoint_GAAPICommon_Core_Dtos_NodeDto_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(GAAPICommon.Core.Dtos.NodeDto)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint(GAAPICommon.Core.Dtos.NodeDto)
   nameWithType: IMapClient_ExtensionMethods.ToPoint(NodeDto)
 - uid: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint*
   name: ToPoint
@@ -1283,22 +1254,22 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.ToPoint
   nameWithType: IMapClient_ExtensionMethods.ToPoint
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.MoveDto},System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.MoveDto},System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
   name: Within(IEnumerable<MoveDto>, IEnumerable<NodeDto>, Rect)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_MoveDto__System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.MoveDto},System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_MoveDto__System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_NodeDto__System_Windows_Rect_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.MoveDto},System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
   name.vb: Within(IEnumerable(Of MoveDto), IEnumerable(Of NodeDto), Rect)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<SchedulingClients.Core.MapServiceReference.MoveDto>, System.Collections.Generic.IEnumerable<SchedulingClients.Core.MapServiceReference.NodeDto>, System.Windows.Rect)
-  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of SchedulingClients.Core.MapServiceReference.MoveDto), System.Collections.Generic.IEnumerable(Of SchedulingClients.Core.MapServiceReference.NodeDto), System.Windows.Rect)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.MoveDto>, System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.NodeDto>, System.Windows.Rect)
+  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.MoveDto), System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.NodeDto), System.Windows.Rect)
   nameWithType: IMapClient_ExtensionMethods.Within(IEnumerable<MoveDto>, IEnumerable<NodeDto>, Rect)
   nameWithType.vb: IMapClient_ExtensionMethods.Within(IEnumerable(Of MoveDto), IEnumerable(Of NodeDto), Rect)
-- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)
+- uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
   name: Within(IEnumerable<NodeDto>, Rect)
-  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_SchedulingClients_Core_MapServiceReference_NodeDto__System_Windows_Rect_
-  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{SchedulingClients.Core.MapServiceReference.NodeDto},System.Windows.Rect)
+  href: api/SchedulingClients.Core.IMapClient_ExtensionMethods.html#SchedulingClients_Core_IMapClient_ExtensionMethods_Within_System_Collections_Generic_IEnumerable_GAAPICommon_Core_Dtos_NodeDto__System_Windows_Rect_
+  commentId: M:SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable{GAAPICommon.Core.Dtos.NodeDto},System.Windows.Rect)
   name.vb: Within(IEnumerable(Of NodeDto), Rect)
-  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<SchedulingClients.Core.MapServiceReference.NodeDto>, System.Windows.Rect)
-  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of SchedulingClients.Core.MapServiceReference.NodeDto), System.Windows.Rect)
+  fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable<GAAPICommon.Core.Dtos.NodeDto>, System.Windows.Rect)
+  fullName.vb: SchedulingClients.Core.IMapClient_ExtensionMethods.Within(System.Collections.Generic.IEnumerable(Of GAAPICommon.Core.Dtos.NodeDto), System.Windows.Rect)
   nameWithType: IMapClient_ExtensionMethods.Within(IEnumerable<NodeDto>, Rect)
   nameWithType.vb: IMapClient_ExtensionMethods.Within(IEnumerable(Of NodeDto), Rect)
 - uid: SchedulingClients.Core.IMapClient_ExtensionMethods.Within*
@@ -1308,6 +1279,31 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.IMapClient_ExtensionMethods.Within
   nameWithType: IMapClient_ExtensionMethods.Within
+- uid: SchedulingClients.Core.ISchedulingClient
+  name: ISchedulingClient
+  href: api/SchedulingClients.Core.ISchedulingClient.html
+  commentId: T:SchedulingClients.Core.ISchedulingClient
+  fullName: SchedulingClients.Core.ISchedulingClient
+  nameWithType: ISchedulingClient
+- uid: SchedulingClients.Core.ISchedulingClient.SchedulerState
+  name: SchedulerState
+  href: api/SchedulingClients.Core.ISchedulingClient.html#SchedulingClients_Core_ISchedulingClient_SchedulerState
+  commentId: P:SchedulingClients.Core.ISchedulingClient.SchedulerState
+  fullName: SchedulingClients.Core.ISchedulingClient.SchedulerState
+  nameWithType: ISchedulingClient.SchedulerState
+- uid: SchedulingClients.Core.ISchedulingClient.SchedulerState*
+  name: SchedulerState
+  href: api/SchedulingClients.Core.ISchedulingClient.html#SchedulingClients_Core_ISchedulingClient_SchedulerState_
+  commentId: Overload:SchedulingClients.Core.ISchedulingClient.SchedulerState
+  isSpec: "True"
+  fullName: SchedulingClients.Core.ISchedulingClient.SchedulerState
+  nameWithType: ISchedulingClient.SchedulerState
+- uid: SchedulingClients.Core.ISchedulingClient.Updated
+  name: Updated
+  href: api/SchedulingClients.Core.ISchedulingClient.html#SchedulingClients_Core_ISchedulingClient_Updated
+  commentId: E:SchedulingClients.Core.ISchedulingClient.Updated
+  fullName: SchedulingClients.Core.ISchedulingClient.Updated
+  nameWithType: ISchedulingClient.Updated
 - uid: SchedulingClients.Core.IServicingClient
   name: IServicingClient
   href: api/SchedulingClients.Core.IServicingClient.html
@@ -1514,32 +1510,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateAwaitingTaskAsync
   nameWithType: IJobBuilderService.CreateAwaitingTaskAsync
-- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTask(System.Int32,System.Int32)
-  name: CreateChargeTask(Int32, Int32)
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateChargeTask_System_Int32_System_Int32_
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTask(System.Int32,System.Int32)
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTask(System.Int32, System.Int32)
-  nameWithType: IJobBuilderService.CreateChargeTask(Int32, Int32)
-- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTask*
-  name: CreateChargeTask
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateChargeTask_
-  commentId: Overload:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTask
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTask
-  nameWithType: IJobBuilderService.CreateChargeTask
-- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTaskAsync(System.Int32,System.Int32)
-  name: CreateChargeTaskAsync(Int32, Int32)
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateChargeTaskAsync_System_Int32_System_Int32_
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTaskAsync(System.Int32,System.Int32)
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTaskAsync(System.Int32, System.Int32)
-  nameWithType: IJobBuilderService.CreateChargeTaskAsync(Int32, Int32)
-- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTaskAsync*
-  name: CreateChargeTaskAsync
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateChargeTaskAsync_
-  commentId: Overload:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTaskAsync
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateChargeTaskAsync
-  nameWithType: IJobBuilderService.CreateChargeTaskAsync
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateGoToNodeTask(System.Int32,System.Int32)
   name: CreateGoToNodeTask(Int32, Int32)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateGoToNodeTask_System_Int32_System_Int32_
@@ -1566,12 +1536,12 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateGoToNodeTaskAsync
   nameWithType: IJobBuilderService.CreateGoToNodeTaskAsync
-- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob
-  name: CreateJob()
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJob
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob()
-  nameWithType: IJobBuilderService.CreateJob()
+- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
+  name: CreateJob(JobPriority)
+  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJob_GAAPICommon_Architecture_JobPriority_
+  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
+  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob(GAAPICommon.Architecture.JobPriority)
+  nameWithType: IJobBuilderService.CreateJob(JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob*
   name: CreateJob
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJob_
@@ -1579,12 +1549,12 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJob
   nameWithType: IJobBuilderService.CreateJob
-- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync
-  name: CreateJobAsync()
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJobAsync
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync()
-  nameWithType: IJobBuilderService.CreateJobAsync()
+- uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
+  name: CreateJobAsync(JobPriority)
+  href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJobAsync_GAAPICommon_Architecture_JobPriority_
+  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
+  fullName: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
+  nameWithType: IJobBuilderService.CreateJobAsync(JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.CreateJobAsync*
   name: CreateJobAsync
   href: api/SchedulingClients.Core.JobBuilderServiceReference.IJobBuilderService.html#SchedulingClients_Core_JobBuilderServiceReference_IJobBuilderService_CreateJobAsync_
@@ -2109,32 +2079,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateAwaitingTaskAsync
   nameWithType: JobBuilderServiceClient.CreateAwaitingTaskAsync
-- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTask(System.Int32,System.Int32)
-  name: CreateChargeTask(Int32, Int32)
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateChargeTask_System_Int32_System_Int32_
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTask(System.Int32,System.Int32)
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTask(System.Int32, System.Int32)
-  nameWithType: JobBuilderServiceClient.CreateChargeTask(Int32, Int32)
-- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTask*
-  name: CreateChargeTask
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateChargeTask_
-  commentId: Overload:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTask
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTask
-  nameWithType: JobBuilderServiceClient.CreateChargeTask
-- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTaskAsync(System.Int32,System.Int32)
-  name: CreateChargeTaskAsync(Int32, Int32)
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateChargeTaskAsync_System_Int32_System_Int32_
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTaskAsync(System.Int32,System.Int32)
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTaskAsync(System.Int32, System.Int32)
-  nameWithType: JobBuilderServiceClient.CreateChargeTaskAsync(Int32, Int32)
-- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTaskAsync*
-  name: CreateChargeTaskAsync
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateChargeTaskAsync_
-  commentId: Overload:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTaskAsync
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateChargeTaskAsync
-  nameWithType: JobBuilderServiceClient.CreateChargeTaskAsync
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateGoToNodeTask(System.Int32,System.Int32)
   name: CreateGoToNodeTask(Int32, Int32)
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateGoToNodeTask_System_Int32_System_Int32_
@@ -2161,12 +2105,12 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateGoToNodeTaskAsync
   nameWithType: JobBuilderServiceClient.CreateGoToNodeTaskAsync
-- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob
-  name: CreateJob()
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJob
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob()
-  nameWithType: JobBuilderServiceClient.CreateJob()
+- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  name: CreateJob(JobPriority)
+  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJob_GAAPICommon_Architecture_JobPriority_
+  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob(GAAPICommon.Architecture.JobPriority)
+  nameWithType: JobBuilderServiceClient.CreateJob(JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob*
   name: CreateJob
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJob_
@@ -2174,12 +2118,12 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJob
   nameWithType: JobBuilderServiceClient.CreateJob
-- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync
-  name: CreateJobAsync()
-  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJobAsync
-  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync
-  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync()
-  nameWithType: JobBuilderServiceClient.CreateJobAsync()
+- uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
+  name: CreateJobAsync(JobPriority)
+  href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJobAsync_GAAPICommon_Architecture_JobPriority_
+  commentId: M:SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
+  fullName: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync(GAAPICommon.Architecture.JobPriority)
+  nameWithType: JobBuilderServiceClient.CreateJobAsync(JobPriority)
 - uid: SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.CreateJobAsync*
   name: CreateJobAsync
   href: api/SchedulingClients.Core.JobBuilderServiceReference.JobBuilderServiceClient.html#SchedulingClients_Core_JobBuilderServiceReference_JobBuilderServiceClient_CreateJobAsync_
@@ -3319,289 +3263,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.JobStateServiceReference.JobStateServiceClient.SubscriptionHeartbeatAsync
   nameWithType: JobStateServiceClient.SubscriptionHeartbeatAsync
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto
-  name: JobSummaryDto
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html
-  commentId: T:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto
-  nameWithType: JobSummaryDto
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.AssignedAgentId
-  name: AssignedAgentId
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_AssignedAgentId
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.AssignedAgentId
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.AssignedAgentId
-  nameWithType: JobSummaryDto.AssignedAgentId
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.AssignedAgentId*
-  name: AssignedAgentId
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_AssignedAgentId_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.AssignedAgentId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.AssignedAgentId
-  nameWithType: JobSummaryDto.AssignedAgentId
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Description
-  name: Description
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_Description
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Description
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Description
-  nameWithType: JobSummaryDto.Description
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Description*
-  name: Description
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_Description_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Description
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Description
-  nameWithType: JobSummaryDto.Description
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.ExtensionData
-  name: ExtensionData
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_ExtensionData
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.ExtensionData
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.ExtensionData
-  nameWithType: JobSummaryDto.ExtensionData
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.ExtensionData*
-  name: ExtensionData
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_ExtensionData_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.ExtensionData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.ExtensionData
-  nameWithType: JobSummaryDto.ExtensionData
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobId
-  name: JobId
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_JobId
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobId
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobId
-  nameWithType: JobSummaryDto.JobId
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobId*
-  name: JobId
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_JobId_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobId
-  nameWithType: JobSummaryDto.JobId
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobStatus
-  name: JobStatus
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_JobStatus
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobStatus
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobStatus
-  nameWithType: JobSummaryDto.JobStatus
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobStatus*
-  name: JobStatus
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_JobStatus_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobStatus
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.JobStatus
-  nameWithType: JobSummaryDto.JobStatus
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Notes
-  name: Notes
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_Notes
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Notes
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Notes
-  nameWithType: JobSummaryDto.Notes
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Notes*
-  name: Notes
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_Notes_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Notes
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.Notes
-  nameWithType: JobSummaryDto.Notes
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.PropertyChanged
-  name: PropertyChanged
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_PropertyChanged
-  commentId: E:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.PropertyChanged
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.PropertyChanged
-  nameWithType: JobSummaryDto.PropertyChanged
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RaisePropertyChanged(System.String)
-  name: RaisePropertyChanged(String)
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_RaisePropertyChanged_System_String_
-  commentId: M:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RaisePropertyChanged(System.String)
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RaisePropertyChanged(System.String)
-  nameWithType: JobSummaryDto.RaisePropertyChanged(String)
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RaisePropertyChanged*
-  name: RaisePropertyChanged
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_RaisePropertyChanged_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RaisePropertyChanged
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RaisePropertyChanged
-  nameWithType: JobSummaryDto.RaisePropertyChanged
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RootOrderedListTaskId
-  name: RootOrderedListTaskId
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_RootOrderedListTaskId
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RootOrderedListTaskId
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RootOrderedListTaskId
-  nameWithType: JobSummaryDto.RootOrderedListTaskId
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RootOrderedListTaskId*
-  name: RootOrderedListTaskId
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_RootOrderedListTaskId_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RootOrderedListTaskId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.RootOrderedListTaskId
-  nameWithType: JobSummaryDto.RootOrderedListTaskId
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.TaskSummaries
-  name: TaskSummaries
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_TaskSummaries
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.TaskSummaries
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.TaskSummaries
-  nameWithType: JobSummaryDto.TaskSummaries
-- uid: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.TaskSummaries*
-  name: TaskSummaries
-  href: api/SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_JobSummaryDto_TaskSummaries_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.TaskSummaries
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.JobSummaryDto.TaskSummaries
-  nameWithType: JobSummaryDto.TaskSummaries
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto
-  name: NodeTaskSummaryDto
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html
-  commentId: T:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto
-  nameWithType: NodeTaskSummaryDto
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.ExtensionData
-  name: ExtensionData
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_ExtensionData
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.ExtensionData
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.ExtensionData
-  nameWithType: NodeTaskSummaryDto.ExtensionData
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.ExtensionData*
-  name: ExtensionData
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_ExtensionData_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.ExtensionData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.ExtensionData
-  nameWithType: NodeTaskSummaryDto.ExtensionData
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.NodeId
-  name: NodeId
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_NodeId
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.NodeId
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.NodeId
-  nameWithType: NodeTaskSummaryDto.NodeId
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.NodeId*
-  name: NodeId
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_NodeId_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.NodeId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.NodeId
-  nameWithType: NodeTaskSummaryDto.NodeId
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.PropertyChanged
-  name: PropertyChanged
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_PropertyChanged
-  commentId: E:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.PropertyChanged
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.PropertyChanged
-  nameWithType: NodeTaskSummaryDto.PropertyChanged
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.RaisePropertyChanged(System.String)
-  name: RaisePropertyChanged(String)
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_RaisePropertyChanged_System_String_
-  commentId: M:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.RaisePropertyChanged(System.String)
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.RaisePropertyChanged(System.String)
-  nameWithType: NodeTaskSummaryDto.RaisePropertyChanged(String)
-- uid: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.RaisePropertyChanged*
-  name: RaisePropertyChanged
-  href: api/SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_NodeTaskSummaryDto_RaisePropertyChanged_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.RaisePropertyChanged
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.NodeTaskSummaryDto.RaisePropertyChanged
-  nameWithType: NodeTaskSummaryDto.RaisePropertyChanged
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto
-  name: TaskSummaryDto
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html
-  commentId: T:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto
-  nameWithType: TaskSummaryDto
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ExtensionData
-  name: ExtensionData
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_ExtensionData
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ExtensionData
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ExtensionData
-  nameWithType: TaskSummaryDto.ExtensionData
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ExtensionData*
-  name: ExtensionData
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_ExtensionData_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ExtensionData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ExtensionData
-  nameWithType: TaskSummaryDto.ExtensionData
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.NodeTaskSummaryData
-  name: NodeTaskSummaryData
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_NodeTaskSummaryData
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.NodeTaskSummaryData
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.NodeTaskSummaryData
-  nameWithType: TaskSummaryDto.NodeTaskSummaryData
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.NodeTaskSummaryData*
-  name: NodeTaskSummaryData
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_NodeTaskSummaryData_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.NodeTaskSummaryData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.NodeTaskSummaryData
-  nameWithType: TaskSummaryDto.NodeTaskSummaryData
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ParentTaskId
-  name: ParentTaskId
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_ParentTaskId
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ParentTaskId
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ParentTaskId
-  nameWithType: TaskSummaryDto.ParentTaskId
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ParentTaskId*
-  name: ParentTaskId
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_ParentTaskId_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ParentTaskId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.ParentTaskId
-  nameWithType: TaskSummaryDto.ParentTaskId
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.PropertyChanged
-  name: PropertyChanged
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_PropertyChanged
-  commentId: E:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.PropertyChanged
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.PropertyChanged
-  nameWithType: TaskSummaryDto.PropertyChanged
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.RaisePropertyChanged(System.String)
-  name: RaisePropertyChanged(String)
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_RaisePropertyChanged_System_String_
-  commentId: M:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.RaisePropertyChanged(System.String)
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.RaisePropertyChanged(System.String)
-  nameWithType: TaskSummaryDto.RaisePropertyChanged(String)
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.RaisePropertyChanged*
-  name: RaisePropertyChanged
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_RaisePropertyChanged_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.RaisePropertyChanged
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.RaisePropertyChanged
-  nameWithType: TaskSummaryDto.RaisePropertyChanged
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskId
-  name: TaskId
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_TaskId
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskId
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskId
-  nameWithType: TaskSummaryDto.TaskId
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskId*
-  name: TaskId
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_TaskId_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskId
-  nameWithType: TaskSummaryDto.TaskId
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskStatus
-  name: TaskStatus
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_TaskStatus
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskStatus
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskStatus
-  nameWithType: TaskSummaryDto.TaskStatus
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskStatus*
-  name: TaskStatus
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_TaskStatus_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskStatus
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskStatus
-  nameWithType: TaskSummaryDto.TaskStatus
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType
-  name: TaskType
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_TaskType
-  commentId: P:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType
-  nameWithType: TaskSummaryDto.TaskType
-- uid: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType*
-  name: TaskType
-  href: api/SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.html#SchedulingClients_Core_JobStateServiceReference_TaskSummaryDto_TaskType_
-  commentId: Overload:SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType
-  isSpec: "True"
-  fullName: SchedulingClients.Core.JobStateServiceReference.TaskSummaryDto.TaskType
-  nameWithType: TaskSummaryDto.TaskType
 - uid: SchedulingClients.Core.MapServiceReference
   name: SchedulingClients.Core.MapServiceReference
   href: api/SchedulingClients.Core.MapServiceReference.html
@@ -4162,212 +3823,6 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.MapServiceReference.MapServiceClient.SubscriptionHeartbeatAsync
   nameWithType: MapServiceClient.SubscriptionHeartbeatAsync
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto
-  name: MoveDto
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html
-  commentId: T:SchedulingClients.Core.MapServiceReference.MoveDto
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto
-  nameWithType: MoveDto
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.Alias
-  name: Alias
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_Alias
-  commentId: P:SchedulingClients.Core.MapServiceReference.MoveDto.Alias
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.Alias
-  nameWithType: MoveDto.Alias
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.Alias*
-  name: Alias
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_Alias_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.MoveDto.Alias
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.Alias
-  nameWithType: MoveDto.Alias
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.DestinationId
-  name: DestinationId
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_DestinationId
-  commentId: P:SchedulingClients.Core.MapServiceReference.MoveDto.DestinationId
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.DestinationId
-  nameWithType: MoveDto.DestinationId
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.DestinationId*
-  name: DestinationId
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_DestinationId_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.MoveDto.DestinationId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.DestinationId
-  nameWithType: MoveDto.DestinationId
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.ExtensionData
-  name: ExtensionData
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_ExtensionData
-  commentId: P:SchedulingClients.Core.MapServiceReference.MoveDto.ExtensionData
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.ExtensionData
-  nameWithType: MoveDto.ExtensionData
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.ExtensionData*
-  name: ExtensionData
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_ExtensionData_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.MoveDto.ExtensionData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.ExtensionData
-  nameWithType: MoveDto.ExtensionData
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.Id
-  name: Id
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_Id
-  commentId: P:SchedulingClients.Core.MapServiceReference.MoveDto.Id
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.Id
-  nameWithType: MoveDto.Id
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.Id*
-  name: Id
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_Id_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.MoveDto.Id
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.Id
-  nameWithType: MoveDto.Id
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.PropertyChanged
-  name: PropertyChanged
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_PropertyChanged
-  commentId: E:SchedulingClients.Core.MapServiceReference.MoveDto.PropertyChanged
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.PropertyChanged
-  nameWithType: MoveDto.PropertyChanged
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.RaisePropertyChanged(System.String)
-  name: RaisePropertyChanged(String)
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_RaisePropertyChanged_System_String_
-  commentId: M:SchedulingClients.Core.MapServiceReference.MoveDto.RaisePropertyChanged(System.String)
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.RaisePropertyChanged(System.String)
-  nameWithType: MoveDto.RaisePropertyChanged(String)
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.RaisePropertyChanged*
-  name: RaisePropertyChanged
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_RaisePropertyChanged_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.MoveDto.RaisePropertyChanged
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.RaisePropertyChanged
-  nameWithType: MoveDto.RaisePropertyChanged
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.SourceId
-  name: SourceId
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_SourceId
-  commentId: P:SchedulingClients.Core.MapServiceReference.MoveDto.SourceId
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.SourceId
-  nameWithType: MoveDto.SourceId
-- uid: SchedulingClients.Core.MapServiceReference.MoveDto.SourceId*
-  name: SourceId
-  href: api/SchedulingClients.Core.MapServiceReference.MoveDto.html#SchedulingClients_Core_MapServiceReference_MoveDto_SourceId_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.MoveDto.SourceId
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.MoveDto.SourceId
-  nameWithType: MoveDto.SourceId
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto
-  name: NodeDto
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html
-  commentId: T:SchedulingClients.Core.MapServiceReference.NodeDto
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto
-  nameWithType: NodeDto
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Alias
-  name: Alias
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Alias
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.Alias
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Alias
-  nameWithType: NodeDto.Alias
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Alias*
-  name: Alias
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Alias_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.Alias
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Alias
-  nameWithType: NodeDto.Alias
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.ExtensionData
-  name: ExtensionData
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_ExtensionData
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.ExtensionData
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.ExtensionData
-  nameWithType: NodeDto.ExtensionData
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.ExtensionData*
-  name: ExtensionData
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_ExtensionData_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.ExtensionData
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.ExtensionData
-  nameWithType: NodeDto.ExtensionData
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.HeadingRad
-  name: HeadingRad
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_HeadingRad
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.HeadingRad
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.HeadingRad
-  nameWithType: NodeDto.HeadingRad
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.HeadingRad*
-  name: HeadingRad
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_HeadingRad_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.HeadingRad
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.HeadingRad
-  nameWithType: NodeDto.HeadingRad
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Id
-  name: Id
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Id
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.Id
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Id
-  nameWithType: NodeDto.Id
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Id*
-  name: Id
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Id_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.Id
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Id
-  nameWithType: NodeDto.Id
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.PropertyChanged
-  name: PropertyChanged
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_PropertyChanged
-  commentId: E:SchedulingClients.Core.MapServiceReference.NodeDto.PropertyChanged
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.PropertyChanged
-  nameWithType: NodeDto.PropertyChanged
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.RaisePropertyChanged(System.String)
-  name: RaisePropertyChanged(String)
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_RaisePropertyChanged_System_String_
-  commentId: M:SchedulingClients.Core.MapServiceReference.NodeDto.RaisePropertyChanged(System.String)
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.RaisePropertyChanged(System.String)
-  nameWithType: NodeDto.RaisePropertyChanged(String)
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.RaisePropertyChanged*
-  name: RaisePropertyChanged
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_RaisePropertyChanged_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.RaisePropertyChanged
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.RaisePropertyChanged
-  nameWithType: NodeDto.RaisePropertyChanged
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Services
-  name: Services
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Services
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.Services
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Services
-  nameWithType: NodeDto.Services
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Services*
-  name: Services
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Services_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.Services
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Services
-  nameWithType: NodeDto.Services
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.X
-  name: X
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_X
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.X
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.X
-  nameWithType: NodeDto.X
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.X*
-  name: X
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_X_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.X
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.X
-  nameWithType: NodeDto.X
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Y
-  name: Y
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Y
-  commentId: P:SchedulingClients.Core.MapServiceReference.NodeDto.Y
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Y
-  nameWithType: NodeDto.Y
-- uid: SchedulingClients.Core.MapServiceReference.NodeDto.Y*
-  name: Y
-  href: api/SchedulingClients.Core.MapServiceReference.NodeDto.html#SchedulingClients_Core_MapServiceReference_NodeDto_Y_
-  commentId: Overload:SchedulingClients.Core.MapServiceReference.NodeDto.Y
-  isSpec: "True"
-  fullName: SchedulingClients.Core.MapServiceReference.NodeDto.Y
-  nameWithType: NodeDto.Y
 - uid: SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto
   name: OccupyingMandateMapItemDto
   href: api/SchedulingClients.Core.MapServiceReference.OccupyingMandateMapItemDto.html
@@ -4689,6 +4144,305 @@ references:
   isSpec: "True"
   fullName: SchedulingClients.Core.MapServiceReference.WaypointDto.Y
   nameWithType: WaypointDto.Y
+- uid: SchedulingClients.Core.SchedulingClient
+  name: SchedulingClient
+  href: api/SchedulingClients.Core.SchedulingClient.html
+  commentId: T:SchedulingClients.Core.SchedulingClient
+  fullName: SchedulingClients.Core.SchedulingClient
+  nameWithType: SchedulingClient
+- uid: SchedulingClients.Core.SchedulingClient.#ctor(System.Uri,System.TimeSpan)
+  name: SchedulingClient(Uri, TimeSpan)
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient__ctor_System_Uri_System_TimeSpan_
+  commentId: M:SchedulingClients.Core.SchedulingClient.#ctor(System.Uri,System.TimeSpan)
+  fullName: SchedulingClients.Core.SchedulingClient.SchedulingClient(System.Uri, System.TimeSpan)
+  nameWithType: SchedulingClient.SchedulingClient(Uri, TimeSpan)
+- uid: SchedulingClients.Core.SchedulingClient.#ctor*
+  name: SchedulingClient
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient__ctor_
+  commentId: Overload:SchedulingClients.Core.SchedulingClient.#ctor
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingClient.SchedulingClient
+  nameWithType: SchedulingClient.SchedulingClient
+- uid: SchedulingClients.Core.SchedulingClient.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_Dispose_System_Boolean_
+  commentId: M:SchedulingClients.Core.SchedulingClient.Dispose(System.Boolean)
+  fullName: SchedulingClients.Core.SchedulingClient.Dispose(System.Boolean)
+  nameWithType: SchedulingClient.Dispose(Boolean)
+- uid: SchedulingClients.Core.SchedulingClient.Dispose*
+  name: Dispose
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_Dispose_
+  commentId: Overload:SchedulingClients.Core.SchedulingClient.Dispose
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingClient.Dispose
+  nameWithType: SchedulingClient.Dispose
+- uid: SchedulingClients.Core.SchedulingClient.HandleSubscriptionHeartbeat(SchedulingClients.Core.SchedulingServiceReference.ISchedulingService,System.Guid)
+  name: HandleSubscriptionHeartbeat(ISchedulingService, Guid)
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_HandleSubscriptionHeartbeat_SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_System_Guid_
+  commentId: M:SchedulingClients.Core.SchedulingClient.HandleSubscriptionHeartbeat(SchedulingClients.Core.SchedulingServiceReference.ISchedulingService,System.Guid)
+  fullName: SchedulingClients.Core.SchedulingClient.HandleSubscriptionHeartbeat(SchedulingClients.Core.SchedulingServiceReference.ISchedulingService, System.Guid)
+  nameWithType: SchedulingClient.HandleSubscriptionHeartbeat(ISchedulingService, Guid)
+- uid: SchedulingClients.Core.SchedulingClient.HandleSubscriptionHeartbeat*
+  name: HandleSubscriptionHeartbeat
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_HandleSubscriptionHeartbeat_
+  commentId: Overload:SchedulingClients.Core.SchedulingClient.HandleSubscriptionHeartbeat
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingClient.HandleSubscriptionHeartbeat
+  nameWithType: SchedulingClient.HandleSubscriptionHeartbeat
+- uid: SchedulingClients.Core.SchedulingClient.SchedulerState
+  name: SchedulerState
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_SchedulerState
+  commentId: P:SchedulingClients.Core.SchedulingClient.SchedulerState
+  fullName: SchedulingClients.Core.SchedulingClient.SchedulerState
+  nameWithType: SchedulingClient.SchedulerState
+- uid: SchedulingClients.Core.SchedulingClient.SchedulerState*
+  name: SchedulerState
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_SchedulerState_
+  commentId: Overload:SchedulingClients.Core.SchedulingClient.SchedulerState
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingClient.SchedulerState
+  nameWithType: SchedulingClient.SchedulerState
+- uid: SchedulingClients.Core.SchedulingClient.SetInstanceContext
+  name: SetInstanceContext()
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_SetInstanceContext
+  commentId: M:SchedulingClients.Core.SchedulingClient.SetInstanceContext
+  fullName: SchedulingClients.Core.SchedulingClient.SetInstanceContext()
+  nameWithType: SchedulingClient.SetInstanceContext()
+- uid: SchedulingClients.Core.SchedulingClient.SetInstanceContext*
+  name: SetInstanceContext
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_SetInstanceContext_
+  commentId: Overload:SchedulingClients.Core.SchedulingClient.SetInstanceContext
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingClient.SetInstanceContext
+  nameWithType: SchedulingClient.SetInstanceContext
+- uid: SchedulingClients.Core.SchedulingClient.Updated
+  name: Updated
+  href: api/SchedulingClients.Core.SchedulingClient.html#SchedulingClients_Core_SchedulingClient_Updated
+  commentId: E:SchedulingClients.Core.SchedulingClient.Updated
+  fullName: SchedulingClients.Core.SchedulingClient.Updated
+  nameWithType: SchedulingClient.Updated
+- uid: SchedulingClients.Core.SchedulingServiceCallback
+  name: SchedulingServiceCallback
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html
+  commentId: T:SchedulingClients.Core.SchedulingServiceCallback
+  fullName: SchedulingClients.Core.SchedulingServiceCallback
+  nameWithType: SchedulingServiceCallback
+- uid: SchedulingClients.Core.SchedulingServiceCallback.#ctor
+  name: SchedulingServiceCallback()
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback__ctor
+  commentId: M:SchedulingClients.Core.SchedulingServiceCallback.#ctor
+  fullName: SchedulingClients.Core.SchedulingServiceCallback.SchedulingServiceCallback()
+  nameWithType: SchedulingServiceCallback.SchedulingServiceCallback()
+- uid: SchedulingClients.Core.SchedulingServiceCallback.#ctor*
+  name: SchedulingServiceCallback
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback__ctor_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceCallback.#ctor
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceCallback.SchedulingServiceCallback
+  nameWithType: SchedulingServiceCallback.SchedulingServiceCallback
+- uid: SchedulingClients.Core.SchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  name: OnCallback(SchedulerStateDto)
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback_OnCallback_GAAPICommon_Core_Dtos_SchedulerStateDto_
+  commentId: M:SchedulingClients.Core.SchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  fullName: SchedulingClients.Core.SchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  nameWithType: SchedulingServiceCallback.OnCallback(SchedulerStateDto)
+- uid: SchedulingClients.Core.SchedulingServiceCallback.OnCallback*
+  name: OnCallback
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback_OnCallback_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceCallback.OnCallback
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceCallback.OnCallback
+  nameWithType: SchedulingServiceCallback.OnCallback
+- uid: SchedulingClients.Core.SchedulingServiceCallback.Updated
+  name: Updated
+  href: api/SchedulingClients.Core.SchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceCallback_Updated
+  commentId: E:SchedulingClients.Core.SchedulingServiceCallback.Updated
+  fullName: SchedulingClients.Core.SchedulingServiceCallback.Updated
+  nameWithType: SchedulingServiceCallback.Updated
+- uid: SchedulingClients.Core.SchedulingServiceReference
+  name: SchedulingClients.Core.SchedulingServiceReference
+  href: api/SchedulingClients.Core.SchedulingServiceReference.html
+  commentId: N:SchedulingClients.Core.SchedulingServiceReference
+  fullName: SchedulingClients.Core.SchedulingServiceReference
+  nameWithType: SchedulingClients.Core.SchedulingServiceReference
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService
+  name: ISchedulingService
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html
+  commentId: T:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService
+  nameWithType: ISchedulingService
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVer
+  name: GetAPISemVer()
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_GetAPISemVer
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVer
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVer()
+  nameWithType: ISchedulingService.GetAPISemVer()
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVer*
+  name: GetAPISemVer
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_GetAPISemVer_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVer
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVer
+  nameWithType: ISchedulingService.GetAPISemVer
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVerAsync
+  name: GetAPISemVerAsync()
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_GetAPISemVerAsync
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVerAsync
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVerAsync()
+  nameWithType: ISchedulingService.GetAPISemVerAsync()
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVerAsync*
+  name: GetAPISemVerAsync
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_GetAPISemVerAsync_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVerAsync
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.GetAPISemVerAsync
+  nameWithType: ISchedulingService.GetAPISemVerAsync
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeat(System.Guid)
+  name: SubscriptionHeartbeat(Guid)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_SubscriptionHeartbeat_System_Guid_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeat(System.Guid)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeat(System.Guid)
+  nameWithType: ISchedulingService.SubscriptionHeartbeat(Guid)
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeat*
+  name: SubscriptionHeartbeat
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_SubscriptionHeartbeat_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeat
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeat
+  nameWithType: ISchedulingService.SubscriptionHeartbeat
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeatAsync(System.Guid)
+  name: SubscriptionHeartbeatAsync(Guid)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_SubscriptionHeartbeatAsync_System_Guid_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeatAsync(System.Guid)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeatAsync(System.Guid)
+  nameWithType: ISchedulingService.SubscriptionHeartbeatAsync(Guid)
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeatAsync*
+  name: SubscriptionHeartbeatAsync
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingService_SubscriptionHeartbeatAsync_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeatAsync
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingService.SubscriptionHeartbeatAsync
+  nameWithType: ISchedulingService.SubscriptionHeartbeatAsync
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback
+  name: ISchedulingServiceCallback
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html
+  commentId: T:SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback
+  nameWithType: ISchedulingServiceCallback
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  name: OnCallback(SchedulerStateDto)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingServiceCallback_OnCallback_GAAPICommon_Core_Dtos_SchedulerStateDto_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback(GAAPICommon.Core.Dtos.SchedulerStateDto)
+  nameWithType: ISchedulingServiceCallback.OnCallback(SchedulerStateDto)
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback*
+  name: OnCallback
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.html#SchedulingClients_Core_SchedulingServiceReference_ISchedulingServiceCallback_OnCallback_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceCallback.OnCallback
+  nameWithType: ISchedulingServiceCallback.OnCallback
+- uid: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel
+  name: ISchedulingServiceChannel
+  href: api/SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel.html
+  commentId: T:SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel
+  fullName: SchedulingClients.Core.SchedulingServiceReference.ISchedulingServiceChannel
+  nameWithType: ISchedulingServiceChannel
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient
+  name: SchedulingServiceClient
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html
+  commentId: T:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient
+  nameWithType: SchedulingServiceClient
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext)
+  name: SchedulingServiceClient(InstanceContext)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient__ctor_System_ServiceModel_InstanceContext_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SchedulingServiceClient(System.ServiceModel.InstanceContext)
+  nameWithType: SchedulingServiceClient.SchedulingServiceClient(InstanceContext)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)
+  name: SchedulingServiceClient(InstanceContext, Binding, EndpointAddress)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient__ctor_System_ServiceModel_InstanceContext_System_ServiceModel_Channels_Binding_System_ServiceModel_EndpointAddress_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SchedulingServiceClient(System.ServiceModel.InstanceContext, System.ServiceModel.Channels.Binding, System.ServiceModel.EndpointAddress)
+  nameWithType: SchedulingServiceClient.SchedulingServiceClient(InstanceContext, Binding, EndpointAddress)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String)
+  name: SchedulingServiceClient(InstanceContext, String)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient__ctor_System_ServiceModel_InstanceContext_System_String_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SchedulingServiceClient(System.ServiceModel.InstanceContext, System.String)
+  nameWithType: SchedulingServiceClient.SchedulingServiceClient(InstanceContext, String)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)
+  name: SchedulingServiceClient(InstanceContext, String, EndpointAddress)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient__ctor_System_ServiceModel_InstanceContext_System_String_System_ServiceModel_EndpointAddress_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SchedulingServiceClient(System.ServiceModel.InstanceContext, System.String, System.ServiceModel.EndpointAddress)
+  nameWithType: SchedulingServiceClient.SchedulingServiceClient(InstanceContext, String, EndpointAddress)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)
+  name: SchedulingServiceClient(InstanceContext, String, String)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient__ctor_System_ServiceModel_InstanceContext_System_String_System_String_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SchedulingServiceClient(System.ServiceModel.InstanceContext, System.String, System.String)
+  nameWithType: SchedulingServiceClient.SchedulingServiceClient(InstanceContext, String, String)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor*
+  name: SchedulingServiceClient
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient__ctor_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.#ctor
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SchedulingServiceClient
+  nameWithType: SchedulingServiceClient.SchedulingServiceClient
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVer
+  name: GetAPISemVer()
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_GetAPISemVer
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVer
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVer()
+  nameWithType: SchedulingServiceClient.GetAPISemVer()
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVer*
+  name: GetAPISemVer
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_GetAPISemVer_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVer
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVer
+  nameWithType: SchedulingServiceClient.GetAPISemVer
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVerAsync
+  name: GetAPISemVerAsync()
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_GetAPISemVerAsync
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVerAsync
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVerAsync()
+  nameWithType: SchedulingServiceClient.GetAPISemVerAsync()
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVerAsync*
+  name: GetAPISemVerAsync
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_GetAPISemVerAsync_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVerAsync
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.GetAPISemVerAsync
+  nameWithType: SchedulingServiceClient.GetAPISemVerAsync
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeat(System.Guid)
+  name: SubscriptionHeartbeat(Guid)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_SubscriptionHeartbeat_System_Guid_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeat(System.Guid)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeat(System.Guid)
+  nameWithType: SchedulingServiceClient.SubscriptionHeartbeat(Guid)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeat*
+  name: SubscriptionHeartbeat
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_SubscriptionHeartbeat_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeat
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeat
+  nameWithType: SchedulingServiceClient.SubscriptionHeartbeat
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeatAsync(System.Guid)
+  name: SubscriptionHeartbeatAsync(Guid)
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_SubscriptionHeartbeatAsync_System_Guid_
+  commentId: M:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeatAsync(System.Guid)
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeatAsync(System.Guid)
+  nameWithType: SchedulingServiceClient.SubscriptionHeartbeatAsync(Guid)
+- uid: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeatAsync*
+  name: SubscriptionHeartbeatAsync
+  href: api/SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.html#SchedulingClients_Core_SchedulingServiceReference_SchedulingServiceClient_SubscriptionHeartbeatAsync_
+  commentId: Overload:SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeatAsync
+  isSpec: "True"
+  fullName: SchedulingClients.Core.SchedulingServiceReference.SchedulingServiceClient.SubscriptionHeartbeatAsync
+  nameWithType: SchedulingServiceClient.SubscriptionHeartbeatAsync
 - uid: SchedulingClients.Core.ServicingServiceReference
   name: SchedulingClients.Core.ServicingServiceReference
   href: api/SchedulingClients.Core.ServicingServiceReference.html
