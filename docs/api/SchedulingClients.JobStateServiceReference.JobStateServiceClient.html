@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JobStateServiceClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JobStateServiceClient
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient">
+  
+  
+  <h1 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient" class="text-break">Class JobStateServiceClient
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.ServiceModel.ClientBase</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.IJobStateService.html">IJobStateService</a>&gt;</div>
+    <div class="level2"><span class="xref">System.ServiceModel.DuplexClientBase</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.IJobStateService.html">IJobStateService</a>&gt;</div>
+    <div class="level3"><span class="xref">JobStateServiceClient</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ServiceModel.ICommunicationObject</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="SchedulingClients.JobStateServiceReference.IJobStateService.html">IJobStateService</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.ServiceModel.DuplexClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.InnerDuplexChannel</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.GetDefaultValueForInitialization&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.Open()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.Abort()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.Close()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.DisplayInitializationUI()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.CreateChannel()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.IDisposable.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Open(System.TimeSpan)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Close(System.TimeSpan)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.BeginClose(System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.BeginClose(System.TimeSpan, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.EndClose(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.BeginOpen(System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.BeginOpen(System.TimeSpan, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.EndOpen(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.InvokeAsync(System.ServiceModel.ClientBase.BeginOperationDelegate&lt;&gt;, System.Object[], System.ServiceModel.ClientBase.EndOperationDelegate&lt;&gt;, System.Threading.SendOrPostCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.Channel</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.CacheSetting</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.ChannelFactory</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.ClientCredentials</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.State</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.InnerChannel</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.Endpoint</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Closed</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Closing</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Faulted</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Opened</span>
+    </div>
+    <div>
+      <span class="xref">System.ServiceModel.ClientBase&lt;SchedulingClients.JobStateServiceReference.IJobStateService&gt;.System.ServiceModel.ICommunicationObject.Opening</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SchedulingClients.JobStateServiceReference.html">SchedulingClients.JobStateServiceReference</a></h6>
+  <h6><strong>Assembly</strong>: SchedulingClients.dll</h6>
+  <h5 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JobStateServiceClient : DuplexClientBase&lt;IJobStateService&gt;, ICommunicationObject, IDisposable, IJobStateService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_System_ServiceModel_InstanceContext_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor(System.ServiceModel.InstanceContext)">JobStateServiceClient(InstanceContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobStateServiceClient(InstanceContext callbackInstance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ServiceModel.InstanceContext</span></td>
+        <td><span class="parametername">callbackInstance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_System_ServiceModel_InstanceContext_System_ServiceModel_Channels_Binding_System_ServiceModel_EndpointAddress_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">JobStateServiceClient(InstanceContext, Binding, EndpointAddress)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobStateServiceClient(InstanceContext callbackInstance, Binding binding, EndpointAddress remoteAddress)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ServiceModel.InstanceContext</span></td>
+        <td><span class="parametername">callbackInstance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ServiceModel.Channels.Binding</span></td>
+        <td><span class="parametername">binding</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ServiceModel.EndpointAddress</span></td>
+        <td><span class="parametername">remoteAddress</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_System_ServiceModel_InstanceContext_System_String_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String)">JobStateServiceClient(InstanceContext, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobStateServiceClient(InstanceContext callbackInstance, string endpointConfigurationName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ServiceModel.InstanceContext</span></td>
+        <td><span class="parametername">callbackInstance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">endpointConfigurationName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_System_ServiceModel_InstanceContext_System_String_System_ServiceModel_EndpointAddress_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">JobStateServiceClient(InstanceContext, String, EndpointAddress)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobStateServiceClient(InstanceContext callbackInstance, string endpointConfigurationName, EndpointAddress remoteAddress)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ServiceModel.InstanceContext</span></td>
+        <td><span class="parametername">callbackInstance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">endpointConfigurationName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ServiceModel.EndpointAddress</span></td>
+        <td><span class="parametername">remoteAddress</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient__ctor_System_ServiceModel_InstanceContext_System_String_System_String_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)">JobStateServiceClient(InstanceContext, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobStateServiceClient(InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ServiceModel.InstanceContext</span></td>
+        <td><span class="parametername">callbackInstance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">endpointConfigurationName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">remoteAddress</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetCurrentJobSummaryForAgentId_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetCurrentJobSummaryForAgentId*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetCurrentJobSummaryForAgentId_System_Int32_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetCurrentJobSummaryForAgentId(System.Int32)">GetCurrentJobSummaryForAgentId(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tuple&lt;JobSummaryData, ServiceCallData&gt; GetCurrentJobSummaryForAgentId(int agentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">agentId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Tuple</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.JobSummaryData.html">JobSummaryData</a>, <a class="xref" href="SchedulingClients.JobStateServiceReference.ServiceCallData.html">ServiceCallData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetCurrentJobSummaryForAgentIdAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetCurrentJobSummaryForAgentIdAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetCurrentJobSummaryForAgentIdAsync_System_Int32_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetCurrentJobSummaryForAgentIdAsync(System.Int32)">GetCurrentJobSummaryForAgentIdAsync(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Tuple&lt;JobSummaryData, ServiceCallData&gt;&gt; GetCurrentJobSummaryForAgentIdAsync(int agentId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">agentId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Tuple</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.JobSummaryData.html">JobSummaryData</a>, <a class="xref" href="SchedulingClients.JobStateServiceReference.ServiceCallData.html">ServiceCallData</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetJobSummary_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetJobSummary*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetJobSummary_System_Int32_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetJobSummary(System.Int32)">GetJobSummary(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tuple&lt;JobSummaryData, ServiceCallData&gt; GetJobSummary(int jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Tuple</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.JobSummaryData.html">JobSummaryData</a>, <a class="xref" href="SchedulingClients.JobStateServiceReference.ServiceCallData.html">ServiceCallData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetJobSummaryAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetJobSummaryAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetJobSummaryAsync_System_Int32_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetJobSummaryAsync(System.Int32)">GetJobSummaryAsync(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Tuple&lt;JobSummaryData, ServiceCallData&gt;&gt; GetJobSummaryAsync(int jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Tuple</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.JobSummaryData.html">JobSummaryData</a>, <a class="xref" href="SchedulingClients.JobStateServiceReference.ServiceCallData.html">ServiceCallData</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetParentJobSummaryFromTaskId_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetParentJobSummaryFromTaskId*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetParentJobSummaryFromTaskId_System_Int32_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetParentJobSummaryFromTaskId(System.Int32)">GetParentJobSummaryFromTaskId(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tuple&lt;JobSummaryData, ServiceCallData&gt; GetParentJobSummaryFromTaskId(int taskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Tuple</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.JobSummaryData.html">JobSummaryData</a>, <a class="xref" href="SchedulingClients.JobStateServiceReference.ServiceCallData.html">ServiceCallData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetParentJobSummaryFromTaskIdAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetParentJobSummaryFromTaskIdAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_GetParentJobSummaryFromTaskIdAsync_System_Int32_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.GetParentJobSummaryFromTaskIdAsync(System.Int32)">GetParentJobSummaryFromTaskIdAsync(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Tuple&lt;JobSummaryData, ServiceCallData&gt;&gt; GetParentJobSummaryFromTaskIdAsync(int taskId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">taskId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Tuple</span>&lt;<a class="xref" href="SchedulingClients.JobStateServiceReference.JobSummaryData.html">JobSummaryData</a>, <a class="xref" href="SchedulingClients.JobStateServiceReference.ServiceCallData.html">ServiceCallData</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_SubscriptionHeartbeat_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.SubscriptionHeartbeat*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_SubscriptionHeartbeat_System_Guid_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.SubscriptionHeartbeat(System.Guid)">SubscriptionHeartbeat(Guid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubscriptionHeartbeat(Guid guid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">guid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_SubscriptionHeartbeatAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.SubscriptionHeartbeatAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_SubscriptionHeartbeatAsync_System_Guid_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.SubscriptionHeartbeatAsync(System.Guid)">SubscriptionHeartbeatAsync(Guid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SubscriptionHeartbeatAsync(Guid guid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">guid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMajor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMajor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMajor" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMajor">VersionMajor()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VersionMajor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMajorAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMajorAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMajorAsync" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMajorAsync">VersionMajorAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; VersionMajorAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMinor_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMinor*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMinor" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMinor">VersionMinor()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VersionMinor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMinorAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMinorAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionMinorAsync" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionMinorAsync">VersionMinorAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; VersionMinorAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionPatch_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionPatch*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionPatch" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionPatch">VersionPatch()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VersionPatch()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionPatchAsync_" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionPatchAsync*"></a>
+  <h4 id="SchedulingClients_JobStateServiceReference_JobStateServiceClient_VersionPatchAsync" data-uid="SchedulingClients.JobStateServiceReference.JobStateServiceClient.VersionPatchAsync">VersionPatchAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; VersionPatchAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ServiceModel.ICommunicationObject</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="SchedulingClients.JobStateServiceReference.IJobStateService.html">IJobStateService</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

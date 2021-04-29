@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="SchedulingClients.Controls.MapClient.SetOccupyingMandateControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchedulingClients.Controls.MapClient"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             x:Name="setOccupyingMandateControl"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <StatusBar>Set Occupying Mandate</StatusBar>
+            <TextBlock>Timeout</TextBlock>
+            <toolkit:TimeSpanUpDown x:Name="timeSpanUpDown"
+                                    Minimum="00:00:00"
+                                    DefaultValue="00:00:30"
+                                    Value="00:00:30"
+                                    Maximum="00:05:00"/>
+            <Button x:Name="setButton" Click="SetButton_Click">Set</Button>
+            <Button x:Name="populateButton" Click="PopulateButton_Click">Populate</Button>
+            <ItemsControl ItemsSource="{Binding Path=MapItemIds, ElementName=setOccupyingMandateControl}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Style>
+                    <Style TargetType="{x:Type ItemsControl}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBlock>No map items selected.</TextBlock>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ItemsControl.Style>
+            </ItemsControl>
+        </StackPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <local:GetAllNodeDataControl x:Name="getAllNodeDataControl" Grid.Column="0">
+            </local:GetAllNodeDataControl>
+            <GridSplitter Grid.Column="1"/>
+            <local:GetAllMoveDataControl x:Name="getAllMoveDataControl" Grid.Column="2">
+            </local:GetAllMoveDataControl>
+        </Grid>
+    </DockPanel>
+</UserControl>

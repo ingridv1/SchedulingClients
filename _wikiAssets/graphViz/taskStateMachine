@@ -1,0 +1,8 @@
+digraph TaskStateMachine
+{
+	Unstarted -> InProgress
+	Unstarted  -> Aborted
+	InProgress -> Aborted
+	InProgress -> Completed
+
+}

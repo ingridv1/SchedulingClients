@@ -1,0 +1,43 @@
+﻿<Window x:Class="SchedulingClients.UserControls.TrajectoryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchedulingClients.UserControls"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Trajectory" Height="320" Width="480">
+    <Window.Resources>
+        <system:Double x:Key="Text">14</system:Double>
+        <Style TargetType="{x:Type Control}" x:Key="BaseControlStyle">
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="{StaticResource Text}" />
+            <Setter Property="Margin" Value="6" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="{StaticResource Text}" />
+            <Setter Property="Margin" Value="6" />
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseControlStyle}">
+            <Setter Property="Height" Value="23" />
+            <Setter Property="Width" Value="75" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="waypointDataGrid" Grid.Row="0" AutoGenerateColumns="False" ColumnWidth="*" ItemsSource="{Binding}"
+                  Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control, AncestorLevel=1}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="X (m)" Binding="{Binding X, StringFormat={}{0:N3}}" />
+                <DataGridTextColumn Header="Y (m)" Binding="{Binding Y, StringFormat={}{0:N3}}" />
+                <DataGridTextColumn Header="Heading (rad)" Binding="{Binding HeadingRad, StringFormat={}{0:N2}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" HorizontalAlignment="Right" x:Name="okButton" Click="okButton_Click">OK</Button>
+    </Grid>
+</Window>

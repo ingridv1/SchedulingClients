@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="SchedulingClients.UserControls.JobBuilderClientControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:SchedulingClients.UserControls"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+	<Grid>
+		<StackPanel>
+            <StackPanel>
+                <local:LabelContentControl Header="Job">
+                    <toolkit:IntegerUpDown x:Name="jobIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+                </local:LabelContentControl>
+                <local:LabelContentControl Header="AgentId">
+                    <toolkit:IntegerUpDown x:Name="agentIdUpDown" Minimum="-1" Maximum="65535" MinWidth="50" />
+                </local:LabelContentControl>
+                <local:LabelContentControl Header="Commits the specified job to the specified agent, or the most efficient agent if -1">
+                    <Button x:Name="commitJobButton" Click="commitJobButton_Click">Commit</Button>
+                </local:LabelContentControl>
+            </StackPanel>
+			<local:LabelContentControl Header="Creates a single job with no tasks">
+				<Button x:Name="createJobButton" Click="createJobButton_Click">Create</Button>
+			</local:LabelContentControl>
+			<local:LabelContentControl Header="Creates a simple multi pick job, consisting of three picks, a drop and a park">
+				<Button x:Name="multiPickJobTest" Click="multiPickJobTest_Click"  >Multi</Button>
+			</local:LabelContentControl>
+			<local:LabelContentControl Header="Creates a job consisting of two pipelined move tasks, uncheck the box to make it unfinalised">
+				<StackPanel Orientation="Horizontal">
+					<CheckBox x:Name="finalisedPipelineCheck" IsChecked="True" VerticalAlignment="Center">Finalised</CheckBox>
+					<Button x:Name="moveJobButton" Click="moveJobButton_Click" VerticalAlignment="Center">Pipeline</Button>
+				</StackPanel>
+			</local:LabelContentControl>
+			<StackPanel>
+				<local:LabelContentControl Header="Task">
+					<toolkit:IntegerUpDown x:Name="taskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+				</local:LabelContentControl>
+				<local:LabelContentControl Header="Parameter Alias">
+                    <TextBox x:Name="parameterAliasTextBox"/>
+                </local:LabelContentControl>
+				<local:LabelContentControl Header="Value">
+					<toolkit:IntegerUpDown x:Name="valueUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+				</local:LabelContentControl>
+				<Button x:Name="directiveTest" Click="directiveTest_Click" HorizontalAlignment="Right"  >Directive</Button>
+			</StackPanel>
+            <local:LabelContentControl Header="Create an ordered list task with the specified parent task">
+                <StackPanel Orientation="Horizontal">
+                    <toolkit:IntegerUpDown x:Name="parentTaskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+                    <Button x:Name="orderedListTaskButton" Click="orderedListTaskButton_Click" Width="auto">Ordered List Task</Button>
+                </StackPanel>
+            </local:LabelContentControl>
+            <local:LabelContentControl Header="Bring the specified job into or out of the Editing state">
+				<StackPanel Orientation="Horizontal">
+					<toolkit:IntegerUpDown x:Name="editJobIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+					<Button x:Name="beginEditingJobButton" Click="beginEditingJobButton_Click" Margin="5,0" Width="auto">Begin Editing</Button>
+					<Button x:Name="finishEditingJobButton" Click="finishEditingJobButton_Click" Width="auto">Finish Editing</Button>
+				</StackPanel>
+			</local:LabelContentControl>
+			<local:LabelContentControl Header="Bring the specified task into or out of the Editing state">
+				<StackPanel Orientation="Horizontal">
+					<toolkit:IntegerUpDown x:Name="editTaskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+					<Button x:Name="beginEditingTaskButton" Click="beginEditingTaskButton_Click"  Margin="5,0" Width="auto">Begin Editing</Button>
+					<Button x:Name="finishEditingTaskButton" Click="finishEditingTaskButton_Click" Width="auto">Finish Editing</Button>
+				</StackPanel>
+			</local:LabelContentControl>
+			<local:LabelContentControl Header="Add a node task for the given node to the given parent task ID">
+				<StackPanel Orientation="Vertical">
+					<local:LabelContentControl Header="Node ID">
+						<toolkit:IntegerUpDown x:Name="addNodeTaskIdUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+					</local:LabelContentControl>
+					<local:LabelContentControl Header="Parent Task ID">
+						<toolkit:IntegerUpDown x:Name="addNodeTaskParentUpDown" Minimum="0" Maximum="65535" MinWidth="50" />
+					</local:LabelContentControl>
+					<local:LabelContentControl Header="Add Task to Parent">
+                        <StackPanel>
+                            <Button x:Name="addGoToNodeTaskToParentButton" Click="addGoToNodeTaskToParentButton_Click" Width="auto">Create GoTo Node Task</Button>
+                            <Button x:Name="addAwaitTaskToParentButton" Click="addAwaitTaskToParentButton_Click" Width="auto">Create Await Task</Button>
+                            <Button x:Name="addServiceTaskToParentButton" Click="addServiceTaskToParentButton_Click" Width="auto">Create Service Task</Button>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="sleepDurationBox" Text="Sleep time (s)" Width="auto" />
+                                <Button x:Name="addSleepTaskToParentButton" Click="addSleepTaskToParentButton_Click" Width="auto">Create Sleep Task</Button>
+                            </StackPanel>
+                        </StackPanel>
+					</local:LabelContentControl>
+				</StackPanel>
+			</local:LabelContentControl>
+		</StackPanel>
+	</Grid>
+</UserControl>
